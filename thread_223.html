@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,860 +44,1348 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_11.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Główne rozporządzenia</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Dzień doberek</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Dzień doberek</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1683">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-12-09T14:41:24" class="text-sm text-gray-500 font-mono">2017-12-09 14:41:24</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Eksperyment startuje dzisiaj. Brak moderacji, jakichś obostrzeń. Wystarczy pamiętać o dobrym smaku i polskim prawie. Wiecie, czego nie postowac, nie? :)
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Dzień doberek</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1683" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1683"
+                                 aria-describedby="post-content-1683">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1684">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2017-12-09T15:17:37" class="text-sm text-gray-500 font-mono">2017-12-09 15:17:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1683" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Wiecie, czego nie postowac, nie? :)</div><br /><br />O Jezu, przecież miała już 15 lat.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1683" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-12-09T14:41:24"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-09 14:41:24</time>
+                                    </header>
+                                    <div id="post-content-1683"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Eksperyment startuje dzisiaj. Brak moderacji, jakichś obostrzeń. Wystarczy pamiętać o dobrym smaku i polskim prawie. Wiecie, czego nie postowac, nie? :)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1685">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-12-09T19:58:18" class="text-sm text-gray-500 font-mono">2017-12-09 19:58:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1684" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>O Jezu, przecież miała już 15 lat.</div><br />Chyba w psich latach.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1684" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1684"
+                                 aria-describedby="post-content-1684">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1686">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2017-12-09T20:08:45" class="text-sm text-gray-500 font-mono">2017-12-09 20:08:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Spoko Cabelek, zdjęć z naszej imprezy w zwierzęcym prosektorium też nie będę wrzucał*<br /><br />*przypomnę wszystkim, że ja nie rucham.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1684" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2017-12-09T15:17:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-09 15:17:37</time>
+                                    </header>
+                                    <div id="post-content-1684"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1683" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Wiecie, czego nie postowac, nie? :)</div><br /><br />O Jezu, przecież miała już 15 lat.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1687">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-12-09T20:16:40" class="text-sm text-gray-500 font-mono">2017-12-09 20:16:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <em>Naszej imprezy</em>? Nie wiem o czym bredzisz, z przegrywami się nie zadaję.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1685" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1685"
+                                 aria-describedby="post-content-1685">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1688">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-12-10T10:24:08" class="text-sm text-gray-500 font-mono">2017-12-10 10:24:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Czemu nie? Czasami jest zabawnie :P
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1685" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-12-09T19:58:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-09 19:58:18</time>
+                                    </header>
+                                    <div id="post-content-1685"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1684" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>O Jezu, przecież miała już 15 lat.</div><br />Chyba w psich latach.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1689">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2017-12-11T00:19:56" class="text-sm text-gray-500 font-mono">2017-12-11 00:19:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1687" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div><em>Naszej imprezy</em>? Nie wiem o czym bredzisz, z przegrywami się nie zadaję.</div><br /><br />A mówiłem, nie dolewaj Red Labela do tej coli, bo będziesz miał problemy z pamięcią. Nie słuchał.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1686" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1686"
+                                 aria-describedby="post-content-1686">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1690">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-12-11T22:00:57" class="text-sm text-gray-500 font-mono">2017-12-11 22:00:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1689" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>A mówiłem, nie dolewaj Red Labela do tej coli, bo będziesz miał problemy z pamięcią. Nie słuchał.</div><br />Weźcie chociaż ustalcie wspólną wersję :P
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1686" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2017-12-09T20:08:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-09 20:08:45</time>
+                                    </header>
+                                    <div id="post-content-1686"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        Spoko Cabelek, zdjęć z naszej imprezy w zwierzęcym prosektorium też nie będę wrzucał*<br /><br />*przypomnę wszystkim, że ja nie rucham.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1720">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-12-26T22:56:46" class="text-sm text-gray-500 font-mono">2017-12-26 22:56:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                KIEDY SB<br />muszę mieć jakieś miejsce gdzie mogę pisać jednozdaniowce i wklejać linki do gównianych filmów, obrazków etc
+                        </article>
+                    </li>
+                    
+                    <li id="post-1687" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1687"
+                                 aria-describedby="post-content-1687">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1721">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2017-12-26T23:50:38" class="text-sm text-gray-500 font-mono">2017-12-26 23:50:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1720" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>KIEDY SB</div><br /><br />W dupie.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1687" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-12-09T20:16:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-09 20:16:40</time>
+                                    </header>
+                                    <div id="post-content-1687"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <em>Naszej imprezy</em>? Nie wiem o czym bredzisz, z przegrywami się nie zadaję.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1728">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-12-31T16:36:57" class="text-sm text-gray-500 font-mono">2017-12-31 16:36:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1721" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>W dupie.</div><br />W sumie tak, bo nikt nie planował SB, ale jak będzie bardzo trzeba, to czemu tak&#8230; : ^ )
+                        </article>
+                    </li>
+                    
+                    <li id="post-1688" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1688"
+                                 aria-describedby="post-content-1688">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1740">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-02T23:21:15" class="text-sm text-gray-500 font-mono">2018-01-02 23:21:15</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                jak to nie jest duży problem to byłoby supcio, bo od technicznej strony obecnie tylko SB na tej stronie brakuje.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1688" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-12-10T10:24:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-10 10:24:08</time>
+                                    </header>
+                                    <div id="post-content-1688"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Czemu nie? Czasami jest zabawnie :P
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1749">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-04T20:24:55" class="text-sm text-gray-500 font-mono">2018-01-04 20:24:55</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1687" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>z przegrywami się nie zadaję.</div><br /><br />X-D
+                        </article>
+                    </li>
+                    
+                    <li id="post-1689" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1689"
+                                 aria-describedby="post-content-1689">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1750">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-05T11:09:16" class="text-sm text-gray-500 font-mono">2018-01-05 11:09:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1740" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>jak to nie jest duży problem to byłoby supcio, bo od technicznej strony obecnie tylko SB na tej stronie brakuje.</div><br />Żaden problem, 9,99 EUR :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1689" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2017-12-11T00:19:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-11 00:19:56</time>
+                                    </header>
+                                    <div id="post-content-1689"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1687" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div><em>Naszej imprezy</em>? Nie wiem o czym bredzisz, z przegrywami się nie zadaję.</div><br /><br />A mówiłem, nie dolewaj Red Labela do tej coli, bo będziesz miał problemy z pamięcią. Nie słuchał.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1751">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-05T12:35:39" class="text-sm text-gray-500 font-mono">2018-01-05 12:35:39</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1750" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Żaden problem, 9,99 EUR :)</div><br /><br />Miska Ci wyrwie jakąś jedynkę za darmola. Stoi?
+                        </article>
+                    </li>
+                    
+                    <li id="post-1690" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1690"
+                                 aria-describedby="post-content-1690">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1752">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-05T12:39:50" class="text-sm text-gray-500 font-mono">2018-01-05 12:39:50</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1751" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Miska Ci wyrwie jakąś jedynkę za darmola. Stoi?</div><br />W suuuuumie~
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1690" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-12-11T22:00:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-11 22:00:57</time>
+                                    </header>
+                                    <div id="post-content-1690"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1689" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>A mówiłem, nie dolewaj Red Labela do tej coli, bo będziesz miał problemy z pamięcią. Nie słuchał.</div><br />Weźcie chociaż ustalcie wspólną wersję :P
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1753">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-05T12:52:45" class="text-sm text-gray-500 font-mono">2018-01-05 12:52:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Podobie mnie się w sumie ten pierdolnik z tymi śmiećtematami, jakie spamowałem, gdy Caleb miał swoje palpitacje okrężnicy. xD
+                        </article>
+                    </li>
+                    
+                    <li id="post-1720" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1720"
+                                 aria-describedby="post-content-1720">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1755">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-05T13:08:19" class="text-sm text-gray-500 font-mono">2018-01-05 13:08:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1753" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Podobie mnie się w sumie ten pierdolnik z tymi śmiećtematami, jakie spamowałem, gdy Caleb miał swoje palpitacje okrężnicy. xD</div><br />Ten projekt służy zabawie i rozmowom, nie moderacji i nakurwianiem banami i innymi chujami. Baw się, zatem, dobrze!
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1720" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-12-26T22:56:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-26 22:56:46</time>
+                                    </header>
+                                    <div id="post-content-1720"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        KIEDY SB<br />muszę mieć jakieś miejsce gdzie mogę pisać jednozdaniowce i wklejać linki do gównianych filmów, obrazków etc
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1756">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-05T15:32:59" class="text-sm text-gray-500 font-mono">2018-01-05 15:32:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1755" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Ten projekt służy zabawie i rozmowom, nie moderacji i nakurwianiem banami i innymi chujami. Baw się, zatem, dobrze!</div><br /><br />To ja czekam aż Miska wróci z zw.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1721" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1721"
+                                 aria-describedby="post-content-1721">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1757">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-05T16:57:16" class="text-sm text-gray-500 font-mono">2018-01-05 16:57:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1756" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>To ja czekam aż Miska wróci z zw.</div><br />Jak mu tak będziesz słodził, dostanie konfliktu ippp i koniec.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1721" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2017-12-26T23:50:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-26 23:50:38</time>
+                                    </header>
+                                    <div id="post-content-1721"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1720" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>KIEDY SB</div><br /><br />W dupie.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1758">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-05T19:16:41" class="text-sm text-gray-500 font-mono">2018-01-05 19:16:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1757" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Jak mu tak będziesz słodził, dostanie konfliktu ippp i koniec.</div><br /><br />Postmisizm. Man vs ipppp.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1728" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1728"
+                                 aria-describedby="post-content-1728">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1759">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-06T00:46:50" class="text-sm text-gray-500 font-mono">2018-01-06 00:46:50</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                O cie chuj, druga strona tridu, prawie jak poważne forum.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1728" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-12-31T16:36:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-31 16:36:57</time>
+                                    </header>
+                                    <div id="post-content-1728"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1721" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>W dupie.</div><br />W sumie tak, bo nikt nie planował SB, ale jak będzie bardzo trzeba, to czemu tak&#8230; : ^ )
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1760">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-06T10:28:19" class="text-sm text-gray-500 font-mono">2018-01-06 10:28:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1759" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>O cie chuj, druga strona tridu, prawie jak poważne forum.</div><br />Poważne forum na burzliwe czasy. A tak w ogóle – gdzie on jest? Miał być po świętach.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1740" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1740"
+                                 aria-describedby="post-content-1740">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1761">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-06T13:37:43" class="text-sm text-gray-500 font-mono">2018-01-06 13:37:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1760" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Poważne forum na burzliwe czasy. A tak w ogóle – gdzie on jest? Miał być po świętach.</div><br /><br />Będzie zaraz po tym jak Fred i Raven przyjdą do GTA.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1740" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-02T23:21:15"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-02 23:21:15</time>
+                                    </header>
+                                    <div id="post-content-1740"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        jak to nie jest duży problem to byłoby supcio, bo od technicznej strony obecnie tylko SB na tej stronie brakuje.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1762">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-06T15:34:53" class="text-sm text-gray-500 font-mono">2018-01-06 15:34:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1761" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Będzie zaraz po tym jak Fred i Raven przyjdą do GTA.</div><br />Rejben jeszcze żyje? Medżik, chrum, chrum.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1749" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1749"
+                                 aria-describedby="post-content-1749">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1763">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-06T20:19:43" class="text-sm text-gray-500 font-mono">2018-01-06 20:19:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1740" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>jak to nie jest duży problem to byłoby supcio, bo od technicznej strony obecnie tylko SB na tej stronie brakuje.</div><br />SB zrobione. Proste, nieprzesłodzone, bezproblemowe. Jak będzie chujowe, zrobię inne, z większą ilością opcji ;)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1749" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-04T20:24:55"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-04 20:24:55</time>
+                                    </header>
+                                    <div id="post-content-1749"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1687" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>z przegrywami się nie zadaję.</div><br /><br />X-D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1764">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-06T20:48:41" class="text-sm text-gray-500 font-mono">2018-01-06 20:48:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Szanuję. Lecz nie zmienia to faktu, że i tak jesteście bandą zaplutych faszystów. <br /><br />MAMY JUŻ SB, TERAZ CZAS NA SYGNATURY
+                        </article>
+                    </li>
+                    
+                    <li id="post-1750" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1750"
+                                 aria-describedby="post-content-1750">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1823">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-08T14:20:21" class="text-sm text-gray-500 font-mono">2018-01-08 14:20:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1764" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Szanuję. Lecz nie zmienia to faktu, że i tak jesteście bandą zaplutych faszystów.<br /><br />MAMY JUŻ SB, TERAZ CZAS NA SYGNATURY</div><br />Musisz sobie ustawić, fajansiarzu :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1750" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-05T11:09:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 11:09:16</time>
+                                    </header>
+                                    <div id="post-content-1750"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1740" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>jak to nie jest duży problem to byłoby supcio, bo od technicznej strony obecnie tylko SB na tej stronie brakuje.</div><br />Żaden problem, 9,99 EUR :)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1824">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-08T15:00:07" class="text-sm text-gray-500 font-mono">2018-01-08 15:00:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1823" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Musisz sobie ustawić, fajansiarzu :)</div><br /><br />I zepsułeś, a jego dysmózgowy nieogar był taki zabawny.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1751" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1751"
+                                 aria-describedby="post-content-1751">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1825">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-08T16:03:18" class="text-sm text-gray-500 font-mono">2018-01-08 16:03:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1824" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>I zepsułeś, a jego dysmózgowy nieogar był taki zabawny.</div><br />Spoko, może ustawi coś zabawnego :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1751" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-05T12:35:39"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 12:35:39</time>
+                                    </header>
+                                    <div id="post-content-1751"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1750" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Żaden problem, 9,99 EUR :)</div><br /><br />Miska Ci wyrwie jakąś jedynkę za darmola. Stoi?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1828">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-08T16:34:03" class="text-sm text-gray-500 font-mono">2018-01-08 16:34:03</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pedalaj.<br />BTW, przydałoby się jakieś widoczne odgraniczenie sygny od treści wiadomości, ale chuj tam.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1752" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1752"
+                                 aria-describedby="post-content-1752">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1830">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-08T16:44:47" class="text-sm text-gray-500 font-mono">2018-01-08 16:44:47</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1824" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>I zepsułeś, a jego dysmózgowy nieogar był taki zabawny.</div><br /><br />No przecież ja pod każdym swoim postem wstawiałem obrazek ręcznie.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1752" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-05T12:39:50"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 12:39:50</time>
+                                    </header>
+                                    <div id="post-content-1752"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1751" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Miska Ci wyrwie jakąś jedynkę za darmola. Stoi?</div><br />W suuuuumie~
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1831">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-08T17:09:20" class="text-sm text-gray-500 font-mono">2018-01-08 17:09:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No przecież ja wciąż nie widzę że mamy SB, a co dopiero sygnatury. W Grażynę Żarko też wierzysz, kutafongu Ty?
+                        </article>
+                    </li>
+                    
+                    <li id="post-1753" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1753"
+                                 aria-describedby="post-content-1753">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1841">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-11T23:29:19" class="text-sm text-gray-500 font-mono">2018-01-11 23:29:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1831" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>No przecież ja wciąż nie widzę że mamy SB, a co dopiero sygnatury. W Grażynę Żarko też wierzysz, kutafongu Ty?</div><br />A ktoś normalny nie wierzy w błogosławioną panią Żarko?! Ty Belzebubie pierdolony!
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1753" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-05T12:52:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 12:52:45</time>
+                                    </header>
+                                    <div id="post-content-1753"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Podobie mnie się w sumie ten pierdolnik z tymi śmiećtematami, jakie spamowałem, gdy Caleb miał swoje palpitacje okrężnicy. xD
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2465">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-11-20T17:50:34" class="text-sm text-gray-500 font-mono">2018-11-20 17:50:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pozwolę sobie zaapelować o wydłużenie czasu bez czystki w SB z 3 do minimum 5 dni.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1755" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1755"
+                                 aria-describedby="post-content-1755">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2470">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2018-11-21T09:13:31" class="text-sm text-gray-500 font-mono">2018-11-21 09:13:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Może jeszcze frytki do tego?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1755" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-05T13:08:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 13:08:19</time>
+                                    </header>
+                                    <div id="post-content-1755"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1753" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Podobie mnie się w sumie ten pierdolnik z tymi śmiećtematami, jakie spamowałem, gdy Caleb miał swoje palpitacje okrężnicy. xD</div><br />Ten projekt służy zabawie i rozmowom, nie moderacji i nakurwianiem banami i innymi chujami. Baw się, zatem, dobrze!
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2472">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-11-21T12:05:02" class="text-sm text-gray-500 font-mono">2018-11-21 12:05:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2470" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Może jeszcze frytki do tego?</div><br />Zestaw powiększony z colą i frytkami? Tylko 2 zł różnicy.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1756" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1756"
+                                 aria-describedby="post-content-1756">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2474">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-11-21T12:35:05" class="text-sm text-gray-500 font-mono">2018-11-21 12:35:05</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Frytki srytki. Tylko kanapki made by mamusia.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1756" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-05T15:32:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 15:32:59</time>
+                                    </header>
+                                    <div id="post-content-1756"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1755" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Ten projekt służy zabawie i rozmowom, nie moderacji i nakurwianiem banami i innymi chujami. Baw się, zatem, dobrze!</div><br /><br />To ja czekam aż Miska wróci z zw.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2479">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2018-11-21T13:09:10" class="text-sm text-gray-500 font-mono">2018-11-21 13:09:10</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2474" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Frytki srytki. Tylko kanapki made by mamusia.</div><br />Która/czyja? Już się w waszych krzakach genealogicznych gubię.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1757" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1757"
+                                 aria-describedby="post-content-1757">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2480">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-11-21T13:45:05" class="text-sm text-gray-500 font-mono">2018-11-21 13:45:05</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mamusia Pimpusia, rzecz jasna.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1757" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-05T16:57:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 16:57:16</time>
+                                    </header>
+                                    <div id="post-content-1757"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1756" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>To ja czekam aż Miska wróci z zw.</div><br />Jak mu tak będziesz słodził, dostanie konfliktu ippp i koniec.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1758" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1758"
+                                 aria-describedby="post-content-1758">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1758" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-05T19:16:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-05 19:16:41</time>
+                                    </header>
+                                    <div id="post-content-1758"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1757" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Jak mu tak będziesz słodził, dostanie konfliktu ippp i koniec.</div><br /><br />Postmisizm. Man vs ipppp.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1759" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1759"
+                                 aria-describedby="post-content-1759">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1759" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-06T00:46:50"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 00:46:50</time>
+                                    </header>
+                                    <div id="post-content-1759"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        O cie chuj, druga strona tridu, prawie jak poważne forum.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1760" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1760"
+                                 aria-describedby="post-content-1760">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1760" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-06T10:28:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 10:28:19</time>
+                                    </header>
+                                    <div id="post-content-1760"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1759" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>O cie chuj, druga strona tridu, prawie jak poważne forum.</div><br />Poważne forum na burzliwe czasy. A tak w ogóle – gdzie on jest? Miał być po świętach.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1761" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1761"
+                                 aria-describedby="post-content-1761">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1761" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-06T13:37:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 13:37:43</time>
+                                    </header>
+                                    <div id="post-content-1761"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1760" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Poważne forum na burzliwe czasy. A tak w ogóle – gdzie on jest? Miał być po świętach.</div><br /><br />Będzie zaraz po tym jak Fred i Raven przyjdą do GTA.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1762" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1762"
+                                 aria-describedby="post-content-1762">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1762" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-06T15:34:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 15:34:53</time>
+                                    </header>
+                                    <div id="post-content-1762"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1761" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Będzie zaraz po tym jak Fred i Raven przyjdą do GTA.</div><br />Rejben jeszcze żyje? Medżik, chrum, chrum.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1763" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1763"
+                                 aria-describedby="post-content-1763">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1763" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-06T20:19:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 20:19:43</time>
+                                    </header>
+                                    <div id="post-content-1763"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1740" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>jak to nie jest duży problem to byłoby supcio, bo od technicznej strony obecnie tylko SB na tej stronie brakuje.</div><br />SB zrobione. Proste, nieprzesłodzone, bezproblemowe. Jak będzie chujowe, zrobię inne, z większą ilością opcji ;)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1764" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1764"
+                                 aria-describedby="post-content-1764">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1764" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-06T20:48:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 20:48:41</time>
+                                    </header>
+                                    <div id="post-content-1764"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Szanuję. Lecz nie zmienia to faktu, że i tak jesteście bandą zaplutych faszystów. <br /><br />MAMY JUŻ SB, TERAZ CZAS NA SYGNATURY
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1823" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1823"
+                                 aria-describedby="post-content-1823">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1823" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-08T14:20:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 14:20:21</time>
+                                    </header>
+                                    <div id="post-content-1823"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1764" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Szanuję. Lecz nie zmienia to faktu, że i tak jesteście bandą zaplutych faszystów.<br /><br />MAMY JUŻ SB, TERAZ CZAS NA SYGNATURY</div><br />Musisz sobie ustawić, fajansiarzu :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1824" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1824"
+                                 aria-describedby="post-content-1824">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1824" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-08T15:00:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 15:00:07</time>
+                                    </header>
+                                    <div id="post-content-1824"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1823" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Musisz sobie ustawić, fajansiarzu :)</div><br /><br />I zepsułeś, a jego dysmózgowy nieogar był taki zabawny.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1825" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1825"
+                                 aria-describedby="post-content-1825">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1825" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-08T16:03:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 16:03:18</time>
+                                    </header>
+                                    <div id="post-content-1825"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1824" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>I zepsułeś, a jego dysmózgowy nieogar był taki zabawny.</div><br />Spoko, może ustawi coś zabawnego :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1828" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1828"
+                                 aria-describedby="post-content-1828">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1828" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-08T16:34:03"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 16:34:03</time>
+                                    </header>
+                                    <div id="post-content-1828"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Pedalaj.<br />BTW, przydałoby się jakieś widoczne odgraniczenie sygny od treści wiadomości, ale chuj tam.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1830" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1830"
+                                 aria-describedby="post-content-1830">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1830" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-08T16:44:47"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 16:44:47</time>
+                                    </header>
+                                    <div id="post-content-1830"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1824" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>I zepsułeś, a jego dysmózgowy nieogar był taki zabawny.</div><br /><br />No przecież ja pod każdym swoim postem wstawiałem obrazek ręcznie.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1831" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1831"
+                                 aria-describedby="post-content-1831">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1831" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-08T17:09:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 17:09:20</time>
+                                    </header>
+                                    <div id="post-content-1831"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        No przecież ja wciąż nie widzę że mamy SB, a co dopiero sygnatury. W Grażynę Żarko też wierzysz, kutafongu Ty?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1841" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1841"
+                                 aria-describedby="post-content-1841">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1841" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-11T23:29:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-11 23:29:19</time>
+                                    </header>
+                                    <div id="post-content-1841"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1831" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>No przecież ja wciąż nie widzę że mamy SB, a co dopiero sygnatury. W Grażynę Żarko też wierzysz, kutafongu Ty?</div><br />A ktoś normalny nie wierzy w błogosławioną panią Żarko?! Ty Belzebubie pierdolony!
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2465" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2465"
+                                 aria-describedby="post-content-2465">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2465" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-11-20T17:50:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-20 17:50:34</time>
+                                    </header>
+                                    <div id="post-content-2465"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Pozwolę sobie zaapelować o wydłużenie czasu bez czystki w SB z 3 do minimum 5 dni.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2470" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2470"
+                                 aria-describedby="post-content-2470">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2470" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2018-11-21T09:13:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-21 09:13:31</time>
+                                    </header>
+                                    <div id="post-content-2470"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Może jeszcze frytki do tego?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2472" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2472"
+                                 aria-describedby="post-content-2472">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2472" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-11-21T12:05:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-21 12:05:02</time>
+                                    </header>
+                                    <div id="post-content-2472"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2470" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Może jeszcze frytki do tego?</div><br />Zestaw powiększony z colą i frytkami? Tylko 2 zł różnicy.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2474" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2474"
+                                 aria-describedby="post-content-2474">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2474" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-11-21T12:35:05"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-21 12:35:05</time>
+                                    </header>
+                                    <div id="post-content-2474"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Frytki srytki. Tylko kanapki made by mamusia.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2479" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2479"
+                                 aria-describedby="post-content-2479">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2479" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2018-11-21T13:09:10"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-21 13:09:10</time>
+                                    </header>
+                                    <div id="post-content-2479"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2474" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Frytki srytki. Tylko kanapki made by mamusia.</div><br />Która/czyja? Już się w waszych krzakach genealogicznych gubię.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2480" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2480"
+                                 aria-describedby="post-content-2480">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2480" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-11-21T13:45:05"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-21 13:45:05</time>
+                                    </header>
+                                    <div id="post-content-2480"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Mamusia Pimpusia, rzecz jasna.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

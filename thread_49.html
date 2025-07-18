@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,41 +44,139 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">McGyverstwo Stosowane</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">McGyverstwo Stosowane</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-603">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2017-01-03T02:23:30" class="text-sm text-gray-500 font-mono">2017-01-03 02:23:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                https://www.youtube.com/watch?v=UKTNWI0eYJ4<br /><br />W tym temacie pragnąłbym opowiedzieć o umiejętności prawdziwego stalkera do przystosowania się do każdych warunków, uściślając - do naprawienia, stworzenia, zmodyfikowania dowolnej rzeczy / maszyny tak aby lepiej służyła naszym potrzebom. Wstawiajcie i chwalcie się swoimi patentami, coby każdy z nas mógł się podeprzeć podobnym pomysłem kiedy będzie to potrzebne.<br /><br />Moje ostatnie dokonania:<br /><br />1. Gopnik + Jedyny Słuszny Cytat na shotgunie ASG AGM003 Long<br /><br />Myślę że nie wymaga to większego komentarza&#8230; Prawdziwie słowiański shotgun.<br /><br /><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/15239301_10208095486570521_282055036_n.jpg?oh=d2d83b4b0f16f94ff4c56f9f6706c00c&amp;oe=586D07B4" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />2. Cardholder z drewna<br /><br />Niesamowicie rozsierdziła mnie skórzana buła w kieszeni, którą nosiłem już n-ty rok. Z &quot;oryginalnych&quot; prawie 8 cm byłem w stanie zejść do 1,5 cm w najbardziej napakowanej wersji. Użytkuję już jakieś dwa miesiące i nie czuję żadnego dyskomfortu. Zrobiłem takie cudo z drewna sosnowego + gumka z pasmanterii która wszysta jest przez otwory widoczne po bokach. Zdjęcie przedstawia szkielet w trakcie impregnowania olejem lnianym.<br /><br /><br /><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/15328385_10208156378812789_1509681662_n.jpg?oh=08d44924780c11be32dfae75debfff0e&amp;oe=586D478F" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />Nie bardzo chce mi się robić zdjęć pozostałych pomysłów, natomiast mogę powiedzieć, że są nimi: bransoletka z gumki 0,5 mm (zawsze chciałem mieć jakąś silikonową albo ogólnie z gumy, teraz w końcu mi się to udało), a chwilowo męcze się z własnoręcznym dostosowaniem parametrów gitary akustycznej (bez pomocy lutnika).<br /><br />Ogólnie chwalta się Panie i Pany swoimi osiągnięciami z dziedziny DIY. Z chęcią podpatrzę rozwiązania techniczne, jeśli coś będę robił :)
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku McGyverstwo Stosowane</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-603" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-603"
+                                 aria-describedby="post-content-603">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-603" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2017-01-03T02:23:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-03 02:23:30</time>
+                                    </header>
+                                    <div id="post-content-603"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        https://www.youtube.com/watch?v=UKTNWI0eYJ4<br /><br />W tym temacie pragnąłbym opowiedzieć o umiejętności prawdziwego stalkera do przystosowania się do każdych warunków, uściślając - do naprawienia, stworzenia, zmodyfikowania dowolnej rzeczy / maszyny tak aby lepiej służyła naszym potrzebom. Wstawiajcie i chwalcie się swoimi patentami, coby każdy z nas mógł się podeprzeć podobnym pomysłem kiedy będzie to potrzebne.<br /><br />Moje ostatnie dokonania:<br /><br />1. Gopnik + Jedyny Słuszny Cytat na shotgunie ASG AGM003 Long<br /><br />Myślę że nie wymaga to większego komentarza&#8230; Prawdziwie słowiański shotgun.<br /><br /><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/15239301_10208095486570521_282055036_n.jpg?oh=d2d83b4b0f16f94ff4c56f9f6706c00c&amp;oe=586D07B4" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />2. Cardholder z drewna<br /><br />Niesamowicie rozsierdziła mnie skórzana buła w kieszeni, którą nosiłem już n-ty rok. Z &quot;oryginalnych&quot; prawie 8 cm byłem w stanie zejść do 1,5 cm w najbardziej napakowanej wersji. Użytkuję już jakieś dwa miesiące i nie czuję żadnego dyskomfortu. Zrobiłem takie cudo z drewna sosnowego + gumka z pasmanterii która wszysta jest przez otwory widoczne po bokach. Zdjęcie przedstawia szkielet w trakcie impregnowania olejem lnianym.<br /><br /><br /><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/15328385_10208156378812789_1509681662_n.jpg?oh=08d44924780c11be32dfae75debfff0e&amp;oe=586D478F" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />Nie bardzo chce mi się robić zdjęć pozostałych pomysłów, natomiast mogę powiedzieć, że są nimi: bransoletka z gumki 0,5 mm (zawsze chciałem mieć jakąś silikonową albo ogólnie z gumy, teraz w końcu mi się to udało), a chwilowo męcze się z własnoręcznym dostosowaniem parametrów gitary akustycznej (bez pomocy lutnika).<br /><br />Ogólnie chwalta się Panie i Pany swoimi osiągnięciami z dziedziny DIY. Z chęcią podpatrzę rozwiązania techniczne, jeśli coś będę robił :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

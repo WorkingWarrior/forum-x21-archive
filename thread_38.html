@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,146 +44,294 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_8.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Humor</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Humor dla graczy</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Humor dla graczy</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-503">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2016-12-30T21:33:10" class="text-sm text-gray-500 font-mono">2016-12-30 21:33:10</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Czyli wszystko co dotyczy gier i jest śmieszne. <br /><br />https://www.youtube.com/watch?v=lKaO-NSt5yc<br /><br />https://www.youtube.com/watch?v=thILxw6wBJE<br /><br />https://www.youtube.com/watch?v=pZaY1jV96jI<br /><br />Stare ale jare.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Humor dla graczy</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-503" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-503"
+                                 aria-describedby="post-content-503">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-504">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-02-09T01:04:59" class="text-sm text-gray-500 font-mono">2017-02-09 01:04:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                To kontynuujemy z chałwą.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/tcwgX7gQPf0</span>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-503" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2016-12-30T21:33:10"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-30 21:33:10</time>
+                                    </header>
+                                    <div id="post-content-503"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Czyli wszystko co dotyczy gier i jest śmieszne. <br /><br />https://www.youtube.com/watch?v=lKaO-NSt5yc<br /><br />https://www.youtube.com/watch?v=thILxw6wBJE<br /><br />https://www.youtube.com/watch?v=pZaY1jV96jI<br /><br />Stare ale jare.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-505">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-02-09T17:37:57" class="text-sm text-gray-500 font-mono">2017-02-09 17:37:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/uxyPzqEuBDE</span>
+                        </article>
+                    </li>
+                    
+                    <li id="post-504" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-504"
+                                 aria-describedby="post-content-504">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-506">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-02-10T13:34:14" class="text-sm text-gray-500 font-mono">2017-02-10 13:34:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Grałem z tym modem. Nawet to mu wyszło. Tak odpaliłem go, kliknąłem pierwszy epizod i zanim się zorientowałem skończyłem go. Polecam, dobra zabawa xD<br /><br />O ten mod mi chodzi: http://hdoomguy.tumblr.com
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-504" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-02-09T01:04:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-09 01:04:59</time>
+                                    </header>
+                                    <div id="post-content-504"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        To kontynuujemy z chałwą.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/tcwgX7gQPf0</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-507">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-02-10T13:37:13" class="text-sm text-gray-500 font-mono">2017-02-10 13:37:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                HDoom jest spoko. Nawet się doczekał dość obszernego niusa na Steamie. Cóż, czekamy na wersję pod Dooma 4. :D<br /><br />Tymczasem, wracając do Jolly Wankera.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/tW-wSti5Y6M</span><br />Crack Life is love, Crack Life is life.
+                        </article>
+                    </li>
+                    
+                    <li id="post-505" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-505"
+                                 aria-describedby="post-content-505">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2684">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-04-05T07:00:09" class="text-sm text-gray-500 font-mono">2019-04-05 07:00:09</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="https://planetagracza.pl/wp-content/uploads/2019/04/Gabe-Newell.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-505" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-02-09T17:37:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-09 17:37:57</time>
+                                    </header>
+                                    <div id="post-content-505"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/uxyPzqEuBDE</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-506" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-506"
+                                 aria-describedby="post-content-506">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-506" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-02-10T13:34:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-10 13:34:14</time>
+                                    </header>
+                                    <div id="post-content-506"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        Grałem z tym modem. Nawet to mu wyszło. Tak odpaliłem go, kliknąłem pierwszy epizod i zanim się zorientowałem skończyłem go. Polecam, dobra zabawa xD<br /><br />O ten mod mi chodzi: http://hdoomguy.tumblr.com
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-507" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-507"
+                                 aria-describedby="post-content-507">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-507" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-02-10T13:37:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-10 13:37:13</time>
+                                    </header>
+                                    <div id="post-content-507"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        HDoom jest spoko. Nawet się doczekał dość obszernego niusa na Steamie. Cóż, czekamy na wersję pod Dooma 4. :D<br /><br />Tymczasem, wracając do Jolly Wankera.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/tW-wSti5Y6M</span><br />Crack Life is love, Crack Life is life.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2684" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2684"
+                                 aria-describedby="post-content-2684">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2684" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-04-05T07:00:09"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-04-05 07:00:09</time>
+                                    </header>
+                                    <div id="post-content-2684"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <img src="https://planetagracza.pl/wp-content/uploads/2019/04/Gabe-Newell.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

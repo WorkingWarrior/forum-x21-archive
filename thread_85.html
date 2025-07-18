@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,83 +44,201 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_25.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Książka i komiks</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">H. P. Lovecraft</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">H. P. Lovecraft</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-884">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Valentino</span>
-                                <time datetime="2017-01-16T13:14:57" class="text-sm text-gray-500 font-mono">2017-01-16 13:14:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dopiero w ostatnie wakacje zacząłem (i przestałem, w sensie &quot;przeczytałem większość dorobku&quot;) go czytać - lepiej późno niż wcale.<br />Rzecz, która straszy/imponuje rozmachem i skalą, okazjonalnym niepokojącym dziwactwem i, przede wszystkim - dojmuje wizją świata (z punktu widzenia &quot;zasad rządzących nami wszystkimi&quot;; historiozoficznego), według której jesteśmy mali i nic nieznaczący dla stworzeń istniejących od wielu, wielu eonów.<br />Strach przed nieznanym, niedającym się zrozumieć i ogarnąć myślą, strach przed-<br /><br />Strach przed myślą o kolejnym podejściu do &quot;W poszukiwaniu nieznanego Kadath&quot;, który ciągłą fantasmagorią i tak wielką niesamowitością znużył mnie po kilkunastu stronach.<br />Niemniej polecam - bardzo, bardzo, zwłaszcza &quot;Zew Cthulhu&quot; i &quot;W górach szaleństwa&quot;.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku H. P. Lovecraft</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-884" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-884"
+                                 aria-describedby="post-content-884">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/20.jpg?1512503192"
+                                     alt="Awatar użytkownika Valentino"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-885">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Alechemik</span>
-                                <time datetime="2017-01-23T23:15:20" class="text-sm text-gray-500 font-mono">2017-01-23 23:15:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mam dwa fajne nabytki od wydawnictwa C&amp;T.<br />Pierwszy to zbiór opowiadań Lovecrafta, które napisał na spółkę z Hazel Heald.<br /><img src="http://www.hplovecraft.pl/wp-content/uploads/2016/03/Lovecraft_Koszmary_3.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Pierwsze i ostatnie to typowe opowiadania grozy w stylu &quot;zdarzyło się w małej wsi&quot;. Nieciekawe dla znawcy, ale daję jakieś 3/5 za pomysł.<br />Drugie i czwarte to dobrze napisane opowiadania z kręgu &quot;Mitów Cthulhu&quot;, daję mocne 7/10.<br />Trzecie to arcydzieło. Przynajmniej w moim mniemaniu. Daję spokojnie 11/9.<br /><br />Drugi tomik to spółka HPL i Zelia Bishop.<br /><img src="http://carpenoctem.pl/wp-content/uploads/2013/11/lovecraft-kopiec.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Pierwsze dwa to genialne dopasowanie miejsca i klimatu. Legendy indiańskie, złowrogi Yig i mieszkańcy K&#39;n-Yan. 10/10!<br />Trzecie to shit. Podoba mi się kreacja głównej antagonistki, ale rasistowskie wstawki, które zwykle były u Lovecrafta jedynie dodatkiem, który świetnie pokazywał nam mentalność ludzi w latach 20/30, tym razem były tak częste i paskudne, że uznałem, że nie wypadają szanującemu się dżentelmenowi. Głównym szokiem pod koniec opowiadania miało być pochodzenie antagonistki, które w ogóle nie szokuje, a jedynie ukazuje ból dupy o pochodzenie ludzi. Poza tym w tym opowiadaniu zmieszano motyw &quot;Małej wsi&quot; z &quot;Mitami&quot;. Zamiast drugiego Koszmaru z Dunwich mamy siekę erotyczną. 2/10!<br /><br />Podsumowując: Jeżeli ktoś ma na składzie zbiór opowiadań Roberta E. Howarda, pod tytułem &quot;Królestwo Cieni&quot;, to chętnie pożyczę. Niestety nie miałem jak go dorwać jako, że mieszkam w Polsce C.  :P
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-884" class="font-bold text-lg text-white">Valentino</h3>
+                                        <time datetime="2017-01-16T13:14:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-16 13:14:57</time>
+                                    </header>
+                                    <div id="post-content-884"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Valentino">
+                                        Dopiero w ostatnie wakacje zacząłem (i przestałem, w sensie &quot;przeczytałem większość dorobku&quot;) go czytać - lepiej późno niż wcale.<br />Rzecz, która straszy/imponuje rozmachem i skalą, okazjonalnym niepokojącym dziwactwem i, przede wszystkim - dojmuje wizją świata (z punktu widzenia &quot;zasad rządzących nami wszystkimi&quot;; historiozoficznego), według której jesteśmy mali i nic nieznaczący dla stworzeń istniejących od wielu, wielu eonów.<br />Strach przed nieznanym, niedającym się zrozumieć i ogarnąć myślą, strach przed-<br /><br />Strach przed myślą o kolejnym podejściu do &quot;W poszukiwaniu nieznanego Kadath&quot;, który ciągłą fantasmagorią i tak wielką niesamowitością znużył mnie po kilkunastu stronach.<br />Niemniej polecam - bardzo, bardzo, zwłaszcza &quot;Zew Cthulhu&quot; i &quot;W górach szaleństwa&quot;.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-886">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Najemnik</span>
-                                <time datetime="2017-03-18T18:07:35" class="text-sm text-gray-500 font-mono">2017-03-18 18:07:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W sumie to czytam sobie teraz jeden zbiór opowiadań, wstawać mi się nie chce po książkę, ale ludzie polecają właśnie ten przekaz.<br />Momentami potrafi wciągnąć, prawie wszystko oparte na Necromiconie i Przedwiecznych to całkiem spoko idea. Jednak co mnie boli, to czasem przesadzone reakcje bohaterów. Wstrzymywanie krzyku czy omdlenia z błahych powodów. No ale to jakoś da się znieść. Idealnie zrównoważona długość opowiadań, te dłuższe wypełnione satysfakcjonującymi opisami, zaś te krótsze od razu wrzucają w napięcie i w nim trzymają czytelnika. <br />Wiele słyszałem o Cthulhu i R&#39;lyeh, dlatego postanowiłem chwycić za książkę i nadrobić zaległości. I powiem szczerze, że samo opowiadanie o Cthulhu mnie najmniej pociągnęło. Już o wiele bardziej wchłonąłem w książkę czytając &quot;Przy­pa­dek Char­lesa Dextera Warda&quot;, &quot;Szepczącego w ciemności&quot; czy aktualnie przeze mnie czytane &quot;W górach szaleństwa&quot;. <br />Czy sięgnę po tym wszystkim po więcej Lovecrafta? Pewnie tak, co prawda język trochę archaiczny, no ale nic dziwnego, jak niedawno się śmiałem, że opowiadanie które czytam w tym roku będzie miało sto lat (wtedy czytałem Dagona), ale najpierw sięgnę po coś lżejszego w czytaniu, gdyż nie uważam się za jakiegoś uber pro czytacza i czytam sobie ot tak, dla przyjemności.
+                        </article>
+                    </li>
+                    
+                    <li id="post-885" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-885"
+                                 aria-describedby="post-content-885">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/15.jpg?1512503192"
+                                     alt="Awatar użytkownika Alechemik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-885" class="font-bold text-lg text-white">Alechemik</h3>
+                                        <time datetime="2017-01-23T23:15:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 23:15:20</time>
+                                    </header>
+                                    <div id="post-content-885"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Alechemik">
+                                        Mam dwa fajne nabytki od wydawnictwa C&amp;T.<br />Pierwszy to zbiór opowiadań Lovecrafta, które napisał na spółkę z Hazel Heald.<br /><img src="http://www.hplovecraft.pl/wp-content/uploads/2016/03/Lovecraft_Koszmary_3.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Pierwsze i ostatnie to typowe opowiadania grozy w stylu &quot;zdarzyło się w małej wsi&quot;. Nieciekawe dla znawcy, ale daję jakieś 3/5 za pomysł.<br />Drugie i czwarte to dobrze napisane opowiadania z kręgu &quot;Mitów Cthulhu&quot;, daję mocne 7/10.<br />Trzecie to arcydzieło. Przynajmniej w moim mniemaniu. Daję spokojnie 11/9.<br /><br />Drugi tomik to spółka HPL i Zelia Bishop.<br /><img src="http://carpenoctem.pl/wp-content/uploads/2013/11/lovecraft-kopiec.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Pierwsze dwa to genialne dopasowanie miejsca i klimatu. Legendy indiańskie, złowrogi Yig i mieszkańcy K&#39;n-Yan. 10/10!<br />Trzecie to shit. Podoba mi się kreacja głównej antagonistki, ale rasistowskie wstawki, które zwykle były u Lovecrafta jedynie dodatkiem, który świetnie pokazywał nam mentalność ludzi w latach 20/30, tym razem były tak częste i paskudne, że uznałem, że nie wypadają szanującemu się dżentelmenowi. Głównym szokiem pod koniec opowiadania miało być pochodzenie antagonistki, które w ogóle nie szokuje, a jedynie ukazuje ból dupy o pochodzenie ludzi. Poza tym w tym opowiadaniu zmieszano motyw &quot;Małej wsi&quot; z &quot;Mitami&quot;. Zamiast drugiego Koszmaru z Dunwich mamy siekę erotyczną. 2/10!<br /><br />Podsumowując: Jeżeli ktoś ma na składzie zbiór opowiadań Roberta E. Howarda, pod tytułem &quot;Królestwo Cieni&quot;, to chętnie pożyczę. Niestety nie miałem jak go dorwać jako, że mieszkam w Polsce C.  :P
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-886" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-886"
+                                 aria-describedby="post-content-886">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/11.jpg?1512503192"
+                                     alt="Awatar użytkownika Najemnik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-886" class="font-bold text-lg text-white">Najemnik</h3>
+                                        <time datetime="2017-03-18T18:07:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-18 18:07:35</time>
+                                    </header>
+                                    <div id="post-content-886"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Najemnik">
+                                        W sumie to czytam sobie teraz jeden zbiór opowiadań, wstawać mi się nie chce po książkę, ale ludzie polecają właśnie ten przekaz.<br />Momentami potrafi wciągnąć, prawie wszystko oparte na Necromiconie i Przedwiecznych to całkiem spoko idea. Jednak co mnie boli, to czasem przesadzone reakcje bohaterów. Wstrzymywanie krzyku czy omdlenia z błahych powodów. No ale to jakoś da się znieść. Idealnie zrównoważona długość opowiadań, te dłuższe wypełnione satysfakcjonującymi opisami, zaś te krótsze od razu wrzucają w napięcie i w nim trzymają czytelnika. <br />Wiele słyszałem o Cthulhu i R&#39;lyeh, dlatego postanowiłem chwycić za książkę i nadrobić zaległości. I powiem szczerze, że samo opowiadanie o Cthulhu mnie najmniej pociągnęło. Już o wiele bardziej wchłonąłem w książkę czytając &quot;Przy­pa­dek Char­lesa Dextera Warda&quot;, &quot;Szepczącego w ciemności&quot; czy aktualnie przeze mnie czytane &quot;W górach szaleństwa&quot;. <br />Czy sięgnę po tym wszystkim po więcej Lovecrafta? Pewnie tak, co prawda język trochę archaiczny, no ale nic dziwnego, jak niedawno się śmiałem, że opowiadanie które czytam w tym roku będzie miało sto lat (wtedy czytałem Dagona), ale najpierw sięgnę po coś lżejszego w czytaniu, gdyż nie uważam się za jakiegoś uber pro czytacza i czytam sobie ot tak, dla przyjemności.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

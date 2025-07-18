@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,545 +44,883 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">SEKS</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">SEKS</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2314">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-07-20T14:02:00" class="text-sm text-gray-500 font-mono">2018-07-20 14:02:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>DAJCIE MI GO</strong><br /><br />P I E R D Z I A W A<br />D O J C E<br />P I Z D A<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/YUc5mnY_Zeg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku SEKS</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2314" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2314"
+                                 aria-describedby="post-content-2314">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2315">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-07-20T14:16:27" class="text-sm text-gray-500 font-mono">2018-07-20 14:16:27</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Rozumiem Twój ból, latem również cierpię na deficyt seksu ze względu na zbyt wysoką temperaturę uniemożliwiającą chodzenie w płaszczu. Są jednak pewne sposoby, które mogą pomóc w znalezieniu odpowiedniej partnerki. Czy próbowałeś już nasrać sobie do ryja?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2314" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-07-20T14:02:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-20 14:02:00</time>
+                                    </header>
+                                    <div id="post-content-2314"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <strong>DAJCIE MI GO</strong><br /><br />P I E R D Z I A W A<br />D O J C E<br />P I Z D A<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/YUc5mnY_Zeg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2317">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-07-20T17:18:11" class="text-sm text-gray-500 font-mono">2018-07-20 17:18:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jakby ktoś tu dawał seks, to dalej czytalibyśmy cierpienia młodego Analchomika na SB.<br /><br />F
+                        </article>
+                    </li>
+                    
+                    <li id="post-2315" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2315"
+                                 aria-describedby="post-content-2315">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2320">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-23T09:04:42" class="text-sm text-gray-500 font-mono">2018-07-23 09:04:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2317" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Jakby ktoś tu dawał seks, to dalej czytalibyśmy cierpienia młodego Analchomika na SB.<br /><br />F</div><br />Tutaj dają tylko smutek, seks może dać Ci Ropasiak, jak przyniesiesz mu nowy karton :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2315" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-07-20T14:16:27"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-20 14:16:27</time>
+                                    </header>
+                                    <div id="post-content-2315"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Rozumiem Twój ból, latem również cierpię na deficyt seksu ze względu na zbyt wysoką temperaturę uniemożliwiającą chodzenie w płaszczu. Są jednak pewne sposoby, które mogą pomóc w znalezieniu odpowiedniej partnerki. Czy próbowałeś już nasrać sobie do ryja?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2323">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-07-23T16:51:35" class="text-sm text-gray-500 font-mono">2018-07-23 16:51:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ropsiak też mieszka w Gdańsku. To jest myśl. :unsure: To jak, Ropas?
+                        </article>
+                    </li>
+                    
+                    <li id="post-2317" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2317"
+                                 aria-describedby="post-content-2317">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2325">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-07-23T23:19:28" class="text-sm text-gray-500 font-mono">2018-07-23 23:19:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nowy karton juz mam :(
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2317" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-07-20T17:18:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-20 17:18:11</time>
+                                    </header>
+                                    <div id="post-content-2317"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Jakby ktoś tu dawał seks, to dalej czytalibyśmy cierpienia młodego Analchomika na SB.<br /><br />F
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2326">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-07-23T23:25:16" class="text-sm text-gray-500 font-mono">2018-07-23 23:25:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie chciałbyś nabyć aż 3 nowych kartonów? Poczułbyś się jak polski oligarcha.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2320" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2320"
+                                 aria-describedby="post-content-2320">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2327">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-07-24T19:30:31" class="text-sm text-gray-500 font-mono">2018-07-24 19:30:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A na chuj mi 6 pokoi wtedy? 3 na Chełmie mi wystarczają :&lt;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2320" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-23T09:04:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-23 09:04:42</time>
+                                    </header>
+                                    <div id="post-content-2320"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2317" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Jakby ktoś tu dawał seks, to dalej czytalibyśmy cierpienia młodego Analchomika na SB.<br /><br />F</div><br />Tutaj dają tylko smutek, seks może dać Ci Ropasiak, jak przyniesiesz mu nowy karton :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2328">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-24T19:41:28" class="text-sm text-gray-500 font-mono">2018-07-24 19:41:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2327" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>A na chuj mi 6 pokoi wtedy? 3 na Chełmie mi wystarczają :&lt;</div><br />Ej, Ropas, ale przegródek nie licz jako pokoi :)
+                        </article>
+                    </li>
+                    
+                    <li id="post-2323" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2323"
+                                 aria-describedby="post-content-2323">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2341">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-08-12T00:55:14" class="text-sm text-gray-500 font-mono">2018-08-12 00:55:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                nie lubię seksu
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2323" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-07-23T16:51:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-23 16:51:35</time>
+                                    </header>
+                                    <div id="post-content-2323"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Ropsiak też mieszka w Gdańsku. To jest myśl. :unsure: To jak, Ropas?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2342">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-08-12T14:54:28" class="text-sm text-gray-500 font-mono">2018-08-12 14:54:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                PATRZCIE GO, JAKI ASCETA<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/V8IZ-QDzXCM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2325" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2325"
+                                 aria-describedby="post-content-2325">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2343">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-08-12T17:12:54" class="text-sm text-gray-500 font-mono">2018-08-12 17:12:54</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2341" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>nie lubię seksu</div><br />A to nie tak, że seks nie lubi Ciebie?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2325" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-07-23T23:19:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-23 23:19:28</time>
+                                    </header>
+                                    <div id="post-content-2325"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Nowy karton juz mam :(
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2344">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-08-12T23:51:22" class="text-sm text-gray-500 font-mono">2018-08-12 23:51:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2342" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Leeter</strong> napisał:</span></a></div>PATRZCIE GO, JAKI ASCETA</div><br /><br />To jest wszystko przereklamowane, chwila przyjemności, a potem cały dzień odbytnica boli.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2326" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2326"
+                                 aria-describedby="post-content-2326">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2345">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-08-13T20:10:13" class="text-sm text-gray-500 font-mono">2018-08-13 20:10:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                My tutaj mówimy o 100% hetero seksiku, mordeczko.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/V6wSjKh0rDQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2326" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-07-23T23:25:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-23 23:25:16</time>
+                                    </header>
+                                    <div id="post-content-2326"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Nie chciałbyś nabyć aż 3 nowych kartonów? Poczułbyś się jak polski oligarcha.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2348">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-08-24T07:58:40" class="text-sm text-gray-500 font-mono">2018-08-24 07:58:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                no przecież wiadomo, że bez trapa się nie obejdzie.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2327" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2327"
+                                 aria-describedby="post-content-2327">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2349">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-08-24T21:25:06" class="text-sm text-gray-500 font-mono">2018-08-24 21:25:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Trapy to geje, czy lesby? :unsure:
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2327" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-07-24T19:30:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-24 19:30:31</time>
+                                    </header>
+                                    <div id="post-content-2327"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        A na chuj mi 6 pokoi wtedy? 3 na Chełmie mi wystarczają :&lt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2351">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-08-27T15:15:56" class="text-sm text-gray-500 font-mono">2018-08-27 15:15:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Geje. Siusiacz kwalifikuje ich do gejów.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2328" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2328"
+                                 aria-describedby="post-content-2328">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2352">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-08-27T23:27:04" class="text-sm text-gray-500 font-mono">2018-08-27 23:27:04</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Stara Ropasa jest gejem.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2328" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-24T19:41:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-24 19:41:28</time>
+                                    </header>
+                                    <div id="post-content-2328"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2327" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>A na chuj mi 6 pokoi wtedy? 3 na Chełmie mi wystarczają :&lt;</div><br />Ej, Ropas, ale przegródek nie licz jako pokoi :)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2353">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-08-28T22:37:52" class="text-sm text-gray-500 font-mono">2018-08-28 22:37:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2352" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Stara Ropasa jest gejem.</div><br />Mondre, nie powiem.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2341" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2341"
+                                 aria-describedby="post-content-2341">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2354">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-08-29T13:32:51" class="text-sm text-gray-500 font-mono">2018-08-29 13:32:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2352" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Stara Ropasa jest gejem.</div><br />Ropas jest starym gejem
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2341" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-08-12T00:55:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-12 00:55:14</time>
+                                    </header>
+                                    <div id="post-content-2341"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        nie lubię seksu
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2355">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-08-29T20:55:16" class="text-sm text-gray-500 font-mono">2018-08-29 20:55:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2354" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Ropas jest starym gejem</div><br /><br />Przestań szkalować gejuf.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2342" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2342"
+                                 aria-describedby="post-content-2342">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2362">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-08-31T05:59:02" class="text-sm text-gray-500 font-mono">2018-08-31 05:59:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2355" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Przestań szkalować gejuf.</div><br />Gej starego jest Ropasem?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2342" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-08-12T14:54:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-12 14:54:28</time>
+                                    </header>
+                                    <div id="post-content-2342"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        PATRZCIE GO, JAKI ASCETA<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/V8IZ-QDzXCM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2363">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-08-31T08:03:14" class="text-sm text-gray-500 font-mono">2018-08-31 08:03:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2362" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Gej starego jest Ropasem?</div><br />Ropas jest starym geja.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2343" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2343"
+                                 aria-describedby="post-content-2343">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2374">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-09-03T16:58:19" class="text-sm text-gray-500 font-mono">2018-09-03 16:58:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Susiaki z was.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2343" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-08-12T17:12:54"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-12 17:12:54</time>
+                                    </header>
+                                    <div id="post-content-2343"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2341" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>nie lubię seksu</div><br />A to nie tak, że seks nie lubi Ciebie?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2377">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-09-05T16:57:37" class="text-sm text-gray-500 font-mono">2018-09-05 16:57:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2374" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Susiaki z was.</div><br />Ale od Jacków to nas nie wyzywaj, co.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2344" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2344"
+                                 aria-describedby="post-content-2344">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2344" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-08-12T23:51:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-12 23:51:22</time>
+                                    </header>
+                                    <div id="post-content-2344"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2342" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Leeter</strong> napisał:</span></a></div>PATRZCIE GO, JAKI ASCETA</div><br /><br />To jest wszystko przereklamowane, chwila przyjemności, a potem cały dzień odbytnica boli.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2345" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2345"
+                                 aria-describedby="post-content-2345">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2345" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-08-13T20:10:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-13 20:10:13</time>
+                                    </header>
+                                    <div id="post-content-2345"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        My tutaj mówimy o 100% hetero seksiku, mordeczko.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/V6wSjKh0rDQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2348" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2348"
+                                 aria-describedby="post-content-2348">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2348" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-08-24T07:58:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-24 07:58:40</time>
+                                    </header>
+                                    <div id="post-content-2348"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        no przecież wiadomo, że bez trapa się nie obejdzie.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2349" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2349"
+                                 aria-describedby="post-content-2349">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2349" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-08-24T21:25:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-24 21:25:06</time>
+                                    </header>
+                                    <div id="post-content-2349"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Trapy to geje, czy lesby? :unsure:
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2351" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2351"
+                                 aria-describedby="post-content-2351">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2351" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-08-27T15:15:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-27 15:15:56</time>
+                                    </header>
+                                    <div id="post-content-2351"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Geje. Siusiacz kwalifikuje ich do gejów.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2352" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2352"
+                                 aria-describedby="post-content-2352">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2352" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-08-27T23:27:04"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-27 23:27:04</time>
+                                    </header>
+                                    <div id="post-content-2352"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Stara Ropasa jest gejem.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2353" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2353"
+                                 aria-describedby="post-content-2353">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2353" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-08-28T22:37:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-28 22:37:52</time>
+                                    </header>
+                                    <div id="post-content-2353"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2352" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Stara Ropasa jest gejem.</div><br />Mondre, nie powiem.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2354" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2354"
+                                 aria-describedby="post-content-2354">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2354" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-08-29T13:32:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-29 13:32:51</time>
+                                    </header>
+                                    <div id="post-content-2354"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2352" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Stara Ropasa jest gejem.</div><br />Ropas jest starym gejem
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2355" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2355"
+                                 aria-describedby="post-content-2355">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2355" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-08-29T20:55:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-29 20:55:16</time>
+                                    </header>
+                                    <div id="post-content-2355"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2354" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Ropas jest starym gejem</div><br /><br />Przestań szkalować gejuf.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2362" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2362"
+                                 aria-describedby="post-content-2362">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2362" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-08-31T05:59:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-31 05:59:02</time>
+                                    </header>
+                                    <div id="post-content-2362"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2355" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Przestań szkalować gejuf.</div><br />Gej starego jest Ropasem?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2363" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2363"
+                                 aria-describedby="post-content-2363">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2363" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-08-31T08:03:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-08-31 08:03:14</time>
+                                    </header>
+                                    <div id="post-content-2363"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2362" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Gej starego jest Ropasem?</div><br />Ropas jest starym geja.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2374" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2374"
+                                 aria-describedby="post-content-2374">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2374" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-09-03T16:58:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-09-03 16:58:19</time>
+                                    </header>
+                                    <div id="post-content-2374"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Susiaki z was.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2377" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2377"
+                                 aria-describedby="post-content-2377">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2377" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-09-05T16:57:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-09-05 16:57:37</time>
+                                    </header>
+                                    <div id="post-content-2377"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2374" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Susiaki z was.</div><br />Ale od Jacków to nas nie wyzywaj, co.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

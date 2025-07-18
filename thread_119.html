@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,146 +44,294 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_24.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Amino i mango</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Bleach</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Bleach</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1082">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-02-01T07:52:17" class="text-sm text-gray-500 font-mono">2017-02-01 07:52:17</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Skoro Rakietnyj wyskoczył z Narutardem, to ja dowalę z broadside&#39;a Truskawą i jego bandą autystów.<br /><br />Przyznać się, kto oglądał Wybielacz i ew. doczytał jak zdechło?
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Bleach</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1082" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1082"
+                                 aria-describedby="post-content-1082">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1083">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-02-01T14:05:06" class="text-sm text-gray-500 font-mono">2017-02-01 14:05:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="http://i.imgur.com/MK0jYmC.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1082" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-02-01T07:52:17"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-01 07:52:17</time>
+                                    </header>
+                                    <div id="post-content-1082"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        Skoro Rakietnyj wyskoczył z Narutardem, to ja dowalę z broadside&#39;a Truskawą i jego bandą autystów.<br /><br />Przyznać się, kto oglądał Wybielacz i ew. doczytał jak zdechło?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1084">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-02-04T08:31:33" class="text-sm text-gray-500 font-mono">2017-02-04 08:31:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Zdechło? A co się stao? (właśnie miałam napisać posta o treści &quot;to jeszcze żyje?&quot;)<br />I pomyśleć, że jakieś 10 lat temu chciałam zacząć to oglądać. :P
+                        </article>
+                    </li>
+                    
+                    <li id="post-1083" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1083"
+                                 aria-describedby="post-content-1083">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1085">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-02-04T09:20:29" class="text-sm text-gray-500 font-mono">2017-02-04 09:20:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z racji, że Bleach był puszczany w paśmie dziennym, to i miał coś takiego jak &#39;oglądalność&#39;&#8230; Miał, w teorii, bo była w pewnym momencie tak chujowa, że po którymś filler arcu zwyczajnie anime zabili nożem #pdk
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1083" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-02-01T14:05:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-01 14:05:06</time>
+                                    </header>
+                                    <div id="post-content-1083"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="http://i.imgur.com/MK0jYmC.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1086">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-02-06T02:00:00" class="text-sm text-gray-500 font-mono">2017-02-06 02:00:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Próbowałem to ruszyć, przeżyłem jakieś 15-20 odcinków po czym skapitulowałem. Niestety nic mi się nie podobało, ani kreska, ani muzyka, bohaterowie czy fabuła, której w sumie nie zdążyłem do końca ogarnąć bo po prostu nie dałem rady tego dłużej oglądać. Całość była na poziomie fillerów Naruto, nie do przełknięcia dla mnie.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1084" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1084"
+                                 aria-describedby="post-content-1084">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1885">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-01-19T16:47:44" class="text-sm text-gray-500 font-mono">2018-01-19 16:47:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/PfCaBd2_KqQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />xD
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1084" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-02-04T08:31:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-04 08:31:33</time>
+                                    </header>
+                                    <div id="post-content-1084"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Zdechło? A co się stao? (właśnie miałam napisać posta o treści &quot;to jeszcze żyje?&quot;)<br />I pomyśleć, że jakieś 10 lat temu chciałam zacząć to oglądać. :P
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1085" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1085"
+                                 aria-describedby="post-content-1085">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1085" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-02-04T09:20:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-04 09:20:29</time>
+                                    </header>
+                                    <div id="post-content-1085"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        Z racji, że Bleach był puszczany w paśmie dziennym, to i miał coś takiego jak &#39;oglądalność&#39;&#8230; Miał, w teorii, bo była w pewnym momencie tak chujowa, że po którymś filler arcu zwyczajnie anime zabili nożem #pdk
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1086" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1086"
+                                 aria-describedby="post-content-1086">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1086" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-02-06T02:00:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-06 02:00:00</time>
+                                    </header>
+                                    <div id="post-content-1086"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Próbowałem to ruszyć, przeżyłem jakieś 15-20 odcinków po czym skapitulowałem. Niestety nic mi się nie podobało, ani kreska, ani muzyka, bohaterowie czy fabuła, której w sumie nie zdążyłem do końca ogarnąć bo po prostu nie dałem rady tego dłużej oglądać. Całość była na poziomie fillerów Naruto, nie do przełknięcia dla mnie.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1885" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1885"
+                                 aria-describedby="post-content-1885">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1885" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-01-19T16:47:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-19 16:47:44</time>
+                                    </header>
+                                    <div id="post-content-1885"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/PfCaBd2_KqQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />xD
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

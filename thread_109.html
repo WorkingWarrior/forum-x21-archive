@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,587 +44,945 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_11.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Główne rozporządzenia</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Adminisztraczja</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Adminisztraczja</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1033">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-24T15:25:42" class="text-sm text-gray-500 font-mono">2017-01-24 15:25:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Słowa dwa o tym kto zarządza forumem. Tradycyjnie, tak jak to zawsze u nas było, do moderowania postów użytkowników i wpisywania w nich swoich uwag używamy kolorów, szczegóły poniżej:<br /><br />Adminy:<br /><span style="color: cyan;">Sölve - Slv.</span><br /><span style="color: dodgerblue;">MCaleb - MC</span><br /><br />Moderatorzy globalni vel globusy:<br /><span style="color: olive;">Missile - M.</span><br /><span style="color: #FFFF00;">Lenny Weisstein - (L)</span>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Adminisztraczja</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1033" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1033"
+                                 aria-describedby="post-content-1033">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1034">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-24T15:46:16" class="text-sm text-gray-500 font-mono">2017-01-24 15:46:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie nabijaj sobie postów.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1033" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-24T15:25:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 15:25:42</time>
+                                    </header>
+                                    <div id="post-content-1033"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Słowa dwa o tym kto zarządza forumem. Tradycyjnie, tak jak to zawsze u nas było, do moderowania postów użytkowników i wpisywania w nich swoich uwag używamy kolorów, szczegóły poniżej:<br /><br />Adminy:<br /><span style="color: cyan;">Sölve - Slv.</span><br /><span style="color: dodgerblue;">MCaleb - MC</span><br /><br />Moderatorzy globalni vel globusy:<br /><span style="color: olive;">Missile - M.</span><br /><span style="color: #FFFF00;">Lenny Weisstein - (L)</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2540">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-28T10:49:05" class="text-sm text-gray-500 font-mono">2019-01-28 10:49:05</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1033" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Słowa dwa o tym kto zarządza forumem. Tradycyjnie, tak jak to zawsze u nas było, do moderowania postów użytkowników i wpisywania w nich swoich uwag używamy kolorów, szczegóły poniżej:<br /><br />Adminy:<br /><span style="color: cyan;">Sölve - Slv.</span><br /><span style="color: dodgerblue;">MCaleb - MC</span><br /><br />Moderatorzy globalni vel globusy:<br /><span style="color: olive;">Missile - M.</span><br /><span style="color: #FFFF00;">Lenny Weisstein - (L)</span></div><br />Tak właśnie patrzę na ten nieaktualny post :D Nie ma już administracji i moderacji. Jestem sobie tylko rootem, nie przejmujcie się :) Ale cóż, podoba mi się ten cyjan ^^
+                        </article>
+                    </li>
+                    
+                    <li id="post-1034" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1034"
+                                 aria-describedby="post-content-1034">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2544">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-01-28T12:34:46" class="text-sm text-gray-500 font-mono">2019-01-28 12:34:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Niniejszym jako były globus zezwalam Ci na pisanie wszystkich postów cyjanem, piorunie kurwisty.<br /><br />Beteweu, nie wyświetla się Twój avek, jeno puste szare tło, niczym otchłań odbytu Infernala.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1034" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-24T15:46:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 15:46:16</time>
+                                    </header>
+                                    <div id="post-content-1034"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Nie nabijaj sobie postów.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2545">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-28T12:39:59" class="text-sm text-gray-500 font-mono">2019-01-28 12:39:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2544" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Beteweu, nie wyświetla się Twój avek, jeno puste szare tło, niczym otchłań odbytu Infernala.</div><br />Usuń konflikt IPPP, bez keszu też się ładuje i wyświetla.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2540" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2540"
+                                 aria-describedby="post-content-2540">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2546">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2019-01-28T17:04:18" class="text-sm text-gray-500 font-mono">2019-01-28 17:04:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mózg ani prącie Miski mi się nie wyświetlają.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2540" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-28T10:49:05"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 10:49:05</time>
+                                    </header>
+                                    <div id="post-content-2540"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1033" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Słowa dwa o tym kto zarządza forumem. Tradycyjnie, tak jak to zawsze u nas było, do moderowania postów użytkowników i wpisywania w nich swoich uwag używamy kolorów, szczegóły poniżej:<br /><br />Adminy:<br /><span style="color: cyan;">Sölve - Slv.</span><br /><span style="color: dodgerblue;">MCaleb - MC</span><br /><br />Moderatorzy globalni vel globusy:<br /><span style="color: olive;">Missile - M.</span><br /><span style="color: #FFFF00;">Lenny Weisstein - (L)</span></div><br />Tak właśnie patrzę na ten nieaktualny post :D Nie ma już administracji i moderacji. Jestem sobie tylko rootem, nie przejmujcie się :) Ale cóż, podoba mi się ten cyjan ^^
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2548">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-01-28T19:06:34" class="text-sm text-gray-500 font-mono">2019-01-28 19:06:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mózgu nigdy nie stwierdzono, a prącie utknęło w dupie Twojej Starej.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2544" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2544"
+                                 aria-describedby="post-content-2544">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2559">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-01-29T08:43:57" class="text-sm text-gray-500 font-mono">2019-01-29 08:43:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dzięki za informację.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2544" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-01-28T12:34:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 12:34:46</time>
+                                    </header>
+                                    <div id="post-content-2544"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Niniejszym jako były globus zezwalam Ci na pisanie wszystkich postów cyjanem, piorunie kurwisty.<br /><br />Beteweu, nie wyświetla się Twój avek, jeno puste szare tło, niczym otchłań odbytu Infernala.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2560">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-29T08:44:49" class="text-sm text-gray-500 font-mono">2019-01-29 08:44:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2559" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Dzięki za informację.</div><br />Nie ma za co.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2545" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2545"
+                                 aria-describedby="post-content-2545">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2561">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-01-29T08:45:12" class="text-sm text-gray-500 font-mono">2019-01-29 08:45:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2560" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Nie ma za co.</div><br />Ależ jest. Dlatego dzięki.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2545" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-28T12:39:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 12:39:59</time>
+                                    </header>
+                                    <div id="post-content-2545"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2544" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Beteweu, nie wyświetla się Twój avek, jeno puste szare tło, niczym otchłań odbytu Infernala.</div><br />Usuń konflikt IPPP, bez keszu też się ładuje i wyświetla.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2563">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-29T08:46:39" class="text-sm text-gray-500 font-mono">2019-01-29 08:46:39</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2561" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Ależ jest. Dlatego dzięki.</div><br />W takim razie na zdrowie!
+                        </article>
+                    </li>
+                    
+                    <li id="post-2546" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2546"
+                                 aria-describedby="post-content-2546">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2565">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-01-29T08:47:37" class="text-sm text-gray-500 font-mono">2019-01-29 08:47:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2563" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>W takim razie na zdrowie!</div><br />Zdrowie zawsze się przyda.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2546" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2019-01-28T17:04:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 17:04:18</time>
+                                    </header>
+                                    <div id="post-content-2546"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Mózg ani prącie Miski mi się nie wyświetlają.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2568">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-30T15:42:48" class="text-sm text-gray-500 font-mono">2019-01-30 15:42:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dobra, repost Ropasowego shitu<br />:mad::mad::mad::mad::mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad::mad::mad::mad::mad:<br />:mad::mad::mad::mad::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::mad::mad::mad::mad:<br />:mad::mad::mad::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::coffee::coffee::mad::mad::mad:<br />:mad::mad::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::coffee::coffee::coffee::mad::mad:<br />:mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad:<br />:mad::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::mad:<br />:mad::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::mad:<br />:coffee::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::coffee:<br />:poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop:<br />:coffee::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::coffee:<br />:mad::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::mad:<br />:mad::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::mad:<br />:mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad:<br />:mad::mad::coffee::coffee::coffee::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::mad::mad:<br />:mad::mad::mad::coffee::coffee::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::mad::mad::mad:<br />:mad::mad::mad::mad::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::mad::mad::mad::mad:<br />:mad::mad::mad::mad::mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad::mad::mad::mad::mad:<br />:mad::mad::mad::mad::mad::mad::mad::mad::coffee::poop::coffee::mad::mad::mad::mad::mad::mad::mad::mad:
+                        </article>
+                    </li>
+                    
+                    <li id="post-2548" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2548"
+                                 aria-describedby="post-content-2548">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2569">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-01-31T10:10:44" class="text-sm text-gray-500 font-mono">2019-01-31 10:10:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2568" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Dobra, repost Ropasowego shitu<br />&lt;piękny pixel/ascii/emote art&gt;</div><br />Z uwagi na to, że znalazło się to w tym temacie, mam rozumieć że administracja złożona jest z gówna, kawy i gniewu?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2548" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-01-28T19:06:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 19:06:34</time>
+                                    </header>
+                                    <div id="post-content-2548"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Mózgu nigdy nie stwierdzono, a prącie utknęło w dupie Twojej Starej.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2570">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-31T14:35:06" class="text-sm text-gray-500 font-mono">2019-01-31 14:35:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2569" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Z uwagi na to, że znalazło się to w tym temacie, mam rozumieć że administracja złożona jest z gówna, kawy i gniewu?</div><br />Dokładnie. Jak nie wypiję kawy, to się nie zesram, jak wypiję, to jestem zły. A bez kawy, ani rusz :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-2559" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2559"
+                                 aria-describedby="post-content-2559">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2571">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2019-01-31T14:41:27" class="text-sm text-gray-500 font-mono">2019-01-31 14:41:27</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Faszysty!!111
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2559" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-01-29T08:43:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:43:57</time>
+                                    </header>
+                                    <div id="post-content-2559"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Dzięki za informację.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2572">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-01-31T19:31:01" class="text-sm text-gray-500 font-mono">2019-01-31 19:31:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Wy kurwy zamaszyste, klękajcie przed Papieszem Musli.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2560" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2560"
+                                 aria-describedby="post-content-2560">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2573">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2019-01-31T23:45:30" class="text-sm text-gray-500 font-mono">2019-01-31 23:45:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Po rękach widzę, żeś czerwona kurwa.<br /><br />Raz sierpem, raz młotem.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2560" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-29T08:44:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:44:49</time>
+                                    </header>
+                                    <div id="post-content-2560"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2559" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Dzięki za informację.</div><br />Nie ma za co.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2574">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-02-01T01:01:54" class="text-sm text-gray-500 font-mono">2019-02-01 01:01:54</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jan Paweł Opalony. <br />Fixed cobyś nie strzelał z dupy.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2561" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2561"
+                                 aria-describedby="post-content-2561">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2575">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-02-01T09:48:08" class="text-sm text-gray-500 font-mono">2019-02-01 09:48:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Faszystowska Kato-Komuna nam tu powstaje. Wstyd.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2561" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-01-29T08:45:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:45:12</time>
+                                    </header>
+                                    <div id="post-content-2561"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2560" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Nie ma za co.</div><br />Ależ jest. Dlatego dzięki.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2576">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2019-02-01T13:52:35" class="text-sm text-gray-500 font-mono">2019-02-01 13:52:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2575" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Faszystowska Kato-Komuna nam tu powstaje. Wstyd.</div><br /><br />To teraz bierzemy dotacje od rządu za wspieranie jedynego słusznego systemu i sobie Solvaka kupi etui z ryjkiem Bartłomieja M.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2563" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2563"
+                                 aria-describedby="post-content-2563">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2577">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-02-01T15:44:36" class="text-sm text-gray-500 font-mono">2019-02-01 15:44:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Tak.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2563" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-29T08:46:39"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:46:39</time>
+                                    </header>
+                                    <div id="post-content-2563"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2561" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Ależ jest. Dlatego dzięki.</div><br />W takim razie na zdrowie!
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2578">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-02-01T15:55:26" class="text-sm text-gray-500 font-mono">2019-02-01 15:55:26</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2576" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>To teraz bierzemy dotacje od rządu za wspieranie jedynego słusznego systemu i sobie Solvaka kupi etui z ryjkiem Bartłomieja M.</div><br />Sry, już mam etui. Za moje zarobki mógłbym kupić tyle wongla, że Mizzle by się posrał.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2577" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Tak.</div><br />Srak.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2565" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2565"
+                                 aria-describedby="post-content-2565">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2583">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-02-04T08:52:39" class="text-sm text-gray-500 font-mono">2019-02-04 08:52:39</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2578" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Sry, już mam etui. Za moje zarobki mógłbym kupić tyle wongla, że Mizzle by się posrał.</div><br />Jakby wszystek zeżarł, to w ogóle by się nie posrał.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2565" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-01-29T08:47:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:47:37</time>
+                                    </header>
+                                    <div id="post-content-2565"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2563" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>W takim razie na zdrowie!</div><br />Zdrowie zawsze się przyda.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2585">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-02-04T08:59:07" class="text-sm text-gray-500 font-mono">2019-02-04 08:59:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2583" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Jakby wszystek zeżarł, to w ogóle by się nie posrał.</div><br />Wtedy zmieniłby się w jamochłona i zaczął wydalać otworem gębowym. Otwór wydalniczy byłby wykorzystywany wyłącznie przez tate™.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2568" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2568"
+                                 aria-describedby="post-content-2568">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2586">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-02-04T09:03:58" class="text-sm text-gray-500 font-mono">2019-02-04 09:03:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2585" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Wtedy zmieniłby się w jamochłona i zaczął wydalać otworem gębowym. Otwór wydalniczy byłby wykorzystywany wyłącznie przez tate™.</div><br />Czyli bez zmian.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2568" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-30T15:42:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-30 15:42:48</time>
+                                    </header>
+                                    <div id="post-content-2568"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Dobra, repost Ropasowego shitu<br />:mad::mad::mad::mad::mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad::mad::mad::mad::mad:<br />:mad::mad::mad::mad::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::mad::mad::mad::mad:<br />:mad::mad::mad::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::coffee::coffee::mad::mad::mad:<br />:mad::mad::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::coffee::coffee::coffee::mad::mad:<br />:mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad:<br />:mad::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::mad:<br />:mad::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::mad:<br />:coffee::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::coffee:<br />:poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop:<br />:coffee::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::coffee:<br />:mad::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::mad:<br />:mad::coffee::coffee::poop::poop::poop::poop::poop::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::mad:<br />:mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad:<br />:mad::mad::coffee::coffee::coffee::poop::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::mad::mad:<br />:mad::mad::mad::coffee::coffee::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::mad::mad::mad:<br />:mad::mad::mad::mad::coffee::coffee::coffee::coffee::coffee::poop::poop::poop::coffee::coffee::coffee::mad::mad::mad::mad:<br />:mad::mad::mad::mad::mad::mad::coffee::coffee::poop::poop::poop::coffee::coffee::mad::mad::mad::mad::mad::mad:<br />:mad::mad::mad::mad::mad::mad::mad::mad::coffee::poop::coffee::mad::mad::mad::mad::mad::mad::mad::mad:
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2587">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-02-04T10:14:02" class="text-sm text-gray-500 font-mono">2019-02-04 10:14:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2586" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Czyli bez zmian.</div><br />W sumie racja. Nie ma różnicy, którą jamą będzie chłonął :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-2569" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2569"
+                                 aria-describedby="post-content-2569">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2569" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-01-31T10:10:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-31 10:10:44</time>
+                                    </header>
+                                    <div id="post-content-2569"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2568" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Dobra, repost Ropasowego shitu<br />&lt;piękny pixel/ascii/emote art&gt;</div><br />Z uwagi na to, że znalazło się to w tym temacie, mam rozumieć że administracja złożona jest z gówna, kawy i gniewu?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2570" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2570"
+                                 aria-describedby="post-content-2570">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2570" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-31T14:35:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-31 14:35:06</time>
+                                    </header>
+                                    <div id="post-content-2570"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2569" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Z uwagi na to, że znalazło się to w tym temacie, mam rozumieć że administracja złożona jest z gówna, kawy i gniewu?</div><br />Dokładnie. Jak nie wypiję kawy, to się nie zesram, jak wypiję, to jestem zły. A bez kawy, ani rusz :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2571" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2571"
+                                 aria-describedby="post-content-2571">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2571" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2019-01-31T14:41:27"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-31 14:41:27</time>
+                                    </header>
+                                    <div id="post-content-2571"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Faszysty!!111
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2572" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2572"
+                                 aria-describedby="post-content-2572">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2572" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-01-31T19:31:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-31 19:31:01</time>
+                                    </header>
+                                    <div id="post-content-2572"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Wy kurwy zamaszyste, klękajcie przed Papieszem Musli.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2573" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2573"
+                                 aria-describedby="post-content-2573">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2573" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2019-01-31T23:45:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-31 23:45:30</time>
+                                    </header>
+                                    <div id="post-content-2573"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Po rękach widzę, żeś czerwona kurwa.<br /><br />Raz sierpem, raz młotem.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2574" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2574"
+                                 aria-describedby="post-content-2574">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2574" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-02-01T01:01:54"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-01 01:01:54</time>
+                                    </header>
+                                    <div id="post-content-2574"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Jan Paweł Opalony. <br />Fixed cobyś nie strzelał z dupy.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2575" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2575"
+                                 aria-describedby="post-content-2575">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2575" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-02-01T09:48:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-01 09:48:08</time>
+                                    </header>
+                                    <div id="post-content-2575"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Faszystowska Kato-Komuna nam tu powstaje. Wstyd.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2576" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2576"
+                                 aria-describedby="post-content-2576">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2576" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2019-02-01T13:52:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-01 13:52:35</time>
+                                    </header>
+                                    <div id="post-content-2576"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2575" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Faszystowska Kato-Komuna nam tu powstaje. Wstyd.</div><br /><br />To teraz bierzemy dotacje od rządu za wspieranie jedynego słusznego systemu i sobie Solvaka kupi etui z ryjkiem Bartłomieja M.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2577" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2577"
+                                 aria-describedby="post-content-2577">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2577" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-02-01T15:44:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-01 15:44:36</time>
+                                    </header>
+                                    <div id="post-content-2577"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Tak.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2578" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2578"
+                                 aria-describedby="post-content-2578">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2578" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-02-01T15:55:26"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-01 15:55:26</time>
+                                    </header>
+                                    <div id="post-content-2578"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2576" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>To teraz bierzemy dotacje od rządu za wspieranie jedynego słusznego systemu i sobie Solvaka kupi etui z ryjkiem Bartłomieja M.</div><br />Sry, już mam etui. Za moje zarobki mógłbym kupić tyle wongla, że Mizzle by się posrał.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2577" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Tak.</div><br />Srak.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2583" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2583"
+                                 aria-describedby="post-content-2583">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2583" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-02-04T08:52:39"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-04 08:52:39</time>
+                                    </header>
+                                    <div id="post-content-2583"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2578" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Sry, już mam etui. Za moje zarobki mógłbym kupić tyle wongla, że Mizzle by się posrał.</div><br />Jakby wszystek zeżarł, to w ogóle by się nie posrał.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2585" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2585"
+                                 aria-describedby="post-content-2585">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2585" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-02-04T08:59:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-04 08:59:07</time>
+                                    </header>
+                                    <div id="post-content-2585"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2583" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Jakby wszystek zeżarł, to w ogóle by się nie posrał.</div><br />Wtedy zmieniłby się w jamochłona i zaczął wydalać otworem gębowym. Otwór wydalniczy byłby wykorzystywany wyłącznie przez tate™.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2586" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2586"
+                                 aria-describedby="post-content-2586">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2586" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-02-04T09:03:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-04 09:03:58</time>
+                                    </header>
+                                    <div id="post-content-2586"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2585" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Wtedy zmieniłby się w jamochłona i zaczął wydalać otworem gębowym. Otwór wydalniczy byłby wykorzystywany wyłącznie przez tate™.</div><br />Czyli bez zmian.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2587" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2587"
+                                 aria-describedby="post-content-2587">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2587" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-02-04T10:14:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-04 10:14:02</time>
+                                    </header>
+                                    <div id="post-content-2587"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2586" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Czyli bez zmian.</div><br />W sumie racja. Nie ma różnicy, którą jamą będzie chłonął :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

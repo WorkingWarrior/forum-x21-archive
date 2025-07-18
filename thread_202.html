@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,83 +44,201 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_10.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Propozycje i zgłoszenia</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Skarga podwójna</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Skarga podwójna</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1613">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-06-14T15:12:59" class="text-sm text-gray-500 font-mono">2017-06-14 15:12:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Płuczki Dolne, 14.06.2017<br /><br />Missile Elissim, ul. Marii i Lecha Kaczyńskiego Pod Wezwaniem Najświętszej Maryi Panny Jaśnie Dziewicy, <br />Płuczki Dolne, 01-337 <br /><div style="text-align: right;">Mirai Caleb,<br />Administrator X-21<br />ul. Pod Kartonem,<br />Okolice Krakowa</div><br /><br /><br /><div style="text-align: center;">Skarga na nieuzasadnione usunięcie dwóch światłych tematów na forum</div><br /><br /><br />Korzystając z chwilowej nieobecności pewnego czerwonego bota na forum, zwracam się z prośbą do wszystkich osób prawomocnych oraz Boga o interwencję w sprawie bezzasadnego usunięcia tematu “Nie dali mi nigdy” utworzonego przeze mnie, Missile’a Elissima, dalej zwanego Światłością Tego Forum, w godzinach porannych dnia 13.06.2017 w dziale “Ogólna dyskusja”. Usunięcia dokonał niejaki Mirai “Chleb” Caleb, pełniący w tym okresie funkcję administratora forum.<br />Światłość Tego Forum uważa, iż temat spełniał wszystkie normy moralne, polityczne i religijne, w związku z czym na mocy art. 9/11 wnosi o przywrócenie w/w tematu i zadośćuczynienie w postaci kubka w kształcie konewki i dwóch dodatnich punktów reputacji przelanych na konto użytkownika “abbacchio” oraz trzydziestu trzech ujemnych punktów reputacji przelanych na konto użytkownika “Enzo”. <br />Ponadto pragnę powiadomić, iż jest to już drugi temat ze skargą - pierwszy został w bestialski sposób trwale usunięty z foruma, co jest jawnym stosowaniem cenzury i unikaniem odpowiedzialności karnej. <br />Skarżący oświadcza, iż z chwilą tą interesy jego w sprawie powyższej reprezentować będzie użytkownik “Infernal”. Prawo do własnego pełnomocnika przysługuje również oskarżonemu. <br /><div style="text-align: right;">Z wyrazami szacunku,<br /><img src="http://pics.tinypic.pl/i/00909/kmozz6ikcz07.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Skarga podwójna</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1613" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1613"
+                                 aria-describedby="post-content-1613">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1614">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-06-14T20:07:52" class="text-sm text-gray-500 font-mono">2017-06-14 20:07:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Strażnik quality contetu został quality content&#39;d.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1613" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-06-14T15:12:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-14 15:12:59</time>
+                                    </header>
+                                    <div id="post-content-1613"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Płuczki Dolne, 14.06.2017<br /><br />Missile Elissim, ul. Marii i Lecha Kaczyńskiego Pod Wezwaniem Najświętszej Maryi Panny Jaśnie Dziewicy, <br />Płuczki Dolne, 01-337 <br /><div style="text-align: right;">Mirai Caleb,<br />Administrator X-21<br />ul. Pod Kartonem,<br />Okolice Krakowa</div><br /><br /><br /><div style="text-align: center;">Skarga na nieuzasadnione usunięcie dwóch światłych tematów na forum</div><br /><br /><br />Korzystając z chwilowej nieobecności pewnego czerwonego bota na forum, zwracam się z prośbą do wszystkich osób prawomocnych oraz Boga o interwencję w sprawie bezzasadnego usunięcia tematu “Nie dali mi nigdy” utworzonego przeze mnie, Missile’a Elissima, dalej zwanego Światłością Tego Forum, w godzinach porannych dnia 13.06.2017 w dziale “Ogólna dyskusja”. Usunięcia dokonał niejaki Mirai “Chleb” Caleb, pełniący w tym okresie funkcję administratora forum.<br />Światłość Tego Forum uważa, iż temat spełniał wszystkie normy moralne, polityczne i religijne, w związku z czym na mocy art. 9/11 wnosi o przywrócenie w/w tematu i zadośćuczynienie w postaci kubka w kształcie konewki i dwóch dodatnich punktów reputacji przelanych na konto użytkownika “abbacchio” oraz trzydziestu trzech ujemnych punktów reputacji przelanych na konto użytkownika “Enzo”. <br />Ponadto pragnę powiadomić, iż jest to już drugi temat ze skargą - pierwszy został w bestialski sposób trwale usunięty z foruma, co jest jawnym stosowaniem cenzury i unikaniem odpowiedzialności karnej. <br />Skarżący oświadcza, iż z chwilą tą interesy jego w sprawie powyższej reprezentować będzie użytkownik “Infernal”. Prawo do własnego pełnomocnika przysługuje również oskarżonemu. <br /><div style="text-align: right;">Z wyrazami szacunku,<br /><img src="http://pics.tinypic.pl/i/00909/kmozz6ikcz07.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1615">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-06-14T21:06:29" class="text-sm text-gray-500 font-mono">2017-06-14 21:06:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Xuj tam z quality skoro nawet gnijące zwłoki wiewiórek tu nie zaglądają i jedyne co pociesza, to że na stalker.pl jeszcze większy xuj. Precz z cenzurą! Niech żyje polna Wolska! <br />#freemiska
+                        </article>
+                    </li>
+                    
+                    <li id="post-1614" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1614"
+                                 aria-describedby="post-content-1614">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1614" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-06-14T20:07:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-14 20:07:52</time>
+                                    </header>
+                                    <div id="post-content-1614"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Strażnik quality contetu został quality content&#39;d.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1615" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1615"
+                                 aria-describedby="post-content-1615">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1615" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-06-14T21:06:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-14 21:06:29</time>
+                                    </header>
+                                    <div id="post-content-1615"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Xuj tam z quality skoro nawet gnijące zwłoki wiewiórek tu nie zaglądają i jedyne co pociesza, to że na stalker.pl jeszcze większy xuj. Precz z cenzurą! Niech żyje polna Wolska! <br />#freemiska
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

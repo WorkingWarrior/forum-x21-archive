@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,209 +44,387 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_23.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Film i serial</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Wszelka animacja</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Wszelka animacja</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1813">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-01-08T06:36:12" class="text-sm text-gray-500 font-mono">2018-01-08 06:36:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pogadajmy o kreskówkach, serialach animowanych etc.<br />W ramach inauguracji tematu taki news: <a href="https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html</a><br /><br />Jako gówniak jarałam się strasznie tą kreskówką, więc z jednej strony cieszy mnie jej powrót, ale z drugiej&#8230; Każdy kto oglądał Animaniaków wie, że serial był pełen żartów z drugim dnem, niezrozumiałych dla dzieci i niekoniecznie, jak to się mówi, poprawnych politycznie, jeśli spojrzymy na to przez pryzmat dzisiejszych czasów. <br />Także nie wiem, to na pewno nie będzie to samo co 20 parę lat temu, a nie chcę sobie psuć dobrych wspomnień. :&lt;
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Wszelka animacja</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1813" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1813"
+                                 aria-describedby="post-content-1813">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1818">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-08T10:59:18" class="text-sm text-gray-500 font-mono">2018-01-08 10:59:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1813" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Pogadajmy o kreskówkach, serialach animowanych etc.<br />W ramach inauguracji tematu taki news: <a href="https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html</a><br /><br />Jako gówniak jarałam się strasznie tą kreskówką, więc z jednej strony cieszy mnie jej powrót, ale z drugiej&#8230; Każdy kto oglądał Animaniaków wie, że serial był pełen żartów z drugim dnem, niezrozumiałych dla dzieci i niekoniecznie, jak to się mówi, poprawnych politycznie, jeśli spojrzymy na to przez pryzmat dzisiejszych czasów.<br />Także nie wiem, to na pewno nie będzie to samo co 20 parę lat temu, a nie chcę sobie psuć dobrych wspomnień. :&lt;</div><br />Przy obecnych czasach pod znakiem poprawności politycznej, głaskania pedałów po głowach i wpychania fekalnoskórych wszędzie, odpowiednie odwzorowanie ww. żartów może być, po prostu, niemożliwe.<br />Skoro już piszemy o animacji – jakiś czas temu oglądałem BLAME! w ekranizacji Netfliksa. Nadal mnie kręci ten świat przedstawiony i historia :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1813" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-01-08T06:36:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 06:36:12</time>
+                                    </header>
+                                    <div id="post-content-1813"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Pogadajmy o kreskówkach, serialach animowanych etc.<br />W ramach inauguracji tematu taki news: <a href="https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html</a><br /><br />Jako gówniak jarałam się strasznie tą kreskówką, więc z jednej strony cieszy mnie jej powrót, ale z drugiej&#8230; Każdy kto oglądał Animaniaków wie, że serial był pełen żartów z drugim dnem, niezrozumiałych dla dzieci i niekoniecznie, jak to się mówi, poprawnych politycznie, jeśli spojrzymy na to przez pryzmat dzisiejszych czasów. <br />Także nie wiem, to na pewno nie będzie to samo co 20 parę lat temu, a nie chcę sobie psuć dobrych wspomnień. :&lt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1821">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-01-08T13:06:22" class="text-sm text-gray-500 font-mono">2018-01-08 13:06:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Oczywiście w Animaniakach nie mogli przeginać, bo w końcu to była kreskówka dla dzieci.<br />Teraz wolę typowe filmy animowane dla dorosłych, jak Kot Fritz. xD
+                        </article>
+                    </li>
+                    
+                    <li id="post-1818" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1818"
+                                 aria-describedby="post-content-1818">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2489">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-12-09T12:25:37" class="text-sm text-gray-500 font-mono">2018-12-09 12:25:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1821" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Oczywiście w Animaniakach nie mogli przeginać, bo w końcu to była kreskówka dla dzieci.<br />Teraz wolę typowe filmy animowane dla dorosłych, jak Kot Fritz. xD</div><br />Nie no, Fritz to klasyka, jeśli chodzi o animację dla dorosłych. Natomiast w tytule wymienionym wcześniej żarciki musiały być subtelne i dobrze zamaskowane, żeby nie było bólu dupy :)<br /><br />Welp, sporo czasu minęło – postanowiłem odświeżyć, ponieważ obejrzałem całe Gravity Falls / Wodogrzmoty małe. Baja opowiada o bliźniakach, które zostały wysłane na wakacje do swojego wujka. Wszystko byłoby dobrze, gdyby nie fakt, że wujek mieszka na tajemniczym zadupiu, jest notorycznym kłamcą i oszustem. Na dodatek w okolicy dzieją się niewyjaśnione rzeczy.<br />Gorąco polecam każdemu, kto nie ma mózgu przeżartego przez „hurr, hamerykańskie gówno dla dzieci, durr”. Seria jest naprawdę zabawna i przyjemna w odbiorze. Postaci są niesztampowe, przygody wciągają, a cała fabuła jest dobrze poprowadzona. Od strony technicznej również wszystko w jak najlepszym porządku.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1818" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-08T10:59:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 10:59:18</time>
+                                    </header>
+                                    <div id="post-content-1818"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1813" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Pogadajmy o kreskówkach, serialach animowanych etc.<br />W ramach inauguracji tematu taki news: <a href="https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.cdaction.pl/news-52245/animaniacy-powracaja-pinky-i-mozg-rowniez.html</a><br /><br />Jako gówniak jarałam się strasznie tą kreskówką, więc z jednej strony cieszy mnie jej powrót, ale z drugiej&#8230; Każdy kto oglądał Animaniaków wie, że serial był pełen żartów z drugim dnem, niezrozumiałych dla dzieci i niekoniecznie, jak to się mówi, poprawnych politycznie, jeśli spojrzymy na to przez pryzmat dzisiejszych czasów.<br />Także nie wiem, to na pewno nie będzie to samo co 20 parę lat temu, a nie chcę sobie psuć dobrych wspomnień. :&lt;</div><br />Przy obecnych czasach pod znakiem poprawności politycznej, głaskania pedałów po głowach i wpychania fekalnoskórych wszędzie, odpowiednie odwzorowanie ww. żartów może być, po prostu, niemożliwe.<br />Skoro już piszemy o animacji – jakiś czas temu oglądałem BLAME! w ekranizacji Netfliksa. Nadal mnie kręci ten świat przedstawiony i historia :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2499">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2018-12-10T11:37:25" class="text-sm text-gray-500 font-mono">2018-12-10 11:37:25</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mnie odrzuca styl graficzny ww. tytułu. To ten sam, sztampowy, chujowy, leniwy styl, który zmuszeni są animować Chińczycy za psie pieniądze. Nie żeby to ostatnie było złe.<br />CalArts powinien spłonąć, jak i wszyscy którzy go używają.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1821" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1821"
+                                 aria-describedby="post-content-1821">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2502">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-12-10T11:43:18" class="text-sm text-gray-500 font-mono">2018-12-10 11:43:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2499" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Mnie odrzuca styl graficzny ww. tytułu. To ten sam, sztampowy, chujowy, leniwy styl, który zmuszeni są animować Chińczycy za psie pieniądze. Nie żeby to ostatnie było złe.<br />CalArts powinien spłonąć, jak i wszyscy którzy go używają.</div><br />Welp, przecież Amerykanie wszędzie go wpychają, powinieneś już się przyzwyczaić :P<br />Bardziej chodzi mi tu o samą fabułę i humor zawarty w ww. tytule, aczkolwiek jestem w pełni świadom, że zawsze znajdą się malkontenci ;)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1821" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-01-08T13:06:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-08 13:06:22</time>
+                                    </header>
+                                    <div id="post-content-1821"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Oczywiście w Animaniakach nie mogli przeginać, bo w końcu to była kreskówka dla dzieci.<br />Teraz wolę typowe filmy animowane dla dorosłych, jak Kot Fritz. xD
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2505">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2018-12-10T13:59:40" class="text-sm text-gray-500 font-mono">2018-12-10 13:59:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2502" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Welp, przecież Amerykanie wszędzie go wpychają, powinieneś już się przyzwyczaić :p<br />Bardziej chodzi mi tu o samą fabułę i humor zawarty w ww. tytule, aczkolwiek jestem w pełni świadom, że zawsze znajdą się malkontenci ;)</div><br />Nie mam zamiaru przyzwyczajać się do czyjegoś lenistwa.<br />I wiesz, treść może być i zacna, ale opakowanie i na to co gapisz się przez całe show ssie ośle kutasy bez popitki.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2489" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2489"
+                                 aria-describedby="post-content-2489">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2510">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2018-12-10T15:54:45" class="text-sm text-gray-500 font-mono">2018-12-10 15:54:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Czekam na hahahahaHazbin Hotel. Zobaczymy jak wyjdzie, o ile. Produkcja niby amatorska, wygląda przyjemnie i z ostrym żartem. Tak jak lubię. Akcja dzieje się w Piekle, zmagającym się z problemem przeludnienia. Jako że nie wpadli na pomysł redukcji z użyciem BFG9K a Doom Slayer nie bywał jeszcze w tamtych stronach, bohaterka wymyśliła inne rozwiązanie. Mianowicie, hotel rehabilitacyjny (że sanatorium?). Na razie dostaliśmy zwiastun, parę scenek i wygląda to bardzo fajnie. Wszystko dostępne na jutube. Mam nadzieję na inspirowany wad do Dooma 2.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2489" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-12-09T12:25:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-09 12:25:37</time>
+                                    </header>
+                                    <div id="post-content-2489"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1821" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Oczywiście w Animaniakach nie mogli przeginać, bo w końcu to była kreskówka dla dzieci.<br />Teraz wolę typowe filmy animowane dla dorosłych, jak Kot Fritz. xD</div><br />Nie no, Fritz to klasyka, jeśli chodzi o animację dla dorosłych. Natomiast w tytule wymienionym wcześniej żarciki musiały być subtelne i dobrze zamaskowane, żeby nie było bólu dupy :)<br /><br />Welp, sporo czasu minęło – postanowiłem odświeżyć, ponieważ obejrzałem całe Gravity Falls / Wodogrzmoty małe. Baja opowiada o bliźniakach, które zostały wysłane na wakacje do swojego wujka. Wszystko byłoby dobrze, gdyby nie fakt, że wujek mieszka na tajemniczym zadupiu, jest notorycznym kłamcą i oszustem. Na dodatek w okolicy dzieją się niewyjaśnione rzeczy.<br />Gorąco polecam każdemu, kto nie ma mózgu przeżartego przez „hurr, hamerykańskie gówno dla dzieci, durr”. Seria jest naprawdę zabawna i przyjemna w odbiorze. Postaci są niesztampowe, przygody wciągają, a cała fabuła jest dobrze poprowadzona. Od strony technicznej również wszystko w jak najlepszym porządku.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2513">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-12-11T11:10:45" class="text-sm text-gray-500 font-mono">2018-12-11 11:10:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2510" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>Czekam na hahahahaHazbin Hotel. Zobaczymy jak wyjdzie, o ile. Produkcja niby amatorska, wygląda przyjemnie i z ostrym żartem. Tak jak lubię. Akcja dzieje się w Piekle, zmagającym się z problemem przeludnienia. Jako że nie wpadli na pomysł redukcji z użyciem BFG9K a Doom Slayer nie bywał jeszcze w tamtych stronach, bohaterka wymyśliła inne rozwiązanie. Mianowicie, hotel rehabilitacyjny (że sanatorium?). Na razie dostaliśmy zwiastun, parę scenek i wygląda to bardzo fajnie. Wszystko dostępne na jutube. Mam nadzieję na inspirowany wad do Dooma 2.</div><br />Ej, całkiem fajny zwiastun do tego :D Zapowiada się przyjemnie, ale wiadomo - obiecanki cacanki. Pożyjemy, zobaczymy ;)
+                        </article>
+                    </li>
+                    
+                    <li id="post-2499" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2499"
+                                 aria-describedby="post-content-2499">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2499" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2018-12-10T11:37:25"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-10 11:37:25</time>
+                                    </header>
+                                    <div id="post-content-2499"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Mnie odrzuca styl graficzny ww. tytułu. To ten sam, sztampowy, chujowy, leniwy styl, który zmuszeni są animować Chińczycy za psie pieniądze. Nie żeby to ostatnie było złe.<br />CalArts powinien spłonąć, jak i wszyscy którzy go używają.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2502" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2502"
+                                 aria-describedby="post-content-2502">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2502" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-12-10T11:43:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-10 11:43:18</time>
+                                    </header>
+                                    <div id="post-content-2502"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2499" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Mnie odrzuca styl graficzny ww. tytułu. To ten sam, sztampowy, chujowy, leniwy styl, który zmuszeni są animować Chińczycy za psie pieniądze. Nie żeby to ostatnie było złe.<br />CalArts powinien spłonąć, jak i wszyscy którzy go używają.</div><br />Welp, przecież Amerykanie wszędzie go wpychają, powinieneś już się przyzwyczaić :P<br />Bardziej chodzi mi tu o samą fabułę i humor zawarty w ww. tytule, aczkolwiek jestem w pełni świadom, że zawsze znajdą się malkontenci ;)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2505" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2505"
+                                 aria-describedby="post-content-2505">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2505" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2018-12-10T13:59:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-10 13:59:40</time>
+                                    </header>
+                                    <div id="post-content-2505"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2502" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Welp, przecież Amerykanie wszędzie go wpychają, powinieneś już się przyzwyczaić :p<br />Bardziej chodzi mi tu o samą fabułę i humor zawarty w ww. tytule, aczkolwiek jestem w pełni świadom, że zawsze znajdą się malkontenci ;)</div><br />Nie mam zamiaru przyzwyczajać się do czyjegoś lenistwa.<br />I wiesz, treść może być i zacna, ale opakowanie i na to co gapisz się przez całe show ssie ośle kutasy bez popitki.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2510" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2510"
+                                 aria-describedby="post-content-2510">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2510" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2018-12-10T15:54:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-10 15:54:45</time>
+                                    </header>
+                                    <div id="post-content-2510"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Czekam na hahahahaHazbin Hotel. Zobaczymy jak wyjdzie, o ile. Produkcja niby amatorska, wygląda przyjemnie i z ostrym żartem. Tak jak lubię. Akcja dzieje się w Piekle, zmagającym się z problemem przeludnienia. Jako że nie wpadli na pomysł redukcji z użyciem BFG9K a Doom Slayer nie bywał jeszcze w tamtych stronach, bohaterka wymyśliła inne rozwiązanie. Mianowicie, hotel rehabilitacyjny (że sanatorium?). Na razie dostaliśmy zwiastun, parę scenek i wygląda to bardzo fajnie. Wszystko dostępne na jutube. Mam nadzieję na inspirowany wad do Dooma 2.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2513" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2513"
+                                 aria-describedby="post-content-2513">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2513" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-12-11T11:10:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-11 11:10:45</time>
+                                    </header>
+                                    <div id="post-content-2513"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2510" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>Czekam na hahahahaHazbin Hotel. Zobaczymy jak wyjdzie, o ile. Produkcja niby amatorska, wygląda przyjemnie i z ostrym żartem. Tak jak lubię. Akcja dzieje się w Piekle, zmagającym się z problemem przeludnienia. Jako że nie wpadli na pomysł redukcji z użyciem BFG9K a Doom Slayer nie bywał jeszcze w tamtych stronach, bohaterka wymyśliła inne rozwiązanie. Mianowicie, hotel rehabilitacyjny (że sanatorium?). Na razie dostaliśmy zwiastun, parę scenek i wygląda to bardzo fajnie. Wszystko dostępne na jutube. Mam nadzieję na inspirowany wad do Dooma 2.</div><br />Ej, całkiem fajny zwiastun do tego :D Zapowiada się przyjemnie, ale wiadomo - obiecanki cacanki. Pożyjemy, zobaczymy ;)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,83 +44,201 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Stunt GP</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Stunt GP</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1592">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-06-04T15:44:11" class="text-sm text-gray-500 font-mono">2017-06-04 15:44:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Stunt GP to gra stworzona przez Team17 - zespół odpowiedzialny również za produkcję takich kultowych tytułów jak Worms, Superfrog czy Max Payne. Stunt GP jest grą wyścigową, na której wzorowane były wszystkie późniejsze tego typu produkcje; uważana jest za najbardziej niedocenianą grę wszech czasów. Do wyboru graczy oddano kilkanaście pojazdów, podzielonych na cztery kategorie (wyścigowe, terenowe itd). Gra charakteryzuje się niespotykaną dziś grywalnością: każdy z pojazdów można dowolnie tuningować, wymieniając podzespoły na coraz to nowsze, co zwiększa osiągi pojazdu, w trakcie wyścigów wykonywać możemy przeróżne akrobacje, które są trudne do wykonania i można wypaść z trasy, lecz dzięki nim nie trzeba tak często zjeżdżać do pit stopu. <br /><br />Główny tryb rozgrywki stanowią Mistrzostwa, których wątek fabularny mnie osobiście wgniótł w fotel - trochę jak połączenie Matrixa, Tokyo Drift oraz Interstellara. Co ciekawe, grać również można po ukończeniu głównego wątku fabularnego - taki a&#39;la freeplay. Warto również wspomnieć o ścieżce dźwiękowej - mieszanka electro, niemieckiego hip hopu i synth popu, którą niejednokrotnie później będziemy odsłuchiwali na youtube.<br /><br />Wymagania sprzętowe są dość wysokie jak na grę która ma już tyle lat, lecz myślę że każdemu powinna ruszyć. Ostatnio pojawia się mnóstwo modów i dodatków, gra przeżywa prawdziwy renesans, jeszcze 3 lata temu grając w nią czułem się jak hipster, dziś już tylko jak mainstream kurwa. Szczególnie polecam mod graficzny SDIA, jeszcze nie wszystkie tryby gry są dostępne, ale na pewno warto pobrać, kilka skrinów:<br /><br /><a href="http://pics.tinypic.pl/i/00906/wh68c6gbk3vr.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">1</a><br /><a href="http://pics.tinypic.pl/i/00906/3cwq2piakroo.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">2</a><br /><br />Jeśli ktoś gra w multiplejera to zgłaszać się, zrobimy klan.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Stunt GP</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1592" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1592"
+                                 aria-describedby="post-content-1592">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1593">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-06-05T04:01:00" class="text-sm text-gray-500 font-mono">2017-06-05 04:01:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Stunt GP to gra stworzona przez Team17 - zespół odpowiedzialny również za produkcję (&#8230;) Max Payne.</div><br /><img src="http://i.imgur.com/qMKXZKh.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Proofs or dindu happen.<br /><br />W Stunt GP grałem kiedyś za dzieciaka, gówno pamiętam poza tym że bawiłem się dobrze. Mogłem wtedy jeszcze nie mieć własnego pieca, tak odległe czasy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1592" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-06-04T15:44:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-04 15:44:11</time>
+                                    </header>
+                                    <div id="post-content-1592"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Stunt GP to gra stworzona przez Team17 - zespół odpowiedzialny również za produkcję takich kultowych tytułów jak Worms, Superfrog czy Max Payne. Stunt GP jest grą wyścigową, na której wzorowane były wszystkie późniejsze tego typu produkcje; uważana jest za najbardziej niedocenianą grę wszech czasów. Do wyboru graczy oddano kilkanaście pojazdów, podzielonych na cztery kategorie (wyścigowe, terenowe itd). Gra charakteryzuje się niespotykaną dziś grywalnością: każdy z pojazdów można dowolnie tuningować, wymieniając podzespoły na coraz to nowsze, co zwiększa osiągi pojazdu, w trakcie wyścigów wykonywać możemy przeróżne akrobacje, które są trudne do wykonania i można wypaść z trasy, lecz dzięki nim nie trzeba tak często zjeżdżać do pit stopu. <br /><br />Główny tryb rozgrywki stanowią Mistrzostwa, których wątek fabularny mnie osobiście wgniótł w fotel - trochę jak połączenie Matrixa, Tokyo Drift oraz Interstellara. Co ciekawe, grać również można po ukończeniu głównego wątku fabularnego - taki a&#39;la freeplay. Warto również wspomnieć o ścieżce dźwiękowej - mieszanka electro, niemieckiego hip hopu i synth popu, którą niejednokrotnie później będziemy odsłuchiwali na youtube.<br /><br />Wymagania sprzętowe są dość wysokie jak na grę która ma już tyle lat, lecz myślę że każdemu powinna ruszyć. Ostatnio pojawia się mnóstwo modów i dodatków, gra przeżywa prawdziwy renesans, jeszcze 3 lata temu grając w nią czułem się jak hipster, dziś już tylko jak mainstream kurwa. Szczególnie polecam mod graficzny SDIA, jeszcze nie wszystkie tryby gry są dostępne, ale na pewno warto pobrać, kilka skrinów:<br /><br /><a href="http://pics.tinypic.pl/i/00906/wh68c6gbk3vr.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">1</a><br /><a href="http://pics.tinypic.pl/i/00906/3cwq2piakroo.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">2</a><br /><br />Jeśli ktoś gra w multiplejera to zgłaszać się, zrobimy klan.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1594">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-06-05T16:49:32" class="text-sm text-gray-500 font-mono">2017-06-05 16:49:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block">Proofs or dindu happen.</div><br /><br />http://images.tinypic.pl/i/00906/fjp5zb2ahy6u.png<br /><br />Chyba wiem co stworzyło Maxa Payne&#39;a. Następnym razem ban.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1593" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1593"
+                                 aria-describedby="post-content-1593">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1593" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-06-05T04:01:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-05 04:01:00</time>
+                                    </header>
+                                    <div id="post-content-1593"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Stunt GP to gra stworzona przez Team17 - zespół odpowiedzialny również za produkcję (&#8230;) Max Payne.</div><br /><img src="http://i.imgur.com/qMKXZKh.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Proofs or dindu happen.<br /><br />W Stunt GP grałem kiedyś za dzieciaka, gówno pamiętam poza tym że bawiłem się dobrze. Mogłem wtedy jeszcze nie mieć własnego pieca, tak odległe czasy.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1594" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1594"
+                                 aria-describedby="post-content-1594">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1594" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-06-05T16:49:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-05 16:49:32</time>
+                                    </header>
+                                    <div id="post-content-1594"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        <div class="quote-block">Proofs or dindu happen.</div><br /><br />http://images.tinypic.pl/i/00906/fjp5zb2ahy6u.png<br /><br />Chyba wiem co stworzyło Maxa Payne&#39;a. Następnym razem ban.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,251 +44,449 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Tzw fotele sportowe</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Tzw fotele sportowe</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1542">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-05-03T17:24:01" class="text-sm text-gray-500 font-mono">2017-05-03 17:24:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Temat jak najbardziej poważny. <br />Mianowicie, na czym sadzacie dupska przed kompem? Moje krzesło biurowe z Ikei ma chyba, nie wiem, 12 lat i już trochę niedomaga, dlatego rozglądam się za nowym. Rozglądając się natrafiłam na tzw fotele dla graczy (lub jak kto woli sportowe), ale zastanawiam się czy to nie jest przerost formy nad treścią. :D Owszem, wyglądają na wygodne, tyle te ceny&#8230; 300 zł z hakiem jeszcze mogę dać, ale 1200 to raczej nie bardzo. Używa ktoś jakiegoś pro gamers only fotela?
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Tzw fotele sportowe</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1542" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1542"
+                                 aria-describedby="post-content-1542">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1543">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-05-15T07:26:38" class="text-sm text-gray-500 font-mono">2017-05-15 07:26:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                IMO te wszystkie progejmerskie fotele to lanie wody. W robocie siedzę na jakimś wyższym, obrotowym. Jak oprę plecy, to i łeb się mieści (chociaż Calebowi pewnie wystawałby, bo dłuższy jest). Uważam, że krzesło jest naprawdę ważne, ale nie aż tak, żeby płacić 1200 zł :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1542" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-05-03T17:24:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-03 17:24:01</time>
+                                    </header>
+                                    <div id="post-content-1542"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Temat jak najbardziej poważny. <br />Mianowicie, na czym sadzacie dupska przed kompem? Moje krzesło biurowe z Ikei ma chyba, nie wiem, 12 lat i już trochę niedomaga, dlatego rozglądam się za nowym. Rozglądając się natrafiłam na tzw fotele dla graczy (lub jak kto woli sportowe), ale zastanawiam się czy to nie jest przerost formy nad treścią. :D Owszem, wyglądają na wygodne, tyle te ceny&#8230; 300 zł z hakiem jeszcze mogę dać, ale 1200 to raczej nie bardzo. Używa ktoś jakiegoś pro gamers only fotela?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1544">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-05-16T16:10:20" class="text-sm text-gray-500 font-mono">2017-05-16 16:10:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ano, parę stów można dać ale bez przesady. Grunt to się najpierw przymierzyć bo fotel reklamowany jako mega wygodny może się okazać akurat dla Ciebie niewygodny. A generalnie wszystko co jest robione For Gamers ma cenę założoną o jakieś 30-40%
+                        </article>
+                    </li>
+                    
+                    <li id="post-1543" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1543"
+                                 aria-describedby="post-content-1543">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1545">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-05-16T20:47:59" class="text-sm text-gray-500 font-mono">2017-05-16 20:47:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przypomniałam sobie, że parę miechów temu widziałam w Makro taki właśnie fotel, nawet usadowiłam na nim rzyć i był całkiem wygodny. Kosztował 300 zł, także przesadyzmu nie ma. Może się tam wybiorę i zobaczę czy jeszcze je mają.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1543" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-05-15T07:26:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-15 07:26:38</time>
+                                    </header>
+                                    <div id="post-content-1543"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        IMO te wszystkie progejmerskie fotele to lanie wody. W robocie siedzę na jakimś wyższym, obrotowym. Jak oprę plecy, to i łeb się mieści (chociaż Calebowi pewnie wystawałby, bo dłuższy jest). Uważam, że krzesło jest naprawdę ważne, ale nie aż tak, żeby płacić 1200 zł :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1546">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-05-16T21:28:29" class="text-sm text-gray-500 font-mono">2017-05-16 21:28:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Przypomniałam sobie, że parę miechów temu widziałam w Makro taki właśnie fotel, nawet usadowiłam na nim rzyć i był całkiem wygodny. Kosztował 300 zł, także przesadyzmu nie ma. Może się tam wybiorę i zobaczę czy jeszcze je mają.<br /></div>Zapewne też zależy od powierzchni danej rzyci :D Jutro walnę zdjęcie mojego krzesłaczka.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1544" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1544"
+                                 aria-describedby="post-content-1544">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1547">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-07-08T16:35:43" class="text-sm text-gray-500 font-mono">2017-07-08 16:35:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Kupiłam sobie <a href="http://selgros24.pl/Dla-firmy-i-biura/Meble-biurowe/Fotele-i-krzesla-biurowe/Nowy-Styl/FOTEL-RACE-ZIELONO-CZARNY-pp80469.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">to</a>, tyle że w Makro dałam 306 zł, a nie 380 zł.<br />Jest wygodny, fajnie się siedzi, pewnie za tę cenę znalazłoby się coś lepszego, ale teraz za bardzo nie mam czasu popierdzielać po sklepach, a  ciemno przez internety nie chciałam zamawiać. <br />Nada się.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1544" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-05-16T16:10:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-16 16:10:20</time>
+                                    </header>
+                                    <div id="post-content-1544"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Ano, parę stów można dać ale bez przesady. Grunt to się najpierw przymierzyć bo fotel reklamowany jako mega wygodny może się okazać akurat dla Ciebie niewygodny. A generalnie wszystko co jest robione For Gamers ma cenę założoną o jakieś 30-40%
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1548">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-07-14T12:27:52" class="text-sm text-gray-500 font-mono">2017-07-14 12:27:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Oczywiście, że się nada. Teraz jest jeszcze tańszy. Może bym sobie sam coś kupił do pracy…
+                        </article>
+                    </li>
+                    
+                    <li id="post-1545" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1545"
+                                 aria-describedby="post-content-1545">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1549">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-08-14T21:17:42" class="text-sm text-gray-500 font-mono">2017-08-14 21:17:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W Auchanie w związku z powrotem bachorów do szkoły jest teraz promocja na te fotele, 299,99 zł. =]
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1545" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-05-16T20:47:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-16 20:47:59</time>
+                                    </header>
+                                    <div id="post-content-1545"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Przypomniałam sobie, że parę miechów temu widziałam w Makro taki właśnie fotel, nawet usadowiłam na nim rzyć i był całkiem wygodny. Kosztował 300 zł, także przesadyzmu nie ma. Może się tam wybiorę i zobaczę czy jeszcze je mają.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1550">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-08-22T17:03:48" class="text-sm text-gray-500 font-mono">2017-08-22 17:03:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A jak wrażenia z użytkowania ?
+                        </article>
+                    </li>
+                    
+                    <li id="post-1546" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1546"
+                                 aria-describedby="post-content-1546">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1551">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-08-25T18:46:46" class="text-sm text-gray-500 font-mono">2017-08-25 18:46:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pozytywne. Wygodny, fajnie się siedzi i wgl. Polecam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1546" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-05-16T21:28:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-16 21:28:29</time>
+                                    </header>
+                                    <div id="post-content-1546"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Przypomniałam sobie, że parę miechów temu widziałam w Makro taki właśnie fotel, nawet usadowiłam na nim rzyć i był całkiem wygodny. Kosztował 300 zł, także przesadyzmu nie ma. Może się tam wybiorę i zobaczę czy jeszcze je mają.<br /></div>Zapewne też zależy od powierzchni danej rzyci :D Jutro walnę zdjęcie mojego krzesłaczka.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1552">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-08-27T22:28:14" class="text-sm text-gray-500 font-mono">2017-08-27 22:28:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Hmm, może się w takim razie któregoś dnia przewiozę do Auchana i przymierzę się do takiego fotela. Przydałoby się coś co spowodowałoby u mnie zaprzestanie siedzenia w pozycji półleżącej ;)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1547" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1547"
+                                 aria-describedby="post-content-1547">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1547" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-07-08T16:35:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-07-08 16:35:43</time>
+                                    </header>
+                                    <div id="post-content-1547"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Kupiłam sobie <a href="http://selgros24.pl/Dla-firmy-i-biura/Meble-biurowe/Fotele-i-krzesla-biurowe/Nowy-Styl/FOTEL-RACE-ZIELONO-CZARNY-pp80469.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">to</a>, tyle że w Makro dałam 306 zł, a nie 380 zł.<br />Jest wygodny, fajnie się siedzi, pewnie za tę cenę znalazłoby się coś lepszego, ale teraz za bardzo nie mam czasu popierdzielać po sklepach, a  ciemno przez internety nie chciałam zamawiać. <br />Nada się.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1548" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1548"
+                                 aria-describedby="post-content-1548">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1548" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-07-14T12:27:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-07-14 12:27:52</time>
+                                    </header>
+                                    <div id="post-content-1548"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Oczywiście, że się nada. Teraz jest jeszcze tańszy. Może bym sobie sam coś kupił do pracy…
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1549" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1549"
+                                 aria-describedby="post-content-1549">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1549" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-08-14T21:17:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-14 21:17:42</time>
+                                    </header>
+                                    <div id="post-content-1549"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        W Auchanie w związku z powrotem bachorów do szkoły jest teraz promocja na te fotele, 299,99 zł. =]
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1550" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1550"
+                                 aria-describedby="post-content-1550">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1550" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-08-22T17:03:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-22 17:03:48</time>
+                                    </header>
+                                    <div id="post-content-1550"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        A jak wrażenia z użytkowania ?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1551" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1551"
+                                 aria-describedby="post-content-1551">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1551" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-08-25T18:46:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-25 18:46:46</time>
+                                    </header>
+                                    <div id="post-content-1551"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Pozytywne. Wygodny, fajnie się siedzi i wgl. Polecam.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1552" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1552"
+                                 aria-describedby="post-content-1552">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1552" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-08-27T22:28:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-27 22:28:14</time>
+                                    </header>
+                                    <div id="post-content-1552"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Hmm, może się w takim razie któregoś dnia przewiozę do Auchana i przymierzę się do takiego fotela. Przydałoby się coś co spowodowałoby u mnie zaprzestanie siedzenia w pozycji półleżącej ;)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

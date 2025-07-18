@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,230 +44,418 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Jak dbać o stopy</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Jak dbać o stopy</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2193">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-04-17T12:17:19" class="text-sm text-gray-500 font-mono">2018-04-17 12:17:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                by dobrze prezentowały się w sandałach? Proszę o porady
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Jak dbać o stopy</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2193" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2193"
+                                 aria-describedby="post-content-2193">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2194">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-04-17T15:57:00" class="text-sm text-gray-500 font-mono">2018-04-17 15:57:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ubierz je w kondom.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2193" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-04-17T12:17:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-04-17 12:17:19</time>
+                                    </header>
+                                    <div id="post-content-2193"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        by dobrze prezentowały się w sandałach? Proszę o porady
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2294">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-09T11:53:59" class="text-sm text-gray-500 font-mono">2018-07-09 11:53:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2193" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>by dobrze prezentowały się w sandałach? Proszę o porady</div><br />Że takie złoto mi uciekło.<br />Wyobrażam sobie, jak Messil smaruje swoje cuchnące wonglem giry apapem, po czym wkłada do pieca hutniczego na trzy zdrowaśki, by apap zamienił się w szkliwo.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2194" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2194"
+                                 aria-describedby="post-content-2194">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2297">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-07-09T12:39:51" class="text-sm text-gray-500 font-mono">2018-07-09 12:39:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Crystal Paracetamol, ulubiony środek rekreacyjny na pewnym chujowym forum.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2194" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-04-17T15:57:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-04-17 15:57:00</time>
+                                    </header>
+                                    <div id="post-content-2194"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Ubierz je w kondom.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2298">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-09T15:31:37" class="text-sm text-gray-500 font-mono">2018-07-09 15:31:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2297" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Crystal Paracetamol, ulubiony środek rekreacyjny na pewnym chujowym forum.</div><br />Śmiem twierdzić, że nawet i prokreacyjny.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2294" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2294"
+                                 aria-describedby="post-content-2294">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2305">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-07-13T23:53:58" class="text-sm text-gray-500 font-mono">2018-07-13 23:53:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Do śmieszkowania to pierwsi, ale quality porady to ani jednej, a lato już w toku. Przez Was nie ogarnąłem na czas ujebanych wunglem stópuw. Co za tym idzie, wnoszę o zbanowanie Enza.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2294" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-09T11:53:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-09 11:53:59</time>
+                                    </header>
+                                    <div id="post-content-2294"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2193" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>by dobrze prezentowały się w sandałach? Proszę o porady</div><br />Że takie złoto mi uciekło.<br />Wyobrażam sobie, jak Messil smaruje swoje cuchnące wonglem giry apapem, po czym wkłada do pieca hutniczego na trzy zdrowaśki, by apap zamienił się w szkliwo.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2308">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-07-14T08:32:20" class="text-sm text-gray-500 font-mono">2018-07-14 08:32:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie ma porady, jak Ci trąd zeżarł giry.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2305" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>wnoszę o zbanowanie Enza.</div><br /><br />To.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2297" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2297"
+                                 aria-describedby="post-content-2297">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2311">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-14T13:54:33" class="text-sm text-gray-500 font-mono">2018-07-14 13:54:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2308" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Nie ma porady, jak Ci trąd zeżarł giry.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2305" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>wnoszę o zbanowanie Enza.</div><br /><br />To.</div><br />Nie mogę zbanować 1/3 użytkowników, sry.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2297" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-07-09T12:39:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-09 12:39:51</time>
+                                    </header>
+                                    <div id="post-content-2297"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Crystal Paracetamol, ulubiony środek rekreacyjny na pewnym chujowym forum.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2312">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-07-19T22:15:11" class="text-sm text-gray-500 font-mono">2018-07-19 22:15:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Obtocz swoje stopy w curry, jak na brudnego i pedalskiego pajeeta przystało.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2298" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2298"
+                                 aria-describedby="post-content-2298">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2322">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-23T09:08:19" class="text-sm text-gray-500 font-mono">2018-07-23 09:08:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2312" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Leeter</strong> napisał:</span></a></div>Obtocz swoje stopy w curry, jak na brudnego i pedalskiego pajeeta przystało.</div><br />Ej, ej, on je codziennie moczy w Gangesie, szanuj ten brud spod paznokci.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2298" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-09T15:31:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-09 15:31:37</time>
+                                    </header>
+                                    <div id="post-content-2298"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2297" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Crystal Paracetamol, ulubiony środek rekreacyjny na pewnym chujowym forum.</div><br />Śmiem twierdzić, że nawet i prokreacyjny.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2305" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2305"
+                                 aria-describedby="post-content-2305">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2305" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-07-13T23:53:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-13 23:53:58</time>
+                                    </header>
+                                    <div id="post-content-2305"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Do śmieszkowania to pierwsi, ale quality porady to ani jednej, a lato już w toku. Przez Was nie ogarnąłem na czas ujebanych wunglem stópuw. Co za tym idzie, wnoszę o zbanowanie Enza.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2308" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2308"
+                                 aria-describedby="post-content-2308">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2308" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-07-14T08:32:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-14 08:32:20</time>
+                                    </header>
+                                    <div id="post-content-2308"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Nie ma porady, jak Ci trąd zeżarł giry.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2305" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>wnoszę o zbanowanie Enza.</div><br /><br />To.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2311" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2311"
+                                 aria-describedby="post-content-2311">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2311" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-14T13:54:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-14 13:54:33</time>
+                                    </header>
+                                    <div id="post-content-2311"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2308" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Nie ma porady, jak Ci trąd zeżarł giry.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2305" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>wnoszę o zbanowanie Enza.</div><br /><br />To.</div><br />Nie mogę zbanować 1/3 użytkowników, sry.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2312" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2312"
+                                 aria-describedby="post-content-2312">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2312" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-07-19T22:15:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-19 22:15:11</time>
+                                    </header>
+                                    <div id="post-content-2312"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Obtocz swoje stopy w curry, jak na brudnego i pedalskiego pajeeta przystało.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2322" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2322"
+                                 aria-describedby="post-content-2322">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2322" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-23T09:08:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-23 09:08:19</time>
+                                    </header>
+                                    <div id="post-content-2322"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2312" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Leeter</strong> napisał:</span></a></div>Obtocz swoje stopy w curry, jak na brudnego i pedalskiego pajeeta przystało.</div><br />Ej, ej, on je codziennie moczy w Gangesie, szanuj ten brud spod paznokci.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

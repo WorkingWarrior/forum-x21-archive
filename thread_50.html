@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,272 +44,480 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Szczelanka 2017</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Szczelanka 2017</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-604">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-04T10:34:23" class="text-sm text-gray-500 font-mono">2017-01-04 10:34:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Witame. Pograłbym czasem w jakiegoś w miarę porządnego FPSa, ofc multiplayer. Może to być free2play, byle nie pay2win. Najchętniej coś na kształt Bad Company 2, tylko żeby serwery nie świeciły pustkami. No i nie może mieć wymagań z dupy, bo 5 letni laptop hier - i3, GT635M, 4GB <del>delmy</del> ramu.<br /><br />Any ideas? Im więcej tym lepiej. CoDy odpadają, a BFy od 3 wzwyż ssą (i, poza trójką, mi nie pójdą).
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Szczelanka 2017</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-604" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-604"
+                                 aria-describedby="post-content-604">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-605">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-06T15:14:49" class="text-sm text-gray-500 font-mono">2017-01-06 15:14:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Planetside 2 - F2P, pełno graczy, swego czasu trochę pograłem i podobało mi się ;) Można pobrać bez problemów na Steam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-604" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-04T10:34:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-04 10:34:23</time>
+                                    </header>
+                                    <div id="post-content-604"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Witame. Pograłbym czasem w jakiegoś w miarę porządnego FPSa, ofc multiplayer. Może to być free2play, byle nie pay2win. Najchętniej coś na kształt Bad Company 2, tylko żeby serwery nie świeciły pustkami. No i nie może mieć wymagań z dupy, bo 5 letni laptop hier - i3, GT635M, 4GB <del>delmy</del> ramu.<br /><br />Any ideas? Im więcej tym lepiej. CoDy odpadają, a BFy od 3 wzwyż ssą (i, poza trójką, mi nie pójdą).
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-606">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-06T15:38:18" class="text-sm text-gray-500 font-mono">2017-01-06 15:38:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Kiedyś już coś o tej grze słyszałem, sprawdziłem i wygląda spoko, taki BC2 z fajerwerkami, obadam. Dzięki, jakby ktoś coś jeszcze miał to śmiało, nicz sie nie bacz.
+                        </article>
+                    </li>
+                    
+                    <li id="post-605" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-605"
+                                 aria-describedby="post-content-605">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-607">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-01-06T15:57:30" class="text-sm text-gray-500 font-mono">2017-01-06 15:57:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>miarę porządnego FPSa, ofc multiplayer</div><br />To jedno albo drugie, panie, wszystkiego mieć nie można.<br /><br />Nie wiem czy Ci pójdą ale Titanfalle wyglądały na coś co by Cię mogło zainteresować. Rok temu na serwerach jeszcze ludzie byli, widziałem jak mój ziomek grał. Prócz tego możesz jeszcze potrenować rosyjski grając w CSGO, to chyba rusza na każdym złomie. <br />No i zostaje jeszcze kwestia Memewatch ale do zdzierżenia tego trzeba mieć nerwy wypalone na np. Hat Simulator 2. Zupełnie nie znam wymagań więc sobie musiałbyś obadać sam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-605" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-06T15:14:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-06 15:14:49</time>
+                                    </header>
+                                    <div id="post-content-605"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Planetside 2 - F2P, pełno graczy, swego czasu trochę pograłem i podobało mi się ;) Można pobrać bez problemów na Steam.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-608">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-06T23:37:36" class="text-sm text-gray-500 font-mono">2017-01-06 23:37:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                To co podałeś to niestety nie na mój traktor, zarżnąłbym go tym do końca. Ofc nie dotyczy to CS:GO, ale grałem sporo w Source i to mi wystarczy. Anyway dzięki, w razie gdyby mi odjebało i kupiłbym nowego komputra to będę o tym pamiętał.
+                        </article>
+                    </li>
+                    
+                    <li id="post-606" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-606"
+                                 aria-describedby="post-content-606">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-609">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-01-09T12:58:26" class="text-sm text-gray-500 font-mono">2017-01-09 12:58:26</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z tego co wiem Warframe jest całkiem spoko, choć nie mogę mówić z własnego doświadczenia - raz spróbowałem i gra na złość mi się skaszaniła.<br />Gierka jest całkiem popularna i nie powinno być problemów z brakiem graczy. Jednak nie wiem jak z wymaganiami, musiałbyś sprawdzić. Format to F2P, a elementy płatne to głównie zmiany wyglądu postaci.<br />Dostępna jest m.in. na Steamie.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-606" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-06T15:38:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-06 15:38:18</time>
+                                    </header>
+                                    <div id="post-content-606"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Kiedyś już coś o tej grze słyszałem, sprawdziłem i wygląda spoko, taki BC2 z fajerwerkami, obadam. Dzięki, jakby ktoś coś jeszcze miał to śmiało, nicz sie nie bacz.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-610">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-09T13:05:51" class="text-sm text-gray-500 font-mono">2017-01-09 13:05:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Meh, TPP&#8230; jestem upośledzony w tego typu produkcjach, daję sobie radę tylko z FPP. Póki co pobrałem Planetside 2 tylko jeszcze nie mam czasu na granie, jak mi nie podejdzie to wypróbuję kolejne opcje. :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-607" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-607"
+                                 aria-describedby="post-content-607">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-611">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-10T21:19:08" class="text-sm text-gray-500 font-mono">2017-01-10 21:19:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Survarium :D tak mi się właśnie przypomniało. Grałem chwilę temu póki nie wyszedł patch i nie popsuli mi broni :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-607" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-01-06T15:57:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-06 15:57:30</time>
+                                    </header>
+                                    <div id="post-content-607"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>miarę porządnego FPSa, ofc multiplayer</div><br />To jedno albo drugie, panie, wszystkiego mieć nie można.<br /><br />Nie wiem czy Ci pójdą ale Titanfalle wyglądały na coś co by Cię mogło zainteresować. Rok temu na serwerach jeszcze ludzie byli, widziałem jak mój ziomek grał. Prócz tego możesz jeszcze potrenować rosyjski grając w CSGO, to chyba rusza na każdym złomie. <br />No i zostaje jeszcze kwestia Memewatch ale do zdzierżenia tego trzeba mieć nerwy wypalone na np. Hat Simulator 2. Zupełnie nie znam wymagań więc sobie musiałbyś obadać sam.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-612">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-10T22:12:49" class="text-sm text-gray-500 font-mono">2017-01-10 22:12:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Stary, przypomniałeś mi o tej grze. Lata temu opłaciłem wersję beta (albo alfa, nie pamiętam), a nie gram&#8230; Jak się rozwinęła ta gra?
+                        </article>
+                    </li>
+                    
+                    <li id="post-608" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-608"
+                                 aria-describedby="post-content-608">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-613">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-11T11:04:59" class="text-sm text-gray-500 font-mono">2017-01-11 11:04:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Gracze sa, nie ma problemu zeby uzbierac ludzi, map nadal trochu malo, gra nadal jest w wersji beta ale dziala stabilnie, brakuje jeszcze paru rzeczy jak dodatkowe tryby rozgrywki ale generalnie jest przyjemnie. Gralbym dalej jakby nie patch ktory troche namieszal w zachowaniu broni, glownie karabinow, a ciagle nie poprawil strzelb, ktore nadal sa zabojczo celne i skuteczne.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-608" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-06T23:37:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-06 23:37:36</time>
+                                    </header>
+                                    <div id="post-content-608"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        To co podałeś to niestety nie na mój traktor, zarżnąłbym go tym do końca. Ofc nie dotyczy to CS:GO, ale grałem sporo w Source i to mi wystarczy. Anyway dzięki, w razie gdyby mi odjebało i kupiłbym nowego komputra to będę o tym pamiętał.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-614">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-12T13:14:40" class="text-sm text-gray-500 font-mono">2017-01-12 13:14:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W Planetside 2 pograłem dosłownie chwilę i już wiem, że to nie dla mnie - milion pocisków żeby kogoś zabić, bitwy niesamowicie sztampowe - cały team siedzi w jednym miejscu i prowadzi wymianę ognia na odległość jednego kilometra. Gra jest jednocześnie nudna i chaotyczna, to nie dla mnie. Chyba sobie po prostu sprawię BF3 i na tym się skończy, ponoć na serwerach jest jeszcze sporo ludzia.
+                        </article>
+                    </li>
+                    
+                    <li id="post-609" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-609"
+                                 aria-describedby="post-content-609">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-615">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-12T17:54:46" class="text-sm text-gray-500 font-mono">2017-01-12 17:54:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W GTA 5 się ponoć strzela.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-609" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-01-09T12:58:26"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-09 12:58:26</time>
+                                    </header>
+                                    <div id="post-content-609"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Z tego co wiem Warframe jest całkiem spoko, choć nie mogę mówić z własnego doświadczenia - raz spróbowałem i gra na złość mi się skaszaniła.<br />Gierka jest całkiem popularna i nie powinno być problemów z brakiem graczy. Jednak nie wiem jak z wymaganiami, musiałbyś sprawdzić. Format to F2P, a elementy płatne to głównie zmiany wyglądu postaci.<br />Dostępna jest m.in. na Steamie.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-610" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-610"
+                                 aria-describedby="post-content-610">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-610" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-09T13:05:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-09 13:05:51</time>
+                                    </header>
+                                    <div id="post-content-610"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Meh, TPP&#8230; jestem upośledzony w tego typu produkcjach, daję sobie radę tylko z FPP. Póki co pobrałem Planetside 2 tylko jeszcze nie mam czasu na granie, jak mi nie podejdzie to wypróbuję kolejne opcje. :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-611" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-611"
+                                 aria-describedby="post-content-611">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-611" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-10T21:19:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 21:19:08</time>
+                                    </header>
+                                    <div id="post-content-611"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Survarium :D tak mi się właśnie przypomniało. Grałem chwilę temu póki nie wyszedł patch i nie popsuli mi broni :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-612" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-612"
+                                 aria-describedby="post-content-612">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-612" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-10T22:12:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 22:12:49</time>
+                                    </header>
+                                    <div id="post-content-612"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Stary, przypomniałeś mi o tej grze. Lata temu opłaciłem wersję beta (albo alfa, nie pamiętam), a nie gram&#8230; Jak się rozwinęła ta gra?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-613" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-613"
+                                 aria-describedby="post-content-613">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-613" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-11T11:04:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-11 11:04:59</time>
+                                    </header>
+                                    <div id="post-content-613"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Gracze sa, nie ma problemu zeby uzbierac ludzi, map nadal trochu malo, gra nadal jest w wersji beta ale dziala stabilnie, brakuje jeszcze paru rzeczy jak dodatkowe tryby rozgrywki ale generalnie jest przyjemnie. Gralbym dalej jakby nie patch ktory troche namieszal w zachowaniu broni, glownie karabinow, a ciagle nie poprawil strzelb, ktore nadal sa zabojczo celne i skuteczne.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-614" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-614"
+                                 aria-describedby="post-content-614">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-614" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-12T13:14:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-12 13:14:40</time>
+                                    </header>
+                                    <div id="post-content-614"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        W Planetside 2 pograłem dosłownie chwilę i już wiem, że to nie dla mnie - milion pocisków żeby kogoś zabić, bitwy niesamowicie sztampowe - cały team siedzi w jednym miejscu i prowadzi wymianę ognia na odległość jednego kilometra. Gra jest jednocześnie nudna i chaotyczna, to nie dla mnie. Chyba sobie po prostu sprawię BF3 i na tym się skończy, ponoć na serwerach jest jeszcze sporo ludzia.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-615" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-615"
+                                 aria-describedby="post-content-615">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-615" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-12T17:54:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-12 17:54:46</time>
+                                    </header>
+                                    <div id="post-content-615"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        W GTA 5 się ponoć strzela.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

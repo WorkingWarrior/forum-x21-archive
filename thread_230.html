@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,461 +44,759 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">PUGB</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">PUGB</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1767">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-06T21:09:58" class="text-sm text-gray-500 font-mono">2018-01-06 21:09:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                To jak, gra ktoś w to? Inf, pedale? Pamiętam że prorokowałeś iż będzie to hicior. No i ponoć jest, więc pewnie pogrywasz, a skoro tak to weźże coś napisz. Lepsze od CoD4? A od WoTa?<br /><br />Jakby ktoś nie wiedział co to w ogóle jest: w grze są takie bardzo duże mapy, lądujesz na jakiejś z setką innych graczy i wygrywa ten kto przeżyje ostatni. Aha, obszar na którym można przebywać na mapie powoli się zmniejsza, więc przy końcówce rozgrywki mapa ma rozmiar ~mojego prącia. <br />Są bronie, pojazdy, ekwipunek i takie tam. Gra jest TPP, ale można też przełączać widok na FPP.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku PUGB</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1767" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1767"
+                                 aria-describedby="post-content-1767">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1768">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-06T23:21:21" class="text-sm text-gray-500 font-mono">2018-01-06 23:21:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                BUGP
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1767" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-06T21:09:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 21:09:58</time>
+                                    </header>
+                                    <div id="post-content-1767"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        To jak, gra ktoś w to? Inf, pedale? Pamiętam że prorokowałeś iż będzie to hicior. No i ponoć jest, więc pewnie pogrywasz, a skoro tak to weźże coś napisz. Lepsze od CoD4? A od WoTa?<br /><br />Jakby ktoś nie wiedział co to w ogóle jest: w grze są takie bardzo duże mapy, lądujesz na jakiejś z setką innych graczy i wygrywa ten kto przeżyje ostatni. Aha, obszar na którym można przebywać na mapie powoli się zmniejsza, więc przy końcówce rozgrywki mapa ma rozmiar ~mojego prącia. <br />Są bronie, pojazdy, ekwipunek i takie tam. Gra jest TPP, ale można też przełączać widok na FPP.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1769">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-06T23:24:01" class="text-sm text-gray-500 font-mono">2018-01-06 23:24:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1768" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>BUGP</div><br /><br />Nie kradnij postów, chuju.<br /><br /><br />Mam, gram, nawet da się to teraz odpalić z więcej niż 20 FPS i bez dwugodzinnych ładowań.<br />Lepsze od klasycznego napierdalania nie jest, ale można sobie pobiegać, popierdolić o głupotach i umrzeć od strzału w plecy.<br /><br />Bez voice&#39;a nie gram, spierdalaj.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1768" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1768"
+                                 aria-describedby="post-content-1768">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1770">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-06T23:24:58" class="text-sm text-gray-500 font-mono">2018-01-06 23:24:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1769" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Bez voice&#39;a nie gram, spierdalaj.</div><br /><br />I bez Jacha.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1768" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-06T23:21:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 23:21:21</time>
+                                    </header>
+                                    <div id="post-content-1768"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        BUGP
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1771">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-06T23:27:47" class="text-sm text-gray-500 font-mono">2018-01-06 23:27:47</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1770" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>I bez Jacha.</div><br /><br />Właśnie, a Jana Flagę znasz?
+                        </article>
+                    </li>
+                    
+                    <li id="post-1769" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1769"
+                                 aria-describedby="post-content-1769">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1772">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-07T11:36:48" class="text-sm text-gray-500 font-mono">2018-01-07 11:36:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dobra, ale o chuj chodzi w tej grze?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1769" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-06T23:24:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 23:24:01</time>
+                                    </header>
+                                    <div id="post-content-1769"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1768" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>BUGP</div><br /><br />Nie kradnij postów, chuju.<br /><br /><br />Mam, gram, nawet da się to teraz odpalić z więcej niż 20 FPS i bez dwugodzinnych ładowań.<br />Lepsze od klasycznego napierdalania nie jest, ale można sobie pobiegać, popierdolić o głupotach i umrzeć od strzału w plecy.<br /><br />Bez voice&#39;a nie gram, spierdalaj.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1773">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-07T12:36:51" class="text-sm text-gray-500 font-mono">2018-01-07 12:36:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                żeby być graczem drużynowym
+                        </article>
+                    </li>
+                    
+                    <li id="post-1770" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1770"
+                                 aria-describedby="post-content-1770">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1774">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-07T12:41:46" class="text-sm text-gray-500 font-mono">2018-01-07 12:41:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1773" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>żeby być graczem drużynowym</div><br />Okej. A w jakich klimatach jest ta gra? Nie, google mi nie działa.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1770" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-06T23:24:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 23:24:58</time>
+                                    </header>
+                                    <div id="post-content-1770"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1769" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Bez voice&#39;a nie gram, spierdalaj.</div><br /><br />I bez Jacha.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1775">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-07T12:55:53" class="text-sm text-gray-500 font-mono">2018-01-07 12:55:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1772" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Dobra, ale o chuj chodzi w tej grze?</div><br /><br />Najnowsza odmiana zombiakowo-survivalowego pierdolca rynku gier, który snuje się od lat jak papież po przedszkolu. Tylko tym razem jest w miarę fajna, bo tylko biegasz i strzelasz do innych graczy.<br /><br />Jak już Miska napisał, lecisz sobie samolocikiem razem z prawie setką innych graczy nad jedną z obecnie dwóch wielgaśnych map i wyskakujesz kiedy Ci się podoba, z niczym poza spadochronem i marzeniami o pozyskaniu dziewictwa Enza.<br />Gdy już wylądujesz, zależnie czy wylądowałeś na odludziu, czy razem z milionem innych bezmózgów, musisz albo wywalczyć swoje prawo do egzystencji poprzez chwytanie pierwszego lepszego pistoletu lub patelni albo po prostu zabierasz się za zbieranie fantów. Po paru minutach na mapie zaczynają pojawiać się okręgi, do których gracze muszą się udać, jeżeli nie chcą zakończyć rozgrywki zgonem bez wystrzelenia ani jednego pocisku. Kółeczka robią się coraz mniejsze, a gracze coraz bardziej ściśnięci. I tak kurczą się, kurczą aż zostanie ostatni gracz/drużyna.<br />Generalnie gra jest symulatorem biegania, który od czasu do czasu wymaga umiejętności strzelania i taktycznego myślenia. Cały czas musisz mieć pod uwagą gdzie może czaić się wróg, skąd nadejść, jakie miejsca są dobre do tymczasowej obrony, skąd zaatakować dane miejsce, a jak kogoś zobaczysz, to musisz przekalkulować, czy warto podejmować walkę z nim, czy nie. Musisz też dość szybko zdecydować się gdzie chcesz lądować i jaki rodzaj rozrywki preferujesz - szybką inbę i w 90% wczesny zgon, czy hasanie po polach w poszukiwaniu graczy dopiero w ostatnich 10 minutach. Czy ryzykować, że nie zdąży się na czas do okręgu i szukać fantów, czy lecieć szukać szczęścia uzbrojony w różaniec i kropidło. Itd., itp.<br />Każda runda trwa 30 minut. Można grać solo lub w drużynach 2/3/4 graczy (w przeciwieństwie do ułomnego WoTa drużyny walczą wyłącznie przeciw drużynom). W grze jest multum broni, do której można/trzeba zbierać ulepszenia, więc pod tym kątem też jest miła i można sobie pofapać. Mechanika strzelania jest fajna, ale też dość wymagająca.<br />Ile zabawy wyciągniesz z tej gry zależy od mentalności. Jeżeli jesteś ułomnym dzieckiem CoDa i liczysz na le ebin killstrik 30 fragów każdą rundę, to będziesz się tylko wkurwiać, że biegałeś przez 15 minut, żeby ktoś Ci strzelił w plecy. Ja po prostu lubię sobie pobiegać, pogadać na wojsie i chwilowo zaplikować sobie dawkę adrenaliny. Dodatkowo, jeżeli już jesteś w top 5 albo nawet top 3 i walczysz o zwycięstwo, to chyba żadna gra nie daje tyle emocji, co ta. Dlatego tyle osób w to gra.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1771" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1771"
+                                 aria-describedby="post-content-1771">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1776">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-07T13:50:50" class="text-sm text-gray-500 font-mono">2018-01-07 13:50:50</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1775" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Najnowsza odmiana zombiakowo-survivalowego pierdolca rynku gier, który snuje się od lat jak papież po przedszkolu. Tylko tym razem jest w miarę fajna, bo tylko biegasz i strzelasz do innych graczy.<br /><br />Jak już Miska napisał, lecisz sobie samolocikiem razem z prawie setką innych graczy nad jedną z obecnie dwóch wielgaśnych map i wyskakujesz kiedy Ci się podoba, z niczym poza spadochronem i marzeniami o pozyskaniu dziewictwa Enza.<br />Gdy już wylądujesz, zależnie czy wylądowałeś na odludziu, czy razem z milionem innych bezmózgów, musisz albo wywalczyć swoje prawo do egzystencji poprzez chwytanie pierwszego lepszego pistoletu lub patelni albo po prostu zabierasz się za zbieranie fantów. Po paru minutach na mapie zaczynają pojawiać się okręgi, do których gracze muszą się udać, jeżeli nie chcą zakończyć rozgrywki zgonem bez wystrzelenia ani jednego pocisku. Kółeczka robią się coraz mniejsze, a gracze coraz bardziej ściśnięci. I tak kurczą się, kurczą aż zostanie ostatni gracz/drużyna.<br />Generalnie gra jest symulatorem biegania, który od czasu do czasu wymaga umiejętności strzelania i taktycznego myślenia. Cały czas musisz mieć pod uwagą gdzie może czaić się wróg, skąd nadejść, jakie miejsca są dobre do tymczasowej obrony, skąd zaatakować dane miejsce, a jak kogoś zobaczysz, to musisz przekalkulować, czy warto podejmować walkę z nim, czy nie. Musisz też dość szybko zdecydować się gdzie chcesz lądować i jaki rodzaj rozrywki preferujesz - szybką inbę i w 90% wczesny zgon, czy hasanie po polach w poszukiwaniu graczy dopiero w ostatnich 10 minutach. Czy ryzykować, że nie zdąży się na czas do okręgu i szukać fantów, czy lecieć szukać szczęścia uzbrojony w różaniec i kropidło. Itd., itp.<br />Każda runda trwa 30 minut. Można grać solo lub w drużynach 2/3/4 graczy (w przeciwieństwie do ułomnego WoTa drużyny walczą wyłącznie przeciw drużynom). W grze jest multum broni, do której można/trzeba zbierać ulepszenia, więc pod tym kątem też jest miła i można sobie pofapać. Mechanika strzelania jest fajna, ale też dość wymagająca.<br />Ile zabawy wyciągniesz z tej gry zależy od mentalności. Jeżeli jesteś ułomnym dzieckiem CoDa i liczysz na le ebin killstrik 30 fragów każdą rundę, to będziesz się tylko wkurwiać, że biegałeś przez 15 minut, żeby ktoś Ci strzelił w plecy. Ja po prostu lubię sobie pobiegać, pogadać na wojsie i chwilowo zaplikować sobie dawkę adrenaliny. Dodatkowo, jeżeli już jesteś w top 5 albo nawet top 3 i walczysz o zwycięstwo, to chyba żadna gra nie daje tyle emocji, co ta. Dlatego tyle osób w to gra.</div><br />Welp, z opisu wydaje się całkiem ciekawa. Mizzle nie pogra, bo on lubi tylko w WoTa, tam jara się swoimi kontami, które ma później na sprzedaż. Gra ma jakieś szczególne wymagania, jeśli chodzi o sprzęt?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1771" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-06T23:27:47"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 23:27:47</time>
+                                    </header>
+                                    <div id="post-content-1771"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1770" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>I bez Jacha.</div><br /><br />Właśnie, a Jana Flagę znasz?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1778">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-07T13:56:08" class="text-sm text-gray-500 font-mono">2018-01-07 13:56:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Właśnie, właśnie, można później sprzedawać konta?
+                        </article>
+                    </li>
+                    
+                    <li id="post-1772" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1772"
+                                 aria-describedby="post-content-1772">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1779">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-07T13:58:53" class="text-sm text-gray-500 font-mono">2018-01-07 13:58:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1776" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Gra ma jakieś szczególne wymagania, jeśli chodzi o sprzęt?</div><br /><br />eecks dee<br /><br />Jeszcze do niedawna na moim GTX 760 to ścierwo prawie w ogóle nie działało.<br /><br />Na szczęście sytuacja poprawiła się i na swoim blaszaku mogę grać bez wyłączania krytycznych ficzerów graficznych, ale zabójczych FPSów nie wyciągam. Optymalizacja tej gry to gówno jakich mało, ale czego się spodziewać po składaku z gotowych assetów i bandzie amatorów udających developera.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-1778" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Właśnie, właśnie, można później sprzedawać konta?</div><br /><br />Po chuj komu Twoje śmierdzące pantoflem i naftaliną konto, wszystkie itemy można tam sprzedawać na Steam markecie.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1772" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-07T11:36:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 11:36:48</time>
+                                    </header>
+                                    <div id="post-content-1772"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Dobra, ale o chuj chodzi w tej grze?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1781">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-07T14:01:12" class="text-sm text-gray-500 font-mono">2018-01-07 14:01:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie szanuję i nie kupię w takim razie. Proszę usunąć ten temat.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1773" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1773"
+                                 aria-describedby="post-content-1773">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1782">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-07T14:02:10" class="text-sm text-gray-500 font-mono">2018-01-07 14:02:10</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1781" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Nie szanuję i nie kupię w takim razie. Proszę usunąć ten temat.</div><br />Się dziwię, że Cię mama nie usunęła.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1773" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-07T12:36:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 12:36:51</time>
+                                    </header>
+                                    <div id="post-content-1773"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        żeby być graczem drużynowym
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1783">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-07T14:03:10" class="text-sm text-gray-500 font-mono">2018-01-07 14:03:10</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Lekarz powiedział, że to nie płód tylko jakieś gowno i że szkoda zachodu na aborcję.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1774" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1774"
+                                 aria-describedby="post-content-1774">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1784">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-07T14:06:22" class="text-sm text-gray-500 font-mono">2018-01-07 14:06:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1783" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Lekarz powiedział, że to nie płód tylko jakieś gowno i że szkoda zachodu na aborcję.</div><br /><br />Mogła wpierdalać mniej wungla, toby się echo nie zesrało. Teraz musimy my cierpieć.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1774" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-07T12:41:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 12:41:46</time>
+                                    </header>
+                                    <div id="post-content-1774"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1773" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>żeby być graczem drużynowym</div><br />Okej. A w jakich klimatach jest ta gra? Nie, google mi nie działa.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1785">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-07T14:07:13" class="text-sm text-gray-500 font-mono">2018-01-07 14:07:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1784" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Mogła wpierdalać mniej wungla, toby się echo nie zesrało. Teraz musimy my cierpieć.</div><br />Spoko, aborcję podobno można przeprowadzać do 30. roku życia, więc jeszcze mieści się w przedziale.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1775" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1775"
+                                 aria-describedby="post-content-1775">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1789">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-07T14:14:07" class="text-sm text-gray-500 font-mono">2018-01-07 14:14:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Trzy rzeczy:<br />1. Wengiel na ślonsku to synonim zdrowia i dostatku<br />5. Jest jeszcze unbirthing, kto wie, może się skuszę
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1775" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-07T12:55:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 12:55:53</time>
+                                    </header>
+                                    <div id="post-content-1775"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1772" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Dobra, ale o chuj chodzi w tej grze?</div><br /><br />Najnowsza odmiana zombiakowo-survivalowego pierdolca rynku gier, który snuje się od lat jak papież po przedszkolu. Tylko tym razem jest w miarę fajna, bo tylko biegasz i strzelasz do innych graczy.<br /><br />Jak już Miska napisał, lecisz sobie samolocikiem razem z prawie setką innych graczy nad jedną z obecnie dwóch wielgaśnych map i wyskakujesz kiedy Ci się podoba, z niczym poza spadochronem i marzeniami o pozyskaniu dziewictwa Enza.<br />Gdy już wylądujesz, zależnie czy wylądowałeś na odludziu, czy razem z milionem innych bezmózgów, musisz albo wywalczyć swoje prawo do egzystencji poprzez chwytanie pierwszego lepszego pistoletu lub patelni albo po prostu zabierasz się za zbieranie fantów. Po paru minutach na mapie zaczynają pojawiać się okręgi, do których gracze muszą się udać, jeżeli nie chcą zakończyć rozgrywki zgonem bez wystrzelenia ani jednego pocisku. Kółeczka robią się coraz mniejsze, a gracze coraz bardziej ściśnięci. I tak kurczą się, kurczą aż zostanie ostatni gracz/drużyna.<br />Generalnie gra jest symulatorem biegania, który od czasu do czasu wymaga umiejętności strzelania i taktycznego myślenia. Cały czas musisz mieć pod uwagą gdzie może czaić się wróg, skąd nadejść, jakie miejsca są dobre do tymczasowej obrony, skąd zaatakować dane miejsce, a jak kogoś zobaczysz, to musisz przekalkulować, czy warto podejmować walkę z nim, czy nie. Musisz też dość szybko zdecydować się gdzie chcesz lądować i jaki rodzaj rozrywki preferujesz - szybką inbę i w 90% wczesny zgon, czy hasanie po polach w poszukiwaniu graczy dopiero w ostatnich 10 minutach. Czy ryzykować, że nie zdąży się na czas do okręgu i szukać fantów, czy lecieć szukać szczęścia uzbrojony w różaniec i kropidło. Itd., itp.<br />Każda runda trwa 30 minut. Można grać solo lub w drużynach 2/3/4 graczy (w przeciwieństwie do ułomnego WoTa drużyny walczą wyłącznie przeciw drużynom). W grze jest multum broni, do której można/trzeba zbierać ulepszenia, więc pod tym kątem też jest miła i można sobie pofapać. Mechanika strzelania jest fajna, ale też dość wymagająca.<br />Ile zabawy wyciągniesz z tej gry zależy od mentalności. Jeżeli jesteś ułomnym dzieckiem CoDa i liczysz na le ebin killstrik 30 fragów każdą rundę, to będziesz się tylko wkurwiać, że biegałeś przez 15 minut, żeby ktoś Ci strzelił w plecy. Ja po prostu lubię sobie pobiegać, pogadać na wojsie i chwilowo zaplikować sobie dawkę adrenaliny. Dodatkowo, jeżeli już jesteś w top 5 albo nawet top 3 i walczysz o zwycięstwo, to chyba żadna gra nie daje tyle emocji, co ta. Dlatego tyle osób w to gra.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1790">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-07T14:19:22" class="text-sm text-gray-500 font-mono">2018-01-07 14:19:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1785" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Spoko, aborcję podobno można przeprowadzać do 30. roku życia, więc jeszcze mieści się w przedziale.</div><br /><br />W tym mądrym kraju to niedługo trzeba będzie spermę z nocnych polucji zachowywać i dać księdzu do poświęcenia, a prezerwatywy będą tylko na receptę od biskupa, a nie jakieś aborcje.<br /><br />Poza tym bez Miski nagle cudowna reklama jebania się jak królik straci jedynego swojego targeta.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1776" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1776"
+                                 aria-describedby="post-content-1776">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1796">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-07T14:30:43" class="text-sm text-gray-500 font-mono">2018-01-07 14:30:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Śmierć abortystom! Jaka reklama, coś mnie ominęło? Nie mam telewizji, póki co myślałem tylko o kokainie żeby nie mieć odruchu wymiotnego przy robieniu loda.<br /><br />Abstrahując. PUGB. Grać? Bo jak mam sie wkurwiac jak przy WoT to pierdole. Kupuje sie to raz i nara czy jest milion mikroplatnosci?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1776" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-07T13:50:50"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 13:50:50</time>
+                                    </header>
+                                    <div id="post-content-1776"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1775" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Najnowsza odmiana zombiakowo-survivalowego pierdolca rynku gier, który snuje się od lat jak papież po przedszkolu. Tylko tym razem jest w miarę fajna, bo tylko biegasz i strzelasz do innych graczy.<br /><br />Jak już Miska napisał, lecisz sobie samolocikiem razem z prawie setką innych graczy nad jedną z obecnie dwóch wielgaśnych map i wyskakujesz kiedy Ci się podoba, z niczym poza spadochronem i marzeniami o pozyskaniu dziewictwa Enza.<br />Gdy już wylądujesz, zależnie czy wylądowałeś na odludziu, czy razem z milionem innych bezmózgów, musisz albo wywalczyć swoje prawo do egzystencji poprzez chwytanie pierwszego lepszego pistoletu lub patelni albo po prostu zabierasz się za zbieranie fantów. Po paru minutach na mapie zaczynają pojawiać się okręgi, do których gracze muszą się udać, jeżeli nie chcą zakończyć rozgrywki zgonem bez wystrzelenia ani jednego pocisku. Kółeczka robią się coraz mniejsze, a gracze coraz bardziej ściśnięci. I tak kurczą się, kurczą aż zostanie ostatni gracz/drużyna.<br />Generalnie gra jest symulatorem biegania, który od czasu do czasu wymaga umiejętności strzelania i taktycznego myślenia. Cały czas musisz mieć pod uwagą gdzie może czaić się wróg, skąd nadejść, jakie miejsca są dobre do tymczasowej obrony, skąd zaatakować dane miejsce, a jak kogoś zobaczysz, to musisz przekalkulować, czy warto podejmować walkę z nim, czy nie. Musisz też dość szybko zdecydować się gdzie chcesz lądować i jaki rodzaj rozrywki preferujesz - szybką inbę i w 90% wczesny zgon, czy hasanie po polach w poszukiwaniu graczy dopiero w ostatnich 10 minutach. Czy ryzykować, że nie zdąży się na czas do okręgu i szukać fantów, czy lecieć szukać szczęścia uzbrojony w różaniec i kropidło. Itd., itp.<br />Każda runda trwa 30 minut. Można grać solo lub w drużynach 2/3/4 graczy (w przeciwieństwie do ułomnego WoTa drużyny walczą wyłącznie przeciw drużynom). W grze jest multum broni, do której można/trzeba zbierać ulepszenia, więc pod tym kątem też jest miła i można sobie pofapać. Mechanika strzelania jest fajna, ale też dość wymagająca.<br />Ile zabawy wyciągniesz z tej gry zależy od mentalności. Jeżeli jesteś ułomnym dzieckiem CoDa i liczysz na le ebin killstrik 30 fragów każdą rundę, to będziesz się tylko wkurwiać, że biegałeś przez 15 minut, żeby ktoś Ci strzelił w plecy. Ja po prostu lubię sobie pobiegać, pogadać na wojsie i chwilowo zaplikować sobie dawkę adrenaliny. Dodatkowo, jeżeli już jesteś w top 5 albo nawet top 3 i walczysz o zwycięstwo, to chyba żadna gra nie daje tyle emocji, co ta. Dlatego tyle osób w to gra.</div><br />Welp, z opisu wydaje się całkiem ciekawa. Mizzle nie pogra, bo on lubi tylko w WoTa, tam jara się swoimi kontami, które ma później na sprzedaż. Gra ma jakieś szczególne wymagania, jeśli chodzi o sprzęt?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1797">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-07T14:34:27" class="text-sm text-gray-500 font-mono">2018-01-07 14:34:27</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1796" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Abstrahując. PUGB. Grać? Bo jak mam sie wkurwiac jak przy WoT to pierdole. Kupuje sie to raz i nara czy jest milion mikroplatnosci?</div><br /><br />Płacisz raz, gra jest tania, a czy się będziesz wkurwiać zależy czy będziesz grał z luzem czy ściskał poślady przy każdej śmierci. Ja już zakończyłem ten etap życia, gdy gry mnie wkurwiały.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1778" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1778"
+                                 aria-describedby="post-content-1778">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1778" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-07T13:56:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 13:56:08</time>
+                                    </header>
+                                    <div id="post-content-1778"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Właśnie, właśnie, można później sprzedawać konta?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1779" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1779"
+                                 aria-describedby="post-content-1779">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1779" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-07T13:58:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 13:58:53</time>
+                                    </header>
+                                    <div id="post-content-1779"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1776" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Gra ma jakieś szczególne wymagania, jeśli chodzi o sprzęt?</div><br /><br />eecks dee<br /><br />Jeszcze do niedawna na moim GTX 760 to ścierwo prawie w ogóle nie działało.<br /><br />Na szczęście sytuacja poprawiła się i na swoim blaszaku mogę grać bez wyłączania krytycznych ficzerów graficznych, ale zabójczych FPSów nie wyciągam. Optymalizacja tej gry to gówno jakich mało, ale czego się spodziewać po składaku z gotowych assetów i bandzie amatorów udających developera.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-1778" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Właśnie, właśnie, można później sprzedawać konta?</div><br /><br />Po chuj komu Twoje śmierdzące pantoflem i naftaliną konto, wszystkie itemy można tam sprzedawać na Steam markecie.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1781" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1781"
+                                 aria-describedby="post-content-1781">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1781" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-07T14:01:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:01:12</time>
+                                    </header>
+                                    <div id="post-content-1781"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Nie szanuję i nie kupię w takim razie. Proszę usunąć ten temat.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1782" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1782"
+                                 aria-describedby="post-content-1782">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1782" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-07T14:02:10"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:02:10</time>
+                                    </header>
+                                    <div id="post-content-1782"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1781" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Nie szanuję i nie kupię w takim razie. Proszę usunąć ten temat.</div><br />Się dziwię, że Cię mama nie usunęła.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1783" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1783"
+                                 aria-describedby="post-content-1783">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1783" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-07T14:03:10"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:03:10</time>
+                                    </header>
+                                    <div id="post-content-1783"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Lekarz powiedział, że to nie płód tylko jakieś gowno i że szkoda zachodu na aborcję.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1784" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1784"
+                                 aria-describedby="post-content-1784">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1784" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-07T14:06:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:06:22</time>
+                                    </header>
+                                    <div id="post-content-1784"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1783" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Lekarz powiedział, że to nie płód tylko jakieś gowno i że szkoda zachodu na aborcję.</div><br /><br />Mogła wpierdalać mniej wungla, toby się echo nie zesrało. Teraz musimy my cierpieć.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1785" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1785"
+                                 aria-describedby="post-content-1785">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1785" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-07T14:07:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:07:13</time>
+                                    </header>
+                                    <div id="post-content-1785"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1784" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Mogła wpierdalać mniej wungla, toby się echo nie zesrało. Teraz musimy my cierpieć.</div><br />Spoko, aborcję podobno można przeprowadzać do 30. roku życia, więc jeszcze mieści się w przedziale.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1789" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1789"
+                                 aria-describedby="post-content-1789">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1789" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-07T14:14:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:14:07</time>
+                                    </header>
+                                    <div id="post-content-1789"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Trzy rzeczy:<br />1. Wengiel na ślonsku to synonim zdrowia i dostatku<br />5. Jest jeszcze unbirthing, kto wie, może się skuszę
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1790" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1790"
+                                 aria-describedby="post-content-1790">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1790" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-07T14:19:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:19:22</time>
+                                    </header>
+                                    <div id="post-content-1790"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1785" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Spoko, aborcję podobno można przeprowadzać do 30. roku życia, więc jeszcze mieści się w przedziale.</div><br /><br />W tym mądrym kraju to niedługo trzeba będzie spermę z nocnych polucji zachowywać i dać księdzu do poświęcenia, a prezerwatywy będą tylko na receptę od biskupa, a nie jakieś aborcje.<br /><br />Poza tym bez Miski nagle cudowna reklama jebania się jak królik straci jedynego swojego targeta.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1796" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1796"
+                                 aria-describedby="post-content-1796">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1796" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-07T14:30:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:30:43</time>
+                                    </header>
+                                    <div id="post-content-1796"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Śmierć abortystom! Jaka reklama, coś mnie ominęło? Nie mam telewizji, póki co myślałem tylko o kokainie żeby nie mieć odruchu wymiotnego przy robieniu loda.<br /><br />Abstrahując. PUGB. Grać? Bo jak mam sie wkurwiac jak przy WoT to pierdole. Kupuje sie to raz i nara czy jest milion mikroplatnosci?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1797" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1797"
+                                 aria-describedby="post-content-1797">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1797" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-07T14:34:27"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 14:34:27</time>
+                                    </header>
+                                    <div id="post-content-1797"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1796" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Abstrahując. PUGB. Grać? Bo jak mam sie wkurwiac jak przy WoT to pierdole. Kupuje sie to raz i nara czy jest milion mikroplatnosci?</div><br /><br />Płacisz raz, gra jest tania, a czy się będziesz wkurwiać zależy czy będziesz grał z luzem czy ściskał poślady przy każdej śmierci. Ja już zakończyłem ten etap życia, gdy gry mnie wkurwiały.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

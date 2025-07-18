@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,335 +44,573 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_14.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Sprzęt</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Procesory Ryzen – hit czy kit?</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Procesory Ryzen – hit czy kit?</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1203">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-11T13:46:55" class="text-sm text-gray-500 font-mono">2017-02-11 13:46:55</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Wraz z nadchodzącą premierą procesorów AMD Ryzen nasuwa mi się pytanie – czy naprawdę wytrącą Intela ze swojej wieloletniej pozycji? Media robią wokół nich wiele szumu, więc wydaje mi się, że trochę potrząsną konkurencją.<br />Zapraszam do dyskusji.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Procesory Ryzen – hit czy kit?</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1203" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1203"
+                                 aria-describedby="post-content-1203">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1204">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-05-21T13:23:09" class="text-sm text-gray-500 font-mono">2017-05-21 13:23:09</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jako, że wiadomo już wszystko o nowych Ryzenach (albo prawie wszytko) wreszcie można zacząć dyskusję. IMHO nowe Ryzeny są bardzo fajnym sprzętem pod warunkiem, że umiesz je wykorzystać, jako procesory tylko po gry ich zakup nie jest w mojej opinii sensowny. Co innego gdy ktoś się bawi w granie + streaming lub bawi się w jakąś obróbkę wideo czy renderingi (choć te można czasem zrzucić na grafikę). Wtedy zakup 8 rdzeniowego Ryzena w cenie 4 rdzeniowego i7 jest jak najbardziej sensownym rozwiązaniem. Czyli klasyka, każdemu wg. potrzeb. Pozytywne jest to, że nawet jeśli patrzeć tylko pod względem gier to Ryzen i tak daje radę utrzymać 60FPS w większości tytułów w FullHD (oczywiście po sparowaniu z odpowiednią kartą jak 1070 czy 1080).
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1203" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-11T13:46:55"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-11 13:46:55</time>
+                                    </header>
+                                    <div id="post-content-1203"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Wraz z nadchodzącą premierą procesorów AMD Ryzen nasuwa mi się pytanie – czy naprawdę wytrącą Intela ze swojej wieloletniej pozycji? Media robią wokół nich wiele szumu, więc wydaje mi się, że trochę potrząsną konkurencją.<br />Zapraszam do dyskusji.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2051">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-19T15:24:07" class="text-sm text-gray-500 font-mono">2018-02-19 15:24:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Fred ma prawie rok, więc nastała najlepsza pora na odgrzanie kotleta – zbliża się premiera Ryzenów+, które mają być o jakieś 5 - 8% wydajniejsze od poprzedników. Mamy już suchy test Rysia 2600, który należy raczej do segmentu średnich procesorów. Nie sądzę, żeby nowa iteracja procków zatrzęsła rynkiem, ale mam cichą nadzieję, że wydajność chociaż zbliży się do i5 8600 :)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1204" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1204"
+                                 aria-describedby="post-content-1204">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2052">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-02-19T15:30:23" class="text-sm text-gray-500 font-mono">2018-02-19 15:30:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Wszyscy mają taką nadzieje.  Z chęcią przeszedłbym na ryż azjatycki, ale odstraszyło mnie, że taki I5 3570k nadal jest wydajnieszy od R5 1600, którego w np. Falloucie 4 gniecie pentium&#8230; Ale może już Zen 2, aka Ryż 3 stanie oko w oko z Intelem?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1204" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-05-21T13:23:09"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-21 13:23:09</time>
+                                    </header>
+                                    <div id="post-content-1204"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Jako, że wiadomo już wszystko o nowych Ryzenach (albo prawie wszytko) wreszcie można zacząć dyskusję. IMHO nowe Ryzeny są bardzo fajnym sprzętem pod warunkiem, że umiesz je wykorzystać, jako procesory tylko po gry ich zakup nie jest w mojej opinii sensowny. Co innego gdy ktoś się bawi w granie + streaming lub bawi się w jakąś obróbkę wideo czy renderingi (choć te można czasem zrzucić na grafikę). Wtedy zakup 8 rdzeniowego Ryzena w cenie 4 rdzeniowego i7 jest jak najbardziej sensownym rozwiązaniem. Czyli klasyka, każdemu wg. potrzeb. Pozytywne jest to, że nawet jeśli patrzeć tylko pod względem gier to Ryzen i tak daje radę utrzymać 60FPS w większości tytułów w FullHD (oczywiście po sparowaniu z odpowiednią kartą jak 1070 czy 1080).
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2053">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-19T15:35:39" class="text-sm text-gray-500 font-mono">2018-02-19 15:35:39</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2052" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Wszyscy mają taką nadzieje.  Z chęcią przeszedłbym na ryż azjatycki, ale odstraszyło mnie, że taki I5 3570k nadal jest wydajnieszy od R5 1600, którego w np. Falloucie 4 gniecie pentium&#8230; Ale może już Zen 2, aka Ryż 3 stanie oko w oko z Intelem?</div><br />Zen 2 nadejdzie za rok, do tej pory wyjdą już procesory Cannonlake, przed którymi AMD nadal będzie się kłaniać, bo wydajność pojedynczego rdzenia nadal będzie wyższa. Mimo wszystko Intel poczuł chłodny oddech AMD na karku i próbuje walczyć z konkurencją. Zobaczymy, jak im to wyjdzie :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-2051" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2051"
+                                 aria-describedby="post-content-2051">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2055">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-02-19T16:48:37" class="text-sm text-gray-500 font-mono">2018-02-19 16:48:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Intel musi załatać procesory do 2018 roku.  Cannonlake to na 99% będzie kilka procesorów do laptopów. Dopiero IceLake może trafić do deskopów. A te dopiero w 2018. Wydajność IPC na pewno spadnie, bo Intel będzie musiał załatać procesory. A jestem pewny, że jego przewaga wynikała przynajmniej  z części z dosyć pobieżną implementacją zabezpieczeń. Dlatego myślę, że Ryż 3 i Intel IceLake może być ciekawym pojedynkiem.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2051" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-19T15:24:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-19 15:24:07</time>
+                                    </header>
+                                    <div id="post-content-2051"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Fred ma prawie rok, więc nastała najlepsza pora na odgrzanie kotleta – zbliża się premiera Ryzenów+, które mają być o jakieś 5 - 8% wydajniejsze od poprzedników. Mamy już suchy test Rysia 2600, który należy raczej do segmentu średnich procesorów. Nie sądzę, żeby nowa iteracja procków zatrzęsła rynkiem, ale mam cichą nadzieję, że wydajność chociaż zbliży się do i5 8600 :)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2061">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-20T10:24:34" class="text-sm text-gray-500 font-mono">2018-02-20 10:24:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Intel musi załatać procesory do 2018 roku.</div><br />Twój argument jest inwalidą. Mamy rok 2018, procesory nie są załatane.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Cannonlake to na 99% będzie kilka procesorów do laptopów.</div><br />Plany były nieco inne. Cannonlake miało być na mniejszym procesie technologicznym, bez rozróżniania pomiędzy celem.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Dopiero IceLake może trafić do deskopów. A te dopiero w 2018.</div><br />Przypominam, Ropciu, że mamy już 2018.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Wydajność IPC na pewno spadnie, bo Intel będzie musiał załatać procesory. A jestem pewny, że jego przewaga wynikała przynajmniej z części z dosyć pobieżną implementacją zabezpieczeń.</div><br />Spadnie, spadnie. ZEN 2 może okazać się bardzo dobrym konkurentem dla Lodowego Jeziora (oczywiście w ramach odpowiednich klas procków) ;)
+                        </article>
+                    </li>
+                    
+                    <li id="post-2052" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2052"
+                                 aria-describedby="post-content-2052">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2064">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-02-20T10:54:02" class="text-sm text-gray-500 font-mono">2018-02-20 10:54:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Aj, ja ciągle żyje 2017 :E Wszystko co tam napisałem ma być o rok do przodu. Czyli załatanie do końca 2018 procesorów, 2019 Icelake. Tak czyś jak, obstawiam, że pod względem samej wydajności Coffelake nadal w tym roku będzie wygrywać, ale Ryzen+ zacznie być już rozsądną alternatywą, a nie, że Ryż 5 będzie w jakieś grze przegrywał z Pentiumem, bo się okaże, że Pentium ma 25fps, a Ryż 24fps.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2052" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-02-19T15:30:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-19 15:30:23</time>
+                                    </header>
+                                    <div id="post-content-2052"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Wszyscy mają taką nadzieje.  Z chęcią przeszedłbym na ryż azjatycki, ale odstraszyło mnie, że taki I5 3570k nadal jest wydajnieszy od R5 1600, którego w np. Falloucie 4 gniecie pentium&#8230; Ale może już Zen 2, aka Ryż 3 stanie oko w oko z Intelem?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2065">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-20T11:28:42" class="text-sm text-gray-500 font-mono">2018-02-20 11:28:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2064" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Tak czyś jak, obstawiam, że pod względem samej wydajności Coffelake nadal w tym roku będzie wygrywać, ale Ryzen+ zacznie być już rozsądną alternatywą, a nie, że Ryż 5 będzie w jakieś grze przegrywał z Pentiumem, bo się okaże, że Pentium ma 25fps, a Ryż 24fps.</div><br />Oby, bo nadal czekam na premierę Ryzen+, by nie kupić 8700K :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-2053" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2053"
+                                 aria-describedby="post-content-2053">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2066">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-02-20T11:49:39" class="text-sm text-gray-500 font-mono">2018-02-20 11:49:39</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No ja też :E Mocno się zastanawiam nad Kawą a Ryżem. Chociaż i tak ceny DDR4 odstraszają mnie od zmiany platformy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2053" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-19T15:35:39"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-19 15:35:39</time>
+                                    </header>
+                                    <div id="post-content-2053"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2052" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Wszyscy mają taką nadzieje.  Z chęcią przeszedłbym na ryż azjatycki, ale odstraszyło mnie, że taki I5 3570k nadal jest wydajnieszy od R5 1600, którego w np. Falloucie 4 gniecie pentium&#8230; Ale może już Zen 2, aka Ryż 3 stanie oko w oko z Intelem?</div><br />Zen 2 nadejdzie za rok, do tej pory wyjdą już procesory Cannonlake, przed którymi AMD nadal będzie się kłaniać, bo wydajność pojedynczego rdzenia nadal będzie wyższa. Mimo wszystko Intel poczuł chłodny oddech AMD na karku i próbuje walczyć z konkurencją. Zobaczymy, jak im to wyjdzie :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2076">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-21T21:28:32" class="text-sm text-gray-500 font-mono">2018-02-21 21:28:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2066" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>No ja też :E Mocno się zastanawiam nad Kawą a Ryżem. Chociaż i tak ceny DDR4 odstraszają mnie od zmiany platformy.</div><br />Odkąd ceny RAM-u (i nie tylko) poszybowały dwa lata temu w górę, tak nadal się trzymają. Raczej szybko nie spadną, a producenci mają uciechę. Mam cichą nadzieję, że AMD zagra mocną kartą, a Intel obniży ceny na tyle, że będzie przystępny dla najzwyklejszych zjadaczy Caleba.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2055" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2055"
+                                 aria-describedby="post-content-2055">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2116">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-03-07T12:00:42" class="text-sm text-gray-500 font-mono">2018-03-07 12:00:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow</a><br /><br />Jeżeli to się sprawdzi to wojna AMD vs Intel może być już w Zenku 1.5
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2055" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-02-19T16:48:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-19 16:48:37</time>
+                                    </header>
+                                    <div id="post-content-2055"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Intel musi załatać procesory do 2018 roku.  Cannonlake to na 99% będzie kilka procesorów do laptopów. Dopiero IceLake może trafić do deskopów. A te dopiero w 2018. Wydajność IPC na pewno spadnie, bo Intel będzie musiał załatać procesory. A jestem pewny, że jego przewaga wynikała przynajmniej  z części z dosyć pobieżną implementacją zabezpieczeń. Dlatego myślę, że Ryż 3 i Intel IceLake może być ciekawym pojedynkiem.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2117">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-03-07T12:03:52" class="text-sm text-gray-500 font-mono">2018-03-07 12:03:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2116" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div><a href="https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow</a><br /><br />Jeżeli to się sprawdzi to wojna AMD vs Intel może być już w Zenku 1.5</div><br />Czytałem. Wierzysz w to? Ostatnio też były takie wykresy, nie sprawdziło się. Sądzę, że dopiero za rok AMD pokona ósmą generację Inteli. Oczywiście to mój punkt widzenia, ale&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-2061" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2061"
+                                 aria-describedby="post-content-2061">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2839">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2019-10-07T22:48:53" class="text-sm text-gray-500 font-mono">2019-10-07 22:48:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No i stało się w sumie, Ryzen 3 właściwie jest już w pełni konkurencyjny do procesorów Intela. A Intel własnie obniżył ceny procesorów przez konkurencje:<br /><br /><a href="https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2061" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-20T10:24:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-20 10:24:34</time>
+                                    </header>
+                                    <div id="post-content-2061"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Intel musi załatać procesory do 2018 roku.</div><br />Twój argument jest inwalidą. Mamy rok 2018, procesory nie są załatane.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Cannonlake to na 99% będzie kilka procesorów do laptopów.</div><br />Plany były nieco inne. Cannonlake miało być na mniejszym procesie technologicznym, bez rozróżniania pomiędzy celem.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Dopiero IceLake może trafić do deskopów. A te dopiero w 2018.</div><br />Przypominam, Ropciu, że mamy już 2018.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2055" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Wydajność IPC na pewno spadnie, bo Intel będzie musiał załatać procesory. A jestem pewny, że jego przewaga wynikała przynajmniej z części z dosyć pobieżną implementacją zabezpieczeń.</div><br />Spadnie, spadnie. ZEN 2 może okazać się bardzo dobrym konkurentem dla Lodowego Jeziora (oczywiście w ramach odpowiednich klas procków) ;)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2840">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-10-09T07:17:29" class="text-sm text-gray-500 font-mono">2019-10-09 07:17:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2839" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div><br />No i stało się w sumie, Ryzen 3 właściwie jest już w pełni konkurencyjny do procesorów Intela. A Intel własnie obniżył ceny procesorów przez konkurencje:<br /><br /><a href="https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh</a><br /></div><br />Zobaczymy, jak dalej będzie szło Intelowi. Na 100% będzie dominował w korporacjach, gdzie sprzęt dostarcza Dell, ale pod strzechami może zawitać AMD ;)
+                        </article>
+                    </li>
+                    
+                    <li id="post-2064" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2064"
+                                 aria-describedby="post-content-2064">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2064" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-02-20T10:54:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-20 10:54:02</time>
+                                    </header>
+                                    <div id="post-content-2064"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Aj, ja ciągle żyje 2017 :E Wszystko co tam napisałem ma być o rok do przodu. Czyli załatanie do końca 2018 procesorów, 2019 Icelake. Tak czyś jak, obstawiam, że pod względem samej wydajności Coffelake nadal w tym roku będzie wygrywać, ale Ryzen+ zacznie być już rozsądną alternatywą, a nie, że Ryż 5 będzie w jakieś grze przegrywał z Pentiumem, bo się okaże, że Pentium ma 25fps, a Ryż 24fps.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2065" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2065"
+                                 aria-describedby="post-content-2065">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2065" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-20T11:28:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-20 11:28:42</time>
+                                    </header>
+                                    <div id="post-content-2065"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2064" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Tak czyś jak, obstawiam, że pod względem samej wydajności Coffelake nadal w tym roku będzie wygrywać, ale Ryzen+ zacznie być już rozsądną alternatywą, a nie, że Ryż 5 będzie w jakieś grze przegrywał z Pentiumem, bo się okaże, że Pentium ma 25fps, a Ryż 24fps.</div><br />Oby, bo nadal czekam na premierę Ryzen+, by nie kupić 8700K :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2066" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2066"
+                                 aria-describedby="post-content-2066">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2066" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-02-20T11:49:39"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-20 11:49:39</time>
+                                    </header>
+                                    <div id="post-content-2066"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        No ja też :E Mocno się zastanawiam nad Kawą a Ryżem. Chociaż i tak ceny DDR4 odstraszają mnie od zmiany platformy.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2076" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2076"
+                                 aria-describedby="post-content-2076">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2076" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-21T21:28:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-21 21:28:32</time>
+                                    </header>
+                                    <div id="post-content-2076"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2066" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>No ja też :E Mocno się zastanawiam nad Kawą a Ryżem. Chociaż i tak ceny DDR4 odstraszają mnie od zmiany platformy.</div><br />Odkąd ceny RAM-u (i nie tylko) poszybowały dwa lata temu w górę, tak nadal się trzymają. Raczej szybko nie spadną, a producenci mają uciechę. Mam cichą nadzieję, że AMD zagra mocną kartą, a Intel obniży ceny na tyle, że będzie przystępny dla najzwyklejszych zjadaczy Caleba.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2116" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2116"
+                                 aria-describedby="post-content-2116">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2116" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-03-07T12:00:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-07 12:00:42</time>
+                                    </header>
+                                    <div id="post-content-2116"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        <a href="https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow</a><br /><br />Jeżeli to się sprawdzi to wojna AMD vs Intel może być już w Zenku 1.5
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2117" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2117"
+                                 aria-describedby="post-content-2117">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2117" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-03-07T12:03:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-07 12:03:52</time>
+                                    </header>
+                                    <div id="post-content-2117"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2116" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div><a href="https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/amd_ryzen_7_2000_kolejne_wyniki_wydajnosci_nowych_ukladow</a><br /><br />Jeżeli to się sprawdzi to wojna AMD vs Intel może być już w Zenku 1.5</div><br />Czytałem. Wierzysz w to? Ostatnio też były takie wykresy, nie sprawdziło się. Sądzę, że dopiero za rok AMD pokona ósmą generację Inteli. Oczywiście to mój punkt widzenia, ale&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2839" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2839"
+                                 aria-describedby="post-content-2839">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2839" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2019-10-07T22:48:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-10-07 22:48:53</time>
+                                    </header>
+                                    <div id="post-content-2839"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        No i stało się w sumie, Ryzen 3 właściwie jest już w pełni konkurencyjny do procesorów Intela. A Intel własnie obniżył ceny procesorów przez konkurencje:<br /><br /><a href="https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2840" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2840"
+                                 aria-describedby="post-content-2840">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2840" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-10-09T07:17:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-10-09 07:17:29</time>
+                                    </header>
+                                    <div id="post-content-2840"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2839" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div><br />No i stało się w sumie, Ryzen 3 właściwie jest już w pełni konkurencyjny do procesorów Intela. A Intel własnie obniżył ceny procesorów przez konkurencje:<br /><br /><a href="https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/procesory/intel_obnizki_cen_desktopowych_procesorow_coffee_lake_refresh</a><br /></div><br />Zobaczymy, jak dalej będzie szło Intelowi. Na 100% będzie dominował w korporacjach, gdzie sprzęt dostarcza Dell, ale pod strzechami może zawitać AMD ;)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

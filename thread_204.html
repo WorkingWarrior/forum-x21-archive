@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,83 +44,201 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Retro gaming</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Retro gaming</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1618">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-07-08T16:18:35" class="text-sm text-gray-500 font-mono">2017-07-08 16:18:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jakiś czas temu facebook przywitał mnie takim oto newsem: <a href="http://next.gazeta.pl/next/7,151243,22016539,tania-mini-konsola-od-nintendo-juz-we-wrzesniu-fani-retro-beda.html?utm_campaign=share_article&utm_medium=deeplink&utm_source=gazetaapp" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a><br /><br />Nie wiem, czy chciałabym wydać 400 zł tylko po to, żeby popykać w gierki, w które grałam 25 lat temu u kolegi z klasy w podstawówce, ale na pewno sam fakt, że coś takiego się pojawi jest interesujący. <br />Co do starych gier to (nie)stety nie jestem ich koneserem. Wiadomo, wspomnienia rzecz święta etc, nie chodzi tu o grafikę czy inne rzeczy tego typu, po prostu wolę mechanikę współczesnych gier. Tak jakoś. I chuj. <br /><br /><a href="http://polygamia.pl/a-moze-chcecie-odpalic-kartridze-z-game-boya-na-waszym-telefonie-z-androidem/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">I jeszcze taka ciekawostka</a><br />Niegdyś byłam fanką GB, nawet mam GBC, ale od dłuższego czasu nijak mnie to już nie jara. Jakkolwiek taka nakładka wydaje się być interesująca - najbardziej w GB we współczesnych czasach irytuje brak podświetlanego ekranu&#8230;
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Retro gaming</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1618" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1618"
+                                 aria-describedby="post-content-1618">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1619">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-07-11T12:53:45" class="text-sm text-gray-500 font-mono">2017-07-11 12:53:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja planuję ogarnąć sobie Raspberry PI 3 z RetroPie do takiej zabawy w emulację starych konsol. Te wszystkie wynalazki są obliczone na wyciągnięcie łatwej kasy bazując na sentymencie. Mógłbym kupić takiego NES mini czy SNES mini jakby tam było dużo więcej gier lub ew. możliwość dogrania gier.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1618" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-07-08T16:18:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-07-08 16:18:35</time>
+                                    </header>
+                                    <div id="post-content-1618"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Jakiś czas temu facebook przywitał mnie takim oto newsem: <a href="http://next.gazeta.pl/next/7,151243,22016539,tania-mini-konsola-od-nintendo-juz-we-wrzesniu-fani-retro-beda.html?utm_campaign=share_article&utm_medium=deeplink&utm_source=gazetaapp" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a><br /><br />Nie wiem, czy chciałabym wydać 400 zł tylko po to, żeby popykać w gierki, w które grałam 25 lat temu u kolegi z klasy w podstawówce, ale na pewno sam fakt, że coś takiego się pojawi jest interesujący. <br />Co do starych gier to (nie)stety nie jestem ich koneserem. Wiadomo, wspomnienia rzecz święta etc, nie chodzi tu o grafikę czy inne rzeczy tego typu, po prostu wolę mechanikę współczesnych gier. Tak jakoś. I chuj. <br /><br /><a href="http://polygamia.pl/a-moze-chcecie-odpalic-kartridze-z-game-boya-na-waszym-telefonie-z-androidem/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">I jeszcze taka ciekawostka</a><br />Niegdyś byłam fanką GB, nawet mam GBC, ale od dłuższego czasu nijak mnie to już nie jara. Jakkolwiek taka nakładka wydaje się być interesująca - najbardziej w GB we współczesnych czasach irytuje brak podświetlanego ekranu&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1620">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-08-13T20:54:22" class="text-sm text-gray-500 font-mono">2017-08-13 20:54:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div><br />Ja planuję ogarnąć sobie Raspberry PI 3 z RetroPie do takiej zabawy w emulację starych konsol. Te wszystkie wynalazki są obliczone na wyciągnięcie łatwej kasy bazując na sentymencie. Mógłbym kupić takiego NES mini czy SNES mini jakby tam było dużo więcej gier lub ew. możliwość dogrania gier.<br /></div>Tak trochę to, co Fredek napisał. RPi 3 jest za połowę ceny (ja kupiłem na firmę za 140 zł). Cóż, to jest żerowanie na kasie sentymentalnych graczy (czyt. hubi1).
+                        </article>
+                    </li>
+                    
+                    <li id="post-1619" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1619"
+                                 aria-describedby="post-content-1619">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1619" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-07-11T12:53:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-07-11 12:53:45</time>
+                                    </header>
+                                    <div id="post-content-1619"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Ja planuję ogarnąć sobie Raspberry PI 3 z RetroPie do takiej zabawy w emulację starych konsol. Te wszystkie wynalazki są obliczone na wyciągnięcie łatwej kasy bazując na sentymencie. Mógłbym kupić takiego NES mini czy SNES mini jakby tam było dużo więcej gier lub ew. możliwość dogrania gier.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1620" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1620"
+                                 aria-describedby="post-content-1620">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1620" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-08-13T20:54:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-13 20:54:22</time>
+                                    </header>
+                                    <div id="post-content-1620"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div><br />Ja planuję ogarnąć sobie Raspberry PI 3 z RetroPie do takiej zabawy w emulację starych konsol. Te wszystkie wynalazki są obliczone na wyciągnięcie łatwej kasy bazując na sentymencie. Mógłbym kupić takiego NES mini czy SNES mini jakby tam było dużo więcej gier lub ew. możliwość dogrania gier.<br /></div>Tak trochę to, co Fredek napisał. RPi 3 jest za połowę ceny (ja kupiłem na firmę za 140 zł). Cóż, to jest żerowanie na kasie sentymentalnych graczy (czyt. hubi1).
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

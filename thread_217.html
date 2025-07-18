@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,104 +44,232 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Rimworld - zbuduj i zarządzaj swoją bazą na krańcu wszechświata</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Rimworld - zbuduj i zarządzaj swoją bazą na krańcu wszechświata</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1662">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-08-31T18:57:09" class="text-sm text-gray-500 font-mono">2017-08-31 18:57:09</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block">&quot;RimWorld opowiada o losach trzech ocalałych rozbitków statku kosmicznego, którzy budują kolonię na obrzeżach wszechświata. Zainspirowany westernowym klimatem Firefly, zaawansowaną symulacją Dwarf Fortress oraz epicką skalą Diuny i Warhammera 40,000<br /><br />Dbaj o nastroje, potrzeby i zdrowie poszczególnych kolonistów. Weź udział w rozbudowanej symulacji potyczek. Twórz stroje, budowle i broń z metalu, drewna, kamienia, tkanin czy egzotycznych, futurystycznych materiałów. Walcz z pirackimi bandami, zacofanymi technologicznie plemionami, dzikimi zwierzętami i starożytnymi mechanoidami. Przy każdej grze odkrywaj nowy, wygenerowany świat. Buduj kolonie w różnych strefach klimatycznych począwszy od pustyni, przez dżunglę, po tundrę, każda z wyjątkową florą i fauną. Rozwijaj i zarządzaj kolonistami z niepowtarzalnymi historiami, cechami i umiejętnościami. Łatwo nauczysz się grać z pomocą subtelnego nauczyciela SI.</div><br /><br />Wydaje mi się, że sam opis powinien być wystarczający do zainteresowania was tym indykiem. Powyższy opis jest nie do końca prawdziwy bowiem nie koniecznie musimy zaczynać z trzema ocalałymi, możemy zacząć z jednym, który znudził się życiem w luksusie i postanowił zobaczyć jak w rzeczywistości wygląda życie i przygody o których do tej pory tylko czytał. W grze musimy umiejętnie zarządzać swoimi osadnikami, którzy mają różne potrzeby, umiejętności, wady i zalety. Niektórzy będą uzależnieni od narkotyków, inni będą w wiecznej depresji, a jeszcze inni będą wiecznie zadowoleni ze świata, który ich otacza. Przy tworzeniu gry mamy do wyboru trzy tryby sztucznej inteligencji, jedna będzie nam powoli zwiększała trudność gry, druga pozwoli nam na w miarę spokojny rozwój naszej kolonii, a trzecia będzie kompletnie nieobliczalna i będzie popadać ze skrajności w skrajność, raz dostaniemy trochę zasobów za free innym razem napadną na nas znacznie przeważające siły z wrogo nastawionej osady.<br /><br />Gra aktualnie znajduje się w Early Access w cenie 28$ i jak to opisują producenci gra jest aktualnie niemal wolna od bugów i w pełni zbalansowana, a pozostaje w Early Access bo chcą dodać jeszcze trochę zawartości.<br /><div class="quote-block">“We&#39;re not sure how long the game will be in Early Access. That said, it&#39;s fully playable, low in bugs and balanced now. We&#39;re just not sure how much more additional free content we&#39;re going to add before calling it done.<br /><br />To be clear - we might end development soon, or we might continue it for years. Please buy the game only if you want to play it as it exists now - not based on what it might some day become.”</div><br /><br />Na koniec trailer<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/866pKJDoHj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Rimworld - zbuduj i zarządzaj swoją bazą na krańcu wszechświata</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1662" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1662"
+                                 aria-describedby="post-content-1662">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2038">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-12T13:44:32" class="text-sm text-gray-500 font-mono">2018-02-12 13:44:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1662" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Fred</strong> napisał:</span></a></div>Wydaje mi się, że sam opis powinien być wystarczający do zainteresowania was tym indykiem. Powyższy opis jest nie do końca prawdziwy bowiem nie koniecznie musimy zaczynać z trzema ocalałymi, możemy zacząć z jednym, który znudził się życiem w luksusie i postanowił zobaczyć jak w rzeczywistości wygląda życie i przygody o których do tej pory tylko czytał. W grze musimy umiejętnie zarządzać swoimi osadnikami, którzy mają różne potrzeby, umiejętności, wady i zalety. Niektórzy będą uzależnieni od narkotyków, inni będą w wiecznej depresji, a jeszcze inni będą wiecznie zadowoleni ze świata, który ich otacza. Przy tworzeniu gry mamy do wyboru trzy tryby sztucznej inteligencji, jedna będzie nam powoli zwiększała trudność gry, druga pozwoli nam na w miarę spokojny rozwój naszej kolonii, a trzecia będzie kompletnie nieobliczalna i będzie popadać ze skrajności w skrajność, raz dostaniemy trochę zasobów za free innym razem napadną na nas znacznie przeważające siły z wrogo nastawionej osady.<br /><br />Gra aktualnie znajduje się w Early Access w cenie 28$ i jak to opisują producenci gra jest aktualnie niemal wolna od bugów i w pełni zbalansowana, a pozostaje w Early Access bo chcą dodać jeszcze trochę zawartości.<br /><br /><br />Na koniec trailer<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/866pKJDoHj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div><br />Temat ma prawie pół roku, a ja nie odpisałem&#8230; Obejrzałem trailery, gejmpleje i dzisiaj to zainstaluję na swoim kompie. Lubię produkcje typu Terraria i Starbound, więc to na pewno też mi będzie odpowiadać. Ktoś więcej grał?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1662" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-08-31T18:57:09"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-31 18:57:09</time>
+                                    </header>
+                                    <div id="post-content-1662"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        <div class="quote-block">&quot;RimWorld opowiada o losach trzech ocalałych rozbitków statku kosmicznego, którzy budują kolonię na obrzeżach wszechświata. Zainspirowany westernowym klimatem Firefly, zaawansowaną symulacją Dwarf Fortress oraz epicką skalą Diuny i Warhammera 40,000<br /><br />Dbaj o nastroje, potrzeby i zdrowie poszczególnych kolonistów. Weź udział w rozbudowanej symulacji potyczek. Twórz stroje, budowle i broń z metalu, drewna, kamienia, tkanin czy egzotycznych, futurystycznych materiałów. Walcz z pirackimi bandami, zacofanymi technologicznie plemionami, dzikimi zwierzętami i starożytnymi mechanoidami. Przy każdej grze odkrywaj nowy, wygenerowany świat. Buduj kolonie w różnych strefach klimatycznych począwszy od pustyni, przez dżunglę, po tundrę, każda z wyjątkową florą i fauną. Rozwijaj i zarządzaj kolonistami z niepowtarzalnymi historiami, cechami i umiejętnościami. Łatwo nauczysz się grać z pomocą subtelnego nauczyciela SI.</div><br /><br />Wydaje mi się, że sam opis powinien być wystarczający do zainteresowania was tym indykiem. Powyższy opis jest nie do końca prawdziwy bowiem nie koniecznie musimy zaczynać z trzema ocalałymi, możemy zacząć z jednym, który znudził się życiem w luksusie i postanowił zobaczyć jak w rzeczywistości wygląda życie i przygody o których do tej pory tylko czytał. W grze musimy umiejętnie zarządzać swoimi osadnikami, którzy mają różne potrzeby, umiejętności, wady i zalety. Niektórzy będą uzależnieni od narkotyków, inni będą w wiecznej depresji, a jeszcze inni będą wiecznie zadowoleni ze świata, który ich otacza. Przy tworzeniu gry mamy do wyboru trzy tryby sztucznej inteligencji, jedna będzie nam powoli zwiększała trudność gry, druga pozwoli nam na w miarę spokojny rozwój naszej kolonii, a trzecia będzie kompletnie nieobliczalna i będzie popadać ze skrajności w skrajność, raz dostaniemy trochę zasobów za free innym razem napadną na nas znacznie przeważające siły z wrogo nastawionej osady.<br /><br />Gra aktualnie znajduje się w Early Access w cenie 28$ i jak to opisują producenci gra jest aktualnie niemal wolna od bugów i w pełni zbalansowana, a pozostaje w Early Access bo chcą dodać jeszcze trochę zawartości.<br /><div class="quote-block">“We&#39;re not sure how long the game will be in Early Access. That said, it&#39;s fully playable, low in bugs and balanced now. We&#39;re just not sure how much more additional free content we&#39;re going to add before calling it done.<br /><br />To be clear - we might end development soon, or we might continue it for years. Please buy the game only if you want to play it as it exists now - not based on what it might some day become.”</div><br /><br />Na koniec trailer<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/866pKJDoHj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2114">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2018-03-07T08:22:53" class="text-sm text-gray-500 font-mono">2018-03-07 08:22:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja ostatnio znów zacząłem grać w Rimworld żeby zobaczyć co się zmieniło z ostatnim patchem i doszło parę rzeczy :)
+                        </article>
+                    </li>
+                    
+                    <li id="post-2038" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2038"
+                                 aria-describedby="post-content-2038">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2115">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-03-07T09:45:41" class="text-sm text-gray-500 font-mono">2018-03-07 09:45:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2114" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Fred</strong> napisał:</span></a></div>Ja ostatnio znów zacząłem grać w Rimworld żeby zobaczyć co się zmieniło z ostatnim patchem i doszło parę rzeczy :)</div><br />Grałem w Rimworld przez kilka kolejnych dni z rzędu. Jest to bardzo rozbudowana gra, skomplikowana, z zaawansowanym systemem emulacji świata i ekonomii. Nie powiem, jest trudna, ale tylko na tyle, na ile się jej pozwoli. Po prostu trzeba myśleć :P Wciąga nieziemsko, więc co chwilę trzeba zerkać na zegarek. Gorąco polecam fanom strategii, Terrarii i Tibii (xD).
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2038" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-12T13:44:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-12 13:44:32</time>
+                                    </header>
+                                    <div id="post-content-2038"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1662" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Fred</strong> napisał:</span></a></div>Wydaje mi się, że sam opis powinien być wystarczający do zainteresowania was tym indykiem. Powyższy opis jest nie do końca prawdziwy bowiem nie koniecznie musimy zaczynać z trzema ocalałymi, możemy zacząć z jednym, który znudził się życiem w luksusie i postanowił zobaczyć jak w rzeczywistości wygląda życie i przygody o których do tej pory tylko czytał. W grze musimy umiejętnie zarządzać swoimi osadnikami, którzy mają różne potrzeby, umiejętności, wady i zalety. Niektórzy będą uzależnieni od narkotyków, inni będą w wiecznej depresji, a jeszcze inni będą wiecznie zadowoleni ze świata, który ich otacza. Przy tworzeniu gry mamy do wyboru trzy tryby sztucznej inteligencji, jedna będzie nam powoli zwiększała trudność gry, druga pozwoli nam na w miarę spokojny rozwój naszej kolonii, a trzecia będzie kompletnie nieobliczalna i będzie popadać ze skrajności w skrajność, raz dostaniemy trochę zasobów za free innym razem napadną na nas znacznie przeważające siły z wrogo nastawionej osady.<br /><br />Gra aktualnie znajduje się w Early Access w cenie 28$ i jak to opisują producenci gra jest aktualnie niemal wolna od bugów i w pełni zbalansowana, a pozostaje w Early Access bo chcą dodać jeszcze trochę zawartości.<br /><br /><br />Na koniec trailer<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/866pKJDoHj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div><br />Temat ma prawie pół roku, a ja nie odpisałem&#8230; Obejrzałem trailery, gejmpleje i dzisiaj to zainstaluję na swoim kompie. Lubię produkcje typu Terraria i Starbound, więc to na pewno też mi będzie odpowiadać. Ktoś więcej grał?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2114" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2114"
+                                 aria-describedby="post-content-2114">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2114" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2018-03-07T08:22:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-07 08:22:53</time>
+                                    </header>
+                                    <div id="post-content-2114"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Ja ostatnio znów zacząłem grać w Rimworld żeby zobaczyć co się zmieniło z ostatnim patchem i doszło parę rzeczy :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2115" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2115"
+                                 aria-describedby="post-content-2115">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2115" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-03-07T09:45:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-07 09:45:41</time>
+                                    </header>
+                                    <div id="post-content-2115"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2114" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Fred</strong> napisał:</span></a></div>Ja ostatnio znów zacząłem grać w Rimworld żeby zobaczyć co się zmieniło z ostatnim patchem i doszło parę rzeczy :)</div><br />Grałem w Rimworld przez kilka kolejnych dni z rzędu. Jest to bardzo rozbudowana gra, skomplikowana, z zaawansowanym systemem emulacji świata i ekonomii. Nie powiem, jest trudna, ale tylko na tyle, na ile się jej pozwoli. Po prostu trzeba myśleć :P Wciąga nieziemsko, więc co chwilę trzeba zerkać na zegarek. Gorąco polecam fanom strategii, Terrarii i Tibii (xD).
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

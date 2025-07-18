@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,146 +44,294 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_23.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Film i serial</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Mindfucks</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Mindfucks</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-877">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-16T10:59:25" class="text-sm text-gray-500 font-mono">2017-01-16 10:59:25</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Myślę, że sporo znajdzie się fanów mindfucków - filmów, które wprowadzają widza w błąd, wymagają by obejrzeć je 3 razy zanim zrozumie się połowę, gdzie występują zwroty akcji wgniatające widza w fotel, często przesiąknięte mrocznym klimatem i atmosferą niepewności. To chyba mój ulubiony typ filmów, ale coraz mniej takich produkcji w ostatnim czasie się pojawia, dlatego polecam abyśmy wrzucali tu swoje propozycje.<br /><br />W mindfuckach króluje moim zdaniem Aronofsky i jego dzieł w moim zestawieniu będzie najwięcej:<br /><br />1. Pi - najsroższy z jego mindfucków, najbardziej warty wymienienia. Film w czarno-białej projekcji, bez efektów specjalnych, psychodeliczny, zapadający w pamięć. Raczej nie dla fanów Transformers i Zmierzchu. <br />2. Requiem dla snu - może wywarł na mnie wrażenie bo oglądałem go chyba jeszcze w gimnazjum, teraz pewnie nie zostawiłby na mnie takiego wrażenia. Wieki go nie widziałem, ale wydaje mi się, że mimo wszystko godny polecenia. Nie jest to typowy mindfuck, bardziej po prostu dramat, od niego radziłbym zacząć przygodę z Aronofskym.<br />3. Czarny łabędź - wydawać by się mogło, że to film o balecie o dziewczynek, ale to sowita porcja mindfucku. Ciężko mi coś powiedzieć bez zdradzania istotnych fabularnie wątków. Warto obejrzeć. <br /><br />Inni twórcy:<br />Memento - film Nolana, ale różni się od pozostałych jego produkcji. Rewelacyjna fabuła, zwroty akcji - nie da się na tym filmie nudzić. <br />One point zero - film polecony mi przez Infernala, może będzie chciał się wypowiedzieć na jego temat, więc zostawiam to jemu. <br />Irreversible - nie jestem pewien, czy można to określić mianem mindfucka, ale film po obejrzeniu bardzo długo został w mojej głowie. To raczej mroczny thriller, nakręcony nietypowo, bo od końca. <br />Wyspa tajemnic - bardzo łagodny mindfuck, o ile tak można go w ogóle nazwać. Co prawda z Di Caprio, ale naprawdę solidne filmidło.<br />Piękny umysł - również brak tu atmosfery mroku, ale w przyjemny sposób wywija mózg na drugą stronę. <br />Mulholland Drive - film, który wymaga obejrzenia minimum 2 razy żeby w ogóle cokolwiek zrozumieć. Raczej dla koneserów niż dla przeciętnego odbiorcy. Bardzo dużo symboliki, kilka scen które pamiętać będzie się długo i cholernie pomieszana fabuła.<br /><br />Polecić mogę jeszcze Mechanika z Christianem Balem, miałem tylko okazję obejrzeć pierwsze 30 minut, ale zapowiadał się przez ten czas na świetnego, mrocznego mindfucka i czekam na okazję żeby obejrzeć go do końca. <br /><br />Ciekaw jestem Waszych propozycji, szczególnie filmów niszowych, mało znanych, zagranicznych, co by wyłowić takie perełki jak One point zero.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Mindfucks</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-877" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-877"
+                                 aria-describedby="post-content-877">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-878">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Valentino</span>
-                                <time datetime="2017-01-16T12:46:00" class="text-sm text-gray-500 font-mono">2017-01-16 12:46:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>Mulholland Drive - film, który wymaga obejrzenia minimum 2 razy żeby w ogóle cokolwiek zrozumieć. Raczej dla koneserów niż dla przeciętnego odbiorcy. Bardzo dużo symboliki, kilka scen które pamiętać będzie się długo i cholernie pomieszana fabuła.</div><br /><br />Please, don&#39;t.<br />Nie cierpię tego przesądu i powtarzania dokładnie tego tekstu o Lynchu i jego filmach - &quot;zobacz X razy, żeby zrozumieć&quot;. Nigdy nie spotkałem osoby, która miałaby z tym problem - wystarczy zastanowić się po filmie, przypomnieć pewnie fakty i uważnie oglądać. Film? Oglądać uważnie? Boy-oh-boy. Jeszcze jedna rzecz - Lyncha bardzo miło ogląda się jako &quot;doznanie&quot;, tj. najbardziej chodzi mu o oddanie emocji i wrażeń ze snów - funkcje &quot;poznawcze&quot; i składanie tego, co cała ta abstrakcja próbuje przemycić na poziomie logicznym i przyczynowo-skutkowym, jest trochę dalej.<br />Ale chwila - spotkałem. Mój wujek wyszedł z premiery &quot;Inland Empire&quot;, bo nie wiedział, co się dzieje. <br /><br />Od siebie dorzucę jeszcze znane pewnie wszystkim:<br />&quot;Donnie Darko&quot; - chyba jedyny dobry film (debiut) tego reżysera. Kompleks Shyamalandindonga, ale ten drugi odkuł się ze swoim &quot;Split&quot;. Film, którego wersja kinowa daje o wiele więcej pola do interpretacja; jest bardziej &quot;liberalna&quot; - reżyserska drąży głębiej jeden z wątków, nad którym można się głowić jak nad detalami w serialowym &quot;Twin Peaks&quot;.<br />&quot;Primer&quot; - just watch it.<br />&quot;Salo&quot; - wielbię, ale nie jest to mindfuck wynikający z abstrahowania, symboliki, skrótowości przekazu i wymagania od widza dużej uwagi - tu po prostu dzieją się złe rzeczy, a atmosfera jest ciężka i dojmująca. <br />&quot;The Holy Mountain&quot; - jeszcze nie widziałem, ale wystarczy kilka klipów, które gdzieś tam mignęły, by obstawiać, że w kategorii tego typu mindfucków film ten znajdzie się po obejrzeniu bardzo wysoko.<br />&quot;Akira&quot; - najlepsze sci-fi i anime, jakie kiedykolwiek widziałem. Bez mówienia, jakie wątki są tu ważne, bo wiedza ta może ukierunkować odbiór i zaowocować spoilerami. <br />Lekkim mindfuckiem było też dla mnie &quot;Ofiarowanie&quot; Tarkowskiego - ale z zupełnych innych powodów, wspomnienie o których także byłoby spoilerem.<br />Nieabstrakcyjny midfuck to także &quot;The Plague Dogs&quot; - najbardziej depresyjny film, jaki kiedykolwiek widziałem.<br />&quot;Fear &amp; Loathing in Las Vegas&quot; - narkotykowy trip. Czasem - dosłownie. O, nie wiedziałem, że niektórzy krytycy <a href="http://www.rogerebert.com/reviews/fear-and-loathing-in-las-vegas-1998" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">tak go nie lubią.</a><br />&quot;Spider&quot; Cronenberga - spokojny, dziwny, nieprzyjemny. <br />I jeszcze honorable mention dla &quot;Twelve Monkeys&quot;, które mindfuckowe bardzo nie jest, ale w wiele ciekawych rzeczy się bawi i robi je bardzo dobrze.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-877" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-16T10:59:25"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-16 10:59:25</time>
+                                    </header>
+                                    <div id="post-content-877"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Myślę, że sporo znajdzie się fanów mindfucków - filmów, które wprowadzają widza w błąd, wymagają by obejrzeć je 3 razy zanim zrozumie się połowę, gdzie występują zwroty akcji wgniatające widza w fotel, często przesiąknięte mrocznym klimatem i atmosferą niepewności. To chyba mój ulubiony typ filmów, ale coraz mniej takich produkcji w ostatnim czasie się pojawia, dlatego polecam abyśmy wrzucali tu swoje propozycje.<br /><br />W mindfuckach króluje moim zdaniem Aronofsky i jego dzieł w moim zestawieniu będzie najwięcej:<br /><br />1. Pi - najsroższy z jego mindfucków, najbardziej warty wymienienia. Film w czarno-białej projekcji, bez efektów specjalnych, psychodeliczny, zapadający w pamięć. Raczej nie dla fanów Transformers i Zmierzchu. <br />2. Requiem dla snu - może wywarł na mnie wrażenie bo oglądałem go chyba jeszcze w gimnazjum, teraz pewnie nie zostawiłby na mnie takiego wrażenia. Wieki go nie widziałem, ale wydaje mi się, że mimo wszystko godny polecenia. Nie jest to typowy mindfuck, bardziej po prostu dramat, od niego radziłbym zacząć przygodę z Aronofskym.<br />3. Czarny łabędź - wydawać by się mogło, że to film o balecie o dziewczynek, ale to sowita porcja mindfucku. Ciężko mi coś powiedzieć bez zdradzania istotnych fabularnie wątków. Warto obejrzeć. <br /><br />Inni twórcy:<br />Memento - film Nolana, ale różni się od pozostałych jego produkcji. Rewelacyjna fabuła, zwroty akcji - nie da się na tym filmie nudzić. <br />One point zero - film polecony mi przez Infernala, może będzie chciał się wypowiedzieć na jego temat, więc zostawiam to jemu. <br />Irreversible - nie jestem pewien, czy można to określić mianem mindfucka, ale film po obejrzeniu bardzo długo został w mojej głowie. To raczej mroczny thriller, nakręcony nietypowo, bo od końca. <br />Wyspa tajemnic - bardzo łagodny mindfuck, o ile tak można go w ogóle nazwać. Co prawda z Di Caprio, ale naprawdę solidne filmidło.<br />Piękny umysł - również brak tu atmosfery mroku, ale w przyjemny sposób wywija mózg na drugą stronę. <br />Mulholland Drive - film, który wymaga obejrzenia minimum 2 razy żeby w ogóle cokolwiek zrozumieć. Raczej dla koneserów niż dla przeciętnego odbiorcy. Bardzo dużo symboliki, kilka scen które pamiętać będzie się długo i cholernie pomieszana fabuła.<br /><br />Polecić mogę jeszcze Mechanika z Christianem Balem, miałem tylko okazję obejrzeć pierwsze 30 minut, ale zapowiadał się przez ten czas na świetnego, mrocznego mindfucka i czekam na okazję żeby obejrzeć go do końca. <br /><br />Ciekaw jestem Waszych propozycji, szczególnie filmów niszowych, mało znanych, zagranicznych, co by wyłowić takie perełki jak One point zero.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-879">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-16T15:45:06" class="text-sm text-gray-500 font-mono">2017-01-16 15:45:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No ja nie wiem jak można nie napisać o Incepcji i Interstellar w takim temacie. Chyba zbyt skomplikowane dla Was.<br /><br /><br />Tak zaś na serio, to większość rzeczy zostało już nadmienionych. Sam jakimś wielkim kinomaniakiem nie jestem i sporo filmów potencjalnie mindfuckowych mam dopiero na liście do obejrzenia, więc raczej nie będę tutaj hipotetyzował.<br /><br />Z rzeczy które widziałem:<br /><br />Wspomnianie <u>One Point 0</u>, aka <u>Paranoia 1.0</u> to wspaniały homage do Pi. Filmy mają ze sobą dużo wspólnych motywów, ze zmienionym głównym wątkiem. Obrzydliwy i piękny jednocześnie. Paskudne korytarze zmarniałego apartamentowca, pokraczni lokatorzy, cudaczna odmiana niedalekiej przyszłości i przybijający soundtrack wchodzą w głowę i zostają tam na długo po seansie. Do tego, w dużej mierze mało lub średnio znani, aktorzy dają z siebie wszystko i pozwalają widzowi świetnie wczuć się w klimat filmu.<br /><br />Kolejnym, już bardziej znanym, lecz również niezbyt popularnym filmem tego typu są <a href="http://www.filmweb.pl/Kontrolerzy" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><u>Kontrolerzy</u></a>. Zwyczajny, zdaje się humorystyczny, film o kontrolerach biletów w budapesztańskim metrze zaczyna w czasie seansu robić się coraz bardziej pokraczny i powoli zamienia się w skupisko alegorii i metafor.<br /><br />Coś co nie zostało jeszcze nadmienione, bo może niekoniecznie to mindfuck, ale i tutaj od widza i jego skłonności do używania mózgu zależy ile wyniesie z filmu. Mowa o <u>Big Lebowskim</u>. W najgorszym wypadku nieco cudaczna komedyjka, w najlepszym oryginalny pogląd na życie.<br /><br />Z animacji mogę polecić <a href="http://www.filmweb.pl/film/Kocia+Zupa-2001-190308" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><u>Kocią Zupę</u></a>. Znam ją z pewnego fanowskiego teledysku dla Boards of Canada (dla zainteresowanych <a href="https://www.youtube.com/watch?v=xf66Lmrqk00" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><span style="color: #40BF80;"><u>link</u></span></a>, polecam, świetna kombinacja). Jeżeli nie jest się Japończykiem, to zapewne nie zrozumie się nawet połowy motywów w filmie, ale ciężko o bardziej ryjącą mózg animację.
+                        </article>
+                    </li>
+                    
+                    <li id="post-878" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-878"
+                                 aria-describedby="post-content-878">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/20.jpg?1512503192"
+                                     alt="Awatar użytkownika Valentino"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-880">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-17T11:04:49" class="text-sm text-gray-500 font-mono">2017-01-17 11:04:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Valentino</strong> napisał:</span></div><br /><br />Please, don&#39;t.<br />Nie cierpię tego przesądu i powtarzania dokładnie tego tekstu o Lynchu i jego filmach - &quot;zobacz X razy, żeby zrozumieć&quot;. Nigdy nie spotkałem osoby, która miałaby z tym problem - wystarczy zastanowić się po filmie, przypomnieć pewnie fakty i uważnie oglądać. Film? Oglądać uważnie? Boy-oh-boy. Jeszcze jedna rzecz - Lyncha bardzo miło ogląda się jako &quot;doznanie&quot;, tj. najbardziej chodzi mu o oddanie emocji i wrażeń ze snów - funkcje &quot;poznawcze&quot; i składanie tego, co cała ta abstrakcja próbuje przemycić na poziomie logicznym i przyczynowo-skutkowym, jest trochę dalej.<br /></div><br /><br />Może dlatego, że było to moje pierwsze spotkanie z Lynchem, nie wiem. Ale film miał tyle przenośni i był tak skomplikowany, że 5 minut po pierwszym obejrzeniu załączyłem go jeszcze raz, bo nie mogłem posklejać obrazu w całość. Dopiero po 6h oglądania w końcu byłem w stanie coś z niego wyciągnąć.<br /><br />Donnie Darko oglądałem i również polecam, natomiast Salo&#8230; to by nadawało się na osobny temat. Nie oglądałem, ale słyszałem pogłoski. Da się to w ogóle skądś normalnie pobrać, mam na myśli wersję reżyserską, a nie okrojoną? Naprawdę jest tak popierdolone jak wynika z opinii w internetach?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-878" class="font-bold text-lg text-white">Valentino</h3>
+                                        <time datetime="2017-01-16T12:46:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-16 12:46:00</time>
+                                    </header>
+                                    <div id="post-content-878"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Valentino">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>Mulholland Drive - film, który wymaga obejrzenia minimum 2 razy żeby w ogóle cokolwiek zrozumieć. Raczej dla koneserów niż dla przeciętnego odbiorcy. Bardzo dużo symboliki, kilka scen które pamiętać będzie się długo i cholernie pomieszana fabuła.</div><br /><br />Please, don&#39;t.<br />Nie cierpię tego przesądu i powtarzania dokładnie tego tekstu o Lynchu i jego filmach - &quot;zobacz X razy, żeby zrozumieć&quot;. Nigdy nie spotkałem osoby, która miałaby z tym problem - wystarczy zastanowić się po filmie, przypomnieć pewnie fakty i uważnie oglądać. Film? Oglądać uważnie? Boy-oh-boy. Jeszcze jedna rzecz - Lyncha bardzo miło ogląda się jako &quot;doznanie&quot;, tj. najbardziej chodzi mu o oddanie emocji i wrażeń ze snów - funkcje &quot;poznawcze&quot; i składanie tego, co cała ta abstrakcja próbuje przemycić na poziomie logicznym i przyczynowo-skutkowym, jest trochę dalej.<br />Ale chwila - spotkałem. Mój wujek wyszedł z premiery &quot;Inland Empire&quot;, bo nie wiedział, co się dzieje. <br /><br />Od siebie dorzucę jeszcze znane pewnie wszystkim:<br />&quot;Donnie Darko&quot; - chyba jedyny dobry film (debiut) tego reżysera. Kompleks Shyamalandindonga, ale ten drugi odkuł się ze swoim &quot;Split&quot;. Film, którego wersja kinowa daje o wiele więcej pola do interpretacja; jest bardziej &quot;liberalna&quot; - reżyserska drąży głębiej jeden z wątków, nad którym można się głowić jak nad detalami w serialowym &quot;Twin Peaks&quot;.<br />&quot;Primer&quot; - just watch it.<br />&quot;Salo&quot; - wielbię, ale nie jest to mindfuck wynikający z abstrahowania, symboliki, skrótowości przekazu i wymagania od widza dużej uwagi - tu po prostu dzieją się złe rzeczy, a atmosfera jest ciężka i dojmująca. <br />&quot;The Holy Mountain&quot; - jeszcze nie widziałem, ale wystarczy kilka klipów, które gdzieś tam mignęły, by obstawiać, że w kategorii tego typu mindfucków film ten znajdzie się po obejrzeniu bardzo wysoko.<br />&quot;Akira&quot; - najlepsze sci-fi i anime, jakie kiedykolwiek widziałem. Bez mówienia, jakie wątki są tu ważne, bo wiedza ta może ukierunkować odbiór i zaowocować spoilerami. <br />Lekkim mindfuckiem było też dla mnie &quot;Ofiarowanie&quot; Tarkowskiego - ale z zupełnych innych powodów, wspomnienie o których także byłoby spoilerem.<br />Nieabstrakcyjny midfuck to także &quot;The Plague Dogs&quot; - najbardziej depresyjny film, jaki kiedykolwiek widziałem.<br />&quot;Fear &amp; Loathing in Las Vegas&quot; - narkotykowy trip. Czasem - dosłownie. O, nie wiedziałem, że niektórzy krytycy <a href="http://www.rogerebert.com/reviews/fear-and-loathing-in-las-vegas-1998" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">tak go nie lubią.</a><br />&quot;Spider&quot; Cronenberga - spokojny, dziwny, nieprzyjemny. <br />I jeszcze honorable mention dla &quot;Twelve Monkeys&quot;, które mindfuckowe bardzo nie jest, ale w wiele ciekawych rzeczy się bawi i robi je bardzo dobrze.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-881">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Valentino</span>
-                                <time datetime="2017-01-17T14:11:29" class="text-sm text-gray-500 font-mono">2017-01-17 14:11:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>[&#8230;] Salo&#8230; to by nadawało się na osobny temat. Nie oglądałem, ale słyszałem pogłoski. Da się to w ogóle skądś normalnie pobrać, mam na myśli wersję reżyserską, a nie okrojoną? Naprawdę jest tak popierdolone jak wynika z opinii w internetach?</div><br /><br />Z &quot;Salo&quot; bym nie przesadzał - jest ciężki i brutalny, to fakt, ale trochę się zestarzał - w tym sensie, że wrażliwość i przyzwyczajenia ludzi w czasie, gdy &quot;Salo&quot; wychodziło, były nieco inne niż teraz - w kwestii bezpośredniego obrazowania przemocy, sadyzmu i tak dalej. Niemniej - potrafi uderzyć, jak dla mnie - nadal działa. Uwaga a propos de Sade&#39;a i jego twórczości - film to nie tyle jakieś ekstremalne gore i obrzydliwe obrazy, ale dołująca i niepokojąca atmosfera wynikająca z tego, jak bardzo zrytualizowane i zhierarchizowane jest całe przedsięwzięcie 120 dni coraz dzikszych wybryków. <br /><br />Dużo mniej przesadzone są za to opinie o &quot;Serbskim filmie&quot; i &quot;Philosophy of a Knife&quot;.
+                        </article>
+                    </li>
+                    
+                    <li id="post-879" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-879"
+                                 aria-describedby="post-content-879">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-882">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-27T16:28:54" class="text-sm text-gray-500 font-mono">2017-01-27 16:28:54</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Po wielu pozytywnych opiniach zdecydowałem się obejrzeć &quot;Arrival&quot; czyli &quot;Nowy początek&quot; - ambitne sci-fi, które miało mi rzekomo rozwalić na koniec mózg. W skrócie: obcy lądują w statkach na Ziemi, ale z nich nie wyłażą, a ludzie próbują się z nimi skomunikować. W tym celu wojsko zwraca się z prośbą o pomoc do kobity która jest lingwistycznym guru, a jej zadanie to zrozumienie języka obcych. Średnio polecam, miejscami po prostu nudne. Więcej uwagi poświęcono armii (tradycyjnie: zły porucznik, wszyscy chcą szczelać w obcych zamiast rozmawiać etc) a samo rozszyfrowywanie języka obcych potraktowano pobieżnie. Był potencjał, wyszła słabizna.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-879" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-16T15:45:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-16 15:45:06</time>
+                                    </header>
+                                    <div id="post-content-879"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        No ja nie wiem jak można nie napisać o Incepcji i Interstellar w takim temacie. Chyba zbyt skomplikowane dla Was.<br /><br /><br />Tak zaś na serio, to większość rzeczy zostało już nadmienionych. Sam jakimś wielkim kinomaniakiem nie jestem i sporo filmów potencjalnie mindfuckowych mam dopiero na liście do obejrzenia, więc raczej nie będę tutaj hipotetyzował.<br /><br />Z rzeczy które widziałem:<br /><br />Wspomnianie <u>One Point 0</u>, aka <u>Paranoia 1.0</u> to wspaniały homage do Pi. Filmy mają ze sobą dużo wspólnych motywów, ze zmienionym głównym wątkiem. Obrzydliwy i piękny jednocześnie. Paskudne korytarze zmarniałego apartamentowca, pokraczni lokatorzy, cudaczna odmiana niedalekiej przyszłości i przybijający soundtrack wchodzą w głowę i zostają tam na długo po seansie. Do tego, w dużej mierze mało lub średnio znani, aktorzy dają z siebie wszystko i pozwalają widzowi świetnie wczuć się w klimat filmu.<br /><br />Kolejnym, już bardziej znanym, lecz również niezbyt popularnym filmem tego typu są <a href="http://www.filmweb.pl/Kontrolerzy" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><u>Kontrolerzy</u></a>. Zwyczajny, zdaje się humorystyczny, film o kontrolerach biletów w budapesztańskim metrze zaczyna w czasie seansu robić się coraz bardziej pokraczny i powoli zamienia się w skupisko alegorii i metafor.<br /><br />Coś co nie zostało jeszcze nadmienione, bo może niekoniecznie to mindfuck, ale i tutaj od widza i jego skłonności do używania mózgu zależy ile wyniesie z filmu. Mowa o <u>Big Lebowskim</u>. W najgorszym wypadku nieco cudaczna komedyjka, w najlepszym oryginalny pogląd na życie.<br /><br />Z animacji mogę polecić <a href="http://www.filmweb.pl/film/Kocia+Zupa-2001-190308" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><u>Kocią Zupę</u></a>. Znam ją z pewnego fanowskiego teledysku dla Boards of Canada (dla zainteresowanych <a href="https://www.youtube.com/watch?v=xf66Lmrqk00" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><span style="color: #40BF80;"><u>link</u></span></a>, polecam, świetna kombinacja). Jeżeli nie jest się Japończykiem, to zapewne nie zrozumie się nawet połowy motywów w filmie, ale ciężko o bardziej ryjącą mózg animację.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-880" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-880"
+                                 aria-describedby="post-content-880">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-880" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-17T11:04:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-17 11:04:49</time>
+                                    </header>
+                                    <div id="post-content-880"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Valentino</strong> napisał:</span></div><br /><br />Please, don&#39;t.<br />Nie cierpię tego przesądu i powtarzania dokładnie tego tekstu o Lynchu i jego filmach - &quot;zobacz X razy, żeby zrozumieć&quot;. Nigdy nie spotkałem osoby, która miałaby z tym problem - wystarczy zastanowić się po filmie, przypomnieć pewnie fakty i uważnie oglądać. Film? Oglądać uważnie? Boy-oh-boy. Jeszcze jedna rzecz - Lyncha bardzo miło ogląda się jako &quot;doznanie&quot;, tj. najbardziej chodzi mu o oddanie emocji i wrażeń ze snów - funkcje &quot;poznawcze&quot; i składanie tego, co cała ta abstrakcja próbuje przemycić na poziomie logicznym i przyczynowo-skutkowym, jest trochę dalej.<br /></div><br /><br />Może dlatego, że było to moje pierwsze spotkanie z Lynchem, nie wiem. Ale film miał tyle przenośni i był tak skomplikowany, że 5 minut po pierwszym obejrzeniu załączyłem go jeszcze raz, bo nie mogłem posklejać obrazu w całość. Dopiero po 6h oglądania w końcu byłem w stanie coś z niego wyciągnąć.<br /><br />Donnie Darko oglądałem i również polecam, natomiast Salo&#8230; to by nadawało się na osobny temat. Nie oglądałem, ale słyszałem pogłoski. Da się to w ogóle skądś normalnie pobrać, mam na myśli wersję reżyserską, a nie okrojoną? Naprawdę jest tak popierdolone jak wynika z opinii w internetach?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-881" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-881"
+                                 aria-describedby="post-content-881">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/20.jpg?1512503192"
+                                     alt="Awatar użytkownika Valentino"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-881" class="font-bold text-lg text-white">Valentino</h3>
+                                        <time datetime="2017-01-17T14:11:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-17 14:11:29</time>
+                                    </header>
+                                    <div id="post-content-881"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Valentino">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>[&#8230;] Salo&#8230; to by nadawało się na osobny temat. Nie oglądałem, ale słyszałem pogłoski. Da się to w ogóle skądś normalnie pobrać, mam na myśli wersję reżyserską, a nie okrojoną? Naprawdę jest tak popierdolone jak wynika z opinii w internetach?</div><br /><br />Z &quot;Salo&quot; bym nie przesadzał - jest ciężki i brutalny, to fakt, ale trochę się zestarzał - w tym sensie, że wrażliwość i przyzwyczajenia ludzi w czasie, gdy &quot;Salo&quot; wychodziło, były nieco inne niż teraz - w kwestii bezpośredniego obrazowania przemocy, sadyzmu i tak dalej. Niemniej - potrafi uderzyć, jak dla mnie - nadal działa. Uwaga a propos de Sade&#39;a i jego twórczości - film to nie tyle jakieś ekstremalne gore i obrzydliwe obrazy, ale dołująca i niepokojąca atmosfera wynikająca z tego, jak bardzo zrytualizowane i zhierarchizowane jest całe przedsięwzięcie 120 dni coraz dzikszych wybryków. <br /><br />Dużo mniej przesadzone są za to opinie o &quot;Serbskim filmie&quot; i &quot;Philosophy of a Knife&quot;.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-882" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-882"
+                                 aria-describedby="post-content-882">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-882" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-27T16:28:54"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 16:28:54</time>
+                                    </header>
+                                    <div id="post-content-882"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Po wielu pozytywnych opiniach zdecydowałem się obejrzeć &quot;Arrival&quot; czyli &quot;Nowy początek&quot; - ambitne sci-fi, które miało mi rzekomo rozwalić na koniec mózg. W skrócie: obcy lądują w statkach na Ziemi, ale z nich nie wyłażą, a ludzie próbują się z nimi skomunikować. W tym celu wojsko zwraca się z prośbą o pomoc do kobity która jest lingwistycznym guru, a jej zadanie to zrozumienie języka obcych. Średnio polecam, miejscami po prostu nudne. Więcej uwagi poświęcono armii (tradycyjnie: zły porucznik, wszyscy chcą szczelać w obcych zamiast rozmawiać etc) a samo rozszyfrowywanie języka obcych potraktowano pobieżnie. Był potencjał, wyszła słabizna.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,104 +44,232 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_24.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Amino i mango</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Kowboj Bip Bop</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Kowboj Bip Bop</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1387">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-02-25T05:25:11" class="text-sm text-gray-500 font-mono">2017-02-25 05:25:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Długo miałem te anime na liście do obejrzenia i wreszcie się za to zabrałem, a przed chwilą skończyłem.<br /><br />Co tu dużo mówić. Epizodyczne anime o dwóch łowcach nagród podróżujących sobie po kosmosie.<br />Fanem sci-fi nigdy nie byłem, a wręcz stronię od tego gatunku większość czasu, jednakże świat tego anime przemówił do mnie bardzo szybko. Z chęcią podziwiałem kolejne widoki planet skolonizowanych jak i zrujnowanych, jak i wszystkie pięknie wydizajnowane maszyny. Kreska jak na anime z 98 roku jest bajeczna, a techniczne niedociągnięcia pojawiały się bardzo, bardzo rzadko. Soundtrack, niekoniecznie leżący w moich klimatach, jest jednak dopasowany świetnie i stoi na bardzo wysokim poziomie. Wbrew pierwszemu wrażeniu postacie są niesztampowe i szybko wchodzą w głowę. Zaś co do fabuły&#8230; Anime jest bardzo, ale to bardzo epizodyczne. Przez całość anime przewijają się praktycznie jedynie dwa główne wątki dwóch postaci, które szczątkowo odsłaniają się tylko w poszczególnych odcinkach. Duża część z nich to po prostu krótkie historie o tym, co nowego przytrafia się bohaterom. Anime nie ma z góry narzuconego tonu, odcinki toczą się naprzemiennie, raz będąc czysto humorystycznymi, a raz grającymi na emocjach. Rozwiązanie ciekawe, jednak ciężko oprzeć się wrażeniu, że bardziej zaawansowana fabuła, spinająca ze sobą całość nieco mocniej, mogłaby dużo więcej zdziałać w połączeniu z wyjątkowo solidną resztą produkcji. Błędem jak dla mnie było rzucenie widza &quot;na głęboką wodę&quot; pierwszym odcinkiem, pokazując dobitnie epizodyczny charakter serii, przez co mi osobiście ponad 2 tygodnie zajęło odpalenie drugiego odcinka.<br />W każdym razie ciężko mi nie polecić tego anime dla kogoś, kto szuka czegoś lekkiego, co niekoniecznie wymaga od widza ślęczenia przed monitorem godzinami i pochłaniania odcinka za odcinkiem.<br /><br />Poćta się.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Kowboj Bip Bop</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1387" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1387"
+                                 aria-describedby="post-content-1387">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1388">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-25T14:58:45" class="text-sm text-gray-500 font-mono">2017-02-25 14:58:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Re: Cowboy Bebop</strong><br /><br />&lt;r&gt;Bebop jest dla mnie pewnego rodzaju wyznacznikiem dobrego anime dawnych lat. Jest epizodyczne, owszem, ale wątki główne bohaterów są zamknięte. Czasami melancholijne, czasami wesołe, jeszcze kiedy indziej pełne akcji – takie odcinki przeplatają się w całej serii. W pełni zgadzam się z przedmówcą, że widz szybko zapoznaje się z postaciami, a następnie nawet z nimi utożsamia i dowiaduje, że wcale nie miały lekko. Udźwiękowienie było na najwyższym poziomie, tak samo jak animacja i styl rysunku. Produkcja wciągnęła mnie na wiele godzin i przyznam, ze bawiłem się bardzo dobrze. Polecam fanom dobrego „kina”.<br />&lt;YOUTUBE content0=&quot;https&quot; content1=&quot;NLzpXciijjA&quot;&gt;&lt;s&gt;<span class="custom-tag" title="Niestandardowy tag: youtube">&lt;/s&gt;&lt;URL url=&quot;https://youtu.be/NLzpXciijjA&quot;&gt;https://youtu.be/NLzpXciijjA&lt;/URL&gt;&lt;e&gt;</span>&lt;/e&gt;&lt;/YOUTUBE&gt;&lt;/r&gt;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1387" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-02-25T05:25:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-25 05:25:11</time>
+                                    </header>
+                                    <div id="post-content-1387"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Długo miałem te anime na liście do obejrzenia i wreszcie się za to zabrałem, a przed chwilą skończyłem.<br /><br />Co tu dużo mówić. Epizodyczne anime o dwóch łowcach nagród podróżujących sobie po kosmosie.<br />Fanem sci-fi nigdy nie byłem, a wręcz stronię od tego gatunku większość czasu, jednakże świat tego anime przemówił do mnie bardzo szybko. Z chęcią podziwiałem kolejne widoki planet skolonizowanych jak i zrujnowanych, jak i wszystkie pięknie wydizajnowane maszyny. Kreska jak na anime z 98 roku jest bajeczna, a techniczne niedociągnięcia pojawiały się bardzo, bardzo rzadko. Soundtrack, niekoniecznie leżący w moich klimatach, jest jednak dopasowany świetnie i stoi na bardzo wysokim poziomie. Wbrew pierwszemu wrażeniu postacie są niesztampowe i szybko wchodzą w głowę. Zaś co do fabuły&#8230; Anime jest bardzo, ale to bardzo epizodyczne. Przez całość anime przewijają się praktycznie jedynie dwa główne wątki dwóch postaci, które szczątkowo odsłaniają się tylko w poszczególnych odcinkach. Duża część z nich to po prostu krótkie historie o tym, co nowego przytrafia się bohaterom. Anime nie ma z góry narzuconego tonu, odcinki toczą się naprzemiennie, raz będąc czysto humorystycznymi, a raz grającymi na emocjach. Rozwiązanie ciekawe, jednak ciężko oprzeć się wrażeniu, że bardziej zaawansowana fabuła, spinająca ze sobą całość nieco mocniej, mogłaby dużo więcej zdziałać w połączeniu z wyjątkowo solidną resztą produkcji. Błędem jak dla mnie było rzucenie widza &quot;na głęboką wodę&quot; pierwszym odcinkiem, pokazując dobitnie epizodyczny charakter serii, przez co mi osobiście ponad 2 tygodnie zajęło odpalenie drugiego odcinka.<br />W każdym razie ciężko mi nie polecić tego anime dla kogoś, kto szuka czegoś lekkiego, co niekoniecznie wymaga od widza ślęczenia przed monitorem godzinami i pochłaniania odcinka za odcinkiem.<br /><br />Poćta się.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1389">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-02-26T23:09:24" class="text-sm text-gray-500 font-mono">2017-02-26 23:09:24</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Re: Cowboy Bebop</strong><br /><br />&lt;r&gt;Pocić się nie będę, Infuś. Serdecznie polecam Kowboja Benisa, bo nie wymaga używania zbyt wielu szarych komórek, a na dodatek jest to chińska baja, która &quot;podejdzie&quot; nie tylko łibusom, a &quot;zwykłym&quot; ludziom. Prezentowane przez to anime atmosfera, kreska, muzyka i luźny szkielet fabularny to przepis na sukces. Kiedyś to było, &lt;URL url=&quot;https://youtu.be/x2dhR_rqcSQ&quot;&gt;&lt;s&gt;<a href="https://youtu.be/x2dhR_rqcSQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&lt;/s&gt;kwiiik&lt;e&gt;</a>&lt;/e&gt;&lt;/URL&gt;. Teraz jakieś wymyślne bzdety jak trójwymiarowa grafika w anime, pretensjonalne scenariusze i inne dziwy. Oldschool pełną gębą.&lt;/r&gt;
+                        </article>
+                    </li>
+                    
+                    <li id="post-1388" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1388"
+                                 aria-describedby="post-content-1388">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1390">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-03-01T20:30:38" class="text-sm text-gray-500 font-mono">2017-03-01 20:30:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Re: Cowboy Bebop</strong><br /><br />&lt;t&gt;Bebopa oglądałem jeszcze na Hyperze, kiedy to leciał po raz pierwszy w telewizji.&lt;br/&gt;<br />Jest to jedna z moich ulubionych serii animu. Animacja, kinematografia, fabuła i wkład włożony w serię potrafi powalić - i to w dobrym tego słowa znaczeniu. Pomimo epizodyczności i pewnego rozczłonkowania epizodów (mamy tylko dwa two-party w całej serii - w środku i na samym końcu) tworzy spójną całość i wiarygodnie inscenizuje żywot futurystycznego łowcy nagród.&lt;br/&gt;<br />Główny Zły (żarcik z polskiego tłumaczenia) Vicious, mimo iż nie przewija się zbyt często w wątku serii, był napisany i zaprezentowany tak dobrze, że jest to postać utożsamiany z serią na równi z głównymi bohaterami. Trafił też na moją prywatną listę najlepszych antagonistów i anty-bohaterów.&lt;br/&gt;<br />Serię gorąco polecam, jak i film pełnometrażowy Knocking on Heaven&#39;s Door. Po prostu miodzio.&lt;/t&gt;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1388" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-25T14:58:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-25 14:58:45</time>
+                                    </header>
+                                    <div id="post-content-1388"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <strong>Re: Cowboy Bebop</strong><br /><br />&lt;r&gt;Bebop jest dla mnie pewnego rodzaju wyznacznikiem dobrego anime dawnych lat. Jest epizodyczne, owszem, ale wątki główne bohaterów są zamknięte. Czasami melancholijne, czasami wesołe, jeszcze kiedy indziej pełne akcji – takie odcinki przeplatają się w całej serii. W pełni zgadzam się z przedmówcą, że widz szybko zapoznaje się z postaciami, a następnie nawet z nimi utożsamia i dowiaduje, że wcale nie miały lekko. Udźwiękowienie było na najwyższym poziomie, tak samo jak animacja i styl rysunku. Produkcja wciągnęła mnie na wiele godzin i przyznam, ze bawiłem się bardzo dobrze. Polecam fanom dobrego „kina”.<br />&lt;YOUTUBE content0=&quot;https&quot; content1=&quot;NLzpXciijjA&quot;&gt;&lt;s&gt;<span class="custom-tag" title="Niestandardowy tag: youtube">&lt;/s&gt;&lt;URL url=&quot;https://youtu.be/NLzpXciijjA&quot;&gt;https://youtu.be/NLzpXciijjA&lt;/URL&gt;&lt;e&gt;</span>&lt;/e&gt;&lt;/YOUTUBE&gt;&lt;/r&gt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1389" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1389"
+                                 aria-describedby="post-content-1389">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1389" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-02-26T23:09:24"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-26 23:09:24</time>
+                                    </header>
+                                    <div id="post-content-1389"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <strong>Re: Cowboy Bebop</strong><br /><br />&lt;r&gt;Pocić się nie będę, Infuś. Serdecznie polecam Kowboja Benisa, bo nie wymaga używania zbyt wielu szarych komórek, a na dodatek jest to chińska baja, która &quot;podejdzie&quot; nie tylko łibusom, a &quot;zwykłym&quot; ludziom. Prezentowane przez to anime atmosfera, kreska, muzyka i luźny szkielet fabularny to przepis na sukces. Kiedyś to było, &lt;URL url=&quot;https://youtu.be/x2dhR_rqcSQ&quot;&gt;&lt;s&gt;<a href="https://youtu.be/x2dhR_rqcSQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&lt;/s&gt;kwiiik&lt;e&gt;</a>&lt;/e&gt;&lt;/URL&gt;. Teraz jakieś wymyślne bzdety jak trójwymiarowa grafika w anime, pretensjonalne scenariusze i inne dziwy. Oldschool pełną gębą.&lt;/r&gt;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1390" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1390"
+                                 aria-describedby="post-content-1390">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1390" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-03-01T20:30:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-01 20:30:38</time>
+                                    </header>
+                                    <div id="post-content-1390"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        <strong>Re: Cowboy Bebop</strong><br /><br />&lt;t&gt;Bebopa oglądałem jeszcze na Hyperze, kiedy to leciał po raz pierwszy w telewizji.&lt;br/&gt;<br />Jest to jedna z moich ulubionych serii animu. Animacja, kinematografia, fabuła i wkład włożony w serię potrafi powalić - i to w dobrym tego słowa znaczeniu. Pomimo epizodyczności i pewnego rozczłonkowania epizodów (mamy tylko dwa two-party w całej serii - w środku i na samym końcu) tworzy spójną całość i wiarygodnie inscenizuje żywot futurystycznego łowcy nagród.&lt;br/&gt;<br />Główny Zły (żarcik z polskiego tłumaczenia) Vicious, mimo iż nie przewija się zbyt często w wątku serii, był napisany i zaprezentowany tak dobrze, że jest to postać utożsamiany z serią na równi z głównymi bohaterami. Trafił też na moją prywatną listę najlepszych antagonistów i anty-bohaterów.&lt;br/&gt;<br />Serię gorąco polecam, jak i film pełnometrażowy Knocking on Heaven&#39;s Door. Po prostu miodzio.&lt;/t&gt;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

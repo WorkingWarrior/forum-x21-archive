@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,650 +44,1038 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Żelaza wasze i zapożyczone</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Żelaza wasze i zapożyczone</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1096">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-02-02T19:13:40" class="text-sm text-gray-500 font-mono">2017-02-02 19:13:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No, chwalić się co tam macie na podjazdach :D<br /><br />U mnie obecnie BMW.<br /><br /><a href="http://imgbox.com/gMqKdf1O" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://4-t.imgbox.com/gMqKdf1O.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br /><strong>BMW 530D E39</strong><br />3.0L Diesel 184KM<br />Skrzynia biegów: 5 biegowa<br />263000km<br />Rocznik 2000 Luty 17<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><strong>Wyposażenie:</strong><br />Pakiet Shadowline Highgloss<br />Tapicerka skórzana z pamięcią (Sportsize)<br />Elektryczne lusterka z pamięcią (i fotochromatyczne)<br />Multi funkcyjna skórzana kierownica ustawiana elektrycznie (według instrukcji Sportowa :P, po vinie wyszło, że po prostu MPakietowa)<br />Grzane dupcie na przodzie<br />4x elektryczne szyby<br />Szyberdach<br />W sumie 3 strefowa klima (z tyłu można regulować czy ciepło czy zimno czy pomiędzy pokrętełkiem :P)<br />Pełny komp pokładowy, telefon fabryczny BMW<br />Radio 1din na kasety oraz ze zmieniarką na płyty w bagażniku<br />Fotochromatyczne lusterko wsteczne<br />Wydaję mi się również, że zawieszenie sportowe&#8230; nisko siedzi, ale ładnie tłumi dziury (sprawność amorów 72-78%) (Po odkodowaniu Vinu wszystko wiadomo&#8230; Zawieszenie M-Technic ;) )<br />Czujniki parkowania tylne (obecnie martwe, trzeba zdiagnozować) [Zdiagnozowane, wszystkie 4 do wymiany, ale wygląda na to, że moduł sprawny)<br />Ksenon<br />Roleta elektryczna z tyłu<br />Lekkie oświetlenie deski rozdzielczej w nocy (oryginalne ledy w podsufitce)</div></details><br /><br />Co do reszty zeszłych samochodów&#8230;<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">Pierwszy samochód Mazda 323F BJ 2.0 FS-DE Sportive 2001<br /><a href="https://imgbox.com/3sAuKdXn" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://4-s.imgbox.com/3sAuKdXn.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />Skoda Rapid 1.2 MPI 2015 - porażka, nie będę nawet o tym wspominał&#8230;<br /><br />Audi A4 B6 2.0 ALT 2000<br /><a href="https://imgbox.com/9R2A27W9" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://7-s.imgbox.com/9R2A27W9.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div></details>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Żelaza wasze i zapożyczone</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1096" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1096"
+                                 aria-describedby="post-content-1096">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1097">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-02-02T22:29:32" class="text-sm text-gray-500 font-mono">2017-02-02 22:29:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Bombardier_NGT6-2_in_Gda%C5%84sk_rear.JPG" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">W 90% przypadkach jeżdżę taborem o nazwie Bombardier NGT6, mój ulubiony, bo najlepiej zaprojektowany pod względem przestrzeni z dostępnych tramwajów w Danzig. xD<br />https://pl.wikipedia.org/wiki/Bombardier_Flexity_Classic</div></details>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1096" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-02-02T19:13:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-02 19:13:40</time>
+                                    </header>
+                                    <div id="post-content-1096"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        No, chwalić się co tam macie na podjazdach :D<br /><br />U mnie obecnie BMW.<br /><br /><a href="http://imgbox.com/gMqKdf1O" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://4-t.imgbox.com/gMqKdf1O.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br /><strong>BMW 530D E39</strong><br />3.0L Diesel 184KM<br />Skrzynia biegów: 5 biegowa<br />263000km<br />Rocznik 2000 Luty 17<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><strong>Wyposażenie:</strong><br />Pakiet Shadowline Highgloss<br />Tapicerka skórzana z pamięcią (Sportsize)<br />Elektryczne lusterka z pamięcią (i fotochromatyczne)<br />Multi funkcyjna skórzana kierownica ustawiana elektrycznie (według instrukcji Sportowa :P, po vinie wyszło, że po prostu MPakietowa)<br />Grzane dupcie na przodzie<br />4x elektryczne szyby<br />Szyberdach<br />W sumie 3 strefowa klima (z tyłu można regulować czy ciepło czy zimno czy pomiędzy pokrętełkiem :P)<br />Pełny komp pokładowy, telefon fabryczny BMW<br />Radio 1din na kasety oraz ze zmieniarką na płyty w bagażniku<br />Fotochromatyczne lusterko wsteczne<br />Wydaję mi się również, że zawieszenie sportowe&#8230; nisko siedzi, ale ładnie tłumi dziury (sprawność amorów 72-78%) (Po odkodowaniu Vinu wszystko wiadomo&#8230; Zawieszenie M-Technic ;) )<br />Czujniki parkowania tylne (obecnie martwe, trzeba zdiagnozować) [Zdiagnozowane, wszystkie 4 do wymiany, ale wygląda na to, że moduł sprawny)<br />Ksenon<br />Roleta elektryczna z tyłu<br />Lekkie oświetlenie deski rozdzielczej w nocy (oryginalne ledy w podsufitce)</div></details><br /><br />Co do reszty zeszłych samochodów&#8230;<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">Pierwszy samochód Mazda 323F BJ 2.0 FS-DE Sportive 2001<br /><a href="https://imgbox.com/3sAuKdXn" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://4-s.imgbox.com/3sAuKdXn.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />Skoda Rapid 1.2 MPI 2015 - porażka, nie będę nawet o tym wspominał&#8230;<br /><br />Audi A4 B6 2.0 ALT 2000<br /><a href="https://imgbox.com/9R2A27W9" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://7-s.imgbox.com/9R2A27W9.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div></details>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1098">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-03T07:06:25" class="text-sm text-gray-500 font-mono">2017-02-03 07:06:25</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No, chłopie, przywaliłeś jak łysy grzywką o kant dupy :D Ale w sumie temat jest. Od dwóch lat jeżdżę Alfą Romeo 147, 2.0 150 KM.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1097" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1097"
+                                 aria-describedby="post-content-1097">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1099">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-02-03T13:11:18" class="text-sm text-gray-500 font-mono">2017-02-03 13:11:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mitsubishi Carisma, 2002r., 1.9 DID 115KM, srebrna. Szału nie ma,  silnik Renault, rdza jak u Japońca, krótko mówiąc trzeba będzie rozglądać się za czymś innym.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1097" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-02-02T22:29:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-02 22:29:32</time>
+                                    </header>
+                                    <div id="post-content-1097"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Bombardier_NGT6-2_in_Gda%C5%84sk_rear.JPG" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">W 90% przypadkach jeżdżę taborem o nazwie Bombardier NGT6, mój ulubiony, bo najlepiej zaprojektowany pod względem przestrzeni z dostępnych tramwajów w Danzig. xD<br />https://pl.wikipedia.org/wiki/Bombardier_Flexity_Classic</div></details>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1100">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-02-03T13:27:27" class="text-sm text-gray-500 font-mono">2017-02-03 13:27:27</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                BMW E36 1.6 &#39;98. Czorna, rdza ją wcina tu i ówdzie, nie ma ABS. Ale jeździć jeździ jak popieprzona, przynajmniej w porównaniu do reszty parku maszynowego na podwórku XD
+                        </article>
+                    </li>
+                    
+                    <li id="post-1098" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1098"
+                                 aria-describedby="post-content-1098">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1101">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2017-02-03T18:58:58" class="text-sm text-gray-500 font-mono">2017-02-03 18:58:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Opel Astra F Cabrio 1,6l, &#39;95,  produkcji Bertone. W podtlenku cebuli, a jakże! Cudo niemieckiej technologii z popierdoloną włoską elektryką. Fajnie śmiga.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1098" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-03T07:06:25"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-03 07:06:25</time>
+                                    </header>
+                                    <div id="post-content-1098"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        No, chłopie, przywaliłeś jak łysy grzywką o kant dupy :D Ale w sumie temat jest. Od dwóch lat jeżdżę Alfą Romeo 147, 2.0 150 KM.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1102">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-02-04T08:39:36" class="text-sm text-gray-500 font-mono">2017-02-04 08:39:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja mam podobny gust jak Leeter.  8-) <br />A tak to chodzę pieszo (np do pracy), jeśli to oczywiście możliwe. xD
+                        </article>
+                    </li>
+                    
+                    <li id="post-1099" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1099"
+                                 aria-describedby="post-content-1099">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1103">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-04T11:08:02" class="text-sm text-gray-500 font-mono">2017-02-04 11:08:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Ja mam podobny gust jak Leeter.  8-) <br />A tak to chodzę pieszo (np do pracy), jeśli to oczywiście możliwe. xD<br /></div>Nie mów tak, Leeter nie ma gustu <br />Sam wiele lat jeździłem komunikacją miejską itd., ale w końcu szlag mnie trafił i kupiłem samochód. Ileż można jebać pieszo w śnieg, wiatr, deszcz i całe inne dziadostwo atmosferyczne.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1099" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-02-03T13:11:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-03 13:11:18</time>
+                                    </header>
+                                    <div id="post-content-1099"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Mitsubishi Carisma, 2002r., 1.9 DID 115KM, srebrna. Szału nie ma,  silnik Renault, rdza jak u Japońca, krótko mówiąc trzeba będzie rozglądać się za czymś innym.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1104">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-02-04T11:12:20" class="text-sm text-gray-500 font-mono">2017-02-04 11:12:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block">Ileż można jebać pieszo w śnieg, wiatr, deszcz i całe inne dziadostwo atmosferyczne.</div><br /><br />Faszyst&#8230; Nadczłowiek gardzi życiem wygodnym.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1100" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1100"
+                                 aria-describedby="post-content-1100">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1105">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-03-19T13:21:22" class="text-sm text-gray-500 font-mono">2017-03-19 13:21:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="http://imgbox.com/HUThIvYI" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://1-t.imgbox.com/HUThIvYI.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />2000km dalej i 1310zł więcej :&gt;<br /><br />Zrobiony kompletny serwis wycieraczek (Pióra Bosch Twin, nowe ramię wycieraczki, nowe ramię mechanizmu wycieraczek) + problem z mocą zażegnany (Regeneracja i uszczlenienie pompy wysokiego ciśnienia paliwa + system podciśnień 1100zł  wyszło za regeneracje i uszczelnienie pompy + system podciśnień z wymontowaniem i włożeniem jej na samochód + sprawdzenie na stole z wydrukiem wyniku i roczną gwarancją.)<br /><br />I tak kocham ten samochód :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1100" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-02-03T13:27:27"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-03 13:27:27</time>
+                                    </header>
+                                    <div id="post-content-1100"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        BMW E36 1.6 &#39;98. Czorna, rdza ją wcina tu i ówdzie, nie ma ABS. Ale jeździć jeździ jak popieprzona, przynajmniej w porównaniu do reszty parku maszynowego na podwórku XD
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1106">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-03-20T17:43:09" class="text-sm text-gray-500 font-mono">2017-03-20 17:43:09</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                @Ropasiak, i tak jeździ na gnojówkę :P Co do piór wycieraczek to Ci tak powiem od siebie, że Bosch wcale szału nie robi, przez pewien czas też kupowałem tylko Boscha bo miałem dojście do nich w dobrej cenie, a jak się dojście skończyło to kupiłem Motgum czy coś w tym stylu w Auchan i radzą sobie równie dobrze co Bosche, a są o połowę tańsze.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1101" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1101"
+                                 aria-describedby="post-content-1101">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1107">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-03-20T20:01:06" class="text-sm text-gray-500 font-mono">2017-03-20 20:01:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Miałem założone Valeo, Bosche – dawały radę. Ostatnio kupiłem u miłego pana pod Biedronką jakieś noname, nie zauważyłem żadnej różnicy, oprócz ceny. Pewnie nie wytrzymają tyle co ww. wymienione, ale IMO szkoda hajsu.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1101" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2017-02-03T18:58:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-03 18:58:58</time>
+                                    </header>
+                                    <div id="post-content-1101"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        Opel Astra F Cabrio 1,6l, &#39;95,  produkcji Bertone. W podtlenku cebuli, a jakże! Cudo niemieckiej technologii z popierdoloną włoską elektryką. Fajnie śmiga.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1108">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-03-20T20:13:52" class="text-sm text-gray-500 font-mono">2017-03-20 20:13:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                @Fred - też parę już przerobiłem i dopóki są nowe to wszystko jest dobre, po pół roku dopiero zaczyna się zabawa :E Ja miałem już dość, że a to pół zbiornika spryskiwaczy wypsikam, a to jak pada drobny deszczyk to zamiast raz przejechać wycieraczką to kilka razy muszę, a i tak jakaś smuga zostanie. <br /><br />Co do gnojówki - jednak 390Nm robi robotę, a być może niedługo jakiś wirus wpadnie na ~220KM i 450-500Nm :P Aczkolwiek i teraz wyprzedzanie na autostradzie bez redukcji jest bardzo przyjemne, 120 chwila gazu w podłodze i już 160 na budziku. No i spalanie&#8230; 5.8l/100KM w trasie i 6.9l/100KM w mieście.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1102" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1102"
+                                 aria-describedby="post-content-1102">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1109">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-03-22T14:19:24" class="text-sm text-gray-500 font-mono">2017-03-22 14:19:24</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Osobiście wycieraczki bosch wymieniałem równie często co aktualne no name. Jedna i drugie wytrzymały u mnie maks rok i były do wypalenia. Poza tym jak place 15pln za sztukę to mogę je wymienić i dwa razy w roku,  to żaden wydatek.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1102" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-02-04T08:39:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-04 08:39:36</time>
+                                    </header>
+                                    <div id="post-content-1102"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ja mam podobny gust jak Leeter.  8-) <br />A tak to chodzę pieszo (np do pracy), jeśli to oczywiście możliwe. xD
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1110">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/10.jpg?1512503192" alt="Awatar Rex" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Rex</span>
-                                <time datetime="2017-03-29T15:54:37" class="text-sm text-gray-500 font-mono">2017-03-29 15:54:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja dałem dychę od wycieraczki i nie widzę różnicy, może się po prostu szybciej rozpadną, ale to nie usprawiedliwia ceny, a ja i tak zmieniam je z raz na rok.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1103" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1103"
+                                 aria-describedby="post-content-1103">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1111">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-03-30T23:14:20" class="text-sm text-gray-500 font-mono">2017-03-30 23:14:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dobra, jednak odwołuje 1100zł psu w dupę. Nadal powyżej 180km/h nie jedzie. Na INPIe/Boschu KTS/DIS nic nie pokazuje, żadnych błędów, parametry w normie. Jedyna metoda to wymienianie elementów na chybił trafił&#8230; Zostały wtryski (wątpliwe czy coś w ogóle da), ustawienie kąta na pompie, albo spróbowanie z fabrycznie nową turbosprężarką/ewentualnie całym nowym dolotem. Muszę jeszcze odłączyć przepływkę i sprawdzić&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1103" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-04T11:08:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-04 11:08:02</time>
+                                    </header>
+                                    <div id="post-content-1103"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Ja mam podobny gust jak Leeter.  8-) <br />A tak to chodzę pieszo (np do pracy), jeśli to oczywiście możliwe. xD<br /></div>Nie mów tak, Leeter nie ma gustu <br />Sam wiele lat jeździłem komunikacją miejską itd., ale w końcu szlag mnie trafił i kupiłem samochód. Ileż można jebać pieszo w śnieg, wiatr, deszcz i całe inne dziadostwo atmosferyczne.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1112">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-04T07:22:59" class="text-sm text-gray-500 font-mono">2017-04-04 07:22:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A kąt nie był ustawiany, po regeneracji pompy? :O Sprawdź przepływkę, sondy lambda, ciśnienie na turbo. Może coś wyjdzie w trakcie.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1104" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1104"
+                                 aria-describedby="post-content-1104">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1113">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-04-04T20:52:06" class="text-sm text-gray-500 font-mono">2017-04-04 20:52:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Właśnie nie wiem czy gościowi chodziło o kąt na pompie czy na wtryskach&#8230; Generalnie pompa ma teraz parametry wzorowe. Przewalone, że mam tylko wyjście diagnostyczne przy silniku - trudno jest zrobić pomiary na drodze.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1104" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-02-04T11:12:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-04 11:12:20</time>
+                                    </header>
+                                    <div id="post-content-1104"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <div class="quote-block">Ileż można jebać pieszo w śnieg, wiatr, deszcz i całe inne dziadostwo atmosferyczne.</div><br /><br />Faszyst&#8230; Nadczłowiek gardzi życiem wygodnym.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1114">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-04T20:54:44" class="text-sm text-gray-500 font-mono">2017-04-04 20:54:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Ropasiak</strong> napisał:</span></div>Przewalone, że mam tylko wyjście diagnostyczne przy silniku - trudno jest zrobić pomiary na drodze.</div>Kątowa wtyczka, długi przewód i jazda :D Tak robiliśmy w tych modelach i było OK.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1105" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1105"
+                                 aria-describedby="post-content-1105">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1115">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-04-16T08:59:07" class="text-sm text-gray-500 font-mono">2017-04-16 08:59:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Ropasiak</strong> napisał:</span></div><br />Właśnie nie wiem czy gościowi chodziło o kąt na pompie czy na wtryskach&#8230; Generalnie pompa ma teraz parametry wzorowe. Przewalone, że mam tylko wyjście diagnostyczne przy silniku - trudno jest zrobić pomiary na drodze.<br /></div><br /><br />Wspomniałeś w SB, że po zalaniu Vervy problem zniknął, sprawdzi wtryski, najprawdopodobniej trzeba wyczyścić układ wtryskowy. Paliwa typu Verva czy Dynamic mają właściwości czyszczące.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1105" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-03-19T13:21:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-19 13:21:22</time>
+                                    </header>
+                                    <div id="post-content-1105"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        <a href="http://imgbox.com/HUThIvYI" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://1-t.imgbox.com/HUThIvYI.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />2000km dalej i 1310zł więcej :&gt;<br /><br />Zrobiony kompletny serwis wycieraczek (Pióra Bosch Twin, nowe ramię wycieraczki, nowe ramię mechanizmu wycieraczek) + problem z mocą zażegnany (Regeneracja i uszczlenienie pompy wysokiego ciśnienia paliwa + system podciśnień 1100zł  wyszło za regeneracje i uszczelnienie pompy + system podciśnień z wymontowaniem i włożeniem jej na samochód + sprawdzenie na stole z wydrukiem wyniku i roczną gwarancją.)<br /><br />I tak kocham ten samochód :)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1116">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-04-17T23:29:12" class="text-sm text-gray-500 font-mono">2017-04-17 23:29:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W sumie to możliwe, że coś z paliwem, bo aktualnie muszę wymienić przewody paliwowe od wysokiego ciśnienia, ładna kałuża zbiera się pod autem po nocy stania&#8230;<br /><br />Aczkolwiek spalanie od tankowania do tankowania w normie (5-6l/100km) (według paliwa w baku, nie według kompa :E)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1106" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1106"
+                                 aria-describedby="post-content-1106">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1117">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-06-04T21:58:37" class="text-sm text-gray-500 font-mono">2017-06-04 21:58:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="http://imgbox.com/9ajuGgxL" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/9ajuGgxL.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/LOd5Eclc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/LOd5Eclc.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/drL69nHo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/drL69nHo.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />To chyba była progówka&#8230; :E W kwietniu nic nie włożyłem to w maju nadrobiłem&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1106" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-03-20T17:43:09"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-20 17:43:09</time>
+                                    </header>
+                                    <div id="post-content-1106"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        @Ropasiak, i tak jeździ na gnojówkę :P Co do piór wycieraczek to Ci tak powiem od siebie, że Bosch wcale szału nie robi, przez pewien czas też kupowałem tylko Boscha bo miałem dojście do nich w dobrej cenie, a jak się dojście skończyło to kupiłem Motgum czy coś w tym stylu w Auchan i radzą sobie równie dobrze co Bosche, a są o połowę tańsze.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1118">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-06-07T23:15:22" class="text-sm text-gray-500 font-mono">2017-06-07 23:15:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                6 czerwca Becia zaliczyła pierwszą poważną trasę - 810km, Grodzisk-&gt;Gdańsk-&gt;Wołomin-&gt;Grodzisk. Nie zawiodła ;) Jechałem DK7 i S7 prawie cały czas. Spalanie wyszło 5.8l/100km w stronę Gdańska i powrót pod wiatr 6.2l/100km. Głównie 120 km/h jechałem. Tam gdzie odcinkowy pomiar to wiadomo 90km/h i nie powiem trochę się na wyprzedzałem, ale z tym silnikiem to, aż się o to prosi :D Przy okazji zrobiłem zdjęcie podświetlenia tablicy i dymionych kierunków bocznych. <br /><br /><a href="http://imgbox.com/YmKShpQE" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://3-t.imgbox.com/YmKShpQE.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/bGunP2pF" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://9-t.imgbox.com/bGunP2pF.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/QztOdUXR" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://7-t.imgbox.com/QztOdUXR.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1107" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1107"
+                                 aria-describedby="post-content-1107">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1119">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-06-13T07:23:01" class="text-sm text-gray-500 font-mono">2017-06-13 07:23:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Ropasiak</strong> napisał:</span></div><br /><a href="http://imgbox.com/9ajuGgxL" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/9ajuGgxL.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/LOd5Eclc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/LOd5Eclc.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/drL69nHo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/drL69nHo.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />To chyba była progówka&#8230; :E W kwietniu nic nie włożyłem to w maju nadrobiłem&#8230;<br /></div><br />Powiem Ci, Ropas, że trochę drogo wychodzi Cię ta „przyjemność”. Za same przelewy dałeś ponad sześćdziesiąt złotych :|
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1107" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-03-20T20:01:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-20 20:01:06</time>
+                                    </header>
+                                    <div id="post-content-1107"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Miałem założone Valeo, Bosche – dawały radę. Ostatnio kupiłem u miłego pana pod Biedronką jakieś noname, nie zauważyłem żadnej różnicy, oprócz ceny. Pewnie nie wytrzymają tyle co ww. wymienione, ale IMO szkoda hajsu.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1120">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-06-13T21:13:00" class="text-sm text-gray-500 font-mono">2017-06-13 21:13:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przelewy i tak jakieś uniwersalne brałem z Mercedesa 5 cylidrowego (obstawiam 2.7 CDI) (którym też się troszkę najeździłem :D). Dedykowane to albo 100zł, albo 200zł nawet&#8230;<br /><br />Teraz jestem na etapie - zapobiegam, a nie naprawiam. Tak było z ręcznym, tak dzisiaj było z paskiem klinowym. Muszę jutro zapłacić, bo nawet na podwórko mi mechanik wstawił sam jak spałem ^^ Generalnie to jeszcze ze znanych rzeczy to opony letnie, fajnie by było coś z felgami zrobić, blacharka&#8230; Mam spisik znanych napraw i już zaczyna się kurczyć. Najwięcej mnie wyniesie blacharka, nie wiem jak z zawieszeniem wyjdzie, niby luzów nie ma, ale kiedyś dla świętego spokoju trzeba by zrobić. Tak samo kiedyś i wtryskami się zając i przed zimą świece i akumulator nowy. Czujniki parkowania i webasto naprawić. Reszta to kosmetyka, ale chcąc zrobić perełkę (może w końcu mi się uda z jakimś samochodem xD) trza się liczyć z kosztami, które nie są do końca rozsądne. Gdyby to było E39 za 20 kafli to bym się wkurwił, ale dałem za nie 11 kafli więc nie płaczę, widziałem stan przed kupnem, parę rzeczy mnie zaskoczyło po kupnie, ale bez tragedii. Już bliżej niż dalej :)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1108" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1108"
+                                 aria-describedby="post-content-1108">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1121">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-06-23T11:48:36" class="text-sm text-gray-500 font-mono">2017-06-23 11:48:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja w swojego grata wsadziłem ostatnio 1200 zeta i mam nadzieję, że to koniec w tym roku. Wymiana oleju, filtrów, regulacja wtryskiwaczy, serwis klimatyzacji i oby nic się już nie wysypało.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1108" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-03-20T20:13:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-20 20:13:52</time>
+                                    </header>
+                                    <div id="post-content-1108"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        @Fred - też parę już przerobiłem i dopóki są nowe to wszystko jest dobre, po pół roku dopiero zaczyna się zabawa :E Ja miałem już dość, że a to pół zbiornika spryskiwaczy wypsikam, a to jak pada drobny deszczyk to zamiast raz przejechać wycieraczką to kilka razy muszę, a i tak jakaś smuga zostanie. <br /><br />Co do gnojówki - jednak 390Nm robi robotę, a być może niedługo jakiś wirus wpadnie na ~220KM i 450-500Nm :P Aczkolwiek i teraz wyprzedzanie na autostradzie bez redukcji jest bardzo przyjemne, 120 chwila gazu w podłodze i już 160 na budziku. No i spalanie&#8230; 5.8l/100KM w trasie i 6.9l/100KM w mieście.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2330">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2018-07-26T08:10:32" class="text-sm text-gray-500 font-mono">2018-07-26 08:10:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Od dwóch msc mam nowe żelazo tj. Golf 4 TDI Ropas style czyt. wydałem już niemal równowartość na serwis.<br />Nowy rozrząd, nowe sprzęgło, przerobione wtryskiwacze z 90 na 110KM, wymienione przewody hamulcowe, aktualnie regeneruje turbo.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1109" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1109"
+                                 aria-describedby="post-content-1109">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2630">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2019-03-11T17:58:21" class="text-sm text-gray-500 font-mono">2019-03-11 17:58:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jakby ktoś był ciekawy to problem z mocą u mnie rozwiązany. Wystarczyło wymyc filterki od elektrozaworu turbiny i egr. Teraz leci ile na predkosciomierzu i na 2 zrywa trakcie bez pomocy sprzęgła. Dzisiaj jeszcze na tyle ile mogłem to porobilem blacharke. Nie straszy już tak rdza. W październiku wymieniłem w niej termostat a w listopadzie wpadł nowy aku. W Kwietniu 2018 wpadły nowe wtryski. W grudniu zimowki Pirelli Sottosopra 2. Bardzo fajne zimowki, polecam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1109" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-03-22T14:19:24"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-22 14:19:24</time>
+                                    </header>
+                                    <div id="post-content-1109"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Osobiście wycieraczki bosch wymieniałem równie często co aktualne no name. Jedna i drugie wytrzymały u mnie maks rok i były do wypalenia. Poza tym jak place 15pln za sztukę to mogę je wymienić i dwa razy w roku,  to żaden wydatek.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2631">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-03-12T05:42:13" class="text-sm text-gray-500 font-mono">2019-03-12 05:42:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2630" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Pirelli Sottosopra 2</div><br />Powiedz mi, Ropas – od kiedy Włosi znają się na zimie i chujowych warunkach, żeby robić „dobre” zimówki? 😶
+                        </article>
+                    </li>
+                    
+                    <li id="post-1110" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1110"
+                                 aria-describedby="post-content-1110">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/10.jpg?1512503192"
+                                     alt="Awatar użytkownika Rex"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2637">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2019-03-13T15:09:48" class="text-sm text-gray-500 font-mono">2019-03-13 15:09:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Oczywiście się jebłem w nazwie. Sottozero 2, a nie Sottosopra. A co do opon - bardzo fajne zimówki. Na śniegu dobrze trzymają auto, na deszczu również jest bardzo ok. Spalanie nie wzrosło, nie sa jakieś głośne. Jak chcemy tylko jechać to nie wyłączamy ESP i jeździmy normalnie. Wyłączamy ESP i możemy bokiem polatać. Chętnie porównałbym je z Nokianami WR A4.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1110" class="font-bold text-lg text-white">Rex</h3>
+                                        <time datetime="2017-03-29T15:54:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-29 15:54:37</time>
+                                    </header>
+                                    <div id="post-content-1110"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Rex">
+                                        Ja dałem dychę od wycieraczki i nie widzę różnicy, może się po prostu szybciej rozpadną, ale to nie usprawiedliwia ceny, a ja i tak zmieniam je z raz na rok.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1111" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1111"
+                                 aria-describedby="post-content-1111">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1111" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-03-30T23:14:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-30 23:14:20</time>
+                                    </header>
+                                    <div id="post-content-1111"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Dobra, jednak odwołuje 1100zł psu w dupę. Nadal powyżej 180km/h nie jedzie. Na INPIe/Boschu KTS/DIS nic nie pokazuje, żadnych błędów, parametry w normie. Jedyna metoda to wymienianie elementów na chybił trafił&#8230; Zostały wtryski (wątpliwe czy coś w ogóle da), ustawienie kąta na pompie, albo spróbowanie z fabrycznie nową turbosprężarką/ewentualnie całym nowym dolotem. Muszę jeszcze odłączyć przepływkę i sprawdzić&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1112" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1112"
+                                 aria-describedby="post-content-1112">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1112" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-04T07:22:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-04 07:22:59</time>
+                                    </header>
+                                    <div id="post-content-1112"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        A kąt nie był ustawiany, po regeneracji pompy? :O Sprawdź przepływkę, sondy lambda, ciśnienie na turbo. Może coś wyjdzie w trakcie.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1113" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1113"
+                                 aria-describedby="post-content-1113">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1113" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-04-04T20:52:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-04 20:52:06</time>
+                                    </header>
+                                    <div id="post-content-1113"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Właśnie nie wiem czy gościowi chodziło o kąt na pompie czy na wtryskach&#8230; Generalnie pompa ma teraz parametry wzorowe. Przewalone, że mam tylko wyjście diagnostyczne przy silniku - trudno jest zrobić pomiary na drodze.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1114" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1114"
+                                 aria-describedby="post-content-1114">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1114" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-04T20:54:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-04 20:54:44</time>
+                                    </header>
+                                    <div id="post-content-1114"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Ropasiak</strong> napisał:</span></div>Przewalone, że mam tylko wyjście diagnostyczne przy silniku - trudno jest zrobić pomiary na drodze.</div>Kątowa wtyczka, długi przewód i jazda :D Tak robiliśmy w tych modelach i było OK.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1115" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1115"
+                                 aria-describedby="post-content-1115">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1115" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-04-16T08:59:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-16 08:59:07</time>
+                                    </header>
+                                    <div id="post-content-1115"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Ropasiak</strong> napisał:</span></div><br />Właśnie nie wiem czy gościowi chodziło o kąt na pompie czy na wtryskach&#8230; Generalnie pompa ma teraz parametry wzorowe. Przewalone, że mam tylko wyjście diagnostyczne przy silniku - trudno jest zrobić pomiary na drodze.<br /></div><br /><br />Wspomniałeś w SB, że po zalaniu Vervy problem zniknął, sprawdzi wtryski, najprawdopodobniej trzeba wyczyścić układ wtryskowy. Paliwa typu Verva czy Dynamic mają właściwości czyszczące.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1116" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1116"
+                                 aria-describedby="post-content-1116">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1116" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-04-17T23:29:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-17 23:29:12</time>
+                                    </header>
+                                    <div id="post-content-1116"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        W sumie to możliwe, że coś z paliwem, bo aktualnie muszę wymienić przewody paliwowe od wysokiego ciśnienia, ładna kałuża zbiera się pod autem po nocy stania&#8230;<br /><br />Aczkolwiek spalanie od tankowania do tankowania w normie (5-6l/100km) (według paliwa w baku, nie według kompa :E)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1117" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1117"
+                                 aria-describedby="post-content-1117">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1117" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-06-04T21:58:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-04 21:58:37</time>
+                                    </header>
+                                    <div id="post-content-1117"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        <a href="http://imgbox.com/9ajuGgxL" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/9ajuGgxL.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/LOd5Eclc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/LOd5Eclc.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/drL69nHo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/drL69nHo.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />To chyba była progówka&#8230; :E W kwietniu nic nie włożyłem to w maju nadrobiłem&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1118" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1118"
+                                 aria-describedby="post-content-1118">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1118" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-06-07T23:15:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-07 23:15:22</time>
+                                    </header>
+                                    <div id="post-content-1118"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        6 czerwca Becia zaliczyła pierwszą poważną trasę - 810km, Grodzisk-&gt;Gdańsk-&gt;Wołomin-&gt;Grodzisk. Nie zawiodła ;) Jechałem DK7 i S7 prawie cały czas. Spalanie wyszło 5.8l/100km w stronę Gdańska i powrót pod wiatr 6.2l/100km. Głównie 120 km/h jechałem. Tam gdzie odcinkowy pomiar to wiadomo 90km/h i nie powiem trochę się na wyprzedzałem, ale z tym silnikiem to, aż się o to prosi :D Przy okazji zrobiłem zdjęcie podświetlenia tablicy i dymionych kierunków bocznych. <br /><br /><a href="http://imgbox.com/YmKShpQE" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://3-t.imgbox.com/YmKShpQE.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/bGunP2pF" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://9-t.imgbox.com/bGunP2pF.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/QztOdUXR" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://7-t.imgbox.com/QztOdUXR.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1119" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1119"
+                                 aria-describedby="post-content-1119">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1119" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-06-13T07:23:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-13 07:23:01</time>
+                                    </header>
+                                    <div id="post-content-1119"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Ropasiak</strong> napisał:</span></div><br /><a href="http://imgbox.com/9ajuGgxL" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/9ajuGgxL.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/LOd5Eclc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/LOd5Eclc.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/drL69nHo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://t.imgbox.com/drL69nHo.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><br />To chyba była progówka&#8230; :E W kwietniu nic nie włożyłem to w maju nadrobiłem&#8230;<br /></div><br />Powiem Ci, Ropas, że trochę drogo wychodzi Cię ta „przyjemność”. Za same przelewy dałeś ponad sześćdziesiąt złotych :|
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1120" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1120"
+                                 aria-describedby="post-content-1120">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1120" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-06-13T21:13:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-13 21:13:00</time>
+                                    </header>
+                                    <div id="post-content-1120"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Przelewy i tak jakieś uniwersalne brałem z Mercedesa 5 cylidrowego (obstawiam 2.7 CDI) (którym też się troszkę najeździłem :D). Dedykowane to albo 100zł, albo 200zł nawet&#8230;<br /><br />Teraz jestem na etapie - zapobiegam, a nie naprawiam. Tak było z ręcznym, tak dzisiaj było z paskiem klinowym. Muszę jutro zapłacić, bo nawet na podwórko mi mechanik wstawił sam jak spałem ^^ Generalnie to jeszcze ze znanych rzeczy to opony letnie, fajnie by było coś z felgami zrobić, blacharka&#8230; Mam spisik znanych napraw i już zaczyna się kurczyć. Najwięcej mnie wyniesie blacharka, nie wiem jak z zawieszeniem wyjdzie, niby luzów nie ma, ale kiedyś dla świętego spokoju trzeba by zrobić. Tak samo kiedyś i wtryskami się zając i przed zimą świece i akumulator nowy. Czujniki parkowania i webasto naprawić. Reszta to kosmetyka, ale chcąc zrobić perełkę (może w końcu mi się uda z jakimś samochodem xD) trza się liczyć z kosztami, które nie są do końca rozsądne. Gdyby to było E39 za 20 kafli to bym się wkurwił, ale dałem za nie 11 kafli więc nie płaczę, widziałem stan przed kupnem, parę rzeczy mnie zaskoczyło po kupnie, ale bez tragedii. Już bliżej niż dalej :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1121" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1121"
+                                 aria-describedby="post-content-1121">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1121" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-06-23T11:48:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-06-23 11:48:36</time>
+                                    </header>
+                                    <div id="post-content-1121"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Ja w swojego grata wsadziłem ostatnio 1200 zeta i mam nadzieję, że to koniec w tym roku. Wymiana oleju, filtrów, regulacja wtryskiwaczy, serwis klimatyzacji i oby nic się już nie wysypało.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2330" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2330"
+                                 aria-describedby="post-content-2330">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2330" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2018-07-26T08:10:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-26 08:10:32</time>
+                                    </header>
+                                    <div id="post-content-2330"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Od dwóch msc mam nowe żelazo tj. Golf 4 TDI Ropas style czyt. wydałem już niemal równowartość na serwis.<br />Nowy rozrząd, nowe sprzęgło, przerobione wtryskiwacze z 90 na 110KM, wymienione przewody hamulcowe, aktualnie regeneruje turbo.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2630" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2630"
+                                 aria-describedby="post-content-2630">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2630" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2019-03-11T17:58:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-03-11 17:58:21</time>
+                                    </header>
+                                    <div id="post-content-2630"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Jakby ktoś był ciekawy to problem z mocą u mnie rozwiązany. Wystarczyło wymyc filterki od elektrozaworu turbiny i egr. Teraz leci ile na predkosciomierzu i na 2 zrywa trakcie bez pomocy sprzęgła. Dzisiaj jeszcze na tyle ile mogłem to porobilem blacharke. Nie straszy już tak rdza. W październiku wymieniłem w niej termostat a w listopadzie wpadł nowy aku. W Kwietniu 2018 wpadły nowe wtryski. W grudniu zimowki Pirelli Sottosopra 2. Bardzo fajne zimowki, polecam.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2631" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2631"
+                                 aria-describedby="post-content-2631">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2631" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-03-12T05:42:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-03-12 05:42:13</time>
+                                    </header>
+                                    <div id="post-content-2631"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2630" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Pirelli Sottosopra 2</div><br />Powiedz mi, Ropas – od kiedy Włosi znają się na zimie i chujowych warunkach, żeby robić „dobre” zimówki? 😶
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2637" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2637"
+                                 aria-describedby="post-content-2637">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2637" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2019-03-13T15:09:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-03-13 15:09:48</time>
+                                    </header>
+                                    <div id="post-content-2637"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Oczywiście się jebłem w nazwie. Sottozero 2, a nie Sottosopra. A co do opon - bardzo fajne zimówki. Na śniegu dobrze trzymają auto, na deszczu również jest bardzo ok. Spalanie nie wzrosło, nie sa jakieś głośne. Jak chcemy tylko jechać to nie wyłączamy ESP i jeździmy normalnie. Wyłączamy ESP i możemy bokiem polatać. Chętnie porównałbym je z Nokianami WR A4.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

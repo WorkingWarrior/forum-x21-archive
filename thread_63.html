@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,356 +44,604 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Kawa i herbata</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Kawa i herbata</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-726">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-10T11:12:48" class="text-sm text-gray-500 font-mono">2017-01-10 11:12:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Był temat o alkoholach, to teraz będzie o kawie i herbacie. :3<br /><br />Osobiście bardzo lubię jedno i drugie. Moja ulubiona herbata to herbata o smaku liczi firmy Dilmah, ponadto pijam różne smakowe Liptony (te w piramidkach), ostatnio np jagoda z muffinką. Dziwne połączenie, ale zasmakowała mi. Z tańszych - herbaty w piramidkach z Lidla. Lubię też herbaty tzw owocowe, chociaż po prawdzie wszystkie smakują tak samo, ale lubię, zwłaszcza z sokiem. <br />Co do zwykłej, czarnej herbaty, toleruję tylko w wersji z cytryną i miodem (od biedy cukrem). Pijam też zieloną w różnych wariantach. <br /><br />W kwestii kawy, nie jestem jakimś koneserem, po prostu piję co mi smakuje. Dostaliśmy na święta ekspres na kapsułki Boscha, więc teraz namiętnie testuję różne smaki kawy (i nie tylko kawy, bo mają też np kapsułki z czekoladą), ale to też trzeba z umiarem, bo taka paczka kapsułek kosztuje ~20 zeta, schodzi toto szybko. a nie zamierzam wydać połowy pensji na kawę. xD<br />Ostatnio bardzo zasmakowało mi latte z karmelem. <br />&#8230;ale i tak wciąż zazdroszczę ziomkowi i jego żonie, którzy mają porządny ekspres z prawdziwego zdarzenia, z młynkiem i spieniaczem do mleka. Jednak świeżo zmielona kawa to jest to. <br /><br />Kawę pijam z mlekiem i cukrem, czarnej i gorzkiej nie cierpię. I zawsze nie mogę się nadziwić, jak ludzie w mojej robocie mogą pić kawę parzoną z tymi ohydnymi fusami. Nie że nie lubię parzonej kawy, ale mam do tego specjalny zaparzacz i żadne jebane fusy mi nie pływają w kubku.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Kawa i herbata</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-726" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-726"
+                                 aria-describedby="post-content-726">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-727">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-10T12:42:31" class="text-sm text-gray-500 font-mono">2017-01-10 12:42:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div>Był temat o alkoholach, to teraz będzie o kawie i herbacie. :3</div>Dla mnie nawet bardziej interesujący, bo rzadko piję alkohol, natomiast ww. codziennie. Z napojów herbacianych najbardziej lubię <a href="https://pl.wikipedia.org/wiki/Rooibos" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">rooibosa</a> (mimo że to nie herbata), zaraz potem Earl Grey, gdzieś tam dalej jest Yunan itd. Zielonej nie pijam, za słabe to dla mnie, jakieś takie bez jadu :D Czerwona śmierdzi mi błotem, więc też nie tykam. Jeśli chodzi o Biedronkowe/Lidlowe herbaty smakowe, praktycznie lubię wszystkie, szczególnie pomarańczową z cynamonem.<br />Kawa, kawa, kawa. Bez kawy nie odpalę się o poranku. Pijam mieloną, rozpuszczalną, z mlekiem i cukrem (całkowicie czarna też ujdzie), natomiast nie przepadam za wersją z firmowego ekspresu [mamy Siemensowską maszynę do kawy (z młynkiem i spieniaczem :P), ale paskudna z niej wychodzi].<div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div>Kawę pijam z mlekiem i cukrem, czarnej i gorzkiej nie cierpię. I zawsze nie mogę się nadziwić, jak ludzie w mojej robocie mogą pić kawę parzoną z tymi ohydnymi fusami. Nie że nie lubię parzonej kawy, ale mam do tego specjalny zaparzacz i żadne jebane fusy mi nie pływają w kubku.</div>Do jebanych fusów da się przyzwyczaić, po prostu przez szereg lat trzeba nie mieć warunków, żeby pić inną :P
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-726" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-10T11:12:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 11:12:48</time>
+                                    </header>
+                                    <div id="post-content-726"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Był temat o alkoholach, to teraz będzie o kawie i herbacie. :3<br /><br />Osobiście bardzo lubię jedno i drugie. Moja ulubiona herbata to herbata o smaku liczi firmy Dilmah, ponadto pijam różne smakowe Liptony (te w piramidkach), ostatnio np jagoda z muffinką. Dziwne połączenie, ale zasmakowała mi. Z tańszych - herbaty w piramidkach z Lidla. Lubię też herbaty tzw owocowe, chociaż po prawdzie wszystkie smakują tak samo, ale lubię, zwłaszcza z sokiem. <br />Co do zwykłej, czarnej herbaty, toleruję tylko w wersji z cytryną i miodem (od biedy cukrem). Pijam też zieloną w różnych wariantach. <br /><br />W kwestii kawy, nie jestem jakimś koneserem, po prostu piję co mi smakuje. Dostaliśmy na święta ekspres na kapsułki Boscha, więc teraz namiętnie testuję różne smaki kawy (i nie tylko kawy, bo mają też np kapsułki z czekoladą), ale to też trzeba z umiarem, bo taka paczka kapsułek kosztuje ~20 zeta, schodzi toto szybko. a nie zamierzam wydać połowy pensji na kawę. xD<br />Ostatnio bardzo zasmakowało mi latte z karmelem. <br />&#8230;ale i tak wciąż zazdroszczę ziomkowi i jego żonie, którzy mają porządny ekspres z prawdziwego zdarzenia, z młynkiem i spieniaczem do mleka. Jednak świeżo zmielona kawa to jest to. <br /><br />Kawę pijam z mlekiem i cukrem, czarnej i gorzkiej nie cierpię. I zawsze nie mogę się nadziwić, jak ludzie w mojej robocie mogą pić kawę parzoną z tymi ohydnymi fusami. Nie że nie lubię parzonej kawy, ale mam do tego specjalny zaparzacz i żadne jebane fusy mi nie pływają w kubku.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-728">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-10T13:12:46" class="text-sm text-gray-500 font-mono">2017-01-10 13:12:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A z rozpuszczalnych to jakie kawy preferujesz? Ja wolę takie delikatniejsze i mniej intensywne (crema czy cuś), bo aromat aromatem, ale potem mój żołądek może cierpieć&#8230; <br />Z mielonych lubię Illy Espresso. :3
+                        </article>
+                    </li>
+                    
+                    <li id="post-727" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-727"
+                                 aria-describedby="post-content-727">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-729">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-10T13:15:55" class="text-sm text-gray-500 font-mono">2017-01-10 13:15:55</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div>A z rozpuszczalnych to jakie kawy preferujesz? Ja wolę takie delikatniejsze i mniej intensywne (crema czy cuś), bo aromat aromatem, ale potem mój żołądek może cierpieć&#8230; <br />Z mielonych lubię Illy Espresso. :3</div><br />Kremowe są dla mnie zbyt delikatne, po prostu ich nie czuję (chociaż ostatnio skończyła mi się zwykła i piję kremową :D). Zwykle piję Nescafe Classic albo Tchibo Family, nic wykwintnego. Mieloną piję Tchibo (najczęściej), z całych ziaren Lavazzę.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-727" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-10T12:42:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 12:42:31</time>
+                                    </header>
+                                    <div id="post-content-727"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div>Był temat o alkoholach, to teraz będzie o kawie i herbacie. :3</div>Dla mnie nawet bardziej interesujący, bo rzadko piję alkohol, natomiast ww. codziennie. Z napojów herbacianych najbardziej lubię <a href="https://pl.wikipedia.org/wiki/Rooibos" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">rooibosa</a> (mimo że to nie herbata), zaraz potem Earl Grey, gdzieś tam dalej jest Yunan itd. Zielonej nie pijam, za słabe to dla mnie, jakieś takie bez jadu :D Czerwona śmierdzi mi błotem, więc też nie tykam. Jeśli chodzi o Biedronkowe/Lidlowe herbaty smakowe, praktycznie lubię wszystkie, szczególnie pomarańczową z cynamonem.<br />Kawa, kawa, kawa. Bez kawy nie odpalę się o poranku. Pijam mieloną, rozpuszczalną, z mlekiem i cukrem (całkowicie czarna też ujdzie), natomiast nie przepadam za wersją z firmowego ekspresu [mamy Siemensowską maszynę do kawy (z młynkiem i spieniaczem :P), ale paskudna z niej wychodzi].<div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div>Kawę pijam z mlekiem i cukrem, czarnej i gorzkiej nie cierpię. I zawsze nie mogę się nadziwić, jak ludzie w mojej robocie mogą pić kawę parzoną z tymi ohydnymi fusami. Nie że nie lubię parzonej kawy, ale mam do tego specjalny zaparzacz i żadne jebane fusy mi nie pływają w kubku.</div>Do jebanych fusów da się przyzwyczaić, po prostu przez szereg lat trzeba nie mieć warunków, żeby pić inną :P
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-730">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-10T21:27:24" class="text-sm text-gray-500 font-mono">2017-01-10 21:27:24</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Herbata: Earl Gray, Lipton Yellow Label, herbatki owocowe z lidla (ostatnio kupiłem z białych owoców i była świetna).<br />Kawa: Tylko i wyłącznie mielona, z ekspresu lub kawiarki, Lavazza złota (sam mielę), Dallmayr z lidla lub to co akurat kupi firma (kiedyś Jacobs Gold, teraz jakiś shit z niemickimi napisami).
+                        </article>
+                    </li>
+                    
+                    <li id="post-728" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-728"
+                                 aria-describedby="post-content-728">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-731">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/18.jpg?1512503192" alt="Awatar abbacchio" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">abbacchio</span>
-                                <time datetime="2017-01-23T19:22:51" class="text-sm text-gray-500 font-mono">2017-01-23 19:22:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div> ponadto pijam różne smakowe Liptony (te w piramidkach), ostatnio np jagoda z muffinką. Dziwne połączenie, ale zasmakowała mi.</div><br />Jak parzyć Liptona żeby smakował jak herbata? Powiedzcie mi. Zawsze kiedy próbuję yellow label, albo czegokolwiek innego tej firmy zastanawiam się gdzie leży mój błąd- wszyscy sobie chwalą smak liptonów, ale dla mnie jest za gorzki. <em>Jak parzyć liptony pytam? Chcę dołączyć do grona ludzi cieszących się smakiem tej herbaty</em><br /> Moją ulubioną herbatą jest earl grey, bardzo przyjemny aromat i smak jeden  średni earl grey wystarczy, żeby mnie postawić na nogi. Nie wiem czy hibiskus i róża liczą się jako herbaty czy napary, ale polecam spróbować. <br /> TOP 5 TEA BLENDS: Sencha z różą i wiśnią, sencha z różą i miętą, sencha z różą, herbata czarna O P z mandarynką, skórką pomarańczy płatkami róży no i klasyk: earl grey z płatkami bławatka, nagietka i słonecznika.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-728" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-10T13:12:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 13:12:46</time>
+                                    </header>
+                                    <div id="post-content-728"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        A z rozpuszczalnych to jakie kawy preferujesz? Ja wolę takie delikatniejsze i mniej intensywne (crema czy cuś), bo aromat aromatem, ale potem mój żołądek może cierpieć&#8230; <br />Z mielonych lubię Illy Espresso. :3
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-732">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-02-22T20:22:33" class="text-sm text-gray-500 font-mono">2017-02-22 20:22:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Moje dzisiejsze odkrycie: Lipton, herbata zielona z jagodami i goji, dość droga (z 8 zł), ale zajebista. :]
+                        </article>
+                    </li>
+                    
+                    <li id="post-729" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-729"
+                                 aria-describedby="post-content-729">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-733">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-23T07:25:53" class="text-sm text-gray-500 font-mono">2017-02-23 07:25:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Moje dzisiejsze odkrycie: Lipton, herbata zielona z jagodami i goji, dość droga (z 8 zł), ale zajebista. :]<br /></div>Gdzie można ją dostać? Jakaś Biedronka czy lepsze sklepy? PS do Carrefoura nie będę pchał, bo rozdepczą mnie w pogoni za „o złotówkę tańszym” cukrem :P
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-729" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-10T13:15:55"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 13:15:55</time>
+                                    </header>
+                                    <div id="post-content-729"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div>A z rozpuszczalnych to jakie kawy preferujesz? Ja wolę takie delikatniejsze i mniej intensywne (crema czy cuś), bo aromat aromatem, ale potem mój żołądek może cierpieć&#8230; <br />Z mielonych lubię Illy Espresso. :3</div><br />Kremowe są dla mnie zbyt delikatne, po prostu ich nie czuję (chociaż ostatnio skończyła mi się zwykła i piję kremową :D). Zwykle piję Nescafe Classic albo Tchibo Family, nic wykwintnego. Mieloną piję Tchibo (najczęściej), z całych ziaren Lavazzę.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-734">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-02-24T05:35:16" class="text-sm text-gray-500 font-mono">2017-02-24 05:35:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Kupiłam ją w Auchanie, a z tego co mi wiadomo powinna być również w Lidlu. :)
+                        </article>
+                    </li>
+                    
+                    <li id="post-730" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-730"
+                                 aria-describedby="post-content-730">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-735">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-24T12:35:04" class="text-sm text-gray-500 font-mono">2017-02-24 12:35:04</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Kupiłam ją w Auchanie, a z tego co mi wiadomo powinna być również w Lidlu. :)<br /></div> Dzięki, dzisiaj sprawdzę :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-730" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-10T21:27:24"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 21:27:24</time>
+                                    </header>
+                                    <div id="post-content-730"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Herbata: Earl Gray, Lipton Yellow Label, herbatki owocowe z lidla (ostatnio kupiłem z białych owoców i była świetna).<br />Kawa: Tylko i wyłącznie mielona, z ekspresu lub kawiarki, Lavazza złota (sam mielę), Dallmayr z lidla lub to co akurat kupi firma (kiedyś Jacobs Gold, teraz jakiś shit z niemickimi napisami).
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-736">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-02-24T19:46:01" class="text-sm text-gray-500 font-mono">2017-02-24 19:46:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Smakoszem kawy nie jestem, piję tylko rozpuszczalnego Jacobsa z mlekiem i toną cukru, żeby zrzucić z siebie skorupę jaką obrosłem podczas snu i pobudzić się do życia. Czarna kawa to absolutnie niepijalny syf.<br /><br />Herbaty uwielbiam, pochłaniam litrami i piłem już różne, ale ostatecznie zostałem przy semi-burżujskich Twiningsach. Dość drogie, ale w smaku cudowne i idealnie intensywne. English Breakfast, Earl Grey (wolę ten łagodniejszy), Lady Grey, The de Ceylan, wszystkie wchodzą jak Miska pod papcia.
+                        </article>
+                    </li>
+                    
+                    <li id="post-731" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-731"
+                                 aria-describedby="post-content-731">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/18.jpg?1512503192"
+                                     alt="Awatar użytkownika abbacchio"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-737">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-05-01T19:53:33" class="text-sm text-gray-500 font-mono">2017-05-01 19:53:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Popijam ostatnimi czasy herbatę Liptona o smaku gruszki w czekoladzie. Wszyscy twierdzą, że jest obrzydliwa, jako i jagoda z muffinką i bardzo dobrze, bo nikt mi jej nie podpierdziela przynajmniej.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-731" class="font-bold text-lg text-white">abbacchio</h3>
+                                        <time datetime="2017-01-23T19:22:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 19:22:51</time>
+                                    </header>
+                                    <div id="post-content-731"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika abbacchio">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div> ponadto pijam różne smakowe Liptony (te w piramidkach), ostatnio np jagoda z muffinką. Dziwne połączenie, ale zasmakowała mi.</div><br />Jak parzyć Liptona żeby smakował jak herbata? Powiedzcie mi. Zawsze kiedy próbuję yellow label, albo czegokolwiek innego tej firmy zastanawiam się gdzie leży mój błąd- wszyscy sobie chwalą smak liptonów, ale dla mnie jest za gorzki. <em>Jak parzyć liptony pytam? Chcę dołączyć do grona ludzi cieszących się smakiem tej herbaty</em><br /> Moją ulubioną herbatą jest earl grey, bardzo przyjemny aromat i smak jeden  średni earl grey wystarczy, żeby mnie postawić na nogi. Nie wiem czy hibiskus i róża liczą się jako herbaty czy napary, ale polecam spróbować. <br /> TOP 5 TEA BLENDS: Sencha z różą i wiśnią, sencha z różą i miętą, sencha z różą, herbata czarna O P z mandarynką, skórką pomarańczy płatkami róży no i klasyk: earl grey z płatkami bławatka, nagietka i słonecznika.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-738">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-05-02T07:13:48" class="text-sm text-gray-500 font-mono">2017-05-02 07:13:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Doznania smakowe muszą być nie do opisania :D Nigdy nawet nie patrzyłem w kierunku takich herbat, a może właśnie powinienem :P Szukać tego w jakichś Carrefourach i Lidlach?
+                        </article>
+                    </li>
+                    
+                    <li id="post-732" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-732"
+                                 aria-describedby="post-content-732">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-739">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-05-02T08:00:03" class="text-sm text-gray-500 font-mono">2017-05-02 08:00:03</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Myślę, że spokojnie ją tam nabędziesz. :) No i oczywiście Auchan. <br />Co do mnie, to dostałam za friko całą paczkę od koleżanki - kupiła sobie, ale stwierdziła że jej nijak nie smakuje i mogę to wziąć. :mrgreen:
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-732" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-02-22T20:22:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-22 20:22:33</time>
+                                    </header>
+                                    <div id="post-content-732"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Moje dzisiejsze odkrycie: Lipton, herbata zielona z jagodami i goji, dość droga (z 8 zł), ale zajebista. :]
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-740">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-05-06T11:53:57" class="text-sm text-gray-500 font-mono">2017-05-06 11:53:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ostatnio kupiłem dwie herbatki owocowe LoydTea, jedna o smaku Ananas i Gruszka druga Pigwa i Mirabelka, obie bardzo fajnie pachną i smakują.
+                        </article>
+                    </li>
+                    
+                    <li id="post-733" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-733"
+                                 aria-describedby="post-content-733">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2004">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-28T20:08:38" class="text-sm text-gray-500 font-mono">2018-01-28 20:08:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Odkopuję, dejcie szpadel. Musze przyznać, że ostatnio całkowicie przestawiłem się na mieloną kawę. Nie musi być z żadnego jebanego ekspresu kurwaciśnieniowego, bo lubię zwykłą, parzoną. Próbuję wrócić do rozpuszczalnej, ale ni cholery, nie mogę :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-733" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-23T07:25:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-23 07:25:53</time>
+                                    </header>
+                                    <div id="post-content-733"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Moje dzisiejsze odkrycie: Lipton, herbata zielona z jagodami i goji, dość droga (z 8 zł), ale zajebista. :]<br /></div>Gdzie można ją dostać? Jakaś Biedronka czy lepsze sklepy? PS do Carrefoura nie będę pchał, bo rozdepczą mnie w pogoni za „o złotówkę tańszym” cukrem :P
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-734" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-734"
+                                 aria-describedby="post-content-734">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-734" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-02-24T05:35:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-24 05:35:16</time>
+                                    </header>
+                                    <div id="post-content-734"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Kupiłam ją w Auchanie, a z tego co mi wiadomo powinna być również w Lidlu. :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-735" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-735"
+                                 aria-describedby="post-content-735">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-735" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-24T12:35:04"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-24 12:35:04</time>
+                                    </header>
+                                    <div id="post-content-735"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Kupiłam ją w Auchanie, a z tego co mi wiadomo powinna być również w Lidlu. :)<br /></div> Dzięki, dzisiaj sprawdzę :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-736" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-736"
+                                 aria-describedby="post-content-736">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-736" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-02-24T19:46:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-24 19:46:01</time>
+                                    </header>
+                                    <div id="post-content-736"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Smakoszem kawy nie jestem, piję tylko rozpuszczalnego Jacobsa z mlekiem i toną cukru, żeby zrzucić z siebie skorupę jaką obrosłem podczas snu i pobudzić się do życia. Czarna kawa to absolutnie niepijalny syf.<br /><br />Herbaty uwielbiam, pochłaniam litrami i piłem już różne, ale ostatecznie zostałem przy semi-burżujskich Twiningsach. Dość drogie, ale w smaku cudowne i idealnie intensywne. English Breakfast, Earl Grey (wolę ten łagodniejszy), Lady Grey, The de Ceylan, wszystkie wchodzą jak Miska pod papcia.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-737" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-737"
+                                 aria-describedby="post-content-737">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-737" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-05-01T19:53:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-01 19:53:33</time>
+                                    </header>
+                                    <div id="post-content-737"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Popijam ostatnimi czasy herbatę Liptona o smaku gruszki w czekoladzie. Wszyscy twierdzą, że jest obrzydliwa, jako i jagoda z muffinką i bardzo dobrze, bo nikt mi jej nie podpierdziela przynajmniej.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-738" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-738"
+                                 aria-describedby="post-content-738">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-738" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-05-02T07:13:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-02 07:13:48</time>
+                                    </header>
+                                    <div id="post-content-738"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Doznania smakowe muszą być nie do opisania :D Nigdy nawet nie patrzyłem w kierunku takich herbat, a może właśnie powinienem :P Szukać tego w jakichś Carrefourach i Lidlach?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-739" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-739"
+                                 aria-describedby="post-content-739">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-739" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-05-02T08:00:03"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-02 08:00:03</time>
+                                    </header>
+                                    <div id="post-content-739"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Myślę, że spokojnie ją tam nabędziesz. :) No i oczywiście Auchan. <br />Co do mnie, to dostałam za friko całą paczkę od koleżanki - kupiła sobie, ale stwierdziła że jej nijak nie smakuje i mogę to wziąć. :mrgreen:
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-740" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-740"
+                                 aria-describedby="post-content-740">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-740" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-05-06T11:53:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-06 11:53:57</time>
+                                    </header>
+                                    <div id="post-content-740"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Ostatnio kupiłem dwie herbatki owocowe LoydTea, jedna o smaku Ananas i Gruszka druga Pigwa i Mirabelka, obie bardzo fajnie pachną i smakują.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2004" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2004"
+                                 aria-describedby="post-content-2004">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2004" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-28T20:08:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-28 20:08:38</time>
+                                    </header>
+                                    <div id="post-content-2004"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Odkopuję, dejcie szpadel. Musze przyznać, że ostatnio całkowicie przestawiłem się na mieloną kawę. Nie musi być z żadnego jebanego ekspresu kurwaciśnieniowego, bo lubię zwykłą, parzoną. Próbuję wrócić do rozpuszczalnej, ale ni cholery, nie mogę :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

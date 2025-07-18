@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,209 +44,387 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Screeny z gier, czyli co tu się od***ało</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Screeny z gier, czyli co tu się od***ało</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1039">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-27T21:17:21" class="text-sm text-gray-500 font-mono">2017-01-27 21:17:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W tej nitce wrzucamy nasze screeny z gier. Warunki: screen musi zawierać znaczne ilości śmiechu, żalu, wtf-u lub raka. <br /><br />Ja zaczynam, a na pierwszy ogień idzie <a href="http://images.tinypic.pl/i/00863/wppbvd0acpju.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Nikita Szabla</a>, którego dotknęła samotność i korzystając z atrybutów swego wygimnastykowanego ciała postanowił sobie obciągnąć. Mimo wszystko zachował kulturę i rzucił do mnie przyjazne &quot;Priviet&quot; (dziarsko przetłumaczone przez Uttę na &quot;Siemanko&quot;) kiedy się przybliżyłem. Klasa.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Screeny z gier, czyli co tu się od***ało</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1039" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1039"
+                                 aria-describedby="post-content-1039">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1040">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-01-27T21:35:40" class="text-sm text-gray-500 font-mono">2017-01-27 21:35:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Mukashi mukashi&#8230; Znaczy ten, dawno dawno temu, w czasie gdy Lost Alpha było <del>bogiem</del> bugiem (alfą znaczy), jechałem ci ja samochodem przez Outskirts, aż tu nagle SRRRRRRRU blowout, a że był specjalnie oskryptowany, to mnie pięknie wyjebało do bunkra w Lost Factory&#8230; Jakież było moje zdziwienie, gdy mój stalowy rumak postanowił mi <a href="http://i.imgur.com/b91MhMV.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">wiernie towarzyszyć&#8230;</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1039" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-27T21:17:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 21:17:21</time>
+                                    </header>
+                                    <div id="post-content-1039"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        W tej nitce wrzucamy nasze screeny z gier. Warunki: screen musi zawierać znaczne ilości śmiechu, żalu, wtf-u lub raka. <br /><br />Ja zaczynam, a na pierwszy ogień idzie <a href="http://images.tinypic.pl/i/00863/wppbvd0acpju.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Nikita Szabla</a>, którego dotknęła samotność i korzystając z atrybutów swego wygimnastykowanego ciała postanowił sobie obciągnąć. Mimo wszystko zachował kulturę i rzucił do mnie przyjazne &quot;Priviet&quot; (dziarsko przetłumaczone przez Uttę na &quot;Siemanko&quot;) kiedy się przybliżyłem. Klasa.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1041">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/25.jpg?1512503192" alt="Awatar PMG" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">PMG</span>
-                                <time datetime="2017-01-27T22:55:09" class="text-sm text-gray-500 font-mono">2017-01-27 22:55:09</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="http://oi65.tinypic.com/6hjdj4.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Telekineza</a> w Battlefield 1942. Zrobiłem skrina w idealnym momencie nie będąc świadom, co właściwie udało mi się uchwycić. ;)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1040" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1040"
+                                 aria-describedby="post-content-1040">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1042">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-28T19:06:12" class="text-sm text-gray-500 font-mono">2017-01-28 19:06:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ragdolle z HL2 w głupich pozach zawsze na propsie:<br /><br /><a href="http://images.akamai.steamusercontent.com/ugc/568898140350101166/A625CEA72A4EB69B612A7B31A1DBED35934CAA1E/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a><br /><a href="http://images.akamai.steamusercontent.com/ugc/164779984964437626/BD9DA4A18C161CB8942AE2DC34B9F04F67B31496/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik2</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1040" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-01-27T21:35:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 21:35:40</time>
+                                    </header>
+                                    <div id="post-content-1040"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        Mukashi mukashi&#8230; Znaczy ten, dawno dawno temu, w czasie gdy Lost Alpha było <del>bogiem</del> bugiem (alfą znaczy), jechałem ci ja samochodem przez Outskirts, aż tu nagle SRRRRRRRU blowout, a że był specjalnie oskryptowany, to mnie pięknie wyjebało do bunkra w Lost Factory&#8230; Jakież było moje zdziwienie, gdy mój stalowy rumak postanowił mi <a href="http://i.imgur.com/b91MhMV.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">wiernie towarzyszyć&#8230;</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1043">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-01-28T19:16:32" class="text-sm text-gray-500 font-mono">2017-01-28 19:16:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Ragdolle z HL2 w głupich pozach zawsze na propsie:<br /><br /><a href="http://images.akamai.steamusercontent.com/ugc/568898140350101166/A625CEA72A4EB69B612A7B31A1DBED35934CAA1E/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a><br /><a href="http://images.akamai.steamusercontent.com/ugc/164779984964437626/BD9DA4A18C161CB8942AE2DC34B9F04F67B31496/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik2</a><br /></div><br /><br />To i ja dorzucę coś z HL2<br /><br /><a href="http://i.imgur.com/q2EclC2.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">hanibalek</a><br /><a href="http://i.imgur.com/Axv3jpa.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">taki trochę rzeszów</a>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1041" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1041"
+                                 aria-describedby="post-content-1041">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/25.jpg?1512503192"
+                                     alt="Awatar użytkownika PMG"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1044">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-04-16T16:24:25" class="text-sm text-gray-500 font-mono">2017-04-16 16:24:25</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="http://i.imgur.com/RnsRIKE.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Opętany CJ</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1041" class="font-bold text-lg text-white">PMG</h3>
+                                        <time datetime="2017-01-27T22:55:09"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 22:55:09</time>
+                                    </header>
+                                    <div id="post-content-1041"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika PMG">
+                                        <a href="http://oi65.tinypic.com/6hjdj4.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Telekineza</a> w Battlefield 1942. Zrobiłem skrina w idealnym momencie nie będąc świadom, co właściwie udało mi się uchwycić. ;)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1045">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-05-16T20:45:30" class="text-sm text-gray-500 font-mono">2017-05-16 20:45:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ahhhh te stare gry :3
+                        </article>
+                    </li>
+                    
+                    <li id="post-1042" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1042"
+                                 aria-describedby="post-content-1042">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1046">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-08-19T15:20:47" class="text-sm text-gray-500 font-mono">2017-08-19 15:20:47</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nieśmieszne i namolne karachanowe gimbo-przegrywy z R* pozdrawiają zdrową wspólnotę.<br /><br /><img src="http://i.imgur.com/HfHbXIq.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1042" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-28T19:06:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-28 19:06:12</time>
+                                    </header>
+                                    <div id="post-content-1042"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ragdolle z HL2 w głupich pozach zawsze na propsie:<br /><br /><a href="http://images.akamai.steamusercontent.com/ugc/568898140350101166/A625CEA72A4EB69B612A7B31A1DBED35934CAA1E/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a><br /><a href="http://images.akamai.steamusercontent.com/ugc/164779984964437626/BD9DA4A18C161CB8942AE2DC34B9F04F67B31496/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik2</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1047">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-08-25T18:42:57" class="text-sm text-gray-500 font-mono">2017-08-25 18:42:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Easter egg z nowego Dooma<br /><br /><img src="https://steamuserimages-a.akamaihd.net/ugc/853848480728013445/141203A4B82ED514EF6EEFBB2ACE0FDA9C2D95FB/" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                        </article>
+                    </li>
+                    
+                    <li id="post-1043" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1043"
+                                 aria-describedby="post-content-1043">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1043" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-01-28T19:16:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-28 19:16:32</time>
+                                    </header>
+                                    <div id="post-content-1043"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Ragdolle z HL2 w głupich pozach zawsze na propsie:<br /><br /><a href="http://images.akamai.steamusercontent.com/ugc/568898140350101166/A625CEA72A4EB69B612A7B31A1DBED35934CAA1E/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a><br /><a href="http://images.akamai.steamusercontent.com/ugc/164779984964437626/BD9DA4A18C161CB8942AE2DC34B9F04F67B31496/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik2</a><br /></div><br /><br />To i ja dorzucę coś z HL2<br /><br /><a href="http://i.imgur.com/q2EclC2.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">hanibalek</a><br /><a href="http://i.imgur.com/Axv3jpa.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">taki trochę rzeszów</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1044" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1044"
+                                 aria-describedby="post-content-1044">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1044" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-04-16T16:24:25"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-16 16:24:25</time>
+                                    </header>
+                                    <div id="post-content-1044"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        <a href="http://i.imgur.com/RnsRIKE.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Opętany CJ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1045" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1045"
+                                 aria-describedby="post-content-1045">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1045" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-05-16T20:45:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-05-16 20:45:30</time>
+                                    </header>
+                                    <div id="post-content-1045"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ahhhh te stare gry :3
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1046" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1046"
+                                 aria-describedby="post-content-1046">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1046" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-08-19T15:20:47"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-19 15:20:47</time>
+                                    </header>
+                                    <div id="post-content-1046"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Nieśmieszne i namolne karachanowe gimbo-przegrywy z R* pozdrawiają zdrową wspólnotę.<br /><br /><img src="http://i.imgur.com/HfHbXIq.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1047" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1047"
+                                 aria-describedby="post-content-1047">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1047" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-08-25T18:42:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-25 18:42:57</time>
+                                    </header>
+                                    <div id="post-content-1047"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Easter egg z nowego Dooma<br /><br /><img src="https://steamuserimages-a.akamaihd.net/ugc/853848480728013445/141203A4B82ED514EF6EEFBB2ACE0FDA9C2D95FB/" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

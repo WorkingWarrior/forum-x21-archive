@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,230 +44,418 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Ostatnie 4-5 lat w branży gier</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Ostatnie 4-5 lat w branży gier</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2948">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2021-07-15T19:46:41" class="text-sm text-gray-500 font-mono">2021-07-15 19:46:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                to;dr: w co gracie/graliście w ciągu ostatnich kilku lat? Co polecacie? Gatunki gier dowolne.<br /><br />Zakładam temat bo od wspomnianych 4-5 lat mam gigantyczny problem żeby wsiąknąć w jakąś grę. Ostatnio udało mi się to ze Stalker Anomaly, gdzie spędziłem pewnie jakieś 150 godzin, no ale ileż można. <br /><br />Próbowałem Wiedźmina, GTA V, nowego CoDa (xD), far krajów, hitmanow i wielu innych gówien. Przy niektórych był fun, ale nic spektakularnego. Większość odpada już po gejplejach na jutube. Czy zostaje mi ogrywanie starych tytułów czy może moglibyście polecić coś, co wyszło na przestrzeni ostatnich kilku lat i nie jest przesiąknięte bliżej niesprecyzowana, ale wszystkim znaną tandetą?
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Ostatnie 4-5 lat w branży gier</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2948" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2948"
+                                 aria-describedby="post-content-2948">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2949">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2021-07-16T11:02:59" class="text-sm text-gray-500 font-mono">2021-07-16 11:02:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                GTA V, Wiedźmin 3, Black Desert Online. Reszta ogólnie chuj.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2948" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2021-07-15T19:46:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-15 19:46:41</time>
+                                    </header>
+                                    <div id="post-content-2948"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        to;dr: w co gracie/graliście w ciągu ostatnich kilku lat? Co polecacie? Gatunki gier dowolne.<br /><br />Zakładam temat bo od wspomnianych 4-5 lat mam gigantyczny problem żeby wsiąknąć w jakąś grę. Ostatnio udało mi się to ze Stalker Anomaly, gdzie spędziłem pewnie jakieś 150 godzin, no ale ileż można. <br /><br />Próbowałem Wiedźmina, GTA V, nowego CoDa (xD), far krajów, hitmanow i wielu innych gówien. Przy niektórych był fun, ale nic spektakularnego. Większość odpada już po gejplejach na jutube. Czy zostaje mi ogrywanie starych tytułów czy może moglibyście polecić coś, co wyszło na przestrzeni ostatnich kilku lat i nie jest przesiąknięte bliżej niesprecyzowana, ale wszystkim znaną tandetą?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2950">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2021-07-17T15:12:59" class="text-sm text-gray-500 font-mono">2021-07-17 15:12:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                FIFA 21, FIFA 20, FIFA 19, FIFA 18, FIFA 17, no i oczywiście kierki na kurniku
+                        </article>
+                    </li>
+                    
+                    <li id="post-2949" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2949"
+                                 aria-describedby="post-content-2949">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2951">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2021-07-18T10:28:14" class="text-sm text-gray-500 font-mono">2021-07-18 10:28:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                FIFA? Ty podludziu. Tylko PES. Ano o kierkach zapomniałem, niezapomniana immersja. <br /><br />Chuj, najwyżej kupie se po raz 28 konto w wot.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2949" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2021-07-16T11:02:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-16 11:02:59</time>
+                                    </header>
+                                    <div id="post-content-2949"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        GTA V, Wiedźmin 3, Black Desert Online. Reszta ogólnie chuj.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2952">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2021-07-18T13:12:23" class="text-sm text-gray-500 font-mono">2021-07-18 13:12:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Trzeba mieć nieźle przeoraną odbytnicę, żeby grać w grę o piłce nożnej, która ma &quot;soccer&quot; w tytule.<br /><br />Cho do GTA Online, od dawna chcieliśmy mieć z Pimpkiem dziecko. No i Undertale&#39;a w końcu ograj, bo znając Twoją nieheteronormatywną naturę, to pewnie nie grałeś.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2950" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2950"
+                                 aria-describedby="post-content-2950">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2953">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2021-07-26T22:03:12" class="text-sm text-gray-500 font-mono">2021-07-26 22:03:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja tam nabiłem 120h w MGS5 w tym roku. Dwa lata temu 180h na PS3, ale że mi zdycha to dokupiłem wersję pecetową.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2950" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2021-07-17T15:12:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-17 15:12:59</time>
+                                    </header>
+                                    <div id="post-content-2950"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        FIFA 21, FIFA 20, FIFA 19, FIFA 18, FIFA 17, no i oczywiście kierki na kurniku
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2954">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2021-07-27T10:29:05" class="text-sm text-gray-500 font-mono">2021-07-27 10:29:05</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2952" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div><br />Trzeba mieć nieźle przeoraną odbytnicę, żeby grać w grę o piłce nożnej, która ma &quot;soccer&quot; w tytule.<br /><br />Cho do GTA Online, od dawna chcieliśmy mieć z Pimpkiem dziecko. No i Undertale&#39;a w końcu ograj, bo znając Twoją nieheteronormatywną naturę, to pewnie nie grałeś.<br /></div><br /><br />Undertale za słaba grafika, a Pimpek wzgardził forum, więc ja wzgardzam Pimpkiem. <br /><br />MGS5 fajny pomysł, dziękować.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2951" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2951"
+                                 aria-describedby="post-content-2951">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2955">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2021-08-02T12:51:33" class="text-sm text-gray-500 font-mono">2021-08-02 12:51:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2954" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />Undertale za słaba grafika<br /></div><br /><br />Twoje prącie to też słaba grafika, a używasz. Stara Pimpka ponoć nie narzeka.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2951" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2021-07-18T10:28:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-18 10:28:14</time>
+                                    </header>
+                                    <div id="post-content-2951"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        FIFA? Ty podludziu. Tylko PES. Ano o kierkach zapomniałem, niezapomniana immersja. <br /><br />Chuj, najwyżej kupie se po raz 28 konto w wot.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2961">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2021-10-01T02:23:56" class="text-sm text-gray-500 font-mono">2021-10-01 02:23:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="https://media.discordapp.net/attachments/247426304125829120/893290471055564840/z27634203QTwarze-Ronaldo-i-Messiego-negatywnie-zaskakuja-w-e.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /> <br /><br />Nawet ładna ta lepsza gra o piłce.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2952" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2952"
+                                 aria-describedby="post-content-2952">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2964">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2021-10-04T20:11:31" class="text-sm text-gray-500 font-mono">2021-10-04 20:11:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie rozumiem o co chodzi, całkiem wierne odwzorowanie Rio Ferdinanda i Di Marii.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2952" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2021-07-18T13:12:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-18 13:12:23</time>
+                                    </header>
+                                    <div id="post-content-2952"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        Trzeba mieć nieźle przeoraną odbytnicę, żeby grać w grę o piłce nożnej, która ma &quot;soccer&quot; w tytule.<br /><br />Cho do GTA Online, od dawna chcieliśmy mieć z Pimpkiem dziecko. No i Undertale&#39;a w końcu ograj, bo znając Twoją nieheteronormatywną naturę, to pewnie nie grałeś.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2953" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2953"
+                                 aria-describedby="post-content-2953">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2953" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2021-07-26T22:03:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-26 22:03:12</time>
+                                    </header>
+                                    <div id="post-content-2953"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Ja tam nabiłem 120h w MGS5 w tym roku. Dwa lata temu 180h na PS3, ale że mi zdycha to dokupiłem wersję pecetową.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2954" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2954"
+                                 aria-describedby="post-content-2954">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2954" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2021-07-27T10:29:05"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-07-27 10:29:05</time>
+                                    </header>
+                                    <div id="post-content-2954"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2952" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div><br />Trzeba mieć nieźle przeoraną odbytnicę, żeby grać w grę o piłce nożnej, która ma &quot;soccer&quot; w tytule.<br /><br />Cho do GTA Online, od dawna chcieliśmy mieć z Pimpkiem dziecko. No i Undertale&#39;a w końcu ograj, bo znając Twoją nieheteronormatywną naturę, to pewnie nie grałeś.<br /></div><br /><br />Undertale za słaba grafika, a Pimpek wzgardził forum, więc ja wzgardzam Pimpkiem. <br /><br />MGS5 fajny pomysł, dziękować.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2955" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2955"
+                                 aria-describedby="post-content-2955">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2955" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2021-08-02T12:51:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-08-02 12:51:33</time>
+                                    </header>
+                                    <div id="post-content-2955"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2954" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />Undertale za słaba grafika<br /></div><br /><br />Twoje prącie to też słaba grafika, a używasz. Stara Pimpka ponoć nie narzeka.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2961" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2961"
+                                 aria-describedby="post-content-2961">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2961" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2021-10-01T02:23:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-10-01 02:23:56</time>
+                                    </header>
+                                    <div id="post-content-2961"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <img src="https://media.discordapp.net/attachments/247426304125829120/893290471055564840/z27634203QTwarze-Ronaldo-i-Messiego-negatywnie-zaskakuja-w-e.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /> <br /><br />Nawet ładna ta lepsza gra o piłce.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2964" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2964"
+                                 aria-describedby="post-content-2964">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2964" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2021-10-04T20:11:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-10-04 20:11:31</time>
+                                    </header>
+                                    <div id="post-content-2964"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Nie rozumiem o co chodzi, całkiem wierne odwzorowanie Rio Ferdinanda i Di Marii.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

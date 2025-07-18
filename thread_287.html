@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,62 +44,170 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">F.E.A.R.</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">F.E.A.R.</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2627">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2019-02-18T18:12:13" class="text-sm text-gray-500 font-mono">2019-02-18 18:12:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Seria FEAR jakoś mnie ominęła i dopiero niedawno uznałem że warto by się zapoznać, zwłaszcza że pierwsza część z dodatkami siedziała u mnie na gogu już jakiś czas.<br />Zagrałem, wczoraj przeszedłem. Pierwsze wrażenie po odpaleniu: cieszę się, że najpierw przeszedłem Blooda. Czuć że to staroszkolny shooter od Monolith. Gra nie jest trudna w ogarnięciu, ale niemożliwa do przejścia jeśli gracz po prostu nie nauczy się używać wszystkich możliwości które ona daje. Jedna źle przemyślana akcja kończy się albo wczytaniem gry, albo wykończeniem zasobów, czyli wczytaniem gry około 30 sekund później. Strzelanie daje bardzo dużo frajdy i czuć moc pukawek danych graczowi do zabawy. Graficznie ok, wiadomo gra 2006 rok więc to widać ale na prawdę nie przeszkadza. Udźwiękowienie jest świetne, doskonale buduje atmosferę, choć co prawda muzyki tam za specjalnie nie ma. Parę kawałków które są nie zapadły mi tak w pamięć jak po prostu dźwięki tła. Fabuła jest ok, nic wybitnego, opisałbym ją jako MGS1 spotyka Stranger Things i idą obejrzeć Szklaną Pułapkę. Podoba mi się jednak jak poprowadzona jest narracja, o ile zazwyczaj nie jestem wielkim fanem szukania masy nagrań i zapisków, w FEAR dziwnym trafem to działa. <br />Na daną chwilę zabrałem się za Extraction Point, pierwszy dodatek. Strzelanie równie ok choć brakuje mi wyżej wspomnianej narracji. Takie trochę <a href="https://pics.me.me/i-do-not-know-i-dont-know-who-i-am-22479861.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">o</a> wrażenie. Więcej o dodatkach gdy je skończę.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku F.E.A.R.</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2627" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2627"
+                                 aria-describedby="post-content-2627">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2628">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2019-02-19T20:21:21" class="text-sm text-gray-500 font-mono">2019-02-19 20:21:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                ^ FEAR jest FPSem.<br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="https://i.imgur.com/XzfrGme.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br />Gra fajna, a że wymaga czasami wczytania save, to znaczy, że jest &quot;nie do przejścia&quot; jak nie grało się w Dooma z zawiązanymi oczętami i pytą Miski w ustach. Graficznie strasznie się zestarzała, bo cierpi na syndrom &quot;life in plastic, it&#39;s fantastic&quot;, co niestety psuje zwłaszcza spoopy momenty. Po graniu w bardziej hardkorowe straszaki pod tym względem nie ma za bardzo wrażenia, gore też wypada kiepskawo. W zasadzie większość rzeczy w tej grze jest na dzień dzisiejszy dość &quot;meh&quot;.<br />Jednak jest jeden powód, dla którego warto zagrać w tę grę. To fenomenalne AI wroga, które do dzisiaj bije na głowę większość strzelanek. To właśnie to sprawia, że czasami zdarzy nam się kilka razy wczytać ten sam punkt zapisu. Wróg kombinuje, flankuje, koordynuje ruchy pomiędzy jednostkami, robi zasadzki, po prostu miodzio. Gdy widzę dzisiejsze pożal się boże gry, gdzie stoisz 10 metrów od wroga pod kątem 90 stopni, a on nie reaguje, to mam ochotę rzygnąć dupą poprzecznie. Tutaj nie traktuje się gracza jak debila. Gra każdą potyczką stawia wyzwanie do pokonania, które jest naturalne i satysfakcjonujące, nie zaś utrudnione jakimś sztucznym, z dupy wymyślonym &quot;ficzerem&quot;. Po tylu latach jednak ta gra to niestety głównie ciekawostka dla entuzjastów, nie zaś jakiś obowiązkowy tytuł do ogrania.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2627" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2019-02-18T18:12:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-18 18:12:13</time>
+                                    </header>
+                                    <div id="post-content-2627"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Seria FEAR jakoś mnie ominęła i dopiero niedawno uznałem że warto by się zapoznać, zwłaszcza że pierwsza część z dodatkami siedziała u mnie na gogu już jakiś czas.<br />Zagrałem, wczoraj przeszedłem. Pierwsze wrażenie po odpaleniu: cieszę się, że najpierw przeszedłem Blooda. Czuć że to staroszkolny shooter od Monolith. Gra nie jest trudna w ogarnięciu, ale niemożliwa do przejścia jeśli gracz po prostu nie nauczy się używać wszystkich możliwości które ona daje. Jedna źle przemyślana akcja kończy się albo wczytaniem gry, albo wykończeniem zasobów, czyli wczytaniem gry około 30 sekund później. Strzelanie daje bardzo dużo frajdy i czuć moc pukawek danych graczowi do zabawy. Graficznie ok, wiadomo gra 2006 rok więc to widać ale na prawdę nie przeszkadza. Udźwiękowienie jest świetne, doskonale buduje atmosferę, choć co prawda muzyki tam za specjalnie nie ma. Parę kawałków które są nie zapadły mi tak w pamięć jak po prostu dźwięki tła. Fabuła jest ok, nic wybitnego, opisałbym ją jako MGS1 spotyka Stranger Things i idą obejrzeć Szklaną Pułapkę. Podoba mi się jednak jak poprowadzona jest narracja, o ile zazwyczaj nie jestem wielkim fanem szukania masy nagrań i zapisków, w FEAR dziwnym trafem to działa. <br />Na daną chwilę zabrałem się za Extraction Point, pierwszy dodatek. Strzelanie równie ok choć brakuje mi wyżej wspomnianej narracji. Takie trochę <a href="https://pics.me.me/i-do-not-know-i-dont-know-who-i-am-22479861.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">o</a> wrażenie. Więcej o dodatkach gdy je skończę.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2628" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2628"
+                                 aria-describedby="post-content-2628">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2628" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2019-02-19T20:21:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-19 20:21:21</time>
+                                    </header>
+                                    <div id="post-content-2628"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        ^ FEAR jest FPSem.<br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="https://i.imgur.com/XzfrGme.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br />Gra fajna, a że wymaga czasami wczytania save, to znaczy, że jest &quot;nie do przejścia&quot; jak nie grało się w Dooma z zawiązanymi oczętami i pytą Miski w ustach. Graficznie strasznie się zestarzała, bo cierpi na syndrom &quot;life in plastic, it&#39;s fantastic&quot;, co niestety psuje zwłaszcza spoopy momenty. Po graniu w bardziej hardkorowe straszaki pod tym względem nie ma za bardzo wrażenia, gore też wypada kiepskawo. W zasadzie większość rzeczy w tej grze jest na dzień dzisiejszy dość &quot;meh&quot;.<br />Jednak jest jeden powód, dla którego warto zagrać w tę grę. To fenomenalne AI wroga, które do dzisiaj bije na głowę większość strzelanek. To właśnie to sprawia, że czasami zdarzy nam się kilka razy wczytać ten sam punkt zapisu. Wróg kombinuje, flankuje, koordynuje ruchy pomiędzy jednostkami, robi zasadzki, po prostu miodzio. Gdy widzę dzisiejsze pożal się boże gry, gdzie stoisz 10 metrów od wroga pod kątem 90 stopni, a on nie reaguje, to mam ochotę rzygnąć dupą poprzecznie. Tutaj nie traktuje się gracza jak debila. Gra każdą potyczką stawia wyzwanie do pokonania, które jest naturalne i satysfakcjonujące, nie zaś utrudnione jakimś sztucznym, z dupy wymyślonym &quot;ficzerem&quot;. Po tylu latach jednak ta gra to niestety głównie ciekawostka dla entuzjastów, nie zaś jakiś obowiązkowy tytuł do ogrania.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

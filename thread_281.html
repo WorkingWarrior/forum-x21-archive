@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,251 +44,449 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_25.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Książka i komiks</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Czytniki e-booków</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Czytniki e-booków</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2541">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-28T10:55:58" class="text-sm text-gray-500 font-mono">2019-01-28 10:55:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Temat trochę nawiązuje do <a href="https://x-21.pl/threads/ebooki-ktos-cos.206/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">tego</a>, ale nie jest bezpośrednim powiązaniem.<br />Podejrzewam, że spora część użytkowników (xD) ma jakiś czytnik czy też korzysta z aplikacji, która umożliwia taką zabawę.<br />Osobiście posiadam KIndle Paperwhite 4, który jawi mi się jako czytnik idealny. Wodoodporny, szybki, dobry ekran z podświetleniem, bateria trzyma w nieskończoność. Jest powleczony tworzywem przypominającym gumę, więc nie wyślizguje się z łapy. Ściągnąłem go z Niemiec, w naszej dystrybucji był o jakieś 300 zł droższy. POZDRAWIAM I POLETZAM, FIOTR PRĄCIEWSKI.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Czytniki e-booków</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2541" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2541"
+                                 aria-describedby="post-content-2541">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2543">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2019-01-28T11:48:17" class="text-sm text-gray-500 font-mono">2019-01-28 11:48:17</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Standardowo aplikacją Książki od Google. Smartphone zawsze przy sobie, a poza tym hehe, najważniejsza cena dla Polaka: pobierasz za darmo PDFa którego znalałeś na necie, wrzucasz na fona, wgrywasz na Ksiażki od Google i masz ebuka za darmo, hehe.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2541" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-28T10:55:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 10:55:58</time>
+                                    </header>
+                                    <div id="post-content-2541"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Temat trochę nawiązuje do <a href="https://x-21.pl/threads/ebooki-ktos-cos.206/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">tego</a>, ale nie jest bezpośrednim powiązaniem.<br />Podejrzewam, że spora część użytkowników (xD) ma jakiś czytnik czy też korzysta z aplikacji, która umożliwia taką zabawę.<br />Osobiście posiadam KIndle Paperwhite 4, który jawi mi się jako czytnik idealny. Wodoodporny, szybki, dobry ekran z podświetleniem, bateria trzyma w nieskończoność. Jest powleczony tworzywem przypominającym gumę, więc nie wyślizguje się z łapy. Ściągnąłem go z Niemiec, w naszej dystrybucji był o jakieś 300 zł droższy. POZDRAWIAM I POLETZAM, FIOTR PRĄCIEWSKI.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2547">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-01-28T19:05:44" class="text-sm text-gray-500 font-mono">2019-01-28 19:05:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Bo jesteś, kurwa, jebanym biedakiem spod mostu, nie to co Solve von Kindle Czwarty. <br /><br />Gardzę ebookami.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2543" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2543"
+                                 aria-describedby="post-content-2543">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2549">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2019-01-28T20:38:28" class="text-sm text-gray-500 font-mono">2019-01-28 20:38:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Po co mi czytnik w piwnicy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2543" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2019-01-28T11:48:17"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 11:48:17</time>
+                                    </header>
+                                    <div id="post-content-2543"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Standardowo aplikacją Książki od Google. Smartphone zawsze przy sobie, a poza tym hehe, najważniejsza cena dla Polaka: pobierasz za darmo PDFa którego znalałeś na necie, wrzucasz na fona, wgrywasz na Ksiażki od Google i masz ebuka za darmo, hehe.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2551">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-01-28T21:38:18" class="text-sm text-gray-500 font-mono">2019-01-28 21:38:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Czytnik tęczówki i linii papilarnych, coby nikt nieproszony do niej nie wszedł, to by się przydał.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2547" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2547"
+                                 aria-describedby="post-content-2547">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2554">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-28T22:17:43" class="text-sm text-gray-500 font-mono">2019-01-28 22:17:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2547" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Gardzę ebookami.</div><br />E-booki gardzą Tobą, plebejuszu 😆<br /><div class="quote-block"><div class="quote-header"><a href="#post-2551" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Czytnik tęczówki i linii papilarnych, coby nikt nieproszony do niej nie wszedł, to by się przydał.</div><br />Przecież i tak nikt nie wchodzi, problem solved.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2547" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-01-28T19:05:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 19:05:44</time>
+                                    </header>
+                                    <div id="post-content-2547"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Bo jesteś, kurwa, jebanym biedakiem spod mostu, nie to co Solve von Kindle Czwarty. <br /><br />Gardzę ebookami.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2555">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-01-28T22:18:53" class="text-sm text-gray-500 font-mono">2019-01-28 22:18:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Coby mama z kanapkami podczas fapa nie weszła*
+                        </article>
+                    </li>
+                    
+                    <li id="post-2549" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2549"
+                                 aria-describedby="post-content-2549">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2556">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-28T22:20:05" class="text-sm text-gray-500 font-mono">2019-01-28 22:20:05</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2555" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Coby mama z kanapkami podczas fapa nie weszła*</div><br />Chciałeś napisać „pomarańczami”.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2549" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2019-01-28T20:38:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 20:38:28</time>
+                                    </header>
+                                    <div id="post-content-2549"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Po co mi czytnik w piwnicy.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2557">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2019-01-28T23:35:13" class="text-sm text-gray-500 font-mono">2019-01-28 23:35:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pfff, nie stać robactwa na pomarańcze, co Ty insynuujesz.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2551" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2551"
+                                 aria-describedby="post-content-2551">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2564">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2019-01-29T08:46:56" class="text-sm text-gray-500 font-mono">2019-01-29 08:46:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Musiałbym przetestować przed kupnem. Póki co kupuję książki, a czytanie na monitorze tudzież ekranie mnie nie jara.<br />No i jak już kupować Kindla, to każdego PDFa wczyta, czy tylko oficjalne ścierwo?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2551" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-01-28T21:38:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 21:38:18</time>
+                                    </header>
+                                    <div id="post-content-2551"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Czytnik tęczówki i linii papilarnych, coby nikt nieproszony do niej nie wszedł, to by się przydał.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2566">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-01-29T08:49:52" class="text-sm text-gray-500 font-mono">2019-01-29 08:49:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2564" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Musiałbym przetestować przed kupnem. Póki co kupuję książki, a czytanie na monitorze tudzież ekranie mnie nie jara.<br />No i jak już kupować Kindla, to każdego PDFa wczyta, czy tylko oficjalne ścierwo?</div><br />Z moich doświadczeń wynika, że czyta wszystkie normalne PDF-y. Wspiera też reflow, ale trzeba go jebnąć do AZW przez oficjalny programik.<br />Ogólnie wolę EPUB i MOBI, są lepiej przystosowane do wyświetlania na czytnikach, aniżeli PDF, który został stworzony do odwzorowania dokumentu do wydruku.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2554" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2554"
+                                 aria-describedby="post-content-2554">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2554" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-28T22:17:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 22:17:43</time>
+                                    </header>
+                                    <div id="post-content-2554"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2547" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Gardzę ebookami.</div><br />E-booki gardzą Tobą, plebejuszu 😆<br /><div class="quote-block"><div class="quote-header"><a href="#post-2551" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Czytnik tęczówki i linii papilarnych, coby nikt nieproszony do niej nie wszedł, to by się przydał.</div><br />Przecież i tak nikt nie wchodzi, problem solved.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2555" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2555"
+                                 aria-describedby="post-content-2555">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2555" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-01-28T22:18:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 22:18:53</time>
+                                    </header>
+                                    <div id="post-content-2555"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Coby mama z kanapkami podczas fapa nie weszła*
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2556" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2556"
+                                 aria-describedby="post-content-2556">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2556" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-28T22:20:05"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 22:20:05</time>
+                                    </header>
+                                    <div id="post-content-2556"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2555" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Coby mama z kanapkami podczas fapa nie weszła*</div><br />Chciałeś napisać „pomarańczami”.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2557" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2557"
+                                 aria-describedby="post-content-2557">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2557" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2019-01-28T23:35:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-28 23:35:13</time>
+                                    </header>
+                                    <div id="post-content-2557"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Pfff, nie stać robactwa na pomarańcze, co Ty insynuujesz.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2564" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2564"
+                                 aria-describedby="post-content-2564">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2564" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2019-01-29T08:46:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:46:56</time>
+                                    </header>
+                                    <div id="post-content-2564"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Musiałbym przetestować przed kupnem. Póki co kupuję książki, a czytanie na monitorze tudzież ekranie mnie nie jara.<br />No i jak już kupować Kindla, to każdego PDFa wczyta, czy tylko oficjalne ścierwo?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2566" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2566"
+                                 aria-describedby="post-content-2566">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2566" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-01-29T08:49:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-01-29 08:49:52</time>
+                                    </header>
+                                    <div id="post-content-2566"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2564" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Musiałbym przetestować przed kupnem. Póki co kupuję książki, a czytanie na monitorze tudzież ekranie mnie nie jara.<br />No i jak już kupować Kindla, to każdego PDFa wczyta, czy tylko oficjalne ścierwo?</div><br />Z moich doświadczeń wynika, że czyta wszystkie normalne PDF-y. Wspiera też reflow, ale trzeba go jebnąć do AZW przez oficjalny programik.<br />Ogólnie wolę EPUB i MOBI, są lepiej przystosowane do wyświetlania na czytnikach, aniżeli PDF, który został stworzony do odwzorowania dokumentu do wydruku.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

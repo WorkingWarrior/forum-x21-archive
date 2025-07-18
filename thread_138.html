@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,83 +44,201 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">SINoAlice</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">SINoAlice</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1214">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-16T10:06:41" class="text-sm text-gray-500 font-mono">2017-02-16 10:06:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div style="text-align: center;"><a href="https://i.imgur.com/PSKR83A.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/PSKR83Al.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br />SINoAlice to niedawno zapowiedziana gra Square Enix na urządzenia przenośne. Gra jest dziełem Taro Yoko, autora serii Drakengard i Nier, a powstaje w studiu Pocket Laboratory, które wydało już m.in. Devil Maker: Tokyo - dosyć sławną karciankę. Fabuła opowiada o <em>Bibliotece</em>, świecie spętanym nieskończonym cyklem historii. Tymczasowo dostajemy klimatyczny zwiastun:<br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XKeAJDtEe9E</span></div><br /><div class="quote-block">Pamiętacie tę historię, którą czytano Wam, gdy byliście mali? Tę o pięknej księżniczce i silnym bohaterze.<br />Jesteśmy ignorantami, te dziewczyny nawet teraz gdzieś się błąkają.<br />To „Biblioteka”, świat spętany okowami nieskończych cykli opowieści.<br />Zebrały się tu postaci z opowieści. Te dziewczyny marzą tylko o jednym – wskrzesić „autora”.<br />Każda z postaci skrywa w sobie mrok, ale również pragnie spełnić swoje marzenia.<br />Jaka historia wyniknie z tego pragnienia?</div>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku SINoAlice</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1214" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1214"
+                                 aria-describedby="post-content-1214">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1215">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-02-16T10:40:53" class="text-sm text-gray-500 font-mono">2017-02-16 10:40:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                I pewnie dostaniemy też mikropłatności, gache, i 3 rozdziały na krzyż, aktualizowane raz na miesiąc :^)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1214" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-16T10:06:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-16 10:06:41</time>
+                                    </header>
+                                    <div id="post-content-1214"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div style="text-align: center;"><a href="https://i.imgur.com/PSKR83A.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/PSKR83Al.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br />SINoAlice to niedawno zapowiedziana gra Square Enix na urządzenia przenośne. Gra jest dziełem Taro Yoko, autora serii Drakengard i Nier, a powstaje w studiu Pocket Laboratory, które wydało już m.in. Devil Maker: Tokyo - dosyć sławną karciankę. Fabuła opowiada o <em>Bibliotece</em>, świecie spętanym nieskończonym cyklem historii. Tymczasowo dostajemy klimatyczny zwiastun:<br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XKeAJDtEe9E</span></div><br /><div class="quote-block">Pamiętacie tę historię, którą czytano Wam, gdy byliście mali? Tę o pięknej księżniczce i silnym bohaterze.<br />Jesteśmy ignorantami, te dziewczyny nawet teraz gdzieś się błąkają.<br />To „Biblioteka”, świat spętany okowami nieskończych cykli opowieści.<br />Zebrały się tu postaci z opowieści. Te dziewczyny marzą tylko o jednym – wskrzesić „autora”.<br />Każda z postaci skrywa w sobie mrok, ale również pragnie spełnić swoje marzenia.<br />Jaka historia wyniknie z tego pragnienia?</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1216">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-07T11:43:49" class="text-sm text-gray-500 font-mono">2017-04-07 11:43:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>atikabubu</strong> napisał:</span></div><br />I pewnie dostaniemy też mikropłatności, gache, i 3 rozdziały na krzyż, aktualizowane raz na miesiąc :^)<br /></div>Jak we wszystkich tego typu grach :P Muszę przyznać, że już mi to nawet nie przeszkadza, byleby dobrze się bawić. W Devil Maker: Tokyo grałem dosyć długo, gierka zacna, tyle że przejście do wyższych rozdziałów było wyjątkowo upierdliwe bez ww. mikropłatności. Mam nadzieję, że waifu będą tu piękne i cycate, a mikropłatności niepotrzebne do uzyskiwania jakiegokolwiek postępu w grze.<br /><br /><span style="color: cyan;">//Edyta:</span><br />Mamy listę postaci i nowy trailer (tylko po hińsku :&lt;)<br /><div class="quote-block">Czerwony Kapturek<br />Królewna Śnieżka<br />Alicja<br />Małgosia<br />Kopciuszek<br />Ibara-hime<br />Kaguya-hime<br />Pinokio</div><br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/f2g50vilDEE</span></div><br /><br /><span style="color: cyan;">//Edyta namba tsu:</span><br />No i pojawiły się wizerunki bohaterek (+ jedna, która wcześniej nie była wymieniona) :)<br /><details class="spoiler-block my-4"><summary>Czerwony kapturek</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/bouTWB0.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Kopciuszek</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/kB89DMK.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Alicja</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/iFHJigU.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Królewna Śnieżka</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/048pV1O.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Małgosia</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/k9qs82a.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Pinokio</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/Zq7myET.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Kaguya-hime</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/5cdW12o.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Ibara-hime</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/k8VaICS.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Mała Syrenka</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/RdY2qpy.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><br /><span style="color: cyan;">//Edyta namba sri:</span><br />Dotarłem do kolejnego PV, na którym widać fragmenty rozgrywki. Jak już było wiadomo, będzie to karcianka z turowymi walkami.<br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/edu3NoCUu9I</span></div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1215" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1215"
+                                 aria-describedby="post-content-1215">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1215" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-02-16T10:40:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-16 10:40:53</time>
+                                    </header>
+                                    <div id="post-content-1215"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        I pewnie dostaniemy też mikropłatności, gache, i 3 rozdziały na krzyż, aktualizowane raz na miesiąc :^)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1216" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1216"
+                                 aria-describedby="post-content-1216">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1216" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-07T11:43:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-07 11:43:49</time>
+                                    </header>
+                                    <div id="post-content-1216"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>atikabubu</strong> napisał:</span></div><br />I pewnie dostaniemy też mikropłatności, gache, i 3 rozdziały na krzyż, aktualizowane raz na miesiąc :^)<br /></div>Jak we wszystkich tego typu grach :P Muszę przyznać, że już mi to nawet nie przeszkadza, byleby dobrze się bawić. W Devil Maker: Tokyo grałem dosyć długo, gierka zacna, tyle że przejście do wyższych rozdziałów było wyjątkowo upierdliwe bez ww. mikropłatności. Mam nadzieję, że waifu będą tu piękne i cycate, a mikropłatności niepotrzebne do uzyskiwania jakiegokolwiek postępu w grze.<br /><br /><span style="color: cyan;">//Edyta:</span><br />Mamy listę postaci i nowy trailer (tylko po hińsku :&lt;)<br /><div class="quote-block">Czerwony Kapturek<br />Królewna Śnieżka<br />Alicja<br />Małgosia<br />Kopciuszek<br />Ibara-hime<br />Kaguya-hime<br />Pinokio</div><br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/f2g50vilDEE</span></div><br /><br /><span style="color: cyan;">//Edyta namba tsu:</span><br />No i pojawiły się wizerunki bohaterek (+ jedna, która wcześniej nie była wymieniona) :)<br /><details class="spoiler-block my-4"><summary>Czerwony kapturek</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/bouTWB0.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Kopciuszek</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/kB89DMK.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Alicja</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/iFHJigU.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Królewna Śnieżka</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/048pV1O.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Małgosia</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/k9qs82a.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Pinokio</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/Zq7myET.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Kaguya-hime</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/5cdW12o.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Ibara-hime</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/k8VaICS.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><details class="spoiler-block my-4"><summary>Mała Syrenka</summary><div class="mt-2"><div style="text-align: center;"><img src="https://i.imgur.com/RdY2qpy.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></div></details><br /><br /><span style="color: cyan;">//Edyta namba sri:</span><br />Dotarłem do kolejnego PV, na którym widać fragmenty rozgrywki. Jak już było wiadomo, będzie to karcianka z turowymi walkami.<br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/edu3NoCUu9I</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

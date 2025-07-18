@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,356 +44,604 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">W co aktualnie gracie</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">W co aktualnie gracie</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-479">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2016-12-30T21:19:35" class="text-sm text-gray-500 font-mono">2016-12-30 21:19:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No właśnie? <br />Ja męczę BioShocka w wersji remastered, nie jest najgorsze to odświeżenie, ale dupy nie urywa. No ale dostałam za darmo to nie będę narzekać. No i jeszcze Jedi Knight: Dark Forces II kupiony niedawno na GOG, trza doceniać klasykę.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku W co aktualnie gracie</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-479" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-479"
+                                 aria-describedby="post-content-479">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-480">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2016-12-30T21:21:41" class="text-sm text-gray-500 font-mono">2016-12-30 21:21:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Na 3DSie gram  w [url=https://en.wikipedia.org/wiki/Shantae_and_the_Pirate&#39;s_Curse]Shantae and the Pirate&#39;s Curse, na Vicie nie gram w nic, PS3 niedawno ukończyło mi Odin Sphere. A na kompie czytam Steins;Gate 0 :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-479" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2016-12-30T21:19:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-30 21:19:35</time>
+                                    </header>
+                                    <div id="post-content-479"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        No właśnie? <br />Ja męczę BioShocka w wersji remastered, nie jest najgorsze to odświeżenie, ale dupy nie urywa. No ale dostałam za darmo to nie będę narzekać. No i jeszcze Jedi Knight: Dark Forces II kupiony niedawno na GOG, trza doceniać klasykę.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-481">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2016-12-30T23:35:38" class="text-sm text-gray-500 font-mono">2016-12-30 23:35:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Binding of Isaac : Afterbirth i Antibirth. Głównie dla klimatu, bo poziom trudności wywala mi żeżuncjometr poza skalę.
+                        </article>
+                    </li>
+                    
+                    <li id="post-480" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-480"
+                                 aria-describedby="post-content-480">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-482">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2016-12-30T23:41:08" class="text-sm text-gray-500 font-mono">2016-12-30 23:41:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Na daną chwilę gram tylko w GTA V oraz Dooma 1 i 2, z rozlicznymi modami typu Brutal Doom, Moon oraz DooD. Zabrałem się też za This War of Mine, jednak niespecjalnie tę grę ogarniam więc raczej zbyt daleko z nią nie zajdę. Daleko też nie zaszedłem z najnowszym Doomem jako że ściąganie goryliona niggabajtów updatów niespecjalnie pasuje mi przy internecie jaki mam w akademiku. Do niedawna jeszcze grałem w Memetale oraz Papers, Please.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-480" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2016-12-30T21:21:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-30 21:21:41</time>
+                                    </header>
+                                    <div id="post-content-480"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Na 3DSie gram  w [url=https://en.wikipedia.org/wiki/Shantae_and_the_Pirate&#39;s_Curse]Shantae and the Pirate&#39;s Curse, na Vicie nie gram w nic, PS3 niedawno ukończyło mi Odin Sphere. A na kompie czytam Steins;Gate 0 :)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-483">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2016-12-31T00:53:48" class="text-sm text-gray-500 font-mono">2016-12-31 00:53:48</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                U mnie ostatnio króluje Fallout New Vegas, a do tego od czasu do czasu The Crew w ramach relaksu. Jak przemielę FNV to chyba wreszcie wrócę do Wieśmina 3 bo oba dodatki dokupione, a podstawa jeszcze nie ukończona.
+                        </article>
+                    </li>
+                    
+                    <li id="post-481" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-481"
+                                 aria-describedby="post-content-481">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-484">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Najemnik</span>
-                                <time datetime="2016-12-31T01:26:29" class="text-sm text-gray-500 font-mono">2016-12-31 01:26:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Overwatch i czasem, ale to bardzo bardzo rzadko Gwint.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-481" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2016-12-30T23:35:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-30 23:35:38</time>
+                                    </header>
+                                    <div id="post-content-481"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        Binding of Isaac : Afterbirth i Antibirth. Głównie dla klimatu, bo poziom trudności wywala mi żeżuncjometr poza skalę.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-485">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-04T10:39:24" class="text-sm text-gray-500 font-mono">2017-01-04 10:39:24</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lenny Weisstein</strong> napisał:</span></div>Na daną chwilę gram tylko w GTA V oraz Dooma 1 i 2, z rozlicznymi modami typu Brutal Doom, Moon oraz DooD. Zabrałem się też za This War of Mine, jednak niespecjalnie tę grę ogarniam więc raczej zbyt daleko z nią nie zajdę. Daleko też nie zaszedłem z najnowszym Doomem jako że ściąganie goryliona niggabajtów updatów niespecjalnie pasuje mi przy internecie jaki mam w akademiku. Do niedawna jeszcze grałem w Memetale oraz Papers, Please.</div><br /><br /><br />This War of Mine polecam dać drugą szansę. Dosyć wymagająca, ale naprawdę nieźle zrealizowana, przyjemnie mi się w to grało. No i można pędzić bimber i robić prochy, powinieneś się w tym odnaleźć. <br /><br />Od siebie nic nie dodam, bo od półtora roku, poza kierkami na kurniku i pokemon go na telefonie, w nic nie grałem.
+                        </article>
+                    </li>
+                    
+                    <li id="post-482" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-482"
+                                 aria-describedby="post-content-482">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-486">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-01-24T17:07:11" class="text-sm text-gray-500 font-mono">2017-01-24 17:07:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                PC:<br /><a href="https://www.gamefaqs.com/snes/563038-super-noahs-ark-3d" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Super 3D Noah&#39;s Ark</a><br /><a href="https://www.gamefaqs.com/pc/...return-to-castle-wolfenstein" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Return to Castle Wolfenstein</a> [Re-play]<br />DS:<br /><a href="https://www.gamefaqs.com/ds/933044-kirby-squeak-squad" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kirby: Canvas Curse</a><br /><a href="https://www.gamefaqs.com/ds/933044-kirby-squeak-squad" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kirby: Squeak Squad</a><br />3DS: <br /><a href="https://www.gamefaqs.com/3ds/187638-kirby-planet-robobot" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kirby: Planet Robobot</a><br />PS2:<br /><a href="https://www.gamefaqs.com/ps2/920206-rocky-legends" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Rocky: Legends</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-482" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2016-12-30T23:41:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-30 23:41:08</time>
+                                    </header>
+                                    <div id="post-content-482"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Na daną chwilę gram tylko w GTA V oraz Dooma 1 i 2, z rozlicznymi modami typu Brutal Doom, Moon oraz DooD. Zabrałem się też za This War of Mine, jednak niespecjalnie tę grę ogarniam więc raczej zbyt daleko z nią nie zajdę. Daleko też nie zaszedłem z najnowszym Doomem jako że ściąganie goryliona niggabajtów updatów niespecjalnie pasuje mi przy internecie jaki mam w akademiku. Do niedawna jeszcze grałem w Memetale oraz Papers, Please.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-487">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/25.jpg?1512503192" alt="Awatar PMG" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">PMG</span>
-                                <time datetime="2017-01-26T21:22:31" class="text-sm text-gray-500 font-mono">2017-01-26 21:22:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ostatnio dorwałem się do mniej lub bardziej pamiętnego System Shock 2. Ogólnie gra jest zarąbista, klimat jest gęsty, rozgrywka przyjemna, a czasem nawet się idzie wystraszyć. Poziom trudności bywa przegięty, ale akurat w przypadku tej gry jest to w miarę okej. Można grać bez dostania pierdzielca, choć polecam robić regularne, &quot;twarde&quot; sejwy, bo bugi się zdarzają i to dosyć okrutne.  Jeśli ktoś lubi takie cyberpunkowo-horrorowe klimaty to warto zerknąć.
+                        </article>
+                    </li>
+                    
+                    <li id="post-483" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-483"
+                                 aria-describedby="post-content-483">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-488">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-27T08:07:49" class="text-sm text-gray-500 font-mono">2017-01-27 08:07:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Miałem grać w Pillars of Eternity ale jakoś tak wyszło, że gram w Borderlands 2 :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-483" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2016-12-31T00:53:48"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-31 00:53:48</time>
+                                    </header>
+                                    <div id="post-content-483"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        U mnie ostatnio króluje Fallout New Vegas, a do tego od czasu do czasu The Crew w ramach relaksu. Jak przemielę FNV to chyba wreszcie wrócę do Wieśmina 3 bo oba dodatki dokupione, a podstawa jeszcze nie ukończona.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1802">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-01-07T15:51:23" class="text-sm text-gray-500 font-mono">2018-01-07 15:51:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Od czasu do czasu pyknę se w Observera, którego nabyłam na wyprzedaży na Stimie. Klimatyczna gierka, spoko.
+                        </article>
+                    </li>
+                    
+                    <li id="post-484" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-484"
+                                 aria-describedby="post-content-484">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/11.jpg?1512503192"
+                                     alt="Awatar użytkownika Najemnik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1809">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-07T21:42:28" class="text-sm text-gray-500 font-mono">2018-01-07 21:42:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ogólnie to pykam w GTA V na PS3, ale próbuje zainstalować Fallouta 4 na kompie :)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-484" class="font-bold text-lg text-white">Najemnik</h3>
+                                        <time datetime="2016-12-31T01:26:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-31 01:26:29</time>
+                                    </header>
+                                    <div id="post-content-484"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Najemnik">
+                                        Overwatch i czasem, ale to bardzo bardzo rzadko Gwint.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1851">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-01-13T22:30:56" class="text-sm text-gray-500 font-mono">2018-01-13 22:30:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="http://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Standardowo</a>
+                        </article>
+                    </li>
+                    
+                    <li id="post-485" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-485"
+                                 aria-describedby="post-content-485">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1852">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-13T23:07:58" class="text-sm text-gray-500 font-mono">2018-01-13 23:07:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie gram w nic bo jest zima i mi palce odmarzają przy łapaniu pokemonów. Ale czasem sobie wyobrażam, że gram w czołgi.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-485" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-04T10:39:24"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-04 10:39:24</time>
+                                    </header>
+                                    <div id="post-content-485"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lenny Weisstein</strong> napisał:</span></div>Na daną chwilę gram tylko w GTA V oraz Dooma 1 i 2, z rozlicznymi modami typu Brutal Doom, Moon oraz DooD. Zabrałem się też za This War of Mine, jednak niespecjalnie tę grę ogarniam więc raczej zbyt daleko z nią nie zajdę. Daleko też nie zaszedłem z najnowszym Doomem jako że ściąganie goryliona niggabajtów updatów niespecjalnie pasuje mi przy internecie jaki mam w akademiku. Do niedawna jeszcze grałem w Memetale oraz Papers, Please.</div><br /><br /><br />This War of Mine polecam dać drugą szansę. Dosyć wymagająca, ale naprawdę nieźle zrealizowana, przyjemnie mi się w to grało. No i można pędzić bimber i robić prochy, powinieneś się w tym odnaleźć. <br /><br />Od siebie nic nie dodam, bo od półtora roku, poza kierkami na kurniku i pokemon go na telefonie, w nic nie grałem.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1853">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/10.jpg?1512503192" alt="Awatar Rex" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Rex</span>
-                                <time datetime="2018-01-14T00:59:56" class="text-sm text-gray-500 font-mono">2018-01-14 00:59:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Star Wars The Force Unleashed na PC. O kurwa, jakie to gówno. Wersja na PSP ma zupełnie inne, lepsze poziomy, lepszy system walki, lepszy system rozwoju postaci i ogólnie jest w chuj lepsza. Jak można było coś takiego popełnić?
+                        </article>
+                    </li>
+                    
+                    <li id="post-486" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-486"
+                                 aria-describedby="post-content-486">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1860">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-01-15T18:02:32" class="text-sm text-gray-500 font-mono">2018-01-15 18:02:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1853" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Rex</strong> napisał:</span></a></div>Star Wars The Force Unleashed na PC. O kurwa, jakie to gówno.</div><br />Powiadają, że dwójka jest nieco lepsza, chuj wie, nie grałam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-486" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-01-24T17:07:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 17:07:11</time>
+                                    </header>
+                                    <div id="post-content-486"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        PC:<br /><a href="https://www.gamefaqs.com/snes/563038-super-noahs-ark-3d" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Super 3D Noah&#39;s Ark</a><br /><a href="https://www.gamefaqs.com/pc/...return-to-castle-wolfenstein" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Return to Castle Wolfenstein</a> [Re-play]<br />DS:<br /><a href="https://www.gamefaqs.com/ds/933044-kirby-squeak-squad" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kirby: Canvas Curse</a><br /><a href="https://www.gamefaqs.com/ds/933044-kirby-squeak-squad" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kirby: Squeak Squad</a><br />3DS: <br /><a href="https://www.gamefaqs.com/3ds/187638-kirby-planet-robobot" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kirby: Planet Robobot</a><br />PS2:<br /><a href="https://www.gamefaqs.com/ps2/920206-rocky-legends" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Rocky: Legends</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-487" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-487"
+                                 aria-describedby="post-content-487">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/25.jpg?1512503192"
+                                     alt="Awatar użytkownika PMG"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-487" class="font-bold text-lg text-white">PMG</h3>
+                                        <time datetime="2017-01-26T21:22:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-26 21:22:31</time>
+                                    </header>
+                                    <div id="post-content-487"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika PMG">
+                                        Ostatnio dorwałem się do mniej lub bardziej pamiętnego System Shock 2. Ogólnie gra jest zarąbista, klimat jest gęsty, rozgrywka przyjemna, a czasem nawet się idzie wystraszyć. Poziom trudności bywa przegięty, ale akurat w przypadku tej gry jest to w miarę okej. Można grać bez dostania pierdzielca, choć polecam robić regularne, &quot;twarde&quot; sejwy, bo bugi się zdarzają i to dosyć okrutne.  Jeśli ktoś lubi takie cyberpunkowo-horrorowe klimaty to warto zerknąć.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-488" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-488"
+                                 aria-describedby="post-content-488">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-488" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-27T08:07:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 08:07:49</time>
+                                    </header>
+                                    <div id="post-content-488"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Miałem grać w Pillars of Eternity ale jakoś tak wyszło, że gram w Borderlands 2 :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1802" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1802"
+                                 aria-describedby="post-content-1802">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1802" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-01-07T15:51:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 15:51:23</time>
+                                    </header>
+                                    <div id="post-content-1802"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Od czasu do czasu pyknę se w Observera, którego nabyłam na wyprzedaży na Stimie. Klimatyczna gierka, spoko.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1809" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1809"
+                                 aria-describedby="post-content-1809">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1809" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-07T21:42:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-07 21:42:28</time>
+                                    </header>
+                                    <div id="post-content-1809"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Ogólnie to pykam w GTA V na PS3, ale próbuje zainstalować Fallouta 4 na kompie :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1851" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1851"
+                                 aria-describedby="post-content-1851">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1851" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-01-13T22:30:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-13 22:30:56</time>
+                                    </header>
+                                    <div id="post-content-1851"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        <a href="http://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Standardowo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1852" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1852"
+                                 aria-describedby="post-content-1852">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1852" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-13T23:07:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-13 23:07:58</time>
+                                    </header>
+                                    <div id="post-content-1852"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Nie gram w nic bo jest zima i mi palce odmarzają przy łapaniu pokemonów. Ale czasem sobie wyobrażam, że gram w czołgi.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1853" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1853"
+                                 aria-describedby="post-content-1853">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/10.jpg?1512503192"
+                                     alt="Awatar użytkownika Rex"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1853" class="font-bold text-lg text-white">Rex</h3>
+                                        <time datetime="2018-01-14T00:59:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-14 00:59:56</time>
+                                    </header>
+                                    <div id="post-content-1853"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Rex">
+                                        Star Wars The Force Unleashed na PC. O kurwa, jakie to gówno. Wersja na PSP ma zupełnie inne, lepsze poziomy, lepszy system walki, lepszy system rozwoju postaci i ogólnie jest w chuj lepsza. Jak można było coś takiego popełnić?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1860" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1860"
+                                 aria-describedby="post-content-1860">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1860" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-01-15T18:02:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-15 18:02:32</time>
+                                    </header>
+                                    <div id="post-content-1860"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1853" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Rex</strong> napisał:</span></a></div>Star Wars The Force Unleashed na PC. O kurwa, jakie to gówno.</div><br />Powiadają, że dwójka jest nieco lepsza, chuj wie, nie grałam.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,630 +44,1008 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_23.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Film i serial</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Ekran duży i mały</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Ekran duży i mały</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-676">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-05T23:54:33" class="text-sm text-gray-500 font-mono">2017-01-05 23:54:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Temat, w którym można dyskutować o wszelkiej maści filmach i serialach. Co tam ostatnio oglądaliście, czy się podobało etc. <br />Niedawno byłam w kinie na nowych StarWarsach, znaczy &quot;Łotr 1&quot;, podobało mi się, tyle, że miałam mieszane uczucia odnośnie tej całkowitej zmiany konwencji. Bo film jest smutny. :( :( :(<br />Ale za to ma dużo nawiązań do klasycznej trylogii; tak czy srak nie żałuję, że poszłam do kina i to obejrzałam. Inna sprawa, że jeśli chodzi o filmy tego typu, nie jestem zbyt wymagającym odbiorcą.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Ekran duży i mały</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-676" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-676"
+                                 aria-describedby="post-content-676">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-677">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-06T17:03:56" class="text-sm text-gray-500 font-mono">2017-01-06 17:03:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z filmów to ostatnio obejrzałem The Guest z 2014 roku. Film na tyle mi sie podobał, że obejrzałem go dwa razy, głównie ze względu na muzykę ;)
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-676" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-05T23:54:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-05 23:54:33</time>
+                                    </header>
+                                    <div id="post-content-676"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Temat, w którym można dyskutować o wszelkiej maści filmach i serialach. Co tam ostatnio oglądaliście, czy się podobało etc. <br />Niedawno byłam w kinie na nowych StarWarsach, znaczy &quot;Łotr 1&quot;, podobało mi się, tyle, że miałam mieszane uczucia odnośnie tej całkowitej zmiany konwencji. Bo film jest smutny. :( :( :(<br />Ale za to ma dużo nawiązań do klasycznej trylogii; tak czy srak nie żałuję, że poszłam do kina i to obejrzałam. Inna sprawa, że jeśli chodzi o filmy tego typu, nie jestem zbyt wymagającym odbiorcą.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-678">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-06T17:17:51" class="text-sm text-gray-500 font-mono">2017-01-06 17:17:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Sam się zdziwiłem co do The Guest.<br /><br />Jako dziwka na wszystko, co z latami 80 związane, widząc stylistykę okładki filmu zainteresowałem się. <br />Daleko mu do Drive z Goslingiem, ale filmy wypełniają podobną niszę i o ile Gościowi sporo brakuje do arcydzieła, to Dan Stevens też daje sobie radę jako psychopatyczny przystojniacha. Jednak jak już było wspomniane to, co głównie wybija film, to ścieżka dźwiękowa. Nawet jeżeli komuś nie spodoba się film, to posłucha dobrej muzyki.<br /><br />Poza tym teraz sobie zatriggeruję Lenina i pozwolę stwierdzić, że zostałem zarażony kinem koreańskim. Jeżeli ktoś lubi dobre, klimatyczne kryminały, to może śmiało zacząć się interesować. Z filmów bije autentyczność, bez kiczowatej holiłudzkiej pompy, a brutalność fizyczna i psychologiczna potrafi pozostawić pozytywnie nieprzyjemny posmak w ustach.
+                        </article>
+                    </li>
+                    
+                    <li id="post-677" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-677"
+                                 aria-describedby="post-content-677">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-679">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-09T07:09:19" class="text-sm text-gray-500 font-mono">2017-01-09 07:09:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No to tak - jakiś czas temu skończyłem <a href="http://www.filmweb.pl/serial/Westworld-2016-232988" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Westworld</a>. Dobry serial, choć muszę przyznać, że rozkręcał się dość długo. Fanem dzikiego zachodu nie jestem, muszę przyznać, że raczej przyciągnął mnie temat sztucznej świadomości i drogi do niej. Czekam na drugi sezon i polecam wszystkim fanom SF ;)<br />Wczoraj zacząłem oglądać <a href="http://www.filmweb.pl/serial/Belfer-2016-746188" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Belfra</a> - łyknąłem dwa odcinki i jestem zadowolony, podoba mi się kryminalik, choć niektóre rzeczy są jasne od początku.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-677" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-06T17:03:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-06 17:03:56</time>
+                                    </header>
+                                    <div id="post-content-677"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Z filmów to ostatnio obejrzałem The Guest z 2014 roku. Film na tyle mi sie podobał, że obejrzałem go dwa razy, głównie ze względu na muzykę ;)
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-680">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-09T11:04:16" class="text-sm text-gray-500 font-mono">2017-01-09 11:04:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Oglądam dosyć sporo, ale raczej kurczowo trzymam się kina anglojęzycznego i komercji. Z nieco mniej znanych filmów polecić mogę Irreversible - mroczny thriller, nietypowy, bo nagrany od końca. Dla znaffców i krytyków - obowiązkowo Mulholland Drive, ale od razu ostrzegam, że trzeba go obejrzeć ze 2-3 razy żeby coś zrozumieć, a film trwa 3 godziny. Dodatkowo dla fanów Monici Bellucci polecam Malenę. Z takiej średniej komerchy - Memento, czyli całkiem porządny mindfuck. <br /><br />Seriale - True Detective, chyba najlepszy serial ostatnich lat, a oglądałem wiele.
+                        </article>
+                    </li>
+                    
+                    <li id="post-678" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-678"
+                                 aria-describedby="post-content-678">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-681">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Valentino</span>
-                                <time datetime="2017-01-11T02:16:52" class="text-sm text-gray-500 font-mono">2017-01-11 02:16:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Serialowo.<br />&quot;True Detective&quot; - bardzo dobre, ale przehype&#39;owane. Drugi sezon o dziwo, pod wieloma względami, bardziej mi podszedł, a ogólnie uchodzi za gorszy (i chyba nawet jest; lekka sympatia do <em>guilty pleasures</em> z mojej strony).<br />Nic nie jest jednak tak bardzo przehype&#39;owane jak &quot;Stranger Things&quot; - dobre i solidne, ale tylko tyle, a poza tym - odtwórcze i niezbyt ciekawe. Ale nostalgiczne kurewstwo z bardzo dobrymi dziecięcymi aktorami pierwszej klasy.<br />Z o wiele lepszych rzeczy polecam następujące:<br />&quot;Peaky Blinders&quot;;<br />&quot;Fargo&quot; - zwłaszcza drugi sezon;<br />&quot;Bron/Broen&quot;;<br />&quot;The Killing&quot; - widziałem, póki co, tylko amerykański remake z Kinnamanem;<br />&quot;Penny Dreadful&quot;;<br />&quot;The Night Of&quot; (nyes-nyes-nyes).
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-678" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-06T17:17:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-06 17:17:51</time>
+                                    </header>
+                                    <div id="post-content-678"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Sam się zdziwiłem co do The Guest.<br /><br />Jako dziwka na wszystko, co z latami 80 związane, widząc stylistykę okładki filmu zainteresowałem się. <br />Daleko mu do Drive z Goslingiem, ale filmy wypełniają podobną niszę i o ile Gościowi sporo brakuje do arcydzieła, to Dan Stevens też daje sobie radę jako psychopatyczny przystojniacha. Jednak jak już było wspomniane to, co głównie wybija film, to ścieżka dźwiękowa. Nawet jeżeli komuś nie spodoba się film, to posłucha dobrej muzyki.<br /><br />Poza tym teraz sobie zatriggeruję Lenina i pozwolę stwierdzić, że zostałem zarażony kinem koreańskim. Jeżeli ktoś lubi dobre, klimatyczne kryminały, to może śmiało zacząć się interesować. Z filmów bije autentyczność, bez kiczowatej holiłudzkiej pompy, a brutalność fizyczna i psychologiczna potrafi pozostawić pozytywnie nieprzyjemny posmak w ustach.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-682">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-11T07:20:45" class="text-sm text-gray-500 font-mono">2017-01-11 07:20:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No, Belfer skończony. IMO solidny kawałek serialu, warto poświęcić te (niecałe) dziesięć godzin. Gdzieś czytałem, że kręcą drugi sezon, obawiam się, iż totalnie spierdolą sprawę.<br />&quot;True Detective&quot; - oglądałem, przy pierwszej serii dobrze się bawiłem. Druga mnie nie zachwyciła, chociaż też miała sporo swoich smaczków.<br />&quot;Stranger Things&quot; - hype był na to ogromny, czekałem cały rok na premierę i&#8230; nie zawiodłem się. Dostałem dokładnie to, czego oczekiwałem.
+                        </article>
+                    </li>
+                    
+                    <li id="post-679" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-679"
+                                 aria-describedby="post-content-679">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-683">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-15T20:35:38" class="text-sm text-gray-500 font-mono">2017-01-15 20:35:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z seriali to ostatnio:<br />- Westworld - jestem w połowie pierwszego sezonu i wygląda świetnie<br />- Taboo - zapowiada się bardzo dobrze<br />- Black Sails - planuję oglądać od nowa bo lada moment sezon 4
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-679" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-09T07:09:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-09 07:09:19</time>
+                                    </header>
+                                    <div id="post-content-679"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        No to tak - jakiś czas temu skończyłem <a href="http://www.filmweb.pl/serial/Westworld-2016-232988" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Westworld</a>. Dobry serial, choć muszę przyznać, że rozkręcał się dość długo. Fanem dzikiego zachodu nie jestem, muszę przyznać, że raczej przyciągnął mnie temat sztucznej świadomości i drogi do niej. Czekam na drugi sezon i polecam wszystkim fanom SF ;)<br />Wczoraj zacząłem oglądać <a href="http://www.filmweb.pl/serial/Belfer-2016-746188" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Belfra</a> - łyknąłem dwa odcinki i jestem zadowolony, podoba mi się kryminalik, choć niektóre rzeczy są jasne od początku.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-684">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-01-29T05:57:44" class="text-sm text-gray-500 font-mono">2017-01-29 05:57:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Akurat wróciłem z kina, tzn. z popijawy pokinowej, po seansie Trainspotting 2.<br />Mózg rozjebany, muszę obejrzeć ten film jeszcze parę razy.  Świetna historia, wartka akcja, dość psychodeliczna atmosfera, genialny soundtrack i humor. <br />Klimat i konwencję ma zupełnie inny niż pierwszy film, który także każdemu polecam. Dwójkę o ile można spokojnie oglądać bez znajomości jedynki, to warto tę ostatnią sobie odświeżyć przed seansem dla wyłapania większej ilości nawiązań.
+                        </article>
+                    </li>
+                    
+                    <li id="post-680" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-680"
+                                 aria-describedby="post-content-680">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-685">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-03-04T11:50:18" class="text-sm text-gray-500 font-mono">2017-03-04 11:50:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ostatnio obejrzałam &quot;Pasażerów&quot;. Ogólnie mi się podobało, ciekawa koncepcja, ale film jak to film, miał lepsze i gorsze momenty, niektóre banalne i zbyt przewidywalne. Ale w sumie spoko. Jak kiedyś pisałam, nie mam wysokich wymagań odnośnie kina tego typu.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-680" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-09T11:04:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-09 11:04:16</time>
+                                    </header>
+                                    <div id="post-content-680"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Oglądam dosyć sporo, ale raczej kurczowo trzymam się kina anglojęzycznego i komercji. Z nieco mniej znanych filmów polecić mogę Irreversible - mroczny thriller, nietypowy, bo nagrany od końca. Dla znaffców i krytyków - obowiązkowo Mulholland Drive, ale od razu ostrzegam, że trzeba go obejrzeć ze 2-3 razy żeby coś zrozumieć, a film trwa 3 godziny. Dodatkowo dla fanów Monici Bellucci polecam Malenę. Z takiej średniej komerchy - Memento, czyli całkiem porządny mindfuck. <br /><br />Seriale - True Detective, chyba najlepszy serial ostatnich lat, a oglądałem wiele.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-686">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-03-04T12:35:01" class="text-sm text-gray-500 font-mono">2017-03-04 12:35:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ostatnio zebraliśmy się ze swoją połówką i obejrzeliśmy „Interstellar” – IMO bardzo dobre kino, tylko ta akcja w czarnej dziurze nieco mnie zniechęciła, no aaaaaleeee wiadomo, że to wizja artystyczna. Film ma ode mnie wielkiego kciuka w górę, bo rzadko zdarza się, żebym nie usnął podczas oglądania :)<br />PS widział ktoś już Belle Epoque?
+                        </article>
+                    </li>
+                    
+                    <li id="post-681" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-681"
+                                 aria-describedby="post-content-681">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/20.jpg?1512503192"
+                                     alt="Awatar użytkownika Valentino"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-687">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-03-04T13:11:57" class="text-sm text-gray-500 font-mono">2017-03-04 13:11:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja widziałem. Dwa odcinki. Miał niby to być mini film, że każdy odcinek o czymś innym na miarę zagranicznych seriali. No niestety nie. Serial trwa nieco ponad 30 minut, więc to założenie nie mogło się udać. Przewidywalne, specjalnie nie trzyma w napięciu, od razu wiadomo kto jest tym złym, Małaszyński mnie wkurza (ale takie to już moje ale). Klimatu tamtych lat specjalnie nie czuć, niestety. Kiczowate to. Dwa głupie błędy też zauważyłem w pierwszym odcinku. Żaluzje współczesne i sygnalizacja świetlna, serio xdd Zwykły przeciętny serial. Naprawde, to Ojciec Mateusz którego bardzo lubie i jest serialem do obiadu i z mniejszym budżetem bardziej trzyma w napięciu xd
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-681" class="font-bold text-lg text-white">Valentino</h3>
+                                        <time datetime="2017-01-11T02:16:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-11 02:16:52</time>
+                                    </header>
+                                    <div id="post-content-681"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Valentino">
+                                        Serialowo.<br />&quot;True Detective&quot; - bardzo dobre, ale przehype&#39;owane. Drugi sezon o dziwo, pod wieloma względami, bardziej mi podszedł, a ogólnie uchodzi za gorszy (i chyba nawet jest; lekka sympatia do <em>guilty pleasures</em> z mojej strony).<br />Nic nie jest jednak tak bardzo przehype&#39;owane jak &quot;Stranger Things&quot; - dobre i solidne, ale tylko tyle, a poza tym - odtwórcze i niezbyt ciekawe. Ale nostalgiczne kurewstwo z bardzo dobrymi dziecięcymi aktorami pierwszej klasy.<br />Z o wiele lepszych rzeczy polecam następujące:<br />&quot;Peaky Blinders&quot;;<br />&quot;Fargo&quot; - zwłaszcza drugi sezon;<br />&quot;Bron/Broen&quot;;<br />&quot;The Killing&quot; - widziałem, póki co, tylko amerykański remake z Kinnamanem;<br />&quot;Penny Dreadful&quot;;<br />&quot;The Night Of&quot; (nyes-nyes-nyes).
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-688">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-03-04T13:22:28" class="text-sm text-gray-500 font-mono">2017-03-04 13:22:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-687" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div><br />Ja widziałem. Dwa odcinki. Miał niby to być mini film, że każdy odcinek o czymś innym na miarę zagranicznych seriali. No niestety nie. Serial trwa nieco ponad 30 minut, więc to założenie nie mogło się udać. Przewidywalne, specjalnie nie trzyma w napięciu, od razu wiadomo kto jest tym złym, Małaszyński mnie wkurza (ale takie to już moje ale). Klimatu tamtych lat specjalnie nie czuć, niestety. Kiczowate to. Dwa głupie błędy też zauważyłem w pierwszym odcinku. Żaluzje współczesne i sygnalizacja świetlna, serio xdd Zwykły przeciętny serial. Naprawde, to Ojciec Mateusz którego bardzo lubie i jest serialem do obiadu i z mniejszym budżetem bardziej trzyma w napięciu xd<br /></div>Obejrzę pierwszy, jeśli będzie tak gówniany, jak opisujesz, nie będę dalej oglądał, szkoda mojego czasu. Sam nie lubię gęby Małaszyńskiego, jakoś mnie drażni D:
+                        </article>
+                    </li>
+                    
+                    <li id="post-682" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-682"
+                                 aria-describedby="post-content-682">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-689">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-04-15T07:36:17" class="text-sm text-gray-500 font-mono">2017-04-15 07:36:17</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Obejrzałem &quot;Szybkich i wściekłych 8&quot; i pomimo numerka sugerującego że jest to produkcja wśród filmów niczym następny Kał z Dupy czy Haszyszowa Kreda wśród gier, bawiłem się świetnie.<br />Dobry film akcji z humorem do pooglądania na luzie, zwłaszcza po paru piwkach w dobrym towarzystwie.<br /><details class="spoiler-block my-4"><summary>Najlepszy aktor i jego postać czego nie napiszę normalnie by nie słać spoilera</summary><div class="mt-2">Jason Statham wymiata.</div></details><br />W sumie najciekawszym elementem filmu było szacowanie ilu imigrantów siedziało na sali kinowej. Anglikom raczej trudno było się śmiać z nieprzetłumaczonych kwestii i napisów w języku rosyjskim. Polacy i reszta braci z Europy Środkowo-Wschodniej skorzystali nieco więcej.   :mrgreen: <br />Słychać było, kto się śmiał.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-682" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-11T07:20:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-11 07:20:45</time>
+                                    </header>
+                                    <div id="post-content-682"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        No, Belfer skończony. IMO solidny kawałek serialu, warto poświęcić te (niecałe) dziesięć godzin. Gdzieś czytałem, że kręcą drugi sezon, obawiam się, iż totalnie spierdolą sprawę.<br />&quot;True Detective&quot; - oglądałem, przy pierwszej serii dobrze się bawiłem. Druga mnie nie zachwyciła, chociaż też miała sporo swoich smaczków.<br />&quot;Stranger Things&quot; - hype był na to ogromny, czekałem cały rok na premierę i&#8230; nie zawiodłem się. Dostałem dokładnie to, czego oczekiwałem.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-690">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-15T12:39:01" class="text-sm text-gray-500 font-mono">2017-04-15 12:39:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A ja ostatnio byłem w kinie na Azylu. Ukazanie polskiej historii oczami zagraniczników. Polecam.<br /><br />//AKTUALKA<br />Jakiś czas temu obejrzałem sobie drugi sezon Stranger Things. Trochę zabrakło mi tego klimatu małego miasteczka, osaczenia. Rodzeństwo wciśnięto na siłę.
+                        </article>
+                    </li>
+                    
+                    <li id="post-683" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-683"
+                                 aria-describedby="post-content-683">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1717">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2017-12-26T21:03:12" class="text-sm text-gray-500 font-mono">2017-12-26 21:03:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z rodzeństwa najlepszy był samochód Billy&#39;ego, chociaż oczywiście daleko mu do Pinto pani Byers. Uwielbiam ten wóz i jego wybuchowy charakter&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-683" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-15T20:35:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-15 20:35:38</time>
+                                    </header>
+                                    <div id="post-content-683"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Z seriali to ostatnio:<br />- Westworld - jestem w połowie pierwszego sezonu i wygląda świetnie<br />- Taboo - zapowiada się bardzo dobrze<br />- Black Sails - planuję oglądać od nowa bo lada moment sezon 4
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1748">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-04T08:27:59" class="text-sm text-gray-500 font-mono">2018-01-04 08:27:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1717" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>Z rodzeństwa najlepszy był samochód Billy&#39;ego, chociaż oczywiście daleko mu do Pinto pani Byers. Uwielbiam ten wóz i jego wybuchowy charakter&#8230;</div><br />Mnie nieco się wydaję, że spoczęli na laurach i chcieli zostawić sobie furtki na kolejne sezony. Miałem cichą nadzieję, że tej rudej stanie się coś złego, a tu nic :( Wątek innych dzieci też nie został rozwiązany, w sumie ucięli go nieco na siłę, bo takie nagłe pożegnanie trochę z dupska wyciągnęli&#8230;<br /><br />//AKTUALKA<br />Obecnie oglądam:<br /><ul>
+                        </article>
+                    </li>
+                    
+                    <li id="post-684" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-684"
+                                 aria-describedby="post-content-684">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-684" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-01-29T05:57:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-29 05:57:44</time>
+                                    </header>
+                                    <div id="post-content-684"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Akurat wróciłem z kina, tzn. z popijawy pokinowej, po seansie Trainspotting 2.<br />Mózg rozjebany, muszę obejrzeć ten film jeszcze parę razy.  Świetna historia, wartka akcja, dość psychodeliczna atmosfera, genialny soundtrack i humor. <br />Klimat i konwencję ma zupełnie inny niż pierwszy film, który także każdemu polecam. Dwójkę o ile można spokojnie oglądać bez znajomości jedynki, to warto tę ostatnią sobie odświeżyć przed seansem dla wyłapania większej ilości nawiązań.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-685" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-685"
+                                 aria-describedby="post-content-685">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-685" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-03-04T11:50:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-04 11:50:18</time>
+                                    </header>
+                                    <div id="post-content-685"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ostatnio obejrzałam &quot;Pasażerów&quot;. Ogólnie mi się podobało, ciekawa koncepcja, ale film jak to film, miał lepsze i gorsze momenty, niektóre banalne i zbyt przewidywalne. Ale w sumie spoko. Jak kiedyś pisałam, nie mam wysokich wymagań odnośnie kina tego typu.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-686" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-686"
+                                 aria-describedby="post-content-686">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-686" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-03-04T12:35:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-04 12:35:01</time>
+                                    </header>
+                                    <div id="post-content-686"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Ostatnio zebraliśmy się ze swoją połówką i obejrzeliśmy „Interstellar” – IMO bardzo dobre kino, tylko ta akcja w czarnej dziurze nieco mnie zniechęciła, no aaaaaleeee wiadomo, że to wizja artystyczna. Film ma ode mnie wielkiego kciuka w górę, bo rzadko zdarza się, żebym nie usnął podczas oglądania :)<br />PS widział ktoś już Belle Epoque?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-687" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-687"
+                                 aria-describedby="post-content-687">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-687" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-03-04T13:11:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-04 13:11:57</time>
+                                    </header>
+                                    <div id="post-content-687"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        Ja widziałem. Dwa odcinki. Miał niby to być mini film, że każdy odcinek o czymś innym na miarę zagranicznych seriali. No niestety nie. Serial trwa nieco ponad 30 minut, więc to założenie nie mogło się udać. Przewidywalne, specjalnie nie trzyma w napięciu, od razu wiadomo kto jest tym złym, Małaszyński mnie wkurza (ale takie to już moje ale). Klimatu tamtych lat specjalnie nie czuć, niestety. Kiczowate to. Dwa głupie błędy też zauważyłem w pierwszym odcinku. Żaluzje współczesne i sygnalizacja świetlna, serio xdd Zwykły przeciętny serial. Naprawde, to Ojciec Mateusz którego bardzo lubie i jest serialem do obiadu i z mniejszym budżetem bardziej trzyma w napięciu xd
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-688" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-688"
+                                 aria-describedby="post-content-688">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-688" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-03-04T13:22:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-04 13:22:28</time>
+                                    </header>
+                                    <div id="post-content-688"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-687" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div><br />Ja widziałem. Dwa odcinki. Miał niby to być mini film, że każdy odcinek o czymś innym na miarę zagranicznych seriali. No niestety nie. Serial trwa nieco ponad 30 minut, więc to założenie nie mogło się udać. Przewidywalne, specjalnie nie trzyma w napięciu, od razu wiadomo kto jest tym złym, Małaszyński mnie wkurza (ale takie to już moje ale). Klimatu tamtych lat specjalnie nie czuć, niestety. Kiczowate to. Dwa głupie błędy też zauważyłem w pierwszym odcinku. Żaluzje współczesne i sygnalizacja świetlna, serio xdd Zwykły przeciętny serial. Naprawde, to Ojciec Mateusz którego bardzo lubie i jest serialem do obiadu i z mniejszym budżetem bardziej trzyma w napięciu xd<br /></div>Obejrzę pierwszy, jeśli będzie tak gówniany, jak opisujesz, nie będę dalej oglądał, szkoda mojego czasu. Sam nie lubię gęby Małaszyńskiego, jakoś mnie drażni D:
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-689" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-689"
+                                 aria-describedby="post-content-689">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-689" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-04-15T07:36:17"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-15 07:36:17</time>
+                                    </header>
+                                    <div id="post-content-689"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Obejrzałem &quot;Szybkich i wściekłych 8&quot; i pomimo numerka sugerującego że jest to produkcja wśród filmów niczym następny Kał z Dupy czy Haszyszowa Kreda wśród gier, bawiłem się świetnie.<br />Dobry film akcji z humorem do pooglądania na luzie, zwłaszcza po paru piwkach w dobrym towarzystwie.<br /><details class="spoiler-block my-4"><summary>Najlepszy aktor i jego postać czego nie napiszę normalnie by nie słać spoilera</summary><div class="mt-2">Jason Statham wymiata.</div></details><br />W sumie najciekawszym elementem filmu było szacowanie ilu imigrantów siedziało na sali kinowej. Anglikom raczej trudno było się śmiać z nieprzetłumaczonych kwestii i napisów w języku rosyjskim. Polacy i reszta braci z Europy Środkowo-Wschodniej skorzystali nieco więcej.   :mrgreen: <br />Słychać było, kto się śmiał.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-690" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-690"
+                                 aria-describedby="post-content-690">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-690" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-15T12:39:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-15 12:39:01</time>
+                                    </header>
+                                    <div id="post-content-690"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        A ja ostatnio byłem w kinie na Azylu. Ukazanie polskiej historii oczami zagraniczników. Polecam.<br /><br />//AKTUALKA<br />Jakiś czas temu obejrzałem sobie drugi sezon Stranger Things. Trochę zabrakło mi tego klimatu małego miasteczka, osaczenia. Rodzeństwo wciśnięto na siłę.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1717" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1717"
+                                 aria-describedby="post-content-1717">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1717" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2017-12-26T21:03:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-26 21:03:12</time>
+                                    </header>
+                                    <div id="post-content-1717"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        Z rodzeństwa najlepszy był samochód Billy&#39;ego, chociaż oczywiście daleko mu do Pinto pani Byers. Uwielbiam ten wóz i jego wybuchowy charakter&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1748" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1748"
+                                 aria-describedby="post-content-1748">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1748" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-04T08:27:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-04 08:27:59</time>
+                                    </header>
+                                    <div id="post-content-1748"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1717" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>Z rodzeństwa najlepszy był samochód Billy&#39;ego, chociaż oczywiście daleko mu do Pinto pani Byers. Uwielbiam ten wóz i jego wybuchowy charakter&#8230;</div><br />Mnie nieco się wydaję, że spoczęli na laurach i chcieli zostawić sobie furtki na kolejne sezony. Miałem cichą nadzieję, że tej rudej stanie się coś złego, a tu nic :( Wątek innych dzieci też nie został rozwiązany, w sumie ucięli go nieco na siłę, bo takie nagłe pożegnanie trochę z dupska wyciągnęli&#8230;<br /><br />//AKTUALKA<br />Obecnie oglądam:<br /><ul>
 <li>Czarne lustro (dystopijna wizja przyszłości, takie trochę „co by było, gdyby…”; pękły trzy sezony)</li><li>Dark (na razie mam bardzo mało do powiedzenia, bo obejrzałem dwa odcinki)</li><li>13 powodów (jedenaście odcinków, zmierzam ku końcowi, na razie nieco męczące, ale fajne)</li></ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1765">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-06T20:59:17" class="text-sm text-gray-500 font-mono">2018-01-06 20:59:17</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Od siebie muszę koniecznie polecić Fargo. Serial (bo jest też film). Kto nie ogląda ten ciota i beniz. Klimat wylewa się na nas z ekranu, już pierwszy odcinek wkręci Was tak, że wciągniecie całość nosem w kilka dni. <br />Co do filmów, to ostatnio w końcu ogarnąłem &quot;12 gniewnych ludzi&quot; i jest to jedna z najlepszych produkcji jakie było mi dane oglądać.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1765" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1765"
+                                 aria-describedby="post-content-1765">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1924">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-01-21T17:39:14" class="text-sm text-gray-500 font-mono">2018-01-21 17:39:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Obejrzałem w końcu najbardziej nahajpowaną serialową produkcję od czasów Gry o Chuj i Breaking Bad, czyli Stranger Things.<br /><br />Produkcja bardzo solidna i w zasadzie lepsza niż 90% horrorów, jakie widziałem (jednak nie oszukujmy się, w tym gatunku nie ma mocnej konkurencji), ale aż tak mi dupy nie urwało, jak to każdy zapowiadał. Mogę śmiało polecić, chociaż na swoją wszędobylską rekomendację aż tak nie zasłużyło. Albo to może ja jestem zbyt czepialski.<br />Poza tym będę, hehe, totalnym opozycjonistą i stwierdzę, że drugi sezon był znacznie lepszy niż pierwszy. Narracja była miliard razy płynniejsza, przez co, w przeciwieństwie do sezonu 1, nigdy nie wiało nudą oraz zdecydowanie poprawiono soundtrack (m. in. mniej piosenek, które każdy słyszał miliard razy).<br />S1 wygrywał jedynie klimatem i poczuciem tajemnicy, ale całość była kompletne rujnowana przez rzygogenną highschool dramę wciśniętą kompletnie na siłę, która na domiar złego była kompletnym dnem. Absolutnie żadnego oryginalnego konceptu. Wyglądało to jakby twórcy chcieli zrobić Drive o nastolatkach, tylko zapomnieli te oklepane od tysiącleci schematy odświeżyć, czy chociaż zironizować. Do tego owe pokolenie nastolatków w kwestii fabuły było tam potrzebne, jak gówno w spryskiwaczu. S2 nam już tego oszczędza i zaczyna im dawać jakieś role.<br />W każdym razie jeżeli chodzi o klimatyczny horror z dobrym soundtrackiem i nutką humoru, to ciężko o coś lepszego. Świetni najmłodsi aktorzy, a do tego jestem wielkim fanem gry młodego klona Nicholsona i Pani od Forda Pinto.<br /><br />Black Mirror to też fajny serial, niezbyt odkrywczy dla kogoś z nawet ćwiartką funkcjonalnego mózgu, ale fajnie sobie obejrzeć &quot;w praniu&quot; te wszystkie kiblowo-prysznicowo-trawkowe rozkminy. Oryginalne 2 pierwsze sezony podobały mi się dużo bardziej niż trzeci, który po wykupieniu przez Netflixa został już mocno zhamburgerowany. 4 nie widziałem, może ktoś się wypowie, czy warto.<br /><br />W kwestii filmów, to powiem tylko tyle - błagam, niech ktoś powie Nolanowi, żeby przestał kręcić chuj. Tak patetycznego, a nawet pompatycznego gówna, które obraża inteligencję widza, jak &quot;Dunkierka&quot; to już nie widziałem dawno.<br />Generalnie Nolan za każdym razem, gdy bierze się za jakąś tematykę, to robi z niej spłycony, pełny luk i bezsensów, cierpiący na potęgę na przerost formy nad treścią syf, ale tym to już przebił wszystko. Obsada też była zresztą genialna. Aktorów można by tam podmienić na strachy na wróble, nie byłoby różnicy. No i po raz kolejny, dzięki niesamowicie innowacyjnemu i bardzo oryginalnemu w swoich &quot;dziełach&quot; Zimmerowi moje uszy mają już 3 odmiany AIDS.<br />Jeżeli jeszcze tego nie widać - bardzo gorąco nie polecam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1765" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-06T20:59:17"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-06 20:59:17</time>
+                                    </header>
+                                    <div id="post-content-1765"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Od siebie muszę koniecznie polecić Fargo. Serial (bo jest też film). Kto nie ogląda ten ciota i beniz. Klimat wylewa się na nas z ekranu, już pierwszy odcinek wkręci Was tak, że wciągniecie całość nosem w kilka dni. <br />Co do filmów, to ostatnio w końcu ogarnąłem &quot;12 gniewnych ludzi&quot; i jest to jedna z najlepszych produkcji jakie było mi dane oglądać.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1925">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-21T18:55:20" class="text-sm text-gray-500 font-mono">2018-01-21 18:55:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1924" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Black Mirror to też fajny serial, niezbyt odkrywczy dla kogoś z nawet ćwiartką funkcjonalnego mózgu, ale fajnie sobie obejrzeć &quot;w praniu&quot; te wszystkie kiblowo-prysznicowo-trawkowe rozkminy. Oryginalne 2 pierwsze sezony podobały mi się dużo bardziej niż trzeci, który po wykupieniu przez Netflixa został już mocno zhamburgerowany. 4 nie widziałem, może ktoś się wypowie, czy warto.</div><br />Czwarty sezon miał fajne podsumowanie. Ale czy urwał mi mosznę i wepchnął głęboko w gardło? Aj dont fink soł. Więcej rozkmin o wpływie technologii bezpośrednio na ludzki umysł.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1924" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1924"
+                                 aria-describedby="post-content-1924">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1970">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2018-01-23T16:08:10" class="text-sm text-gray-500 font-mono">2018-01-23 16:08:10</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Obejrzałem wczoraj ten film:<br /><br /><img src="https://i.imgur.com/URmbpzg.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><a href="http://www.filmweb.pl/film/The+Foreigner-2017-754958" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://www.filmweb.pl/film/The+Foreigner-2017-754958</a><br /><br />Nie zawiodłem się. Jackie Chan jak zwykle w formie, <a href="http://www.filmweb.pl/person/Pierce.Brosnan" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Pierce</a> też, a cała reszta ekipy bardziej lub mniej znana dała dobre tło. Nowy film prowadzony w starym stylu. Momentami Rambo, momentami Nowa Policyjna Opowieść jak i też parę innych nawiązań do kina akcji. Scenariusz fajnie prowadzony, nie nudzi się człowiek, nie mówi &quot;jeżuniu, jak to możliwe, co tu się stało&quot;, a nawet jak coś takiego jest to miło się na to patrzy. Co do muzyki, jest ok. Mroczna i pasuje do obrazu, robi klimat, spełnia swoją rolę. Jak komuś się podobał John Wick to może brać w ciemno, jak ktoś lubi Jackie Chana, tym bardziej.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1924" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-01-21T17:39:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-21 17:39:14</time>
+                                    </header>
+                                    <div id="post-content-1924"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Obejrzałem w końcu najbardziej nahajpowaną serialową produkcję od czasów Gry o Chuj i Breaking Bad, czyli Stranger Things.<br /><br />Produkcja bardzo solidna i w zasadzie lepsza niż 90% horrorów, jakie widziałem (jednak nie oszukujmy się, w tym gatunku nie ma mocnej konkurencji), ale aż tak mi dupy nie urwało, jak to każdy zapowiadał. Mogę śmiało polecić, chociaż na swoją wszędobylską rekomendację aż tak nie zasłużyło. Albo to może ja jestem zbyt czepialski.<br />Poza tym będę, hehe, totalnym opozycjonistą i stwierdzę, że drugi sezon był znacznie lepszy niż pierwszy. Narracja była miliard razy płynniejsza, przez co, w przeciwieństwie do sezonu 1, nigdy nie wiało nudą oraz zdecydowanie poprawiono soundtrack (m. in. mniej piosenek, które każdy słyszał miliard razy).<br />S1 wygrywał jedynie klimatem i poczuciem tajemnicy, ale całość była kompletne rujnowana przez rzygogenną highschool dramę wciśniętą kompletnie na siłę, która na domiar złego była kompletnym dnem. Absolutnie żadnego oryginalnego konceptu. Wyglądało to jakby twórcy chcieli zrobić Drive o nastolatkach, tylko zapomnieli te oklepane od tysiącleci schematy odświeżyć, czy chociaż zironizować. Do tego owe pokolenie nastolatków w kwestii fabuły było tam potrzebne, jak gówno w spryskiwaczu. S2 nam już tego oszczędza i zaczyna im dawać jakieś role.<br />W każdym razie jeżeli chodzi o klimatyczny horror z dobrym soundtrackiem i nutką humoru, to ciężko o coś lepszego. Świetni najmłodsi aktorzy, a do tego jestem wielkim fanem gry młodego klona Nicholsona i Pani od Forda Pinto.<br /><br />Black Mirror to też fajny serial, niezbyt odkrywczy dla kogoś z nawet ćwiartką funkcjonalnego mózgu, ale fajnie sobie obejrzeć &quot;w praniu&quot; te wszystkie kiblowo-prysznicowo-trawkowe rozkminy. Oryginalne 2 pierwsze sezony podobały mi się dużo bardziej niż trzeci, który po wykupieniu przez Netflixa został już mocno zhamburgerowany. 4 nie widziałem, może ktoś się wypowie, czy warto.<br /><br />W kwestii filmów, to powiem tylko tyle - błagam, niech ktoś powie Nolanowi, żeby przestał kręcić chuj. Tak patetycznego, a nawet pompatycznego gówna, które obraża inteligencję widza, jak &quot;Dunkierka&quot; to już nie widziałem dawno.<br />Generalnie Nolan za każdym razem, gdy bierze się za jakąś tematykę, to robi z niej spłycony, pełny luk i bezsensów, cierpiący na potęgę na przerost formy nad treścią syf, ale tym to już przebił wszystko. Obsada też była zresztą genialna. Aktorów można by tam podmienić na strachy na wróble, nie byłoby różnicy. No i po raz kolejny, dzięki niesamowicie innowacyjnemu i bardzo oryginalnemu w swoich &quot;dziełach&quot; Zimmerowi moje uszy mają już 3 odmiany AIDS.<br />Jeżeli jeszcze tego nie widać - bardzo gorąco nie polecam.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2048">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-15T09:41:26" class="text-sm text-gray-500 font-mono">2018-02-15 09:41:26</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pierwszy sezon Dark skończony! Oczywiście jest to serial dla fanów Sci-Fi, gdzie wątki fabularne przeplatane są w różnych liniach czasowych. Do tej pory widzieliśmy trzy linie czasowe, czwarta ukazała się w ostatnim odcinku. Mimo wrodzonej awersji do języka naszych zachodnich sąsiadów, oglądało mi się to całkiem przyjemnie, szczególnie jeśli weźmie się pod uwagę, że Sci-Fi łykam jak pelikan. Cóż, chętnym polecam.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1925" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1925"
+                                 aria-describedby="post-content-1925">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2059">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-02-19T18:16:56" class="text-sm text-gray-500 font-mono">2018-02-19 18:16:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja dokończyłem właśnie drugi sezon Stranger Things, całe dwa sezony łyknąłem w jakiś tydzień. Pierwszy sezon: zacnie zrealizowany, ale fabuła/scenariusz/jakzwałtakzwał dość banalna, mam wrażenie że niejeden gimnazjalista napisał bardziej oryginalne wypracowanie na języku polskim. Z tymże prawdziwie oryginalne scenariusze filmów/seriali ostatnich lat policzyć można na palcach obu rąk, więc jakoś specjalnie mi to nie wadziło.<br />Drugi sezon wszedł mi natomiast znacznie lepiej, choć olbrzymim minusem jak dla mnie był brak elementów zaskoczenia podnoszących adrenalinę, za które polubiłem poprzedni sezon. Szkoda, bo mimo wszystko uważam że potencjał do straszenia był i w tym sezonie, tylko go nie wykorzystano. <br /><br />Najbardziej w tym wszystkim zaimponowała mi chyba gra aktorska tych smarkaczy. Wyobrażacie sobie, gdyby to Polaki stworzyły taki serial? xD Jak oglądam jakiś polski film, w którym gra mały smark, to mam ochotę poderżnąć i sobie, i jemu, gardło, bo robi to tak chujowo, że od razu widać, że to syn/córka/wnuk reżysera-nepotysty. Tutaj natomiast pełna profeska, szczególnie gruby z mleczakami mnie urzekał. No i jest klimat lat 80, wiem że Wy też się moczycie na samą myśl o nich.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1925" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-21T18:55:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-21 18:55:20</time>
+                                    </header>
+                                    <div id="post-content-1925"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1924" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Black Mirror to też fajny serial, niezbyt odkrywczy dla kogoś z nawet ćwiartką funkcjonalnego mózgu, ale fajnie sobie obejrzeć &quot;w praniu&quot; te wszystkie kiblowo-prysznicowo-trawkowe rozkminy. Oryginalne 2 pierwsze sezony podobały mi się dużo bardziej niż trzeci, który po wykupieniu przez Netflixa został już mocno zhamburgerowany. 4 nie widziałem, może ktoś się wypowie, czy warto.</div><br />Czwarty sezon miał fajne podsumowanie. Ale czy urwał mi mosznę i wepchnął głęboko w gardło? Aj dont fink soł. Więcej rozkmin o wpływie technologii bezpośrednio na ludzki umysł.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2063">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-20T10:34:05" class="text-sm text-gray-500 font-mono">2018-02-20 10:34:05</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Pierwszy sezon: zacnie zrealizowany, ale fabuła/scenariusz/jakzwałtakzwał dość banalna, mam wrażenie że niejeden gimnazjalista napisał bardziej oryginalne wypracowanie na języku polskim.</div><br />Fabuła nie była nieziemsko odkrywcza, ale bawiłem się przednio. Ten klimat małego miasteczka&#8230;<br /><div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>mam ochotę poderżnąć i sobie, i jemu, gardło</div><br />Ale najpierw sobie? :D<br /><div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Tutaj natomiast pełna profeska, szczególnie gruby z mleczakami mnie urzekał.</div><br />Nie no, gra była bardzo chłodna, również byłem pod wrażeniem.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>No i jest klimat lat 80, wiem że Wy też się moczycie na samą myśl o nich.</div><br />Ale od tego klimatu to się odkoleguj :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-1970" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1970"
+                                 aria-describedby="post-content-1970">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2337">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-07-26T20:42:58" class="text-sm text-gray-500 font-mono">2018-07-26 20:42:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <em>Split</em>, polecam w chuj.<br /><br /><a href="http://horror.com.pl/filmy/recka.php?id=3181" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://horror.com.pl/filmy/recka.php?id=3181</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1970" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2018-01-23T16:08:10"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-23 16:08:10</time>
+                                    </header>
+                                    <div id="post-content-1970"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        Obejrzałem wczoraj ten film:<br /><br /><img src="https://i.imgur.com/URmbpzg.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><a href="http://www.filmweb.pl/film/The+Foreigner-2017-754958" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://www.filmweb.pl/film/The+Foreigner-2017-754958</a><br /><br />Nie zawiodłem się. Jackie Chan jak zwykle w formie, <a href="http://www.filmweb.pl/person/Pierce.Brosnan" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Pierce</a> też, a cała reszta ekipy bardziej lub mniej znana dała dobre tło. Nowy film prowadzony w starym stylu. Momentami Rambo, momentami Nowa Policyjna Opowieść jak i też parę innych nawiązań do kina akcji. Scenariusz fajnie prowadzony, nie nudzi się człowiek, nie mówi &quot;jeżuniu, jak to możliwe, co tu się stało&quot;, a nawet jak coś takiego jest to miło się na to patrzy. Co do muzyki, jest ok. Mroczna i pasuje do obrazu, robi klimat, spełnia swoją rolę. Jak komuś się podobał John Wick to może brać w ciemno, jak ktoś lubi Jackie Chana, tym bardziej.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2338">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-07-26T22:16:33" class="text-sm text-gray-500 font-mono">2018-07-26 22:16:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Tesz oglondałem, tesz polecam w chuj.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2048" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2048"
+                                 aria-describedby="post-content-2048">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2599">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2019-02-17T21:12:08" class="text-sm text-gray-500 font-mono">2019-02-17 21:12:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z jakiegoś powodu oglądając &quot;I origins&quot; czulem się jak podczas oglądania Steins;Gate. Oglądał ktoś? Jak wrażenia? Osobiście - polecam, bardzo. Bardzo bardzo.<br /><br />Ciężko cokolwiek bez spoilera napisać o tym filmie. Jeśli ktoś jest zainteresowany - zalecam nie czytać nic na filmwebie (nawet tego krótkiego wstępnego opisu), wikipedii itp, a już broń boże oglądać trailer. Po prostu włączyć i tyle.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2048" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-15T09:41:26"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-15 09:41:26</time>
+                                    </header>
+                                    <div id="post-content-2048"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Pierwszy sezon Dark skończony! Oczywiście jest to serial dla fanów Sci-Fi, gdzie wątki fabularne przeplatane są w różnych liniach czasowych. Do tej pory widzieliśmy trzy linie czasowe, czwarta ukazała się w ostatnim odcinku. Mimo wrodzonej awersji do języka naszych zachodnich sąsiadów, oglądało mi się to całkiem przyjemnie, szczególnie jeśli weźmie się pod uwagę, że Sci-Fi łykam jak pelikan. Cóż, chętnym polecam.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2751">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-06-07T13:08:37" class="text-sm text-gray-500 font-mono">2019-06-07 13:08:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Piaty sezon Czarnego Lustra obejrzany. Mam niewiele do powiedzenia na jego temat, oprócz tego, że jest bardzo miałki. Nie mamy zupełnie negatywnej wizji, odległej przyszłości itd.<br />Wydaje mi się, że strasznie to ugrzecznili, zrobili zwykły serial, bez żadnych ciekawych wynurzeń. Na dodatek ma tylko trzy odcinki (powodem jest pewnie wystąpienie pewnej amerykańskiej gwiazdki). Nie wiem, co mam więcej napisać, bo jestem zawiedziony.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2059" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2059"
+                                 aria-describedby="post-content-2059">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2965">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2021-10-23T11:46:24" class="text-sm text-gray-500 font-mono">2021-10-23 11:46:24</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Idźcie, kurwa, na Diunę do kina.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2059" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-02-19T18:16:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-19 18:16:56</time>
+                                    </header>
+                                    <div id="post-content-2059"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Ja dokończyłem właśnie drugi sezon Stranger Things, całe dwa sezony łyknąłem w jakiś tydzień. Pierwszy sezon: zacnie zrealizowany, ale fabuła/scenariusz/jakzwałtakzwał dość banalna, mam wrażenie że niejeden gimnazjalista napisał bardziej oryginalne wypracowanie na języku polskim. Z tymże prawdziwie oryginalne scenariusze filmów/seriali ostatnich lat policzyć można na palcach obu rąk, więc jakoś specjalnie mi to nie wadziło.<br />Drugi sezon wszedł mi natomiast znacznie lepiej, choć olbrzymim minusem jak dla mnie był brak elementów zaskoczenia podnoszących adrenalinę, za które polubiłem poprzedni sezon. Szkoda, bo mimo wszystko uważam że potencjał do straszenia był i w tym sezonie, tylko go nie wykorzystano. <br /><br />Najbardziej w tym wszystkim zaimponowała mi chyba gra aktorska tych smarkaczy. Wyobrażacie sobie, gdyby to Polaki stworzyły taki serial? xD Jak oglądam jakiś polski film, w którym gra mały smark, to mam ochotę poderżnąć i sobie, i jemu, gardło, bo robi to tak chujowo, że od razu widać, że to syn/córka/wnuk reżysera-nepotysty. Tutaj natomiast pełna profeska, szczególnie gruby z mleczakami mnie urzekał. No i jest klimat lat 80, wiem że Wy też się moczycie na samą myśl o nich.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2063" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2063"
+                                 aria-describedby="post-content-2063">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2063" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-20T10:34:05"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-20 10:34:05</time>
+                                    </header>
+                                    <div id="post-content-2063"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Pierwszy sezon: zacnie zrealizowany, ale fabuła/scenariusz/jakzwałtakzwał dość banalna, mam wrażenie że niejeden gimnazjalista napisał bardziej oryginalne wypracowanie na języku polskim.</div><br />Fabuła nie była nieziemsko odkrywcza, ale bawiłem się przednio. Ten klimat małego miasteczka&#8230;<br /><div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>mam ochotę poderżnąć i sobie, i jemu, gardło</div><br />Ale najpierw sobie? :D<br /><div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Tutaj natomiast pełna profeska, szczególnie gruby z mleczakami mnie urzekał.</div><br />Nie no, gra była bardzo chłodna, również byłem pod wrażeniem.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2059" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>No i jest klimat lat 80, wiem że Wy też się moczycie na samą myśl o nich.</div><br />Ale od tego klimatu to się odkoleguj :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2337" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2337"
+                                 aria-describedby="post-content-2337">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2337" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-07-26T20:42:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-26 20:42:58</time>
+                                    </header>
+                                    <div id="post-content-2337"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <em>Split</em>, polecam w chuj.<br /><br /><a href="http://horror.com.pl/filmy/recka.php?id=3181" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://horror.com.pl/filmy/recka.php?id=3181</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2338" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2338"
+                                 aria-describedby="post-content-2338">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2338" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-07-26T22:16:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-26 22:16:33</time>
+                                    </header>
+                                    <div id="post-content-2338"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Tesz oglondałem, tesz polecam w chuj.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2599" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2599"
+                                 aria-describedby="post-content-2599">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2599" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2019-02-17T21:12:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-02-17 21:12:08</time>
+                                    </header>
+                                    <div id="post-content-2599"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Z jakiegoś powodu oglądając &quot;I origins&quot; czulem się jak podczas oglądania Steins;Gate. Oglądał ktoś? Jak wrażenia? Osobiście - polecam, bardzo. Bardzo bardzo.<br /><br />Ciężko cokolwiek bez spoilera napisać o tym filmie. Jeśli ktoś jest zainteresowany - zalecam nie czytać nic na filmwebie (nawet tego krótkiego wstępnego opisu), wikipedii itp, a już broń boże oglądać trailer. Po prostu włączyć i tyle.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2751" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2751"
+                                 aria-describedby="post-content-2751">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2751" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-06-07T13:08:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-06-07 13:08:37</time>
+                                    </header>
+                                    <div id="post-content-2751"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Piaty sezon Czarnego Lustra obejrzany. Mam niewiele do powiedzenia na jego temat, oprócz tego, że jest bardzo miałki. Nie mamy zupełnie negatywnej wizji, odległej przyszłości itd.<br />Wydaje mi się, że strasznie to ugrzecznili, zrobili zwykły serial, bez żadnych ciekawych wynurzeń. Na dodatek ma tylko trzy odcinki (powodem jest pewnie wystąpienie pewnej amerykańskiej gwiazdki). Nie wiem, co mam więcej napisać, bo jestem zawiedziony.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2965" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2965"
+                                 aria-describedby="post-content-2965">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2965" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2021-10-23T11:46:24"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2021-10-23 11:46:24</time>
+                                    </header>
+                                    <div id="post-content-2965"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Idźcie, kurwa, na Diunę do kina.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

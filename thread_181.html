@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,41 +44,139 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Euro Truck Simulator 2</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Euro Truck Simulator 2</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1536">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-04-20T21:14:53" class="text-sm text-gray-500 font-mono">2017-04-20 21:14:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dobra, dobra, wszyscy co mnie znają to znają też tą grę.  :D  <br /><br />Krótka historia symulatorów ciężarówek:<br /><br />[Rosyjska firma  Softlab NSK]Hard Truck: Road to Victory (1998)-&gt; Hard Truck 2(2000) -&gt; King of the Road (2002) -&gt; Rig&#39;n&#39;Roll (2009)<br /><br />[Czeska firma SCS Software]Hard Truck: 18 Wheels of Steel (2002)-&gt;18 Wheels of Steel: Across America(2004)-&gt;18 Wheels of Steel: Pedal to the Metal(2004) -&gt;18 Wheels of Steel: Convoy(2005)- &gt; 18 Wheels of Steel: Haulin (2006) -&gt; 18 Wheels of Steel :American Long Haul (2007)-&gt;Euro Truck Simulator (2008)-&gt;German Truck Simulator(2010)-&gt;Euro Truck Simulator 2 (2012)-&gt; American Truck Simulator (2016)<br /><br />Osobiście moją przygodę rozpocząłem jednocześnie od HT2 i HT:18WoS. HT2 wygrywał dla mnie europejskim klimatem (w sumie słowiańskim :E), ale HT:18WoS też mnie wsiąknął w miarę realizmem, HT2 to zawsze były wyścigi kto pierwszy przewiezie towar&#8230; Potem już 18WoS:AA, zaraz potem PTTM, aż długo potem zagrywałem się w Haulina do czasów ETS&#39;a (I romans z KOTR z 2002), podczas posuchy między ETS1 a wydaniem ETS2 zagrywałem się w Rig&#39;n&#39;Roll. Posiadam każdą wymienioną grę i cóż, wsiąkłem w to na dobre :E Która część najlepsza? Cóż, PTTM ma chyba najbardziej sentymentalny wymiar, Haulin również ma oddaną rzeszę fanów, HT2 z nostalgii, ETS1 za zapoczątkowanie europejskiej truckerki w miarę realistycznej otoczce, ETS2 jako, że obecnie najnowszy i z największą zawartością (chociaż nadal brak własnych naczep, cb-radia czy zaawansowanej ekonomii i rywalizacji z poprzednich gier). Za najgorsze uważa się Convoya i ALH (ALH wprowadzał chyba 2 nowe ciężarówki i troszkę większą mapę).<br /><br />Wracając do ETS2 - od 5 lat gra jest nadal wspierana, dostaje darmową jak i płatną nową zawartość i przez kolejne lata również będzie wspierana. ETS2 osiągnął ogromny sukces, które przewyższyło oczekiwania samego studia. <br /><br />A modowanie jest obecnie bajecznie proste (powrót do czasów modowania z PTTM rzekłbym) i już dawno jak dla mnie przebiło prostotę modowania Stalkera :E Jako przykład obecny mod nad którym pracuję: http://forum.scssoft.com/viewtopic.php?f=34&amp;t=232266<br /><br /><a href="http://imgbox.com/PFYBnFuN" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://8-t.imgbox.com/PFYBnFuN.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/VWxVgJtf" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://2-t.imgbox.com/VWxVgJtf.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/9cI9vqKZ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://7-t.imgbox.com/9cI9vqKZ.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><a href="http://imgbox.com/4CeBDWeb" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://4-t.imgbox.com/4CeBDWeb.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Euro Truck Simulator 2</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1536" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1536"
+                                 aria-describedby="post-content-1536">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1536" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-04-20T21:14:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-20 21:14:53</time>
+                                    </header>
+                                    <div id="post-content-1536"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Dobra, dobra, wszyscy co mnie znają to znają też tą grę.  :D  <br /><br />Krótka historia symulatorów ciężarówek:<br /><br />[Rosyjska firma  Softlab NSK]Hard Truck: Road to Victory (1998)-&gt; Hard Truck 2(2000) -&gt; King of the Road (2002) -&gt; Rig&#39;n&#39;Roll (2009)<br /><br />[Czeska firma SCS Software]Hard Truck: 18 Wheels of Steel (2002)-&gt;18 Wheels of Steel: Across America(2004)-&gt;18 Wheels of Steel: Pedal to the Metal(2004) -&gt;18 Wheels of Steel: Convoy(2005)- &gt; 18 Wheels of Steel: Haulin (2006) -&gt; 18 Wheels of Steel :American Long Haul (2007)-&gt;Euro Truck Simulator (2008)-&gt;German Truck Simulator(2010)-&gt;Euro Truck Simulator 2 (2012)-&gt; American Truck Simulator (2016)<br /><br />Osobiście moją przygodę rozpocząłem jednocześnie od HT2 i HT:18WoS. HT2 wygrywał dla mnie europejskim klimatem (w sumie słowiańskim :E), ale HT:18WoS też mnie wsiąknął w miarę realizmem, HT2 to zawsze były wyścigi kto pierwszy przewiezie towar&#8230; Potem już 18WoS:AA, zaraz potem PTTM, aż długo potem zagrywałem się w Haulina do czasów ETS&#39;a (I romans z KOTR z 2002), podczas posuchy między ETS1 a wydaniem ETS2 zagrywałem się w Rig&#39;n&#39;Roll. Posiadam każdą wymienioną grę i cóż, wsiąkłem w to na dobre :E Która część najlepsza? Cóż, PTTM ma chyba najbardziej sentymentalny wymiar, Haulin również ma oddaną rzeszę fanów, HT2 z nostalgii, ETS1 za zapoczątkowanie europejskiej truckerki w miarę realistycznej otoczce, ETS2 jako, że obecnie najnowszy i z największą zawartością (chociaż nadal brak własnych naczep, cb-radia czy zaawansowanej ekonomii i rywalizacji z poprzednich gier). Za najgorsze uważa się Convoya i ALH (ALH wprowadzał chyba 2 nowe ciężarówki i troszkę większą mapę).<br /><br />Wracając do ETS2 - od 5 lat gra jest nadal wspierana, dostaje darmową jak i płatną nową zawartość i przez kolejne lata również będzie wspierana. ETS2 osiągnął ogromny sukces, które przewyższyło oczekiwania samego studia. <br /><br />A modowanie jest obecnie bajecznie proste (powrót do czasów modowania z PTTM rzekłbym) i już dawno jak dla mnie przebiło prostotę modowania Stalkera :E Jako przykład obecny mod nad którym pracuję: http://forum.scssoft.com/viewtopic.php?f=34&amp;t=232266<br /><br /><a href="http://imgbox.com/PFYBnFuN" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://8-t.imgbox.com/PFYBnFuN.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/VWxVgJtf" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://2-t.imgbox.com/VWxVgJtf.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a> <a href="http://imgbox.com/9cI9vqKZ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://7-t.imgbox.com/9cI9vqKZ.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a><br /><a href="http://imgbox.com/4CeBDWeb" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://4-t.imgbox.com/4CeBDWeb.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

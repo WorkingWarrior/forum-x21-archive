@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,62 +44,170 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_22.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Muzyka</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Muzyka faszyzująca - martial industrial, neofolk itp.</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Muzyka faszyzująca - martial industrial, neofolk itp.</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1483">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-03-13T23:17:08" class="text-sm text-gray-500 font-mono">2017-03-13 23:17:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="http://www.artimarziali.org/articoli/ZP/pubbl/Pag38fo1_am.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Na początku chciałem ograniczyć się tylko do martial industrialu, bo jest najbardziej neutralny i zawiera w sobie wstawki ambientowe, a także czysto industrialowe. Dodatkowo w tle, czasami, można usłyszeć zniekształconą, bardziej lub mniej, muzykę klasyczną. Jednak ze względu na tematykę neofolku, który też nie gardzi elektroniką zasługuje na wspomnienie. Bez zbędnego pierdolenia.<br /><br /><strong>Arditi</strong><br />Geneza nazwy zabawna, bo tak nazywały się elitarne jednostki wojskowe u Włochów podczas Wielkiej Wojny. Definitywny martial industrial.<br /><a href="https://www.youtube.com/watch?v=_oFyI5vlkec" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Religion of the Blood</a><br /><strong>Blood Axis</strong><br />Neofolk, industrial. Nie wypuścili zbyt wielu albumów, ale warto dać im szansę, bo atmosferę, którą wykreowali w swoich utworach jest ciekawa.<br /><a href="https://www.youtube.com/watch?v=iss1hqORi3g" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Electricity</a><br /><strong>Death in June</strong><br />Neofolk, martial industrial, dark ambient. Facet wydaje się względnie elastyczny muzycznie, w swojej orientacji seksualnej także. xD Założyciel to homoseksualista, Douglas Pierce. Ostatnio miał koncert w październiku, we Wrocławiu. Prawdopodobnie ostatni.<br /><a href="https://www.youtube.com/watch?v=0rlghYsHnVc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Hollows of Devotion</a><br /><strong>Legionarii</strong><br />Martial industrial, sporo nawiązań do paneuropeizmu, nazistowskich Niemiec i innych odłamów faszyzmu. Pytanie za 88 punktów, z czego pochodzi intro utworu poniżej?<br /><a href="https://www.youtube.com/watch?v=Tq2xAPJvwrA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Ost und West</a><br /><strong>Toroidh</strong><br />Martial industrial, dark ambient. Jeden z albumów ma dość sugestywną <a href="https://i.ytimg.com/vi/o41gtLf3pW4/hqdefault.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">okładkę</a>, co wszystko wyjaśnia.<br /><a href="https://www.youtube.com/watch?v=6cRxkkVOOMM" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Those Who Do Not Remember The Past Are Condemned To Repeat It. Again.</a><br /><strong>Waffenruhe</strong><br />Nazwa projektu muzycznego oznacza dosłownie &quot;zawieszenie broni&quot;. Masa nawiązań do nazistowskich Niemiec i militaryzmu ogólnie pojętego.<br /><a href="https://www.youtube.com/watch?v=ORmpc8RehPQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">DEMAGOGIE II</a>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Muzyka faszyzująca - martial industrial, neofolk itp.</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1483" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1483"
+                                 aria-describedby="post-content-1483">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1484">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-03-14T05:23:44" class="text-sm text-gray-500 font-mono">2017-03-14 05:23:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dużo takiej muzyki nie słuchałem, ale kiedyś szukając zespołów dark ambientowych natrafiłem na parę fajnych projektów. Jednym z nich był zespół <strong>Eldar</strong>, ich zapamiętałem z nazwy. Sylwetki jako takiej nie przedstawię, bo mnie zwyczajnie nie interesowała, ale pamiętam tyle, że był to hiszpański duet, a nazwa ich zespółu w jakimś języku to &quot;epidemia&quot;. Oni to tak najbardziej dark ambient i matrial industrial, ale również modern classical, wczesne płyty też trochę noise. Bardzo smaczne to jest. <u>Leeter</u>, polecam Ci skoro lubisz takie klimaty.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/x_T0IT2vVQU</span>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1483" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-03-13T23:17:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-13 23:17:08</time>
+                                    </header>
+                                    <div id="post-content-1483"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <img src="http://www.artimarziali.org/articoli/ZP/pubbl/Pag38fo1_am.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Na początku chciałem ograniczyć się tylko do martial industrialu, bo jest najbardziej neutralny i zawiera w sobie wstawki ambientowe, a także czysto industrialowe. Dodatkowo w tle, czasami, można usłyszeć zniekształconą, bardziej lub mniej, muzykę klasyczną. Jednak ze względu na tematykę neofolku, który też nie gardzi elektroniką zasługuje na wspomnienie. Bez zbędnego pierdolenia.<br /><br /><strong>Arditi</strong><br />Geneza nazwy zabawna, bo tak nazywały się elitarne jednostki wojskowe u Włochów podczas Wielkiej Wojny. Definitywny martial industrial.<br /><a href="https://www.youtube.com/watch?v=_oFyI5vlkec" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Religion of the Blood</a><br /><strong>Blood Axis</strong><br />Neofolk, industrial. Nie wypuścili zbyt wielu albumów, ale warto dać im szansę, bo atmosferę, którą wykreowali w swoich utworach jest ciekawa.<br /><a href="https://www.youtube.com/watch?v=iss1hqORi3g" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Electricity</a><br /><strong>Death in June</strong><br />Neofolk, martial industrial, dark ambient. Facet wydaje się względnie elastyczny muzycznie, w swojej orientacji seksualnej także. xD Założyciel to homoseksualista, Douglas Pierce. Ostatnio miał koncert w październiku, we Wrocławiu. Prawdopodobnie ostatni.<br /><a href="https://www.youtube.com/watch?v=0rlghYsHnVc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Hollows of Devotion</a><br /><strong>Legionarii</strong><br />Martial industrial, sporo nawiązań do paneuropeizmu, nazistowskich Niemiec i innych odłamów faszyzmu. Pytanie za 88 punktów, z czego pochodzi intro utworu poniżej?<br /><a href="https://www.youtube.com/watch?v=Tq2xAPJvwrA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Ost und West</a><br /><strong>Toroidh</strong><br />Martial industrial, dark ambient. Jeden z albumów ma dość sugestywną <a href="https://i.ytimg.com/vi/o41gtLf3pW4/hqdefault.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">okładkę</a>, co wszystko wyjaśnia.<br /><a href="https://www.youtube.com/watch?v=6cRxkkVOOMM" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Those Who Do Not Remember The Past Are Condemned To Repeat It. Again.</a><br /><strong>Waffenruhe</strong><br />Nazwa projektu muzycznego oznacza dosłownie &quot;zawieszenie broni&quot;. Masa nawiązań do nazistowskich Niemiec i militaryzmu ogólnie pojętego.<br /><a href="https://www.youtube.com/watch?v=ORmpc8RehPQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">DEMAGOGIE II</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1484" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1484"
+                                 aria-describedby="post-content-1484">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1484" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-03-14T05:23:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-14 05:23:44</time>
+                                    </header>
+                                    <div id="post-content-1484"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        Dużo takiej muzyki nie słuchałem, ale kiedyś szukając zespołów dark ambientowych natrafiłem na parę fajnych projektów. Jednym z nich był zespół <strong>Eldar</strong>, ich zapamiętałem z nazwy. Sylwetki jako takiej nie przedstawię, bo mnie zwyczajnie nie interesowała, ale pamiętam tyle, że był to hiszpański duet, a nazwa ich zespółu w jakimś języku to &quot;epidemia&quot;. Oni to tak najbardziej dark ambient i matrial industrial, ale również modern classical, wczesne płyty też trochę noise. Bardzo smaczne to jest. <u>Leeter</u>, polecam Ci skoro lubisz takie klimaty.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/x_T0IT2vVQU</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

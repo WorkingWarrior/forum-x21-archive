@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,146 +44,294 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Niusy i ploteczki ze świata gier</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Niusy i ploteczki ze świata gier</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2008">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2018-01-30T13:42:41" class="text-sm text-gray-500 font-mono">2018-01-30 13:42:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Miejsca na różne wiadomości i plotki ze świata gier które nas zaciekawią i stwierdzimy, że warto się nimi podzielić.<br /><br />Mój nius na początek:<br /><br /><a href="https://www.gry-online.pl/S013.asp?ID=107618" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Age of Empires: Definitive Edition - Microsoft zrzuca na Valve winę za brak wersji na Steam</a>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Niusy i ploteczki ze świata gier</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2008" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2008"
+                                 aria-describedby="post-content-2008">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2015">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-31T23:54:45" class="text-sm text-gray-500 font-mono">2018-01-31 23:54:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2008" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Miejsca na różne wiadomości i plotki ze świata gier które nas zaciekawią i stwierdzimy, że warto się nimi podzielić.<br /><br />Mój nius na początek:<br /><br /><a href="https://www.gry-online.pl/S013.asp?ID=107618" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Age of Empires: Definitive Edition - Microsoft zrzuca na Valve winę za brak wersji na Steam</a></div><br />Toż oni się zarżną tępym nożem, jak nie dadzą na Steama :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2008" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2018-01-30T13:42:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-30 13:42:41</time>
+                                    </header>
+                                    <div id="post-content-2008"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        Miejsca na różne wiadomości i plotki ze świata gier które nas zaciekawią i stwierdzimy, że warto się nimi podzielić.<br /><br />Mój nius na początek:<br /><br /><a href="https://www.gry-online.pl/S013.asp?ID=107618" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Age of Empires: Definitive Edition - Microsoft zrzuca na Valve winę za brak wersji na Steam</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2020">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-02-03T13:09:23" class="text-sm text-gray-500 font-mono">2018-02-03 13:09:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Co tam ci ludzie w internetach pierdolo, że Microsoft chce kupić Volvo? Ponoć Gaben to zdementował, ale w sumie chuj wie&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-2015" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2015"
+                                 aria-describedby="post-content-2015">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2025">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2018-02-03T22:35:18" class="text-sm text-gray-500 font-mono">2018-02-03 22:35:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Mistrzostwa Polski 2018: Heroes III</strong><br /><br />Info: <a href="http://heroes.net.pl/nowina/3688" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://heroes.net.pl/nowina/3688</a><br /><br />Zapisy: <a href="http://mistrzostwa.heroes.net.pl/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://mistrzostwa.heroes.net.pl/</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2015" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-31T23:54:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-31 23:54:45</time>
+                                    </header>
+                                    <div id="post-content-2015"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2008" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Miejsca na różne wiadomości i plotki ze świata gier które nas zaciekawią i stwierdzimy, że warto się nimi podzielić.<br /><br />Mój nius na początek:<br /><br /><a href="https://www.gry-online.pl/S013.asp?ID=107618" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Age of Empires: Definitive Edition - Microsoft zrzuca na Valve winę za brak wersji na Steam</a></div><br />Toż oni się zarżną tępym nożem, jak nie dadzą na Steama :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2031">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-02-05T07:53:21" class="text-sm text-gray-500 font-mono">2018-02-05 07:53:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2020" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Co tam ci ludzie w internetach pierdolo, że Microsoft chce kupić Volvo? Ponoć Gaben to zdementował, ale w sumie chuj wie&#8230;</div><br />Marzyć to oni mogą :D Kupią EA, potem Valve, następnie Ubisoft&#8230; Nie, niemożliwe. Gaben nie utnie kurze złotych.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2020" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2020"
+                                 aria-describedby="post-content-2020">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2525">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2018-12-20T03:15:02" class="text-sm text-gray-500 font-mono">2018-12-20 03:15:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Chyba nikt tu nie zapodał info na ten temat, no to ja tu zostawię. Największa zbiórka crowdfundingowa w Polsce. W niecałe półgodziny została zebrana potrzebna kwota na cel (60000zł), a ogólnie zbiórka uzbierała a w sumie kupę kasy, bo 1069469zł. Info o zbiórce:<br /><a href="https://wspieram.to/zewcthulhuRPG" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://wspieram.to/zewcthulhuRPG</a>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2020" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-02-03T13:09:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-03 13:09:23</time>
+                                    </header>
+                                    <div id="post-content-2020"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Co tam ci ludzie w internetach pierdolo, że Microsoft chce kupić Volvo? Ponoć Gaben to zdementował, ale w sumie chuj wie&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2025" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2025"
+                                 aria-describedby="post-content-2025">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2025" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2018-02-03T22:35:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-03 22:35:18</time>
+                                    </header>
+                                    <div id="post-content-2025"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        <strong>Mistrzostwa Polski 2018: Heroes III</strong><br /><br />Info: <a href="http://heroes.net.pl/nowina/3688" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://heroes.net.pl/nowina/3688</a><br /><br />Zapisy: <a href="http://mistrzostwa.heroes.net.pl/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">http://mistrzostwa.heroes.net.pl/</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2031" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2031"
+                                 aria-describedby="post-content-2031">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2031" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-02-05T07:53:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-05 07:53:21</time>
+                                    </header>
+                                    <div id="post-content-2031"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2020" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Co tam ci ludzie w internetach pierdolo, że Microsoft chce kupić Volvo? Ponoć Gaben to zdementował, ale w sumie chuj wie&#8230;</div><br />Marzyć to oni mogą :D Kupią EA, potem Valve, następnie Ubisoft&#8230; Nie, niemożliwe. Gaben nie utnie kurze złotych.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2525" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2525"
+                                 aria-describedby="post-content-2525">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2525" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2018-12-20T03:15:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-12-20 03:15:02</time>
+                                    </header>
+                                    <div id="post-content-2525"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        Chyba nikt tu nie zapodał info na ten temat, no to ja tu zostawię. Największa zbiórka crowdfundingowa w Polsce. W niecałe półgodziny została zebrana potrzebna kwota na cel (60000zł), a ogólnie zbiórka uzbierała a w sumie kupę kasy, bo 1069469zł. Info o zbiórce:<br /><a href="https://wspieram.to/zewcthulhuRPG" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://wspieram.to/zewcthulhuRPG</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

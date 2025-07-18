@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,650 +44,1038 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_8.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Humor</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Cenzopapa</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Cenzopapa</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-243">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/9.jpg?1512503192" alt="Awatar Cute" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Cute</span>
-                                <time datetime="2016-12-29T18:15:19" class="text-sm text-gray-500 font-mono">2016-12-29 18:15:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <span style="font-size: 2.2rem;"><strong>BO NIE ŻYJE xD</strong></span>
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Cenzopapa</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-243" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-243"
+                                 aria-describedby="post-content-243">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/9.jpg?1512503192"
+                                     alt="Awatar użytkownika Cute"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-244">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2016-12-29T18:25:46" class="text-sm text-gray-500 font-mono">2016-12-29 18:25:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Re: Dlaczego Jan Paweł II nie jeździ na rowerze?</strong><br /><br />&lt;t&gt;Bzdura. Niedawno widziano go jak pedałował ostro przez deszcz kremówek. Inba wciąż trwała.&lt;br/&gt;<br />(papaj nitka ić?)&lt;/t&gt;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-243" class="font-bold text-lg text-white">Cute</h3>
+                                        <time datetime="2016-12-29T18:15:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 18:15:19</time>
+                                    </header>
+                                    <div id="post-content-243"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Cute">
+                                        <span style="font-size: 2.2rem;"><strong>BO NIE ŻYJE xD</strong></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-245">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/9.jpg?1512503192" alt="Awatar Cute" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Cute</span>
-                                <time datetime="2016-12-29T18:28:36" class="text-sm text-gray-500 font-mono">2016-12-29 18:28:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Re: Dlaczego Jan Paweł II nie jeździ na rowerze?</strong><br /><br />&lt;r&gt;&lt;IMG src=&quot;http://x3.cdn03.imgwykop.pl/c3201142/comment_90iXKo6QAW5qB3A9rGjZ4Lpna2LDl9UV.jpg&quot;&gt;&lt;s&gt;<img src="&lt;/s&gt;&lt;URL url=&quot;http://x3.cdn03.imgwykop.pl/c3201142/comment_90iXKo6QAW5qB3A9rGjZ4Lpna2LDl9UV.jpg&quot;&gt;&lt;LINK_TEXT text=&quot;http://x3.cdn03.imgwykop.pl/c3201142/co &#8230; LDl9UV.jpg&quot;&gt;http://x3.cdn03.imgwykop.pl/c3201142/comment_90iXKo6QAW5qB3A9rGjZ4Lpna2LDl9UV.jpg&lt;/LINK_TEXT&gt;&lt;/URL&gt;&lt;e&gt;" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />&lt;/e&gt;&lt;/IMG&gt;&lt;br/&gt;<br />Takim go zapamiętałem, och Karol ;_; Ile pięknych artefaktów razem z Tobą przyjacielu zdobyłem wtedy&#8230;.&lt;br/&gt;<br />Łezka w oczku ;_;&lt;/r&gt;
+                        </article>
+                    </li>
+                    
+                    <li id="post-244" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-244"
+                                 aria-describedby="post-content-244">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-246">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2016-12-29T18:30:14" class="text-sm text-gray-500 font-mono">2016-12-29 18:30:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <strong>Re: Dlaczego Jan Paweł II nie jeździ na rowerze?</strong><br /><br />&lt;r&gt;Słabe, jak chcecie prawdziwej polewki i hardkorowego humoru to polecam &lt;URL url=&quot;https://pl.wikiquote.org/wiki/Jan_Pawe%C5%82_II_%28anegdoty%29&quot;&gt;&lt;s&gt;<a href="https://pl.wikiquote.org/wiki/Jan_Pawe%C5%82_II_(anegdoty)" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&lt;/s&gt;&lt;COLOR color=&quot;#00FFFF&quot;&gt;&lt;s&gt;<span style="color: #00FFFF;">&lt;/s&gt;te darmowe kremówki&lt;e&gt;</span>&lt;/e&gt;&lt;/COLOR&gt;&lt;e&gt;</a>&lt;/e&gt;&lt;/URL&gt;&lt;/r&gt;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-244" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2016-12-29T18:25:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 18:25:46</time>
+                                    </header>
+                                    <div id="post-content-244"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        <strong>Re: Dlaczego Jan Paweł II nie jeździ na rowerze?</strong><br /><br />&lt;t&gt;Bzdura. Niedawno widziano go jak pedałował ostro przez deszcz kremówek. Inba wciąż trwała.&lt;br/&gt;<br />(papaj nitka ić?)&lt;/t&gt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-247">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2016-12-29T19:21:53" class="text-sm text-gray-500 font-mono">2016-12-29 19:21:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No i ja się pytam, dumni Wy jesteście z siebie? Zdajecie sobie sprawę z tego co robicie? Macie Wy w ogóle rozum i godność człowieka?<br /><br />Molte volte, co tu się odjaniepawla na tej nitce&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-245" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-245"
+                                 aria-describedby="post-content-245">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/9.jpg?1512503192"
+                                     alt="Awatar użytkownika Cute"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-248">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2016-12-29T19:41:08" class="text-sm text-gray-500 font-mono">2016-12-29 19:41:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="http://img2.wikia.nocookie.net/__cb20120912212831/aspergia/images/9/93/Papie%C5%BC_biznesmen_bez_t%C5%82a.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />Niniejszym jest to oficjalny papieżowy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-245" class="font-bold text-lg text-white">Cute</h3>
+                                        <time datetime="2016-12-29T18:28:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 18:28:36</time>
+                                    </header>
+                                    <div id="post-content-245"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Cute">
+                                        <strong>Re: Dlaczego Jan Paweł II nie jeździ na rowerze?</strong><br /><br />&lt;r&gt;&lt;IMG src=&quot;http://x3.cdn03.imgwykop.pl/c3201142/comment_90iXKo6QAW5qB3A9rGjZ4Lpna2LDl9UV.jpg&quot;&gt;&lt;s&gt;<img src="&lt;/s&gt;&lt;URL url=&quot;http://x3.cdn03.imgwykop.pl/c3201142/comment_90iXKo6QAW5qB3A9rGjZ4Lpna2LDl9UV.jpg&quot;&gt;&lt;LINK_TEXT text=&quot;http://x3.cdn03.imgwykop.pl/c3201142/co &#8230; LDl9UV.jpg&quot;&gt;http://x3.cdn03.imgwykop.pl/c3201142/comment_90iXKo6QAW5qB3A9rGjZ4Lpna2LDl9UV.jpg&lt;/LINK_TEXT&gt;&lt;/URL&gt;&lt;e&gt;" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />&lt;/e&gt;&lt;/IMG&gt;&lt;br/&gt;<br />Takim go zapamiętałem, och Karol ;_; Ile pięknych artefaktów razem z Tobą przyjacielu zdobyłem wtedy&#8230;.&lt;br/&gt;<br />Łezka w oczku ;_;&lt;/r&gt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-249">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2016-12-29T23:19:27" class="text-sm text-gray-500 font-mono">2016-12-29 23:19:27</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ale papieża to wy szanujcie!!!1
+                        </article>
+                    </li>
+                    
+                    <li id="post-246" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-246"
+                                 aria-describedby="post-content-246">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-250">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2016-12-29T23:39:34" class="text-sm text-gray-500 font-mono">2016-12-29 23:39:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Co tam mówisz? <span style="color: #FF0000;">Szkalujcie</span>? Nie ma sprawy!<br /><br /><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/15577732_1388909684473241_898464373_n.jpg?oh=db26a80e6a1bef3aaa91564362a93328&amp;oe=5867D29B" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-246" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2016-12-29T18:30:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 18:30:14</time>
+                                    </header>
+                                    <div id="post-content-246"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <strong>Re: Dlaczego Jan Paweł II nie jeździ na rowerze?</strong><br /><br />&lt;r&gt;Słabe, jak chcecie prawdziwej polewki i hardkorowego humoru to polecam &lt;URL url=&quot;https://pl.wikiquote.org/wiki/Jan_Pawe%C5%82_II_%28anegdoty%29&quot;&gt;&lt;s&gt;<a href="https://pl.wikiquote.org/wiki/Jan_Pawe%C5%82_II_(anegdoty)" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&lt;/s&gt;&lt;COLOR color=&quot;#00FFFF&quot;&gt;&lt;s&gt;<span style="color: #00FFFF;">&lt;/s&gt;te darmowe kremówki&lt;e&gt;</span>&lt;/e&gt;&lt;/COLOR&gt;&lt;e&gt;</a>&lt;/e&gt;&lt;/URL&gt;&lt;/r&gt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-251">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2016-12-29T23:50:55" class="text-sm text-gray-500 font-mono">2016-12-29 23:50:55</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Uważajcie se xD
+                        </article>
+                    </li>
+                    
+                    <li id="post-247" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-247"
+                                 aria-describedby="post-content-247">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-252">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2016-12-29T23:51:46" class="text-sm text-gray-500 font-mono">2016-12-29 23:51:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A ja wolę muzycznie.<br />https://www.youtube.com/watch?v=gjAIe2Ad43U
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-247" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2016-12-29T19:21:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 19:21:53</time>
+                                    </header>
+                                    <div id="post-content-247"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        No i ja się pytam, dumni Wy jesteście z siebie? Zdajecie sobie sprawę z tego co robicie? Macie Wy w ogóle rozum i godność człowieka?<br /><br />Molte volte, co tu się odjaniepawla na tej nitce&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-253">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2016-12-29T23:53:29" class="text-sm text-gray-500 font-mono">2016-12-29 23:53:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jak muzycznie to muzycznie.<br /><br />[Żeżuncja intensifies] <br />https://www.youtube.com/watch?v=Ea7LzvbkS40<br /><br />tudzież<br />https://www.youtube.com/watch?v=dwptXEAdFCw
+                        </article>
+                    </li>
+                    
+                    <li id="post-248" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-248"
+                                 aria-describedby="post-content-248">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-254">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2016-12-30T21:31:12" class="text-sm text-gray-500 font-mono">2016-12-30 21:31:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lenny Weisstein</strong> napisał:</span></div>A ja wolę muzycznie.<br />https://www.youtube.com/watch?v=gjAIe2Ad43U</div><br />Kur*a mać, dzięki wielkie, rano jak byłam w Biedrze to mi się przypomniała ta piosenka i nie mogłam się jej pozbyć z głowy. :&lt;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-248" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2016-12-29T19:41:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 19:41:08</time>
+                                    </header>
+                                    <div id="post-content-248"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        <img src="http://img2.wikia.nocookie.net/__cb20120912212831/aspergia/images/9/93/Papie%C5%BC_biznesmen_bez_t%C5%82a.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />Niniejszym jest to oficjalny papieżowy.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-255">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-01T17:18:36" class="text-sm text-gray-500 font-mono">2017-01-01 17:18:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                no i ja się pytam człowieku dumny ty jesteś z siebie zdajesz sobie sprawę z tego co robisz?masz ty wogóle rozum i godnośc człowieka?ja nie wiem ale żałosny typek z ciebie ,chyba nie pomyślałes nawet co robisz i kogo obrażasz ,możesz sobie obrażac tych co na to zasłużyli sobie ale nie naszego papieża polaka naszego rodaka wielką osobę ,i tak wyjątkowa i ważną bo to nie jest ktoś tam taki sobie że możesz go sobie wyśmiać bo tak ci się podoba nie wiem w jakiej ty się wychowałes rodzinie ale chyba ty nie wiem nie rozumiesz co to jest wiara .jeśli myslisz że jestes wspaniały to jestes zwykłym czubkiem którego ktoś nie odizolował jeszcze od społeczeństwa ,nie wiem co w tym jest takie śmieszne ale czepcie się stalina albo hitlera albo innych zwyrodnialców a nie czepiacie się takiej świętej osoby jak papież jan paweł 2 .jak można wogóle publicznie zamieszczac takie zdięcia na forach internetowych?ja się pytam kto powinien za to odpowiedziec bo chyba widac że do koscioła nie chodzi jak jestes nie wiem ateistą albo wierzysz w jakies sekty czy wogóle jestes może ty sługą szatana a nie będziesz z papieża robił takiego ,to ty chyba jestes jakis nie wiem co sie jarasz pomiotami szatana .wez pomyśl sobie ile papież zrobił ,on był kimś a ty kim jestes żeby z niego sobie robić kpiny co? kto dał ci prawo obrażac wogóle papieża naszego ?pomyślałes wogóle nad tym że to nie jest osoba taka sobie że ją wyśmieje i mnie będa wszyscy chwalic? wez dziecko naprawdę jestes jakis psycholek bo w przeciwieństwie do ciebie to papież jest autorytetem dla mnie a ty to nie wiem czyim możesz być autorytetem chyba takich samych jakiś głupków jak ty którzy nie wiedza co to kosciół i religia ,widac że się nie modlisz i nie chodzisz na religie do szkoły ,widac nie szanujesz religii to nie wiem jak chcesz to sobie wez swoje zdięcie wstaw ciekawe czy byś sie odważył .naprawdę wezta się dzieci zastanówcie co wy roicie bo nie macie widac pojęcia o tym kim był papież jan paweł2 jak nie jestescie w pełni rozwinięte umysłowo to się nie zabierajcie za taką osobę jak ojciec swięty bo to świadczy o tym że nie macie chyba w domu krzyża ani jednego obraza świętego nie chodzi tutaj o kosciół mnie ale wogóle ogólnie o zasady wiary żeby mieć jakąs godnosc bo papież nikogo nie obrażał a ty za co go obrażasz co? no powiedz za co obrażasz taką osobę jak ojciec święty ?brak mnie słów ale jakbyś miał pojęcie chociaz i sięgnął po pismo święte i poczytał sobie to może byś się odmienił .nie wiem idz do kościoła bo widac już dawno szatan jest w tobie człowieku ,nie lubisz kościoła to chociaż siedz cicho i nie obrażaj innych ludzi
+                        </article>
+                    </li>
+                    
+                    <li id="post-249" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-249"
+                                 aria-describedby="post-content-249">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-256">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Alechemik</span>
-                                <time datetime="2017-01-01T18:39:52" class="text-sm text-gray-500 font-mono">2017-01-01 18:39:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Czemu taki mały obrazek? :&lt;<br /><img src="http://vignette2.wikia.nocookie.net/meme-hell/images/2/29/CEMFZTgUEAA479m.jpg/revision/latest?cb=20150818181327" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-249" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2016-12-29T23:19:27"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 23:19:27</time>
+                                    </header>
+                                    <div id="post-content-249"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ale papieża to wy szanujcie!!!1
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-257">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-01T20:59:46" class="text-sm text-gray-500 font-mono">2017-01-01 20:59:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Infernal</strong> napisał:</span></div>no i ja się pytam człowieku dumny ty jesteś z siebie zdajesz sobie sprawę z tego co robisz?masz ty wogóle rozum i godnośc człowieka?ja nie wiem ale żałosny typek z ciebie ,chyba nie pomyślałes nawet co robisz i kogo obrażasz ,możesz sobie obrażac tych co na to zasłużyli sobie ale nie naszego papieża polaka naszego rodaka wielką osobę ,i tak wyjątkowa i ważną bo to nie jest ktoś tam taki sobie że możesz go sobie wyśmiać bo tak ci się podoba nie wiem w jakiej ty się wychowałes rodzinie ale chyba ty nie wiem nie rozumiesz co to jest wiara .jeśli myslisz że jestes wspaniały to jestes zwykłym czubkiem którego ktoś nie odizolował jeszcze od społeczeństwa ,nie wiem co w tym jest takie śmieszne ale czepcie się stalina albo hitlera albo innych zwyrodnialców a nie czepiacie się takiej świętej osoby jak papież jan paweł 2 .jak można wogóle publicznie zamieszczac takie zdięcia na forach internetowych?ja się pytam kto powinien za to odpowiedziec bo chyba widac że do koscioła nie chodzi jak jestes nie wiem ateistą albo wierzysz w jakies sekty czy wogóle jestes może ty sługą szatana a nie będziesz z papieża robił takiego ,to ty chyba jestes jakis nie wiem co sie jarasz pomiotami szatana .wez pomyśl sobie ile papież zrobił ,on był kimś a ty kim jestes żeby z niego sobie robić kpiny co? kto dał ci prawo obrażac wogóle papieża naszego ?pomyślałes wogóle nad tym że to nie jest osoba taka sobie że ją wyśmieje i mnie będa wszyscy chwalic? wez dziecko naprawdę jestes jakis psycholek bo w przeciwieństwie do ciebie to papież jest autorytetem dla mnie a ty to nie wiem czyim możesz być autorytetem chyba takich samych jakiś głupków jak ty którzy nie wiedza co to kosciół i religia ,widac że się nie modlisz i nie chodzisz na religie do szkoły ,widac nie szanujesz religii to nie wiem jak chcesz to sobie wez swoje zdięcie wstaw ciekawe czy byś sie odważył .naprawdę wezta się dzieci zastanówcie co wy roicie bo nie macie widac pojęcia o tym kim był papież jan paweł2 jak nie jestescie w pełni rozwinięte umysłowo to się nie zabierajcie za taką osobę jak ojciec swięty bo to świadczy o tym że nie macie chyba w domu krzyża ani jednego obraza świętego nie chodzi tutaj o kosciół mnie ale wogóle ogólnie o zasady wiary żeby mieć jakąs godnosc bo papież nikogo nie obrażał a ty za co go obrażasz co? no powiedz za co obrażasz taką osobę jak ojciec święty ?brak mnie słów ale jakbyś miał pojęcie chociaz i sięgnął po pismo święte i poczytał sobie to może byś się odmienił .nie wiem idz do kościoła bo widac już dawno szatan jest w tobie człowieku ,nie lubisz kościoła to chociaż siedz cicho i nie obrażaj innych ludzi</div>O, stary, teraz to przyjebałeś najstarszą pastą świata :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-250" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-250"
+                                 aria-describedby="post-content-250">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-258">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-01T21:12:44" class="text-sm text-gray-500 font-mono">2017-01-01 21:12:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div>O, stary, teraz to przyjebałeś najstarszą pastą świata :D</div><br /><br />Ja po prostu chcę mieć to pod ręką na wszelkie Jachy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-250" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2016-12-29T23:39:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 23:39:34</time>
+                                    </header>
+                                    <div id="post-content-250"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        Co tam mówisz? <span style="color: #FF0000;">Szkalujcie</span>? Nie ma sprawy!<br /><br /><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/15577732_1388909684473241_898464373_n.jpg?oh=db26a80e6a1bef3aaa91564362a93328&amp;oe=5867D29B" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-259">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-05T08:52:51" class="text-sm text-gray-500 font-mono">2017-01-05 08:52:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Wzruszyłam się ;_;
+                        </article>
+                    </li>
+                    
+                    <li id="post-251" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-251"
+                                 aria-describedby="post-content-251">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-260">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-05T11:27:03" class="text-sm text-gray-500 font-mono">2017-01-05 11:27:03</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                &gt;bądź mną<br />&gt;lvl 70<br />&gt;głowa kościoła katolickiego here<br />&gt;codziennie robią ci obiady<br />&gt;nie musisz gotować<br />&gt;win.exe<br />&gt;ostatnio zmieniła się siostra która gotuje<br />&gt;&quot;jakie jest ulubione danie ojca świętego&quot;<br />&gt;kobieto, kurwa, nie zawracaj mi dupy<br />&gt;ratuje świat przet ateizmem<br />&gt;&quot;takie które jem&quot; rzuć od niechcenia<br />&gt;siostra podaje szpinak na obiad<br />&gt;na początku ciesz się, bo lubisz szpinak<br />&gt;cotokurwajest.avi<br />&gt;dawno nie jadłeś tak niedoprawionego szpinaku<br />&gt;co za gówno, mój Boże<br />&gt;musisz zjeść, bo siostrze będzie przykro<br />&gt;&quot;smakuje ojcu?&quot;<br />&gt;&quot;mmmm&quot; wydaj z siebie udawany pomruk zadowolenia<br />&gt;siostra poszła na chwilę<br />&gt;wypierdol resztę za okno<br />&gt;miej nadzieję, że już więcej tego gówna nie zrobi<br />&gt;nadzieja matką głupich<br />&gt;robi ten jebany szpinak codziennie<br />&gt;za każdym razem mniej doprawiony<br />&gt;numer z wypierdalaniem połowy za okno całkiem wychodzi<br />&gt;zbliża się pielgrzymka do Polski<br />&gt;znowu ta chujolandia<br />&gt;nie po to wypierdoliłeś do Watykanu, żeby tam wracać<br />&gt;trudno<br />&gt;musisz<br />&gt;jesteś papieżem<br />&gt;przed wylotem siostra Mariola przygotowała znowu szpinak bo jakżeby kurwa inaczej<br />&gt;tym razem musisz zjeść cały bo jesz z jakimiś kardynałami<br />&gt;jeszcze gorszy<br />&gt;tym razem chyba nawet nieświeży<br />&gt;trudno<br />&gt;zaciskasz zęby i zjadasz z uśmiechem<br />&gt;lecisz do Polski<br />&gt;czujesz przed lądowaniem że szpinak na pewno był nieświeży<br />&gt;samolot ląduje<br />&gt;prezydent Wałęsa czeka z rządem<br />&gt;powitaj ich wiedząc, że w każdej chwili możesz umrzeć na eksplozję żołądka<br />&gt;Dziwisz mówi, że do jakichś dzieci jedziesz<br />&gt;japierdole.gif<br />&gt;dojezdzasz na miejsce<br />&gt;mowisz Dziwiszowi ze się musisz chwilę pomodlić za drzewem<br />&gt;idziesz za drzewo<br />&gt;rzygasz dalej niż widzisz<br />&gt;wracasz jak gdyby nigdy nic<br />&gt;idziesz do bachorów z gorączką i rozstrojem zoladkowym<br />&gt;o kurwa tu są kamery<br />&gt;&quot;niech bedzie pochwalony Jezus Chrystus hehe&quot;<br />&gt;nie wiesz czemu sie zasmiales<br />&gt;pewnie od tej gorączki<br />&gt;coś mówią i pokazują ci owce<br />&gt;ochujchodzi.png<br />&gt;&quot;po co mam wybierać? Najlepiej zabrać obie.&quot;<br />&gt;wszyscy się śmieją<br />&gt;dobra, łyknęli<br />&gt;jakoś będzie<br />&gt;odpowiadaj na jakieś chujowe pytania czując się jak gówno<br />&gt;miej przeczucie że brzmisz jak pijany lub niespełna rozumu<br />&gt;nagle jakiś jebany bachor mówi<br />&gt;&quot;a czy Papież lubi szpinak?<br />&gt;&quot;szpinak?&quot;<br />&gt;no chyba kurwa sobie jaja robisz<br />&gt;&quot;jak mi dadzą to jem&quot;<br />&gt;bo co masz robić<br />&gt;jesteś papieżem﻿
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-251" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2016-12-29T23:50:55"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 23:50:55</time>
+                                    </header>
+                                    <div id="post-content-251"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Uważajcie se xD
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-261">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-01-05T17:20:45" class="text-sm text-gray-500 font-mono">2017-01-05 17:20:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                https://www.youtube.com/watch?v=GClnb7YtCW8<br /><br />Łojezu prehistoryczny cenzopapaj. Jeszcze sprzed czasów internetów  :o
+                        </article>
+                    </li>
+                    
+                    <li id="post-252" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-252"
+                                 aria-describedby="post-content-252">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-262">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-05T22:29:43" class="text-sm text-gray-500 font-mono">2017-01-05 22:29:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nikt nie nawoływał do publicznego palenia płyt tej kapeli czy coś? xD
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-252" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2016-12-29T23:51:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 23:51:46</time>
+                                    </header>
+                                    <div id="post-content-252"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        A ja wolę muzycznie.<br />https://www.youtube.com/watch?v=gjAIe2Ad43U
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-263">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-01-11T18:34:33" class="text-sm text-gray-500 font-mono">2017-01-11 18:34:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Krótko, ale zbyt długo nic tu nie wpadło.<br />https://www.youtube.com/watch?v=sdHPsVFLlv0
+                        </article>
+                    </li>
+                    
+                    <li id="post-253" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-253"
+                                 aria-describedby="post-content-253">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-264">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-12T16:14:11" class="text-sm text-gray-500 font-mono">2017-01-12 16:14:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                no
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-253" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2016-12-29T23:53:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-29 23:53:29</time>
+                                    </header>
+                                    <div id="post-content-253"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        Jak muzycznie to muzycznie.<br /><br />[Żeżuncja intensifies] <br />https://www.youtube.com/watch?v=Ea7LzvbkS40<br /><br />tudzież<br />https://www.youtube.com/watch?v=dwptXEAdFCw
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-265">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Najemnik</span>
-                                <time datetime="2017-01-18T23:16:11" class="text-sm text-gray-500 font-mono">2017-01-18 23:16:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                ░░░░░░░░░░░░░▄▄▀▀▀▀▀▀▄▄<br />░░░░░░░░░░▄▄▀▄▄▄█████▄▄▀▄<br />░░░░░░░░▄█▀▒▀▀▀█████████▄█▄<br />░░░░░░▄██▒▒▒▒▒▒▒▒▀▒▀▒▀▄▒▀▒▀▄<br />░░░░▄██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▄<br />░░░░██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▌<br />░░░▐██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐█<br />░▄▄███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█<br />▐▒▄▀██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▌<br />▌▒▒▌▒▀▒▒▒▒▒▒▄▀▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒█▌<br />▐▒▀▒▌▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒▀▀▀▀▄▒▐<br />░█▒▒▌▒▒▒▒▒▒▒▒▀▀▒▀▒▒▐▒▄▀██▀▒▒▒▌<br />░░█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒▒▒▒█<br />░░░▀▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▒▒▒▒▒▒▄▀<br />░░░▐▒▒▒▒▒▒▒▒▒▄▀▐▒▒▒▒▒▐▒▒▒▒▄▀<br />░░▄▌▒▒▒▒▒▒▒▄▀▒▒▒▀▄▄▒▒▒▌▒▒▒▐▀▀▀▄▄▄<br />▄▀░▀▄▒▒▒▒▒▒▒▒▀▀▄▄▄▒▄▄▀▌▒▒▒▌░░░░░░<br />▐▌░░░▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▀░░░░░░░<br />░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░<br />░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░<br />░░░█░░░░░░░░░▌▀▀▀▀▀▀▐░░░░░▐▌░░░░░
+                        </article>
+                    </li>
+                    
+                    <li id="post-254" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-254"
+                                 aria-describedby="post-content-254">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-266">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Alechemik</span>
-                                <time datetime="2017-01-30T22:35:01" class="text-sm text-gray-500 font-mono">2017-01-30 22:35:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="http://img.sadistic.pl/pics/68043f9b8878.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-254" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2016-12-30T21:31:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2016-12-30 21:31:12</time>
+                                    </header>
+                                    <div id="post-content-254"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lenny Weisstein</strong> napisał:</span></div>A ja wolę muzycznie.<br />https://www.youtube.com/watch?v=gjAIe2Ad43U</div><br />Kur*a mać, dzięki wielkie, rano jak byłam w Biedrze to mi się przypomniała ta piosenka i nie mogłam się jej pozbyć z głowy. :&lt;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-267">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2017-02-06T23:10:51" class="text-sm text-gray-500 font-mono">2017-02-06 23:10:51</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><div style="text-align: center;"><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/16522797_10208672021783541_519502953_n.jpg?oh=7469bf92125e91a34b72530391026d2e&amp;oe=589A71E7" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /></div></details><br /><span style="font-size: 2.2rem;">KAWAI PAPAI</span>
+                        </article>
+                    </li>
+                    
+                    <li id="post-255" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-255"
+                                 aria-describedby="post-content-255">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-268">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-02-10T13:27:08" class="text-sm text-gray-500 font-mono">2017-02-10 13:27:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="http://i.imgur.com/2u8ADWz.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />https://www.facebook.com/events/429109484147136/
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-255" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-01T17:18:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-01 17:18:36</time>
+                                    </header>
+                                    <div id="post-content-255"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        no i ja się pytam człowieku dumny ty jesteś z siebie zdajesz sobie sprawę z tego co robisz?masz ty wogóle rozum i godnośc człowieka?ja nie wiem ale żałosny typek z ciebie ,chyba nie pomyślałes nawet co robisz i kogo obrażasz ,możesz sobie obrażac tych co na to zasłużyli sobie ale nie naszego papieża polaka naszego rodaka wielką osobę ,i tak wyjątkowa i ważną bo to nie jest ktoś tam taki sobie że możesz go sobie wyśmiać bo tak ci się podoba nie wiem w jakiej ty się wychowałes rodzinie ale chyba ty nie wiem nie rozumiesz co to jest wiara .jeśli myslisz że jestes wspaniały to jestes zwykłym czubkiem którego ktoś nie odizolował jeszcze od społeczeństwa ,nie wiem co w tym jest takie śmieszne ale czepcie się stalina albo hitlera albo innych zwyrodnialców a nie czepiacie się takiej świętej osoby jak papież jan paweł 2 .jak można wogóle publicznie zamieszczac takie zdięcia na forach internetowych?ja się pytam kto powinien za to odpowiedziec bo chyba widac że do koscioła nie chodzi jak jestes nie wiem ateistą albo wierzysz w jakies sekty czy wogóle jestes może ty sługą szatana a nie będziesz z papieża robił takiego ,to ty chyba jestes jakis nie wiem co sie jarasz pomiotami szatana .wez pomyśl sobie ile papież zrobił ,on był kimś a ty kim jestes żeby z niego sobie robić kpiny co? kto dał ci prawo obrażac wogóle papieża naszego ?pomyślałes wogóle nad tym że to nie jest osoba taka sobie że ją wyśmieje i mnie będa wszyscy chwalic? wez dziecko naprawdę jestes jakis psycholek bo w przeciwieństwie do ciebie to papież jest autorytetem dla mnie a ty to nie wiem czyim możesz być autorytetem chyba takich samych jakiś głupków jak ty którzy nie wiedza co to kosciół i religia ,widac że się nie modlisz i nie chodzisz na religie do szkoły ,widac nie szanujesz religii to nie wiem jak chcesz to sobie wez swoje zdięcie wstaw ciekawe czy byś sie odważył .naprawdę wezta się dzieci zastanówcie co wy roicie bo nie macie widac pojęcia o tym kim był papież jan paweł2 jak nie jestescie w pełni rozwinięte umysłowo to się nie zabierajcie za taką osobę jak ojciec swięty bo to świadczy o tym że nie macie chyba w domu krzyża ani jednego obraza świętego nie chodzi tutaj o kosciół mnie ale wogóle ogólnie o zasady wiary żeby mieć jakąs godnosc bo papież nikogo nie obrażał a ty za co go obrażasz co? no powiedz za co obrażasz taką osobę jak ojciec święty ?brak mnie słów ale jakbyś miał pojęcie chociaz i sięgnął po pismo święte i poczytał sobie to może byś się odmienił .nie wiem idz do kościoła bo widac już dawno szatan jest w tobie człowieku ,nie lubisz kościoła to chociaż siedz cicho i nie obrażaj innych ludzi
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-269">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-04-06T04:42:53" class="text-sm text-gray-500 font-mono">2017-04-06 04:42:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/RPNl1mDwDwY</span><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XfJpjxSg0AA</span><br />Stalczanowo.
+                        </article>
+                    </li>
+                    
+                    <li id="post-256" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-256"
+                                 aria-describedby="post-content-256">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/15.jpg?1512503192"
+                                     alt="Awatar użytkownika Alechemik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2035">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2018-02-08T18:23:32" class="text-sm text-gray-500 font-mono">2018-02-08 18:23:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="attachments/0/6-e6abf7ce2d1e3661930bf04666a6fb62.data" alt="Załącznik 6" class="rounded-lg my-4 max-w-full h-auto shadow-lg" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-256" class="font-bold text-lg text-white">Alechemik</h3>
+                                        <time datetime="2017-01-01T18:39:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-01 18:39:52</time>
+                                    </header>
+                                    <div id="post-content-256"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Alechemik">
+                                        Czemu taki mały obrazek? :&lt;<br /><img src="http://vignette2.wikia.nocookie.net/meme-hell/images/2/29/CEMFZTgUEAA479m.jpg/revision/latest?cb=20150818181327" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2196">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-04-20T11:06:20" class="text-sm text-gray-500 font-mono">2018-04-20 11:06:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Funkcja organu zatwierdzającego aneks do PUL dla Nadleśnictwa Białowieża, przypadała w roku 2016 osobie Prof. Jana Szyszko, niekwestionowanemu autorytetowi naukowemu w zakresie diagnozowania i sterowania procesami naturalnymi w środowisku leśnym, jednemu z dwóch (po Świętym Janie Pawle II) polskich laureatów najwyższego wyróżnienia Papieskiej Akademii Nauk (wyróżnienia doceniającego dorobek naukowy Prof. Jana Szyszko w dziedzinie ochrony środowiska, zwanego potocznie „papieskim Noblem”).
+                        </article>
+                    </li>
+                    
+                    <li id="post-257" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-257"
+                                 aria-describedby="post-content-257">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2835">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2019-09-02T17:41:33" class="text-sm text-gray-500 font-mono">2019-09-02 17:41:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="attachments/0/19-c302acadafffdf4ae2c61dab79d1158e.data" alt="Załącznik 19" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /><img src="attachments/0/19-c302acadafffdf4ae2c61dab79d1158e.data" alt="Załącznik 19" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /><img src="attachments/0/19-c302acadafffdf4ae2c61dab79d1158e.data" alt="Załącznik 19" class="rounded-lg my-4 max-w-full h-auto shadow-lg" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-257" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-01T20:59:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-01 20:59:46</time>
+                                    </header>
+                                    <div id="post-content-257"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Infernal</strong> napisał:</span></div>no i ja się pytam człowieku dumny ty jesteś z siebie zdajesz sobie sprawę z tego co robisz?masz ty wogóle rozum i godnośc człowieka?ja nie wiem ale żałosny typek z ciebie ,chyba nie pomyślałes nawet co robisz i kogo obrażasz ,możesz sobie obrażac tych co na to zasłużyli sobie ale nie naszego papieża polaka naszego rodaka wielką osobę ,i tak wyjątkowa i ważną bo to nie jest ktoś tam taki sobie że możesz go sobie wyśmiać bo tak ci się podoba nie wiem w jakiej ty się wychowałes rodzinie ale chyba ty nie wiem nie rozumiesz co to jest wiara .jeśli myslisz że jestes wspaniały to jestes zwykłym czubkiem którego ktoś nie odizolował jeszcze od społeczeństwa ,nie wiem co w tym jest takie śmieszne ale czepcie się stalina albo hitlera albo innych zwyrodnialców a nie czepiacie się takiej świętej osoby jak papież jan paweł 2 .jak można wogóle publicznie zamieszczac takie zdięcia na forach internetowych?ja się pytam kto powinien za to odpowiedziec bo chyba widac że do koscioła nie chodzi jak jestes nie wiem ateistą albo wierzysz w jakies sekty czy wogóle jestes może ty sługą szatana a nie będziesz z papieża robił takiego ,to ty chyba jestes jakis nie wiem co sie jarasz pomiotami szatana .wez pomyśl sobie ile papież zrobił ,on był kimś a ty kim jestes żeby z niego sobie robić kpiny co? kto dał ci prawo obrażac wogóle papieża naszego ?pomyślałes wogóle nad tym że to nie jest osoba taka sobie że ją wyśmieje i mnie będa wszyscy chwalic? wez dziecko naprawdę jestes jakis psycholek bo w przeciwieństwie do ciebie to papież jest autorytetem dla mnie a ty to nie wiem czyim możesz być autorytetem chyba takich samych jakiś głupków jak ty którzy nie wiedza co to kosciół i religia ,widac że się nie modlisz i nie chodzisz na religie do szkoły ,widac nie szanujesz religii to nie wiem jak chcesz to sobie wez swoje zdięcie wstaw ciekawe czy byś sie odważył .naprawdę wezta się dzieci zastanówcie co wy roicie bo nie macie widac pojęcia o tym kim był papież jan paweł2 jak nie jestescie w pełni rozwinięte umysłowo to się nie zabierajcie za taką osobę jak ojciec swięty bo to świadczy o tym że nie macie chyba w domu krzyża ani jednego obraza świętego nie chodzi tutaj o kosciół mnie ale wogóle ogólnie o zasady wiary żeby mieć jakąs godnosc bo papież nikogo nie obrażał a ty za co go obrażasz co? no powiedz za co obrażasz taką osobę jak ojciec święty ?brak mnie słów ale jakbyś miał pojęcie chociaz i sięgnął po pismo święte i poczytał sobie to może byś się odmienił .nie wiem idz do kościoła bo widac już dawno szatan jest w tobie człowieku ,nie lubisz kościoła to chociaż siedz cicho i nie obrażaj innych ludzi</div>O, stary, teraz to przyjebałeś najstarszą pastą świata :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-258" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-258"
+                                 aria-describedby="post-content-258">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-258" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-01T21:12:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-01 21:12:44</time>
+                                    </header>
+                                    <div id="post-content-258"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div>O, stary, teraz to przyjebałeś najstarszą pastą świata :D</div><br /><br />Ja po prostu chcę mieć to pod ręką na wszelkie Jachy.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-259" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-259"
+                                 aria-describedby="post-content-259">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-259" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-05T08:52:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-05 08:52:51</time>
+                                    </header>
+                                    <div id="post-content-259"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Wzruszyłam się ;_;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-260" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-260"
+                                 aria-describedby="post-content-260">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-260" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-05T11:27:03"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-05 11:27:03</time>
+                                    </header>
+                                    <div id="post-content-260"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        &gt;bądź mną<br />&gt;lvl 70<br />&gt;głowa kościoła katolickiego here<br />&gt;codziennie robią ci obiady<br />&gt;nie musisz gotować<br />&gt;win.exe<br />&gt;ostatnio zmieniła się siostra która gotuje<br />&gt;&quot;jakie jest ulubione danie ojca świętego&quot;<br />&gt;kobieto, kurwa, nie zawracaj mi dupy<br />&gt;ratuje świat przet ateizmem<br />&gt;&quot;takie które jem&quot; rzuć od niechcenia<br />&gt;siostra podaje szpinak na obiad<br />&gt;na początku ciesz się, bo lubisz szpinak<br />&gt;cotokurwajest.avi<br />&gt;dawno nie jadłeś tak niedoprawionego szpinaku<br />&gt;co za gówno, mój Boże<br />&gt;musisz zjeść, bo siostrze będzie przykro<br />&gt;&quot;smakuje ojcu?&quot;<br />&gt;&quot;mmmm&quot; wydaj z siebie udawany pomruk zadowolenia<br />&gt;siostra poszła na chwilę<br />&gt;wypierdol resztę za okno<br />&gt;miej nadzieję, że już więcej tego gówna nie zrobi<br />&gt;nadzieja matką głupich<br />&gt;robi ten jebany szpinak codziennie<br />&gt;za każdym razem mniej doprawiony<br />&gt;numer z wypierdalaniem połowy za okno całkiem wychodzi<br />&gt;zbliża się pielgrzymka do Polski<br />&gt;znowu ta chujolandia<br />&gt;nie po to wypierdoliłeś do Watykanu, żeby tam wracać<br />&gt;trudno<br />&gt;musisz<br />&gt;jesteś papieżem<br />&gt;przed wylotem siostra Mariola przygotowała znowu szpinak bo jakżeby kurwa inaczej<br />&gt;tym razem musisz zjeść cały bo jesz z jakimiś kardynałami<br />&gt;jeszcze gorszy<br />&gt;tym razem chyba nawet nieświeży<br />&gt;trudno<br />&gt;zaciskasz zęby i zjadasz z uśmiechem<br />&gt;lecisz do Polski<br />&gt;czujesz przed lądowaniem że szpinak na pewno był nieświeży<br />&gt;samolot ląduje<br />&gt;prezydent Wałęsa czeka z rządem<br />&gt;powitaj ich wiedząc, że w każdej chwili możesz umrzeć na eksplozję żołądka<br />&gt;Dziwisz mówi, że do jakichś dzieci jedziesz<br />&gt;japierdole.gif<br />&gt;dojezdzasz na miejsce<br />&gt;mowisz Dziwiszowi ze się musisz chwilę pomodlić za drzewem<br />&gt;idziesz za drzewo<br />&gt;rzygasz dalej niż widzisz<br />&gt;wracasz jak gdyby nigdy nic<br />&gt;idziesz do bachorów z gorączką i rozstrojem zoladkowym<br />&gt;o kurwa tu są kamery<br />&gt;&quot;niech bedzie pochwalony Jezus Chrystus hehe&quot;<br />&gt;nie wiesz czemu sie zasmiales<br />&gt;pewnie od tej gorączki<br />&gt;coś mówią i pokazują ci owce<br />&gt;ochujchodzi.png<br />&gt;&quot;po co mam wybierać? Najlepiej zabrać obie.&quot;<br />&gt;wszyscy się śmieją<br />&gt;dobra, łyknęli<br />&gt;jakoś będzie<br />&gt;odpowiadaj na jakieś chujowe pytania czując się jak gówno<br />&gt;miej przeczucie że brzmisz jak pijany lub niespełna rozumu<br />&gt;nagle jakiś jebany bachor mówi<br />&gt;&quot;a czy Papież lubi szpinak?<br />&gt;&quot;szpinak?&quot;<br />&gt;no chyba kurwa sobie jaja robisz<br />&gt;&quot;jak mi dadzą to jem&quot;<br />&gt;bo co masz robić<br />&gt;jesteś papieżem﻿
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-261" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-261"
+                                 aria-describedby="post-content-261">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-261" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-01-05T17:20:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-05 17:20:45</time>
+                                    </header>
+                                    <div id="post-content-261"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        https://www.youtube.com/watch?v=GClnb7YtCW8<br /><br />Łojezu prehistoryczny cenzopapaj. Jeszcze sprzed czasów internetów  :o
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-262" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-262"
+                                 aria-describedby="post-content-262">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-262" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-05T22:29:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-05 22:29:43</time>
+                                    </header>
+                                    <div id="post-content-262"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Nikt nie nawoływał do publicznego palenia płyt tej kapeli czy coś? xD
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-263" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-263"
+                                 aria-describedby="post-content-263">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-263" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-01-11T18:34:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-11 18:34:33</time>
+                                    </header>
+                                    <div id="post-content-263"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Krótko, ale zbyt długo nic tu nie wpadło.<br />https://www.youtube.com/watch?v=sdHPsVFLlv0
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-264" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-264"
+                                 aria-describedby="post-content-264">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-264" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-12T16:14:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-12 16:14:11</time>
+                                    </header>
+                                    <div id="post-content-264"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        no
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-265" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-265"
+                                 aria-describedby="post-content-265">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/11.jpg?1512503192"
+                                     alt="Awatar użytkownika Najemnik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-265" class="font-bold text-lg text-white">Najemnik</h3>
+                                        <time datetime="2017-01-18T23:16:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-18 23:16:11</time>
+                                    </header>
+                                    <div id="post-content-265"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Najemnik">
+                                        ░░░░░░░░░░░░░▄▄▀▀▀▀▀▀▄▄<br />░░░░░░░░░░▄▄▀▄▄▄█████▄▄▀▄<br />░░░░░░░░▄█▀▒▀▀▀█████████▄█▄<br />░░░░░░▄██▒▒▒▒▒▒▒▒▀▒▀▒▀▄▒▀▒▀▄<br />░░░░▄██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▄<br />░░░░██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▌<br />░░░▐██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐█<br />░▄▄███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█<br />▐▒▄▀██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▌<br />▌▒▒▌▒▀▒▒▒▒▒▒▄▀▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒█▌<br />▐▒▀▒▌▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒▀▀▀▀▄▒▐<br />░█▒▒▌▒▒▒▒▒▒▒▒▀▀▒▀▒▒▐▒▄▀██▀▒▒▒▌<br />░░█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒▒▒▒█<br />░░░▀▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▒▒▒▒▒▒▄▀<br />░░░▐▒▒▒▒▒▒▒▒▒▄▀▐▒▒▒▒▒▐▒▒▒▒▄▀<br />░░▄▌▒▒▒▒▒▒▒▄▀▒▒▒▀▄▄▒▒▒▌▒▒▒▐▀▀▀▄▄▄<br />▄▀░▀▄▒▒▒▒▒▒▒▒▀▀▄▄▄▒▄▄▀▌▒▒▒▌░░░░░░<br />▐▌░░░▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▀░░░░░░░<br />░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░<br />░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░<br />░░░█░░░░░░░░░▌▀▀▀▀▀▀▐░░░░░▐▌░░░░░
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-266" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-266"
+                                 aria-describedby="post-content-266">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/15.jpg?1512503192"
+                                     alt="Awatar użytkownika Alechemik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-266" class="font-bold text-lg text-white">Alechemik</h3>
+                                        <time datetime="2017-01-30T22:35:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-30 22:35:01</time>
+                                    </header>
+                                    <div id="post-content-266"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Alechemik">
+                                        <img src="http://img.sadistic.pl/pics/68043f9b8878.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-267" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-267"
+                                 aria-describedby="post-content-267">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-267" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2017-02-06T23:10:51"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-06 23:10:51</time>
+                                    </header>
+                                    <div id="post-content-267"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><div style="text-align: center;"><img src="https://scontent-ams3-1.xx.fbcdn.net/v/t34.0-12/16522797_10208672021783541_519502953_n.jpg?oh=7469bf92125e91a34b72530391026d2e&amp;oe=589A71E7" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /></div></details><br /><span style="font-size: 2.2rem;">KAWAI PAPAI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-268" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-268"
+                                 aria-describedby="post-content-268">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-268" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-02-10T13:27:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-10 13:27:08</time>
+                                    </header>
+                                    <div id="post-content-268"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        <img src="http://i.imgur.com/2u8ADWz.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />https://www.facebook.com/events/429109484147136/
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-269" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-269"
+                                 aria-describedby="post-content-269">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-269" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-04-06T04:42:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-06 04:42:53</time>
+                                    </header>
+                                    <div id="post-content-269"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/RPNl1mDwDwY</span><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XfJpjxSg0AA</span><br />Stalczanowo.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2035" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2035"
+                                 aria-describedby="post-content-2035">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2035" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2018-02-08T18:23:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-02-08 18:23:32</time>
+                                    </header>
+                                    <div id="post-content-2035"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        <img src="attachments/0/6-e6abf7ce2d1e3661930bf04666a6fb62.data" alt="Załącznik 6" class="rounded-lg my-4 max-w-full h-auto shadow-lg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2196" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2196"
+                                 aria-describedby="post-content-2196">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2196" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-04-20T11:06:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-04-20 11:06:20</time>
+                                    </header>
+                                    <div id="post-content-2196"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Funkcja organu zatwierdzającego aneks do PUL dla Nadleśnictwa Białowieża, przypadała w roku 2016 osobie Prof. Jana Szyszko, niekwestionowanemu autorytetowi naukowemu w zakresie diagnozowania i sterowania procesami naturalnymi w środowisku leśnym, jednemu z dwóch (po Świętym Janie Pawle II) polskich laureatów najwyższego wyróżnienia Papieskiej Akademii Nauk (wyróżnienia doceniającego dorobek naukowy Prof. Jana Szyszko w dziedzinie ochrony środowiska, zwanego potocznie „papieskim Noblem”).
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2835" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2835"
+                                 aria-describedby="post-content-2835">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2835" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2019-09-02T17:41:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2019-09-02 17:41:33</time>
+                                    </header>
+                                    <div id="post-content-2835"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <img src="attachments/0/19-c302acadafffdf4ae2c61dab79d1158e.data" alt="Załącznik 19" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /><img src="attachments/0/19-c302acadafffdf4ae2c61dab79d1158e.data" alt="Załącznik 19" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /><img src="attachments/0/19-c302acadafffdf4ae2c61dab79d1158e.data" alt="Załącznik 19" class="rounded-lg my-4 max-w-full h-auto shadow-lg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

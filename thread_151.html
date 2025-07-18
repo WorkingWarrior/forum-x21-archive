@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,125 +44,263 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Ogólna dyskusja</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Doktor Mario radzi</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Doktor Mario radzi</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1397">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-03-01T14:29:27" class="text-sm text-gray-500 font-mono">2017-03-01 14:29:27</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W tym temacie będziemy mogli:<br />- Poradzić się odnośnie zakupu gry,<br />- Zadać pytanie jak ktoś będzie miał problem z grą (taki techniczny i nie tylko),<br />- Doradzić się jak ktoś będzie szukał jakiejś gierki do ogrania,<br />itp&#8230; itd&#8230;<br /><br />To ja zadam pierwszy pytanie:<br /><br />Czy może ktoś wie czym się różni normalny <a href="https://www.gamefaqs.com/pc/469881-doom-3" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Doom 3</a> od <a href="https://www.gamefaqs.com/pc/672365-doom-3-bfg-edition" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Doom 3 BFG Edition</a>. Pytam, bo czytałem w komentarzach pod grą opinie typu: bfg chujowy, spierdolili to strasznie. To mnie zaciekawiło. Nigdy całego Dooma 3 nie przeszedłem. Kończe teraz re-play <a href="https://www.gamefaqs.com/pc/913853-return-to-castle-wolfenstein" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">RtCW</a> i myślałem sobie kupić i przejsć Doom3. Pytanie tylko które. No właśnie, czym one się różnią i czemu to lub to wydanie jest lepsze.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Doktor Mario radzi</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1397" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1397"
+                                 aria-describedby="post-content-1397">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1398">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-03-01T22:41:46" class="text-sm text-gray-500 font-mono">2017-03-01 22:41:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Grałem w Doom 3 i Doom BFG Edition, obie gry spiraciłem. Nie wiem, co można było spierdolić w BFG Edition, bo WRESZCIE dodali możliwość włączenia latarki podczas oddawania strzału z broni palnej. Pierwszego wydania Doom-a 3 nie przeszedłem, a BFG Edition pozwoliło mi nadrobić tę zaległość. Graficznie to się w ogóle nie różni, po prostu dodano zgodność z nowszymi systemami i dodano możliwość jednoczesnego mordowania potworów/demonów i używania latarki.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1397" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-03-01T14:29:27"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-01 14:29:27</time>
+                                    </header>
+                                    <div id="post-content-1397"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        W tym temacie będziemy mogli:<br />- Poradzić się odnośnie zakupu gry,<br />- Zadać pytanie jak ktoś będzie miał problem z grą (taki techniczny i nie tylko),<br />- Doradzić się jak ktoś będzie szukał jakiejś gierki do ogrania,<br />itp&#8230; itd&#8230;<br /><br />To ja zadam pierwszy pytanie:<br /><br />Czy może ktoś wie czym się różni normalny <a href="https://www.gamefaqs.com/pc/469881-doom-3" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Doom 3</a> od <a href="https://www.gamefaqs.com/pc/672365-doom-3-bfg-edition" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Doom 3 BFG Edition</a>. Pytam, bo czytałem w komentarzach pod grą opinie typu: bfg chujowy, spierdolili to strasznie. To mnie zaciekawiło. Nigdy całego Dooma 3 nie przeszedłem. Kończe teraz re-play <a href="https://www.gamefaqs.com/pc/913853-return-to-castle-wolfenstein" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">RtCW</a> i myślałem sobie kupić i przejsć Doom3. Pytanie tylko które. No właśnie, czym one się różnią i czemu to lub to wydanie jest lepsze.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1399">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-03-01T23:46:45" class="text-sm text-gray-500 font-mono">2017-03-01 23:46:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No właśnie sprawa latarki też mi migła przed oczyma. I to jest takie wielkie halo, nie wiem, gra straciła klimat i nie jest fajna, bo można strzelać i jednocześnie świecić latarką? : D
+                        </article>
+                    </li>
+                    
+                    <li id="post-1398" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1398"
+                                 aria-describedby="post-content-1398">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1400">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-03-02T09:31:58" class="text-sm text-gray-500 font-mono">2017-03-02 09:31:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Grałem w Dooma 3 tylko chwilę, zaraz po premierze. Irytował mnie wszędobylski cień i mrok, a gra na siłę starała się być straszna wyskakującymi demonami niczym diabełkami z pudełka. Żarty z podczepianą latarką były w tym czasie wszędzie w internecie i nikomu nie podobało się rozwiązanie zaprezentowane w grze. Ba, jednym z najczęściej spotykanych modów był własnie ten dodający latarkę do broni.<br />W BFG nie grałem, ale skoro załatali ten problem, to zakładam że zrobili to dobrze. Jeżeli miałbym wybierać i teraz zagrać w jedną z nich, wybrałbym wersję poprawioną. Zaznaczam przy tym, że nie patrzyłem na żadne porównania obu wersji.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1398" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-03-01T22:41:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-01 22:41:46</time>
+                                    </header>
+                                    <div id="post-content-1398"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Grałem w Doom 3 i Doom BFG Edition, obie gry spiraciłem. Nie wiem, co można było spierdolić w BFG Edition, bo WRESZCIE dodali możliwość włączenia latarki podczas oddawania strzału z broni palnej. Pierwszego wydania Doom-a 3 nie przeszedłem, a BFG Edition pozwoliło mi nadrobić tę zaległość. Graficznie to się w ogóle nie różni, po prostu dodano zgodność z nowszymi systemami i dodano możliwość jednoczesnego mordowania potworów/demonów i używania latarki.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1401">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-03-03T22:52:20" class="text-sm text-gray-500 font-mono">2017-03-03 22:52:20</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przymierzam się do gry w Manhunta 1, ale czytałem/słyszałem różne opinie na temat portu pecetowego. Ponoć lepiej zagrać w wersję na PS2, ile w tym prawdy? Gejpleje nie oddają tych opinii, może ktoś grał w obie wersje? Dodam, że teraz ta gra nie działa na nowszych Windowsach, więc problem wydaje się jeszcze poważniejszy. Kupił mnie soundtrack do tej gry, to teraz podniecony czekam na moment zagrania w to, kiedy najdzie mnie ochota.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1399" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1399"
+                                 aria-describedby="post-content-1399">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1399" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-03-01T23:46:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-01 23:46:45</time>
+                                    </header>
+                                    <div id="post-content-1399"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        No właśnie sprawa latarki też mi migła przed oczyma. I to jest takie wielkie halo, nie wiem, gra straciła klimat i nie jest fajna, bo można strzelać i jednocześnie świecić latarką? : D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1400" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1400"
+                                 aria-describedby="post-content-1400">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1400" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-03-02T09:31:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-02 09:31:58</time>
+                                    </header>
+                                    <div id="post-content-1400"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Grałem w Dooma 3 tylko chwilę, zaraz po premierze. Irytował mnie wszędobylski cień i mrok, a gra na siłę starała się być straszna wyskakującymi demonami niczym diabełkami z pudełka. Żarty z podczepianą latarką były w tym czasie wszędzie w internecie i nikomu nie podobało się rozwiązanie zaprezentowane w grze. Ba, jednym z najczęściej spotykanych modów był własnie ten dodający latarkę do broni.<br />W BFG nie grałem, ale skoro załatali ten problem, to zakładam że zrobili to dobrze. Jeżeli miałbym wybierać i teraz zagrać w jedną z nich, wybrałbym wersję poprawioną. Zaznaczam przy tym, że nie patrzyłem na żadne porównania obu wersji.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1401" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1401"
+                                 aria-describedby="post-content-1401">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1401" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-03-03T22:52:20"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-03 22:52:20</time>
+                                    </header>
+                                    <div id="post-content-1401"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Przymierzam się do gry w Manhunta 1, ale czytałem/słyszałem różne opinie na temat portu pecetowego. Ponoć lepiej zagrać w wersję na PS2, ile w tym prawdy? Gejpleje nie oddają tych opinii, może ktoś grał w obie wersje? Dodam, że teraz ta gra nie działa na nowszych Windowsach, więc problem wydaje się jeszcze poważniejszy. Kupił mnie soundtrack do tej gry, to teraz podniecony czekam na moment zagrania w to, kiedy najdzie mnie ochota.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

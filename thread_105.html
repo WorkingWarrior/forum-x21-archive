@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,713 +44,1131 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_8.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Humor</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Nasza powieść</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Nasza powieść</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-986">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-23T17:24:44" class="text-sm text-gray-500 font-mono">2017-01-23 17:24:44</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie może być tak, że takie skupisko intelektualnej elity cierpi na niedobór wartościowych tematów. A zatem powołuję do życia ten oto wątek, w którym X-21 stworzy epopeję narodową. Ja zaczynam, a każdy w kolejnym poście dopisuje jedno zdanie. Miło byłoby utrzymać klimat Stalkera, ale nie jest to wymagane.<br /><br />Był cichy, chłodny poranek, kiedy Szeregowy Kurwic ocknął się w muszli klozetowej na szczycie gruzowiska w Wysypisku&#8230;
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Nasza powieść</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-986" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-986"
+                                 aria-describedby="post-content-986">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-987">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-23T17:27:03" class="text-sm text-gray-500 font-mono">2017-01-23 17:27:03</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Rozejrzał się dookoła siebie, widząc jedynie dziury w porcelanie. Lewą ręką chwycił się za zsiniałą mosznę, prawą uniósł w geście salutu rzymskiego, po czym&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-986" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-23T17:24:44"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 17:24:44</time>
+                                    </header>
+                                    <div id="post-content-986"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Nie może być tak, że takie skupisko intelektualnej elity cierpi na niedobór wartościowych tematów. A zatem powołuję do życia ten oto wątek, w którym X-21 stworzy epopeję narodową. Ja zaczynam, a każdy w kolejnym poście dopisuje jedno zdanie. Miło byłoby utrzymać klimat Stalkera, ale nie jest to wymagane.<br /><br />Był cichy, chłodny poranek, kiedy Szeregowy Kurwic ocknął się w muszli klozetowej na szczycie gruzowiska w Wysypisku&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-988">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-01-23T17:48:18" class="text-sm text-gray-500 font-mono">2017-01-23 17:48:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przebiegło po nim stado niby-piesków, które nawet nie zauważyły żołnierza ponieważ&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-987" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-987"
+                                 aria-describedby="post-content-987">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-989">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-23T17:49:11" class="text-sm text-gray-500 font-mono">2017-01-23 17:49:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Od stóp do głów był upaprany w gównie, nawet zęby miał brązowe. Jeden z mutantów nagle odwrócił się i&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-987" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-23T17:27:03"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 17:27:03</time>
+                                    </header>
+                                    <div id="post-content-987"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Rozejrzał się dookoła siebie, widząc jedynie dziury w porcelanie. Lewą ręką chwycił się za zsiniałą mosznę, prawą uniósł w geście salutu rzymskiego, po czym&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-990">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-23T18:13:47" class="text-sm text-gray-500 font-mono">2017-01-23 18:13:47</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przykucnął, stęknął głośno, pysk wykrzywił mu wielki grymas, po czym puściły zwieracze i tak oto z odbytu jego na świat przyszedł Kamienny Kwiat. Widząc to Szeregowy Kurwic&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-988" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-988"
+                                 aria-describedby="post-content-988">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-991">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-23T18:15:21" class="text-sm text-gray-500 font-mono">2017-01-23 18:15:21</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Szybko podbiegł i kopnął nibypsa w zadek. Rozpryskujący się kamienny, gówniany kwiat wbił mu się w oko. Szeregowy Kurwic&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-988" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-01-23T17:48:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 17:48:18</time>
+                                    </header>
+                                    <div id="post-content-988"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Przebiegło po nim stado niby-piesków, które nawet nie zauważyły żołnierza ponieważ&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-992">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Najemnik</span>
-                                <time datetime="2017-01-23T21:20:40" class="text-sm text-gray-500 font-mono">2017-01-23 21:20:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W tym momencie zrozumiał, że to nie mutanty, a on jest tu panem, dlatego powinien chwycić za plastikową łopatkę i&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-989" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-989"
+                                 aria-describedby="post-content-989">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-993">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-23T21:22:09" class="text-sm text-gray-500 font-mono">2017-01-23 21:22:09</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z całej siły uderzyć się nią w głowię, po czym&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-989" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-23T17:49:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 17:49:11</time>
+                                    </header>
+                                    <div id="post-content-989"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Od stóp do głów był upaprany w gównie, nawet zęby miał brązowe. Jeden z mutantów nagle odwrócił się i&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-994">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-01-24T13:44:40" class="text-sm text-gray-500 font-mono">2017-01-24 13:44:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Stracił przytomność i opadł na muszlę klozetową, która aż zatrzeszczała pod jego ciężarem, lecz wytrzymała. Po kilku godzinach spokojnego snu, po południu&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-990" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-990"
+                                 aria-describedby="post-content-990">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-995">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-24T13:56:36" class="text-sm text-gray-500 font-mono">2017-01-24 13:56:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Otworzył oczy, widząc znajomego nibypsa obok. Szeregowy Kurwic podniósł swe utytłane w gównie ciało&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-990" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-23T18:13:47"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 18:13:47</time>
+                                    </header>
+                                    <div id="post-content-990"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Przykucnął, stęknął głośno, pysk wykrzywił mu wielki grymas, po czym puściły zwieracze i tak oto z odbytu jego na świat przyszedł Kamienny Kwiat. Widząc to Szeregowy Kurwic&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-996">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-24T15:33:49" class="text-sm text-gray-500 font-mono">2017-01-24 15:33:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Szybkim ruchem podniósł klozet i cisnął nim w zwierzaka, który przez cały czas nie mógł się zdecydować, czy jest wystarczająco głodny by zjeść Kurwica mimo jego gównianego posmaku. Nie sprawdzając nawet czy klozetowy pocisk dosięgnął celu, Szeregowy zjechał na dupie ze sterty gruzu w dół&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-991" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-991"
+                                 aria-describedby="post-content-991">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-997">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-01-24T15:43:40" class="text-sm text-gray-500 font-mono">2017-01-24 15:43:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Drąc sobie spodnie na cienkie pasy, po czym wyciągając sobie kałasza z dupy w biegu wydał głośne &quot;urrrraaaaa! cheeki breeki!&quot; i skierował się w kierunku&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-991" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-23T18:15:21"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 18:15:21</time>
+                                    </header>
+                                    <div id="post-content-991"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Szybko podbiegł i kopnął nibypsa w zadek. Rozpryskujący się kamienny, gówniany kwiat wbił mu się w oko. Szeregowy Kurwic&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-998">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-27T07:31:02" class="text-sm text-gray-500 font-mono">2017-01-27 07:31:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Kordonu, by odwiedzić swojego starego przyjaciela, Sidorowicza. Szeregowy Kurwic, idąc spękanym asfaltem, zobaczył dziwne coś&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-992" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-992"
+                                 aria-describedby="post-content-992">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/11.jpg?1512503192"
+                                     alt="Awatar użytkownika Najemnik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-999">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-27T16:32:00" class="text-sm text-gray-500 font-mono">2017-01-27 16:32:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przypominające żelazny pręt wystające mu z dupy, niesamowicie uwierało w pośladki przy każdym kroku uniemożliwiając szybki marsz. Pociągnął za pręt z całej siły, a jego oczom ukazała się&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-992" class="font-bold text-lg text-white">Najemnik</h3>
+                                        <time datetime="2017-01-23T21:20:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 21:20:40</time>
+                                    </header>
+                                    <div id="post-content-992"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Najemnik">
+                                        W tym momencie zrozumiał, że to nie mutanty, a on jest tu panem, dlatego powinien chwycić za plastikową łopatkę i&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1000">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-27T18:54:16" class="text-sm text-gray-500 font-mono">2017-01-27 18:54:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Głowa Sidorowicza, która dziwnie się do niego uśmiechała. Handlarz nie czekał, zasypał obsranego szeregowca masą pytań, z których jedno brzmiało&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-993" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-993"
+                                 aria-describedby="post-content-993">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1001">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-01-27T20:58:28" class="text-sm text-gray-500 font-mono">2017-01-27 20:58:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                - Masz fanty?<br />Przeszukawszy kieszenie, konstatujesz, że nie masz ani fantów, ani Fanty, więc&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-993" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-23T21:22:09"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 21:22:09</time>
+                                    </header>
+                                    <div id="post-content-993"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Z całej siły uderzyć się nią w głowię, po czym&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1002">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-27T21:01:35" class="text-sm text-gray-500 font-mono">2017-01-27 21:01:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Zaczynasz wpychać głowę przyjaciela z powrotem do dupy. Z zadka dobiega krzyk &quot;ONII-CHAN, NOT THERE&quot;, po czym wszystko milknie, oprócz wszędobylskich wron i kruków. Szeregowy Kurwic&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-994" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-994"
+                                 aria-describedby="post-content-994">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1003">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-28T18:12:50" class="text-sm text-gray-500 font-mono">2017-01-28 18:12:50</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Postanowił udać się do Kordonu i wyjaśnić Sidorowiczowi, że nie życzy sobie takich nieproszonych wizyt w jego odbycie. Wsiadł do zaparkowanego nieopodal kamaza&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-994" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-01-24T13:44:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 13:44:40</time>
+                                    </header>
+                                    <div id="post-content-994"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Stracił przytomność i opadł na muszlę klozetową, która aż zatrzeszczała pod jego ciężarem, lecz wytrzymała. Po kilku godzinach spokojnego snu, po południu&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1004">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-28T18:53:16" class="text-sm text-gray-500 font-mono">2017-01-28 18:53:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przekręcił prowizoryczny kluczyk zrobiony z gwoździa, dodał gazu i juz po chwili radośnie jechał dziurawą drogą. Jakiś czas później rozległ się huk, jakby coś pierdolnęło z mocą tysiąca słońc&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-995" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-995"
+                                 aria-describedby="post-content-995">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1005">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Alechemik</span>
-                                <time datetime="2017-01-29T00:23:34" class="text-sm text-gray-500 font-mono">2017-01-29 00:23:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Kurwic wychylił głowę z resztek kamaza i ujrzał Zdzicha vel Rowerzystę&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-995" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-24T13:56:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 13:56:36</time>
+                                    </header>
+                                    <div id="post-content-995"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Otworzył oczy, widząc znajomego nibypsa obok. Szeregowy Kurwic podniósł swe utytłane w gównie ciało&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1006">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2017-01-29T01:11:26" class="text-sm text-gray-500 font-mono">2017-01-29 01:11:26</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                &#8230; Z przerażeniem stwierdził, że ów, zasłaniając się przed uderzeniem - wyciągnął ręce do przodu. Impet uderzenia spowodował iż jego dłonie przeszły przez przerdzewiałą kratę maski i nic już nie stanowiło dla niego przeszkody przed grzebaniem w silniku&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-996" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-996"
+                                 aria-describedby="post-content-996">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1007">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-29T11:14:56" class="text-sm text-gray-500 font-mono">2017-01-29 11:14:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Zdzicho szybko urwał przewód zasilający pompy wtryskowej, lecz to nie wytraciło pędu przerdzewiałej maszyny. Rozległ się trzask łamanych kości i miażdżonych wnętrzności. Resztki Zdzicha poszybowały w nieznane. Szeregowy Kurwic wysiadł ze zgnilucha, dostrzegł przebitą w dwóch miejscach maskę, po czym krzyknął:<br />- A to skurwysyn, dobrze, że zdechł!<br />Niestety, odtąd Kurwic musiał maszerować pieszo. Nastawał wieczór&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-996" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-24T15:33:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 15:33:49</time>
+                                    </header>
+                                    <div id="post-content-996"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Szybkim ruchem podniósł klozet i cisnął nim w zwierzaka, który przez cały czas nie mógł się zdecydować, czy jest wystarczająco głodny by zjeść Kurwica mimo jego gównianego posmaku. Nie sprawdzając nawet czy klozetowy pocisk dosięgnął celu, Szeregowy zjechał na dupie ze sterty gruzu w dół&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1008">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-29T15:02:29" class="text-sm text-gray-500 font-mono">2017-01-29 15:02:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Tymczasem cały był w gównie, spodnie podarły mu się na dupie, a na domiar złego nie miał nic do jedzenia. Postanowił rozesłać wszystkim Stalkerom w zasięgu 5km wiadomość na PDA o organizowanym dansingu w kamazie: &quot;ahoj cheeki breeki, mam skrzynie kozaków, przynieście tylko coś na zagrychę&quot;, po czym włączył światła awaryjne i zamontował obrotową kulę dyskotekową. Minęło pół godziny i zaczęli schodzić się pierwsi goście&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-997" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-997"
+                                 aria-describedby="post-content-997">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1009">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-31T07:31:32" class="text-sm text-gray-500 font-mono">2017-01-31 07:31:32</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Którzy, niestety, byli zombiakami. Szeregowy Kurwic szybko znalazł kija i&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-997" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-01-24T15:43:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-24 15:43:40</time>
+                                    </header>
+                                    <div id="post-content-997"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Drąc sobie spodnie na cienkie pasy, po czym wyciągając sobie kałasza z dupy w biegu wydał głośne &quot;urrrraaaaa! cheeki breeki!&quot; i skierował się w kierunku&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1010">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-02-01T16:07:30" class="text-sm text-gray-500 font-mono">2017-02-01 16:07:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Włożył go najbliższemu nieumarłemu w dupę, bo biedak miał problemy z kręgosłupem. Tamten niewiele poczuł, poza różnicą w chodzeniu i już kwadrans później Kurwic z chodzacymi trupami obalał trzecią butelkę, bo z uwagi na zapach zombie wzięły go za swojego, jednakże&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-998" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-998"
+                                 aria-describedby="post-content-998">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1011">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Omni</span>
-                                <time datetime="2017-02-01T19:51:18" class="text-sm text-gray-500 font-mono">2017-02-01 19:51:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Wtem, tuż za ciężarówką, pierdyknął drop pod, dewastujac okoliczną przyrodę. Z drop poda wyskoczyło pięciu spejs marines, z  pianą na hełmach i okrzykiem &quot;PURGE THE XENOS&quot;.<br />Jednakże marine na czele szarży omyłkowo poślizgnął się na butelce wódki i&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-998" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-27T07:31:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 07:31:02</time>
+                                    </header>
+                                    <div id="post-content-998"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Kordonu, by odwiedzić swojego starego przyjaciela, Sidorowicza. Szeregowy Kurwic, idąc spękanym asfaltem, zobaczył dziwne coś&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1012">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-02T07:18:56" class="text-sm text-gray-500 font-mono">2017-02-02 07:18:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                I z całej siły jebnął czołem w, już i tak zniszczoną, ciężarówkę, która niebezpiecznie przechyliła się na bok. Szeregowy Kurwic poderwał się na równe nogi, a jego wataha zombiaków zaczęła tańczyć. Marine&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-999" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-999"
+                                 aria-describedby="post-content-999">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1013">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-02-06T02:13:31" class="text-sm text-gray-500 font-mono">2017-02-06 02:13:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                &#8230;postanowili dołączyć się do imprezy. Kolejno prosili Zombiech do tańca, jedli, pili, lulki palili, a Szeregowy Kurwic wesoło przygrywał im na tamburynie. Niestety, swawolę przerwało przybycie kontrolera, który&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-999" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-27T16:32:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 16:32:00</time>
+                                    </header>
+                                    <div id="post-content-999"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Przypominające żelazny pręt wystające mu z dupy, niesamowicie uwierało w pośladki przy każdym kroku uniemożliwiając szybki marsz. Pociągnął za pręt z całej siły, a jego oczom ukazała się&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1014">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-06T07:26:43" class="text-sm text-gray-500 font-mono">2017-02-06 07:26:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Zaczął publicznie się onanizować. Marynowani uciekli, a Szeregowy Kurwic schował się za wrakiem ciężarówki. Nagle do jego uszu doleciał odgłos chlapnięcia. Kurwic wyjrzał zza złomu, a jego oczom, tuż przed samym nosem, ukazał się wielki ryj kontrolera&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-1000" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1000"
+                                 aria-describedby="post-content-1000">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1015">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-02-18T22:39:28" class="text-sm text-gray-500 font-mono">2017-02-18 22:39:28</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Cały w cumshocie niewiadomego pochodzenia. Kurwic postanowił nie zgłębiać się w szczegóły, korzystając z okazji, że maź dostała się również do oczu kontrolera i jest chwilowo ślepy, kopnął go z całej siły w dupę, po czym&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1000" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-27T18:54:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 18:54:16</time>
+                                    </header>
+                                    <div id="post-content-1000"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Głowa Sidorowicza, która dziwnie się do niego uśmiechała. Handlarz nie czekał, zasypał obsranego szeregowca masą pytań, z których jedno brzmiało&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1016">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-02-19T12:03:29" class="text-sm text-gray-500 font-mono">2017-02-19 12:03:29</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pocałował go prosto w mikrousta, w końcu był nosicielem jego haploidalnych dzieci. Oniemiały kontroler nie był w stanie sie ruszyć, a Kurwic zaczął spierdalać, gdzie pieprz rośnie. Okazało się, że znalazł się nieopodal Baru&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-1001" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1001"
+                                 aria-describedby="post-content-1001">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1017">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">MCaleb</span>
-                                <time datetime="2017-02-21T13:37:58" class="text-sm text-gray-500 font-mono">2017-02-21 13:37:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                &#8230; no i wpadł na szklaneczkę, następnie na słoik, aż wreszcie wyhamował na stosie pustych butelek po wódce na zapleczu. Nagle najbliższe drzwi otworzyły się i&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1001" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-01-27T20:58:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 20:58:28</time>
+                                    </header>
+                                    <div id="post-content-1001"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        - Masz fanty?<br />Przeszukawszy kieszenie, konstatujesz, że nie masz ani fantów, ani Fanty, więc&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1018">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-03-11T16:49:01" class="text-sm text-gray-500 font-mono">2017-03-11 16:49:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Do Baru wszedł czerwony, zziajany Sidorowicz.<br />– Gdzieś się, kurwa, szlajał, pidarasie jeden?! Szukam cię cały dzień, a ty zachlewasz ryj u tego niedoroba?! – zakrzyknął gruby handlarz, po czym dał pijanemu w ryj. – Robota jest, wstawaj! Trzeba dostarczyć paczkę do Prypeci!
+                        </article>
+                    </li>
+                    
+                    <li id="post-1002" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1002"
+                                 aria-describedby="post-content-1002">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1002" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-27T21:01:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 21:01:35</time>
+                                    </header>
+                                    <div id="post-content-1002"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Zaczynasz wpychać głowę przyjaciela z powrotem do dupy. Z zadka dobiega krzyk &quot;ONII-CHAN, NOT THERE&quot;, po czym wszystko milknie, oprócz wszędobylskich wron i kruków. Szeregowy Kurwic&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1003" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1003"
+                                 aria-describedby="post-content-1003">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1003" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-28T18:12:50"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-28 18:12:50</time>
+                                    </header>
+                                    <div id="post-content-1003"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Postanowił udać się do Kordonu i wyjaśnić Sidorowiczowi, że nie życzy sobie takich nieproszonych wizyt w jego odbycie. Wsiadł do zaparkowanego nieopodal kamaza&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1004" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1004"
+                                 aria-describedby="post-content-1004">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1004" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-28T18:53:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-28 18:53:16</time>
+                                    </header>
+                                    <div id="post-content-1004"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Przekręcił prowizoryczny kluczyk zrobiony z gwoździa, dodał gazu i juz po chwili radośnie jechał dziurawą drogą. Jakiś czas później rozległ się huk, jakby coś pierdolnęło z mocą tysiąca słońc&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1005" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1005"
+                                 aria-describedby="post-content-1005">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/15.jpg?1512503192"
+                                     alt="Awatar użytkownika Alechemik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1005" class="font-bold text-lg text-white">Alechemik</h3>
+                                        <time datetime="2017-01-29T00:23:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-29 00:23:34</time>
+                                    </header>
+                                    <div id="post-content-1005"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Alechemik">
+                                        Kurwic wychylił głowę z resztek kamaza i ujrzał Zdzicha vel Rowerzystę&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1006" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1006"
+                                 aria-describedby="post-content-1006">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1006" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2017-01-29T01:11:26"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-29 01:11:26</time>
+                                    </header>
+                                    <div id="post-content-1006"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        &#8230; Z przerażeniem stwierdził, że ów, zasłaniając się przed uderzeniem - wyciągnął ręce do przodu. Impet uderzenia spowodował iż jego dłonie przeszły przez przerdzewiałą kratę maski i nic już nie stanowiło dla niego przeszkody przed grzebaniem w silniku&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1007" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1007"
+                                 aria-describedby="post-content-1007">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1007" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-29T11:14:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-29 11:14:56</time>
+                                    </header>
+                                    <div id="post-content-1007"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Zdzicho szybko urwał przewód zasilający pompy wtryskowej, lecz to nie wytraciło pędu przerdzewiałej maszyny. Rozległ się trzask łamanych kości i miażdżonych wnętrzności. Resztki Zdzicha poszybowały w nieznane. Szeregowy Kurwic wysiadł ze zgnilucha, dostrzegł przebitą w dwóch miejscach maskę, po czym krzyknął:<br />- A to skurwysyn, dobrze, że zdechł!<br />Niestety, odtąd Kurwic musiał maszerować pieszo. Nastawał wieczór&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1008" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1008"
+                                 aria-describedby="post-content-1008">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1008" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-29T15:02:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-29 15:02:29</time>
+                                    </header>
+                                    <div id="post-content-1008"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Tymczasem cały był w gównie, spodnie podarły mu się na dupie, a na domiar złego nie miał nic do jedzenia. Postanowił rozesłać wszystkim Stalkerom w zasięgu 5km wiadomość na PDA o organizowanym dansingu w kamazie: &quot;ahoj cheeki breeki, mam skrzynie kozaków, przynieście tylko coś na zagrychę&quot;, po czym włączył światła awaryjne i zamontował obrotową kulę dyskotekową. Minęło pół godziny i zaczęli schodzić się pierwsi goście&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1009" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1009"
+                                 aria-describedby="post-content-1009">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1009" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-31T07:31:32"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-31 07:31:32</time>
+                                    </header>
+                                    <div id="post-content-1009"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Którzy, niestety, byli zombiakami. Szeregowy Kurwic szybko znalazł kija i&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1010" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1010"
+                                 aria-describedby="post-content-1010">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1010" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-02-01T16:07:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-01 16:07:30</time>
+                                    </header>
+                                    <div id="post-content-1010"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        Włożył go najbliższemu nieumarłemu w dupę, bo biedak miał problemy z kręgosłupem. Tamten niewiele poczuł, poza różnicą w chodzeniu i już kwadrans później Kurwic z chodzacymi trupami obalał trzecią butelkę, bo z uwagi na zapach zombie wzięły go za swojego, jednakże&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1011" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1011"
+                                 aria-describedby="post-content-1011">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/8.jpg?1512503192"
+                                     alt="Awatar użytkownika Omni"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1011" class="font-bold text-lg text-white">Omni</h3>
+                                        <time datetime="2017-02-01T19:51:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-01 19:51:18</time>
+                                    </header>
+                                    <div id="post-content-1011"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Omni">
+                                        Wtem, tuż za ciężarówką, pierdyknął drop pod, dewastujac okoliczną przyrodę. Z drop poda wyskoczyło pięciu spejs marines, z  pianą na hełmach i okrzykiem &quot;PURGE THE XENOS&quot;.<br />Jednakże marine na czele szarży omyłkowo poślizgnął się na butelce wódki i&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1012" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1012"
+                                 aria-describedby="post-content-1012">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1012" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-02T07:18:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-02 07:18:56</time>
+                                    </header>
+                                    <div id="post-content-1012"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        I z całej siły jebnął czołem w, już i tak zniszczoną, ciężarówkę, która niebezpiecznie przechyliła się na bok. Szeregowy Kurwic poderwał się na równe nogi, a jego wataha zombiaków zaczęła tańczyć. Marine&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1013" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1013"
+                                 aria-describedby="post-content-1013">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1013" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-02-06T02:13:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-06 02:13:31</time>
+                                    </header>
+                                    <div id="post-content-1013"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        &#8230;postanowili dołączyć się do imprezy. Kolejno prosili Zombiech do tańca, jedli, pili, lulki palili, a Szeregowy Kurwic wesoło przygrywał im na tamburynie. Niestety, swawolę przerwało przybycie kontrolera, który&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1014" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1014"
+                                 aria-describedby="post-content-1014">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1014" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-06T07:26:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-06 07:26:43</time>
+                                    </header>
+                                    <div id="post-content-1014"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Zaczął publicznie się onanizować. Marynowani uciekli, a Szeregowy Kurwic schował się za wrakiem ciężarówki. Nagle do jego uszu doleciał odgłos chlapnięcia. Kurwic wyjrzał zza złomu, a jego oczom, tuż przed samym nosem, ukazał się wielki ryj kontrolera&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1015" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1015"
+                                 aria-describedby="post-content-1015">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1015" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-02-18T22:39:28"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-18 22:39:28</time>
+                                    </header>
+                                    <div id="post-content-1015"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Cały w cumshocie niewiadomego pochodzenia. Kurwic postanowił nie zgłębiać się w szczegóły, korzystając z okazji, że maź dostała się również do oczu kontrolera i jest chwilowo ślepy, kopnął go z całej siły w dupę, po czym&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1016" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1016"
+                                 aria-describedby="post-content-1016">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1016" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-02-19T12:03:29"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-19 12:03:29</time>
+                                    </header>
+                                    <div id="post-content-1016"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Pocałował go prosto w mikrousta, w końcu był nosicielem jego haploidalnych dzieci. Oniemiały kontroler nie był w stanie sie ruszyć, a Kurwic zaczął spierdalać, gdzie pieprz rośnie. Okazało się, że znalazł się nieopodal Baru&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1017" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1017"
+                                 aria-describedby="post-content-1017">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/7.jpg?1559192456"
+                                     alt="Awatar użytkownika MCaleb"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1017" class="font-bold text-lg text-white">MCaleb</h3>
+                                        <time datetime="2017-02-21T13:37:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-21 13:37:58</time>
+                                    </header>
+                                    <div id="post-content-1017"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika MCaleb">
+                                        &#8230; no i wpadł na szklaneczkę, następnie na słoik, aż wreszcie wyhamował na stosie pustych butelek po wódce na zapleczu. Nagle najbliższe drzwi otworzyły się i&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1018" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1018"
+                                 aria-describedby="post-content-1018">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1018" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-03-11T16:49:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-11 16:49:01</time>
+                                    </header>
+                                    <div id="post-content-1018"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Do Baru wszedł czerwony, zziajany Sidorowicz.<br />– Gdzieś się, kurwa, szlajał, pidarasie jeden?! Szukam cię cały dzień, a ty zachlewasz ryj u tego niedoroba?! – zakrzyknął gruby handlarz, po czym dał pijanemu w ryj. – Robota jest, wstawaj! Trzeba dostarczyć paczkę do Prypeci!
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

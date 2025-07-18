@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,168 +44,326 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Chrońmy biedne korporacje!</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Chrońmy biedne korporacje!</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2263">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-06-21T00:36:19" class="text-sm text-gray-500 font-mono">2018-06-21 00:36:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Empeczy im kradno!<br /><br /><br />A tak na serio to znowu zabawa z nienasyconym korpogównem, któremu nie podoba się, że nie spędzasz 24 godzin dziennie na Netflixie. Chcą przepchnąć przez UE prawo, które realistycznie doprowadzi do filtrowania treści przed umieszczaniem ich w Internecie i udupi korzystanie ze źródeł (linkowanie). Wszystko oczywiście w obronie biednych &quot;praw autorskich&quot;. Chuj tam w swobodny przepływ informacji.<br />Trzeba uświadomić dziadkom w parlamencie, że Internet to nie tylko fejsbuk, gógiel i chujowe memy, a chujowo napisana ustawa otwiera bramy Orwellowskiemu szambu w wydaniu Disneya.<br /><br /><a href="https://saveyourinternet.eu/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://saveyourinternet.eu/</a> Piszemy.<br /><a href="https://juliareda.eu/eu-copyright-reform/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://juliareda.eu/eu-copyright-reform/</a> Na bieżąco relacjonuje stan prac nad gównoustawą.<br /><br />Chcecie wincy się dowiedzieć, to góglać article 13/11, njus sajty obudziły się dopiero po pierwszym głosowaniu.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Chrońmy biedne korporacje!</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2263" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2263"
+                                 aria-describedby="post-content-2263">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2264">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-06-21T21:27:25" class="text-sm text-gray-500 font-mono">2018-06-21 21:27:25</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                A może byś tak wyszedł na dyskotekę, poznać jakąś pannę w końcu, a nie tylko ten komputer i komputer?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2263" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-06-21T00:36:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-06-21 00:36:19</time>
+                                    </header>
+                                    <div id="post-content-2263"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Empeczy im kradno!<br /><br /><br />A tak na serio to znowu zabawa z nienasyconym korpogównem, któremu nie podoba się, że nie spędzasz 24 godzin dziennie na Netflixie. Chcą przepchnąć przez UE prawo, które realistycznie doprowadzi do filtrowania treści przed umieszczaniem ich w Internecie i udupi korzystanie ze źródeł (linkowanie). Wszystko oczywiście w obronie biednych &quot;praw autorskich&quot;. Chuj tam w swobodny przepływ informacji.<br />Trzeba uświadomić dziadkom w parlamencie, że Internet to nie tylko fejsbuk, gógiel i chujowe memy, a chujowo napisana ustawa otwiera bramy Orwellowskiemu szambu w wydaniu Disneya.<br /><br /><a href="https://saveyourinternet.eu/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://saveyourinternet.eu/</a> Piszemy.<br /><a href="https://juliareda.eu/eu-copyright-reform/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://juliareda.eu/eu-copyright-reform/</a> Na bieżąco relacjonuje stan prac nad gównoustawą.<br /><br />Chcecie wincy się dowiedzieć, to góglać article 13/11, njus sajty obudziły się dopiero po pierwszym głosowaniu.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2265">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-06-22T01:05:00" class="text-sm text-gray-500 font-mono">2018-06-22 01:05:00</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Może jeszcze bejca i 40k długu?
+                        </article>
+                    </li>
+                    
+                    <li id="post-2264" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2264"
+                                 aria-describedby="post-content-2264">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2282">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2018-07-04T14:25:40" class="text-sm text-gray-500 font-mono">2018-07-04 14:25:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Yep, jest to jakiś plan na życie
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2264" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-06-21T21:27:25"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-06-21 21:27:25</time>
+                                    </header>
+                                    <div id="post-content-2264"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        A może byś tak wyszedł na dyskotekę, poznać jakąś pannę w końcu, a nie tylko ten komputer i komputer?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2293">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-07-09T11:49:33" class="text-sm text-gray-500 font-mono">2018-07-09 11:49:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2265" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Może jeszcze bejca i 40k długu?</div><br />Pszepraszam pan Infernull, Ropas ma już dom. Ostatnio wyjebali kartony z Biedronki.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2265" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2265"
+                                 aria-describedby="post-content-2265">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2306">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-07-13T23:58:12" class="text-sm text-gray-500 font-mono">2018-07-13 23:58:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                I jak tam, przegłosowali? Bo mi gogel nie działa
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2265" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-06-22T01:05:00"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-06-22 01:05:00</time>
+                                    </header>
+                                    <div id="post-content-2265"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Może jeszcze bejca i 40k długu?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2310">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-07-14T08:37:25" class="text-sm text-gray-500 font-mono">2018-07-14 08:37:25</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie umiesz kliknąć w link w OPie, to na pewno umiesz po chińsku, rozwielitko.<br /><br /><div class="quote-block"><br /><ul>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2282" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2282"
+                                 aria-describedby="post-content-2282">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2282" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2018-07-04T14:25:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-04 14:25:40</time>
+                                    </header>
+                                    <div id="post-content-2282"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Yep, jest to jakiś plan na życie
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2293" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2293"
+                                 aria-describedby="post-content-2293">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2293" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-07-09T11:49:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-09 11:49:33</time>
+                                    </header>
+                                    <div id="post-content-2293"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2265" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Może jeszcze bejca i 40k długu?</div><br />Pszepraszam pan Infernull, Ropas ma już dom. Ostatnio wyjebali kartony z Biedronki.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2306" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2306"
+                                 aria-describedby="post-content-2306">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2306" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-07-13T23:58:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-13 23:58:12</time>
+                                    </header>
+                                    <div id="post-content-2306"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        I jak tam, przegłosowali? Bo mi gogel nie działa
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2310" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2310"
+                                 aria-describedby="post-content-2310">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2310" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-07-14T08:37:25"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-07-14 08:37:25</time>
+                                    </header>
+                                    <div id="post-content-2310"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Nie umiesz kliknąć w link w OPie, to na pewno umiesz po chińsku, rozwielitko.<br /><br /><div class="quote-block"><br /><ul>
 <li><strong>Parliament then refused to rubber-stamp</strong> <a href="https://juliareda.eu/2018/06/article-11-13-vote/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">the Committee’s position</a>, opening it up for further debate.</li><li><strong>Next</strong>, the entire Parliament will <strong>vote on changes</strong> to the Committee position <strong>on September 12, 2018</strong>.</li></ul><br /></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

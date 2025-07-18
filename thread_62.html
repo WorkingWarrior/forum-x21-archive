@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,335 +44,573 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Trunki z procentami</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Trunki z procentami</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-711">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-10T10:56:59" class="text-sm text-gray-500 font-mono">2017-01-10 10:56:59</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Chłopy lubią takie tematy, to zakładam. :D<br />Pogadajmy o alkoholach, począwszy od piwa, a skończywszy na mocniejszych rzeczach. Co lubicie, czego nie i takie tam. <br />Osobiście nie lubię alkoholu, a przez leki, które biorę niespecjalnie mogę pić cokolwiek mocniejszego, także jeśli już to piwko albo cydr. W kwestii piw jestem typową kobietą. xD Najbardziej lubię różne smakowe radlery i inne Somersby, które zdaniem prawdziwych mężczyzn nawet koło piwa nie stały. ;) Pijam toto głównie w lecie, kiedy jest ciepło i człek potrzebuje orzeźwienia. <br />Co do cydrów, to nie mam swojego ulubionego, chociaż można powiedzieć, że preferuję truskawkowy Strongbow nad inne. :3 Lubię jeszcze wermuty, nienawidzę natomiast wódki, whisky i innych specyfików tego typu, na szczęście nawet nie mogę tego pić, więc mam wyjebane.  :mrgreen: <br /><br />A jak u was?
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Trunki z procentami</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-711" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-711"
+                                 aria-describedby="post-content-711">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-712">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-10T11:28:33" class="text-sm text-gray-500 font-mono">2017-01-10 11:28:33</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Przede wszystkim łiskacze, takie na jaki mi studencki budżet pozwala, czyli z reguł Johnny Walker, lepiej mi smakuje od Jacka czy Grantsa. Ofc mieszanie z pepsi czy innym gównem to profanacja nawet w przypadku tak niskobudżetowych łych. Schłodzony + ew. mała kostka lodu i jest idealnie.<br />Wódki lubię wszystkie, czyste, smakowe, wsio ryba.<br />Piwo - nie jestem jakimś smakoszem, co dadzą to wypiję. Ostatnio najwięcej grolscha.<br />Inne trunki - próbowałem prawie wszystkiego, nic jakiegoś olbrzymiego orgazmu w jamie ustnej nie wywołało, w związku z czym na co dzień po prostu whisky/piwo, lubię też cydr, a na imprezach wódka. Prosty chłop ze mnie.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-711" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-10T10:56:59"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 10:56:59</time>
+                                    </header>
+                                    <div id="post-content-711"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Chłopy lubią takie tematy, to zakładam. :D<br />Pogadajmy o alkoholach, począwszy od piwa, a skończywszy na mocniejszych rzeczach. Co lubicie, czego nie i takie tam. <br />Osobiście nie lubię alkoholu, a przez leki, które biorę niespecjalnie mogę pić cokolwiek mocniejszego, także jeśli już to piwko albo cydr. W kwestii piw jestem typową kobietą. xD Najbardziej lubię różne smakowe radlery i inne Somersby, które zdaniem prawdziwych mężczyzn nawet koło piwa nie stały. ;) Pijam toto głównie w lecie, kiedy jest ciepło i człek potrzebuje orzeźwienia. <br />Co do cydrów, to nie mam swojego ulubionego, chociaż można powiedzieć, że preferuję truskawkowy Strongbow nad inne. :3 Lubię jeszcze wermuty, nienawidzę natomiast wódki, whisky i innych specyfików tego typu, na szczęście nawet nie mogę tego pić, więc mam wyjebane.  :mrgreen: <br /><br />A jak u was?
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-713">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-10T12:27:14" class="text-sm text-gray-500 font-mono">2017-01-10 12:27:14</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>Przede wszystkim łiskacze</div>No tak, bo co hehestudenciak, gównośmieszek miałby pić (i jeszcze chwalić), jak nie wódę na myszach? :D<br /><br />Lista mojej chemii do smrodzenia gęby:<br /><ul><li>Wino białe/czerwone, wytrawne/półwytrawne</li><li>Wódka czysta</li><li>Rum</li><li>Bardzo rzadko piwo</li></ul>
+                        </article>
+                    </li>
+                    
+                    <li id="post-712" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-712"
+                                 aria-describedby="post-content-712">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-714">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-10T12:33:49" class="text-sm text-gray-500 font-mono">2017-01-10 12:33:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div>No tak, bo co hehestudenciak, gównośmieszek miałby pić (i jeszcze chwalić), jak nie wódę na myszach? :D</div><br /><br />NA TORFIE I BAGNACH. A wino wytrawne mi przez zęby nie przechodzi, nie wiem czy jesteś degustatorem czy masz jakieś polipy w nosie. :D Ale słodkie i półsłodkie piję też dosyć często, zapomniałem. Słodkie to w zasadzie soczek, ale dobry.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-712" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-10T11:28:33"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 11:28:33</time>
+                                    </header>
+                                    <div id="post-content-712"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Przede wszystkim łiskacze, takie na jaki mi studencki budżet pozwala, czyli z reguł Johnny Walker, lepiej mi smakuje od Jacka czy Grantsa. Ofc mieszanie z pepsi czy innym gównem to profanacja nawet w przypadku tak niskobudżetowych łych. Schłodzony + ew. mała kostka lodu i jest idealnie.<br />Wódki lubię wszystkie, czyste, smakowe, wsio ryba.<br />Piwo - nie jestem jakimś smakoszem, co dadzą to wypiję. Ostatnio najwięcej grolscha.<br />Inne trunki - próbowałem prawie wszystkiego, nic jakiegoś olbrzymiego orgazmu w jamie ustnej nie wywołało, w związku z czym na co dzień po prostu whisky/piwo, lubię też cydr, a na imprezach wódka. Prosty chłop ze mnie.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-715">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-10T12:40:01" class="text-sm text-gray-500 font-mono">2017-01-10 12:40:01</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>A wino wytrawne mi przez zęby nie przechodzi, nie wiem czy jesteś degustatorem czy masz jakieś polipy w nosie</div>Nie no, whisky to jest dopiero odświeżacz powietrza :E Ssij, bucu :P Słodkie i półsłodkie też lubię, byleby to nie jechało ziołami jak wermut :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-713" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-713"
+                                 aria-describedby="post-content-713">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-716">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2017-01-13T22:48:53" class="text-sm text-gray-500 font-mono">2017-01-13 22:48:53</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Podbijam, teraz, bo jestem na rauszu.<br />Dziwi mnie to, że nikt nie wspomniał o regionalnych albo gównocraftowych piwach. Naprawdę nikt nie pije innego piwa niż VIP, Warka, Żywiec itp.? Osobiście polecam, z regionalnych, Johannesa, jeśli mowa o jasnych. Za to piwo odpowiedzialna jest spółka Amber, bardzo polecam ich piwa, na 100% każdy może je kupić u siebie, tylko jeśli ma u siebie Auchana albo jakiś &quot;hipsterski&quot; sklep z piwami. Inne piwa od Amber: Koźlak, Złote Lwy, Porter. Ten ostatni egzemplarz śmierdzi i smakuje dolewanym alkoholem, ale wiele osób mówi, że to piwo im podchodzi z powodu wysokiego procenta i &quot;szumu&quot; w głowie, mnie nie podchodzi. Z bardziej popularnych polecam piwa Miłosław, chociaż Pilznera nie polecam z powodu, delikatnie mówiąc, niemiłego posmaku. <br />Z mocniejszych alkoholi piję tylko jeden, bo wódki wywołują we mnie chęć wyrzygania się, a whiskey umiem tylko wypić z masą coli, co mija się z celem, a tym alkoholem jest Jägermeister. Ten alkohol jest czystą perfekcją z paru powodów: <br />1. Ładnie pachnie<br />2. Rozgrzewa<br />3. Nigdy nie czułem się po nim źle<br />4. Alkohol o wysokiej jakości<br />5. Sprzedawali go na większą skalę już za Adolfa<br />6. Dobrze kopie<br />7. Uważany za lekarstwo<br /><br /><strong>Z A C H Ę C A M</strong> do dyskusji.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-713" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-10T12:27:14"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 12:27:14</time>
+                                    </header>
+                                    <div id="post-content-713"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>Przede wszystkim łiskacze</div>No tak, bo co hehestudenciak, gównośmieszek miałby pić (i jeszcze chwalić), jak nie wódę na myszach? :D<br /><br />Lista mojej chemii do smrodzenia gęby:<br /><ul><li>Wino białe/czerwone, wytrawne/półwytrawne</li><li>Wódka czysta</li><li>Rum</li><li>Bardzo rzadko piwo</li></ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-717">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Najemnik</span>
-                                <time datetime="2017-01-15T15:57:26" class="text-sm text-gray-500 font-mono">2017-01-15 15:57:26</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja tam klasycznie. Piwo. Zazwyczaj jakieś regionalne, kraftowe. Najlepiej delikatne w smaku, choć i stouty czy portery mi się trafią. No ale najczęściej jasne pszeniczne. Koncerniaki też mi się zdarzą. Nie jestem jakimś piwoszem neofitą (#pdk), więc z tych popularnych to Perłę Chmielową sobie wypiję. <br />Jednak moim ulubionym trunkiem są wina. Czerwone, choć i czasem różowe. Uwielbiam hiszpańskie półwytrawne, ale i półsłodkie się trafi. Co ciekawe- nie przepadam za winem do posiłku, chociaż wiem, że jest cała rozpiska jakie i do czego. Kiedyś próbowałem to ogarnąć, ale okazję miałem ze dwa czy trzy razy pić wino do posiłku. Zdecydowanie wolę wodę.<br />Okazjonalnie piję też inne trunki, tu mnie Miśka zjebie, ale na imprezach lubię się napić whisky ze spritem. Zdarzyło mi się zrazić do whisky i teraz czy z colą/pepsi czy samo strasznie mi krzywi ryj. Na sam zapach mnie telepie. <br />W lecie uwielbiam napić się schłodzonego cydru. Jest orzeźwiający i nie uderza tak do głowy. Aczkolwiek rzadko mi się zdarza, bo lato jest dla mnie porą wypadów za miasto, nad rzekę czy coś, a w towarzystwie mało znajomych kierowców, więc to brzemię leży na moich barkach.<br />Czasem zdarzy mi się gdzieś wypić jakiegoś drinka, ale to też sporadycznie. Drinki w barach z reguły są drogie, a i też za dużo wypić ich nie można, bo łeb nawala, więc staram się ich unikać.<br />EDIT:<br />Co do Jagera- tylko jagerbomby.
+                        </article>
+                    </li>
+                    
+                    <li id="post-714" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-714"
+                                 aria-describedby="post-content-714">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-718">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-01-15T16:11:22" class="text-sm text-gray-500 font-mono">2017-01-15 16:11:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Stroop</strong> napisał:</span></div>Dziwi mnie to, że nikt nie wspomniał o regionalnych albo gównocraftowych piwach.</div><br />Na Namysłowie się pić piwo nauczyłem i Namysłów piję gdy tylko mam okazję. Choć rzadko się u mnie w sklepach pojawia.<br />Zazwyczaj zaś piję Becksa który w jakimkolwiek choć stopniu Namysłowy przypomina. W pubach z kolei najczęściej zamawiam ale - najbardziej sobie cenię Abbot Ale, choć przy jego braku mogę zamówić Doom Bar lub butelkowe Newcastle Brown Ale. <br /><br />Jeszcze częściej piję cydry których ceny w UK pozwalają się studentowi napruć bez żalu o pusty portfel do następnej raty kredytu studenckiego. Zazwyczaj dwulitrowy Blackthorn lub Summerdown które pić się jeszcze da, na grubsze okazje siedmiowoltowy White Strike. Na Komandosa w Polsce się spóźniłem, nim mogłem kupować przestali go produkować. Także obecnie nadrabiam przyswajanie siarki.<br /><br />Jakiś czas temu zacząłem też pić wina, jako że smakują lepiej niż cydry a stosunek ceny do potencjału upijania jest jak najbardziej strawny.<br /><br />Alkohole wysokoprocentowe pijam rzadko. Najczęściej whisky i burbony, choć zdarzają się też smakowe wódki. Z whisky najbardziej cenię sobie Famous Grouse i Bellsa. Smak jest na poziomie a cena niewygórowana. Famous Grouse najczęściej piję w domu, tymczasem Bellsa głównie zamawiam w pubach, gdzie jest łatwiejszy do dostania niż FG. Do burbonów zacząłem przekonywać się dość niedawno jako że są lżejsze w smaku a na starość obyczaje łagodnieją. Na zwyczajne spotkanie z ziomkami najlepiej nadaje się Southern Comfort, za to przy opijaniu jakiejś okazji lecimy raczej po Jim Beama. Ostatnio miałem przyjemność pić Jim Beam Black Cherry z posmakiem czereśni. Napój jest tak dobry że świetnie wchodzi na czysto, bez żadnych dodatków. Polecam gorąco.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-714" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-10T12:33:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 12:33:49</time>
+                                    </header>
+                                    <div id="post-content-714"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div>No tak, bo co hehestudenciak, gównośmieszek miałby pić (i jeszcze chwalić), jak nie wódę na myszach? :D</div><br /><br />NA TORFIE I BAGNACH. A wino wytrawne mi przez zęby nie przechodzi, nie wiem czy jesteś degustatorem czy masz jakieś polipy w nosie. :D Ale słodkie i półsłodkie piję też dosyć często, zapomniałem. Słodkie to w zasadzie soczek, ale dobry.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-719">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/6.jpg?1512503192" alt="Awatar Strzelec" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Strzelec</span>
-                                <time datetime="2017-01-27T23:26:56" class="text-sm text-gray-500 font-mono">2017-01-27 23:26:56</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W okolicach Matki Boskiej Pieniężnej lub jak kto woli, Matki Boskiej Żartobliwej idzie Bushmill&#39;s biały. Poza tym jakże pięknym świętem - tzw. Złota Locha z Biedry (Golden Loch). Wóda na myszach is love, niezależnie od tego co powie Najbardziej Plusi Człowiek po tej stronie Wisły.
+                        </article>
+                    </li>
+                    
+                    <li id="post-715" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-715"
+                                 aria-describedby="post-content-715">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-720">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-29T13:11:23" class="text-sm text-gray-500 font-mono">2017-01-29 13:11:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Z twardych alkoholi to u mnie króluje od dłuższego czasu Jim Beam Maple. Lubię też od czasu do czasu chlapnąć Seagram’s Gin Extra Dry z tonikiem. Oczywiście jedno i drugie pite w celach relaksacyjnych w niedużych ilościach ;)<br /><br />Z miękkich to przeważnie jakieś fajne piwko np. Pilsner Urquell albo Połczyńskie Miodowe (czasem coś innego na miodzie). Kiedyś przepadałem za ciemnymi piwami ale od jakiegoś czasu przeskoczyłem na miodowce. Od czasu do czasu kupuję też coś czego jeszcze nie piłem na spróbowanie, wtedy specjalnie nie wybrzydzam i jedyne czym się kieruję to budżet w przedziale 3-8pln.<br /><br />Na zimę lubię od czasu do czasu kupić sobie jakiegoś grzańca i wypić na ciepło wieczorem do książki, a latem zdarza mi się nabywać cydr aby móc wypić coś lekkiego i się zrelaksować.<br /><div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />preferuję truskawkowy Strongbow</div><br /><br />Przeczytaj sobie skład ;) kupiłem parę razy ale po przeczytaniu składu mi przeszło.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-715" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-10T12:40:01"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-10 12:40:01</time>
+                                    </header>
+                                    <div id="post-content-715"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>A wino wytrawne mi przez zęby nie przechodzi, nie wiem czy jesteś degustatorem czy masz jakieś polipy w nosie</div>Nie no, whisky to jest dopiero odświeżacz powietrza :E Ssij, bucu :P Słodkie i półsłodkie też lubię, byleby to nie jechało ziołami jak wermut :D
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-721">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-30T21:26:22" class="text-sm text-gray-500 font-mono">2017-01-30 21:26:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div>Przeczytaj sobie skład ;) kupiłem parę razy ale po przeczytaniu składu mi przeszło.<br /></div><br />W sensie, że sama chemia od której nic tylko się umiera? :P Czy jakieś inne perełki typu mięso mechanicznie oddzielone? :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-716" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-716"
+                                 aria-describedby="post-content-716">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-722">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-01-30T23:00:47" class="text-sm text-gray-500 font-mono">2017-01-30 23:00:47</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br /><div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div>Przeczytaj sobie skład ;) kupiłem parę razy ale po przeczytaniu składu mi przeszło.<br /></div><br />W sensie, że sama chemia od której nic tylko się umiera? :P Czy jakieś inne perełki typu mięso mechanicznie oddzielone? :D<br /></div><br /><br />Skład: Cydr 25%, woda, syrop glukozowo-fruktozowy, karmel, kwas jabłkowy, dwutlenek węgla, pirosiarczyn potasu, naturalny aromat. Czyli tak na poważnie to cydru tam zbyt wiele nie ma ;)<br /><br />Dla odmiany Lubelski czy Dobroński sprawiają wrażenie faktycznych cydrów tworzonych jedynie z jabłek, cukru i dodatków wspomagających fermentację (jak np. siarczyny, które są również stosowane przy produkcji wina). Z tego co pamiętam to twórcy Lubelskiego chwalili się, że ich cydr to w 90% świeżo wyciśnięty sok jabłkowy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-716" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2017-01-13T22:48:53"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-13 22:48:53</time>
+                                    </header>
+                                    <div id="post-content-716"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        Podbijam, teraz, bo jestem na rauszu.<br />Dziwi mnie to, że nikt nie wspomniał o regionalnych albo gównocraftowych piwach. Naprawdę nikt nie pije innego piwa niż VIP, Warka, Żywiec itp.? Osobiście polecam, z regionalnych, Johannesa, jeśli mowa o jasnych. Za to piwo odpowiedzialna jest spółka Amber, bardzo polecam ich piwa, na 100% każdy może je kupić u siebie, tylko jeśli ma u siebie Auchana albo jakiś &quot;hipsterski&quot; sklep z piwami. Inne piwa od Amber: Koźlak, Złote Lwy, Porter. Ten ostatni egzemplarz śmierdzi i smakuje dolewanym alkoholem, ale wiele osób mówi, że to piwo im podchodzi z powodu wysokiego procenta i &quot;szumu&quot; w głowie, mnie nie podchodzi. Z bardziej popularnych polecam piwa Miłosław, chociaż Pilznera nie polecam z powodu, delikatnie mówiąc, niemiłego posmaku. <br />Z mocniejszych alkoholi piję tylko jeden, bo wódki wywołują we mnie chęć wyrzygania się, a whiskey umiem tylko wypić z masą coli, co mija się z celem, a tym alkoholem jest Jägermeister. Ten alkohol jest czystą perfekcją z paru powodów: <br />1. Ładnie pachnie<br />2. Rozgrzewa<br />3. Nigdy nie czułem się po nim źle<br />4. Alkohol o wysokiej jakości<br />5. Sprzedawali go na większą skalę już za Adolfa<br />6. Dobrze kopie<br />7. Uważany za lekarstwo<br /><br /><strong>Z A C H Ę C A M</strong> do dyskusji.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-723">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-31T07:51:31" class="text-sm text-gray-500 font-mono">2017-01-31 07:51:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Cydr&#8230; Mój kolega dał mi dwie butelki na wakacjach, w ogóle nie mogłem tego zmęczyć. Tyle że on dał mi samoróbkę, bez żadnego świństwa w środku. Był tak kwaśny, że pysk wykrzywiało w każdą ze stron. Ogólnie nie przepadam, ale coś typu śmieciowego Sommersby mogę wypić.
+                        </article>
+                    </li>
+                    
+                    <li id="post-717" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-717"
+                                 aria-describedby="post-content-717">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/11.jpg?1512503192"
+                                     alt="Awatar użytkownika Najemnik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-724">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-02-02T19:05:15" class="text-sm text-gray-500 font-mono">2017-02-02 19:05:15</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Triple Blond - to jedyne piwo które mogę pić litrami. No i słuszny procentaż 8%. Na 5 dniową majówkę kupiłem sobie 20 butelek - ledwo starczyło. Niestety u mnie dostępne tylko w Tesco w sąsiednim mieście. Oprócz tego raz widziałem w Biedrze na Włochach.<br />Cydry - wszelkie też mi podchodzą.<br />Wino musujące gazowane (niestety na Szampany za pare tysi mnie nie stać :E) - też właściwie każde mi podchodzi :D
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-717" class="font-bold text-lg text-white">Najemnik</h3>
+                                        <time datetime="2017-01-15T15:57:26"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-15 15:57:26</time>
+                                    </header>
+                                    <div id="post-content-717"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Najemnik">
+                                        Ja tam klasycznie. Piwo. Zazwyczaj jakieś regionalne, kraftowe. Najlepiej delikatne w smaku, choć i stouty czy portery mi się trafią. No ale najczęściej jasne pszeniczne. Koncerniaki też mi się zdarzą. Nie jestem jakimś piwoszem neofitą (#pdk), więc z tych popularnych to Perłę Chmielową sobie wypiję. <br />Jednak moim ulubionym trunkiem są wina. Czerwone, choć i czasem różowe. Uwielbiam hiszpańskie półwytrawne, ale i półsłodkie się trafi. Co ciekawe- nie przepadam za winem do posiłku, chociaż wiem, że jest cała rozpiska jakie i do czego. Kiedyś próbowałem to ogarnąć, ale okazję miałem ze dwa czy trzy razy pić wino do posiłku. Zdecydowanie wolę wodę.<br />Okazjonalnie piję też inne trunki, tu mnie Miśka zjebie, ale na imprezach lubię się napić whisky ze spritem. Zdarzyło mi się zrazić do whisky i teraz czy z colą/pepsi czy samo strasznie mi krzywi ryj. Na sam zapach mnie telepie. <br />W lecie uwielbiam napić się schłodzonego cydru. Jest orzeźwiający i nie uderza tak do głowy. Aczkolwiek rzadko mi się zdarza, bo lato jest dla mnie porą wypadów za miasto, nad rzekę czy coś, a w towarzystwie mało znajomych kierowców, więc to brzemię leży na moich barkach.<br />Czasem zdarzy mi się gdzieś wypić jakiegoś drinka, ale to też sporadycznie. Drinki w barach z reguły są drogie, a i też za dużo wypić ich nie można, bo łeb nawala, więc staram się ich unikać.<br />EDIT:<br />Co do Jagera- tylko jagerbomby.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-725">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-04-20T09:05:15" class="text-sm text-gray-500 font-mono">2017-04-20 09:05:15</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ku mojej uciesze wyszedł nowy Radler - malina z cytryną. Dobry soczek o lekkim aromacie piwa. :lol:
+                        </article>
+                    </li>
+                    
+                    <li id="post-718" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-718"
+                                 aria-describedby="post-content-718">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-718" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-01-15T16:11:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-15 16:11:22</time>
+                                    </header>
+                                    <div id="post-content-718"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Stroop</strong> napisał:</span></div>Dziwi mnie to, że nikt nie wspomniał o regionalnych albo gównocraftowych piwach.</div><br />Na Namysłowie się pić piwo nauczyłem i Namysłów piję gdy tylko mam okazję. Choć rzadko się u mnie w sklepach pojawia.<br />Zazwyczaj zaś piję Becksa który w jakimkolwiek choć stopniu Namysłowy przypomina. W pubach z kolei najczęściej zamawiam ale - najbardziej sobie cenię Abbot Ale, choć przy jego braku mogę zamówić Doom Bar lub butelkowe Newcastle Brown Ale. <br /><br />Jeszcze częściej piję cydry których ceny w UK pozwalają się studentowi napruć bez żalu o pusty portfel do następnej raty kredytu studenckiego. Zazwyczaj dwulitrowy Blackthorn lub Summerdown które pić się jeszcze da, na grubsze okazje siedmiowoltowy White Strike. Na Komandosa w Polsce się spóźniłem, nim mogłem kupować przestali go produkować. Także obecnie nadrabiam przyswajanie siarki.<br /><br />Jakiś czas temu zacząłem też pić wina, jako że smakują lepiej niż cydry a stosunek ceny do potencjału upijania jest jak najbardziej strawny.<br /><br />Alkohole wysokoprocentowe pijam rzadko. Najczęściej whisky i burbony, choć zdarzają się też smakowe wódki. Z whisky najbardziej cenię sobie Famous Grouse i Bellsa. Smak jest na poziomie a cena niewygórowana. Famous Grouse najczęściej piję w domu, tymczasem Bellsa głównie zamawiam w pubach, gdzie jest łatwiejszy do dostania niż FG. Do burbonów zacząłem przekonywać się dość niedawno jako że są lżejsze w smaku a na starość obyczaje łagodnieją. Na zwyczajne spotkanie z ziomkami najlepiej nadaje się Southern Comfort, za to przy opijaniu jakiejś okazji lecimy raczej po Jim Beama. Ostatnio miałem przyjemność pić Jim Beam Black Cherry z posmakiem czereśni. Napój jest tak dobry że świetnie wchodzi na czysto, bez żadnych dodatków. Polecam gorąco.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-719" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-719"
+                                 aria-describedby="post-content-719">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/6.jpg?1512503192"
+                                     alt="Awatar użytkownika Strzelec"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-719" class="font-bold text-lg text-white">Strzelec</h3>
+                                        <time datetime="2017-01-27T23:26:56"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-27 23:26:56</time>
+                                    </header>
+                                    <div id="post-content-719"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Strzelec">
+                                        W okolicach Matki Boskiej Pieniężnej lub jak kto woli, Matki Boskiej Żartobliwej idzie Bushmill&#39;s biały. Poza tym jakże pięknym świętem - tzw. Złota Locha z Biedry (Golden Loch). Wóda na myszach is love, niezależnie od tego co powie Najbardziej Plusi Człowiek po tej stronie Wisły.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-720" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-720"
+                                 aria-describedby="post-content-720">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-720" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-29T13:11:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-29 13:11:23</time>
+                                    </header>
+                                    <div id="post-content-720"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Z twardych alkoholi to u mnie króluje od dłuższego czasu Jim Beam Maple. Lubię też od czasu do czasu chlapnąć Seagram’s Gin Extra Dry z tonikiem. Oczywiście jedno i drugie pite w celach relaksacyjnych w niedużych ilościach ;)<br /><br />Z miękkich to przeważnie jakieś fajne piwko np. Pilsner Urquell albo Połczyńskie Miodowe (czasem coś innego na miodzie). Kiedyś przepadałem za ciemnymi piwami ale od jakiegoś czasu przeskoczyłem na miodowce. Od czasu do czasu kupuję też coś czego jeszcze nie piłem na spróbowanie, wtedy specjalnie nie wybrzydzam i jedyne czym się kieruję to budżet w przedziale 3-8pln.<br /><br />Na zimę lubię od czasu do czasu kupić sobie jakiegoś grzańca i wypić na ciepło wieczorem do książki, a latem zdarza mi się nabywać cydr aby móc wypić coś lekkiego i się zrelaksować.<br /><div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />preferuję truskawkowy Strongbow</div><br /><br />Przeczytaj sobie skład ;) kupiłem parę razy ale po przeczytaniu składu mi przeszło.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-721" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-721"
+                                 aria-describedby="post-content-721">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-721" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-30T21:26:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-30 21:26:22</time>
+                                    </header>
+                                    <div id="post-content-721"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div>Przeczytaj sobie skład ;) kupiłem parę razy ale po przeczytaniu składu mi przeszło.<br /></div><br />W sensie, że sama chemia od której nic tylko się umiera? :P Czy jakieś inne perełki typu mięso mechanicznie oddzielone? :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-722" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-722"
+                                 aria-describedby="post-content-722">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-722" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-01-30T23:00:47"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-30 23:00:47</time>
+                                    </header>
+                                    <div id="post-content-722"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br /><div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div>Przeczytaj sobie skład ;) kupiłem parę razy ale po przeczytaniu składu mi przeszło.<br /></div><br />W sensie, że sama chemia od której nic tylko się umiera? :P Czy jakieś inne perełki typu mięso mechanicznie oddzielone? :D<br /></div><br /><br />Skład: Cydr 25%, woda, syrop glukozowo-fruktozowy, karmel, kwas jabłkowy, dwutlenek węgla, pirosiarczyn potasu, naturalny aromat. Czyli tak na poważnie to cydru tam zbyt wiele nie ma ;)<br /><br />Dla odmiany Lubelski czy Dobroński sprawiają wrażenie faktycznych cydrów tworzonych jedynie z jabłek, cukru i dodatków wspomagających fermentację (jak np. siarczyny, które są również stosowane przy produkcji wina). Z tego co pamiętam to twórcy Lubelskiego chwalili się, że ich cydr to w 90% świeżo wyciśnięty sok jabłkowy.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-723" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-723"
+                                 aria-describedby="post-content-723">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-723" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-31T07:51:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-31 07:51:31</time>
+                                    </header>
+                                    <div id="post-content-723"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Cydr&#8230; Mój kolega dał mi dwie butelki na wakacjach, w ogóle nie mogłem tego zmęczyć. Tyle że on dał mi samoróbkę, bez żadnego świństwa w środku. Był tak kwaśny, że pysk wykrzywiało w każdą ze stron. Ogólnie nie przepadam, ale coś typu śmieciowego Sommersby mogę wypić.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-724" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-724"
+                                 aria-describedby="post-content-724">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-724" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-02-02T19:05:15"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-02 19:05:15</time>
+                                    </header>
+                                    <div id="post-content-724"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Triple Blond - to jedyne piwo które mogę pić litrami. No i słuszny procentaż 8%. Na 5 dniową majówkę kupiłem sobie 20 butelek - ledwo starczyło. Niestety u mnie dostępne tylko w Tesco w sąsiednim mieście. Oprócz tego raz widziałem w Biedrze na Włochach.<br />Cydry - wszelkie też mi podchodzą.<br />Wino musujące gazowane (niestety na Szampany za pare tysi mnie nie stać :E) - też właściwie każde mi podchodzi :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-725" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-725"
+                                 aria-describedby="post-content-725">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-725" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-04-20T09:05:15"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-20 09:05:15</time>
+                                    </header>
+                                    <div id="post-content-725"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ku mojej uciesze wyszedł nowy Radler - malina z cytryną. Dobry soczek o lekkim aromacie piwa. :lol:
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

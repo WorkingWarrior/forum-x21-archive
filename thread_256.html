@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,146 +44,294 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Wegetarianizm a homoseksualizm</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Wegetarianizm a homoseksualizm</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2084">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-03-02T18:41:30" class="text-sm text-gray-500 font-mono">2018-03-02 18:41:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                W tym temacie chciałbym abyśmy przedyskutowali związek pomiędzy niejedzeniem mięsa a posuwaniem chłopców przez innych chłopców. Czy jedno wiąże się z drugim? Czy występuje tutaj związek przyczynowo skutkowy? Co przemawia za tą teorią:<br />1. Facet ma gdzieś co je, byle by smakowało. Udziwnień szukają geje.<br />2. Facet jest głodny -&gt; idzie polować na zwierzynę i ją zjada. Wszelkie inne formy zachowania są sprzeczne z ewolucją samców gatunku ludzkiego (typu: zamiast zjeść ten kotlet z dzika poszukam przez 3 godziny jagódek).<br />3. Facet, szczególnie głodny, gdy mu się poda posiłek z mięsem - zje ze smakiem. Wegetarianin, mimo że będzie głodny, odmówi posiłku, co przeczy ewolucji (głodny -&gt; zjem cokolwiek byle by mieć siłę). <br />4. Kowek nie je mięsa. Przypadek?<br />5. Kryptogejowi konsumpcja mięsa może się kojarzyć z chapaniem dzidy, stąd nie je go, aby nie przywoływać we własnej głowie takich podświadomych skojarzeń. True samiec nie musi się tym przejmować.<br />6. Nie jesz mięsa -&gt; musisz spędzić dodatkowy czas na tworzeniu diety, wyszukiwaniu alternatyw bogatych w białko, tak aby nie zabrakło żadnego aminokwasu w Twojej diecie, co podchodzi pod przesadne dbanie o siebie. Czy jest to męskie? No właśnie. <br />7. Jak brzmią nazwy alternatywnych posiłków dla kotleta, steku, polędwicy? Falafel, ciecierzyca&#8230; wystarczy wypowiedzieć te słowa na głos, by dotarło do nas ich gejowskie brzmienie. <br /><br />Powodów znalazło by się wiele więcej, ja tymczasem zapraszam Was do dyskusji. Jecie mięso? Ruchacie się w dupę? Sprawdźmy czy moja teoria znajdzie uzasadnienie, czy też przeciwnie, zostanie obalona niczym koloseum Enza na myśl o fiendzonie z Infernalem.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Wegetarianizm a homoseksualizm</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2084" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2084"
+                                 aria-describedby="post-content-2084">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2089">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-03-02T19:05:45" class="text-sm text-gray-500 font-mono">2018-03-02 19:05:45</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pedałem mogę być, nie wegetarianinem.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2084" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-03-02T18:41:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-02 18:41:30</time>
+                                    </header>
+                                    <div id="post-content-2084"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        W tym temacie chciałbym abyśmy przedyskutowali związek pomiędzy niejedzeniem mięsa a posuwaniem chłopców przez innych chłopców. Czy jedno wiąże się z drugim? Czy występuje tutaj związek przyczynowo skutkowy? Co przemawia za tą teorią:<br />1. Facet ma gdzieś co je, byle by smakowało. Udziwnień szukają geje.<br />2. Facet jest głodny -&gt; idzie polować na zwierzynę i ją zjada. Wszelkie inne formy zachowania są sprzeczne z ewolucją samców gatunku ludzkiego (typu: zamiast zjeść ten kotlet z dzika poszukam przez 3 godziny jagódek).<br />3. Facet, szczególnie głodny, gdy mu się poda posiłek z mięsem - zje ze smakiem. Wegetarianin, mimo że będzie głodny, odmówi posiłku, co przeczy ewolucji (głodny -&gt; zjem cokolwiek byle by mieć siłę). <br />4. Kowek nie je mięsa. Przypadek?<br />5. Kryptogejowi konsumpcja mięsa może się kojarzyć z chapaniem dzidy, stąd nie je go, aby nie przywoływać we własnej głowie takich podświadomych skojarzeń. True samiec nie musi się tym przejmować.<br />6. Nie jesz mięsa -&gt; musisz spędzić dodatkowy czas na tworzeniu diety, wyszukiwaniu alternatyw bogatych w białko, tak aby nie zabrakło żadnego aminokwasu w Twojej diecie, co podchodzi pod przesadne dbanie o siebie. Czy jest to męskie? No właśnie. <br />7. Jak brzmią nazwy alternatywnych posiłków dla kotleta, steku, polędwicy? Falafel, ciecierzyca&#8230; wystarczy wypowiedzieć te słowa na głos, by dotarło do nas ich gejowskie brzmienie. <br /><br />Powodów znalazło by się wiele więcej, ja tymczasem zapraszam Was do dyskusji. Jecie mięso? Ruchacie się w dupę? Sprawdźmy czy moja teoria znajdzie uzasadnienie, czy też przeciwnie, zostanie obalona niczym koloseum Enza na myśl o fiendzonie z Infernalem.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2095">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-03-03T09:04:43" class="text-sm text-gray-500 font-mono">2018-03-03 09:04:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Drogi Messilu. Uważam, że wegetarianizm jest zachowaniem jak najbardziej anomalnym. Tacy ludzie nie mogą być normalni, co potwierdzałoby Twoje założenie. Mam nadzieję, że Ropas również wypowie się na ten temat, ponieważ jest najlepszym przykładem człowieka nienormalnego, który nie jest homoseksualistą.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2089" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2089"
+                                 aria-describedby="post-content-2089">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2098">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-03-03T19:25:31" class="text-sm text-gray-500 font-mono">2018-03-03 19:25:31</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                No szczerze mówiąc przez 10 lat w ogóle nie jadłem warzyw tylko same mięso. Teraz też z nimi nie przesadzam. :E A obecnie czekam na dostawę z KFC bo byłem za leniwy, żeby przejść przez jezdnie do KFC
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2089" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-03-02T19:05:45"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-02 19:05:45</time>
+                                    </header>
+                                    <div id="post-content-2089"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Pedałem mogę być, nie wegetarianinem.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2099">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-03-03T19:40:42" class="text-sm text-gray-500 font-mono">2018-03-03 19:40:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2098" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>No szczerze mówiąc przez 10 lat w ogóle nie jadłem warzyw tylko same mięso. Teraz też z nimi nie przesadzam. :E A obecnie czekam na dostawę z KFC bo byłem za leniwy, żeby przejść przez jezdnie do KFC</div><br /><br />I to jest samiec alfa!
+                        </article>
+                    </li>
+                    
+                    <li id="post-2095" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2095"
+                                 aria-describedby="post-content-2095">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2100">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2018-03-03T20:55:02" class="text-sm text-gray-500 font-mono">2018-03-03 20:55:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Alfa i omega orgazmicznego intelektu.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2095" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-03-03T09:04:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-03 09:04:43</time>
+                                    </header>
+                                    <div id="post-content-2095"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Drogi Messilu. Uważam, że wegetarianizm jest zachowaniem jak najbardziej anomalnym. Tacy ludzie nie mogą być normalni, co potwierdzałoby Twoje założenie. Mam nadzieję, że Ropas również wypowie się na ten temat, ponieważ jest najlepszym przykładem człowieka nienormalnego, który nie jest homoseksualistą.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2098" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2098"
+                                 aria-describedby="post-content-2098">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2098" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-03-03T19:25:31"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-03 19:25:31</time>
+                                    </header>
+                                    <div id="post-content-2098"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        No szczerze mówiąc przez 10 lat w ogóle nie jadłem warzyw tylko same mięso. Teraz też z nimi nie przesadzam. :E A obecnie czekam na dostawę z KFC bo byłem za leniwy, żeby przejść przez jezdnie do KFC
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2099" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2099"
+                                 aria-describedby="post-content-2099">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2099" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-03-03T19:40:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-03 19:40:42</time>
+                                    </header>
+                                    <div id="post-content-2099"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2098" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>No szczerze mówiąc przez 10 lat w ogóle nie jadłem warzyw tylko same mięso. Teraz też z nimi nie przesadzam. :E A obecnie czekam na dostawę z KFC bo byłem za leniwy, żeby przejść przez jezdnie do KFC</div><br /><br />I to jest samiec alfa!
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2100" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2100"
+                                 aria-describedby="post-content-2100">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2100" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2018-03-03T20:55:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-03-03 20:55:02</time>
+                                    </header>
+                                    <div id="post-content-2100"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Alfa i omega orgazmicznego intelektu.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

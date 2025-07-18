@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,230 +44,418 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_14.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Sprzęt</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Czy komputery to zuo?</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Czy komputery to zuo?</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-593">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Omni</span>
-                                <time datetime="2017-01-02T22:08:42" class="text-sm text-gray-500 font-mono">2017-01-02 22:08:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pytanie, jakkolwiek kontrowersyjne, pozostawiam otwarte, oczekując na starcie nerdów i mocherów. <br />Coś ala walki kogutów.<br />Zakłady przyjmuję na PW wyłącznie.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Czy komputery to zuo?</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-593" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-593"
+                                 aria-describedby="post-content-593">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/8.jpg?1512503192"
+                                     alt="Awatar użytkownika Omni"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-594">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-03T08:52:42" class="text-sm text-gray-500 font-mono">2017-01-03 08:52:42</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Komputery to zuo, szczególnie gdy zasilacz ma przebicie, a w domu brak różnicówki. Nie polecam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-593" class="font-bold text-lg text-white">Omni</h3>
+                                        <time datetime="2017-01-02T22:08:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-02 22:08:42</time>
+                                    </header>
+                                    <div id="post-content-593"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Omni">
+                                        Pytanie, jakkolwiek kontrowersyjne, pozostawiam otwarte, oczekując na starcie nerdów i mocherów. <br />Coś ala walki kogutów.<br />Zakłady przyjmuję na PW wyłącznie.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-595">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-03T16:58:41" class="text-sm text-gray-500 font-mono">2017-01-03 16:58:41</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Zuo i dzieło szmatana&#8230;
+                        </article>
+                    </li>
+                    
+                    <li id="post-594" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-594"
+                                 aria-describedby="post-content-594">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-596">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2017-01-03T17:10:34" class="text-sm text-gray-500 font-mono">2017-01-03 17:10:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja raz grałem w grę i wpadłem pod tramwaj.<br /><br />Na szczęście przeżyłem ze skutkiem śmiertelnym.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-594" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-03T08:52:42"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-03 08:52:42</time>
+                                    </header>
+                                    <div id="post-content-594"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Komputery to zuo, szczególnie gdy zasilacz ma przebicie, a w domu brak różnicówki. Nie polecam.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-597">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2017-01-03T17:17:46" class="text-sm text-gray-500 font-mono">2017-01-03 17:17:46</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Co do samych gier odwołam się do tego materiału. https://www.youtube.com/watch?v=FapebZqbjYU<br /><br />Za to jak wszyscy wiemy komputery wywołały wymieranie dinożarłów, Czarną Śmierć w średniowieczu oraz obie wojny światowe. Odpowiadają nawet za trzęsienia ziemi i koklusz. Zabrońmy wszystkiego lepiej oglądać sejm.
+                        </article>
+                    </li>
+                    
+                    <li id="post-595" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-595"
+                                 aria-describedby="post-content-595">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-598">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-04T09:09:55" class="text-sm text-gray-500 font-mono">2017-01-04 09:09:55</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Zawsze cudowne jest zrzucanie wszystkiego na gry i internet, które nie tyle zachęcają do agresji co pozwalają ją właśnie wyładować. Skoro gry stymulują do zabijania, to powinno się także zakazać praktykowania sztuk walki, siłowni, posiadania worka treningowego, oglądania filmów (chyba że o zamachu w Smoleńsku i bohaterstwie Kaczyńskiego) a już w największym stopniu czytania książek kryminalnych - w końcu często można w nich wyczytać szczegółowe opisy zbrodni, od zaplanowania po wykonanie, a złapani zabójcy często przyznają, że zainspirowała ich jakaś książka. <br /><br />Nawiązując do posta Lou - ludzie rozpierdalają kebabownię bo denerwuje ich napływ obcokrajowców, a oni to na gry zrzucają, jak tu żyć w tym kraju? Rozstrzelać Polaków.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-595" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-03T16:58:41"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-03 16:58:41</time>
+                                    </header>
+                                    <div id="post-content-595"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Zuo i dzieło szmatana&#8230;
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-599">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-04T14:51:43" class="text-sm text-gray-500 font-mono">2017-01-04 14:51:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="http://i.imgur.com/ZLv2W1x.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="http://i.imgur.com/ZLv2W1xl.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a>
+                        </article>
+                    </li>
+                    
+                    <li id="post-596" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-596"
+                                 aria-describedby="post-content-596">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-600">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-03-23T13:38:07" class="text-sm text-gray-500 font-mono">2017-03-23 13:38:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                http://wiadomosci.gazeta.pl/wiadomosci/7,114871,21536225,wpadl-w-furie-bo-nie-szlo-mu-w-grze-zlapal-2-latke-i-rzucil.html#BoxNewsImg&amp;a=65&amp;c=61<br /><br />Games are bad, they make you mad&#8230; Znowu będzie nagonka przez jednego świra.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-596" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2017-01-03T17:10:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-03 17:10:34</time>
+                                    </header>
+                                    <div id="post-content-596"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Ja raz grałem w grę i wpadłem pod tramwaj.<br /><br />Na szczęście przeżyłem ze skutkiem śmiertelnym.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-601">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-03-24T14:37:02" class="text-sm text-gray-500 font-mono">2017-03-24 14:37:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Co chwilę jakieś nowe doniesienia, a tak naprawdę wszystko gówno warte. Jakby się patologię sortowało i odsyłało do odpowiednich zakładów, byłoby lepiej.
+                        </article>
+                    </li>
+                    
+                    <li id="post-597" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-597"
+                                 aria-describedby="post-content-597">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-602">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-04-15T09:27:52" class="text-sm text-gray-500 font-mono">2017-04-15 09:27:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ej, patrzcie co znalazłam. Artykuł o pozytywnym wpływie gier. :mrgreen:<br /><br />http://weekend.gazeta.pl/weekend/1,152121,21600584,gry-komputerowe-nie-sa-strata-czasu-jak-wykorzystac-je-w-prawdziwym.html#TRwknd
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-597" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2017-01-03T17:17:46"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-03 17:17:46</time>
+                                    </header>
+                                    <div id="post-content-597"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Co do samych gier odwołam się do tego materiału. https://www.youtube.com/watch?v=FapebZqbjYU<br /><br />Za to jak wszyscy wiemy komputery wywołały wymieranie dinożarłów, Czarną Śmierć w średniowieczu oraz obie wojny światowe. Odpowiadają nawet za trzęsienia ziemi i koklusz. Zabrońmy wszystkiego lepiej oglądać sejm.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                        </article>
+                    </li>
+                    
+                    <li id="post-598" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-598"
+                                 aria-describedby="post-content-598">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-598" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-04T09:09:55"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-04 09:09:55</time>
+                                    </header>
+                                    <div id="post-content-598"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Zawsze cudowne jest zrzucanie wszystkiego na gry i internet, które nie tyle zachęcają do agresji co pozwalają ją właśnie wyładować. Skoro gry stymulują do zabijania, to powinno się także zakazać praktykowania sztuk walki, siłowni, posiadania worka treningowego, oglądania filmów (chyba że o zamachu w Smoleńsku i bohaterstwie Kaczyńskiego) a już w największym stopniu czytania książek kryminalnych - w końcu często można w nich wyczytać szczegółowe opisy zbrodni, od zaplanowania po wykonanie, a złapani zabójcy często przyznają, że zainspirowała ich jakaś książka. <br /><br />Nawiązując do posta Lou - ludzie rozpierdalają kebabownię bo denerwuje ich napływ obcokrajowców, a oni to na gry zrzucają, jak tu żyć w tym kraju? Rozstrzelać Polaków.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-599" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-599"
+                                 aria-describedby="post-content-599">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-599" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-04T14:51:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-04 14:51:43</time>
+                                    </header>
+                                    <div id="post-content-599"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <a href="http://i.imgur.com/ZLv2W1x.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="http://i.imgur.com/ZLv2W1xl.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-600" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-600"
+                                 aria-describedby="post-content-600">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-600" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-03-23T13:38:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-23 13:38:07</time>
+                                    </header>
+                                    <div id="post-content-600"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        http://wiadomosci.gazeta.pl/wiadomosci/7,114871,21536225,wpadl-w-furie-bo-nie-szlo-mu-w-grze-zlapal-2-latke-i-rzucil.html#BoxNewsImg&amp;a=65&amp;c=61<br /><br />Games are bad, they make you mad&#8230; Znowu będzie nagonka przez jednego świra.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-601" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-601"
+                                 aria-describedby="post-content-601">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-601" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-03-24T14:37:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-03-24 14:37:02</time>
+                                    </header>
+                                    <div id="post-content-601"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Co chwilę jakieś nowe doniesienia, a tak naprawdę wszystko gówno warte. Jakby się patologię sortowało i odsyłało do odpowiednich zakładów, byłoby lepiej.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-602" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-602"
+                                 aria-describedby="post-content-602">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-602" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-04-15T09:27:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-15 09:27:52</time>
+                                    </header>
+                                    <div id="post-content-602"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Ej, patrzcie co znalazłam. Artykuł o pozytywnym wpływie gier. :mrgreen:<br /><br />http://weekend.gazeta.pl/weekend/1,152121,21600584,gry-komputerowe-nie-sa-strata-czasu-jak-wykorzystac-je-w-prawdziwym.html#TRwknd
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

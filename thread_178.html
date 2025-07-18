@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,461 +44,759 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Konkrety</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Escape from Tarkov – wprowadzenie</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Escape from Tarkov – wprowadzenie</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1521">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-04T17:30:07" class="text-sm text-gray-500 font-mono">2017-04-04 17:30:07</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div style="text-align: center;"><a href="https://i.imgur.com/WARqTOj.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/WARqTOjl.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br /><br />Rzecz dzieje się w roku 2028, w mieście Tarków. Ekonomia sprawiła, że wiele zagranicznych spółek postanowiło otworzyć tam swoje podwoje, prowadząc, często, nieuczciwe interesy. Pewne wydarzenia ściągają do miasta dwie frakcje najemników, które zaczynają prowadzić otwartą wojenkę. Jedną z nich jest USEC, najemnicy prywatnej korporacji, a drugą BEAR – grupa działająca na rzecz rządu Rosji. Miasto zostaje otoczone kordonem wojskowym, co sprawia, że bardzo trudno jest się z niego wydostać.<br /><br />Wcielamy się w postać najemnika (możemy wybrać jedną z ww. grup), którego głównym zadaniem jest wydostanie się z jakże patowej sytuacji. Musimy wykonywać zadania w różnych rejonach miasta, aby w końcu dostać się na obrzeża.<br /><br />Gra jest z natury sieciową strzelanką, ale ma w sobie również elementy nawiązujące do RPG. Najważniejszym aspektem jest tutaj realizm. Jesteśmy krusi, pociski nas ranią i spowalniają, a w końcu zabijają. Zginąć jest bardzo łatwo, trudniej zacząć od początku, ponieważ tracimy wszystkie nasze przedmioty, a przechodzący łupieżca może łatwo je sobie wziąć. Rozgrywkę utrudniają również stres, chłód, choroby, odwodnienie, złamania, mrok – jak w prawdziwym życiu. Ekwipunek z czasem się zużywa, a bronie zacinają i przegrzewają, więc warto zwracać na to uwagę, by nagle, podczas potyczki z innym najemnikiem, nie paść trupem z powodu głupiego niedopatrzenia. W grze dostępna jest mapa, ale nie uświadczymy żadnego wskaźnika obecnego położenia, musimy sami się porozglądać i ustalić, gdzie jesteśmy. Dzięki takim rozwiązaniom świat przedstawiony lepiej „wchłania” gracza.<br /><div style="text-align: center;"><a href="https://i.imgur.com/TauyqHy.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/TauyqHyl.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br /><br />Ciekawostką jest system modyfikacji broni, który pozwala nam na zmianę prawie wszystkich podzespołów (oprócz korpusu). Twórcy obiecali, że będzie w czym przebierać, jeśli chodzi o ekwipunek – począwszy od pistoletów, karabinów i kombinezonów, skończywszy na zwykłej wodzie, której też nie może zabraknąć. Jak wiadomo, wszystkiego może zabraknąć, w związku z tym warto zbierać to, co zastaniemy na naszej drodze.<br /><br />Nie jest to zwyczajna strzelanka w stylu dobrze znanych nam gier. Mapy są duże (5 – 10 km2), a w planach jest kolejna, wielka, do wolnej rozgrywki. Przeciwnicy wcale nie są jaskrawo oznaczeni, nawet przyjaciel z tej samej grupy może strzelić nam w plecy i zabrać wyposażenie. Dodatkowym utrudnieniem są, sterowani przez AI, bandyci.<br /><div style="text-align: center;"><a href="https://i.imgur.com/sagQpGx.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/sagQpGxl.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br /><br />Dostępny jest również system rozwoju gracza powiązany z talentami – aby statystyki wzrosły, musimy korzystać z danej umiejętności. Jak wiadomo, nieużywany narząd zanika, co w grze sprowadzi się do tego, że jeśli nie będziemy korzystać z danego talentu, jego poziom spadnie (lecz ponowne narastanie będzie o wiele szybsze). Smaczkiem jest zmiana sposobu korzystania z danej umiejętności, wraz ze wzrostem jej statystyk.<br /><br />EfT zostało stworzone z wykorzystaniem zmodyfikowanego silnika Unity 5 – jednakże na razie brak jakichkolwiek doniesień o ewentualnych portach na inne platformy.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Escape from Tarkov – wprowadzenie</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1521" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1521"
+                                 aria-describedby="post-content-1521">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1522">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-04-11T14:50:23" class="text-sm text-gray-500 font-mono">2017-04-11 14:50:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Już kilka razy oglądałem różne gameplaye itp. materiały z tej gry i zapowiada się całkiem interesująco. Oczywiście wszystko okaże się w praktyce bo z praktyką różnie bywa.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1521" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-04T17:30:07"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-04 17:30:07</time>
+                                    </header>
+                                    <div id="post-content-1521"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div style="text-align: center;"><a href="https://i.imgur.com/WARqTOj.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/WARqTOjl.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br /><br />Rzecz dzieje się w roku 2028, w mieście Tarków. Ekonomia sprawiła, że wiele zagranicznych spółek postanowiło otworzyć tam swoje podwoje, prowadząc, często, nieuczciwe interesy. Pewne wydarzenia ściągają do miasta dwie frakcje najemników, które zaczynają prowadzić otwartą wojenkę. Jedną z nich jest USEC, najemnicy prywatnej korporacji, a drugą BEAR – grupa działająca na rzecz rządu Rosji. Miasto zostaje otoczone kordonem wojskowym, co sprawia, że bardzo trudno jest się z niego wydostać.<br /><br />Wcielamy się w postać najemnika (możemy wybrać jedną z ww. grup), którego głównym zadaniem jest wydostanie się z jakże patowej sytuacji. Musimy wykonywać zadania w różnych rejonach miasta, aby w końcu dostać się na obrzeża.<br /><br />Gra jest z natury sieciową strzelanką, ale ma w sobie również elementy nawiązujące do RPG. Najważniejszym aspektem jest tutaj realizm. Jesteśmy krusi, pociski nas ranią i spowalniają, a w końcu zabijają. Zginąć jest bardzo łatwo, trudniej zacząć od początku, ponieważ tracimy wszystkie nasze przedmioty, a przechodzący łupieżca może łatwo je sobie wziąć. Rozgrywkę utrudniają również stres, chłód, choroby, odwodnienie, złamania, mrok – jak w prawdziwym życiu. Ekwipunek z czasem się zużywa, a bronie zacinają i przegrzewają, więc warto zwracać na to uwagę, by nagle, podczas potyczki z innym najemnikiem, nie paść trupem z powodu głupiego niedopatrzenia. W grze dostępna jest mapa, ale nie uświadczymy żadnego wskaźnika obecnego położenia, musimy sami się porozglądać i ustalić, gdzie jesteśmy. Dzięki takim rozwiązaniom świat przedstawiony lepiej „wchłania” gracza.<br /><div style="text-align: center;"><a href="https://i.imgur.com/TauyqHy.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/TauyqHyl.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br /><br />Ciekawostką jest system modyfikacji broni, który pozwala nam na zmianę prawie wszystkich podzespołów (oprócz korpusu). Twórcy obiecali, że będzie w czym przebierać, jeśli chodzi o ekwipunek – począwszy od pistoletów, karabinów i kombinezonów, skończywszy na zwykłej wodzie, której też nie może zabraknąć. Jak wiadomo, wszystkiego może zabraknąć, w związku z tym warto zbierać to, co zastaniemy na naszej drodze.<br /><br />Nie jest to zwyczajna strzelanka w stylu dobrze znanych nam gier. Mapy są duże (5 – 10 km2), a w planach jest kolejna, wielka, do wolnej rozgrywki. Przeciwnicy wcale nie są jaskrawo oznaczeni, nawet przyjaciel z tej samej grupy może strzelić nam w plecy i zabrać wyposażenie. Dodatkowym utrudnieniem są, sterowani przez AI, bandyci.<br /><div style="text-align: center;"><a href="https://i.imgur.com/sagQpGx.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><img src="https://i.imgur.com/sagQpGxl.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></a></div><br /><br />Dostępny jest również system rozwoju gracza powiązany z talentami – aby statystyki wzrosły, musimy korzystać z danej umiejętności. Jak wiadomo, nieużywany narząd zanika, co w grze sprowadzi się do tego, że jeśli nie będziemy korzystać z danego talentu, jego poziom spadnie (lecz ponowne narastanie będzie o wiele szybsze). Smaczkiem jest zmiana sposobu korzystania z danej umiejętności, wraz ze wzrostem jej statystyk.<br /><br />EfT zostało stworzone z wykorzystaniem zmodyfikowanego silnika Unity 5 – jednakże na razie brak jakichkolwiek doniesień o ewentualnych portach na inne platformy.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1523">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-12T07:32:04" class="text-sm text-gray-500 font-mono">2017-04-12 07:32:04</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Materiały ukazują nam całkiem ciekawą i dopracowaną (jeśli można tak mówić na tym etapie) pozycję. Twórcy dobrze przemyśleli systemy, które chcą zaimplementować. Mam nadzieję, że żaden wydawca nie ściśnie ich za jaja i wydadzą nieokrojoną, smakowitą strzelankę.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1522" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1522"
+                                 aria-describedby="post-content-1522">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1524">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-04-12T13:02:30" class="text-sm text-gray-500 font-mono">2017-04-12 13:02:30</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja to się obawiam jednej rzeczy, a mianowicie tego, że na tworzenie tej gry zejdzie się tyle czasu, że w dniu premiery większość osób nie będzie już o niej pamiętało ew. już nie będzie zainteresowanych. Bo to co obiecali powinno udać im się stworzyć ale jak będzie w praktyce to się dopiero kiedyś dowiemy.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1522" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-04-11T14:50:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-11 14:50:23</time>
+                                    </header>
+                                    <div id="post-content-1522"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Już kilka razy oglądałem różne gameplaye itp. materiały z tej gry i zapowiada się całkiem interesująco. Oczywiście wszystko okaże się w praktyce bo z praktyką różnie bywa.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1525">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-12T13:24:50" class="text-sm text-gray-500 font-mono">2017-04-12 13:24:50</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div><br />Ja to się obawiam jednej rzeczy, a mianowicie tego, że na tworzenie tej gry zejdzie się tyle czasu, że w dniu premiery większość osób nie będzie już o niej pamiętało ew. już nie będzie zainteresowanych. Bo to co obiecali powinno udać im się stworzyć ale jak będzie w praktyce to się dopiero kiedyś dowiemy.<br /></div>W sumie racja. Kto wie czy Stalker wyszedłby, jeśli wydawca by ich nie pogonił. Miło byłoby, gdyby projekt nie skończył jak Survarium, które dalej jest w fazie testów, a płacić za nie trzeba. Szum dotyczący tej gry ucichł, wygląda na to, że projekt po cichu zdycha i będzie taką malutką niszówką, która gdzieś kiedyś chciała dogonić kolosa, ale nie pykło, bo twórcom zabrakło animuszu.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1523" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1523"
+                                 aria-describedby="post-content-1523">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1526">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-04-15T09:36:12" class="text-sm text-gray-500 font-mono">2017-04-15 09:36:12</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie ma singla? To nie zagram. Szkoda. ;(
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1523" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-12T07:32:04"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-12 07:32:04</time>
+                                    </header>
+                                    <div id="post-content-1523"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Materiały ukazują nam całkiem ciekawą i dopracowaną (jeśli można tak mówić na tym etapie) pozycję. Twórcy dobrze przemyśleli systemy, które chcą zaimplementować. Mam nadzieję, że żaden wydawca nie ściśnie ich za jaja i wydadzą nieokrojoną, smakowitą strzelankę.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1527">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-04-15T13:12:08" class="text-sm text-gray-500 font-mono">2017-04-15 13:12:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Na razie nie ma jakichkolwiek wieści o singlu – twórcy od początku zaplanowali tę grę w stylu multi, więc chyba się go nie doczekamy. A szkoda, mogłoby wyjść fajne coś. Tyle że trochę obawiałbym się COD-owego smrodku…
+                        </article>
+                    </li>
+                    
+                    <li id="post-1524" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1524"
+                                 aria-describedby="post-content-1524">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1528">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-04-16T14:07:52" class="text-sm text-gray-500 font-mono">2017-04-16 14:07:52</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Na ten moment nie wygląda na to, aby w trakcie rozgrywki było dużo interakcji z innymi graczami. Mapy mają być mocno wyludnione, nie jest to typowe multi. Trochę jednak czasu upłynie zanim będzie można powiedzieć coś na 100%, bo póki co dostęp do zamkniętej alfy kosztuje ponad 400zł, a żadnych konkretnych dat odnośnie bety nie ma.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1524" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-04-12T13:02:30"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-12 13:02:30</time>
+                                    </header>
+                                    <div id="post-content-1524"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Ja to się obawiam jednej rzeczy, a mianowicie tego, że na tworzenie tej gry zejdzie się tyle czasu, że w dniu premiery większość osób nie będzie już o niej pamiętało ew. już nie będzie zainteresowanych. Bo to co obiecali powinno udać im się stworzyć ale jak będzie w praktyce to się dopiero kiedyś dowiemy.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1529">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">hubi1</span>
-                                <time datetime="2017-08-19T06:45:08" class="text-sm text-gray-500 font-mono">2017-08-19 06:45:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <a href="https://buff.ly/2wYzTPJ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Escape from Tarkov is a compelling game about gear, and how we store it</a>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1525" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1525"
+                                 aria-describedby="post-content-1525">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1724">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-12-29T10:46:03" class="text-sm text-gray-500 font-mono">2017-12-29 10:46:03</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Dzisiaj w końcu dostałem klucz do bety&#8230; Szkoda, że komp jest 360km stąd :E
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1525" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-12T13:24:50"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-12 13:24:50</time>
+                                    </header>
+                                    <div id="post-content-1525"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div><br />Ja to się obawiam jednej rzeczy, a mianowicie tego, że na tworzenie tej gry zejdzie się tyle czasu, że w dniu premiery większość osób nie będzie już o niej pamiętało ew. już nie będzie zainteresowanych. Bo to co obiecali powinno udać im się stworzyć ale jak będzie w praktyce to się dopiero kiedyś dowiemy.<br /></div>W sumie racja. Kto wie czy Stalker wyszedłby, jeśli wydawca by ich nie pogonił. Miło byłoby, gdyby projekt nie skończył jak Survarium, które dalej jest w fazie testów, a płacić za nie trzeba. Szum dotyczący tej gry ucichł, wygląda na to, że projekt po cichu zdycha i będzie taką malutką niszówką, która gdzieś kiedyś chciała dogonić kolosa, ale nie pykło, bo twórcom zabrakło animuszu.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1727">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-12-31T15:54:43" class="text-sm text-gray-500 font-mono">2017-12-31 15:54:43</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1724" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Dzisiaj w końcu dostałem klucz do bety&#8230; Szkoda, że komp jest 360km stąd :E</div><br />Jak będziesz przy kompie, opowiedz coś więcej :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-1526" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1526"
+                                 aria-describedby="post-content-1526">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1729">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2017-12-31T20:58:26" class="text-sm text-gray-500 font-mono">2017-12-31 20:58:26</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Beta przywiozła moje dupsko, już się pobiera, z tego co wyczytałem to za darmo mogę sobie pograć tydzień/do 4 stycznia :(
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1526" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-04-15T09:36:12"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-15 09:36:12</time>
+                                    </header>
+                                    <div id="post-content-1526"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Nie ma singla? To nie zagram. Szkoda. ;(
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1734">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-01T14:11:37" class="text-sm text-gray-500 font-mono">2018-01-01 14:11:37</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1729" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Beta przywiozła moje dupsko, już się pobiera, z tego co wyczytałem to za darmo mogę sobie pograć tydzień/do 4 stycznia :(</div><br />Dobre i to, przynajmniej zobaczysz, co w trawie piszczy :)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1527" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1527"
+                                 aria-describedby="post-content-1527">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1735">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-01-01T15:26:40" class="text-sm text-gray-500 font-mono">2018-01-01 15:26:40</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Co mogę powiedzieć&#8230; optymalizacja - faktycznie, mimo, że zaraz otwarta beta nadal nie jest idealna. Gram na medium, gdzie grafika wygląda cóż&#8230; średnio. GTA V czy Fallout 4 wyglądają o wiele ładniej i działają mi w 60FPS, tutaj jest jakieś 40-50FPS ze spadkami do 20. Grafę mogę porównać do Army 2 czy 3, w Armie może ciut lepsza optymalizacja. Klimat z grafiką - jak w Armie 2 ze stalkerskimi modami. Modyfikacje broni faktycznie robią wrażenie. Aczkolwiek początkowo wybór broni może robić wrażenie tak jest na pewno mniej niż w Stalkerze. Z tego co widzę mamy z 8 strzelb, z 6 SMG, z 5 czy 6 pistoletów, z 10 karabinów&#8230; Tyle, że w sumie wszystkie są pochodne. Np. 5 odmian AK, a to od Saigi cywywilna, a to jakieś AK na węgierskiej czy czeskiej licencji, a to AK z Iżmasza itp. Więc niby spluw dużo - ale wszystkie są podobne więc czuje się jakby było ich mało. Z zachodnich to wiem o AR-15 i chyba Sig jest, ale jak narazie znalazłem tylko muszkę do niego xD Giniemy często&#8230; a zginięcie na akcji - bye bye wszystkie nasze rzeczy (chyba, że je ubezpieczymy i nikt nam z naszego truchła ubezpieczonych rzeczy nie weźmie). Na razie to taki deathmach na kilku mapach&#8230; tzn. raidy. Czyli respimy się w miarę losowym miejscu na początku planszy i musimy zbierać graty, żeby je potem sprzedawać (lub wykorzystać np. mody do broni czy po prostu bronie) i znaleźć wyjście z planszy. Kojarzy mi się w World of Tanks, czyli klikamy bitwa, czekamy na innych graczy, sesyjka 20-40 minut i jesteśmy spowrotem w menu.<br />Mówi się, że obecnie jest nastawione na P2W&#8230; Chodzi o to, że w bazie w której możemy trzymać fanty po akcji mamy ograniczone miejsce&#8230; chyba, że kupimy je za prawdziwe $$$. Na szczęscie jest trochę sztuczek które pomogą nam zrobić dodatkowe miejsce. A co, gdy na raidach będziemy cały czas ginąć i stracimy w końcu całe wyposażenie i pieniądze? Opcja a) idziemy na żywioł i respimy się tylko z nożem który zawsze sie odnawia i po prostu szukamy po planszy broni (/zabijamy innych z noża, czasami się udaje). Opcja b) gramy jako SCAV, czyli powiedzmy ludność cywilna która wzięła sprawy w swoje ręce. Jeżeli zginiemy jako SCAV no to tracimy to co on miał, ale nic z naszego głównego ekwipunku. Miejsca spawnu SCAV jest losowe jak i wyposażenie które otrzymuje (czasami np. niezła strzelba z pokaźnym zapasem amunicji, czasami 1 pistolet z paroma nabojami). Jeżeli ewakujemy się jako SCAV to zbieramy całe wyposażenie tak jakbyśmy grali swoim najemnikiem. Ale jeżeli zginiemy - musimy odczekać 30 minut zanim znowu będziemy mogli grać jako SCAV.<br /><br />W grze są 3 waluty i paru handlarzy. Ruble, € i $. Większość rzeczy kupimy za ruble, ale niektóre fajne przedmioty tylko za € lub $. € lub $ wymieniamy u handlarzy, albo szukamy w trupach. Musimy dbać o reputacje z handlarzami (niektórym nie podoba się, że hanldujemy z jakimś innym handlarzem itp.)<br /><br />Są jakieś zadania coś jak zadania poboczne w Stalkerze. Dostajemy je od handlarzy.<br /><br />Aha - jak chcecie kupić grę to albo edycje standardową (obecnie 103zł), albo full pakiet za obecnie 380zł (głównie chodzi o rozmiar skrytki w bazie i dostęp za free do DLC). Pośrednie się nie opłacają.<br /><br />Ale czy warto kupić? Cóż - jak któs z samych filmików jest podjarany i po opiniach mimo wszystko chce kupić i nie martwi się o optymalizacje  to śmiało. Najlepiej standardową edycje i jak już jednak się przyjmie to upgrade do full edycji. Ja? Chyba poczekam na tryb freeplay i spadek cen. Po skończonej becie myślę, że 80-100zł to będzie uczciwa cena. Gra ma potencjał, żeby przebić PUBG.<br /><br />Mój komp: I5 3570K 4.6GHZ, Sapphire R9 280X, 12GB RAM 1833MHZ CL9<br /><br />Edit: <br /><br />A jest system rozwoju postaci - im więcej biegamy tym więszka nasza wytryzmałosć itp. Im częsciej strzelamy z AK to tym lepiej radzimy sobie z AK i pochodnymi. Większa kontrola odrzutu itp. Aleee! Jeżeli wyuczymy jakąś umiejętność, ale potem z niej nie będziemy korzystać to nasza postać powoli będzie ją zapominać, efekt tym mniejszy im bardziej mamy wyuczoną umiejętność pamięci (pamieći chyba uczymy się ekplorując i poznająć nowe przedmioty).
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1527" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-04-15T13:12:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-15 13:12:08</time>
+                                    </header>
+                                    <div id="post-content-1527"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Na razie nie ma jakichkolwiek wieści o singlu – twórcy od początku zaplanowali tę grę w stylu multi, więc chyba się go nie doczekamy. A szkoda, mogłoby wyjść fajne coś. Tyle że trochę obawiałbym się COD-owego smrodku…
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1741">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-02T23:23:08" class="text-sm text-gray-500 font-mono">2018-01-02 23:23:08</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ropas, dawaj jakiś kosztorys z operowania Becią w 2018.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1528" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1528"
+                                 aria-describedby="post-content-1528">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1742">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-01-02T23:29:34" class="text-sm text-gray-500 font-mono">2018-01-02 23:29:34</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Pewnie jeździ tą rozpadliną co 2-3 dni na dializy krwi bo już obie nerki spieniężył na skrzynię biegów czy inne gówno.<br />Co do gry. Walić ją, walić mikropłatności. Szanuję tylko CoD4. <br />Serdecznie pozdrawiam.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1528" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-04-16T14:07:52"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-04-16 14:07:52</time>
+                                    </header>
+                                    <div id="post-content-1528"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Na ten moment nie wygląda na to, aby w trakcie rozgrywki było dużo interakcji z innymi graczami. Mapy mają być mocno wyludnione, nie jest to typowe multi. Trochę jednak czasu upłynie zanim będzie można powiedzieć coś na 100%, bo póki co dostęp do zamkniętej alfy kosztuje ponad 400zł, a żadnych konkretnych dat odnośnie bety nie ma.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1743">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Enzo</span>
-                                <time datetime="2018-01-03T01:38:02" class="text-sm text-gray-500 font-mono">2018-01-03 01:38:02</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Konto w WoT kupione?
+                        </article>
+                    </li>
+                    
+                    <li id="post-1529" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1529"
+                                 aria-describedby="post-content-1529">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/24.jpg?1559183528"
+                                     alt="Awatar użytkownika hubi1"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1746">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Ropasiak</span>
-                                <time datetime="2018-01-03T22:56:57" class="text-sm text-gray-500 font-mono">2018-01-03 22:56:57</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1741" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>Ropas, dawaj jakiś kosztorys z operowania Becią w 2018.</div><br />Jak na razie przez rok pękło 11 tysi kosztów bez paliwa. Muszę znowu oddać turbo na regeneracje (myślę nad hybrydą 1450zł), bo gościu źle mi zregenerował, a już po gwarancji i 2 wtryski zregenerować&#8230;<br /><br />Oprócz tego wymienić amortyzatory (800zł), nowy aku (480zł) i przydałoby się przyjrzeć pompie wspomagania i wymienić pompę wody (300zł). No i blacharkę ogarnąć, jak to się zrobi będzie lala ^^
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1529" class="font-bold text-lg text-white">hubi1</h3>
+                                        <time datetime="2017-08-19T06:45:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-08-19 06:45:08</time>
+                                    </header>
+                                    <div id="post-content-1529"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika hubi1">
+                                        <a href="https://buff.ly/2wYzTPJ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Escape from Tarkov is a compelling game about gear, and how we store it</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1747">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-01-04T08:19:55" class="text-sm text-gray-500 font-mono">2018-01-04 08:19:55</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-1735" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Co mogę powiedzieć&#8230; optymalizacja - faktycznie, mimo, że zaraz otwarta beta nadal nie jest idealna. Gram na medium, gdzie grafika wygląda cóż&#8230; średnio. GTA V czy Fallout 4 wyglądają o wiele ładniej i działają mi w 60FPS, tutaj jest jakieś 40-50FPS ze spadkami do 20. Grafę mogę porównać do Army 2 czy 3, w Armie może ciut lepsza optymalizacja. Klimat z grafiką - jak w Armie 2 ze stalkerskimi modami. Modyfikacje broni faktycznie robią wrażenie. Aczkolwiek początkowo wybór broni może robić wrażenie tak jest na pewno mniej niż w Stalkerze. Z tego co widzę mamy z 8 strzelb, z 6 SMG, z 5 czy 6 pistoletów, z 10 karabinów&#8230; Tyle, że w sumie wszystkie są pochodne. Np. 5 odmian AK, a to od Saigi cywywilna, a to jakieś AK na węgierskiej czy czeskiej licencji, a to AK z Iżmasza itp. Więc niby spluw dużo - ale wszystkie są podobne więc czuje się jakby było ich mało. Z zachodnich to wiem o AR-15 i chyba Sig jest, ale jak narazie znalazłem tylko muszkę do niego xD Giniemy często&#8230; a zginięcie na akcji - bye bye wszystkie nasze rzeczy (chyba, że je ubezpieczymy i nikt nam z naszego truchła ubezpieczonych rzeczy nie weźmie). Na razie to taki deathmach na kilku mapach&#8230; tzn. raidy. Czyli respimy się w miarę losowym miejscu na początku planszy i musimy zbierać graty, żeby je potem sprzedawać (lub wykorzystać np. mody do broni czy po prostu bronie) i znaleźć wyjście z planszy. Kojarzy mi się w World of Tanks, czyli klikamy bitwa, czekamy na innych graczy, sesyjka 20-40 minut i jesteśmy spowrotem w menu (…)</div><br />Stary, toś się rozpisał. Nawet nie będę cytował całej wiadomości, bo zginie sens. Z tego co klepnąłeś, wynika, że gra jest w powijakach, a jakikolwiek hype na jej punkcie jest bezsensowny. Powtarza błędy gierek, które kiedykolwiek próbowały imitować Stolcera…<br /><div class="quote-block"><div class="quote-header"><a href="#post-1746" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Jak na razie przez rok pękło 11 tysi kosztów bez paliwa. Muszę znowu oddać turbo na regeneracje (myślę nad hybrydą 1450zł), bo gościu źle mi zregenerował, a już po gwarancji i 2 wtryski zregenerować&#8230;<br /><br />Oprócz tego wymienić amortyzatory (800zł), nowy aku (480zł) i przydałoby się przyjrzeć pompie wspomagania i wymienić pompę wody (300zł). No i blacharkę ogarnąć, jak to się zrobi będzie lala ^^</div><br />Chory jesteś, człowieku :D
+                        </article>
+                    </li>
+                    
+                    <li id="post-1724" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1724"
+                                 aria-describedby="post-content-1724">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2244">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-05-28T12:14:15" class="text-sm text-gray-500 font-mono">2018-05-28 12:14:15</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Co słychać w grze, o której mieliśmy robić forum? xD Ropas, sprzedałeś już klucz do bety żeby mieć na paliwo czy może napiszesz jeszcze jedną ropasową recenzję?
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1724" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-12-29T10:46:03"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-29 10:46:03</time>
+                                    </header>
+                                    <div id="post-content-1724"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Dzisiaj w końcu dostałem klucz do bety&#8230; Szkoda, że komp jest 360km stąd :E
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2245">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2018-05-28T13:07:49" class="text-sm text-gray-500 font-mono">2018-05-28 13:07:49</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <div class="quote-block"><div class="quote-header"><a href="#post-2244" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Co słychać w grze, o której mieliśmy robić forum? xD Ropas, sprzedałeś już klucz do bety żeby mieć na paliwo czy może napiszesz jeszcze jedną ropasową recenzję?</div><br />Jeśli dobrze pamiętam, w grze niezbyt wiele się dzieje. Ropas nie ma czasu, wywala gnój od koni w Niemczech (kup sobie maść na oparzenia, Mizzle) xD
+                        </article>
+                    </li>
+                    
+                    <li id="post-1727" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1727"
+                                 aria-describedby="post-content-1727">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1727" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-12-31T15:54:43"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-31 15:54:43</time>
+                                    </header>
+                                    <div id="post-content-1727"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1724" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Dzisiaj w końcu dostałem klucz do bety&#8230; Szkoda, że komp jest 360km stąd :E</div><br />Jak będziesz przy kompie, opowiedz coś więcej :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1729" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1729"
+                                 aria-describedby="post-content-1729">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1729" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2017-12-31T20:58:26"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-12-31 20:58:26</time>
+                                    </header>
+                                    <div id="post-content-1729"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Beta przywiozła moje dupsko, już się pobiera, z tego co wyczytałem to za darmo mogę sobie pograć tydzień/do 4 stycznia :(
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1734" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1734"
+                                 aria-describedby="post-content-1734">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1734" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-01T14:11:37"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-01 14:11:37</time>
+                                    </header>
+                                    <div id="post-content-1734"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1729" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Beta przywiozła moje dupsko, już się pobiera, z tego co wyczytałem to za darmo mogę sobie pograć tydzień/do 4 stycznia :(</div><br />Dobre i to, przynajmniej zobaczysz, co w trawie piszczy :)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1735" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1735"
+                                 aria-describedby="post-content-1735">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1735" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-01-01T15:26:40"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-01 15:26:40</time>
+                                    </header>
+                                    <div id="post-content-1735"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        Co mogę powiedzieć&#8230; optymalizacja - faktycznie, mimo, że zaraz otwarta beta nadal nie jest idealna. Gram na medium, gdzie grafika wygląda cóż&#8230; średnio. GTA V czy Fallout 4 wyglądają o wiele ładniej i działają mi w 60FPS, tutaj jest jakieś 40-50FPS ze spadkami do 20. Grafę mogę porównać do Army 2 czy 3, w Armie może ciut lepsza optymalizacja. Klimat z grafiką - jak w Armie 2 ze stalkerskimi modami. Modyfikacje broni faktycznie robią wrażenie. Aczkolwiek początkowo wybór broni może robić wrażenie tak jest na pewno mniej niż w Stalkerze. Z tego co widzę mamy z 8 strzelb, z 6 SMG, z 5 czy 6 pistoletów, z 10 karabinów&#8230; Tyle, że w sumie wszystkie są pochodne. Np. 5 odmian AK, a to od Saigi cywywilna, a to jakieś AK na węgierskiej czy czeskiej licencji, a to AK z Iżmasza itp. Więc niby spluw dużo - ale wszystkie są podobne więc czuje się jakby było ich mało. Z zachodnich to wiem o AR-15 i chyba Sig jest, ale jak narazie znalazłem tylko muszkę do niego xD Giniemy często&#8230; a zginięcie na akcji - bye bye wszystkie nasze rzeczy (chyba, że je ubezpieczymy i nikt nam z naszego truchła ubezpieczonych rzeczy nie weźmie). Na razie to taki deathmach na kilku mapach&#8230; tzn. raidy. Czyli respimy się w miarę losowym miejscu na początku planszy i musimy zbierać graty, żeby je potem sprzedawać (lub wykorzystać np. mody do broni czy po prostu bronie) i znaleźć wyjście z planszy. Kojarzy mi się w World of Tanks, czyli klikamy bitwa, czekamy na innych graczy, sesyjka 20-40 minut i jesteśmy spowrotem w menu.<br />Mówi się, że obecnie jest nastawione na P2W&#8230; Chodzi o to, że w bazie w której możemy trzymać fanty po akcji mamy ograniczone miejsce&#8230; chyba, że kupimy je za prawdziwe $$$. Na szczęscie jest trochę sztuczek które pomogą nam zrobić dodatkowe miejsce. A co, gdy na raidach będziemy cały czas ginąć i stracimy w końcu całe wyposażenie i pieniądze? Opcja a) idziemy na żywioł i respimy się tylko z nożem który zawsze sie odnawia i po prostu szukamy po planszy broni (/zabijamy innych z noża, czasami się udaje). Opcja b) gramy jako SCAV, czyli powiedzmy ludność cywilna która wzięła sprawy w swoje ręce. Jeżeli zginiemy jako SCAV no to tracimy to co on miał, ale nic z naszego głównego ekwipunku. Miejsca spawnu SCAV jest losowe jak i wyposażenie które otrzymuje (czasami np. niezła strzelba z pokaźnym zapasem amunicji, czasami 1 pistolet z paroma nabojami). Jeżeli ewakujemy się jako SCAV to zbieramy całe wyposażenie tak jakbyśmy grali swoim najemnikiem. Ale jeżeli zginiemy - musimy odczekać 30 minut zanim znowu będziemy mogli grać jako SCAV.<br /><br />W grze są 3 waluty i paru handlarzy. Ruble, € i $. Większość rzeczy kupimy za ruble, ale niektóre fajne przedmioty tylko za € lub $. € lub $ wymieniamy u handlarzy, albo szukamy w trupach. Musimy dbać o reputacje z handlarzami (niektórym nie podoba się, że hanldujemy z jakimś innym handlarzem itp.)<br /><br />Są jakieś zadania coś jak zadania poboczne w Stalkerze. Dostajemy je od handlarzy.<br /><br />Aha - jak chcecie kupić grę to albo edycje standardową (obecnie 103zł), albo full pakiet za obecnie 380zł (głównie chodzi o rozmiar skrytki w bazie i dostęp za free do DLC). Pośrednie się nie opłacają.<br /><br />Ale czy warto kupić? Cóż - jak któs z samych filmików jest podjarany i po opiniach mimo wszystko chce kupić i nie martwi się o optymalizacje  to śmiało. Najlepiej standardową edycje i jak już jednak się przyjmie to upgrade do full edycji. Ja? Chyba poczekam na tryb freeplay i spadek cen. Po skończonej becie myślę, że 80-100zł to będzie uczciwa cena. Gra ma potencjał, żeby przebić PUBG.<br /><br />Mój komp: I5 3570K 4.6GHZ, Sapphire R9 280X, 12GB RAM 1833MHZ CL9<br /><br />Edit: <br /><br />A jest system rozwoju postaci - im więcej biegamy tym więszka nasza wytryzmałosć itp. Im częsciej strzelamy z AK to tym lepiej radzimy sobie z AK i pochodnymi. Większa kontrola odrzutu itp. Aleee! Jeżeli wyuczymy jakąś umiejętność, ale potem z niej nie będziemy korzystać to nasza postać powoli będzie ją zapominać, efekt tym mniejszy im bardziej mamy wyuczoną umiejętność pamięci (pamieći chyba uczymy się ekplorując i poznająć nowe przedmioty).
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1741" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1741"
+                                 aria-describedby="post-content-1741">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1741" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-02T23:23:08"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-02 23:23:08</time>
+                                    </header>
+                                    <div id="post-content-1741"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        Ropas, dawaj jakiś kosztorys z operowania Becią w 2018.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1742" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1742"
+                                 aria-describedby="post-content-1742">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1742" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-01-02T23:29:34"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-02 23:29:34</time>
+                                    </header>
+                                    <div id="post-content-1742"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Pewnie jeździ tą rozpadliną co 2-3 dni na dializy krwi bo już obie nerki spieniężył na skrzynię biegów czy inne gówno.<br />Co do gry. Walić ją, walić mikropłatności. Szanuję tylko CoD4. <br />Serdecznie pozdrawiam.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1743" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1743"
+                                 aria-describedby="post-content-1743">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/4.jpg?1559579200"
+                                     alt="Awatar użytkownika Enzo"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1743" class="font-bold text-lg text-white">Enzo</h3>
+                                        <time datetime="2018-01-03T01:38:02"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-03 01:38:02</time>
+                                    </header>
+                                    <div id="post-content-1743"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Enzo">
+                                        Konto w WoT kupione?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1746" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1746"
+                                 aria-describedby="post-content-1746">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/19.jpg?1606511630"
+                                     alt="Awatar użytkownika Ropasiak"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1746" class="font-bold text-lg text-white">Ropasiak</h3>
+                                        <time datetime="2018-01-03T22:56:57"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-03 22:56:57</time>
+                                    </header>
+                                    <div id="post-content-1746"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Ropasiak">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1741" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>Ropas, dawaj jakiś kosztorys z operowania Becią w 2018.</div><br />Jak na razie przez rok pękło 11 tysi kosztów bez paliwa. Muszę znowu oddać turbo na regeneracje (myślę nad hybrydą 1450zł), bo gościu źle mi zregenerował, a już po gwarancji i 2 wtryski zregenerować&#8230;<br /><br />Oprócz tego wymienić amortyzatory (800zł), nowy aku (480zł) i przydałoby się przyjrzeć pompie wspomagania i wymienić pompę wody (300zł). No i blacharkę ogarnąć, jak to się zrobi będzie lala ^^
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1747" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1747"
+                                 aria-describedby="post-content-1747">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1747" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-01-04T08:19:55"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-01-04 08:19:55</time>
+                                    </header>
+                                    <div id="post-content-1747"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-1735" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Co mogę powiedzieć&#8230; optymalizacja - faktycznie, mimo, że zaraz otwarta beta nadal nie jest idealna. Gram na medium, gdzie grafika wygląda cóż&#8230; średnio. GTA V czy Fallout 4 wyglądają o wiele ładniej i działają mi w 60FPS, tutaj jest jakieś 40-50FPS ze spadkami do 20. Grafę mogę porównać do Army 2 czy 3, w Armie może ciut lepsza optymalizacja. Klimat z grafiką - jak w Armie 2 ze stalkerskimi modami. Modyfikacje broni faktycznie robią wrażenie. Aczkolwiek początkowo wybór broni może robić wrażenie tak jest na pewno mniej niż w Stalkerze. Z tego co widzę mamy z 8 strzelb, z 6 SMG, z 5 czy 6 pistoletów, z 10 karabinów&#8230; Tyle, że w sumie wszystkie są pochodne. Np. 5 odmian AK, a to od Saigi cywywilna, a to jakieś AK na węgierskiej czy czeskiej licencji, a to AK z Iżmasza itp. Więc niby spluw dużo - ale wszystkie są podobne więc czuje się jakby było ich mało. Z zachodnich to wiem o AR-15 i chyba Sig jest, ale jak narazie znalazłem tylko muszkę do niego xD Giniemy często&#8230; a zginięcie na akcji - bye bye wszystkie nasze rzeczy (chyba, że je ubezpieczymy i nikt nam z naszego truchła ubezpieczonych rzeczy nie weźmie). Na razie to taki deathmach na kilku mapach&#8230; tzn. raidy. Czyli respimy się w miarę losowym miejscu na początku planszy i musimy zbierać graty, żeby je potem sprzedawać (lub wykorzystać np. mody do broni czy po prostu bronie) i znaleźć wyjście z planszy. Kojarzy mi się w World of Tanks, czyli klikamy bitwa, czekamy na innych graczy, sesyjka 20-40 minut i jesteśmy spowrotem w menu (…)</div><br />Stary, toś się rozpisał. Nawet nie będę cytował całej wiadomości, bo zginie sens. Z tego co klepnąłeś, wynika, że gra jest w powijakach, a jakikolwiek hype na jej punkcie jest bezsensowny. Powtarza błędy gierek, które kiedykolwiek próbowały imitować Stolcera…<br /><div class="quote-block"><div class="quote-header"><a href="#post-1746" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Jak na razie przez rok pękło 11 tysi kosztów bez paliwa. Muszę znowu oddać turbo na regeneracje (myślę nad hybrydą 1450zł), bo gościu źle mi zregenerował, a już po gwarancji i 2 wtryski zregenerować&#8230;<br /><br />Oprócz tego wymienić amortyzatory (800zł), nowy aku (480zł) i przydałoby się przyjrzeć pompie wspomagania i wymienić pompę wody (300zł). No i blacharkę ogarnąć, jak to się zrobi będzie lala ^^</div><br />Chory jesteś, człowieku :D
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2244" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2244"
+                                 aria-describedby="post-content-2244">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2244" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-05-28T12:14:15"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-05-28 12:14:15</time>
+                                    </header>
+                                    <div id="post-content-2244"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Co słychać w grze, o której mieliśmy robić forum? xD Ropas, sprzedałeś już klucz do bety żeby mieć na paliwo czy może napiszesz jeszcze jedną ropasową recenzję?
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2245" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2245"
+                                 aria-describedby="post-content-2245">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2245" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2018-05-28T13:07:49"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-05-28 13:07:49</time>
+                                    </header>
+                                    <div id="post-content-2245"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        <div class="quote-block"><div class="quote-header"><a href="#post-2244" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Co słychać w grze, o której mieliśmy robić forum? xD Ropas, sprzedałeś już klucz do bety żeby mieć na paliwo czy może napiszesz jeszcze jedną ropasową recenzję?</div><br />Jeśli dobrze pamiętam, w grze niezbyt wiele się dzieje. Ropas nie ma czasu, wywala gnój od koni w Niemczech (kup sobie maść na oparzenia, Mizzle) xD
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,125 +44,263 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">A w Polsce dalej jak w lesie</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">A w Polsce dalej jak w lesie</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-2887">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2020-04-16T09:51:18" class="text-sm text-gray-500 font-mono">2020-04-16 09:51:18</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jak Wam się wydaje, Polska wyjdzie kiedyś z bycia zapyziałem krajem trzeciego świata? Popatrzcie na robacką mentalność w obliczu epidemii, bandowanie się na kwadratach, wieśniackie pogaduchy przez płot, hehepifko. Jak przetłumaczyć tym ludziom, że są nieziemsko zjebani i nie ogarniają zagrożenia, które sami roznoszą? A potem płaku, płaku, bo PIS był w Smoleńsku, oni ograniczajo prawa obywatelskie xD Ale do Basi na ploteczki to czemu nie xD<br /><div style="text-align: center;"><br /><img src="attachments/0/20-d08a144da7f23c2260ff6ea709d8c116.data" alt="Załącznik 20" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /></div><br />Pozdro.
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku A w Polsce dalej jak w lesie</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-2887" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2887"
+                                 aria-describedby="post-content-2887">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2888">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/43.jpg?1558912131" alt="Awatar King Crimson" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">King Crimson</span>
-                                <time datetime="2020-04-16T22:47:38" class="text-sm text-gray-500 font-mono">2020-04-16 22:47:38</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Trzeba zrobić to, co proponował już dawno wybitny politolog, polityk, filozof, publicysta, przedsiębiorca i szachista, Janusz Koran-Mekka.<br /><img src="https://www.wykop.pl/cdn/c3201142/comment_MOEwHSumrhE9gqfiEY9u4e4y8kqQl9dK.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2887" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2020-04-16T09:51:18"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2020-04-16 09:51:18</time>
+                                    </header>
+                                    <div id="post-content-2887"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Jak Wam się wydaje, Polska wyjdzie kiedyś z bycia zapyziałem krajem trzeciego świata? Popatrzcie na robacką mentalność w obliczu epidemii, bandowanie się na kwadratach, wieśniackie pogaduchy przez płot, hehepifko. Jak przetłumaczyć tym ludziom, że są nieziemsko zjebani i nie ogarniają zagrożenia, które sami roznoszą? A potem płaku, płaku, bo PIS był w Smoleńsku, oni ograniczajo prawa obywatelskie xD Ale do Basi na ploteczki to czemu nie xD<br /><div style="text-align: center;"><br /><img src="attachments/0/20-d08a144da7f23c2260ff6ea709d8c116.data" alt="Załącznik 20" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /></div><br />Pozdro.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2889">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Infernal</span>
-                                <time datetime="2020-04-17T00:31:35" class="text-sm text-gray-500 font-mono">2020-04-17 00:31:35</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ta cała korona to zwykła ściema, nic się nie dzieje, oszukują was, żeby sprawdzić na ile mogą kontrolować społeczeństwo, a zresztą to wszystko przez 5G, LGBT i KFC.<br />Mówię jak jest, Mad Max Golonka.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2888" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2888"
+                                 aria-describedby="post-content-2888">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/43.jpg?1558912131"
+                                     alt="Awatar użytkownika King Crimson"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2890">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2020-04-17T09:48:36" class="text-sm text-gray-500 font-mono">2020-04-17 09:48:36</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Widzicie dychotomię tego zachowania?<br />– HURR, młode ludzie umierajo, borzu ratuj polskie, DURR. Janusz, włoncz fakty, zobaczym, ile ludziów pomarło. A potem pujde do Borzenki, pomodle sie z nio.<br />Lament, bo telewizja pokazuje złe wieści, a potem zapierdala takie do Biedronki i kaszle na ludzi, maca wszystko gołymi łapami. Trochę szanuję to, co <span class="user-mention">@@King Crimson</span> napisał.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2888" class="font-bold text-lg text-white">King Crimson</h3>
+                                        <time datetime="2020-04-16T22:47:38"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2020-04-16 22:47:38</time>
+                                    </header>
+                                    <div id="post-content-2888"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika King Crimson">
+                                        Trzeba zrobić to, co proponował już dawno wybitny politolog, polityk, filozof, publicysta, przedsiębiorca i szachista, Janusz Koran-Mekka.<br /><img src="https://www.wykop.pl/cdn/c3201142/comment_MOEwHSumrhE9gqfiEY9u4e4y8kqQl9dK.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2892">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
-                                <time datetime="2020-04-21T09:07:22" class="text-sm text-gray-500 font-mono">2020-04-21 09:07:22</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Nie, w polsce jak w chlewie osranym gównem. 1/10 nie zamieszkam więcej.
+                        </article>
+                    </li>
+                    
+                    <li id="post-2889" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2889"
+                                 aria-describedby="post-content-2889">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/16.jpg?1561655666"
+                                     alt="Awatar użytkownika Infernal"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2889" class="font-bold text-lg text-white">Infernal</h3>
+                                        <time datetime="2020-04-17T00:31:35"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2020-04-17 00:31:35</time>
+                                    </header>
+                                    <div id="post-content-2889"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Infernal">
+                                        Ta cała korona to zwykła ściema, nic się nie dzieje, oszukują was, żeby sprawdzić na ile mogą kontrolować społeczeństwo, a zresztą to wszystko przez 5G, LGBT i KFC.<br />Mówię jak jest, Mad Max Golonka.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2890" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2890"
+                                 aria-describedby="post-content-2890">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2890" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2020-04-17T09:48:36"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2020-04-17 09:48:36</time>
+                                    </header>
+                                    <div id="post-content-2890"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Widzicie dychotomię tego zachowania?<br />– HURR, młode ludzie umierajo, borzu ratuj polskie, DURR. Janusz, włoncz fakty, zobaczym, ile ludziów pomarło. A potem pujde do Borzenki, pomodle sie z nio.<br />Lament, bo telewizja pokazuje złe wieści, a potem zapierdala takie do Biedronki i kaszle na ludzi, maca wszystko gołymi łapami. Trochę szanuję to, co <span class="user-mention">@@King Crimson</span> napisał.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2892" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2892"
+                                 aria-describedby="post-content-2892">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/5.jpg?1558897754"
+                                     alt="Awatar użytkownika Lenny Weisstein"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2892" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                        <time datetime="2020-04-21T09:07:22"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2020-04-21 09:07:22</time>
+                                    </header>
+                                    <div id="post-content-2892"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lenny Weisstein">
+                                        Nie, w polsce jak w chlewie osranym gównem. 1/10 nie zamieszkam więcej.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 

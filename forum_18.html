@@ -6,207 +6,536 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ogólna dyskusja - Archiwum Forum X-21</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
 
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Ogólna dyskusja</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-4xl font-bold text-white">Ogólna dyskusja</h1>
             
                 <p class="text-gray-400 mt-2">Ogólna dyskusja dotycząca gier</p>
             
-            <nav class="mt-4">
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">&larr; Wróć do strony głównej</a>
+            <nav class="mt-4" aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do strony głównej Forum X-21">&larr; Wróć do strony głównej</a>
             </nav>
         </header>
 
-        <div class="bg-gray-800 rounded-lg shadow-2xl p-3">
-            <ul class="space-y-3">
-                
-                <li>
-                    <a href="thread_321.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Ostatnie 4-5 lat w branży gier</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_200.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Nie dali mi nigdy</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_312.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>CoD: Warzone</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_289.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Chernobylite</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_127.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Łowcy okazji</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_280.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Gry na kanapie przez internet</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_250.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Niusy i ploteczki ze świata gier</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_236.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Konsole</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_270.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Sztim Szamer Szejl</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_268.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Falot 67</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_36.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>W co aktualnie gracie</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_113.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Steam</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_111.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Screeny z gier, czyli co tu się od***ało</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_204.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Retro gaming</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_41.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Gry na tablety i telefony</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_112.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Nowe wersje starych gier</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_155.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Platformówki</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_172.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Wściekły retro hubi</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_151.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Doktor Mario radzi</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_140.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Najlepsiejsze z najlepsiejszych</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_114.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Raptr</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_101.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Komputerowe gry RPG</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_33.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Rogue'like'i</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_50.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Szczelanka 2017</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_57.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Ciupanie w starcrafta II za darmochę.</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_40.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Szity</span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
+        <main id="main-content" role="main">
+            <section class="bg-gray-800 rounded-lg shadow-2xl p-3"
+                     role="region"
+                     aria-labelledby="threads-heading">
+                <h2 id="threads-heading" class="sr-only">Lista wątków w forum Ogólna dyskusja</h2>
+                <nav aria-label="Wątki w forum Ogólna dyskusja">
+                    <ul class="space-y-3" role="list">
+                        
+                        <li role="listitem">
+                            <a href="thread_321.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Ostatnie 4-5 lat w branży gier">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Ostatnie 4-5 lat w branży gier</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_200.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Nie dali mi nigdy">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Nie dali mi nigdy</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_312.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: CoD: Warzone">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">CoD: Warzone</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_289.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Chernobylite">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Chernobylite</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_127.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Łowcy okazji">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Łowcy okazji</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_280.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Gry na kanapie przez internet">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Gry na kanapie przez internet</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_250.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Niusy i ploteczki ze świata gier">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Niusy i ploteczki ze świata gier</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_236.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Konsole">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Konsole</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_270.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Sztim Szamer Szejl">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Sztim Szamer Szejl</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_268.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Falot 67">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Falot 67</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_36.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: W co aktualnie gracie">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">W co aktualnie gracie</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_113.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Steam">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Steam</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_111.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Screeny z gier, czyli co tu się od***ało">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Screeny z gier, czyli co tu się od***ało</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_204.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Retro gaming">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Retro gaming</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_41.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Gry na tablety i telefony">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Gry na tablety i telefony</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_112.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Nowe wersje starych gier">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Nowe wersje starych gier</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_155.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Platformówki">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Platformówki</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_172.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Wściekły retro hubi">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Wściekły retro hubi</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_151.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Doktor Mario radzi">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Doktor Mario radzi</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_140.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Najlepsiejsze z najlepsiejszych">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Najlepsiejsze z najlepsiejszych</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_114.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Raptr">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Raptr</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_101.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Komputerowe gry RPG">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Komputerowe gry RPG</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_33.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Rogue'like'i">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Rogue'like'i</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_50.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Szczelanka 2017">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Szczelanka 2017</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_57.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Ciupanie w starcrafta II za darmochę.">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Ciupanie w starcrafta II za darmochę.</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_40.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Szity">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Szity</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </section>
+        </main>
     </div>
 
 </body>

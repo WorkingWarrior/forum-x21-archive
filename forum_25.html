@@ -6,144 +6,383 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Książka i komiks - Archiwum Forum X-21</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
 
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Książka i komiks</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-4xl font-bold text-white">Książka i komiks</h1>
             
                 <p class="text-gray-400 mt-2">Czy stalkerzy w ogóle czytają książki?</p>
             
-            <nav class="mt-4">
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">&larr; Wróć do strony głównej</a>
+            <nav class="mt-4" aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do strony głównej Forum X-21">&larr; Wróć do strony głównej</a>
             </nav>
         </header>
 
-        <div class="bg-gray-800 rounded-lg shadow-2xl p-3">
-            <ul class="space-y-3">
-                
-                <li>
-                    <a href="thread_42.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Co ostatnio czytacie / przeczytaliście?</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_314.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Nowy awatar Solvego</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_309.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>[LN] Infinite Dendrogram</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_308.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>[LN] WorldEnd</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_306.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Piknik na skraju drogi</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_296.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>CD Action</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_281.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Czytniki e-booków</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_195.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Cykl Patrole - Siergiej Łukjanienko</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_206.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Ebooki - ktoś? Coś?</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_70.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Miroslav Žamboch</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_59.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Uniwersum Metro 2033</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_69.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Stephen King</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_85.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>H. P. Lovecraft</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_126.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Zagraniczne księgarnie</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_121.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Sergiusz Piasecki</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_97.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Darmowa baza książek i artykułów</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="thread_84.html" class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition">
-                        <svg class="w-5 h-5 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path></svg>
-                        <span>Jean-Christophe Grange</span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
+        <main id="main-content" role="main">
+            <section class="bg-gray-800 rounded-lg shadow-2xl p-3"
+                     role="region"
+                     aria-labelledby="threads-heading">
+                <h2 id="threads-heading" class="sr-only">Lista wątków w forum Książka i komiks</h2>
+                <nav aria-label="Wątki w forum Książka i komiks">
+                    <ul class="space-y-3" role="list">
+                        
+                        <li role="listitem">
+                            <a href="thread_42.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Co ostatnio czytacie / przeczytaliście?">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Co ostatnio czytacie / przeczytaliście?</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_314.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Nowy awatar Solvego">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Nowy awatar Solvego</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_309.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: [LN] Infinite Dendrogram">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">[LN] Infinite Dendrogram</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_308.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: [LN] WorldEnd">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">[LN] WorldEnd</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_306.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Piknik na skraju drogi">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Piknik na skraju drogi</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_296.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: CD Action">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">CD Action</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_281.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Czytniki e-booków">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Czytniki e-booków</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_195.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Cykl Patrole - Siergiej Łukjanienko">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Cykl Patrole - Siergiej Łukjanienko</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_206.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Ebooki - ktoś? Coś?">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Ebooki - ktoś? Coś?</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_70.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Miroslav Žamboch">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Miroslav Žamboch</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_59.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Uniwersum Metro 2033">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Uniwersum Metro 2033</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_69.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Stephen King">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Stephen King</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_85.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: H. P. Lovecraft">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">H. P. Lovecraft</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_126.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Zagraniczne księgarnie">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Zagraniczne księgarnie</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_121.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Sergiusz Piasecki">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Sergiusz Piasecki</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_97.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Darmowa baza książek i artykułów">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Darmowa baza książek i artykułów</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                        <li role="listitem">
+                            <a href="thread_84.html"
+                               class="flex items-center text-lg text-blue-400 hover:text-blue-300 transition focus-ring touch-target"
+                               aria-label="Otwórz wątek: Jean-Christophe Grange">
+                                <svg class="w-5 h-5 mr-3 text-gray-400 flex-shrink-0"
+                                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h4M5 8h2m4 0h2"></path>
+                                </svg>
+                                <div class="flex-grow">
+                                    <span class="block">Jean-Christophe Grange</span>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </section>
+        </main>
     </div>
 
 </body>

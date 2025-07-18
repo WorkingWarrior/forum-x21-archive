@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
         .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
         .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
         .post-body ul { @apply list-disc; }
@@ -18,11 +18,11 @@
         .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
         
         /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block { 
+        .code-block {
             @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
         }
         details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
         }
         details.spoiler-block div {
             @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
@@ -44,209 +44,387 @@
         }
         .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
         .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+        
+        /* Custom accessibility and UX styles */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 8px;
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 6px;
+            top: 6px;
+        }
+        
+        /* Enhanced focus styles - WCAG 2.1 AA compliant */
+        .focus-ring:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Touch target improvements for mobile */
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px;
+                min-width: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px;
+            }
+        }
+        
+        /* Breadcrumb microdata styling */
+        .breadcrumb {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
+
     <div class="container mx-auto max-w-4xl px-4 py-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
+            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">Strona główna</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="forum_7.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
+                        <span itemprop="name">O wszystkim</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="text-gray-400" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name" class="text-white font-semibold">Pieczywo czosnkowe</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </nav>
+
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Pieczywo czosnkowe</h1>
-            <nav>
-                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            <nav aria-label="Nawigacja powrotna">
+                <a href="index.html"
+                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
+                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
             </nav>
         </header>
-        <ol class="post-list space-y-10">
-            
-            <li id="post-1019">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/18.jpg?1512503192" alt="Awatar abbacchio" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">abbacchio</span>
-                                <time datetime="2017-01-23T19:45:11" class="text-sm text-gray-500 font-mono">2017-01-23 19:45:11</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jakie jest- każdy wie. Najlepsze jest takie cieplutkie, chrupiące. Takie, żeby czosnek było czuć nawet po trzykrotnym umyciu zębów. Jakie jest Wasze ulubione pieczywo czosnkowe? Z biedronki, piekarni, a może sami robicie? Pochwalcie się swoimi przepisami, upodobaniami, śmiesznymi obrazkami i anegdotami związanymi z pieczywem czosnkowym. Jakie potrawy dobrze komponują się z chlebem czosnkowym waszym zdaniem?<br />Mój faworyt to pieczywo czosnkowe z biedronki, ponieważ jest dobre, tanie i łatwo dostępne. Pieczywo czosnkowe lubię jeść jako śniadanie, obiad oraz kolację. <br /><img src="https://i.imgur.com/YvotRsb.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+
+        <main id="main-content" role="main">
+            <section role="region" aria-labelledby="posts-heading">
+                <h2 id="posts-heading" class="sr-only">Lista postów w wątku Pieczywo czosnkowe</h2>
+                <ol class="post-list space-y-10" role="list">
+                    
+                    <li id="post-1019" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1019"
+                                 aria-describedby="post-content-1019">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/18.jpg?1512503192"
+                                     alt="Awatar użytkownika abbacchio"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1020">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2017-01-23T19:52:10" class="text-sm text-gray-500 font-mono">2017-01-23 19:52:10</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Jedyne słuszne pieczywo czosnkowe to bagiety czosnkowe i nawet z tym nie handlujcie. W auchan / lidlu / innym hipergównie średnio dwa dwajścia dziewięć za sztukę. <br />/fred
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1019" class="font-bold text-lg text-white">abbacchio</h3>
+                                        <time datetime="2017-01-23T19:45:11"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 19:45:11</time>
+                                    </header>
+                                    <div id="post-content-1019"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika abbacchio">
+                                        Jakie jest- każdy wie. Najlepsze jest takie cieplutkie, chrupiące. Takie, żeby czosnek było czuć nawet po trzykrotnym umyciu zębów. Jakie jest Wasze ulubione pieczywo czosnkowe? Z biedronki, piekarni, a może sami robicie? Pochwalcie się swoimi przepisami, upodobaniami, śmiesznymi obrazkami i anegdotami związanymi z pieczywem czosnkowym. Jakie potrawy dobrze komponują się z chlebem czosnkowym waszym zdaniem?<br />Mój faworyt to pieczywo czosnkowe z biedronki, ponieważ jest dobre, tanie i łatwo dostępne. Pieczywo czosnkowe lubię jeść jako śniadanie, obiad oraz kolację. <br /><img src="https://i.imgur.com/YvotRsb.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1021">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Lou</span>
-                                <time datetime="2017-01-23T21:08:13" class="text-sm text-gray-500 font-mono">2017-01-23 21:08:13</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Bagiety czosnkowe z markietów są spoko.<br />A tak to lubię sobie zamówić jakieś pieczywo czosnkowe jako przystawkę do pizzy. Na ogół z serem, czasem bez.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1020" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1020"
+                                 aria-describedby="post-content-1020">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1022">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Sölve</span>
-                                <time datetime="2017-01-25T11:50:19" class="text-sm text-gray-500 font-mono">2017-01-25 11:50:19</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Lubię pieczywo czosnkowe, jest smaczne i zdrowe. Rzadko je jem, ale jeśli już się to zdarza, zawsze jestem szczęśliwy. Pieczywo czosnkowe to przyjaciel ludzkości.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1020" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2017-01-23T19:52:10"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 19:52:10</time>
+                                    </header>
+                                    <div id="post-content-1020"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Jedyne słuszne pieczywo czosnkowe to bagiety czosnkowe i nawet z tym nie handlujcie. W auchan / lidlu / innym hipergównie średnio dwa dwajścia dziewięć za sztukę. <br />/fred
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1023">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Fred</span>
-                                <time datetime="2017-02-04T23:56:23" class="text-sm text-gray-500 font-mono">2017-02-04 23:56:23</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Moja ulubiona wersja to świeżo upieczona bagieta czosnkowa pokrojona na talarki, a na nich plasterek mozzarelli i pomidora ;) Do tego odrobina oregano czy ziół prowansalskich ;)
+                        </article>
+                    </li>
+                    
+                    <li id="post-1021" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1021"
+                                 aria-describedby="post-content-1021">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/13.jpg?1516379200"
+                                     alt="Awatar użytkownika Lou"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1024">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">atikabubu</span>
-                                <time datetime="2017-02-05T07:24:58" class="text-sm text-gray-500 font-mono">2017-02-05 07:24:58</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Hesus, patrzcie jaki burżuj! Prawdziwy rycerz Zakonu Cebuli żre dziewicze bagiety&#8230; That sounded weird&#8230;
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1021" class="font-bold text-lg text-white">Lou</h3>
+                                        <time datetime="2017-01-23T21:08:13"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-23 21:08:13</time>
+                                    </header>
+                                    <div id="post-content-1021"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Lou">
+                                        Bagiety czosnkowe z markietów są spoko.<br />A tak to lubię sobie zamówić jakieś pieczywo czosnkowe jako przystawkę do pizzy. Na ogół z serem, czasem bez.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-1025">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Alechemik</span>
-                                <time datetime="2017-02-13T21:52:17" class="text-sm text-gray-500 font-mono">2017-02-13 21:52:17</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ja do pieczywka zajadam owoce morza. Smakują perfecto.
+                        </article>
+                    </li>
+                    
+                    <li id="post-1022" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1022"
+                                 aria-describedby="post-content-1022">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
+                                     alt="Awatar użytkownika Sölve"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2463">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Missile</span>
-                                <time datetime="2018-11-20T17:43:06" class="text-sm text-gray-500 font-mono">2018-11-20 17:43:06</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                Ciekawe czy jak Alchemik się zabił to czy dalej wpierdala bagiety w zaświatach.
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1022" class="font-bold text-lg text-white">Sölve</h3>
+                                        <time datetime="2017-01-25T11:50:19"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-01-25 11:50:19</time>
+                                    </header>
+                                    <div id="post-content-1022"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Sölve">
+                                        Lubię pieczywo czosnkowe, jest smaczne i zdrowe. Rzadko je jem, ale jeśli już się to zdarza, zawsze jestem szczęśliwy. Pieczywo czosnkowe to przyjaciel ludzkości.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-            <li id="post-2466">
-                <article class="flex items-start gap-4">
-                    <div class="flex-shrink-0">
-                        
-                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
-                        
-                    </div>
-                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
-                        <div class="bg-gray-800 rounded-lg p-5">
-                            <header class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-lg text-white">Leeter</span>
-                                <time datetime="2018-11-20T21:36:16" class="text-sm text-gray-500 font-mono">2018-11-20 21:36:16</time>
-                            </header>
-                            <div class="text-gray-200 leading-7 post-body">
-                                <img src="attachments/0/9-180d4e57c260dde79d314ab42ee8b532.data" alt="Załącznik 9" class="rounded-lg my-4 max-w-full h-auto shadow-lg" />
+                        </article>
+                    </li>
+                    
+                    <li id="post-1023" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1023"
+                                 aria-describedby="post-content-1023">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/12.jpg?1512503192"
+                                     alt="Awatar użytkownika Fred"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            
-        </ol>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1023" class="font-bold text-lg text-white">Fred</h3>
+                                        <time datetime="2017-02-04T23:56:23"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-04 23:56:23</time>
+                                    </header>
+                                    <div id="post-content-1023"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Fred">
+                                        Moja ulubiona wersja to świeżo upieczona bagieta czosnkowa pokrojona na talarki, a na nich plasterek mozzarelli i pomidora ;) Do tego odrobina oregano czy ziół prowansalskich ;)
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1024" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1024"
+                                 aria-describedby="post-content-1024">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp"
+                                     alt="Awatar użytkownika atikabubu"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1024" class="font-bold text-lg text-white">atikabubu</h3>
+                                        <time datetime="2017-02-05T07:24:58"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-05 07:24:58</time>
+                                    </header>
+                                    <div id="post-content-1024"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika atikabubu">
+                                        Hesus, patrzcie jaki burżuj! Prawdziwy rycerz Zakonu Cebuli żre dziewicze bagiety&#8230; That sounded weird&#8230;
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-1025" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-1025"
+                                 aria-describedby="post-content-1025">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/15.jpg?1512503192"
+                                     alt="Awatar użytkownika Alechemik"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-1025" class="font-bold text-lg text-white">Alechemik</h3>
+                                        <time datetime="2017-02-13T21:52:17"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2017-02-13 21:52:17</time>
+                                    </header>
+                                    <div id="post-content-1025"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Alechemik">
+                                        Ja do pieczywka zajadam owoce morza. Smakują perfecto.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2463" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2463"
+                                 aria-describedby="post-content-2463">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/3.jpg?1740478208"
+                                     alt="Awatar użytkownika Missile"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2463" class="font-bold text-lg text-white">Missile</h3>
+                                        <time datetime="2018-11-20T17:43:06"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-20 17:43:06</time>
+                                    </header>
+                                    <div id="post-content-2463"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Missile">
+                                        Ciekawe czy jak Alchemik się zabił to czy dalej wpierdala bagiety w zaświatach.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                    <li id="post-2466" role="listitem">
+                        <article class="flex items-start gap-4"
+                                 role="article"
+                                 aria-labelledby="post-author-2466"
+                                 aria-describedby="post-content-2466">
+                            <div class="flex-shrink-0">
+                                
+                                <img src="data/avatars/m/0/23.jpg?1532088218"
+                                     alt="Awatar użytkownika Leeter"
+                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                
+                            </div>
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                                <div class="bg-gray-800 rounded-lg p-5">
+                                    <header class="flex justify-between items-center mb-3">
+                                        <h3 id="post-author-2466" class="font-bold text-lg text-white">Leeter</h3>
+                                        <time datetime="2018-11-20T21:36:16"
+                                              class="text-sm text-gray-400 font-mono"
+                                              title="Data publikacji postu">2018-11-20 21:36:16</time>
+                                    </header>
+                                    <div id="post-content-2466"
+                                         class="text-gray-200 leading-7 post-body"
+                                         role="region"
+                                         aria-label="Treść postu użytkownika Leeter">
+                                        <img src="attachments/0/9-180d4e57c260dde79d314ab42ee8b532.data" alt="Załącznik 9" class="rounded-lg my-4 max-w-full h-auto shadow-lg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    
+                </ol>
+            </section>
+        </main>
     </div>
 </body>
 
