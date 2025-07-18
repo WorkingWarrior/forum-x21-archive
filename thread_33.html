@@ -1,0 +1,337 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue'like'i - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Rogue'like'i</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-461">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2016-12-30T13:07:53" class="text-sm text-gray-500 font-mono">2016-12-30 13:07:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jako, że właśnie dojebałem sobie ładunek wybuchowy podczas przeszukiwania szafki w teleglitchu i tym samym zmarnowałem ostatnią godzinę mego życia, to sądzę, że warto by było tu zapytać szanowne grono pedagogiczne o to czy napierdala w jakieś rogue&#39;y i jeśli nawet tak, to jakie i czy poleca.<br /><br />Definicja rogue&#39;like&#39;a- gra, która wykorzystuje ukryte skłonności samobójcze, masochistyczne i autodestruktywne gracza, upierdalając go na najprzeróżniejsze sposoby w momencie gdy temu wydaje się, że coś osiągnął, cofając go do punktu startu. Wykorzystuje także lenistwo i głupotę gatunku ludzkiego, który mógłby sobie zapisywać grę bez przeszkód, ale nie chce mu się wejść do folderu z grą i ich samoręcznie wyciągnąć.<br /><br />JA POLECAM MOTZNO:<br /><u>FTL</u>. Ale to wszyscy znają, &quot;dzieci wiedzą o co chodzi&quot; ( ͡° ͜ʖ ͡°)<br /><br /><u>Darkest Dungeon</u>- symulator zwiedzania przez 4 dobranych jegomościów kompleksu piwnic w których zaszył się Alchemik. Można pokurwieć, ocipieć i złapać różne choroby w trakcie gry, jak np. Stulejka. <br />Zupełnie jak wyżej wspomniany jegomość.<br /><img src="https://www.destructoid.com/ul/337158-review-darkest-dungeon/collector-noscale.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Tutaj proszę, drużyna śmiałków znalazła Alchemika.<br /><u>Alien RL</u> Stara szkoła, dobre bo Polskie. Opowiada o losie normalnego człowieka, co wylądował na stacji pełnej Woody&#39;ch Allenów i usiłuje przeżyć. Jest zielono, jest zrobione w ASCII, czego więcej chcieć.<br /><img src="http://i1.kwejk.pl/k/obrazki/2016/04/f8b61c53aac1836bc8e54b4d1af94315.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />Ups, to nie to&#8230;<br /><img src="https://i.ytimg.com/vi/UkCVKpwv00k/maxresdefault.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Potem wrzucę resztę polecajek, bo mie się nie chce.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-462">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-30T13:30:48" class="text-sm text-gray-500 font-mono">2016-12-30 13:30:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Muad'Dib</strong> napisał:</span></div><u>Darkest Dungeon</u>- symulator zwiedzania przez 4 dobranych jegomościów kompleksu piwnic w których zaszył się Alchemik. Można pokurwieć, ocipieć i złapać różne choroby w trakcie gry, jak np. Stulejka. <br />Zupełnie jak wyżej wspomniany jegomość.<br /><img src="https://www.destructoid.com/ul/337158-review-darkest-dungeon/collector-noscale.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br />Tutaj proszę, drużyna śmiałków znalazła Alchemika.</div>Ale tym to mnie zainteresowałeś. Da się w to jakoś po ludzku grać? Są tryby dla niemogących itd.? Bo nigdy nie ciukałem w takie coś.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-463">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2016-12-30T22:15:40" class="text-sm text-gray-500 font-mono">2016-12-30 22:15:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                @Solve Ma dojść tryb, że nie trzeba będzie spędzać całego roku w pokoju żeby przejść grę. <br />Ale generalnie to &quot;jak nie mogie, to przez nogie i dalej mogie!&quot;<br />Gra jest dla ludzi nie tylko nerdów i jest super pod względem klimatu, ale generalnie opiera się po czesci na bezlitosnym RNG, a na to nie ma mocnych jednak.<br />Polecam i pozdro, Piotr F.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-464">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-31T20:57:16" class="text-sm text-gray-500 font-mono">2016-12-31 20:57:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Cholera, jak Piotrek poleca, to trzeba pyknąć! Ale nie dzisiaj, dzisiaj czas na balety :D Bardzo rzadko grywam w takie pozycje, ale z tą muszę sie zmierzyć. PS masz jakieś rady dla początkującego?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-465">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-01T16:17:29" class="text-sm text-gray-500 font-mono">2017-01-01 16:17:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ciężkie pytanie, bo gra jednak ma od cholery kombinacji (4 miejsca na każda wyprawę, 15 klas postaci, każda po 5,6 umiejętności do użytku w walce, każdej postaci można przydzielić dwa artefakty, ich umiejętności, zbroje i oręż można rozwijać. W dodatku każda postać ma jakieś cechy charakteru/schorzenia itd, no jednym słowem kombinacji jest multum na etapie samego ogarniania kogo wysyłasz do podziemi*) a ja stażu jakiegoś wielkiego nie mam na tyle by się wymądrzać. Samemu musisz ogarnąć, nabrać jakiejś wiedzy, dowiedzieć się jak Ci się dobrze gra. Jak coś lataj na reddita, tam Ci majstre powiedzą jakie są topowe kompozycje squadów i co i jak.<br />Pseudo-inteligentna rada: na górze podczas zwiedzania lochów jest wskaźnik światła. Uzupełniasz go pochodniami. To jedna z mniej oczywistych dla nowicjuszy mechanik gry. Ogółem im jaśniej tym mniejsza szansa na zasadzkę, lepsza celność, mniej stresu. Ale im ciemniej tym większy łup, większe obrażenia krytyczne+ ofc pogorszenie sie wszystkiego powyżej. Więc nigdzie nie jest powiedziane, że ciemniej= gorzej.<br />A jedyna słuszna rada to:<br /><div style="text-align: center;"><strong><u><span style="font-size: 1.5rem;">GIT GUD</span></u></strong></div><br />*- Których też jest 5 rodzajów, każda z własnymi zagrożeniami przeciwnikami, bossami itd.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-466">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-02T15:22:20" class="text-sm text-gray-500 font-mono">2017-01-02 15:22:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dankest Dungeon jest dość masochistyczny w późniejszych etapach gry.<br />Wolę <a href="https://dl.dropboxusercontent.com/u/5331527/img%20random/binding_of_isaac.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><span style="color: #40BFBF;">płaczącego żyda</span></a>. Jednak na tę grę też trzeba miliona lat zanim się ją w pełni ogarnie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-467">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-03T11:46:10" class="text-sm text-gray-500 font-mono">2017-01-03 11:46:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Infernal</strong> napisał:</span></div>Wolę <a href="https://dl.dropboxusercontent.com/u/5331527/img%20random/binding_of_isaac.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><span style="color: #40BFBF;">płaczącego żyda</span></a>. Jednak na tę grę też trzeba miliona lat zanim się ją w pełni ogarnie.</div>W sumie to mi nawet odpowiada, bo The Binding of Isaac jest na 3DS-a, a zwykle grywam na handheldach.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-468">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2017-01-03T17:52:35" class="text-sm text-gray-500 font-mono">2017-01-03 17:52:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Muad, fajny mam dizajn w tej grze. :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-469">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-09T13:33:21" class="text-sm text-gray-500 font-mono">2017-01-09 13:33:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Pograłem w Dankest Dungeon. Ta gra to nie spacer po parku. Nie potrafię zliczyć, ilu bohaterów mi zginęło w samych ruinach. Często bohaterowie ginęli mi, zanim przeszedłem planszę. Polecam każdemu masochiście :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-470">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-09T13:38:45" class="text-sm text-gray-500 font-mono">2017-01-09 13:38:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Do Darkest Dungeons muszę wrócić. Grałem weń jeszcze na early access kiedy to powtórny stres nie zabijał postaci.<br /><br />Ze swojej strony polecam Dungeons of Dredmor, bardzo fajny rogal z mnóstwem drzewek i umiejejek - jedne przydatniejsze, drugie zabawniejsze. Jakiś czas temu dorzucili możliwość wrzucania i pobierania modów ze Steam Workshop, co już całkiem zrobiło z tej gry dziką jazdę bez trzymaki.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-471">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-17T08:29:31" class="text-sm text-gray-500 font-mono">2017-01-17 08:29:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Darkest Dungeon zaskoczyło wielu graczy, bo Red Hook Studios przygotowało bardzo mroczną opowieść, która w dodatku charakteryzuje się wyjątkowo wyśrubowanym poziomem trudności. Studio jednak zauważyło, że klienci nie potrafią ukończyć tej wymagającej przygody.<br /><br />Autorzy już w ubiegłym roku zapowiedzieli przygotowanie aktualizacji, która zdecydowanie ułatwi eksplorację lochów, ale teraz otrzymaliśmy konkrety. Tryb Radiant zadebiutuje na początku lutego, a jego największym atutem będzie skrócenie kampanii z 80 do 40 godzin, a jednocześnie studio zajmie się odpowiednim zbalansowaniem rozgrywki. Twórcy chcą mieć pewność, że więcej osób ukończy Darkest Dungeon. Aktualnie pliki trafią do testów na PC, a później wylądują na PlayStation 4 i PlayStation Vicie.<br /><br />Jest to bardzo ciekawa sytuacja, bo w dzisiejszych czasach gracze zazwyczaj narzekają na łatwe produkcje. Jednocześnie rozszerzenie The Crimson Court trafi na serwery dopiero w kwietniu – twórcy musieli opóźnić premierę rozszerzenia właśnie z powodu przygotowania trybu Radiant.</div>Oho, szykują się zmiany, bo normiki płaczą, że gierka zbyt trudna. Darkest Dungeon nie jest grą, do której można siąść na piętnaście minut i przejść główny wątek fabularny. Gram w nią, odkąd Omni ją polecił i wiem, że przejście jej jest na pewno możliwe, ale kurewsko trudne i czasochłonne. Z drugiej strony nie każdemu chce się bawić w zmianę bohaterów dwa razy na wyprawę, bo zginęli w lochach. Mam tylko nadzieję, że nie zrobią z tego spaceru przez park.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-472">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-17T10:17:33" class="text-sm text-gray-500 font-mono">2017-01-17 10:17:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div><div class="quote-block">Darkest Dungeon zaskoczyło wielu graczy, bo Red Hook Studios przygotowało bardzo mroczną opowieść, która w dodatku charakteryzuje się wyjątkowo wyśrubowanym poziomem trudności. Studio jednak zauważyło, że klienci nie potrafią ukończyć tej wymagającej przygody.<br /><br />Autorzy już w ubiegłym roku zapowiedzieli przygotowanie aktualizacji, która zdecydowanie ułatwi eksplorację lochów, ale teraz otrzymaliśmy konkrety. Tryb Radiant zadebiutuje na początku lutego, a jego największym atutem będzie skrócenie kampanii z 80 do 40 godzin, a jednocześnie studio zajmie się odpowiednim zbalansowaniem rozgrywki. Twórcy chcą mieć pewność, że więcej osób ukończy Darkest Dungeon. Aktualnie pliki trafią do testów na PC, a później wylądują na PlayStation 4 i PlayStation Vicie.<br /><br />Jest to bardzo ciekawa sytuacja, bo w dzisiejszych czasach gracze zazwyczaj narzekają na łatwe produkcje. Jednocześnie rozszerzenie The Crimson Court trafi na serwery dopiero w kwietniu – twórcy musieli opóźnić premierę rozszerzenia właśnie z powodu przygotowania trybu Radiant.</div>Oho, szykują się zmiany, bo normiki płaczą, że gierka zbyt trudna. Darkest Dungeon nie jest grą, do której można siąść na piętnaście minut i przejść główny wątek fabularny. Gram w nią, odkąd Omni ją polecił i wiem, że przejście jej jest na pewno możliwe, ale kurewsko trudne i czasochłonne. Z drugiej strony nie każdemu chce się bawić w zmianę bohaterów dwa razy na wyprawę, bo zginęli w lochach. Mam tylko nadzieję, że nie zrobią z tego spaceru przez park.</div><br /><br />Pozwolę sobie z Tobą trochę nie zgodzić, jako, że sam rozumiem o co chodzi graczom i devom.<br />Darkest to gra która jest oparta mimo wszystko na Random Number Generation.I sytuacje, gdy gra udupia gracza tak, że nie ma na to wpływu skill gracza są częste. Godziny czasu gry, exp bohaterów, inwestycja złota i trinketów wszystko w pizdu. I nie każdemu się to może podobać. Ja sam nigdy nawet do Ostatniego lochu nie doturlałem się, nie gram aż tak intensywnie. Osobiście raczej z tego trybu gry po prostu nie skorzystam, ale ja przejście gry szacuję, że zajmie mi tak nie z 80, a 180 godzin :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-473">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-17T10:57:35" class="text-sm text-gray-500 font-mono">2017-01-17 10:57:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Muad'Dib</strong> napisał:</span></div>Darkest to gra która jest oparta mimo wszystko na Random Number Generation.I sytuacje, gdy gra udupia gracza tak, że nie ma na to wpływu skill gracza są częste. Godziny czasu gry, exp bohaterów, inwestycja złota i trinketów wszystko w pizdu. I nie każdemu się to może podobać.</div>Jestem w stanie to zrozumieć, chodzi mi tylko o to, żeby maksymalnie nie spierdolili tej gry, bo szkoda zmarnować potencjał, który w sobie ma. Nadmierne ułatwienie nie wpłynie na dobre, wręcz przeciwnie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

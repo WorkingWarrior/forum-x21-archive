@@ -1,0 +1,316 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowy laptopus - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Nowy laptopus</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1470">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-03-12T15:05:03" class="text-sm text-gray-500 font-mono">2017-03-12 15:05:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Witame. Od pewnego czasu zastanawiam się nad zakupem nowego laptopa. Obecny, mimo że ma już 5 lat, na allegro chodzi po 1000zł (choć kupiłem go okazyjnie za 2400), doszedłem więc do wniosku że byłby to dobry moment by sprzedać go i zastąpić czymś nowszym. Przede wszystkim zależy mi na układzie graficznym klasy co najmniej GTX 970M, porządnym i7, 16GB ram (lub więcej), dysk twardy - mile widziane SSD + HDD, w ostateczności sam sobie domontuję SSD według własnych potrzeb (128GB mi wystarczy). Cena - wstępnie nie chcę się jasno deklarować, ale myślę że do 4000zł. Jeśli teraz nic się takiego nie znajdzie, to poczekam aż stanieją. Docelowo ma to być 17 cali, w ostateczności może być 15. <br /><br />Podstawowe pytania:<br />1. Czy to dobry moment na zakup laptopa? Co prawda nie zamierzam kupować go jeszcze dziś, bardziej w kwietniu/maju, ale trzeba już zrobić rozeznanie. Szykują się jakieś nowe karty graficzne / procesory na horyzoncie? Mowa o mobilnych, wiem że wchodzą Ryzeny, ale AMD na rynku laptopów za bardzo nie ma czego szukać i chyba Ryzeny tego nie zmienią. <br />2. Znalazłem na allegro dość ciekawe aukcje z laptopami Lenovo. <a href="http://allegro.pl/laptop-lenovo-x7835-i7-16gb-128ssd-1tb-gtx980m-i6734246614.html" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Tutaj link do konkretu.</a> Cena bardzo okazyjna, haczyk tkwi w tym że to chyba lekka używka (mimo, że sprzedawany jako nowy). Gwarancja jest, można też oddać towar w ciągu 2 tygodni. Niestety jedyna recka tego laptopa jaką znalazłem była po hitlerowsku, na germańskiej wersji notebookcheck, ale zyskała ocenę 84% (jidysz to nie moje klimaty i nic poza tym nie zrozumiałem). Drugi haczyk - windows to 90 dniowy trial, trochę smutno, ale przeboleję. Sprzedający ma komenty bardzo pozytywne, ale pamiętam że gdy kupowałem pierwszego laptopa Lenovo nie cieszyło się zbyt dobrą renomą w kwestii laptopów, coś się pod tym względem zmieniło? <br /><br />Jakieś inne propozycje? Inb4 kup stacjonarny/xboxa.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1471">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-13T07:37:06" class="text-sm text-gray-500 font-mono">2017-03-13 07:37:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                1. Moment jest zły. Zbliżają się komunie, ludzie już zaczynają myśleć o kupnie prezentu, a ceny w sklepach szybują w górę. W maju też nic nie spadnie, pewnie dopiero w czerwcu będzie można w ludzkiej cenie kupić elektronikę. Zobacz, jak ceny dysków SSD poszły w górę…
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1472">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-03-13T14:31:42" class="text-sm text-gray-500 font-mono">2017-03-13 14:31:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                i7 i 32 GB ramu od obsługi Excela i tinypica.<br />No i WoT. Co najmniej 1080M.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1473">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-03-13T14:38:05" class="text-sm text-gray-500 font-mono">2017-03-13 14:38:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie zapominajmy o obsłudze Twojej stulejki. Kto wie, w międzyczasie może też zechcę pożyczyć od Ciebie trochę CP w rozdziałce Ultra HD. <br /><br />A tak na poważnie, to usuń proszę hakerskie oprogramowanie z mojego komputera, którym monitorujesz moją aktywność i instalowane programy. I więcej nie używaj poradników hakerskich Tigera Bonzo przeciwko swoim pszyjaciouom.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1474">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/10.jpg?1512503192" alt="Awatar Rex" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Rex</span>
+                                <time datetime="2017-03-13T21:15:55" class="text-sm text-gray-500 font-mono">2017-03-13 21:15:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No ja bym na twoim miejscu włożył te pieniądze w stacjonarkę, no ale jak chcesz.<br />Generalnie do 4000 praktycznie niemożliwe jest dostanie laptopa z 970M.<br />Jedynie jakieś tanie i średniej jakości Mediony - Lenovo za 3800 są na allegro. To najgorszy syf, importowany i pełen wad. Oczywiście zapomnij o 2 dyskach.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1475">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-03-14T18:42:24" class="text-sm text-gray-500 font-mono">2017-03-14 18:42:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Meh, obawiałem się właśnie, żeby te Mediony nie były złomem. W takim razie odpadają.<br /><br />Co do stacjonarki - w zasadzie jeszcze pomyślę, ale zależy od tego jak Ryzeny wpłyną na ceny procesorów na rynku. Jeśli dam radę złożyć do 2,5-3k zestaw razem z porządnym monitorem (i jakąś klawiaturą, bo tego też ni mam :E) to może się skuszę, ale wolałbym sprawić sobie porządnego laptopa.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1476">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-14T21:21:18" class="text-sm text-gray-500 font-mono">2017-03-14 21:21:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Stwierdzenie „porządny laptop” wywołuje u mnie dupospin, chociaż wiem, że i takie są, ale raczej nie w tym przedziale cenowym. Podzielam zdanie Reksa, pomyśl nad stacjonarką. Pojawienie się konkurencji (inb4 AMD to nie konkurencja –<br /> lamusy dupa cicho) zapewne wpłynie na spadek cen procesorów Intela. Nie mówię tu o rzędzie wielkości, ale pewnie polecą o jakieś 15-20%. Musisz dać jeszcze bardziej konkretne wymagania, żeby dało się lepiej pomóc :)<br />Ostatnio złożyłem fajną stacjonarkę na i5 za 3k, lata jak szalona.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1477">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-03-20T17:33:01" class="text-sm text-gray-500 font-mono">2017-03-20 17:33:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Solve, trochę się mylisz z tym złym momentem, wiosną przeważnie są najlepsze ceny, latem (sierpień) zaczynają iść w górę żeby osiągnąć max na święta, a potem cykl się powtarza, marzec/kwiecień zwykle jest najsłabsza sprzedaż. <br />Co do cen SSD to poszły w górę bo Samsung czy inny producent płakał ostatnio, że duże zapotrzebowanie i nie wyrabiają z produkcją i ceny z miejsca poszły w górę.<br /><br />Jak masz do wydania do 4k to kupuj  stacjonarkę za jakieś 3200-3500 + monitor za 500pln i będziesz miał więcej mocy jak w laptopie za 4-5k albo lepiej.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1478">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-07-27T12:38:34" class="text-sm text-gray-500 font-mono">2017-07-27 12:38:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No dobra, ceny zmalały bardzo zacnie, za lapteka z GF1050 4GB i SSD wystarczy wyłożyć &quot;zaledwie&quot; ~3800. Dla mnie mobilność jest bardzo ważna, poza tym ceny stacjonarek poszybowały horrendalnie w górę (głównie grafik), a na dodatek jakieś 500zł z budżetu musiałbym wywalić na monitor + ze sprzedaży obecnego laptopa dostanę min. 800zł. Także zostaję przy opcji zakupu nowego laptopa. <br /><br />Po przeczytaniu wielu recenzji wybór padł na lenovo y520, jeno mam pytanie takiego kompletnego kretyna. Żeby zaoszczędzić kilka cebulionów chcę zakupić bez windowsa i wgrać spiraconego. Jeśli ściągnę obraz ISO, wrzucę na pendrive, a później włożę tegoż pendrive&#39;a do nowego laptopa, to na luzie się całość zainstaluje? Nigdy sam nie instalowałem windowsów to pytam. xD<br /><br />Planuję instalować windę 10, spiracona będzie śmigała tak samo miodnie jak oryginalna czy są jakieś haczyki?<br /><br />inb4 linux<br />wypierdalać
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1479">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-07-27T21:44:39" class="text-sm text-gray-500 font-mono">2017-07-27 21:44:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Linux.<br />Z W10 nie masz wyboru bo do żadnego sprzętu nie ma sterów na W7 jeśli chodzi o lapki. Oczywiście nie mówię że będą pod w10. Także tego,  Ubuntu.<br />Jeśli bardzo się upierasz przy pindowsie to czy system będzie działał po zainstalowaniu z pendrajwa będzie Twoim najmniejszym zmartwieniem. Większym będzie to czy cokolwiek zadziała, sterowniki do sprzętu miej na płytce,  USB, dyskietce i najlepiej taśmie magnetofonowej bo o połączeniu się z internetem zaraz po postawieniu systemu możesz zapomnieć. Sterowniki najlepiej pisane pod konkretny egzemplarz sprzętu bo lubią sobie z dupy nie działać, przynajmniej  na W7.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1480">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-07-28T10:20:39" class="text-sm text-gray-500 font-mono">2017-07-28 10:20:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Chyba jednak będę miał W10 :D<br /><br />http://allegro.pl/windows-10-pro-professional-automat-24-7-najtaniej-i6766089061.html
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1481">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-07-30T22:52:50" class="text-sm text-gray-500 font-mono">2017-07-30 22:52:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Chyba jednak będę miał W10 :D<br /><br />http://allegro.pl/windows-10-pro-professional-automat-24-7-najtaniej-i6766089061.html<br /></div><br /><br />LOL. A jeszcze nie tak dawno widziałem na scdkeys.com za 80pln i myślałem, że to tanio :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skaner zostawia pasy - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Skaner zostawia pasy</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1565">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-07T07:31:22" class="text-sm text-gray-500 font-mono">2017-05-07 07:31:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zauważyłam niedawno, że mój dwuletni skaner Epson Perfection V37 zaczyna zostawiać pasy/artefakty na skanach. Na razie są bardzo słabo widoczne, no ale martwi mnie sam fakt, że się w ogóle pojawiają&#8230;<br /><br />Tak to mniej więcej wygląda:<br /><br /><br />I teraz pytanie co z tym zrobić&#8230;?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1566">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-05-08T09:13:15" class="text-sm text-gray-500 font-mono">2017-05-08 09:13:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A pojawiają się na każdym skanie? Mnie to wygląda na uszkodzenie przetwornika w danych miejscach.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1567">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-13T15:25:36" class="text-sm text-gray-500 font-mono">2017-05-13 15:25:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Na szczęście nie na każdym, ale na kilku już się pojawiły. A wiadomo, lepiej nie będzie&#8230; Coś z tym można zrobić, poza kupnem nowego skanera oczywiście?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1568">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-05-15T07:38:53" class="text-sm text-gray-500 font-mono">2017-05-15 07:38:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Samodzielnie raczej nic z tym, niestety, nie zrobisz. Skaner jest dość mocno delikatnym urządzonkiem, często same się psują. Obserwuj postęp degradacji – jeśli nie cofnie się, będziesz zmuszona wymienić urządzenie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1569">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-20T16:17:49" class="text-sm text-gray-500 font-mono">2017-05-20 16:17:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Macie tu &quot;gołe&quot; skany, na których najlepiej widać te pasy:
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1855">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-14T19:34:07" class="text-sm text-gray-500 font-mono">2018-01-14 19:34:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1569" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Macie tu &quot;gołe&quot; skany, na których najlepiej widać te pasy:</div><br />I co, i co, udało się coś zrobić z ww. problemem?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1859">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-15T18:00:45" class="text-sm text-gray-500 font-mono">2018-01-15 18:00:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wada wciąż występuje, ale póki co się nie pogłębia ,więc jakoś z tym żyję. ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2597">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-02-17T21:08:45" class="text-sm text-gray-500 font-mono">2019-02-17 21:08:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Da się z tym jeszcze jakoś żyć?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2598">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-02-17T21:10:51" class="text-sm text-gray-500 font-mono">2019-02-17 21:10:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2597" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Da się z tym jeszcze jakoś żyć?</div><br />Jebnę Ci :&gt;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2601">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-17T21:24:16" class="text-sm text-gray-500 font-mono">2019-02-17 21:24:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2597" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Da się z tym jeszcze jakoś żyć?</div><br />Wyjebię Cię :3
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2603">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-02-17T21:27:33" class="text-sm text-gray-500 font-mono">2019-02-17 21:27:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Panowie, wszystko w porządku, tylko po kolei proszę. <br /><br />Powstrzymajmy się już może od dalszej eskalacji seksu, przemocy i offtopu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2605">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-17T21:29:00" class="text-sm text-gray-500 font-mono">2019-02-17 21:29:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2603" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Panowie, wszystko w porządku, tylko po kolei proszę.<br /><br />Powstrzymajmy się już może od dalszej eskalacji seksu, przemocy i offtopu.</div><br /><br />8======&gt;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2939">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2021-07-09T20:09:03" class="text-sm text-gray-500 font-mono">2021-07-09 20:09:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1565" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div><br />Zauważyłam niedawno, że mój dwuletni skaner Epson Perfection V37 zaczyna zostawiać pasy/artefakty na skanach. Na razie są bardzo słabo widoczne, no ale martwi mnie sam fakt, że się w ogóle pojawiają&#8230;<br /><br />Tak to mniej więcej wygląda:<br /><br /><br />I teraz pytanie co z tym zrobić&#8230;?<br /></div><br /><br /><br />Chyba obrazek Ci się nie dodał, wstaw proszę jeszcze raz żebyśmy mogli pomóc.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

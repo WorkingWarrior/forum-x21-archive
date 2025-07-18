@@ -1,0 +1,274 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate/Apocrypha - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Fate/Apocrypha</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1857">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-15T09:56:46" class="text-sm text-gray-500 font-mono">2018-01-15 09:56:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wątek ten zacznę od wyjaśnienia, co oznacza termin „apokryf”. Otóż jest to dzieło, które nie wchodzi w skład kanonu.<br />Tak samo jest w tym przypadku. Fate/Apocrypha to dzieło innego autora, które Kinoko Nasu „pobłogosławił”, ale fakt faktem, kanoniczne ono nie jest. Opowiada o którejś tam wojnie o Graala, ale w nieco inny sposób. Zespoły są dwa, tym samym dwukrotnie więcej mistrzów i sług. Niby powinno być ciekawiej, ale tak, niestety, nie jest. Jako fan Nasuverse jestem nieco zasmucony przedstawioną historią. Brakowało mi epickiej historii, przeżyć bohaterów itd. Zrobili tani, średnio sensowny romans.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1861">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-01-15T19:46:17" class="text-sm text-gray-500 font-mono">2018-01-15 19:46:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jakieś gejowe rzeczy oglądasz, Solve.<br /><br /><img src="https://i.imgur.com/D08lmVt.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1863">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-15T21:11:24" class="text-sm text-gray-500 font-mono">2018-01-15 21:11:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1861" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Jakieś gejowe rzeczy oglądasz, Solve.<br /><br /><img src="https://i.imgur.com/D08lmVt.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br />A to akurat Astolfo, samiec. Chuj wie, czym on był :/
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1864">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-01-15T22:35:05" class="text-sm text-gray-500 font-mono">2018-01-15 22:35:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Samiec nie samiec, ja tam bym ruchał.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1865">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-01-16T02:11:41" class="text-sm text-gray-500 font-mono">2018-01-16 02:11:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1863" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Chuj wie, czym on był :/</div><br /><br />Zaklinaczem mego węża.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-1864" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Samiec nie samiec, ja tam bym ruchał.</div><br /><br />Dziewczyna wie żeś pedau?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1866">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-01-16T10:21:28" class="text-sm text-gray-500 font-mono">2018-01-16 10:21:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Takie rzeczy to nawet Twój tato wie. To o czym w ogóle jest to animu i co w nim ciekawego poza trapami w pończochach?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1867">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-16T10:48:31" class="text-sm text-gray-500 font-mono">2018-01-16 10:48:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1866" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Takie rzeczy to nawet Twój tato wie. To o czym w ogóle jest to animu i co w nim ciekawego poza trapami w pończochach?</div><br />Najpierw odpowiem na drugie pytanie – nic ciekawego, dla mnie było nudne jak flaki z olejem. Nierówne, niekonsekwentne, niefajne. Animu jest o walce o &quot;Graala&quot;, tyle że tutaj jest on konceptem taumaturgicznym, który spełnia życzenia. Walka odbywa się za pomocą przyzwańcow - sług (dusze bohaterów z przeróżnych czasów). Apokryf ukazuje walkę dwóch zespołów mistrzów o Graala, co jest sytuacją niestandardową, ponieważ zwykle jest tylko jeden &quot;zespół&quot;, który walczy między sobą. Ogólnie odradzam oglądanie, szkoda czasu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1868">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-01-16T13:40:06" class="text-sm text-gray-500 font-mono">2018-01-16 13:40:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Sulf, za mało trudnych słów. Po Tobie spodziewałbym się większej elokwencji. Wstyd.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1875">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">atikabubu</span>
+                                <time datetime="2018-01-17T21:48:18" class="text-sm text-gray-500 font-mono">2018-01-17 21:48:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O, to nawet o tym mamy temat? Srsly, jedyna dobra scena to jak skończył pan złodupiec, wszystko przed tym i po tym to taki dupościsk, że nawet Astolfo by mnie nie wybolcował. Plot armor MC (albo GG, jak kto woli #pdk) osiąga poziomy absurdu, i tenże chłopek jest forsowany niczym chujowe memy z ugandyjskim zwierzakiem. Nie polecam nowociotom w fejty, a starocioty pewnie wyrzucą i nasmarkają nań siarczyście &quot;po budowlanemu&quot; jakoś po drugim odcinku.<br /><br />&quot;Popłakałem to wypierdalam.&quot;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1876">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-18T10:02:39" class="text-sm text-gray-500 font-mono">2018-01-18 10:02:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1875" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>atikabubu</strong> napisał:</span></a></div>Srsly, jedyna dobra scena to jak skończył pan złodupiec, wszystko przed tym i po tym to taki dupościsk, że nawet Astolfo by mnie nie wybolcował.</div><br />Tam było kilku złodupców, więc wiesz :D Ale masz rację, tam wszystko to ass pull. O ile poziom gówna we wcześniejszych fejtach był niższy, tak tutaj osiągnął niebo.<br /><div class="quote-block"><div class="quote-header"><a href="#post-1875" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>atikabubu</strong> napisał:</span></a></div>Plot armor MC (albo GG, jak kto woli #pdk) osiąga poziomy absurdu, i tenże chłopek jest forsowany niczym chujowe memy z ugandyjskim zwierzakiem.</div><br />Tak go na siłę wszędzie wciskali, jak nowe rodzeństwo w Stranger Things 2.<br /><div class="quote-block"><div class="quote-header"><a href="#post-1875" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>atikabubu</strong> napisał:</span></a></div>Nie polecam nowociotom w fejty, a starocioty pewnie wyrzucą i nasmarkają nań siarczyście &quot;po budowlanemu&quot; jakoś po drugim odcinku.</div><br />Nawet nasmarkać bym na to nie chciał, a jestem starociotą w fejty.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

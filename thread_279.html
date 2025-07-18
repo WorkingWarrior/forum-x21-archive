@@ -1,0 +1,442 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dej adminowi na etui - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Dej adminowi na etui</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2490">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-09T14:11:55" class="text-sm text-gray-500 font-mono">2018-12-09 14:11:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Siema.<br /><br />Przedłużyłem domenę na kolejny rok. W zamian chciałbym, byście mi kupili piękne, oryginalne etui na Kindle Paperwhite 4.<br />Takowe kosztuje ~200 zł, w związku z tym ogłaszam zbiórkę na paypalu. Nie dostanę etui, nie dostaniecie forum 😀<br />Enjoy 😘
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2491">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-12-09T16:49:32" class="text-sm text-gray-500 font-mono">2018-12-09 16:49:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Miska zrobi loda za pół tego.<br /><br />Więc dwa lody i jesteśmy kwita.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2492">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-12-09T21:44:49" class="text-sm text-gray-500 font-mono">2018-12-09 21:44:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                PayPal jest dla homoseksualistów.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2493">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-09T22:20:27" class="text-sm text-gray-500 font-mono">2018-12-09 22:20:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Miska, rób dwa lody, Infernal płaci :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2494">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-12-09T22:32:37" class="text-sm text-gray-500 font-mono">2018-12-09 22:32:37</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zrobię loda za dwa lody.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2495">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2018-12-10T01:59:36" class="text-sm text-gray-500 font-mono">2018-12-10 01:59:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Proszę, nie
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2496">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2018-12-10T08:59:27" class="text-sm text-gray-500 font-mono">2018-12-10 08:59:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Implikujesz, że to forum warte jest 200 złotych?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2497">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2018-12-10T09:58:51" class="text-sm text-gray-500 font-mono">2018-12-10 09:58:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2496" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Implikujesz, że to forum warte jest 200 złotych?</div><br /><br />Gorzej, on implikuje, że kawałek plastikowego gówna na inne elektroniczne gówno jest wart 200 zł.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2498">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-10T11:29:47" class="text-sm text-gray-500 font-mono">2018-12-10 11:29:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2497" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>Gorzej, on implikuje, że kawałek plastikowego gówna na inne elektroniczne gówno jest wart 200 zł.</div><br />Gorzej, ja implikuję, że wszyscy, razem wzięci, jesteście warci maksymalnie 200 zł.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2500">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2018-12-10T11:38:52" class="text-sm text-gray-500 font-mono">2018-12-10 11:38:52</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2498" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Gorzej, ja implikuję, że wszyscy, razem wzięci, jesteście warci maksymalnie 200 zł.</div><br />Obawiam się, że postawiłeś zbyt wysoki cel. Może następnym razem zacznijmy od zbiórki na pudełko zapałek?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2501">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-10T11:41:58" class="text-sm text-gray-500 font-mono">2018-12-10 11:41:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2500" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Obawiam się, że postawiłeś zbyt wysoki cel. Może następnym razem zacznijmy od zbiórki na pudełko zapałek?</div><br />A Ropas znowu nie ma gdzie mieszkać?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2504">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2018-12-10T13:58:04" class="text-sm text-gray-500 font-mono">2018-12-10 13:58:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2501" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>A Ropas znowu nie ma gdzie mieszkać?</div><br />Kij z Ropasem, na trumnę Analchomika wypadałoby się zrzucić, to jest o ile wreszcie wziął te dwa APAPy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2506">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-10T14:56:11" class="text-sm text-gray-500 font-mono">2018-12-10 14:56:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2504" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Kij z Ropasem, na trumnę Analchomika wypadałoby się zrzucić, to jest o ile wreszcie wziął te dwa APAPy.</div><br />W ogóle wiadomo coś o tym człowieku? Odkąd obiecał, że wykowkuje, słuch o nim zaginął.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2507">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-12-10T15:29:46" class="text-sm text-gray-500 font-mono">2018-12-10 15:29:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Bo miał lepszy skill od kowka.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2508">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-10T15:32:08" class="text-sm text-gray-500 font-mono">2018-12-10 15:32:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2507" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>Bo miał lepszy skill od kowka.</div><br />Kurde, naprawdę sądzisz, że dotrzymał obietnicy?<br />&quot;Krowa, która dużo ryczy, mało mleka daje&quot;&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2509">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-12-10T15:37:02" class="text-sm text-gray-500 font-mono">2018-12-10 15:37:02</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Krowa która dużo ryczy dużo gówna daje. Nie wiem co zrobił, ale patrząc na to że nie ma go na steamach i podobnych, a i że prezentował się wyjątkowo beznadziejnie, to nie można wykluczyć. Albo się odbił od dna, chugowie. U bukmachera by pewnie stało 15:1.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2511">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-12-10T17:19:28" class="text-sm text-gray-500 font-mono">2018-12-10 17:19:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2509" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>Krowa która dużo ryczy dużo gówna daje. Nie wiem co zrobił, ale patrząc na to że nie ma go na steamach i podobnych, a i że prezentował się wyjątkowo beznadziejnie, to nie można wykluczyć. Albo się odbił od dna, chugowie. U bukmachera by pewnie stało 15:1.</div><br /><br />To nawet jego osobisty terapeuta nie wie?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2512">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-10T23:45:49" class="text-sm text-gray-500 font-mono">2018-12-10 23:45:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2509" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>Krowa która dużo ryczy dużo gówna daje. Nie wiem co zrobił, ale patrząc na to że nie ma go na steamach i podobnych, a i że prezentował się wyjątkowo beznadziejnie, to nie można wykluczyć. Albo się odbił od dna, chugowie. U bukmachera by pewnie stało 15:1.</div><br />Cóż, pewnie kiedyś się dowiemy czy bohater mokrych snów natarczywego onanisty postanowił się wyhuśtać.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2511" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>To nawet jego osobisty terapeuta nie wie?</div><br />Jego osobisty terapeuta ma to tak głęboko w dupie, jak to tylko możliwe.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

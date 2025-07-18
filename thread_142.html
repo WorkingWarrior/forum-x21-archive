@@ -1,0 +1,316 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jutube, jutubery - dyskusja - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Jutube, jutubery - dyskusja</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1241">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-02-18T19:23:32" class="text-sm text-gray-500 font-mono">2017-02-18 19:23:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Mamy temat o ekranie dużym i małym, a przeoczyliśmy ekran najmniejszy, czyli to co oglądamy w internetach. Kanały na jutubach które subskrybujemy, oglądamy od czasu do czasu bądź też szczerze olewamy kwaśnym moczem - nitka idź. <br />Osobiście lubię kanały tematyczne, których tworzenie wymaga od twórców nieco więcej wysiłku i środków niż tylko kamerki i znajomości mowy artykułowanej. Staram się przede wszystkim unikać jakichkolwiek kanałów gamingowych a wszelkie lecpleje uważam za największą zarazę jaka się na YT kiedykolwiek pojawiła. Irytuje mnie fakt że aby pokazać jakąś grę znajomemu muszę się najpierw doszukać nagrań bez cholernego jakże &quot;super śmiesznego&quot; komentarza. Drugiej tematyki której unikam jest tematyka samego youtuba - wszelkie komentowanie i obsmarowywanie się jutuberów między sobą. Jakkolwiek owi obsmarowywani nie zasługiwaliby na to, uważam że środki i wysiłek wkładany w zrobienie takiego filmiku są niezwykle niskie.<br />Oczywiście pomijam już wszelkie dno typu pranki i filmiki reakcyjne.<br /><br /><br />Zacznę może od polskich kanałów które oglądam. Wiem że u wielu osób sam zwrót &quot;polski jutub&quot; wywołuje atak padaczki - na pohybel wam więc, dobry content.<br /><a href="https://www.youtube.com/channel/UCE59JfgJn06qFVHES99M_KQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kickster TV</a> - czyli o motoryzacji dla ludzi którzy mają o niej takie pojęcie, jak ja. To znaczy wiedzą że samochód ma cztery kółka i robi brum brum. Można oglądać dla humoru, można oglądać dla zainteresowania motoryzacją - kanał podchodzi i laikom mojego pokroju.<br /><br /><a href="https://www.youtube.com/channel/UC8uYStXS2ElBFLZVfuYzIxg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Przez Świat na Fazie</a> - autostopowicz przemierzający świat i dokumentujący swoje wojaże. O ile samego kolesia można nie lubić - głównie za ostentacyjne obnoszenie się ze swoimi poglądami - to jednak wiele miejsc pokazuje od strony której nie pokaże wam National Geographic. Faza przejechał już przez Amerykę Południową i Azję, a obecnie jest w trzeciej podróży, w Afryce.<br /><br /><a href="https://www.youtube.com/channel/UCY_fyIMTLLOZgmkuUYo6JKw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Cezary Pazura</a> - on sam, opowiadający ciekawostki i wspominki z planów filmów w których grał, a które wszystkie znamy i uwielbiamy. <br /><br /><a href="https://www.youtube.com/channel/UCKI8MqLlLCRYuzS9B-q3Eww" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Tygodnik NIE</a> - krótkie i dobitne wstawki Jerzego Urbana na poprawienie humoru. <br /><br /><a href="https://www.youtube.com/channel/UCGJRDGFoOzJjO-Ytz2i6RuQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Agresywna Masa</a> - siłownia i koksowanie na luzie.<br /><br />Zagranicznych kanałów oglądam ciut więcej.<br /><a href="https://www.youtube.com/channel/UCS5tt2z_DFvG7-39J3aE-bQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Life of Boris</a> - przedstawiać chyba nie muszę. Martwi mnie jedynie że Borys może stracić balans i zbyt skupić się na filmikach gamingowych, za co nie wróżyłbym mu dobrej przyszłości.<br /><br /><a href="https://www.youtube.com/channel/UC6E2mP01ZLH_kbAyeazCNdg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Brave Wilderness</a> - profesjonalnej jakości program przyrodniczy, głównie o zwierzętach. Prowadzący Coyote Peterson to posiadacz największych jaj na Ziemi i nie rzuci nawet losowym bluzgiem w momencie gdy daje się użreć krokodylowi czy mrówce-pociskowi. Albo też jest masochistą. Pojedyńcze odcinki zazwyczaj przedstawiają konkretne zwierzątko które ekipie udało się znaleźć.<br /><br /><a href="https://www.youtube.com/channel/UCBvc7pmUp9wiZIFOXEp1sCg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Demolition Ranch</a> - czyli teksański redneck bawi się spluwami, najczęściej próbując rozwikłać wielkie pytania na temat efektów strzału z broni palnej na różne obiekty.<br /><br /><a href="https://www.youtube.com/channel/UCvB3solmhqtgDeLpD-yTtfg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">hickok45</a> - kanał również o broni. Wysoki poziom merytoryczny i często ciekawe modele, oraz po prostu wesoły prowadzący. Life is Good.<br /><br /><a href="https://www.youtube.com/channel/UCNEZ7cqaZzYLeyWfTkelkEA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">TAOFLEDERMAUS</a> - i jeszcze jeden kanał o broni, skupiony jednak na balistyce. Kanał głównie opiera się na testach dziwacznej amunicji do strzelb, nierzadko improwizowanej. Analizowane są zarówno parametry lotu (z użyciem kamery do spowolnienia) jak i balistyka terminalna. Czasami też pojawiają się filmiki o innej tematyce. <br /><br /><a href="https://www.youtube.com/channel/UCVZlxkKqlvVqzRJXhAGq42Q" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Slingshot Channel</a> - gruby Niemiec z narzędziami do obróbki drewna i zbyt dużą ilością gumek buduje proce, łuki, kusze i inne dziwaczne wynalazki strzelające bez użycia prochu.<br /><br /><a href="https://www.youtube.com/channel/UCXSCm3S2XZHLBz8kH0N5Heg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Vet Ranch</a> - drugi kanał twórcy Demolition Ranch, skupiający się na pracy ich twórcy, czyli weterynarii. Wzruszające, jak i wesołe historie z lecznic dla zwierzaków. Dochód z kanału i dotacji przeznaczany jest na leczenie zwierząt bezdomnych oraz tych, których właściciele nie byliby w stanie pokryć kosztów.<br /><br /><a href="https://www.youtube.com/channel/UCwvGYKWJKGWXK0kM2A0x9-w" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kocayine</a> - wrzutki i tłumaczenia jugosłowiańskich piosenek wojennych i nie tylko.<br /><br /><a href="https://www.youtube.com/channel/UCtESv1e7ntJaLJYKIO1FoYw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Periodic Videos</a> - kanał na temat chemii publikowany przez Nottingham University. Choć czasy świetności ten kanał ma już chyba za sobą a filmiki pojawiają się rzadziej, nadal przyjemnie ogląda się nowe wstawki.<br /><br /><a href="https://www.youtube.com/channel/UCJ0-OtVpF0wOKEqT2Z1HEtA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">ElectroBOOM</a> - Mehdi Sadaghdar próbuje dowieść, że elektryka prąd nie tyka. Z różnym skutkiem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1242">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-02-18T20:03:49" class="text-sm text-gray-500 font-mono">2017-02-18 20:03:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Fajny temateł, nosiłem się z zamiarem założenia podobnego, ale sam subuję na youtube niemal wyłącznie gówno i zbytnio nie ma się czym chwalić. Z takich ludzkich rzeczy - bardzo lubię To Już Jutro, krótkie, treściwe streszczenia tego, co się aktualnie dzieje w świecie nowinek technicznych, można się dowiedzieć sporo fajnych rzeczy. <br />Poza tym niemal wyłącznie muzyka, sport i jakieś śmieszki w stylu klocucha, które sobie daruję. Odnośnie letsplejów mam takie same odczucia, rak nad raki, nie wiem jak można oglądać jak ktoś gra i rzuca suchymi anegdotami zamiast samemu odpalić chociażby pasjansa. Tak jakbym mógł ciupciać, ale zamiast tego wolał oglądać porno. Wojen jutuberów i gówna w stylu jakichś atorów, gimperów, beks i innego syfu, który jutub namolnie wpycha mi w &quot;Proponowanych&quot; nawet nie komentuję.<br /><br />Gdyby ktoś zarzucił jakimś kanałem z podsumowaniem np. tygodniowym tego co się dzieje na świecie - włączając w to Afrykę, Amerykę Płd itd, a nie tylko USA, Kreml i Syria - to dostanie ode mnie odznakę Przyjaciela Lasu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1243">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-18T20:22:11" class="text-sm text-gray-500 font-mono">2017-02-18 20:22:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Mnie to w ogóle nie jara, jedyne co oglądam na YT to teledyski albo jakieś głupoty, które ktoś mi okazjonalnie wyśle. A tak to nikogo nie śledzę; znaczy wiadomo, ksywki kojarzę i czasem obejrzę jakąś recenzję gry czy coś w tym guście, ale żebym spędzała przy tym godziny to nieeee. Starzeję się&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1244">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-19T02:13:16" class="text-sm text-gray-500 font-mono">2017-02-19 02:13:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Trochę tego stuffu oglądam i śledzę na bieżąco to ograniczę się do jednego kanału który bardzo lubię. <br /><br /><a href="https://www.youtube.com/channel/UC0M0rxSz3IF0CsSour1iWmw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Cinemassacre (Angry Video Game Nerd)</a> - myślę, że większość z was kojarzy tą twórczość.<br />Na początku ten kanał ograniczał się do jego głównej serii &quot;Angry Video Game Nerd&quot;, a potem im dalej w las rozrastało się to coraz bardziej. Kanał głównie jest skupiony na retro grach oraz filmach. <br /><a href="http://www.imdb.com/name/nm3005544/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">James Rolfe</a>, główny twórca tego kanału, właściwie całej marki <a href="http://cinemassacre.com" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Cinemassacre</a> to zapalony gracz i miłośnik filmowy, można rzec człowiek orkiestra. James już od  małego stawiał pierwsze kroki w dziedzinie sztuki filmowej i kręcił krótkie filmy dlatego oprócz tematyki gier spory nacisk też kładzie na film. Od 2007 w każdy październik w otoczce grozy jest organizowany maraton recenzji filmów grozy - <a href="http://www.imdb.com/title/tt1743990/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Cinemassacre&#39;s Monster Madness</a>. <br />To jego druga bardzo ważna seria na tym kanale. Gajmerowymi jutuberami, gwiazdami, takimi którzy są w obecnym mainstreamie bardzo popularni (Nie oszukujmy się, 2mln subów na YT to tyle co nic, więc daleko mu do jakiejś gwiazdy) to ogólnie gardzę, w sumie to ja go nawet nie zaliczam do do tego grona.<br />Jego sztandarowa seria na kanale głównie skupia się na crapowatych retro grach lub wytykaniu błędów bardziej znanym i lubianym tytułom. Błędów które sprawiają, że stan psychiczny gracza mocno ucierpi i na lata może znienawidzić grę.<br />Za co go cenię i lubię? Za kreatywność w jego filmach, bo spora większość filmików to małe filmy z recenzją. Za postać którą stworzył i zapisała się już na kartach historii internetu i fandomu retro gier. Za pasję i miłość do swoich zainteresowań którą mocno widać w jego twórczości przez co się ogląda to z przyjemnością.<br />Nie cierpię kontentu let&#39;s play. Mała mordka w rogu ekranu, jakieś screamy i zoom na mordę playera co jakiś czas. Jaka to przyjemność z oglądania streamingu gry z reakcjami gracza na to co się dzieje na ekranie. Nie zrozumiem chyba tego nigdy dlaczego ten typ kontentu jest tak cholernie popularny.<br />W mojej ocenie jego filmy to sztuka, małe kino. Takie coś lubię i szanuje. Ma też takie luźniejsze serie np. &quot;James &amp; Mike Mondays&quot; gdzie przechodzi grę z razem ze swoim przyjacielem. Wpada tam też czasami jego drugi przyjaciel oraz koledzy z innych kanałów. Siedzą sobie na kanapie i przechodzą gry (które sami wybiorą lub zasugerują się głosami widzów) i dobrze się bawią. No właśnie, to trochę co innego niż taki typowy let&#39;s play. Wygląda to tak, że siedzą, grają i praktycznie cały rozmawiają ze sobą o danej grze i o różnych rzeczach jakie na język im ślina przyniesie. Obraz gry i obraz na nich jest podobnej wielkości, czasami odpowiednio do sytuacji fullscreen na nich lub na grę i wtedy na moment zmniejsza się widok na nich. Filmy są krótkie, od 10 do 20 minut, czasami jak gra dłuższa lub trudniejsza to dwie, trzy części po 20 minut. Gameplay nie schodzi na dalszy plan, nie jest też tłem, ale nie jest też główną zawartością filmiku.  Takie coś mi się podoba. Dobrze się bawię podczas oglądania takiego let&#39;s play.<br /><br />Dodam też wam linki do paru odcinków które bardzo lubię i dobrze pokażą to co wam tu przekazałem w tym tekście:<br /><br /><a href="https://www.youtube.com/watch?v=M1tU61Nyv1w" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Bugs Bunny Birthday Blowout - NES - Angry Video Game Nerd - Episode 31</a><br /><a href="https://www.youtube.com/watch?v=eIr_5CUlCzk" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Aladdin (Sega genesis) James &amp; Mike Mondays</a><br /><a href="https://www.youtube.com/watch?v=gzWtnyhdn_4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Board James: Dream Phone (Episode 19)</a><br /><a href="https://www.youtube.com/watch?v=5UaDepGRB3I" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Win, Lose or Draw (NES) Mike &amp; Bootsy</a><br /><br />Jako ciekawostkę dodam, że nakręcił on jeden film pełnometrażowy: <a href="https://store.steampowered.com/app/357380/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Angry Video Game Nerd: The Movie</a> oraz dwie gry: <a href="http://store.steampowered.com/app/237740/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Angry Video Game Nerd Adventures</a> i <a href="http://store.steampowered.com/app/409660/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Angry Video Game Nerd II: ASSimilation</a><br /><br />ps. Miałem sporządzić jakąś topkę, ale tak się wkręciłem w pisanie o moim ulubionym kanale, że nie mam sił już na opisywanie kolejnych i zmieniłem plan w trakcie tworzenia posta xD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1245">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-22T10:06:47" class="text-sm text-gray-500 font-mono">2017-02-22 10:06:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ostatnio mam coraz mniej czasu, ale od czasu do czasu lubię obejrzeć:<br /><ul><li><a href="https://www.youtube.com/channel/UC8HTSrQddJJDiS6JeEXo4gw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">LEGENDMAKE</a> – blacharz znający się na swoim fachu</li><li><a href="https://www.youtube.com/channel/UC6E2mP01ZLH_kbAyeazCNdg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Brave Wilderness</a> – dzięki, Lenek, przypomniałeś mi o tym kanale</li><li><a href="https://www.youtube.com/channel/UCJ7yzQTV9Yw6zwAaEIL5Jtg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">The Food Emperor</a> – Szwed mówiący po polsku, ba, nawet gotujący!</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1246">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-02-22T19:05:50" class="text-sm text-gray-500 font-mono">2017-02-22 19:05:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Od 2006 roku nazbierało mi się subskrybowanych kanałów - aktywnych i nieaktywnych, dobrych i złych, a nawet takich aktualnie należących do martwych ludzi.<br /><br />Spróbuję coś z tego galimatiasu 420 subskrybcji polecić:<br /><ul><li><a href="https://www.youtube.com/channel/UCQEnQfezywrAwkHWX_Uo_Qg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">A Jolly Wanker</a> - przedstawiać za bardzo nie trzeba, gość instaluje różne dziwne mody i dzieli się przeżyciami.</li><li><a href="https://www.youtube.com/channel/UCJ6KZTTnkE-s2XFJJmoTAkw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Accursed Farms</a> - Ross Scott zajmuje się głównie mało znanymi perełkami, ale nie gardzi szerzej znanymi tytułami. Dla zainteresowanych grami komputerowymi i nie tylko.</li><li><a href="https://www.youtube.com/user/agrmonster" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">agrmonster</a> - martwy aktualnie kanał szalonego moddera Fallouta 3 i Skyrima. Polecam zapoznać się z pełnym asortymentem.</li><li><a href="https://www.youtube.com/channel/UCNMSCL9rDJJez6mP5gSpAPQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">BedBananas</a> - znów kanał związany z grami i szaleństwem. Polecam w ramach lekko absurdalnej rozrywki.</li><li><a href="https://www.youtube.com/channel/UCmiWoT3mqQMLFP9Hg420dsg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Bruva Alfabusa</a> - czyli wszystko co chciałbyś oglądnąć jeżeli uwielbiasz Warhammera 40k.</li><li><a href="https://www.youtube.com/channel/UCCSaQLMqanFT1GkHANX9w2w" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">cs188</a> (główny) <a href="https://www.youtube.com/channel/UCHLBaHuUong73gjaLcPpN9w" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">cs188creations</a> (bonusowy) - wciąż aktywny YTPooper.</li><li><a href="https://www.youtube.com/channel/UCiYERZuoAiu9ltkMcXZPYRQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">CwcvilleGuardian</a> - aktualny kanał YT Chris-Chana. Wchodzisz na własną odpowiedzialność.</li><li><a href="https://www.youtube.com/channel/UCqSHAXN5sqtyE93A-w-8Ddw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">DizastaMusic</a> (stary kanał), <a href="https://www.youtube.com/channel/UCkitABalXafr-NqceQdDXtg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">TVFilthyFrank</a> (główny kanał) <a href="https://www.youtube.com/channel/UCT31um1Ic8KweVWEMBC1K7A" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">TooDamnFilthy</a> (kanał bonusowy), <a href="https://www.youtube.com/channel/UCw8cZ0mw7s8iM7Y6XpLnO9w" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">PinkOmega</a> (martwy kanał Pink Guy&#39;a) - główny przodownik raka na YouTubie. Jakże takiego nie polecić?</li><li><a href="https://www.youtube.com/channel/UCJEGOovmPLK1N-NREORJhlQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">EMH</a> (kanał bonusowy), <a href="https://www.youtube.com/channel/UCPyo1Z769CXG32et2jsFDtg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">TheEditerEMH</a> (kanał główny) - fan ww. Franka, który zaczął robić coś swojego, jednak nie odgapiał, a inspirował się. Polecam.</li><li><a href="https://www.youtube.com/channel/UCJbBijHhBZWkWDamlGDW2MQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Helloween4545</a> - jedyny Let&#39;s Player którego toleruję i lubię oglądać. Naprawdę polecam, jest to Bryt który potrafi zabawić.</li><li><a href="https://www.youtube.com/channel/UC4USoIAL9qcsx5nCZV_QRnA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">iDubbbzTV</a> (główny), <a href="https://www.youtube.com/channel/UC-tsNNJ3yIW98MtPH6PWFAQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">iDubbbzTV2</a> (bonusowy), <a href="https://www.youtube.com/channel/UCVhfFXNY0z3-mbrTh1OYRXA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">iDubbbzgames</a> (martwy) - Idupsa przedstawiać za bardzo nie trzeba, jako że zyskał trochę rozgłosu. Prześmiewca i komentator, kolaborujący z Frankiem.</li><li><a href="https://www.youtube.com/channel/UCO30ZVyXzAYmlzEsWY8BN7A" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Infernal969</a> - kanał jakiegoś autysty, nawet nie wiem czemu go tu wymieniam.</li><li><a href="https://www.youtube.com/channel/UCbJnwLm_HX3FPlLWctTm1SA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Insane Cherry</a> - najlepsze przeróbki znanych (mniej lub bardziej) utworów złożonych tylko i wyłącznie ze zwierzęcych odgłosów.</li><li><a href="https://www.youtube.com/channel/UCdPg4Bb2ufdJvxNjmbCytxg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Judson Joist</a> - Chyba jedyny kanał na YT poświęcony w głównej mierze Stalkerowi. Duża doza szaleństwa, ekspertyzy z zakresu broni i doświadczenia.</li><li><a href="https://www.youtube.com/channel/UChcBFcAWmGjN4DJdnnhz2mA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">kitty0706</a> - aktualnie nie żyje. Jeden z najlepszych animatorów w Gmodzie. Jeżeli ktoś się jeszcze nie zapoznał z jego twórczością, to zalecam nadrobić zaległości.</li><li><a href="https://www.youtube.com/channel/UCq6VFHwMzcMXbuKyG7SQYIg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">penguinz0</a> - chyba najlepszy z komentatorów gier i filmów znalezionych w sieci. Bardzo przystępny.</li><li><a href="https://www.youtube.com/channel/UCoNRSwYHJdy-yV1b82ZdHfQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">SethEverman</a> - połączenie muzyki z humorem.</li><li><a href="https://www.youtube.com/channel/UCsvn_Po0SmunchJYOWpOxMg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">videogamedunkey</a> - znany kanał. Rozrywka i gry komputerowe.</li></ul><br />Oczywiście wyłączyłem z mojej listy wcześniej polecone pozycje.<br />Bawcie się dobrze.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1247">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-02-24T17:57:17" class="text-sm text-gray-500 font-mono">2017-02-24 17:57:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Z wyżej wymienionych Przez Świat na Fazie, ElectroBOOM i videogamedunkey, z moich, które oglądam:<br />Polskie:<br /><a href="https://www.youtube.com/channel/UCjgirfp1BeeM98AxxyKXolA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">arhn.eu</a> - czasem fajna seria system error skupiająca się na bugach i easter eggach. Głównie to recenzje konsol, akcesoriów do nich i gier.<br /><a href="https://www.youtube.com/channel/UCkPjHTuNd_ycm__29dXM3Nw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Grupa Filmowa Darwin</a> - tworzą przeróżne zabawne &quot;skecze&quot;. Skecze w cudzysłowie, bo poziomem przewyższają mocno polskie kabarety czy komedie.<br /><a href="https://www.youtube.com/channel/UCn9hOxISLLpZaCAf_A0U3Bw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Irytujący Historyk</a> - koleś pasjonujący się historią i opowiadający o niej w naprawdę ciekawy sposób. Aż miło się słucha/ogląda.<br /><a href="https://www.youtube.com/channel/UCLr4hMhk_2KE0GUBSBrspGA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kuba Klawiter</a> - jeśli ktoś z was oglądał program Gadżet na TVN Turbo, to jego prowadzący prowadzi ten kanał. Co tydzień wrzuca podsumowanie z technologicznego świata, rzucając przy tym toną sucharów, więc i woda by się przydała podczas oglądania.<br /><br />Zagraniczne:<br /><a href="https://www.youtube.com/channel/UC7dlaP4GdMn7kBnsEDKupuQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">BirgirPall</a> - dwóch kolesi, którzy psują gry, znaczy się szukają bugów mając przy tym ubaw, że przy filmiku ze Star Treka popłakałem się przy tym ze śmiechu. Często grają w co-opie.<br /><a href="https://www.youtube.com/channel/UCEOXxzW2vU0P-0THehuIIeg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">CaptainDisillusion</a> - koleś obala różne fejkowe filmiki w internecie, a czasem i gadżety. Czasem też pokazuje, jak uzyskać dany efekt przy tworzeniu filmiku.<br /><a href="https://www.youtube.com/channel/UCp68_FLety0O-n9QU6phsgw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">colinfurze</a> -  szalony brytol, który tworzy przeróżne konstrukcje, mając przy tym od groma zabawy. Mega pozytywny koleś.<br /><a href="https://www.youtube.com/channel/UCS5tt2z_DFvG7-39J3aE-bQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Life of Boris</a> - true slav. Squatting, mayonez and cheeki breeki.<br /><a href="https://www.youtube.com/channel/UCQD3awTLw9i8Xzh85FKsuJA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">SovietWomble</a> - koleś gra w gry z kumplami, wiele naprawdę śmiesznych filmików, szczególnie te, w których jest Cyanide- pewien pojebany hindus- po dźwięku otwierania wieczka potrafi rozpoznać, jakiego smaku są Pringelsy.<br /><br />A reszta kanałów, które oglądam albo nie warta polecenia, albo zaszywam się w moim małym zamku z kołdry i poduszek i oglądam potajemnie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1248">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-02-24T19:18:34" class="text-sm text-gray-500 font-mono">2017-02-24 19:18:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Najemnik</strong> napisał:</span></div><br /><a href="https://www.youtube.com/channel/UCn9hOxISLLpZaCAf_A0U3Bw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Irytujący Historyk</a> - koleś pasjonujący się historią i opowiadający o niej w naprawdę ciekawy sposób. Aż miło się słucha/ogląda.<br /></div><br /><br />Podgniłem trochę z polecenia, bo to mój znajomy, któremu nawet kiedyś, tylko trochę, pomagałem forsować ten kanał. Szanuję go, facet ma olbrzymie problemy ze zdrowiem, ale wiele woli w sobie, żeby dać coś od siebie, co przyda się ludziom.<br /><br />Widzę, że sporo kanałów, które znam zostało poleconych, ale nadal mam propozycje warte uwagi:<br /><a href="https://www.youtube.com/channel/UCKlUrYO3i9MDlL45Ia6j5EA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Gggmanlives</a> - Australijczyk recenzujący gry pierwszoosobowe, z reguły tytuły, które premiery mają już dawno za sobą. Miło się go słucha i nie wywołuje zażenowania jak większość sceny YT.<br /><a href="https://www.youtube.com/channel/UCngze_3Nx9sogT_oA3GvCdQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Historia w 5 minut</a> - niekoniecznie są to filmy 5 minutowe, ale bardzo dobrze wyjaśniają różne historyczne zawiłości i okresy.<br /><a href="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kurzgesagt – In a Nutshell</a> - bardzo miły kanał przekazujący w prosty sposób wiedzę naukową, uploadują jeden film na miesiąc, co naprawdę dobrze przekłada się na jakość materiałów.<br /><a href="https://www.youtube.com/channel/UCUcyEsEjhPEDf69RRVhRh4A" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">The Great War</a> - kanał historyczny o I Wojnie Światowej, prezentuje nierówny poziom, ale i tak warto go śledzić. Na pewno nikt nie dostanie po nim raka uszu, ani mózgu.<br /><a href="https://www.youtube.com/channel/UC1elWDfDMDDDQk4LtxSnSoQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Unknown WW2 in Color 2</a> - kolorowe materiały z II Wojny Światowej, których nigdzie indziej, prawdopodobnie, nie zobaczycie. Kanał jest martwy, ale warto obejrzeć parę materiałów, dodatkowo muzyka dodana w tle materiałów jest naprawdę niezła.<br /><a href="https://www.youtube.com/channel/UChBsOxskMpDmBAsgJ91fKcg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">ThuleanPerspective</a> - vlogasek Varga Vikernersa, tego z Burzum, mówi o życiu, także jego życiu, swoich poglądach. Często mnie bawi jego postawa, ale to ciekawe, co mu siedzi w głowie. Dodatkowo trochę mu zazdroszczę prostoty, którą wprowadził do swojego życia.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1249">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-27T23:22:05" class="text-sm text-gray-500 font-mono">2017-02-27 23:22:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja dość mało czasu spędzam słuchając / oglądając YT ale i tak mi się kilka subów uzbierało: <br /><a href="https://www.youtube.com/channel/UCWCw2Sd7RlYJ2yuNVHDWNOA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Jim Sterling</a> - tego pana raczej nie trzeba przedstawiać, <br /><a href="https://www.youtube.com/channel/UC-yewGHQbNFpDrGM0diZOLA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Sargon of Akkad</a> - cotygodniowe This Week in Stupid komentujące wydarzenia na świecie, <br /><a href="https://www.youtube.com/channel/UCsgv2QHkT2ljEixyulzOnUQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">AngryJoeShow</a> - jego zapewne też nie trzeba nikomu przedstawiać, popularny choćby przez swoje Angry Review gier, <br /><a href="https://www.youtube.com/channel/UCxXUQuvoiIAlpM2osoAitjQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">MundaneMatt</a> - komentarze różnych wydarzeń bieżących w USA, <br /><a href="https://www.youtube.com/channel/UCmb8hO2ilV9vRa8cilis88A" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Thunderfoot</a> - profesor uniwersytecki, krytyk kreacjonizmu, pseudo nauki itp, a przy okazji bawiący się reakcjami metali i dokumentujący swoje badania na YT, <br /><a href="https://www.youtube.com/channel/UCy1Ms_5qBTawC-k7PVjHXKQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">TotalBiscuit</a> - tego pana na pewno nie trzeba przedstawiać, <br /><a href="https://www.youtube.com/channel/UCTrecbx23AAYdmFHDkci0aQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Undoomed</a> - feminaziści to zło, <br /><a href="https://www.youtube.com/channel/UCgJRL30YS6XFxq9Ga8W2J3A" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">MightyCarMods</a> - australijski serial motoryzacyjny tworzony przez zapaleńców, <br /><a href="https://www.youtube.com/channel/UCIveFvW-ARp_B_RckhweNJw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Steven Crowder</a> - komentator polityczny
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1989">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-01-25T13:58:58" class="text-sm text-gray-500 font-mono">2018-01-25 13:58:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zapewne odkrywam Amerykę, ale kocham gościa od paru dni.<br /><br /><a href="https://www.youtube.com/user/an0nymooose/videos" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/user/an0nymooose/videos</a><br /><br />inb4 oemgje SFM<br /><br />Powiedzcie, że to nie jest epitom cudowności.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/XtIBHfOdyX0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/l8wMVmY7Zpw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1994">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-25T21:40:13" class="text-sm text-gray-500 font-mono">2018-01-25 21:40:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1989" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Zapewne odkrywam Amerykę, ale kocham gościa od paru dni.<br /><br /><a href="https://www.youtube.com/user/an0nymooose/videos" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/user/an0nymooose/videos</a><br /><br />inb4 oemgje SFM<br /><br />Powiedzcie, że to nie jest epitom cudowności.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/XtIBHfOdyX0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/l8wMVmY7Zpw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div><br />Szanuję ten poziom losowości.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2335">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-07-26T20:20:41" class="text-sm text-gray-500 font-mono">2018-07-26 20:20:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/channel/UCSuhUzpdXg9jme6eN6HA_IA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/channel/UCSuhUzpdXg9jme6eN6HA_IA</a><br /><br />O gierkach.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIWO! - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">PIWO!</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2211">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-05-08T21:26:50" class="text-sm text-gray-500 font-mono">2018-05-08 21:26:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jakie kurwa piwo pijecie? Że też ten temat powstaje dopiero ponad rok! od istnienia foruma. Najtańsze z biedry czy hipsterskie kraftowane gówna dostępne w 3 sklepach w Polszy za połowę wypłaty w Januszexie? <br />U mnie:<br />Kogut, czyli kurwa Cornelius, król wymiatacz, najlepszy stosunek jakości do ceny, bo za kurwa jebane 3-4zł dostajecie epicką polewnicę która rozpierdoli Wasze kubki smakowe na oktyliardy nanocząsteczek, będziecie zapierdalali do końca życia żeby się pozbierać po skosztowaniu tego zacnego skurwysyna. Uwaga, nie kupować na grilla, Janusze z żubrami i hehe harnasiami patrzeć będą na Was nieprzychylnym wzrokiem i wrócą wspomnienia z podbazy kiedy to cała klasa rzucała w Was kulkami z papieru. Wiem że tak było. Najlepszy ten z niebieską etykietą. A na serio: łagodny, ale intensywny smak za naprawdę niską cenę, porównać do tego takiego lecha czy innego carslberga to jak ferrari do fiata, a płacicie kurwa tyle samo. Ofc cudów nie ma, ale jest różnica. Idealny na rozdziewiczenie dla prawiczków całe życie wmawiających sobie, że Heineken to szczyt browarniczej poezji. <br />Grolsch - jak lubisz łagodne lagery a w Twojej wsi nie sprzedają Koguta, to se kup Grolscha. Droższy, lekko chujowszy, ale w bardziej szpanerskiej butelce dla ameb które nie umieją into otwieracz do piwa. <br />Kozel - jak jesteś życiowym przegrywem i jedyny sklep w Płuczkach Dolnych, czy innej wsi w której znajduje się Twoja piwnica, oferuje same gówno, a jesteś cipą i przegrywem który kaszle gdy piwo ma 10% więcej goryczki od Piccolo, to kup se Kozela. Cena - jak za Lecha. Smak - w sumie fajny, łagodny, ale czuć że pijesz piwo a nie kurwa sok porzeczkowy od cioci Bożenki.<br />Droższe: kurwa nie pamiętam nazw. Ale som. Np. w Auchan albo spożywczakach w galeriach, ale w tych drugich ceny wysokie.<br />APA! Gdy masz dość lagerów. (Lager- fermentacja dolna, APA - górna)<br />APA KURWA! Grodziska APA. Gdy masz dość lagerów sięgaj po APA od browaru grodziskowego. Cena - do 4zł, jakość - o kurwa. Dobry. Pij. <br />APA Żywiec. <br />;_; <br />;_____________________;<br />gdy mieszkasz na wsi i nie ma Grodziska, pozostaje APA Żywiec&#8230; no ale ogółem ujdzie. Lepszy niż APA książęce. Książęce to kutas i chuj, nie kupuj. <br />Inne APA jakie piłem: dużo. Najwięcej wydałem 8-9zł w sklepie, ale różnica w smaku nie była na tyle kolosalna żebym choćby zapamiętał nazwę browaru. Aczkolwiek zachęcam do eksperymentowania.<br />Piwa dla ciot: przychodzi mi na myśl Piwo Na Miodzie Gryczanym, np. w Dino można dostać. Słodkie w chuj ale dobre. <br />Som też piwa jagodowe, pomarańczowe etc, ale trzeba czytać czy to nie jest zwykłe gówniane piwo dla pedałów z dodatkiem soku z herbapolu. Jak nie jest - można kupować, czasem trafi się coś ciekawego, ale generalnie pedalstwo. <br /><br />Co by mnie interesowało: piwo z dużą dozą goryczki. Szukam, i szukam, i nie mogę nic znaleźć co by mię zadowoliło. Jak ktoś coś poleci, to Inf* w nagrodę zrobi loda.<br /><br />*w tym temacie uprasza się Infa o niepostowanie, nikt nie daje gówna o nowe odmiany Reddsa w biedrze. Ssij pałę kutafongu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2212">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-05-08T23:52:29" class="text-sm text-gray-500 font-mono">2018-05-08 23:52:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No teraz to akurat Żonobijka bo wyjątkowo miałem ochotę na coś jasnego. Jakiś czas temu z współlokatorem dostaliśmy sporej fazy na śliwkowe portery i nie umiemy się zdecydować, czy lepszy jest Titanic (lokalna produkcja), wchodzący bardziej w śliwki suszone, czy Saint Peter&#39;s smakujący bardziej śliwkami świeżymi. Zazwyczaj jednak wchodzą leciutkie bittery, głównie Tetley&#39;s z racji niskiej kaloryczności i dobrego smaku. W weekendy pozwalam sobie na coś mocniejszego, zwykle Abbot, czasem nawet Abbot Reserve.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2214">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2018-05-10T21:33:08" class="text-sm text-gray-500 font-mono">2018-05-10 21:33:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Triple Blond od Corneliusa. Sam browar spoko, wysłał mi za darmo skrzynke piwa kurierem, gdy raz mi Triple Blond nie podpasowało. Propsy.<br /><br />Oprócz tego ostatnio zacząłem pić Okocim Jasne i Łomże jasną, schłodzone świetnie orzeźwiają i wchodzą jak soczek, idealne na lato. <br /><br />APA od Grodziska, chciałem spróbować, ale okazało się, że to z tego pedalskiego Wielkopolskiego, a nie prawilijnego Mazowieckiego, więc sobie darowałem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2215">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-05-11T04:29:32" class="text-sm text-gray-500 font-mono">2018-05-11 04:29:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Okocim to co najwyżej Dubeltowy daje radę. <br /><br /><div class="quote-block">Triple Blond od Corneliusa. Sam browar spoko, wysłał mi za darmo skrzynke piwa kurierem, gdy raz mi Triple Blond nie podpasowało.</div><br />Czekaj, czyli wysłali Ci wincyj stuffu który Ci nie pasował? Nie no to jest mistrzowski marketing, spierdoxy uczcie się jak bajerować na Tinderze.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2216">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2018-05-11T09:31:32" class="text-sm text-gray-500 font-mono">2018-05-11 09:31:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Chodzi o to, że piłem je już od roku i doskonale wiedziałem jak smakuje. Jednak raz kupiłem sobie 2 butelki i smakowało jak gówienko, a nie jak Triple Blond.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

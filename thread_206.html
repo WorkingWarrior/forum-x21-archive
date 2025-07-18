@@ -1,0 +1,232 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebooki - ktoś? Coś? - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Ebooki - ktoś? Coś?</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1626">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-07-30T23:01:57" class="text-sm text-gray-500 font-mono">2017-07-30 23:01:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jako zagorzały fan książek w formie elektronicznej ciekaw jestem jakie jest podejście forumowiczów do e-książek. Czytacie? Kupujecie? <br /><br />Sam jestem w posiadaniu czytnika Kindle Keyboard czyli wersji 3ciej czytnika od Amazon i jestem z niego bardzo zadowolony. Kosztował mnie parę lat temu 200pln i ciągle dzielnie mi służy. Kolejny czytnik na pewno też będzie od Amazona i zapewne będzie to Kindle Paperwhite 3.<br />Co do księgarni to do niedawna nie miałem swojej ulubionej i codziennie odwiedziłem swiatczytnikow.pl żeby przejrzeć najnowsze promocje. Od pewnego czasu jednak posiadam konto premium w Nexto, dzięki któremu mam 40% rabatu na całą ofertę sklepu, a do tego rabat łączy się z innymi promocjami. Dla przykładu książka Jacka Piekary Płomień i Krzyż kosztował mnie około 15pln, a Mrówańcza koło 10pln. IMHO inwestycja w czytnik i Nexto Premium to była super oszczędność względem papieru.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1627">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-13T20:40:59" class="text-sm text-gray-500 font-mono">2017-08-13 20:40:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: area">W związku z przeprowadzką do Srakowa miałem ostatnio mało czasu, by w ogóle wchodzić na forumy, ale mam nadzieję, że teraz się to zmieni.</span><br /><br />Wracając do tematu – od jakiegoś czasu chodzi za mną chęć kupna czytnika e-booków, bo do tej pory czytałem na moim Nexusie 4, co nie było zbyt wygodne (chociaż w autobusie czy tramwaju jest ok, bo tel .mały). Zastanawiam się nad kupnem Kindle Paperwhite 3, bo wszędzie jest zachwalany. Niestety, miejsce w mieszkaniu jest ograniczone, więc nie będę mógł w nieskończoność poszerzać swojej kolekcji. Tak szczerze, chciałbym, by czytnik miał możliwość synchronizacji z Google Drive, byłoby to ciekawa opcja, która uchroniłaby mi dupę przed utratą danych.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1628">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-08-14T10:12:16" class="text-sm text-gray-500 font-mono">2017-08-14 10:12:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jeśli idzie o backup to nie ma problemu, wystarczy, że będziesz wrzucał książki przez email. Wysyłasz je na email powiązany z Twoim kindlem (e.g. solve@kindle.com) i masz od razu backup na serwerach Amazona. Do tego zawsze możesz zainstalować sobie Calibre (program do zarządzania książkami) i ustawić sobie automatyczny backup folderu w którym trzyma biblioteczkę z książkami ;) <br /><br />Co do samego czytnika, to jak poprzeglądałem co jest dostępne na rynku i po kontakcie z Kindle Touch 7 utwierdziłem się w przekonaniu, że najprawdopodobniej w grudniu tego roku kupuję Paperwhite 3 w jakimś Euro RTV AGD czy czymś takim na raty 0%. Nie widzę powodu aby dopłacać do Voyage czy Oasisa, a chcę mieć czytnik z podświetleniem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1629">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-17T08:45:32" class="text-sm text-gray-500 font-mono">2017-08-17 08:45:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Muszę poszukać w Srakowie, gdzie sobie kupić taką przyjemność, ale podejrzewam, że w większości galerii. Pytanie – czy na Kindle da się wrzucić własne pliki? Epuby itd.?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1630">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-08-17T21:48:33" class="text-sm text-gray-500 font-mono">2017-08-17 21:48:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Z tego co kojarzę to natywnie Kindle obsługuje tylko Mobi, TXT i PDF przy czym czytanie na nim PDF to masochizm. Aby przeczytać EPUB, DOC itd. trzeba skonwertować pliki za pomocą np. Calibre ;) To jest chyba jedyny minus Kindle tj. korzystanie z własnego formatu plików MOBI zamiast z bardziej popularnego otwartego EPUB. Na szczęście niemal każda polska księgarnia z ebookami sprzedaje multiformat tj. MOBI + EPUB, a często dorzucają do tego jeszcze PDF.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1631">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-18T19:22:27" class="text-sm text-gray-500 font-mono">2017-08-18 19:22:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Fred</strong> napisał:</span></div><br />Z tego co kojarzę to natywnie Kindle obsługuje tylko Mobi, TXT i PDF przy czym czytanie na nim PDF to masochizm. Aby przeczytać EPUB, DOC itd. trzeba skonwertować pliki za pomocą np. Calibre ;) To jest chyba jedyny minus Kindle tj. korzystanie z własnego formatu plików MOBI zamiast z bardziej popularnego otwartego EPUB. Na szczęście niemal każda polska księgarnia z ebookami sprzedaje multiformat tj. MOBI + EPUB, a często dorzucają do tego jeszcze PDF.<br /></div>Poczytałem trochę w internetach – piszą, że fajny to czytnik. Pliki EPUB można wpierdolić, jak się zmieni im rozszerzenie na *.jpg/*.png, więc sprawa chyba załatwiona. IMO nie ma sensu kupować najnowszych wersji Kindle, bo nic nadmiernie zajebistego nie oferują. Mógłbym wygodnie czytać pierdoły w tramwaju – czytanie z telefonu przyprawia mnie o chęć wyrżnięcia połowy pasażerów. Składka na Pejperłajta dla Sölvego?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1632">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-08-22T17:33:30" class="text-sm text-gray-500 font-mono">2017-08-22 17:33:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Osobiście nie wyobrażam sobie czytania książek z ekranu komputera/tabletu/telefonu (chyba, że Yota Phone z eink). W każdym razie gorąco polecam zakup czytnika z dobrym wyświetlaczem ;) Wygodnie się czyta, szczególnie jak weźmiesz się za jakieś opasłe tomiszcze typu Władca Pierścieni 3w1, Ziemiomorze itp.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2003">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-28T20:05:49" class="text-sm text-gray-500 font-mono">2018-01-28 20:05:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jestem w trakcie lektury „Modyfikowanego węgla” autorstwa Richarda Morgana – chłodna historia, bracie. Opowieść o „Emisariuszu”, który zostaje wplątany w międzyświatową intrygę. Morderstwa, Sci-Fi, modyfikacje ciał i genomu. Polecam ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

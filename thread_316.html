@@ -1,0 +1,148 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plej stejszyn - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Plej stejszyn</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2901">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-07-05T21:12:26" class="text-sm text-gray-500 font-mono">2020-07-05 21:12:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Tak na poważnie rozważam czy by nie kupić PS4, głównie w zasadzie chodziłoby mi o The Last of Us, cz. 1 und 2. Wiadomix, gra dekady, srady, blabla, fajno byłoby obczaić, przy okazji pewnie by się obczaiło parę innych tytułów, no i granko na dużym TV zawsze spoko. Pewnie kupiłbym jakoś w listopadzie, czyli koło premiery PS5, bo domyślam się że wtedy stanieje, ale zastanawiam się nad używanym. Z racji że nie miałem nigdy do czynienia z xboxem czy ps&#39;em, prośbuję o opinię: używki spoko, czy jednak ryzyko że umrze? Psuje się to chujstwo? Nie zamierzam tego nakurwiać po 15h dziennine, mówię - to ma być do paru gier, więc chyba pójście w używki nie takie złe?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2902">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2020-07-07T10:13:28" class="text-sm text-gray-500 font-mono">2020-07-07 10:13:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2901" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />Tak na poważnie rozważam czy by nie kupić PS4, głównie w zasadzie chodziłoby mi o The Last of Us, cz. 1 und 2. Wiadomix, gra dekady, srady, blabla, fajno byłoby obczaić, przy okazji pewnie by się obczaiło parę innych tytułów, no i granko na dużym TV zawsze spoko. Pewnie kupiłbym jakoś w listopadzie, czyli koło premiery PS5, bo domyślam się że wtedy stanieje, ale zastanawiam się nad używanym. Z racji że nie miałem nigdy do czynienia z xboxem czy ps&#39;em, prośbuję o opinię: używki spoko, czy jednak ryzyko że umrze? Psuje się to chujstwo? Nie zamierzam tego nakurwiać po 15h dziennine, mówię - to ma być do paru gier, więc chyba pójście w używki nie takie złe?<br /></div><br />Ty, kurwa, kacapie jebany, biedaku wunglarski, kup se nowe, kosztuje 900 zł. A jak bardzo chcesz, możesz wziąć używkę, nie powinno się nic złego stać. A jak się bardzo boisz, kup używkę i daj znać, załatwię Ci taniuśki i porządny serwis takiej konsolki (SPA, zmiana past, sprawdzenie podzespołów itd.).
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2906">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-07-07T13:01:23" class="text-sm text-gray-500 font-mono">2020-07-07 13:01:23</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Można wysłać playstation do spa? Nie nadążam ostatnio za technologio.<br /><br />No niby tylko 900 ziko ale jak kupuje to tylko dla 2-3 gier to po co mam wypierdalać hajs. Przypominam, że kupiłem CoD: Black Ops po rusku żeby zaoszczędzić 30zł xD und później jobanie w spolszczanie. <br /><br />A którą wersję wybrać, 500 czy 1GB, tzn jak to w ogóle jest, bo moje ostatnie spotkanie z konsolą to chyba był pegasus gdzie nie trzeba było nic instalować i grało się z dyskietki, tzn trzeba instalować gry czy można grać &quot; z płytki&quot;? xD Jak trzeba instalować to gry na PS4 też mają takie pokurwione rozmiary jak obecnie na PC (dla przykładu najnowszy CoD 220GB, chuj im w cyce)?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2907">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2020-07-07T20:57:30" class="text-sm text-gray-500 font-mono">2020-07-07 20:57:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2906" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />Można wysłać playstation do spa? Nie nadążam ostatnio za technologio.<br /><br />No niby tylko 900 ziko ale jak kupuje to tylko dla 2-3 gier to po co mam wypierdalać hajs. Przypominam, że kupiłem CoD: Black Ops po rusku żeby zaoszczędzić 30zł xD und później jobanie w spolszczanie.<br /><br />A którą wersję wybrać, 500 czy 1GB, tzn jak to w ogóle jest, bo moje ostatnie spotkanie z konsolą to chyba był pegasus gdzie nie trzeba było nic instalować i grało się z dyskietki, tzn trzeba instalować gry czy można grać &quot; z płytki&quot;? xD Jak trzeba instalować to gry na PS4 też mają takie pokurwione rozmiary jak obecnie na PC (dla przykładu najnowszy CoD 220GB, chuj im w cyce)?<br /></div><br />Weź 1 TB, teraz to wcale nie jest tak dużo, jak mogłoby się wydawać.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

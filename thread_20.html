@@ -1,0 +1,484 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stare, nowe, dobre - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Stare, nowe, dobre</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-107">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-28T11:30:39" class="text-sm text-gray-500 font-mono">2016-12-28 11:30:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Serwer jest opłacony na rok, więc macie pole do popisu - jeśli chcecie. Udzielajcie się, piszcie, głupiejcie itd.<br /><br />Dobrej zabawy!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-108">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2016-12-28T12:59:38" class="text-sm text-gray-500 font-mono">2016-12-28 12:59:38</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Aprobuję te emotki  :twisted:  8-) <br />Ale szatboksa to Ty dodaj w pierwszej kolejności  :mrgreen:
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-109">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-28T13:02:00" class="text-sm text-gray-500 font-mono">2016-12-28 13:02:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Shitboksa nie będzie, teraz będą posty i rozmowy, nie gówniaczenie :E<br />Ale emotki faktycznie kewl  :lol:
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-110">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2016-12-28T19:21:22" class="text-sm text-gray-500 font-mono">2016-12-28 19:21:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Co tu się odjaniepawla?<br /><div class="quote-block"><div class="quote-header"><span><strong>Enzo</strong> napisał:</span></div>Miska franco doodbytnicza, akceptuj posty, a nie, że nie widzę, że napisałem i piszę drugi raz to samo, bo myślę, że forum mi zjadło posta.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-111">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-28T20:36:42" class="text-sm text-gray-500 font-mono">2016-12-28 20:36:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Z tą akceptacją postów to moja wina, nie zmieniłem domyślnej grupy użytkowników. Mea culpa. Cosa nostra. Czy jakoś tak.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-112">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2016-12-29T11:43:33" class="text-sm text-gray-500 font-mono">2016-12-29 11:43:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div>Z tą akceptacją postów to moja wina, nie zmieniłem domyślnej grupy użytkowników. Mea culpa. Cosa nostra. Czy jakoś tak.</div><br /><br />Proszę nie bronić tego złoczyńcy i natychmiast ustanowić moderatorem Wheeljacka.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-113">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-29T11:44:10" class="text-sm text-gray-500 font-mono">2016-12-29 11:44:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ale Wheelchaira tutaj nie ma :(
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-114">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2016-12-29T11:59:06" class="text-sm text-gray-500 font-mono">2016-12-29 11:59:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zawsze możemy google bota przemianować na Wheelchaira. Wtedy nawet będzie z niego pożytek.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-115">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2016-12-30T10:24:44" class="text-sm text-gray-500 font-mono">2016-12-30 10:24:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Sugeruje zmiane bota na Wheelkrzeslo w takim razie. Brzmi bardziej swojsko.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-116">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2016-12-30T10:27:11" class="text-sm text-gray-500 font-mono">2016-12-30 10:27:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Swojsko to brzmi KołoJacek.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-117">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-30T12:42:26" class="text-sm text-gray-500 font-mono">2016-12-30 12:42:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                KołoJacek brzmi niczym spełnienie marzeń Miski. Niech tak będzie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-118">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2016-12-30T19:22:40" class="text-sm text-gray-500 font-mono">2016-12-30 19:22:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A ja pamiętam, że w ramach krzynki Wheelchair to był Jack Lumberjack.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-119">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-01T16:48:43" class="text-sm text-gray-500 font-mono">2017-01-01 16:48:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wheeljack to był Jacek Kółko, kuhwy amnezyjne.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-120">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/21.jpg?1512503192" alt="Awatar Quinn" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Quinn</span>
+                                <time datetime="2017-01-09T16:27:58" class="text-sm text-gray-500 font-mono">2017-01-09 16:27:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Boję się templatki fore. :(
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-121">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Valentino</span>
+                                <time datetime="2017-01-10T01:15:48" class="text-sm text-gray-500 font-mono">2017-01-10 01:15:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A ile kosztuje takie opłacenie? Co by może na następny zacząć zbierać.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-122">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-12T08:22:22" class="text-sm text-gray-500 font-mono">2017-01-12 08:22:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zależy, jaką opcję wybierzemy. Teraz stoimy na hostingu WWW, ale nie wiem czy nie wrócimy na VPS ;)<br /><ul><li>WWW to 9,83 zł/m-c</li><li>VPS to 14,75 zł/m-c</li></ul><br />Odnowienie domeny to 49,99 zł. Mówię tu o serwerach OVH. Dedyka nie potrzebujemy, bo forma przerośnie treść. Poza tym nie wiem, jak będzie się sprawował najtańszy VPS, trzeba to wszystko potestować.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-123">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-12T08:36:57" class="text-sm text-gray-500 font-mono">2017-01-12 08:36:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Biorąc pod uwagę nasze potrzeby, do dedyka nigdy nie dotrzemy. Jednak opcja VPS wygląda ciekawie. Jeżeli VPS byłby stabilniejszy i pozwalał na większą swobodę (a taki jest zamysł w końcu), to można by się przenieść.<br />For shits and giggles można by nawet Patreona, czy też jego polskiego odpowiednika Patronite, wypróbować do zbierania kasy z ludzi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-124">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-12T09:47:56" class="text-sm text-gray-500 font-mono">2017-01-12 09:47:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>MCaleb</strong> napisał:</span></div>For shits and giggles można by nawet Patreona, czy też jego polskiego odpowiednika Patronite, wypróbować do zbierania kasy z ludzi.</div>Nie no, nie sądzę, by ktoś chciał dać pieniądze forum o kupie. Te 160 zł rocznie jesteśmy w stanie wyrzygać :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-125">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-12T09:53:47" class="text-sm text-gray-500 font-mono">2017-01-12 09:53:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wiem, że gówno, nie pieniądze, ale myślę że i tak byliby tacy, co dorzuciliby choć 12 złociszy rocznie. Przynajmniej nie ponosiłbyś całych kosztów, nieważne jak śmiesznie małych.<br /><br />A wracając do VPSa - dadzą nam potestować, czy trzeba by się po prostu przesiąść i sprawdzić na własnej skórze?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-126">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-12T13:37:21" class="text-sm text-gray-500 font-mono">2017-01-12 13:37:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Trzeba się przesiąść i testować, niestety nie rozdają :/
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

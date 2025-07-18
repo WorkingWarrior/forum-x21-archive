@@ -1,0 +1,841 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co ostatnio czytacie / przeczytaliście? - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Co ostatnio czytacie / przeczytaliście?</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-551">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2016-12-31T14:36:12" class="text-sm text-gray-500 font-mono">2016-12-31 14:36:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jako, że mamy temat o grach w które aktualnie gramy pokusiłem się o temat na temat książek, które aktualnie czytamy bądź przeczytaliśmy niedawno. W moim przypadku jest to Krawędź Żelaza autorstwa Miroslava Žambocha, opowiadająca o przygodach najemnika Koniasza. Jest to druga książka z serii, aktualnie czekam na wydanie części trzeciej w wersji jednotomowej ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-552">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2016-12-31T14:54:32" class="text-sm text-gray-500 font-mono">2016-12-31 14:54:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zbiór opowiadań pisanych na spółę przez Lovecrafta i Zelię Bishop, &#39;&#39;Wzgórze&#39;&#39;. Trzy opowiadanka. <br />Ostatnio katuję też serię &#39;&#39;Sabaty&#39;&#39; od wydawnictwa Illuminatio. To poradniki dla wiccan apropo odprawiania świąt.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-553">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2016-12-31T16:56:37" class="text-sm text-gray-500 font-mono">2016-12-31 16:56:37</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wzięłam się za &quot;Ołowiany świt&quot; Gołkowskiego, ale jeszcze nie skończyłam&#8230; Nie dlatego, że mi się nie podobało czy coś, tylko po prostu czasem czytanie z pewnych powodów topornie mi idzie. :/ No i czasu nie ma tyle co kiedyś (praca&#8230;).<br />Ostatnią książką, jaką przeczytałam w całości był &quot;Nowy, wspaniały świat&quot;. I jeszcze czekan na mnie &quot;Metro 2035&quot;.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-554">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2016-12-31T17:01:14" class="text-sm text-gray-500 font-mono">2016-12-31 17:01:14</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                W trakcie czytania: Metro 2033, długo z tym zwlekałem, trochę się zawiodłem póki co - dobre, ale dupy nie urywa. Lepsze postapo to już Stephen King pisał, chociażby w Bastionie. <br />Poza tym Jo Nesbo, dorwałem w końcu jedną z jego książek - Pierwszy Śnieg - i po 30 stronach już wiem, że przeczytam całą jego twórczość. <br /><br />Pytanie dla tych, którzy czytali - Metro 2034 to faktycznie taki rak? Jeno bez spojlerów proszę.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-555">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2016-12-31T17:09:29" class="text-sm text-gray-500 font-mono">2016-12-31 17:09:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>Pytanie dla tych, którzy czytali - Metro 2034 to faktycznie taki rak? Jeno bez spojlerów proszę.</div><br />2034 jest trochę inne i słabsze, niż pierwsza część, ale również mnie wciągnęło tak jak 2033 i przeczytałam całość. Po prostu autor skupił się tu na innych problemach - główny bohater to taki filozof, co nie wiedział że ma na dupie przedział i trochę Głuchowski przynudził z tymi jego rozmyślaniami (ba, mój koleżka twierdzi nawet, że dla ludzi spoza Rosji te filozofie są jak z dupy). A reszta&#8230; Cóż, co kto lubi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-556">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-03T11:41:21" class="text-sm text-gray-500 font-mono">2017-01-03 11:41:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                &quot;Ręka mistrza&quot; Stephena Kinga. Czasami jego styl mnie męczy, ale jestem z nim zżyty na tyle, że nie potrafię przestać :/
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-557">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-01-03T16:59:49" class="text-sm text-gray-500 font-mono">2017-01-03 16:59:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zaczęłam czytać &quot;Metro 2035&quot;. Jestem dopiero na początku, ale na razie zapowiada się ciekawie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-558">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-01-03T18:14:11" class="text-sm text-gray-500 font-mono">2017-01-03 18:14:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O to widzisz, ja jestem prawie pod koniec tej książki. Momentami są naprawdę ciekawe zwroty akcji, ale niczego nie powiem, by nie zepsuć czytania. Tak czy siak dzisiaj w nocy tak się zaczytałem, że aż słońce mnie zastało, a na uczelnię trzeba było iść.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-559">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-03T19:16:30" class="text-sm text-gray-500 font-mono">2017-01-03 19:16:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Metro 2035 bardziej przypomina manifest polityczny niż opowieść.<br />Jednak ciężko się dziwić biorąc pod uwagę co dzieje się obecnie w Rosji. Można przyjąć, że to przez tę presję polityka przelała mu się do twórczości, jednak całość opowieści oparta jest na tym do tego stopnia, że wygląda to bardziej na próbę &quot;wypuszczenia pary&quot; przez Głuchowskiego. W każdym razie miłe czytadło, zdecydowanie lepsze od części poprzedniej.<br />Jeżeli ktoś nie grał w Metro Last Light, to polecam się wpierw zapoznać. O ile pierwsza część gry była adaptacją pierwszej części książki, to już druga gra to własna opowieść, do której niejednokrotnie autor nawiązuje w 2035.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-560">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-01-05T23:06:35" class="text-sm text-gray-500 font-mono">2017-01-05 23:06:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja się biorę teraz za &quot;WikiLeaks od środka&quot;, szukałem dziś po sklepach &quot;Prawo do użycia siły&quot; Szabalowa ale nie mogłem na nie trafić więc pocieszyłem się książką o WikiLeaks.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-561">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/17.jpg?1512503192" alt="Awatar Wunsz" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Wunsz</span>
+                                <time datetime="2017-01-07T12:55:49" class="text-sm text-gray-500 font-mono">2017-01-07 12:55:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                &quot;Prawo do użycia siły&quot; - polecam, przeczytałem przed Nowy Rokiem, druga część (&quot;Prawo do życia&quot; już zakupione).<br /><br />Aktualnie przechodzę przez &quot;Człowieka obiecanego&quot;. Prolog w ogóle nie przypadł mi do gustu, jednak w częsci pierwszej zaczyna się rozkręcać :)<br /><br />Z uniwersum metro &quot;in queue&quot;:<br />&gt; &quot;Prawo do życia&quot;<br />&gt; &quot;Echa zgasłego światła&quot;<br />&gt; &quot;Wieża&quot; (&quot;Otchłań&quot; była całkiem ciekawa, tym bardziej, że mieszkam aktualnie we Wro)<br /><br />A z dalszych pozycji z tego uniwersum, to przeszedłem przez trylogię Diakowa (&quot;Do światła&quot;, &quot;W mrok&quot;, &quot;Za horyzont&quot;) i też polecam. Choć mam wrażenie że wychodzę na fanboya serii :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-562">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-08T23:00:18" class="text-sm text-gray-500 font-mono">2017-01-08 23:00:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Skończyłem właśnie dziś Tam Gdzie Ciepło Pawła Kornewa.<br />Jest to kolejna część jego opowiadań o Przygraniczu - miejscu gdzie zima panuje wiecznie. Zaczęło się od Sopla, Śliskiego i poszło dalej. Tam Gdzie Ciepło oraz poprzednia część Lodowa Cytadela skupia się na innej postaci, jednak całość jest kontynuacją opowieści.<br />Bardzo polecam autora, naprawdę dobrze pisze i jego opowiadanka miło się czyta. Przynajmniej mi, bo wiem że kumpel miał problem z Cytadelą - ale i zaczął w pewnym sensie od środka.<br /><br />Jeszcze włączę się do rozkmin o Metro:<br />2033 - polecam.<br />2034 - pominąć.<br />2035 - polecam.<br />Najlepsze do najgorszego: 2033 &gt; 2035 &gt; 2034.<br />Tyle w temacie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-563">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-09T07:13:51" class="text-sm text-gray-500 font-mono">2017-01-09 07:13:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Muszę zapytać - czytał ktoś coś z cyklu <em>Świata Siedmiu Zwierząt</em> Nika Pierumowa? Kiedyś miałem w planach te knigi, a teraz nie wiem czy nadal o nich myśleć :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-564">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-01-29T13:02:06" class="text-sm text-gray-500 font-mono">2017-01-29 13:02:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Myśleć możesz :P nikt Ci nie broni (jeszcze), kto wie co się przez kolejne 3 lata zmieni. <br /><br />Ja chwilowo porzuciłem WikiLeaks bo zdobyłem Prawo do użycia siły, Prawo do życia i trylogię Diakowa także priorytet chwilowo mi się zmienił.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-565">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-30T12:02:09" class="text-sm text-gray-500 font-mono">2017-01-30 12:02:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Z uwagi na ostatnie podróże przeczytałem Komornika Gołkowskiego.<br />Autora zapewne kojarzycie z polskich powieści w świecie Stalkera, które napisał.<br /><br />Komornik to trochę inne post-apo, ponieważ dzieje się w świecie gdzie prawdziwa apokalipsa się zaczęła, po czym utkwiła w miejscu, bo zabrakło środków do jej przeprowadzenia. Dlatego też ludzkość jest w dupie i wymiera, ale nie tak jak powinna. Tytułowy zawód to &quot;najemnicy&quot; nieba, którzy mają wykonywać kontrakty (czyt.: zabijać wyznaczonych ludzi), tyle że różnie te kontrakty idą. <br />Więcej nie spoileruję, na stronie Fabryki Słów jest fragment, a samą książkę osobiście polecam.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-566">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">atikabubu</span>
+                                <time datetime="2017-01-30T13:32:26" class="text-sm text-gray-500 font-mono">2017-01-30 13:32:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja sobie właśnie czytam literaturę niskich lotów, czyli &quot;Sto milionów dolarów&quot; Lee Childa. Ot kolejna książka o Jacku Reacherze, gościu który wpierdoli całemu barowi ludzi naraz, w każdej książce wyrucha inną (praktycznie zawsze wysportowaną i cycatą) laskę, a potem zostanie kijem wetkniętym w szprychy jakiemuś złodupcowi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-567">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-02-01T01:11:11" class="text-sm text-gray-500 font-mono">2017-02-01 01:11:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                &quot;Pierwszy śnieg&quot; Jo Nesbo przeczytany, polecam wszystkim fanom kryminałów. Mocna intryga, wszystko splecione tak, że bardzo ciężko domyślić się kto za czym stoi, fajne wątki medyczne. Zacząłem już następną jego książkę &quot;Pancerne serce&quot; i zapowiada się co najmniej równie ciekawie, jeśli ktoś zaczytywał się w Cobenie / Pattersonie to śmiało polecam również Nesbo i jego zapijaczonego, ale błyskotliwego Harry&#39;ego Hole. Nie ma tutaj wielkich strzelanin, dziwek i wybuchów, nie ma też wielu wątków psychologicznych, co z reguły w kryminałach bardzo lubię, ale mimo wszystko mi czytało się przednio.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-568">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-05-16T16:00:57" class="text-sm text-gray-500 font-mono">2017-05-16 16:00:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Aktualnie czytam Ziemiomorze bo kupiłem ebooka na Kindle za jakieś 28pln, gdzie papier kosztuje 60 i jest nieporęczny. Do tego słucham Lux Perpetua w wersji z aktorami (słuchowisko).
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-569">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-07-23T20:31:45" class="text-sm text-gray-500 font-mono">2017-07-23 20:31:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Lux Perpetua za mną, podobnie &quot;Prawo do zemsty&quot;, a co do Ziemiomorza to 41% za mną ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2249">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-06-10T00:40:56" class="text-sm text-gray-500 font-mono">2018-06-10 00:40:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Obecnie że w ramach panującego od jakiegoś czasu nastawienia antyspierdoxowego zwróciłem się w ramy kultury wysokiej, zacząłem czytać &quot;Notatki z Podziemia&quot; Dostojewskiego. Przyznam, że jest to lektura trafiająca nieco w moje własne przywary z dawnych czasów, a zdecydowanie w cechy niektórych osób które znałem. Przydałaby się tu emotka &quot;really makes me think&quot;, także @Sulf tutaj ostry /r/. Na daną chwilę jeszcze powieści nie skończyłem, jako że czytam wymiennie z &quot;Bad Pharma&quot; Bena Goldacre; to gwoli zawodowych zainteresowań.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2515">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-12T08:37:39" class="text-sm text-gray-500 font-mono">2018-12-12 08:37:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jestem w trakcie czytania &quot;Ślepowidzenia&quot; Petera Wattsa - lektura dosyć ciężka, trzeba się skupić, żeby wszystko uchwycić. Aczkolwiek daje satysfakcję ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2519">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-12-13T21:27:24" class="text-sm text-gray-500 font-mono">2018-12-13 21:27:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Czytam regularnie gazetki promocyjne z Lidla i Biedronki, szanujecie?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2520">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2018-12-14T10:38:35" class="text-sm text-gray-500 font-mono">2018-12-14 10:38:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2519" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Leeter</strong> napisał:</span></a></div>Czytam regularnie gazetki promocyjne z Lidla i Biedronki, szanujecie?</div><br />Nie.<br /><br />A skoro już napisałem, to od jakiegoś roku z przerwami czytam Na Skraju Zony (tom 1). Książka wydana w cyklu stalkerskim Fabryki Słów. Nie wiem czy mogę polecić, bo mimo że autor ma pasję, to jednak posiada warsztat początkującego pisarza. Może dlatego też lekturę czytam na raty.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2530">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-01-07T23:33:13" class="text-sm text-gray-500 font-mono">2019-01-07 23:33:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Noo, „Ślepowidzenie” skończone, teraz lecę z „Domem na Wyrębach” Stefana Dardy (kiedyś już czytałem, ale chcę sobie odświeżyć przed przeczytaniem kolejnych tomów, które wyszły, gdy nie byłem świadom) :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2531">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-01-08T05:19:41" class="text-sm text-gray-500 font-mono">2019-01-08 05:19:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Weź chopie jakoś zrecenzuj ślepowidzenie, bo też bym się może zabrał.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2532">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-01-08T08:44:19" class="text-sm text-gray-500 font-mono">2019-01-08 08:44:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2531" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Weź chopie jakoś zrecenzuj ślepowidzenie, bo też bym się może zabrał.</div><br />Ugh. A miałem wziąć się do pracy. No nic, niechaj rozwinie się mój żagiel pisarski :D<br />Ww. powieść traktuje o następstwach pojawienia się dookoła Ziemi 65 k jednostek pozaziemskich, które nie zrobiły totalnie nic, oprócz fotografii. Głównym bohaterem jest Siri Keeton, człowiek pozbawiony empatii w wyniku operacji przeprowadzonej w dzieciństwie. Jest on członkiem załogi statku kosmicznego, Tezeusza, który leci na wyprawę, mającą na celu zbadać, kto podglądał Ziemię za pomocą ww. jednostek. Dowódcą jest wampir (rasę tę wskrzeszono kiedyś w świecie przedstawionym), co wcale nie ułatwia ludziom zadania. U celu swej podróży napotykają istoty pozaziemskie, ale nie są takie, jakich spodziewalibyśmy się, po latach karmienia nas papką kukurydzianą z USA ;)<br />Ogólnie mówiąc, polecam. Tutaj, tak naprawdę, nie liczy się sensacja, czy też zwroty akcji, lecz sposób w jaki sposób autor ukrył prawdę, tak naprawdę wcale tego nie robiąc. Warto czytać w skupieniu, bo wiele może umknąć.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2533">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-01-08T14:55:47" class="text-sm text-gray-500 font-mono">2019-01-08 14:55:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ciemki. W takim razie chętnie się zabiorę jak gdzieś ją dorwę. <br />Tak z ciekawości, ktoś czytał może &quot;Ubik&quot; K. Dicka? Bo też leży u mnie już od dawna na liście książków do przeczytania.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2588">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-02-06T08:24:48" class="text-sm text-gray-500 font-mono">2019-02-06 08:24:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2533" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Ciemki. W takim razie chętnie się zabiorę jak gdzieś ją dorwę.<br />Tak z ciekawości, ktoś czytał może &quot;Ubik&quot; K. Dicka? Bo też leży u mnie już od dawna na liście książków do przeczytania.</div><br />&quot;Ubika&quot; miałem zaczynać. Trawię twórczość Filipa K. Siusiaka, więc pewnie mi podejdzie.<br />Nie pamiętam czy tutaj o tym bazgrałem, ale warto przeczytać &quot;Ptaka śmierci&quot; Harlana Ellisona - zbiór opowiadań S-F. Nie są zbyt długie, ale zawsze skłaniają do refleksji.<br />Polecam też krótkie opowiadanie Roberta Younga - &quot;The Dandelion Girl&quot;. Przypuszczam, że większość osób zna pewien cytat z niego ;)<br />Na liście mam &quot;Wypalić chrom&quot; Williama Gibsona, jako że dobrze czuję się w klimatach cuberpunkowych i postcyberpunkowych. Nie wiem, jak o czymś zapomniałem, to jeszcze napiszę.<br /><br />E:<br />Przeczytałem cały cykl &quot;Wyrębów&quot; Dardy, jednak nie zachwycił mnie tak, jak bym tego chciał. Szczególnie zawiódł mnie drugi tom, który, w gruncie rzeczy, był strasznie rozwleczony. Cóż, w związku z tym przeszedłem do &quot;Echopraksji&quot; :p<br /><br />E2:<br />&quot;Echopraksja&quot; skończona jakiś czas temu, widać w niej ewolucję Petera Wattsa. &quot;Ślepowidzenie&quot; skupiało się na filozofii i rozpatrywaniu sensu świadomości ludzkiej, natomiast kontynuacja jest wypełniona akcją (co nie wypiera dywagacji na tematy przeróżne). Nie będę sypał spoilerami, ale obie książki są warte przeczytania. Jeśli chcecie poczytać, kupcie ebooki, te spiracone są tak gówniane, że ledwo da się czytać, szczególnie drugiego tomu.<br />Obecnie wchłaniam &quot;Poklatkową rewolucję&quot;. Mam nadzieję, że wciągnie mnie tak jak ww. knigi. Teraz mam nieco więcej czasu na czytanie, bo jeżdżę obciągiem, to i mogę więcej poczytać D:<br /><br />E3:<br />&quot;Poklatkowa rewolucja&quot; skończona. Czas na inne opowiadania tego pana. Peter Watts wciąga, serio.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2626">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2019-02-18T17:48:29" class="text-sm text-gray-500 font-mono">2019-02-18 17:48:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Parę dni temu skończyłem ostatni tom &quot;Archipelagu Gułag&quot; Sołżenicyna. Każdemu się pewnie o uszy obiło, ktoś może nawet coś czytał. A jak ktoś nie wie albo zapomniał, książka opisuje przeżycia i spostrzeżenia autora oraz świadków podczas ich przemiałki przez radziecką machinę więzienną. O tym jaki był jej sens, geneza i przyszłość. O ludziach którzy po prostu znaleźli się w niewłaściwym miejscu o niewłaściwej porze. O bohaterskich ucieczkach. I dlaczego ruskies gonna rusk.<br />Pomimo ciężkiej tematyki czyta się bardzo lekko, dzieło mocno wciąga. Przy czym daje do myślenia.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2690">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-04-15T09:05:31" class="text-sm text-gray-500 font-mono">2019-04-15 09:05:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dawno robiłem jakąkolwiek aktualkę. W międzyczasie przeczytałem masę opowiadań Wattsa, pierwszy tom „Płomienia i krzyża” Piekary. Jestem też w trakcie kończenia trzeciego, ostatniego tomu cyklu „Takeshi Kovacs”, czyli „Zbudzone furie”. O ile drugi tom był całkiem smaczny, tak ten totalnie mi nie odpowiada, męczę go już drugi miesiąc, co ewidentnie mi się nie uśmiecha, bo chciałbym cisnąć z cyklem Inkwizytorskim Piekary albo przejść do innych książek. „Zbudzone furie” są nieziemsko rozwleczone, przegadane i, nie ukrywając, nudnawe. Dobrze, że pod koniec trochę się to rozpędza.<br /><br />//E:<br /><br />Dobra, kolejna aktualka. Skończyłem „Zbudzone furie” - zakończenie było lepsze, niż cała książka, ale nie zabiło niesmaku, który zbudowany został przez większość książki. A szkoda, miałem nadzieję, że będę ciepło wspominał ww. trylogię.<br />Hmm, wydaje mi się, że nie pisałem o tym, ale zacząłem cykl inkwizytorski Piekary, czytam go chronologicznie - trochę mnie dupa piecze, że muszę przeczytać cztery książki, żeby dobić się do kolejnego tomu „Płomienia i krzyża”. Bardzo przyjemne czytadło. Jucha, morderstwa, gwałty, wszystko! Cud, miód i orzeszki :D Poletzam!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2698">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2019-04-22T17:25:57" class="text-sm text-gray-500 font-mono">2019-04-22 17:25:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dawno mnie nie było. Pochwalę się, że przez ten czas przeczhytałem m.in. Belgariadę i Czerwony Wariant. Ten drugi polecam, krótki ale dobrze się czytało.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2699">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-05-01T21:23:08" class="text-sm text-gray-500 font-mono">2019-05-01 21:23:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja ostatnio czytam (od wczoraj), <a href="http://lubimyczytac.pl/ksiazka/52252/rambo-pierwsza-krew" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Rambo: pierwsza krew</a>, dziś pewnie skończę, bo długa nie jest. Jak ktoś lubi film, polecam. Fajne rozszerzenie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2851">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-12-06T10:01:36" class="text-sm text-gray-500 font-mono">2019-12-06 10:01:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O chuj, pół roku temu jebnąłem tosta. Trochę zajebało pleśnią, więc trzeba umyć dupę i do roboty. Przez sześć miesięcy przeczytałem w kurwę rzeczy, m.in. całą serię o Mordimerze, sporo Pilipiuka i jego Oka jelenia, From the New World. To ostatnie jest żopańskim czytadłem i opowiada o upadku cywilizacji i rozwoju kolejnej, która posiada zdolność psychokinezy. Całkiem ciekawe, ale płytkie podejście do tematu. Jako że to lekka powieść, nie będę płakał, iż mogliby coś więcej. Całkiem smaczne.<br />Teraz czytam „Ani słowa prawdy”, czyli zbiór opowiadań o Arivaldzie z Wybrzeża. Gdy skończę, mam do przeczytania „Niezwyciężonego” i „Solaris” Lema. Później pewnie wyjdzie kolejny tom WorldEnd. Ksiażek do przeczytania masa, a czasu tak mało…
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2957">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2021-09-09T08:30:02" class="text-sm text-gray-500 font-mono">2021-09-09 08:30:02</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Przeczytałem w końcu slepowodzenie, o którym pisaliśmy x lat temu. Warto było, ale faktycznie pełne skupienie jak przy kupie wymagane, bo się autor nie rozdrabnia i jedzie po całości w każdym zdaniu. Skaza krzyżowa - genialne. No i odwzorowanie przyszłości było najbliższe moim wyobrażeniom. <br /><br />Od siebie chciałbym polecić jednego autora, który mi zapadł w pamięć na przestrzeni ostatnich lat. Cixin Liu. Chyba obecnie mój top 1. Radzę zacząć od Problemu Trzech Ciał, a później lecieć dalej z trylogia. Genialne hard sci-fi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2958">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2021-09-10T14:49:42" class="text-sm text-gray-500 font-mono">2021-09-10 14:49:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ostatnio łyknąłem FUTU.RE Głuchowskiego - całkiem dobry kawał tekstu z akcją i dynamicznym bohaterem. Teraz poluję na Outpost :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2959">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2021-09-11T23:49:16" class="text-sm text-gray-500 font-mono">2021-09-11 23:49:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O, futu.re jest na mojej liście ksionzek na ten rok :3 w ogóle strasznie ostatnio wsiąkłem w sci fi, fajnie jest. Rusz Cixina Liu, serio.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2960">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2021-09-13T14:02:44" class="text-sm text-gray-500 font-mono">2021-09-13 14:02:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2959" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />O, futu.re jest na mojej liście ksionzek na ten rok :3 w ogóle strasznie ostatnio wsiąkłem w sci fi, fajnie jest. Rusz Cixina Liu, serio.<br /></div><br />Cała trylogia leży na Kindlu i czeka, czeka. W najbliższych dniach czeka mnie długa podróż pociągiem, pewnie sobie coś ruszę. W ogóle ciekawi mnie ten Cixin Liu, bo właśnie słyszałem tylko pozytywne opinie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

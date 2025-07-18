@@ -1,0 +1,106 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRRR! - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">DRRR!</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-855">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-15T16:11:56" class="text-sm text-gray-500 font-mono">2017-01-15 16:11:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Najwyższy czas to cudo przedstawić.<br /><br />O czym jest Durarara! ? Świetne pytanie. Najłatwiej jest powiedzieć, że o mieście, o Ikebukuro, dzielnicy Tokio. Przez co mam na myśli ludków tam żyjących.  A ludkowie to najróżniejsi i przedstawić ich wszystkich nie sposób. Jest trójka przyjaciół którzy poznają się w nowej szkole, paczka kumpli (w tym parki mangozjebów) jeżdżących vanem, cała plejada gangsterów różnego formatu, Lekarz podziemia, podejrzanie przyjazne ruskie prowadzące Ruskie Sushi, Gwiazda pop,&#8230; aż po prawdziwe miejskie legendy jak gość w stroju barmana pętający się po mieście, z siłą pozwalającą mu w szale ciskać w ludzi słupami ulicznymi, czy bezgłowego jeźdźca motocyklowego. Plus Oczywiście mój ulubiony charakter gość handlujący informacjami, z ciekawym podejściem do życia&#8230; Wymieniać można w kółko. Ludzie, ludziska, ludziki, bohaterowie pierwszo, drugo, trzecio, piąto planowi, każdy ze swoją narracją, swoim udziałem w wydarzeniach,  zarysowanym charakterem, ukrytymi tożsamosciami, zjawiska niekoniecznie uważane za normalne&#8230; Durarara to splot właśnie tych przedziwnych zdarzeń i perspektyw. Jest często zabawny, często cudaczny, ale miasto potraf też mieć swoje momenty w których atmosfera jest gęsta jak ropa naftowa.<br />Boże, kocham tą serię.<br /><br />Fabuła jest często gęsto poszatkowana, ale nigdy nie miałem szczególnego problemu z sledzeniem splotu tych wątków. Muzyka jest wspaniała, oryginalna, stanowi niesamowitą wartość dodaną do ogólnej atmosfery.<br />Mój problem z serią jest jednak taki, że poza 24 odcinkowym są 3 serie sequeli po 12 odcinków. I jakkolwiek pierwszy sezon jest idealny, tak co do reszty można mieć poważne zastrzeżenia. Dwa razy rzucałem sequele w dwóch różnych momentach i koniec końców nie wiem, czy Durarara powinno być jedzone na raz czy z dłuższymi przerwami. Z jakiegoś powodu uważam, że tempo akcji, fabuła i bohaterowie nie zawsze dorównują momentami oryginałowi.  Akcja w sequelach jest po prostu bardzo nierówna i nie wiem jak to bardziej skonkretyzować.<br />A i zakończenie mnie rozczarowało. <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">Bo Izaya dostał w dupę</div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-856">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-15T18:51:41" class="text-sm text-gray-500 font-mono">2017-01-15 18:51:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Durarara!! to dosyć specyficzna seria, która potrafi na stałe wryć się w umysł oglądającego. Oglądałem tylko pierwszą serię, ale już nawet po niej mogę powiedzieć, że warto, naprawdę warto, choćby tylko tę pierwszą. Jak już wspomniał Omni, jest wypełniona całą masą postaci, które naprawdę łatwo zapamiętać i polubić. Ikebukuro, w którym rozgrywa się akcja, bywa tak samo kapryśne, jak mieszkający w nim ludzie, więc można spodziewać się najróżniejszych zdarzeń. Udźwiękowienie serii też jest niezłe, wystarczy wspomnieć o &quot;Complication&quot; czy &quot;Uragiri No Yuuyake&quot;. Zapraszam und poletzam, Fiotr Prąciewski.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

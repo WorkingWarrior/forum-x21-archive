@@ -1,0 +1,547 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Exodus - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Metro Exodus</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1603">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-06-11T23:50:30" class="text-sm text-gray-500 font-mono">2017-06-11 23:50:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/k19PXQ5ynuw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />Nie wiem jak wam ale mi się to bardzo podoba. Może z tego wyjść naprawdę dobra gra.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1604">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-06-12T08:41:39" class="text-sm text-gray-500 font-mono">2017-06-12 08:41:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O, Artyomka wraca.<br />Samo demo wygląda nieźle, co prawda strasznie filmowe, ale część z tych ekstra rzeczy mogłaby działać w grze.<br />Otwarty świat w uniwersum Metra? Poproszę dwa razy! Nawet jeśli fabuła będzie tak poprowadzona jak w poprzednich częściach, to i tak bym nie narzekał.<br />Jest na co czekać w 2018.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1605">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-06-13T19:06:53" class="text-sm text-gray-500 font-mono">2017-06-13 19:06:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Fajny trailer, chociaż wyreżyserowany, ale myślę że jest na co czekać. :]
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1606">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-06-20T23:52:19" class="text-sm text-gray-500 font-mono">2017-06-20 23:52:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Trailer mocno wyreżyserowany ale jako, że nędznie jest z grami osadzonymi w post-apo to takie Metro bardzo mnie cieszy i będę czekał co pokażą. Może wreszcie będzie coś z klimatem bo Fallout 4 był dla mnie dużym zawodem, a Stalker 2 zaginął w akcji.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2550">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2019-01-28T21:22:11" class="text-sm text-gray-500 font-mono">2019-01-28 21:22:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Skoro Exodus już za rogiem, wydawcy uraczyli nas paroma nowymi informacjami i trailerami. <br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/hizUN-hX16I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />Mamy ledwie koniec stycznia a już mamy kandydata na cringe roku. Rozumiem, że trailer skierowany jest do zachodniego odbiorcy jednak myślę że i tu seria Metro chwalona była za oryginalny slavshit klimat, podobnie jak Wieśmin czy Metro.  Trailer, nawet jeśli opisany jako wersja na UK, wygląda jakby był kierowany dla amerykańskich Amerykanów z Ameryki operujących operacyjnie w operacjach wojskowych. Pardąsik, mówimy o złomie który Wania obrobił na tokarce z czasów Stalina który ma w sobie więcej taśmy izolacyjnej, niż stali. Nie o produktach ze sterylnych fabryk FN, HK, albo nawet Iżmasz. Narracja rodem z Combat Countdown od Discovery nie pasuje mi do syfiastego, chujowego jak Rosja dzisiaj świata. Mam nadzieję że materiały marketingowe nie oddają klimatu gry, a ona sama nie będzie klonem Rage&#39;a czy innego losowego postapo shootera z Gwiaździstym Sztandarem w tle.<br /><br />Ale dość o chujowym trailerze.<br /><br />Ciekawa informacja wyciekła że gra została wycofana ze sprzedaży na Steamie, a zamiast tego będzie dostępna jedynie na Epic Fail. W sumie, grubasowi nie mam zamiaru dawać ani pensa, Epic Fail nie lubię, więc jak dla mnie to informacja że nie mam już wyboru między kiłą a rzeżączką, a po prostu załapię jedno z nich. No cóż, zostaje mi mieć nadzieję że wersja na PS4 będzie cycuś dopracowana.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2552">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-01-28T22:06:01" class="text-sm text-gray-500 font-mono">2019-01-28 22:06:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2550" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>seria Metro chwalona była za oryginalny slavshit klimat, podobnie jak Wieśmin czy Metro.</div><br />👌 <br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2550" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>zamiast tego będzie dostępna jedynie na Epic Fail</div><br />Yay, więc nie trzeba dodawać do wishlisty i wydawać pieniędzy.<br /><br />Nu, Wania, dawai koljimator, bljet.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2553">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-01-28T22:12:13" class="text-sm text-gray-500 font-mono">2019-01-28 22:12:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2552" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Yay, więc nie trzeba dodawać do wishlisty i wydawać pieniędzy.</div><br />Idąc tokiem rozumowania Ropasa, nie musisz płacić, aby skorzystać ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2581">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-03T16:21:06" class="text-sm text-gray-500 font-mono">2019-02-03 16:21:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                &quot;4A Games developer named &quot;scynet&quot; has responded to the PC gamer backlash by stating simply that, if this is how players are going to react, the studio just won’t make games for the PC anymore &quot;<br /><br />Omegalel<br /><br />Polecam też opinie poprzednich Metro na Steam, śmieszkowo jest.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2594">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-02-17T20:40:11" class="text-sm text-gray-500 font-mono">2019-02-17 20:40:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nius za niusem, coraz to większe sensacje. Damnit, ale te steamozjeby srają na rzadko xD<br /><a href="https://www.eurogamer.pl/articles/2019-02-16-metro-exodus-znak-steam-zaklejony-przez-logo-sklepu-epic-na-pudelku-edycji-specjalnej?fbclid=IwAR30jOs-CfKXpVsZqtpMFqRn6Bd-4xeO5PsvGdEmczpZ1vav6ylBmaUWnCc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.eurogamer.pl/articles/2019-02-16-metro-exodus-znak-steam-zaklejony-przez-logo-sklepu-epic-na-pudelku-edycji-specjalnej?fbclid=IwAR30jOs-CfKXpVsZqtpMFqRn6Bd-4xeO5PsvGdEmczpZ1vav6ylBmaUWnCc</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2596">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-02-17T21:07:30" class="text-sm text-gray-500 font-mono">2019-02-17 21:07:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Streść (streścij?) ktoś o chuj cho z tym całym metro-sretro, nigdy nawet jednej stacji nie widziałem a tu jakieś ekscytacje zakrytym naklejką logo sztima.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2600">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-17T21:18:09" class="text-sm text-gray-500 font-mono">2019-02-17 21:18:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                ten uczuć kiedy nie ma launchera CD-Action
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2610">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-02-17T22:00:20" class="text-sm text-gray-500 font-mono">2019-02-17 22:00:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Poprzedni był np. o tym, że o jezu, jak to! Na płycie tylko instalator Epic Store, a wersja Steam nie działa. Każde znalezione zgrubienie na ubraniu jest powiększane do rangi dramtu. Widać, że Steam mocno piecze strata zysków z Metro przez rok i to, że ktoś się śmiał pojawić i szarpać monopol Gaben&#39;a.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2612">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-17T22:09:07" class="text-sm text-gray-500 font-mono">2019-02-17 22:09:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2610" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Widać, że Steam mocno piecze strata zysków z Metro</div><br /><br />Nie podnioso sie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2614">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2019-02-17T23:01:02" class="text-sm text-gray-500 font-mono">2019-02-17 23:01:02</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jak tam granie w 10FPS na low?<br /><br /><a href="https://www.purepc.pl/karty_graficzne/metro_exodus_test_wydajnosci_kart_graficznych_totalna_masakra" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.purepc.pl/karty_graficzne/metro_exodus_test_wydajnosci_kart_graficznych_totalna_masakra</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2615">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-17T23:05:27" class="text-sm text-gray-500 font-mono">2019-02-17 23:05:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2614" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>Jak tam granie w 10FPS na low?</div><br /><br />Nie, dobra gra, tylko Gayben nie może przestać naciskać F5 w Firefoxie, żeby minusować Metra na Steam, bo jego zua platforma przepadnie po tej niemożebnej stracie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2616">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2019-02-18T10:19:32" class="text-sm text-gray-500 font-mono">2019-02-18 10:19:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Sram na Stema i Gabenowi do mordy. Nie podoba mi się jednak przywiązanie tej gry do jakiegoś kolejnego zjebanego klienta. Jakby Metro wyszło na Epika, Stima, GOGa i Ugeja (jebać Ordzina), to nikt by powieką nie mrugnął. A ceny na tych platformach mogłyby być konkurencyjne względem siebie.<br />Mnie tam bardziej wkurwia fakt, że dystrybutorzy wciąż masturbują się do DRMów i znowu podpięli chujowe Denuvo do gierki.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2617">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-02-18T10:23:53" class="text-sm text-gray-500 font-mono">2019-02-18 10:23:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2616" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Sram na Stema i Gabenowi do mordy. Nie podoba mi się jednak przywiązanie tej gry do jakiegoś kolejnego zjebanego klienta. Jakby Metro wyszło na Epika, Stima, GOGa i Ugeja (jebać Ordzina), to nikt by powieką nie mrugnął. A ceny na tych platformach mogłyby być konkurencyjne względem siebie.<br />Mnie tam bardziej wkurwia fakt, że dystrybutorzy wciąż masturbują się do DRMów i znowu podpięli chujowe Denuvo do gierki.</div><br />No dobra, ale i tak chuj im w uszy, bo ludzie potrafią złamać zasrane Denuvo. Sytuacja z tą grą jest jakaś wyjątkowo zjebana.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2618">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2019-02-18T10:26:29" class="text-sm text-gray-500 font-mono">2019-02-18 10:26:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2617" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>No dobra, ale i tak chuj im w uszy, bo ludzie potrafią złamać zasrane Denuvo. Sytuacja z tą grą jest jakaś wyjątkowo zjebana.</div><br />Ano jest. Burza w szklance wody, ale jakby nie zrobili bait and switch na dwa tygodnie przed wydaniem, pewnie by nie było takiej chryi.<br />A z Denuvo jest taki problem, że żre zasoby kurwa jebana. Z tego co czytałem ostatnie łamania nie wyłączały tego draństwa, tylko je obchodziły - co jednak oznacza, że nawet w wersji od wujka pizda działa w tle.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2619">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-02-18T10:28:09" class="text-sm text-gray-500 font-mono">2019-02-18 10:28:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2618" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Ano jest. Burza w szklance wody, ale jakby nie zrobili bait and switch na dwa tygodnie przed wydaniem, pewnie by nie było takiej chryi.<br />A z Denuvo jest taki problem, że żre zasoby kurwa jebana. Z tego co czytałem ostatnie łamania nie wyłączały tego draństwa, tylko je obchodziły - co jednak oznacza, że nawet w wersji od wujka pizda działa w tle.</div><br />To prawda, obejście nie usuwa zabezpieczenia, tylko je omija, a ono nadal zżera zasoby. Usunięcie tego kurewstwa byłoby mocno, mocno upierdliwe.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2621">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2019-02-18T10:31:19" class="text-sm text-gray-500 font-mono">2019-02-18 10:31:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2619" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>To prawda, obejście nie usuwa zabezpieczenie, tylko je omija, a ono nadal zżera zasoby. Usunięcie tego kurewstwa byłoby mocno, mocno upierdliwe.</div><br />Dlatego ostatnio ograniczam się z zakupami tylko do GOGa. Mam zamiar głosować portfelem i na pohybel DRMom.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2623">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-02-18T11:28:49" class="text-sm text-gray-500 font-mono">2019-02-18 11:28:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2621" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Dlatego ostatnio ograniczam się z zakupami tylko do GOGa</div><br />I bardzo dobrze. GOG to świetna platforma. OFC nie tak rozbudowana jak Stim, ale nie ma DRM-a, a i ceny są zwykle konkurencyjne.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2629">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-02-19T22:27:14" class="text-sm text-gray-500 font-mono">2019-02-19 22:27:14</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2616" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Sram na Stema i Gabenowi do mordy.</div><br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="https://i.imgur.com/bfrnAcQ.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2616" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Nie podoba mi się jednak przywiązanie tej gry do jakiegoś kolejnego zjebanego klienta. Jakby Metro wyszło na Epika, Stima, GOGa i Ugeja (jebać Ordzina), to nikt by powieką nie mrugnął. A ceny na tych platformach mogłyby być konkurencyjne względem siebie.</div><br /><br />Sranie żarem na Steam jest już tak 2005, że aż żenujące. Steam ma największe zasoby, swoje i innych platform. No, zawsze jest takie coś, jak Ubichuj, które poza Steamem swojego DRMa i tak musi wpierdolić, ale mimo wszystko za to cenię Steam. Większość rzeczy mam w jednym miejscu, łącznie z szybkim dostępem do forum, modów czy njusów od developerów, a sama platforma jest płynna i przejrzysta, o czym inne zjebane bloatware mogą sobie pomarzyć zapewne przez następne 10 lat. Przy okazji zaopatrzyłem się w wiele tytułów, które w innych przypadkach zlałbym ciepłym moczem, bo już mi się chce krążyć po setce różnych internetowych sklepów, albo w ogóle kupować uczciwie na g2a. A, no tak, u Gaybena się &quot;wypożycza&quot;, gnój jeden. Dajcie znać jak poszło w sądzie z EA, gdy już zamkną Origówno. Albo pozdrówcie Ubisoft, który gry chce streamować.<br />Głównie za co kotwica w dupę Gaybenowi, to za sprzedawanie tytułów, które nie działają na dzisiejszych systemach. Niektóre sam wypatchujesz, a z niektórymi idź się jebać. Tutaj szacun dla GOGa za odrestaurowywanie rupieci i usuwanie tych zjebanych DRMów, ale biblioteka tam jest często skromna i powolna. Poza tym mogliby wreszcie chwycić jakąś porządną popularność, bo kij wie kiedy wejdę na stronkę, by spotkać 404. Steam prędko nie padnie.<br />Ogólnie cała ta zagrywka to w ogóle nie był żenujący skok na kasę między marketingowcami Srajtnajta i Deep Shitter. Warto mieć konie w tym wyścigu, nie ma co. Kiedy bloatware zaczną się wykrywać i nie pozwolą na instalację, gdy już będzie coś innego w systemie?<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2616" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>MCaleb</strong> napisał:</span></a></div>Mnie tam bardziej wkurwia fakt, że dystrybutorzy wciąż masturbują się do DRMów i znowu podpięli chujowe Denuvo do gierki.</div><br />Denuvo w ogóle pomaga? Była jakaś popularniejsza gra, która nie miała cracka w ciągu miesiąca? Nie kontaktowałem się od dawna z wujkiem, a i w sumie gry z tym gówno mnie interesowały do niedawna.<br /><br /><br />Zaś co do gry. Naoglądałem się kilku godzin strimów i nie zauważyłem tam absolutnie nic ciekawego. Gra może i ładna, ale chodzi jak chuj w śrutowniku, gameplay to łażenie, strzelanie i klikanie po trupach, a potem powrót, żeby sobie <del>naklikać</del> NACRAFTOWAĆ gówna (wiecie, fascynujące, konieczne elementy każdego shootera obecnie), chujowy scenariusz, chujowy voice acting. Wszystko co dobre w tej grze pochodzi z poprzednich części, a całość z &quot;liniowego, ale klimatycznego, przyjemnego shootera&quot; zdewaluowała się do rangi &quot;przeciętne zbieraczko-crafto-chodzonko bez jakiejkolwiek treści&quot;, których już było milion. A tego debila, co tam wpierdolił lokację czysto z Mad Maxa, to już powinni wyjąć z developerskiej piwnicy, pokazać, że cała taka gra już powstała i o czym były poprzednie części Metra.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2675">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-04-01T07:09:14" class="text-sm text-gray-500 font-mono">2019-04-01 07:09:14</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2612" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Nie podnioso sie.</div><br />Pierdłem xD<br /><br />No, ale jak na przykładnego roota przystało, powinienem napisać jakiś sensowny post. Jako że kupiłem RTX 2070, dostałem do niej klucz - jak wiecie, miałem do wyboru trzy gry. Battlefiut V, Metro i Anthem. Wcześniejsza część mi się podobała, więc wybrałem Metro. No i cóż - jakoś strasznie przypierdolić się nie mogę. Przy włączonych bajerach, gra wygląda miodnie. Fabuła prowadzi nas, ciągnąc za penisa, ale czy ktoś spodziewał się po tej serii czegoś innego? Walki są przyjemne, opowiedziana historia również - jestem zadowolony z wyboru. Może już tak nie wciągnie mnie jak stolcer czy pierwsze Metro, ale to nadal kawał solidnej gry.<br />Zapraszam und poletzam,<br />Fiotr Prąciewski.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,799 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uwagi, propozycje, zgłoszenia - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Uwagi, propozycje, zgłoszenia</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-765">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-14T13:21:16" class="text-sm text-gray-500 font-mono">2017-01-14 13:21:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Temat zbiorczy - piszcie tutaj swoje uwagi odnośnie forum, pomysły, sugestie, żale etc. Jeśli macie jakiś konkretny pomysł na forum - chętnie wysłuchamy. Może brakuje Ci jakiegoś działu? Masz pomysł na czym forum powinno się skupić? Widziałeś gdzieś jakiś fajny bajer i chciałbyś aby znalazł się też u nas? Może chciałbyś opłacić serwer na kilka lat? Daj znać.<br /><br />Możecie również pisać swoje uwagi odnośnie administracji oraz pozostałych użytkowników, choć wolelibyśmy uniknąć publicznych zadym, więc w miarę możliwości załatwiajcie zatargi między sobą - mail, PW, SB, ustawka pod blokiem, wszystko jedno.<br /><br /><span style="color: cyan;">//EDIT: Zmieniłem nazwę tematu, przecież wiadomo, że odnosi się do forum (kategoria &quot;Sprawy forum&quot;) - Slv.</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-766">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-14T22:10:58" class="text-sm text-gray-500 font-mono">2017-01-14 22:10:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dobra z racji tego co widzę i doświadczam mam kilka następujących próśb/sugestii gwoli rozszerzenia bbcodu.<br />Wypiszę w szeregu IMO najważniejszych do najmniej ważnych. Pozwolę sobie bez opisów bo wszyscy wiedzą co dane tagi robią.<br />Po pierwsze najważniejsze: dodanie tagu <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">.<br />Po drugie, embedowanie jutubów tagiem <span class="custom-tag" title="Niestandardowy tag: youtube"><br />Po trzecie, opcjonalne, <span class="custom-tag" title="Niestandardowy tag: mp3"> <br />Do ostatniego przydałoby się znajść aprobowany hosting póki dropbox jeszcze działa gdyż niedługo działać przestanie.</span></span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-767">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-15T00:10:43" class="text-sm text-gray-500 font-mono">2017-01-15 00:10:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Lenny Weisstein</strong> napisał:</span></div><br />Po pierwsze najważniejsze: dodanie tagu <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">.<br />Po drugie, embedowanie jutubów tagiem <span class="custom-tag" title="Niestandardowy tag: youtube"><br />Po trzecie, opcjonalne, <span class="custom-tag" title="Niestandardowy tag: mp3"> <br />Do ostatniego przydałoby się znajść aprobowany hosting póki dropbox jeszcze działa gdyż niedługo działać przestanie.</span></span></div></details></div><ul><li>Spoiler dodany</li><li>YouTube dodany</li><li>Audio dodane</li></ul><br />YouTube wymaga podania linku youtu.be, nie zwykłego, skopiowanego z paska adresu.<br />Tag audio obsługuje wszystko to, co i HTML5 potrafi łyknąć (a właściwie to przeglądarka), więc męczcie się, ile dusza zapragnie. Sugeruję nie nadużywać tych tagów.<br />kthxbai
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-768">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Valentino</span>
+                                <time datetime="2017-01-15T15:32:49" class="text-sm text-gray-500 font-mono">2017-01-15 15:32:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jak już anime dostało swój dział, to może osobny dla filmów i seriali/animacji niebędących anime?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-769">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-15T21:11:16" class="text-sm text-gray-500 font-mono">2017-01-15 21:11:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dodałem tag video do WEBMów. MP4 może też łyknie. Tag jest w fazie testów i może zostać wyłączony bez ostrzeżenia.<br /><br />Działu na filmy i seriale nie będzie, masz póki co od tego <a href="https://x-21.pl/viewtopic.php?f=2&t=42" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">odpowiedni temat</a>.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-770">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Valentino</span>
+                                <time datetime="2017-01-16T02:04:25" class="text-sm text-gray-500 font-mono">2017-01-16 02:04:25</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>MCaleb</strong> napisał:</span></div>Działu na filmy i seriale nie będzie, masz póki co od tego <a href="https://x-21.pl/viewtopic.php?f=2&t=42" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">odpowiedni temat</a>.</div><br /><br /><br />Tak, wiem, Postowałem tam. <br />Będzie musiał w takim razie póki co wystarczyć. <br />Proponuję jeszcze-
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-771">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-16T10:16:53" class="text-sm text-gray-500 font-mono">2017-01-16 10:16:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                IMO osobny dział na temat seriali i filmów miałby więcej sensu niż osobny dział na muzykę. W tym drugim mamy na ten moment trzy tematy i raczej nie widzę perspektyw na kolejne - równie dobrze można by je przenieść do &quot;O wszystkim&quot;. Natomiast osobny dział na seriale i filmy powinien przynieść o wiele więcej tematów.<br />Dla mnie optimum byłoby pozostawienie działu &quot;Muzyka&quot; i dodanie &quot;Filmy i seriale&quot;. I tak lada moment dział &quot;Konsole&quot; wyleci w kosmos.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-772">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-16T10:22:21" class="text-sm text-gray-500 font-mono">2017-01-16 10:22:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zrobiłem, teraz trzeba poprzenosić odpowiednie tematy ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-773">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-30T02:39:30" class="text-sm text-gray-500 font-mono">2017-01-30 02:39:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dobrze by było jakby się tu nie odjaniepawlało klawiszowanie i zaczęto informować o zmianach rang, ich powodach i takich tam pierdołach, które być może by mogły zainteresować część starych wyjadaczy.<br /><br />Bo jak nie to idę założyć własne forum. O.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-774">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-30T09:04:10" class="text-sm text-gray-500 font-mono">2017-01-30 09:04:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Grupy wróciły do starego porządku, każda kolejna zmiana będzie ogłaszana tutaj. Decyzja była podjęta szybko, wczoraj wieczorem, a sam nie miałem czasu nikogo informować, bo nie było mnie przy w domu, przy kompie, a jedynym medium kontaktu był tel.<br />Za jakiś czas Fantomy rozlecą się w drobny mak - są pozostałością po starym forum, obiektem utworzonym z powodu mojego sentymentu do przeszłości. Na dzień dzisiejszy taka ranga (IMO) nie jest potrzebna, ponieważ nie mamy czego wyróżniać, wszyscy zachowują się tak samo, może dlatego, że nie ma się też gdzie wykazać. Ludzie ze starego forum, którzy mieli tę rangę, wiedzą, czym na nią zasłużyli. Tak Enzo, jak Infernal i Strzelec byli kiedyś rdzeniem społeczności i chciałbym, by nadal tak pozostało, bo po prostu na nich liczę. Wiem, że minęło kupę czasu, sytuacje poszczególnych osób zmieniły się diametralnie, ale, jak widać, są w stanie poświęcić co najmniej tę chwilkę dziennie, by wleźć na witrynę. I nie mówię tu o jakimś pisaniu postów na pierdyliard znaków, w których dominować będzie styl wysoki.<br /><br />Lenek dostał awans na moda globalnego, uzasadniam to bieżącym wkładem w &quot;rozwój&quot; forum.<br />Zainteresowanych zachęcam do dyskusji, tych mniej zainteresowanych również.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-775">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-30T13:30:11" class="text-sm text-gray-500 font-mono">2017-01-30 13:30:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jedyne co mi się nie podobało w zmianach to brak możliwości edycji własnych shoutów w razie kolejnych śmieszkoCalebów i brak reaktora. Poza tym z kolorkami łatwiej było rozróżnić na szybko kto co pisze na SB.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-776">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-30T13:34:01" class="text-sm text-gray-500 font-mono">2017-01-30 13:34:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Czyli, mówiąc w skrócie, nie spodobało Ci się wszystko. xD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-777">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-20T14:20:28" class="text-sm text-gray-500 font-mono">2017-02-20 14:20:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ogłoszenie!<br />Dnia dzisiejszego, wieczorem, wyłączeni zostaną Fantomi – ranga zostanie usunięta, a użytkownicy, którzy do niej należeli, przejdą do grupy zwykłych użytkowników. Jednocześnie zresetowane zostaną wszystkie ostrzeżenia. Decyzja została podjęta jakiś czas temu, ale chcieliśmy dać temu pomysłowi dojrzeć. Każdy wystartuje z czystą kartą, będzie mógł się wykazać. Nabór jest otwarty - każdy, kto wykaże się aktywnością i wkładem w rozwój naszej małej społeczności będzie mógł zostać nagrodzony rangą Fantoma. <br /><br />W przyszłym miesiącu przewiduję konkurs z nagrodami, proszę o rozsądne propozycje.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-778">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-02-20T15:24:20" class="text-sm text-gray-500 font-mono">2017-02-20 15:24:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Co do konkursu z nagrodami to proponowałbym nagrodę dla osoby, która wymyśli tematykę w jakiej powinno rozwijać się forum, jakaś gra komputerowa, anime, mango, woda, hemoglobina, co tam komu wpadnie do głowy, bo musimy w końcu się wyspecjalizować w czymś coby google nas widziało. I z takich bardziej ludzkich pomysłów:<br /><br />turniej w chińczyka/kierki/szachy na kurniku - w sumie pomysł podsunął Enzo<br />załóż temat w dowolnym dziale poza Humorem, który w miesiąc uzyska najwięcej postów (wyłączając posty autora)<br />namaluj walentynkę dla Solvego<br />konkurs na najlepszą autorską pastę<br />konkurs na najlepszą zmyśloną recenzję dowolnej gry, coś jak Grand Seks z Tato<br />konkurs na najlepszą anegdotę związaną z segregowaniem odpadów<br />konkurs na najlepszą przeróbkę zdjęcia Kowka<br />konkurs na najlepszy film o czołganiu. Nagraj jak się czołgasz w centrum handlowym, na rynku, autostradzie, toalecie publicznej, po szkle, rozżarzonym wunglu - najlepszy/najniebezpieczniejszy pomysł wygrywa
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-779">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-02-21T10:07:24" class="text-sm text-gray-500 font-mono">2017-02-21 10:07:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/zi8ShAosqzI</span></div><br /><br />System reputacji został uruchomiony na forum. Teraz każdy może ocenić posty innych użytkowników.<br />Nie tylko powinno to usprawnić feedback, ale również ułatwić podliczanie głosów w przypadku konkursów.<br />Bawcie się dobrze.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-780">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-02-21T12:09:11" class="text-sm text-gray-500 font-mono">2017-02-21 12:09:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja to tak tylko przypomnę o zdjęciu wszystkim warnów. Reputacja - wreszcie, aprobuję, choć gdyby była możliwość rozbudowania systemu (punkty ujemne) to byłbym za.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-781">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-21T15:50:12" class="text-sm text-gray-500 font-mono">2017-02-21 15:50:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Osty zdjęte, ujemne punkty włączone :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-782">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-02-21T16:10:32" class="text-sm text-gray-500 font-mono">2017-02-21 16:10:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dalibyście chociaż możliwość edycji własnych shoutów, a nie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-783">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-03-09T22:30:08" class="text-sm text-gray-500 font-mono">2017-03-09 22:30:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Właśnie! Cudzych też, bo to nie fair.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-784">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-03-10T15:26:17" class="text-sm text-gray-500 font-mono">2017-03-10 15:26:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Aby wyjść naprzeciw oczekiwaniom laborantów, dodaliśmy funkcję zmieniania treści nieistniejących postów, oczywiście dostępną dla wszystkich.<br /><br />Jest to &quot;Odpowiedz&quot;, &quot;Nowy temat&quot; i &quot;Wyślij&quot;.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-785">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-08-25T15:25:51" class="text-sm text-gray-500 font-mono">2017-08-25 15:25:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ostatnio coś się spsuło (no chyba ze było to zamierzone) i po opuszczeniu forum następuje automatyczne wylogowanie. Po ponownej wizycie co prawda zalogować się można w 5sek dwoma kliknięciami, ale jakby się dało ogarnąć to tak, żeby nie wylogowywało z automatu, to byłoby fajno.<br /><br />No chyba że to jakiś atak hakerski na moją osobę.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-786">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-25T15:26:27" class="text-sm text-gray-500 font-mono">2017-08-25 15:26:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wyczyść se ciasteczka (albo dupę)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-787">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-08-25T15:26:54" class="text-sm text-gray-500 font-mono">2017-08-25 15:26:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A ja myślałem to że po prostu przez przeglądarkę po instalacji nowego systemu. Jeśli inni też mają ten problem miło by było się tym zająć.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-788">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-08-25T15:32:20" class="text-sm text-gray-500 font-mono">2017-08-25 15:32:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div><br />Wyczyść se ciasteczka (albo dupę)<br /></div><br /><br />Ni pomogło, mam wrażenie że jest jeszcze gorzej bo zalogowałem się, wlazłem w temat, kliknąłem &quot;odpowiedz&quot; i musiałem się znowu logować. xD <br /><br />Spróbuję jeszcze tego triku z umyciem dupy i dam znać. Ew. c://format
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-789">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-08-25T15:34:47" class="text-sm text-gray-500 font-mono">2017-08-25 15:34:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zaloguj się i wejdź od razu na https://x-21.pl/index.php (żeby sid Ci zniknął) i dopiero korzystaj z forum.<br />Zauważyłem czasem, że forum nie trzyma moczu&#8230; sesji i trzeba umyć dupę&#8230; przyciąć adres po zalogowaniu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-790">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-25T15:35:19" class="text-sm text-gray-500 font-mono">2017-08-25 15:35:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Chwila, wyczyszczę sesje.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-791">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-09-11T12:13:00" class="text-sm text-gray-500 font-mono">2017-09-11 12:13:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Włącz ktoś proszę z powrotem info w SB o nowych tematach i postach, fajne to było.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1694">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2017-12-12T10:32:08" class="text-sm text-gray-500 font-mono">2017-12-12 10:32:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Odbanujcie Alchemika, bo jak się wczoraj zalogowałem na jego konto, to okazało się, że jest tak bardzo zbanowane, że aż wylogować się nie mogłem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1696">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-12-12T17:57:54" class="text-sm text-gray-500 font-mono">2017-12-12 17:57:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1694" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div>Odbanujcie Alchemika, bo jak się wczoraj zalogowałem na jego konto, to okazało się, że jest tak bardzo zbanowane, że aż wylogować się nie mogłem.</div><br />Dzięki, stary. Wyjebałem bana i wcisnąłem „zresetuj hasło”.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1766">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-01-06T21:00:36" class="text-sm text-gray-500 font-mono">2018-01-06 21:00:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                DAJCIE NAM MOŻLIWOŚĆ EDYCJI I USUWANIA POSTÓW W SB, FASZYŚCI
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1927">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-01-21T19:34:40" class="text-sm text-gray-500 font-mono">2018-01-21 19:34:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                mała propozycja. Na telefonum pod SB jest pasek z osobami, które są online, co jest bardzo fajne, natomiast na laptopie jest taka sytuacja, że lista zalogowanych jest wykurwiona na górę po prawej. Dałoby się przesunąć ją żeby było tak jak na telefonum? Inf zrobi Ci za to loda.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1942">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-22T17:37:03" class="text-sm text-gray-500 font-mono">2018-01-22 17:37:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1927" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>mała propozycja. Na telefonum pod SB jest pasek z osobami, które są online, co jest bardzo fajne, natomiast na laptopie jest taka sytuacja, że lista zalogowanych jest wykurwiona na górę po prawej. Dałoby się przesunąć ją żeby było tak jak na telefonum? Inf zrobi Ci za to loda.</div><br />Mogę popatrzeć, jak to wygląda, ale nieco śmierdzi mi to przyzwyczajeniem do starej wersji layoutu.<br /><div class="quote-block"><div class="quote-header"><a href="#post-1934" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div>Każdy ma dość twojej &quot;twojej starej&quot; więc to sobie powinieneś przemyśleć. To nie chodzi o urażanie uczuć tylko o bycie nudnym fhuj. Stary, zjebałeś i taka jest prawda. Jesteś nudny dla reszty. Wkurwiasz ludzi. Nie jesteś jedyny ale jesteś wyjątkowo namolny. Ja z Tobą mam ciągły kontakt od praktycznie początku więc ja wiem jak się z Tobą rozprawić. Powiem Ci jedno. Drocz się. Rób co chcesz. Ja Ci w tym przeszkadzać nie będę bo mi szkalowanie na X-21 pasuje. Ale lepiej se kurwa opracuj nowe metody bo nudzisz ludzi. A nuda to coś czego sobie na X-21 nie życzymy. Ja jakoś umiem jechać innych bez &quot;twojej starej&quot;. To że Ty chcesz Enzowi pokazać jaki fajny jesteś to już nie moja sprawa. Bo reszcie się tego słuchać nie chce. Tylko TROCHĘ PIERDOLONEJ RÓŻNORODNOŚCI. Nie buldupimy tylko jestesmy znudzeni. Ziewamy. Powiem tyle. Jeśli dłużej tak będziesz postępował to za wiele okazji ku temu mieć nie będziesz.</div><br />Dobra pasta. Molto, molto pasta!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2464">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-11-20T17:46:12" class="text-sm text-gray-500 font-mono">2018-11-20 17:46:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <img src="https://i.imgur.com/s7pOOeq.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /><br />co to za Chujowe resolvowanie problemów.<br />Kurwa skandal.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2471">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2018-11-21T09:14:23" class="text-sm text-gray-500 font-mono">2018-11-21 09:14:23</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dziś pytanie, dziś odpowiedź. Support działa jak marzenie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2475">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-11-21T12:40:06" class="text-sm text-gray-500 font-mono">2018-11-21 12:40:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jawne nagabywanie forumowicza do odbycia innej czynności seksualnej - czy chcemy by tak wyglądało forum?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

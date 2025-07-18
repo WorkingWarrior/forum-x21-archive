@@ -1,0 +1,296 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Słuchawki - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Słuchawki</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1938">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-22T13:51:28" class="text-sm text-gray-500 font-mono">2018-01-22 13:51:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zakładam temat tutaj, nie w komputerach bo chodzi o słuchawki-słuchawki, a nie takie z mikrofonem co się przez nie ryczy &quot;wypierdalaj pedale&quot; jak cię ktoś ustrzeli w Kąter Srajku.<br />No. <br />Jakich słuchawek używacie, czy jesteście z nich zadowoleni? Należę do osób niewybrednych i używam dousznych słuchawek za 30-40 zeta. Zresztą mojemu odtwarzaczowi mp3 też dużo brakuje do miana porządnego sprzętu, więc nie warto inwestować w nic lepszego. Lepszego w sensie jakieś wyjebane w kosmos słuchawki za 66666666666666669 zł. Na telefonie muzyki nie słucham, bo mi szkoda baterii. <br />Ostatnio zaczęłam rozważać kupno nausznych, ale w sumie to nie wiem w co warto by było zainwestować. Jak pisałam, nie muszą być jakieś zajebiste, ale nie chcę też kupić totalnego gówna&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1941">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-22T17:35:03" class="text-sm text-gray-500 font-mono">2018-01-22 17:35:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1938" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Zakładam temat tutaj, nie w komputerach bo chodzi o słuchawki-słuchawki, a nie takie z mikrofonem co się przez nie ryczy &quot;wypierdalaj pedale&quot; jak cię ktoś ustrzeli w Kąter Srajku.<br />No.<br />Jakich słuchawek używacie, czy jesteście z nich zadowoleni? Należę do osób niewybrednych i używam dousznych słuchawek za 30-40 zeta. Zresztą mojemu odtwarzaczowi mp3 też dużo brakuje do miana porządnego sprzętu, więc nie warto inwestować w nic lepszego. Lepszego w sensie jakieś wyjebane w kosmos słuchawki za 66666666666666669 zł. Na telefonie muzyki nie słucham, bo mi szkoda baterii.<br />Ostatnio zaczęłam rozważać kupno nausznych, ale w sumie to nie wiem w co warto by było zainwestować. Jak pisałam, nie muszą być jakieś zajebiste, ale nie chcę też kupić totalnego gówna&#8230;</div><br />Używam trzech par słuchawek:<br /><ul>
+<li>Blaupunkt Comfort Acoustica</li><li>JVC HA-S360</li><li>Sony MDR-XD150</li></ul><br />Kiedyś przewinęły się też jakieś AKG i Sennheiserki, ale to było dawno temu :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1944">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-22T19:02:35" class="text-sm text-gray-500 font-mono">2018-01-22 19:02:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A co myślicie o tym?<br /><a href="https://rms.pl/testy/sluchawki-i-odtwarzacze-przenosne/851-sennheiser-hd-201-test-recenzja-opinie" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://rms.pl/testy/sluchawki-i-odtwarzacze-przenosne/851-sennheiser-hd-201-test-recenzja-opinie</a><br /><br />Cena przystępna, firma też się dobrze kojarzy, opinie dobre&#8230; Chyba biere. :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1956">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2018-01-23T10:26:36" class="text-sm text-gray-500 font-mono">2018-01-23 10:26:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Osobiście mam Sennheiser HD439, dziewczyna studiuje muzykologie i skoro ona ich używa ucząc się do kształcenia słuchu itp. to jednak o czymś to świadczy :E<br /><br />Do tel i ogólnie jako pchełek używam SoundMagic E10M jak dobrze pamiętam
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1957">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-23T12:37:28" class="text-sm text-gray-500 font-mono">2018-01-23 12:37:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1956" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div>dziewczyna studiuje muzykologie i skoro ona ich używa ucząc się do kształcenia słuchu</div><br />Do tego cytatu pasuje tylko &quot;xD&quot;.<br /><br />Jak &quot;studiuje muzykologie&quot;, powinna kupić Grado, skoro się zna. Tyle.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1958">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2018-01-23T12:57:04" class="text-sm text-gray-500 font-mono">2018-01-23 12:57:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No niestety pół mieszkania zajebane pianinami Yamahy, a i Beta się domaga kasy<br /><br />Poza tym te słuchawki są świetnie zneutralizowane z responsywnym dołem i górą. Świetnie przez to nadają się do słuchania klasyki jak Bach, Mozart, a Jaskółka Villanelle Haliny Mickiewiczówny czy Cello Suite No. 1 Bacha to po prostu ach&#8230;<br /><br />A no i hardbasy też brzmią na tym zajebiście
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1973">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-23T19:49:59" class="text-sm text-gray-500 font-mono">2018-01-23 19:49:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A znacie może jakiś godny uwagi model z wymiennym kablem?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1974">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2018-01-23T21:00:32" class="text-sm text-gray-500 font-mono">2018-01-23 21:00:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jaki budżet? Bo i moje Senki mają wymienny kabel :E Zresztą jest sporo słuchawek z wymiennym kablem, ale no wypadałoby podać budżet
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1975">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-23T21:14:07" class="text-sm text-gray-500 font-mono">2018-01-23 21:14:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ojej. Do 200 zł.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1979">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-24T16:46:53" class="text-sm text-gray-500 font-mono">2018-01-24 16:46:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Co myślicie <a href="https://www.amazon.de/Kopfhörer-Adapter-frei-Geschlossener-OneOdio-Teleskoparme/dp/B072J49RNL/ref=sr_1_fkmr0_2?ie=UTF8&qid=1516783139&sr=8-2-fkmr0&keywords=OneOdio+Over" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">o tych</a>?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1998">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-26T13:20:49" class="text-sm text-gray-500 font-mono">2018-01-26 13:20:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1979" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Co myślicie <a href="https://www.amazon.de/Kopfhörer-Adapter-frei-Geschlossener-OneOdio-Teleskoparme/dp/B072J49RNL/ref=sr_1_fkmr0_2?ie=UTF8&qid=1516783139&sr=8-2-fkmr0&keywords=OneOdio+Over" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">o tych</a>?</div><br />Pierwszy raz je widzę. Pałąk wygląda solidnie&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

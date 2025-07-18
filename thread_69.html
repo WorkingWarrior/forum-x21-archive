@@ -1,0 +1,442 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen King - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Stephen King</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-792">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-14T14:21:10" class="text-sm text-gray-500 font-mono">2017-01-14 14:21:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Myślę, że większość facetów, którzy w życiu przeczytali co najmniej 10 książek, które nie były lekturami szkolnymi i kamasutrą, miała do czynienia choć z jednym dziełem tego autora, a i kobiet sporo się w nim zaczytuje. Wasze ulubione tytuły? U mnie byłyby to:<br /><br />Lśnienie, którego ekranizacja kompletnie mnie nie przekonała.<br />Skazani na Shawshank, Zielona Mila - dwie świetne książki, których ekranizacje były równie dobre co pierwowzór. Wiernie oddawały klimat, wiele kwestii słowo w słowo wziętych z książki, co bardzo mi się spodobało.<br />Komórka - lekko w klimatach post-apo, grupa ludzi próbuje przetrwać gdy większość populacji zamienia się w coś na kształt zombie o zdolnościach paranormalnych.<br />To - ma 1200 stron, każda z nich to majstersztyk. Powieść o grupce przyjaciół, którzy stawiają czoła &quot;Temu&quot; - morderczemu potworowi przybierającemu formę klauna. Bardzo dużo retrospekcji, genialne ukazane dojrzewanie i metamorfozy bohaterów.<br /><strong>Bastion</strong> - mój faworyt, jedna z moich ulubionych książek spośród wszystkich jakie czytałem. Genialny klimat, takie post-apo bez mutantów. Miało chyba 900 stron ale wchłonąłem całość bardzo szybko, rewelacyjna powieść o garstce ludzi, którzy przetrwali zagładę i uformowali się w dwie grupy walczące ze sobą.<br /><br />Generalnie dorobek literacki ma olbrzymi, ale przeczytałem chyba większość - wszystkiego wymieniać nie będę. Poleciłbym jeszcze Carrie, Cujo, Martwą Strefę, Podpalaczkę, Cmętarz Zwieżąt, Sklepik z marzeniami, Łowcę snów.<br />Zabierałem się też za serią Mroczna Wieża, która była bardzo dobra, aczkolwiek momentami nudnawa, i niestety &quot;Ziemie Jałowe&quot; okazały się dla mnie zbyt jałowe i wymiękłem na nich.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-793">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-14T15:09:35" class="text-sm text-gray-500 font-mono">2017-01-14 15:09:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <ul><li>Lśnienie przeczytałem jako pierwsze, było dobre, ale jakoś nie spuszczam się nad nim każdego dnia.</li><li>Skazani na Shawshank - świetne opowiadanie, jestem pełen uznania.</li><li>Bastion - przeczytałem 3/4 całości, wielokrotnie próbowałem skończyć, za każdym razem rzucałem to w pizdu. Zbyt rozwleczone, zbyt długie. Jest tam pewien pan, o którym jest też mowa gdzie indziej (Mroczna Wieża) - Randall Flagg.</li></ul><br />Przeczytałem tyle jego dzieł, że teraz już nawet nie jestem w stanie wymienić wszystkich tytułów. Lubię go, chociaż czasami jego styl mnie męczy i nuży. A i tak sięgam po kolejne :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-794">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-01-14T18:05:41" class="text-sm text-gray-500 font-mono">2017-01-14 18:05:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">&#8230;kobiet sporo się w nim zaczytuje.</div><br />Właśnie przede wszystkim z tym kojarzy mi się King, z alternatywnymi i pretensjonalnymi licealistkami/studentkami, które myślą, że jak czytają tego autora, to automatem są inteligentniejsze i pełne głębi. xD Pomijając moją obserwację, to nie czytałem ani jednej książki przeczytanej przez Missile. Nie podzielam twojego uznania dla tego autora, który po prostu jest rzemieślnikiem piszącym niezłe książki, ewentualnie poprawne. Przeczytałem tylko <em>Lśnienie</em> i <em>Stukostrachy</em>, ta pierwsza książka ma wszystkie cechy, które potem przejawiają się jego następnych powieściach. Seks, problemy z alkoholizmem, problemy emocjonalne, niepokój, niezłe opisy przemocy - taka tabletka Kinga. Polecam tylko <em>Lśnienie</em>, bo jakieś inne książki jeszcze próbowałem ruszać, ale nie dawałem rady.<em>Stukostrachy</em> przeczytałem, bo kupiłem jako gówniarz i żal było już tej książki nie skończyć, nudziłem się pod koniec jak Wojtyła w klubie z dojrzałymi striptizerkami. Ogólnie jak mi dadzą, to przeczytam, ale na pewno nie kupię/wypożyczę, kiedy mam masę innych książek do nadrobienia.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-795">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-14T21:17:31" class="text-sm text-gray-500 font-mono">2017-01-14 21:17:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Bardzo szanuję Kinga. Lata temu przeczytałem Miasteczko Salem, które było fajne, zacząłem Stukostrachy, ale czemuś rzuciłem po 50 stronach (Też ksiażka jest niepomiernie długa, może dlatego), i coś jeszcze czego nazwy teraz nie pamiętam.<br /><br />Ostatnio dostałem na gwiazdkę &quot;To&quot; (Na razie czeka), &quot;Bazar Złych snów&quot; (w poczekalni), &quot;Rękę Mistrza&quot; (Czytam, zajebiście mi sie podoba, trochę odstępstwa od klasycznego Kinga) i zbiorektych starszych opowiadań na których się wybił, wydanych w Polszy jako &quot;Nocna Zmiana&quot;. I o nich akurat się wypowiem.<br /><br />Otóż te opowiadania są zajebiste. Większość z nich eksploruje bardzo dziwne pomysły, o które raczej podejrzewalibyśmy stare kino horroru klasy Ź. Ale są napisane tak dobrze, że nie tylko nie budzą politowania konceptami typu np. bunt samochodów, a nawet, te co lepsze, prawdziwą grozę. Serdecznie polecam.<br /><div class="quote-block">Nie podzielam twojego uznania dla tego autora, który po prostu jest rzemieślnikiem piszącym niezłe książki, ewentualnie poprawne. </div><br />Poprawne to już bardzo mocne słowo, z pozytywną konotacją dzisiaj. Niezłe to kwestia opinii. Ale nie rozumiem  czemu pijesz do pisarskiego rzemieślnictwa. Polecam żebyś przeczytał wywiad z Sapkiem &quot;historia i Fantastyka&quot;  (Ciekawa lektura ogółem) w której to Mistrz rozprawia się z mitem natchnionego pisarstwa<br /><br />EDYTA: przypomniałem sobie, czytałem jeszcze &quot;Wielki Marsz&quot; też ciekawa lektura.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-796">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-14T21:22:48" class="text-sm text-gray-500 font-mono">2017-01-14 21:22:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Ostatnio dostałem na gwiazdkę &quot;To&quot; (Na razie czeka), &quot;Bazar Złych snów&quot; (w poczekalni), &quot;Rękę Mistrza&quot; (Czytam, zajebiście mi sie podoba, trochę odstępstwa od klasycznego Kinga) i zbiorektych starszych opowiadań na których się wybił, wydanych w Polszy jako &quot;Nocna Zmiana&quot;. I o nich akurat się wypowiem.</div><br /><br />Jeśli spodobały Ci się te opowiadania, to polecam jeszcze &quot;Szkieletową załogę&quot;. Pierwsze 150 stron to opowiadanie &quot;Mgła&quot;, kolejne opowiadania mają po 20-30 stron. Opowiadania o jauntingu, grzybie, handlarzu kokainą na bezludnej wyspie czy szczurach pamiętam do dziś, mimo że czytałem tylko raz i to dobre 7-8 lat temu. Aż sobie jeszcze raz przeczytam, mam nadzieję że w jakiejś księgarni dorwę.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-797">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-14T21:39:50" class="text-sm text-gray-500 font-mono">2017-01-14 21:39:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O grzybku, mgle i szczurach były już w zbiorku o którym wspomniałem powyżej. W sumie podobały mi się bardzo, może Mgiełka trochę odstawała.<br />Czytałeś opowiadanie o Oczach?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-798">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-14T21:42:05" class="text-sm text-gray-500 font-mono">2017-01-14 21:42:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Hmm musiałbyś coś więcej o tych Oczach powiedzieć, bo coś mi się w mózgu tli, ale jeszcze nie wiem gdzie dokładnie. Z opowiadań Kinga czytałem tylko &quot;Szkieletową załogę&quot; i aktualnie kończę &quot;Bazar złych snów&quot;, raptem 30 stron mi zostało.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-799">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-14T21:47:42" class="text-sm text-gray-500 font-mono">2017-01-14 21:47:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Temat zacny - przeczytałem tylko jedną książkę Kinga i mam zamiar sięgnąć po inne jego pozycje, tyle że zawalony jestem innymi tytułami póki co.<br /><br />Książkę, którą przeczytałem był Sklepik z Marzeniami. Całkiem porządne opowiadanie, choć zakończenie historii było trochę nietrafione. Mimo to polecam, przyjemnie zabija czas, a i nie nuży zbytnio.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-800">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-14T21:51:24" class="text-sm text-gray-500 font-mono">2017-01-14 21:51:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ciężko coś kurde powiedzieć w ten sposób by nie dojebać spoilerem (którego kurde nawet się ustawić w BBCode, super robota panowie)<br />To o astronaucie byłym.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-801">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-14T21:54:56" class="text-sm text-gray-500 font-mono">2017-01-14 21:54:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>MCaleb</strong> napisał:</span></div><br />Książkę, którą przeczytałem był Sklepik z Marzeniami. Całkiem porządne opowiadanie, choć zakończenie historii było trochę nietrafione. Mimo to polecam, przyjemnie zabija czas, a i nie nuży zbytnio.</div><br /><br />Zakończenie Sklepiku niestety było najgorszym fragmentem tej książki. Bardzo naiwne i pisane na siłę, zupełnie nie w stylu Kinga i jeśli Cię zawiodło to na pocieszenie powiem, że to jedyny znany mi taki przypadek w jego twórczości. Na szczęście książka jako całokształt mimo wszystko wypada bardzo dobrze, jak to u Kinga: powoli zgłębiasz się w psychikę bohaterów przez kilkadziesiąt-kilkaset stron i nagle akcji jest już tyle, że ciężko książkę odłożyć na bok.<br /><div class="quote-block">Ciężko coś kurde powiedzieć w ten sposób by nie dojebać spoilerem (którego kurde nawet się ustawić w BBCode, super robota panowie)<br />To o astronaucie byłym.</div><br /><br />To chyba jednak nie kojarzę. To jest w Nocnej zmianie? Jeśli tak to wychodzi na to, że będę sobie musiał ją sprawić.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-802">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-14T22:08:24" class="text-sm text-gray-500 font-mono">2017-01-14 22:08:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A czytaliście jego &quot;Talizman&quot;? To chyba moja ulubiona pozycja ze wszystkich, które przeczytałem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-803">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-14T22:16:45" class="text-sm text-gray-500 font-mono">2017-01-14 22:16:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Sölve</strong> napisał:</span></div>A czytaliście jego &quot;Talizman&quot;? To chyba moja ulubiona pozycja ze wszystkich, które przeczytałem.</div><br /><br />Czytałem, całkiem zapomniałem bo to jedna z pierwszych książek Kinga jakie dorwałem. W pamięć zapadła mi postać tego Wolfa, czy jak mu tam było, którego bolały uszy od hałasu miejskiego po przejściu do drugiego świata. Zakończenia za nic sobie nie jestem w stanie przypomnieć, bo minęło jakieś 8 lat odkąd miałem tę książkę, więc sobie może kiedyś odświeżę.<br /><br />A ktoś czytał może jakieś jego najnowsze książki? Na przestrzeni ostatnich kilku lat wydał bardzo wiele, ciekawi mnie czy dalej jest w formie, w końcu facet już 70tkę ma na karku, moi dziadkowie w tym wieku już tylko leżeli o oglądali Złotopolskich.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-804">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-14T22:20:11" class="text-sm text-gray-500 font-mono">2017-01-14 22:20:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ostatnio uznałem że warto by było się nieco z prozą Kinga zapoznać. Obecnie z jego dorobku przeczytaną mam jedynie &quot;Zieloną Milę&quot; i muszę przyznać że książka wywarła na mnie dużo mocniejsze wrażenie niż film. Pomimo tego że film widziałem wiele razy zanim się do książki zabrałem. Poza tym widziałem niedawno &quot;Mgłę&quot; w nowszej wersji. Filmy horrory nie wywierają na mnie specjalnie żadnego wrażenia, horrorowe książki i opowiadania przeżywam dużo bardziej. Postaram się za coś zabrać w tym roku.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-805">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/8.jpg?1512503192" alt="Awatar Omni" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Omni</span>
+                                <time datetime="2017-01-14T22:41:16" class="text-sm text-gray-500 font-mono">2017-01-14 22:41:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Talizman też mam, ale nie czytałem. Jakoś odstręcza mnie pomysł czytani młodzieżowej fantastyki, nawet made by Król.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-806">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-15T00:17:19" class="text-sm text-gray-500 font-mono">2017-01-15 00:17:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Muad'Dib</strong> napisał:</span></div>Talizman też mam, ale nie czytałem. Jakoś odstręcza mnie pomysł czytani młodzieżowej fantastyki, nawet made by Król.</div>IMO nie ma powodu do strachu, w końcu jest tam też drugi autor, który wprowadził powiew świeżości do sztampowej twórczości Kinga. Serio, polecam. Mam na szafce nocnej &quot;Bazar złych snów&quot;, pewnie niebawem zacznę ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-807">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-15T01:53:06" class="text-sm text-gray-500 font-mono">2017-01-15 01:53:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                &gt;nie lubię pretensjonalnych czytaczy Kinga, a w ogóle to King jest suaby, nie na moje standardy<br /><br /><br />Od siebie zaś dodam, że w zasadzie przeczytałem tylko Komórkę, którą pożyczyłem od kumpla jakieś 100 lat temu. Wchłaniało się dobrze. Jednak muszę przestać się opierniczać i poczytać coś więcej. Sporo filmowych adaptacji w końcu jest genialnych, więc podejrzewam, że warto. Liceum, a potem rok filologii hamburgerskiej zabiło mój zwyczaj czytania książek z własnej inicjatywy poza okazjonalnym tytułem i pora chyba przestać być leniwą k&#8230;ą.<br />Chyba zacznę od Lśnienia, biorąc pod uwagę moje mieszane uczucia związane z filmową interpretacją Kubricka. Książka ma ponoć więcej ładu i składu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-808">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-15T11:51:03" class="text-sm text-gray-500 font-mono">2017-01-15 11:51:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Infernal</strong> napisał:</span></div>Chyba zacznę od Lśnienia, biorąc pod uwagę moje mieszane uczucia związane z filmową interpretacją Kubricka. Książka ma ponoć więcej ładu i składu.</div>&quot;Lśnienie&quot; wchodzi dość szybko i gładko, zawiera wszystkie wyznaczniki powieści Kinga i jest dosyć krótkie, więc nie powinieneś zniechęcić się w połowie. Sam szybko to łyknąłem, pomimo wieloletniego braku czasu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-809">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-03-18T18:16:40" class="text-sm text-gray-500 font-mono">2017-03-18 18:16:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Stety albo niestety zraziłem się do Kinga. Jak przeczytałem mozolnie &quot;Mroczną połowę&quot;, która tak średnio mi się podobała, ale utkwiła w pamięci, tak już &quot;Pod kopułą&quot; nie skończyłem. Wziąłem się za tę drugą książkę jedynie w nadziei, że może trafiłem na twórczość Kinga w wydaniu, które mi się nie spodoba. Jednak &quot;Pod kopułą&quot; uświadczyło mnie w przekonaniu, że nie jest to twórczość dla mnie. Sposób w jaki pisze pała jakąś dziwną, niezdefiniowaną siłą, która mnie odpycha.<br />Może kiedyś się przełamię i zrobię kolejne podejście do jego twórczości, ale nieprędko, bo na celowniku mam kilka(naście) lżejszych czytadeł i do nadrobienia klasyki sci-fi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

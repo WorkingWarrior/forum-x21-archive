@@ -1,0 +1,85 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children of Morta - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Children of Morta</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2837">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-09-07T12:07:57" class="text-sm text-gray-500 font-mono">2019-09-07 12:07:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Historia Children of Morta rozgrywa się w odległej krainie, ale porusza tematy dość zbliżone do tych znanych z życia codziennego. Opowiada o prostych uczuciach, które wszyscy dobrze znamy i które często cenimy bardziej, niż śmielibyśmy przyznać – <strong>o miłości i nadziei, tęsknocie i niepewności, ale też o stracie i poświęceniach, na jakie jesteśmy gotowi, aby ocalić najdroższe nam osoby.</strong><br /><br />Wybierz się na przygodę z nadzwyczajną rodziną bohaterów. Strażnicy Morty muszą się sprzeciwić pradawnemu złu, jakie stanowi szerzące się w całej krainie Zepsucie. Lecz.. to nie jest historia o ratowaniu świata. <strong>To historia o bohaterskiej rodzinie, która trzyma się razem w obliczu pożerającej wszystko ciemności.<br /><strong>CECHY:</strong></strong><br /><div style="text-align: center;"><img src="https://items.gog.com/children_of_morta/family.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><strong>WIĘZY RODZINNE</strong><br />Rodzina Bergsonów jest zwarta i gotowa na nadchodzący bój. Odkryj i sprawdź <strong>wyjątkowy styl walki i osobowość każdej z postaci</strong>. Zobacz, jak emocje krewnych sięgają zenitu, gdy robią wszystko, by wspierać siebie nawzajem w dążeniu do przywrócenia pokoju w krainie. <strong>Bądź świadkiem rozkwitu rodziny.</strong><br /><br /><div style="text-align: center;"><img src="https://items.gog.com/children_of_morta/Playstyles.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><strong>DZIEDZICZNE TALENTY</strong><br />Wszyscy członkowie rodziny mają inną przeszłość i specjalność, co czyni ich naprawdę różnorodną grupą strażników. Niektórzy wolą walkę wręcz i miażdżenie wrogów wspaniałymi młotami albo cięcie ich ostrym mieczem bądź sztyletem, inni zaś trzymają się z dala i stosują nadzwyczajne zaklęcia lub mistrzowsko posługują się łukiem. <strong>Poznaj wyjątkowy styl gry każdego członka rodziny i wybierz ten, który do ciebie pasuje!</strong><br /><br /><div style="text-align: center;"><img src="https://items.gog.com/children_of_morta/ancestral_knowledge.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><strong>MĄDROŚĆ PRZODKÓW</strong><br />Babcia Margaret i wujek Ben – jasnowidzka i kowal w rodzinie. Są uzbrojeni w wiedzę przekazywaną z pokolenia na pokolenie w rodzie Bergsonów i z chęcią ci pomogą. Możesz polegać na ich obszernej wiedzy na temat Rei, ducha Morty. <strong>Używaj ich umiejętności, żeby ulepszać rodzinne wyposażenie i poprawiać główne atrybuty.</strong> Koniecznie korzystaj z mądrości przodków!<br /><br /><div style="text-align: center;"><img src="https://items.gog.com/children_of_morta/Mountain.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><strong>MISTYCZNA GÓRA</strong><br />Góra jest dla mieszkańców Rei wszystkim. To obfitujący w historię, legendy oraz magię symbol, a zarazem źródło życia, zdrowia i pomyślności. Wejdź w głąb góry i odkryj kryjące się w jej wnętrzu tajemnice. <strong>Dowiedz się, czym jest Zepsucie i dlaczego nawiedziło to z pozoru spokojne miejsce.</strong><br /><br /><div style="text-align: center;"><img src="https://items.gog.com/children_of_morta/Everchanging.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><strong>ŚWIAT PEŁEN ZMIAN</strong><br />Zepsucie skaziło świat i stale go zmienia. Żaden las, loch czy świątynia, przez które utorujesz sobie drogę, nigdy nie będą takie same, co gwarantuje, że<strong> każdej rozgrywce będą towarzyszyć wyjątkowe przeżycia</strong>.<br /><br /><div style="text-align: center;"><img src="https://items.gog.com/children_of_morta/artstyle.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><strong>WYJĄTKOWY STYL GRAFICZNY</strong><br />Mieszanka <strong>ręcznie wykonanej grafiki pikselowej, poklatkowych animacji i współczesnych technik oświetleniowych</strong> sprawia, że piękny i niebezpieczny świat Children of Morta ożywa na naszych oczach!<br /><br />A tutaj recka od Brody:<br /><div style="text-align: center;"><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/BrLi19lklXs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

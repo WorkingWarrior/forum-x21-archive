@@ -1,0 +1,758 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tydzień tematyczny na X-21! - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Tydzień tematyczny na X-21!</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2703">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-05-20T12:55:38" class="text-sm text-gray-500 font-mono">2019-05-20 12:55:38</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                ВНИМАНИЕ! ВНИМАНИЕ!<br />Niniejszym dekretem papieskim ogłaszam Tydzień Proszków do Prania na Forume (w skrócie TPdP, tudzież TPdPnF). W przybliżeniu do końca maja możecie cieszyć się nowymi atrakcjami, wśród których można wspomnieć o drobnych modyfikacjach w nickach niektórych użytkowników.<br /><br />Niewykluczone że podobne atrakcje pojawią się jeszcze kiedyś w przyszłości. Być może kiedyś dostaniecie większy wpływ na to co się dzieje, np. na metamorfozę swoich nicków. A być może nie. Masz jakieś propozycje odnośnie tego typu eventów na przyszłość? Pisz tu lub na PW lub spierdalaj.<br /><br />Serdecznie pozdrawiam,<br /><br />Papiesz
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2704">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-05-20T13:00:53" class="text-sm text-gray-500 font-mono">2019-05-20 13:00:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2703" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />ВНИМАНИЕ! ВНИМАНИЕ!<br />Niniejszym dekretem papieskim ogłaszam Tydzień Proszków do Prania na Forume (w skrócie TPdP, tudzież TPdPnF). W przybliżeniu do końca maja możecie cieszyć się nowymi atrakcjami, wśród których można wspomnieć o drobnych modyfikacjach w nickach niektórych użytkowników.<br /><br />Niewykluczone że podobne atrakcje pojawią się jeszcze kiedyś w przyszłości. Być może kiedyś dostaniecie większy wpływ na to co się dzieje, np. na metamorfozę swoich nicków. A być może nie. Masz jakieś propozycje odnośnie tego typu eventów na przyszłość? Pisz tu lub na PW lub spierdalaj.<br /><br />Serdecznie pozdrawiam,<br /><br />Papiesz<br /></div><br />A teraz wylistuj ludzi wraz z awatarami oraz nowymi nickami :3
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2706">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-05-20T13:18:21" class="text-sm text-gray-500 font-mono">2019-05-20 13:18:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <ul>
+<li>Solve - <a href="https://i.imgur.com/2ZkkGEx.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Perwoll</a></li><li>Missile - <a href="https://i.imgur.com/Q4uyTpu.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Go for Expert Chusteczki zapobiegające farbowaniu 20 sztuk</a></li><li>Lenin - <a href="https://i.imgur.com/w2wMJPO.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Dosia</a></li><li>Enzo - <a href="https://i.imgur.com/5ld3YyF.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Vizir</a></li><li>Infernal - <a href="https://i.imgur.com/joRrk8o.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Bref WC</a> (ew. Bref WC Power Activ)</li><li>MCaleb - <a href="https://i.imgur.com/5KU727Q.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Calgon</a></li><li>Ropasiak - <a href="https://i.imgur.com/uf2jitt.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Woolite</a></li><li>King Crimson - <a href="https://i.imgur.com/fJjK0HT.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Ariel Mountain Spring</a></li><li>hubi1 - <a href="https://i.imgur.com/lsS4Pn4g.png" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Dzidziuś</a></li></ul><br />Wszystkie awatary: <a href="https://imgur.com/a/ycjzgRO" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">klik</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2707">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/43.jpg?1558912131" alt="Awatar King Crimson" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">King Crimson</span>
+                                <time datetime="2019-05-20T14:43:55" class="text-sm text-gray-500 font-mono">2019-05-20 14:43:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Stałem się śmiercią, niszczycielem światów&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2708">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-05-21T07:42:32" class="text-sm text-gray-500 font-mono">2019-05-21 07:42:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No dobra, ale teraz za chuj nie wiem, kto jest kim…
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2709">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-05-22T04:37:25" class="text-sm text-gray-500 font-mono">2019-05-22 04:37:25</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                ha! a ja nadal jestem hubi1<br /><br /><img src="https://i.imgur.com/jCPmYLo.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2711">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-05-22T12:23:34" class="text-sm text-gray-500 font-mono">2019-05-22 12:23:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A Ty to niby kurwa kto?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2712">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-05-22T13:06:12" class="text-sm text-gray-500 font-mono">2019-05-22 13:06:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2711" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Vizir</strong> napisał:</span></a></div><br />A Ty to niby kurwa kto?<br /></div><br />To jest hubeł, hubała, nietęga pała 😄<br />A po godzinach Irzysztof Kbisz.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2713">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-05-22T13:33:26" class="text-sm text-gray-500 font-mono">2019-05-22 13:33:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                zmień mu nick na huji100, bo jak dla mnie to morde za mocno cieszy
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2714">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-05-22T13:55:24" class="text-sm text-gray-500 font-mono">2019-05-22 13:55:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2713" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Vizir</strong> napisał:</span></a></div><br />zmień mu nick na huji100, bo jak dla mnie to morde za mocno cieszy<br /></div><br />Od teraz hubi jest Dzidziusiem ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2715">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-05-22T15:22:07" class="text-sm text-gray-500 font-mono">2019-05-22 15:22:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2714" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Perwoll</strong> napisał:</span></a></div>Od teraz hubi jest Dzidziusiem ;)</div><br /><br />Yay!<br /><br /><img src="https://66.media.tumblr.com/820a03183b2a2bc974c7b3c443f65e1d/tumblr_pizhktunrl1ui9s1qo7_r1_250.gif" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2720">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-05-23T12:53:33" class="text-sm text-gray-500 font-mono">2019-05-23 12:53:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                To może ja zaproponuję przyszły event: tydzień przeglądarek internetowych!<br />Miska - Edge, bo jest pedałem, ale ma Win 10<br />Inf - IE, bo jest pedałem i nie ma Win 10<br />Lenin - Firefox, bo Linux i chuj<br />Solve - Lynx, bo Linux i nie chuj<br />Enzo - Chrome, bo ma protezę OSa<br />Caleb - Safari, bo jest pijany i można mu wcisnąć iGówno<br />Ropasiak - Opera, bo nie jest pijany, ale i tak można mu wcisnąć gówno
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2721">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-05-23T12:57:56" class="text-sm text-gray-500 font-mono">2019-05-23 12:57:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Pomysł wspaniały, ale nie mam win10, wypraszam sobie więc proszę spierdalać. A Infowi dałbym TORa żeby wygodniej mu było placki oglądać i lalki papieskie zamawiać.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2731">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-05-23T17:01:34" class="text-sm text-gray-500 font-mono">2019-05-23 17:01:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Tor jest dla bidoków, co nie potrafią się zapisać do seminarium.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2736">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-05-23T18:22:50" class="text-sm text-gray-500 font-mono">2019-05-23 18:22:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja proponuje tydzień owoców.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2738">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-05-23T18:57:28" class="text-sm text-gray-500 font-mono">2019-05-23 18:57:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Świeżaków, kurwa
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2740">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-05-23T19:08:31" class="text-sm text-gray-500 font-mono">2019-05-23 19:08:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O, lubię to.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2743">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-05-26T13:49:00" class="text-sm text-gray-500 font-mono">2019-05-26 13:49:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Uwaga, dzisiaj kończy się tydzień proszków. Dajcie Misilowi kolejny tydzień na ogarnięcie nowych możliwości, ew. sami możecie zgłaszać swoje propozycje.<br /><br />// E:<br />Dobra, przywróciłem nicki, niestety awatary będziecie musieli ustawić sobie sami :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2744">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-05-26T15:02:42" class="text-sm text-gray-500 font-mono">2019-05-26 15:02:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2743" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div><br />niestety awatary będziecie musieli ustawić sobie sami :D<br /></div><br /><br />Ty draniu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2745">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/43.jpg?1558912131" alt="Awatar King Crimson" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">King Crimson</span>
+                                <time datetime="2019-05-27T01:15:12" class="text-sm text-gray-500 font-mono">2019-05-27 01:15:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2743" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div><br />Uwaga, dzisiaj kończy się tydzień proszków. Dajcie Misilowi kolejny tydzień na ogarnięcie nowych możliwości, ew. sami możecie zgłaszać swoje propozycje.<br /></div><br /><br />Tydzień Unijny, albo Warhammer.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2755">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-06-09T11:32:57" class="text-sm text-gray-500 font-mono">2019-06-09 11:32:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                E, lamusie. Wymyśliłeś coś?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2756">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-06-09T17:32:51" class="text-sm text-gray-500 font-mono">2019-06-09 17:32:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie xD kompletny brak czasu póki co, sorky :/
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2757">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-06-09T19:40:29" class="text-sm text-gray-500 font-mono">2019-06-09 19:40:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2756" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />Nie xD<br /></div><br /><br />O boże, jak śmiesznie. xDxDxD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2758">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/43.jpg?1558912131" alt="Awatar King Crimson" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">King Crimson</span>
+                                <time datetime="2019-06-10T08:18:20" class="text-sm text-gray-500 font-mono">2019-06-10 08:18:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2756" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />Nie xD kompletny brak czasu póki co, sorky :/<br /></div><br />Lekko zalatujący leń :-(<br />To może klasy z tf2?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2759">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-06-10T09:16:52" class="text-sm text-gray-500 font-mono">2019-06-10 09:16:52</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2758" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>King Crimson</strong> napisał:</span></a></div><br />Lekko zalatujący leń :-(<br />To może klasy z tf2?<br /></div><br />Total Faggot 2?<br />Zaskoczę Was, proponuję <a href="http://patrz.pl/static/uploaded/video/150/1509/150993/f371827438e5389223ef68622f65ce4f_1080.mp4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kubusia Puchatka i resztę pojebów</a>.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2760">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2019-06-10T12:17:04" class="text-sm text-gray-500 font-mono">2019-06-10 12:17:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Hmmm, no w sumie nie głupie
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2761">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-06-10T12:39:22" class="text-sm text-gray-500 font-mono">2019-06-10 12:39:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                części rowerów<br />Solve kierownica, bo kieruje tym gównoforum<br />Miska pedał, bez konkretnego powodu<br />Ropasiak dynamo, bo wciskając mu bejcę go wydynamo<br />Caleb koło, żeby puknąć się nim w czoło<br />Lenin światło, bo to nasz promyczek nadziei<br />Inf siodełko, bo każdy chciałby dotykać pupą Infa<br />Enzo dzwonek, bo też cieniutko piszczy, jak go Miska za dzyndzelek pociąga.<br />Alchemik hamulec, bo wyhamował życie<br />Crimson przerzutki, bo chuj wie od czego jest jedno i drugie<br />Hubi łańcuch, bo swoim CDA pod ręką nakręca ruch na forume
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2762">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-06-10T18:16:36" class="text-sm text-gray-500 font-mono">2019-06-10 18:16:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Cykliści pod cyklon
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2763">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-06-10T21:50:25" class="text-sm text-gray-500 font-mono">2019-06-10 21:50:25</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2761" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div><br />części rowerów<br />Solve kierownica, bo kieruje tym gównoforum<br />Miska pedał, bez konkretnego powodu<br />Ropasiak dynamo, bo wciskając mu bejcę go wydynamo<br />Caleb koło, żeby puknąć się nim w czoło<br />Lenin światło, bo to nasz promyczek nadziei<br />Inf siodełko, bo każdy chciałby dotykać pupą Infa<br />Enzo dzwonek, bo też cieniutko piszczy, jak go Miska za dzyndzelek pociąga.<br />Alchemik hamulec, bo wyhamował życie<br />Crimson przerzutki, bo chuj wie od czego jest jedno i drugie<br />Hubi łańcuch, bo swoim CDA pod ręką nakręca ruch na forume<br /></div><br /><br />aprobuje
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2765">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-06-12T18:41:19" class="text-sm text-gray-500 font-mono">2019-06-12 18:41:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2763" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br /><div class="quote-block"><div class="quote-header"><a href="#post-2761" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Enzo</strong> napisał:</span></a></div><br />Miska pedał, bez konkretnego powodu<br /></div><br />aprobuje<br /></div><br /><br />Ale motyw avatarowy jest tutaj, a nie na fejsie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2766">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-06-13T16:08:31" class="text-sm text-gray-500 font-mono">2019-06-13 16:08:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2763" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />aprobuje<br /></div><br />Mizzle, weź skończ się opierdalać, dawaj nowe awantory :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2767">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-06-13T16:27:57" class="text-sm text-gray-500 font-mono">2019-06-13 16:27:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                ni zrobie, jakiś inny pedał musi ogarnąć :/ ja to tylko do opierdalania gały dobry jestem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2768">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2019-06-13T19:00:30" class="text-sm text-gray-500 font-mono">2019-06-13 19:00:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zrób dżapańskie avatary jak kowek kiedyś zazdrościł że mamy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

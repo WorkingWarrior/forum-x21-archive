@@ -1,0 +1,190 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakacje - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Wakacje</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1597">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2017-06-05T23:26:44" class="text-sm text-gray-500 font-mono">2017-06-05 23:26:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zamierzam w lipcu pojechać na wakacje. Odwiedzę Siedlce, Warszawę, Łódź/Toruń, Wrocław, Strzelin, pałac w Kopicach. Co polecacie na tę wielką wyprawę?  :)<br />Cele: <br />-zwiedzanie;<br />-odwiedziny ludzi;<br />-zbieranie minerałów;<br />-urban exploration.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1598">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-06-06T01:29:52" class="text-sm text-gray-500 font-mono">2017-06-06 01:29:52</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Siedlce to Polska B do kwadratu. Rozsypujące się rudery przesiane PRLowską płytą. Północ miasta jest paskudna i zapuszczona, południe jest już nieco lepsze. Poza ścisłym centrum absolutnie nic wartego obejrzenia, samo centrum generalnie jakoś piękne nie jest, chyba że jarają Cię obdrapane kamienice obklejone z każdej strony paskudnymi reklamami. Kluby są pełne obszczymurów ze wszystkich okolicznych wioch, unikać jak ognia. Jak chcesz się bawić w stalkera, to generalnie trzymaj się linii kolejowych, nie gwarantuję jednak, że nie dostaniesz po ryju. Masz <a href="http://i.imgur.com/gLkb8ze.jpg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">survival guide</a>.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1599">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-06-06T14:12:22" class="text-sm text-gray-500 font-mono">2017-06-06 14:12:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zamysł spoko, ale poza Siedlcami również Łódź bym sobie odpuścił. 100% mur i beton, z tego co rozumiem Ty z namiotem jedziesz - w Łodzi nigdzie go nie rozstawisz, żeby trafić na jakąś łąkę czy nieużytek musiałbyś jechać daleko za miasto, najbliżej chyba w okolicach Pomorskiej (na samym jej końcu, to w zasadzie wylot z Łodzi). Ostatni raz byłem tam jakieś 3 lata temu - brzydkie miasto, zero zieleni, same bloki i kamienice, na głównej ulicy (Piotrowskiej) stoją porozwalane budynki w trakcie rozbiórki, które ktoś zapomniał &quot;rozebrać&quot; do końca. Nie poletzam. Ponoć ostatnio Łódź mocno się rozwija, ale w jakiś optymizm był nie popadał, bo tam po prostu gorzej już być nie mogło. Jeśli jednak się skusisz - poza Manufakturą nie mam nic do polecenia. Ale kamieni tam nie pozbierasz. <br /><br />Wrocław - poletzam, możesz sobie rozbić namiot w wielu miejscach, np. na łąkach/lasach na Biskupinie - 10 minut od centrum miasta. W chuj rzeczy do zwiedzania. Za dużo żeby mi się chciało pisać. <br /><br />Strzelin - byłem przejazdem, wydawał się ok, zwykłe miasto, ni to ładne, ni to piękne. Nie wiem co tam jest do oglądania, jak chcesz jakieś zamki itp oglądać to raczej Bolków (chyba nawet w lipcu jest zlot czarownic i gotów) albo Czocha w Leśnej. Możesz też jechać do Wałbrzycha szukać złotego pociągu, tylko uważaj bo to w 100% trzeci świat. <br /><br />Kopice - ni znom<br /><br />Generalnie bylebyś nie zahaczył o Legnicę (wpierdol od cyganów) i będzie ok. Trip brzmi fajnie, szanuję. Tylko się myj w  rzekach/jeziorach albo wpierdalaj się na jakieś kampingi o ile znajdziesz. Czym podróżujesz? Pociung, auto, autobus, na stopa? <br /><br />No i skoro już będziesz na Dolnym Śląsku to polecam trochę dodać sobie trasy i jebnąć się do Świeradowa albo Szklarskiej Poręby - góry są naprawdę fajne. W schronisku przekimasz się nawet za darmo jak masz własny śpiwór, pokój kosztuje jakieś 10-30zł tylko na weekendy brak miejsc - czeba rezerwować wcześniej. Namiot w górach też przejdzie, tylko rozbijaj tak żeby nikt nie widział. Szlaki są zawsze zaznaczone i rozrysowane, ciężko się zgubić więc luzik. Góry mamy w Polszy naprawdę urodziwe, a i kamieni nazbierasz.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1600">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2017-06-06T14:16:37" class="text-sm text-gray-500 font-mono">2017-06-06 14:16:37</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Zamysł spoko, ale poza Siedlcami również Łódź bym sobie odpuścił. 100% mur i beton, z tego co rozumiem Ty z namiotem jedziesz - w Łodzi nigdzie go nie rozstawisz, żeby trafić na jakąś łąkę czy nieużytek musiałbyś jechać </div><br />Gdzie pod namiot, tam pod namiot. W Łodzi będę w motelu. Siedlce i Łódź to po prostu odwiedziny znajomych.<br /><div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Strzelin - byłem przejazdem, wydawał się ok, zwykłe miasto, ni to ładne, ni to piękne. Nie wiem co tam jest do oglądania <br /></div><br />Szmaragdy kolego ;).<br /><div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Kopice - ni znom<br /></div><br />Pałac w Kopicach.<br /><br />Podróżował będę różnie, raz pociąg, raz bus.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1601">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-07-08T16:31:33" class="text-sm text-gray-500 font-mono">2017-07-08 16:31:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zaczynam urlop za tydzień&#8230;<br />&#8230;ale nigdzie nie jadę. <br /><br />¯\_(ツ)_/¯
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1602">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2017-07-11T23:14:20" class="text-sm text-gray-500 font-mono">2017-07-11 23:14:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Zaczynam urlop za tydzień&#8230;</div><br />Ja dopiero jadę 12 sierpnia bo łatwiej mi to układa resztę spraw.<br />Jadę zobaczyć wpierw Warszawę w weekend, potem do kumpla na parę dni do Giełczyna, gdzie jest park krajobrazowy, potem Łódź, Wrocław. Następnie jadę pod namiot szukać kamieni szlachetnych na wzgórzach Strzelinskich, a potem Zabrze i Gdańsk gdzie będzie konferencja Lashtal Press. Czyli od 12 do 2 jestem niedostępny, chyba że ktoś będzie w okolicy chciał się napić piwa.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

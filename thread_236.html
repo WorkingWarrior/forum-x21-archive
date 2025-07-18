@@ -1,0 +1,296 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsole - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Konsole</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1883">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-19T16:42:04" class="text-sm text-gray-500 font-mono">2018-01-19 16:42:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Są tu osobnicy posiadający jakieś konsole? Nowe, stare, obojętnie. Pogadajmy se o nich, no chyba że gardzicie. xD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1890">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-19T18:35:48" class="text-sm text-gray-500 font-mono">2018-01-19 18:35:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1883" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lou</strong> napisał:</span></a></div>Są tu osobnicy posiadający jakieś konsole? Nowe, stare, obojętnie. Pogadajmy se o nich, no chyba że gardzicie. xD</div><br />/me posiada konsole!<br /><ul>
+<li>Sony PSTV</li><li>Sony PS3</li><li>Nintendo 3DS XL</li><li>Nintendo Switch</li></ul><br />O dziwo, najczęściej gram na PS3, ale najwięcej przegranych godzin mam na Switchu :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1895">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-01-19T21:53:09" class="text-sm text-gray-500 font-mono">2018-01-19 21:53:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Myślałem przez lato czy nie kupić sobie po taniości jakiegoś używanego PS3. Ostatecznie rok akademicki potwierdził, że w sumie to mam wyjebane na granie w gry i byłyby to raczej słabo spożytkowane pieniądze (+ wydatki bo TV Licence się sam nie opłaci). Wpadnę do kumpla raz na jakiś czas, urwę mu łeb w Mortal Kombat, jedna sesja mi starcza na pół roku.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1899">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-20T05:34:12" class="text-sm text-gray-500 font-mono">2018-01-20 05:34:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja obecnie jestem na etapie rozważania kupna PS4, ale czy coś z tego wyniknie to nie wiem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1961">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-01-23T15:08:33" class="text-sm text-gray-500 font-mono">2018-01-23 15:08:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Posiadam:<br />Playstation<br />Playstation 2<br />Playstation 3<br />Xbox 360<br />Nintendo SNES<br />Pegasus<br />Gameboy Color<br />Nitnendo DS<br />Nintendo 3DS<br />Miałem PSP, planuje odzyskać.<br />A z tych co nie miałem planuje Xbox, Wii, a z nowych PS4.<br /><br />Najczęściej gram Gameboy Color, Nitendo DS jeżeli chodzi o handheldy, a jeżeli o stacjonarne to SNES, Playstation 2, Xbox 360.<br />Pewnie dopisałbym też Playstation 3, ale zaraz po tym jak posiadłem i doszedłem do połowy Red Dead Redemption i Castlevanii Symphony of the Night okazało się, że muszę wyczyścić i zrobić konserwacje. Czeka, czeka, niedługo już się doczeka (pewnie w przyszłym miesiącu).<br /><br />ps. &gt;Pogadajmy se o nich, no chyba że gardzicie. xD<br />Ja nie gardze, przeciwnie, lubię.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1962">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-23T15:09:19" class="text-sm text-gray-500 font-mono">2018-01-23 15:09:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1961" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Posiadam:<br />Playstation<br />Playstation 2<br />Playstation 3<br />Xbox 360<br />Nintendo SNES<br />Pegasus<br />Gameboy Color<br />Nitnendo DS<br />Nintendo 3DS<br />Miałem PSP, planuje odzyskać.<br />A z tych co nie miałem planuje Xbox, Wii, a z nowych PS4.<br /><br />Najczęściej gram Gameboy Color, Nitendo DS jeżeli chodzi o handheldy, a jeżeli o stacjonarne to SNES, Playstation 2, Xbox 360.<br />Pewnie dopisałbym też Playstation 3, ale zaraz po tym jak posiadłem i doszedłem do połowy Red Dead Redemption i Castlevanii Symphony of the Night okazało się, że muszę wyczyścić i zrobić konserwacje. Czeka, czeka, niedługo już się doczeka (pewnie w przyszłym miesiącu).</div><br />Ehe, a weź wymień działające :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1963">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-01-23T15:11:00" class="text-sm text-gray-500 font-mono">2018-01-23 15:11:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wszystkie oprócz 3DSa który na Ciebie czeka i właśnie PS3 : P<br /><br />Ze wszystkich bym polecił&#8230; każdą : D Każda mi sprawia wiele frajdy, ale jeżeli ktoś chce bogatą bibliotekę gier i nie przeszkadza mu, że gra ma więcej jak rok czy dwa to ze stacjonarnych polecam Playstation 2 i Playstation 3/Xbox 360, a z handheldów Nintendo DS i PSP (PSP nadaje się też świetnie do gier z PSXa i ma możliwość podpięcia do TV) oraz klasyczny Gameboy Color, a jeżeli komuś brak podświetlenia to Gameboy Advance SP.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2366">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-09-01T21:03:47" class="text-sm text-gray-500 font-mono">2018-09-01 21:03:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Także ziściło się i załatwiłem sobie jakiś czas temu platejszyn 3. Poza tym że potrzebuję drugiego PADa do grania z ziomkiem w coopy, jakoś działa. Nakupiłem nieco tanich gier (sporo za całe 50p/sztuka), większość z nich raczej ssało, część wydało się choć ciut ciekawe, przynajmniej wreszcie przejdę GTA4. W każdym razie - na razie jestem zadowolony. Że to temat słabo przeze mnie badany, jakie eksklusyfy polecacie?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2368">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-09-02T20:26:36" class="text-sm text-gray-500 font-mono">2018-09-02 20:26:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2366" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>Także ziściło się i załatwiłem sobie jakiś czas temu platejszyn 3. Poza tym że potrzebuję drugiego PADa do grania z ziomkiem w coopy, jakoś działa. Nakupiłem nieco tanich gier (sporo za całe 50p/sztuka), większość z nich raczej ssało, część wydało się choć ciut ciekawe, przynajmniej wreszcie przejdę GTA4. W każdym razie - na razie jestem zadowolony. Że to temat słabo przeze mnie badany, jakie eksklusyfy polecacie?</div><br />Nie znam eksklusyfów, ale zagraj w GTA IV, GTA V. Jak lubisz przygodowo-platformowe, to zapierdol w <a href="https://x-21.pl/threads/odin-sphere-leifthrasir.34/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Odin Sphere Leifthrasir</a>, będziesz zadowolony. Może Red Dead Redemption?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2371">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-09-03T10:26:10" class="text-sm text-gray-500 font-mono">2018-09-03 10:26:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                GTA4 akurat cisnę, mam wydanie Episodes from Liberty City. 5 niby też mam ale po co grać w betę jak mam pełną wersję na piecu. Red Dead Redemption mogę rozważyć choć musiałbym znaleźć kopię w rozsądnej cenie. Odin cośtam dostępne będzie tylko przez PS Store jak mniemam?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2372">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-09-03T13:51:58" class="text-sm text-gray-500 font-mono">2018-09-03 13:51:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2371" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div>GTA4 akurat cisnę, mam wydanie Episodes from Liberty City. 5 niby też mam ale po co grać w betę jak mam pełną wersję na piecu. Red Dead Redemption mogę rozważyć choć musiałbym znaleźć kopię w rozsądnej cenie. Odin cośtam dostępne będzie tylko przez PS Store jak mniemam?</div><br />Tak przypuszczam - nie mam pewności, bo Sony mnie zbanowało za piractwo :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

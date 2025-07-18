@@ -1,0 +1,337 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu for dummies - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Ubuntu for dummies</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1228">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-18T10:32:07" class="text-sm text-gray-500 font-mono">2017-02-18 10:32:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dobra, zainstalowałam Ubuntu na laptopie i jeszcze kilku rzeczy nie ogarniam. <br />Laptop to Asus R540L, żadna rewelacja, ale do codziennego, zwykłego użytkowania w zupełności wystarczy. Ubuntu jak wiadomo jest idiot friendly, ale przy nieco bardziej skomplikowanych sprawach już się gubię, bo o ile na windowsach pracuję od kilkunastu lat, tak z linuksem miałam słabą styczność&#8230; Także trochę was tu pomęczę laickimi pytaniami.  :mrgreen: <br />A zatem po pierwsze: jak zmienić kolory/rozjaśnić/przyciemnić ekran? Niestety kombinacja z fn mi nie działa&#8230; Jakaś pomoc? Tylko proszę łopatologicznie. :P<br /><br />Czuję się jakbym znów miała 14 lat i odrywała tajemnice windowsa 98. xD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1229">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-18T10:54:55" class="text-sm text-gray-500 font-mono">2017-02-18 10:54:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Oficjalny poradnik mówi mi, że:<br /><ul><li>Kliknij ikonę po prawej stronie paska menu i wybierz Ustawienia systemu.</li><li>Select Brightness &amp; Lock.</li><li>Adjust the Brightness slider to a comfortable value</li></ul>Taki nieco murzyńsko-polski, ale zrozumiały :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1230">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-18T11:14:33" class="text-sm text-gray-500 font-mono">2017-02-18 11:14:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dobra, zadziałało. Dzięki Sölve. :)<br />Chciałoby się jeszcze ustawić kontrast, ale to już chyba jakaś wyższa szkoła jazdy. :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1231">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-18T11:17:40" class="text-sm text-gray-500 font-mono">2017-02-18 11:17:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Hmm, znalazłem coś na ten temat, ale nie wiem czy będzie Ci odpowiadać:<br /><ul><li>Kliknij ikonę po prawej stronie paska menu i wybierz Ustawienia systemu.</li><li>Otwórz Dostęp uniwersalny i wybierz zakładkę Widzenie.</li><li>Switch High Contrast to ON</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1232">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-18T11:19:07" class="text-sm text-gray-500 font-mono">2017-02-18 11:19:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie, to nie to. :( <br />Trudno, oczy się przyzwyczają. :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1233">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-13T15:30:22" class="text-sm text-gray-500 font-mono">2017-05-13 15:30:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Panowie, mam problem z aktualizacją Ubuntu do wersji 17.04. Każdorazowo wyskakuje mi taki błąd:<br /><br /><em>E:Nie udało się pobrać http://archive.ubuntu.com/ubuntu/dists/zesty/InRelease  Nie udało się znaleźć oczekiwanego wpisu &quot;main”/source/Sources&quot; w pliku Release (nieprawidłowy wpis sources.list lub nieprawidłowy plik), E:Nie udało się pobrać niektórych plików indeksu, zostały one zignorowane lub użyto ich starszej wersji.</em><br /><br />Co jest?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1234">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-05-13T15:31:50" class="text-sm text-gray-500 font-mono">2017-05-13 15:31:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Z tego co wiem, mało osób aktualizuje Ubuntu. Zazwyczaj znacznie wygodniejszą opcją jest po prostu przeinstalowanie systemu do nowej wersji co sam zawsze robię.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1235">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-13T15:34:39" class="text-sm text-gray-500 font-mono">2017-05-13 15:34:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wiem, że to pytanie będzie głupie, ale&#8230; rozumiem, że zrobi się to bez utraty danych i ustawień?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1236">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-05-13T15:40:57" class="text-sm text-gray-500 font-mono">2017-05-13 15:40:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Partycja /home/ powinna być nietknięta więc dane zostają. Musisz ustawić tą samą nazwę użytkownika i hasło z tego co wiem. Ostatni raz to robiłem 3 lata temu więc nie wiem jak z nowymi wersjami, sam muszę sobie odświeżyć wiedzę przez lato kiedy planuję aktualizację.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1237">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-14T10:12:15" class="text-sm text-gray-500 font-mono">2017-05-14 10:12:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wgrałam system na pendrive, odpaliłam, próbowałam zaktualizować i&#8230; wyskoczył błąd. Potem niby system uruchomił się normalnie, ale co chwila wyskakiwały jakieś błędy, więc chcąc nie chcąc zainstalowałam go od nowa. ¯\_(ツ)_/¯ Teraz przynajmniej wszystko działa jak trza.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1238">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-05-15T07:28:58" class="text-sm text-gray-500 font-mono">2017-05-15 07:28:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Z doświadczenia wiem, że aktualizacje Ubuntu rzadko się udają. Najczęściej wgrywam przeinstalowuję na czysto, w sumie ma to swoje plusy – na mojej sieczkarni, system zajmuje stanowczo mniej, /home jest czysty, dowiązania symboliczne poprawne… Same plusy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1239">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-23T17:49:33" class="text-sm text-gray-500 font-mono">2017-05-23 17:49:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No chyba mnie strzeli chuj jasny. Zjebał mi się na Jebuntu Gimp, ot tak sam z siebie. Pomyślałam więc, że go odinstaluję i zainstaluję na nowo. Ale nie ma tak fajnie. Kiedy chciałam go wyjebać przez centrum oprogramowania, wyskakuje &quot;błąd programu systemu&quot; i usuwa, usuwa i usuwa do usrania i usunąć nie może. Pomyślałam więc, że użyję Terminala. Wpisuję &quot;sudo apt-get remove gimp&quot; i coś tam mieli, ale po chwili wyskakuje identyczny błąd jak wyżej i całość kończy się wyświetleniem komunikatu &quot;E: Sub-process /usr/bin/dpkg exited unexpectedly&quot;&#8230; Co się odpierdala?<br /><br />Potrzebuję tego zasranego Gimpa, a jak się zaraz wkurwię to pojutrze zainstaluję na tym lapie Win 10 i wreszcie będzie można po ludzku pracować&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1240">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-05-23T18:23:25" class="text-sm text-gray-500 font-mono">2017-05-23 18:23:25</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Spróbuj: https://ubuntuforums.org/showthread.php?t=1518301
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

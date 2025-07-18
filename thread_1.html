@@ -1,0 +1,316 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czy Miska to Miska? - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Czy Miska to Miska?</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2016-12-28T23:18:59" class="text-sm text-gray-500 font-mono">2016-12-28 23:18:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Assalam alekum/привіт/no jak tam polaczki/tere tulemast/e slysz jest czo/<br /><br />Z dziwniejszym dniem dzisiejszym została ponownie (po raz zerowy, pierwszy i drugi) powołana do życia grupa badawczo-drażniąca pod nazwą nam znaną. Oficjalnie witam wszystkich i swoim dziadowskim zwyczajem zachęcam do refleksji nad moim całym pełnym energii i wytrwałości pierdzieleniem.<br /><br />Dobra formalności mamy za sobą, macą przełamiecie się później.<br /><br />Domyślam się że pewna część z nas, ta mająca tzw. &quot;ważniejsze&quot; rzeczy do roboty (typu krańe s lućmi, studiowanie genderu lub praca w korpo) nie poświęcała czasu na tak głębokie zagadnienia jak zgłębianie tajników handlu, istoty świata i istnienia, czy doprowadzania do perfekcji słowiańskiego przykucu pod całodobowym monopolowym. Jako że zaliczam się raczej do tej drugiej grupy udało mi się zgromadzić dużą bazę informacji.<br /><br />Dzisiaj w jeden z głównych działów mojej bazy danych został wprowadzony całkowity chaos i spustoszenie.<br /><br />Niejaki Miska, znany też jako Missile, mISIL, Musli, Papież Musli oraz Ruchacz w Płaszczu, zwany dalej &quot;Miską&quot;, figurujący dotychczas jako &quot;zaginiony/poległy w akcji&quot;, pojawił się znienacka jako jeden z głównych i pierwszych członków reaktywowanej grupy.<br /><br />Moi informatorzy w panice mogli ograniczyć się jedynie do znajdywania teorii zamiast potwierdzonych faktów.<br /><br />Fakt 1: Miska od ponad roku nie dawał znaków życia, a zgromadzony wywiad pozostawiał dwie opcje:<br />* Opcja 1: Miska nie żyje.<br />* Opcja 2: Jako zbyt sukcesywny i aktywny ruchacz Miska rzucił wszystko na rzecz ruchania.<br />* Opcja 3: Miska nie podołał wyzwaniu i obecnie przebywa w waginie rumuńskiej prostytutki pasożytując na racjach trzech syryjskich czołgistów szukających zagubionego w owej waginie czołgu T-72.<br /><br />Fakt 2: Użytkownik &quot;Missile&quot; pojawił się w nowo reaktywowanej grupie. To także pozostawia dwie opcje.<br />* Opcja 1: Pod Miskę ktoś się podszywa.<br />* Opcja 2: Syryjscy czołgiści zjedli Miskę co pozwoliło im dożyć do momentu znalezienia zagubionego T-72 i nadania komunikatu SOS.<br />* Opcja 3: Mało prawdopodobna jako że zakłada że Miska jest cały i zdrowy. <br /><div class="quote-block">Miska dostał nobla z medycyny za odkrycie leczenia próchnicy penisem i z miłości do nas za pieniądze z nagrody postanowił się sklonować i teraz jeden Miska rucha, a drugi forumuje?</div><br />Co na dobrą sprawę jest tożsame z opcją pierwszą.<br /><br />A więc, czy Miska obecny w teraźniejszej bytności naszej grupy to prawdziwy Miska? Czy żyje? Czy jego uzębienie wymagało terapii penisem? Ktokolwiek widział, ktokolwiek wie, proszę otwarcie o informacje. Od samego użytkownika &quot;Missile&quot; domagam się dowodów na bycie jedynym i prawdziwym Miską.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-28T23:50:30" class="text-sm text-gray-500 font-mono">2016-12-28 23:50:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wsiem priwiet, z Wami Sölve.<br /><br />Spekulacje, spekulacje. Miska zaginął na cały rok, by przeobrazić się w Puaszczykowego Gwiezdnego Kapucyna, który, o dziwo, już nie wali ww. Jego nieziemski PUASZCZ roztacza aurę tajemnicy, która niechybnie zwiodła Twoich informatorów. Należy Ci się wyjaśnienie - Miska rucha i nie ma czasu na forumowanie, ale Gwiezdny Kapucyn wciąż jest z nami i się udziela. Dlatego możesz odczuć obecność Miski.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-3">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2016-12-29T13:55:09" class="text-sm text-gray-500 font-mono">2016-12-29 13:55:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Tak jest, Gwiezdny Kapucyn jest niczym Duch Święty. Zaprawdę powiadam Wam, Missile występuje w trzech postaciach boskich: Miski, Musli i Gwiezdnego Kapucyna. Najpierw był Miska; zesłał ludowi swemu Musli i stało się Słowo Boże. A Miska widział, że było to dobre, a lud jadł, bo było to dobre, a było to dobre, bo były w tym płatki zbożowe różnego rodzaju, a poza płatkami zbożowymi różnego rodzaju były w tym bakalie, a poza płatkami zbożowymi różnego rodzaju i bakaliami były w tym orzechy, a poza płatkami zbożowymi różnego rodzaju, bakaliami i orzechami były w tym suszone owoce, a poza płatkami zbożowymi różnego rodzaju, bakaliami, orzechami i suszonymi owocami było w tym mleko, a dla wybrednych jogurt. <br /><br />I tak skończył się dzień pierwszy.<br /><br />Drugiego dnia, zesyłał Miska papir, ażeby tworzyć z niego opakunki na Musli, jakoby nie psuło się. A lud cieszył się, a Miska widział, że było to dobre.<br /><br />I tak skończył się dzień drugi.<br /><br />Trzeciego dnia, zesyłał Miska szykyło, ażeby tworzyć z niego miski, jakoby nie zjadać Musli i mleka wprost ze stołu, albowiem wygodności w tym nie było. A lud cieszył się, a Miska widział, że było to dobre.<br /><br />I tak skończył się dzień trzeci.<br /><br />Czwartego dnia, zesyłał Miska plastyk, ażeby tworzyć z niego butelunki plastykowe, coby trzymać w nich mleko. A lud cieszył się, a Miska widział, że było to dobre. <br /><br />I tak skończył się dzień czwarty.<br /><br />Piątego dnia, Miska ustanowił trzydniowy weekend, coby nigdy nie musieć patrzeć na przepracowane facyjaty ludu swego. Przez trzy dni bez przerwy uskuteczniał konsumpcję Musli i poił się mlekiem, aż w końcu beknął przepotężnie i zapadł w sen wieczysty.<br /><br />Nie był to koniec, wszakże umysł Jego nie wygasł do cna. Siłą woli swej nieskończonej wytworzył w jelicie swym grubym tasiemca wielkiego, a Gwiezdny Kapucyn na imię mu dał. Przekazał mu tajemną wiedzę na temat segregowania odpadów, by, po roku nauki, Kapucyn Gwiezdny opuścił odbyt Pana Naszego i wyjrzał na światło dzienne, by szerzyć wiedzę co jest szykyłem, co plastykem, a co papirem, i gdzie wyrzucać jedno, gdzie drugie, i, wreszcie, gdzie wrzucać trzecie. Musli is coming. Amen.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-4">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2016-12-30T17:17:26" class="text-sm text-gray-500 font-mono">2016-12-30 17:17:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Obrażacie Miskę, a nie wiecie kto jest po drugiej stronie, a może to nawet Wasza matka być.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-5">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2016-12-30T17:25:48" class="text-sm text-gray-500 font-mono">2016-12-30 17:25:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie, moja matka żyje, pracuje w telewizji. <br />Tak jakbyś nie zauważył, to próbuję zweryfikować czy Miska to na pewno Miska. Dalsze kroki w tej dziedzinie poczynię po konsultacjach z informatorami oraz dłuższej obserwacji.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-6">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2016-12-30T17:30:42" class="text-sm text-gray-500 font-mono">2016-12-30 17:30:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                To nie Miska, bo się jeszcze nie wypytał o moje friendzone&#39;y. Dla mnie to oczywiste i nie mydlcie mi tutaj torsu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-7">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2016-12-30T17:35:09" class="text-sm text-gray-500 font-mono">2016-12-30 17:35:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Myślisz że posiadaczy puaszczy interesują Twoje friendzony? On rozmawia tylko z ruchającymi co sugeruje właśnie że Miska tu obecny to podszywać. Sulfafurazol podał najbardziej prawdopodobną teorię aczkolwiek bez odpowiednich konsultacji nie wezmę jej póki co za prawdziwą.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-8">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2016-12-30T22:31:55" class="text-sm text-gray-500 font-mono">2016-12-30 22:31:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Miska tak naprawdę nigdy nie istniał. Realnie, rzecz jasna. To figment naszej zbiorowej imaginacji, objawiający się w formie cyfrowej za naszą sprawą.<br />Jako admin mam dostęp do ściśle tajnych logów, które pokazują że IP z którego zawsze <em>pisał</em> to 0.0.0.0, a więc kompletne zero. Tylko zaawansowane algorytmy najwydajniejszych maszyn naszego laboratorium były w stanie zasymulować działanie Miskowego umysłu działającego na skali imaginari i przetłumaczyć wszystko w formie strawnych i łatwych do przyswojenia postów na forum.<br />Nie znaczy to, że nie jesteśmy w posiadaniu całkowicie namacalnych artefaktów świadczących za istnieniem Miski, na przykład puaszcza.<br />Gwiezdny Kapucyn to tylko pośrednik. Całkiem miły gość, jak się z nim obali krzynkę wódki.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-9">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2016-12-30T23:47:48" class="text-sm text-gray-500 font-mono">2016-12-30 23:47:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>MCaleb</strong> napisał:</span></div>Miska tak naprawdę nigdy nie istniał. Realnie, rzecz jasna. To figment naszej zbiorowej imaginacji, objawiający się w formie cyfrowej za naszą sprawą.<br />Jako admin mam dostęp do ściśle tajnych logów, które pokazują że IP z którego zawsze <em>pisał</em> to 0.0.0.0, a więc kompletne zero. Tylko zaawansowane algorytmy najwydajniejszych maszyn naszego laboratorium były w stanie zasymulować działanie Miskowego umysłu działającego na skali imaginari i przetłumaczyć wszystko w formie strawnych i łatwych do przyswojenia postów na forum.<br />Nie znaczy to, że nie jesteśmy w posiadaniu całkowicie namacalnych artefaktów świadczących za istnieniem Miski, na przykład puaszcza.<br />Gwiezdny Kapucyn to tylko pośrednik. Całkiem miły gość, jak się z nim obali krzynkę wódki.</div><br /><br />To Miska w końcu rucha czy nie rucha, bo ja już nie nadążąm
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-10">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2016-12-30T23:52:43" class="text-sm text-gray-500 font-mono">2016-12-30 23:52:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Enzo</strong> napisał:</span></div><br />To Miska w końcu rucha czy nie rucha, bo ja już nie nadążąm</div><br /><br />Rucha, ale nie tak jak myślisz. <br />Ruchanie=sranie<br />Sranie=ruchanie<br /><br />Mam nadzieję, że pomogłem  :P
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-11">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2016-12-31T00:57:22" class="text-sm text-gray-500 font-mono">2016-12-31 00:57:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Enzo</strong> napisał:</span></div>To Miska w końcu rucha czy nie rucha, bo ja już nie nadążąm</div><br />Tak.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-12">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-01T21:18:10" class="text-sm text-gray-500 font-mono">2017-01-01 21:18:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Miska rucha, ale nie u mnie, bo ja mam wannę.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

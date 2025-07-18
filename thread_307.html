@@ -1,0 +1,471 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STALKER Anomaly - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">STALKER Anomaly</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2862">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-01-08T19:39:53" class="text-sm text-gray-500 font-mono">2020-01-08 19:39:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div style="text-align: center;"><br /><img src="https://media.moddb.com/images/articles/1/263/262384/auto/orDXeqF.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><br /><a href="https://www.moddb.com/mods/stalker-anomaly" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.moddb.com/mods/stalker-anomaly</a><br /><br />Ostatnio siedzę jak głupi przy kolejnym modziszczu, bo jakoś na stalkera człowieka znowu naszło.<br />Więc o co chodzi z tym? Jeżeli ktoś grał w Call of Chernobyl, to idea moda raczej będzie mu znajoma. Anomaly jest zbudowane na podstawie bety nieukończonego CoC 1.5.<br />No dobra, ale po co mam grać w Anomaly, skoro ograłem już CoC we wszystkie dziury? Duża szansa jest, że graliście w CoC w wersji 1.4. Wersja 1.5 to już zdecydowanie inna para kaloszy jeżeli chodzi o gameplay. Bez obaw, to wciąż ten sam Stalker, łazimy i strzelamy. Tyle że wszystko nagle staje się nieco bardziej skomplikowane.<br /><br />Nie owijając w bawełnę, to co najbardziej wyróżnia Anomaly, to możliwość customizacji własnej rozgrywki. Ogromnej customizacji. Wyobraźcie sobie Call of Chernobyl. Teraz wyobraźcie sobie, że nawalone jest do niego milion addonów, które (OMG) nie wysypują się co 5 minut. Teraz wyobraźcie sobie, że możecie te addony dowolnie włączać lub wyłączać bez jebania się z gamedatami i kompatybilnością. Brzmi fajnie? Bo to dopiero początek. Gra oferuje ogromne możliwości w kwestii tego, jak nasza przygoda w Zonie będzie przebiegać. Poza znajomymi już ustawieniami pogody czy ilości stalkerów/mutantów, możemy tu naprawdę poszaleć. Możemy ustawić sobie odporność naszej postaci, jej bazowy udźwig, jak szybko będzie się męczyć, czy trzeba regularnie spać, ile kasy będą od nas wyciągać handlarze i mechanicy, jak duże obrażenia będziemy zadawać, jak celni będą NPC, ile chcemy elementów HUDu, ile chcemy i jak upierdliwe będą efektory różnego rodzaju obrażeń, czy chcemy dynamiczne anomalie, czy chcemy animacje różnych czynności, czy chcemy znać wszystkie przejścia między lokacjami, jakiego rodzaju komunikaty chcemy w PDA czy nawet jak szybko będą zużywać nam się baterie. Możesz z tego moda zrobić sobie zwiedzacza albo większy hardcore od jakiegokolwiek Misery. Droga wolna. Osobiście pierwszą godzinę przy modzie spędziłem w menu, bawiąc się różnymi suwaczkami i przyciskami aż znalazłem idealny dla siebie balans pomiędzy rozrywką, a wyzwaniem. Miodzio. Mógłbym tak pisać o ficzerach tego moda, ale osobiście nie przepadam za ścianami tekstu, więc po prostu wylistuję rzeczy, dzieląc je na te, które lubię, jestem neutralny bądź nie lubię.<br /><br />Plusy dodatnie:<br /><ul>
+<li><strong>od groma customizacji</strong> praktycznie wszystkiego</li><li><strong>nowe elementy gameplayu</strong> z CoC 1.5 - udźwig bazujący na naszym pancerzu i rodzaju plecaka, nowe rodzaje urządzeń jak licznik Geigera czy odbiornik fal radiowych</li><li><strong>progres poziomu trudności</strong> - im wyższe nasze miejsce w rankingu, tym więcej przeciwników, groźniejsze mutanty i brutalniej uzbrojeni NPC</li><li>domyślnie wgrany i sensownie zbalansowany STCoP - <strong>miliard nowych broni</strong> do ulepszania i customizacji, w różnych wersjach, z których każdy znajdzie coś dla siebie</li><li><strong>od groma nowych pancerzy</strong> dla wszystkich frakcji, wśród których każdy znajdzie sprzęt odpowiadający jego stylowi grania</li><li><strong>nowe, fajne mutanty</strong></li><li>3 wątki fabularne</li><li><strong>odświeżone lokacje</strong> - nowe elementy otoczenia, nowi NPC, większe zalesienie (osoby posiadające PTSD z LA nie muszą się bać, większe zalesienie nie oznacza spierdolenia umysłowego Dezodoranta)</li><li><strong>mnóstwo opcjonalnych, zróżnicowanych questów</strong>, zależnych od naszych postępów z daną frakcją, pory dnia bądź nawet ogłoszeń wydawanych przez PDA</li><li>opcjonalne wizory w stylu Metro - w deszcz stopniowo spływające po hełmie krople będą utrudniać nam widoczność, chyba że sobie go przetrzemy, przy czym hełmy te nie blokują nam masakrycznie pola widzenia, jak to bywa w innych tego typu modach</li><li>bardzo fajny start gry, gdzie sami dobieramy sobie początkowe wyposażenie (zależne od frakcji)</li><li>prawidłowy <strong>artefaktowy chaos</strong> - każdy obciąży nas w innych wartościach, każdy ma inny zestaw właściwości (koniec z prostymi tierami), mnóstwo nowych, rozdział pomiędzy artefakty widoczne gołym okiem, a te, do których potrzeba detektora</li><li>radioaktywne artefakty będą nas napromieniowywać nawet w plecaku - konieczne kontenery do transportu i specjalistyczne do używania ich przy pasie</li><li>naprawianie sprzętu w polu - smary, taśmy i nici, dzięki którym możemy dłużej eksplorować bez konieczności powrotu do bazy i wydawania fortuny na mechaników</li><li>rozkładanie pancerzy i broni na części, dzięki którym możemy doprowadzić wybrany przez nas sprzęt z 10% do 100%</li><li><strong>stealth</strong> - możemy zakładać pancerze innych frakcji i próbować prześlizgnąć się przez wrogie terytorium, jednakże przeciwnicy będą zwracać uwagę na rodzaj i stan naszego wyposażenia (możemy także odkroić naszywkę wrogiej frakcji z dowolnego pancerza i nosić go nie będąc mylonym z kim innym)</li><li>pilnuj pleców, nie tylko gracz potrafi się skradać</li><li>celność NPC zależy od naszej mobilności, siedząc w miejscu będziemy dużo mocniej obrywać</li><li><strong>mutanty są dużo bardziej groźne</strong> - biegną szybciej od nas, poruszają się zwinnie i chaotycznie, w stadzie osaczając gracza i atakując na zmianę</li><li>mnóstwo nowych, przydatnych medykamentów</li><li><strong>mod pomimo ilości bajerów jest bardzo stabilny</strong></li></ul><br /><br />Plusy ujemne:<br /><ul>
+<li><strong>crafting</strong> - osobiście zalew gównianych gier survivalowych przekonał mnie o tym, iż crafting nie powinien był nigdy opuścić Minecrafta, niemniej jest tutaj - możemy zmontować sobie medykamenty, urządzenia, amunicję i inne duperele. Na plus przyznam, że system ten ma jako taki sens, w przeciwieństwie do żenującego Exodusa. System w Anomaly jak dla mnie jest z kolei nadto skomplikowany. Oczywiście jest do ogarnięcia, ale trochę nad tym posiedzimy, zanim zrozumiemy co z czym. Praktycznie każdy przedmiot (a jest ich mnóstwo) ma inne sposoby interakcji z innymi przedmiotami. Bałagan, ale nie nielogiczny.</li><li>NPC są nieco zbyt mobilni - czasami weźmiemy quest od gościa w Barze, wykonamy go tego samego dnia, a wracając odkryjemy, że gościu rozbił sobie już obóz w Janowie</li><li>bardzo <strong>minimalistyczny HUD</strong>, dodatkowo w barwach często utrudniających rozczytanie go</li><li><strong>Gnomus Scopes</strong> - mod, który uważam za arcychujowy, jest tutaj domyślnie. Jeżeli ktoś tak jak ja nie przepada za gównianą, rozmemłaną teksturą ilekroć celujemy z lunety, to <a href="https://mega.nz/#!20NBwSqS!Hf8pdLdlttEJa7bE89F1PFtc8hEg3xn9KHR9QaTma44" rel="nofollow" target="_blank" class="text-blue-400 hover:underline"><u>mogę wrzucić fixa, którego przygotowałem dla siebie</u></a><u></u>, doprowadzając celowniki do stylu vanilli.</li><li>darowałbym sobie przenoszenie mutantów z Metro, ich design nie pasuje do lore Zony (spokojnie, nie ma latadeł)</li><li>opcja szybkiej podróży nieco zabija ideę Stalkera i zbytnio upraszcza grę</li></ul><br /><br />Minusy:<br /><ul>
+<li><strong>nie pogramy na systemach 32 bit</strong></li><li>słabe FPS, gra lubi czasami klatkować, a czasy ładowania są miejscami masakryczne</li><li>gra nie lubi mieć w bibliotece zbyt dużo save&#39;ów - lepiej regularnie usuwać starsze lub przenosić do innego folderu by poprawić wydajność gry</li><li>NPCe mają zbyt sokoli wzrok, przygotujcie się na grady pocisków z niewiadomych kierunków, częste quicksave są bardzo zalecane</li><li>wyposażenie NPC jest czasami nieco zbyt randomowe, egzoszkieletor strzelający do mnie ze Skorpiona to jednak trochę śmieszkość</li><li>wysocy rangą przeciwnicy nadużywają granatów o snajperskiej celności (spokojnie, nie tak źle jak w Clear Sky)</li></ul><br /><br /><br />Ugi bugi (wersja 1.5 Update 4 Hotfix 8):<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><br /><ul>
+<li>koty zadają tyle obrażeń, co pijawki</li><li>mutanty są zbyt ciche, rozumiem nie słyszeć biegnącego w moim kierunku kota, ale bezszelestne dziki i nibypsy to już przegięcie</li><li>u siebie miałem z jakiegoś powodu HDR rozpierdolony do chorych poziomów, przez co niebo jawiło się jako białe światło niezależnie od pogody, konieczne grzebanie w konsoli <a href="https://x-21.pl/threads/stalker-anomaly.307/post-2864" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">detale tutaj</a></li><li>znane z CoC niezbyt gadatliwe NPC przy ogniskach</li><li>skaczące w naszym kierunku mutanty potrafią przenikać przez obiekty i obracać się w locie o 90 stopni byle tylko nas trafić</li><li>odmiana poltergeista, która onehituje powietrzem bez uprzedzenia to jak dla mnie bug</li><li>skoro mowa o polterach, ich hitboxy to ebola</li>EDIT:
+<li>ulepszenie zoomu lornetki na 2 i 3 poziom sprawi, że obraz odwróci nam się do góry nogami; to samo dzieje się z lunetami różnych snajperek, polecam zrobienie save przed montowaniem ulepszeń zoomu, żeby sprawdzić czy nie jest zabugowane</li><li>montowanie ulepszenia do strzelby, przez które nie możemy strzelać śrutem crashuje skrypt odpowiedzialny za wybór amunicji</li><li>po zakończeniu drugiej ścieżki fabularnej Łukasz daje opcjonalny quest, którego nie można ukończyć (ten sam quest pojawia się u paru innych zleceniodawców, gdzie działa prawidłowo)</li><li>namiot clipuje przez ziemię</li><li>mutanty wchodzą do stacji Janów</li><li>crash przy wyborze życzenia o bogactwo (problem z listą przedmiotów)</li><li>crashe w Sarkofagu spowodowane chaosem obiektów fizycznych wywołanym przez Poltergeisty</li><li>bug związany z fizyką zabija medyka Powinności przy wczytywaniu hard save&#39;a</li><li>znikający handlarz Stalkerów</li><li>baza Stalkerów często okupowana przez wrogów strzelających w kółko do nieśmiertelnych NPC</li><li>artefakt Chain nie ma modelu, zauważyć go można tylko przez emitowane światło (można go mimo wszystko podnieść)</li><li>kontrolerzy, przed którymi się ukrywamy potrafią nas instakillnąć sekundę po wychyleniu się zza osłony bez żadnego ostrzeżenia</li><li>bardziej zalesione lokacje cierpią na syndrom strzelających krzaków</li>
+
+</ul><br /></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2863">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2020-01-08T20:06:27" class="text-sm text-gray-500 font-mono">2020-01-08 20:06:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Daję soga. Wrzuć od razu tego Twojego fiksa, to sobie popykam, bo jutro pracuję z domu, co oznacza jebanie po klawie w jakieś gierki :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2864">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-01-08T21:04:55" class="text-sm text-gray-500 font-mono">2020-01-08 21:04:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wskaźniki na celownikach mogą być trochę niewyraźne, gdyż musiałem sporo z nich zeskalować w górę, inaczej celowanie przypominałyby patrzenie przez judasza. Szanuję swoją stabilność psychiczną na tyle, żeby nie robić całkowicie od nowa 20+ celowników.<br /><br /><a href="https://mega.nz/#!20NBwSqS!Hf8pdLdlttEJa7bE89F1PFtc8hEg3xn9KHR9QaTma44" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://mega.nz/#!20NBwSqS!Hf8pdLdlttEJa7bE89F1PFtc8hEg3xn9KHR9QaTma44</a><br /><br />Jakby ktoś miał również zjebany HDR, to to są wartości, jakie ustawiłem u siebie, można je wklepać do user.ltx:<br /><br />r2_ls_bloom_kernel_b 0.1<br />r2_ls_bloom_kernel_g 1.<br />r2_ls_bloom_kernel_scale 0.05<br />r2_ls_bloom_speed 100.<br />r2_ls_bloom_threshold 1.<br />r2_tonemap_adaptation 5.<br />r2_tonemap_amount 1.<br />r2_tonemap_lowlum 0.9<br />r2_tonemap_middlegray 0.5
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2865">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2020-01-08T21:17:48" class="text-sm text-gray-500 font-mono">2020-01-08 21:17:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Czyli mówisz, że lepsze od Dead Air?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2866">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-01-08T21:26:29" class="text-sm text-gray-500 font-mono">2020-01-08 21:26:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie grałem w Dead Air, nie wypowiem się. Wydaje mi się jednak, że Dead Air ma w sobie konkretną wizję, zaś Anomaly po prostu nazwałbym ostateczną wersją CoC - sandbox do zabawy z ogromną możliwością doboru stylu rozgrywki pod własne preferencje.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2872">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-01-26T01:44:27" class="text-sm text-gray-500 font-mono">2020-01-26 01:44:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2865" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Ropasiak</strong> napisał:</span></a></div><br />Czyli mówisz, że lepsze od Dead Air?<br /></div><br /><br />Nie grałem w Dead Air, nie wypowiem się. Wydaje mi się jednak, że Dead Air ma w sobie konkretną wizję, zaś Anomaly po prostu nazwałbym ostateczną wersją CoC - sandbox do zabawy z ogromną możliwością doboru stylu rozgrywki pod własne preferencje.<br /><br />EDIT:<br /><br />Dodałem trochę rzeczy do oryginalnego posta, głównie bugi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2873">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2020-01-26T02:07:14" class="text-sm text-gray-500 font-mono">2020-01-26 02:07:14</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2862" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Infernal</strong> napisał:</span></a></div><br />Minusy:<br /><ul>
+<li><strong>nie pogramy na systemach 32 bit</strong></li></ul><br /></div><br /><br /><div class="quote-block">     2020<br />     hurt nie pogramy na 32 bit durr</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2874">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-01-26T21:03:13" class="text-sm text-gray-500 font-mono">2020-01-26 21:03:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zabłysnąłeś jak pizda Twojej Starej w nowiu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2875">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-01-27T11:52:19" class="text-sm text-gray-500 font-mono">2020-01-27 11:52:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                fajny modzik
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2877">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-03-03T14:01:27" class="text-sm text-gray-500 font-mono">2020-03-03 14:01:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jeśli ktoś jeszcze się waha czy pobierać kilka GB moda, bo np. ma internet na impulsy, albo po prostu grał już w różne &quot;wizjonerskie&quot; modziszcza i ma dosyć wizyt w pulpicie co 5min, to zdecydowanie powinien dać szansę Anomaly. Gdyby potraktować go jako osobną grę, to jest to jeden z najlepszych tytułów w jakie grałem.<br /><br />Ciężko tak naprawdę doszukać się tutaj jakichś istotnych minusów. Mamy wszystko - bronie, mapy, questy, nowe ficzery, ale przede wszystkim mamy balans pomiędzy tym wszystkim i zachowany klimat Zony. Do tego dochodzi możliwość szczegółowej personalizacji poziomu trudności i mnóstwa innych rzeczy pod nasze widzimisię. Jest to najlepsza gra/mod stalkeropodobna w jaką miałem okazję grać i wysyłam do Infernala serduszka za ten temat.<br /><br />O plusach nie chce mi się pisać, bo jest zbyt wiele rzeczy, które mnie urzekły. Jeśli zaś chodzi o minusy to są chyba tylko dwie rzeczy, które mnie mocniej wkurwiają:<br />1) Ekwipunek. Rzeczy w plecaku nie porządkują się wg kategorii, co w obliczu craftingu jest jakimś jebanym masochizmem. Kilka sztuk części mutantów, obok woda, obok parę części broni, obok jedzenie, obok znowu kilka części mutantów. Czy serio nie może się to automatycznie grupować w naszych schowkach i plecaku? Chcąc bawić się w craftowanie trzeba spędzić milion godzin na porządkowaniu zbieranego złomu, wymaga to też stworzenia pierdyliarda schowków. jeden schowek na części do broni, jeden na pancerze, jeden na&#8230; Szkoda strzępić ryja. <br />Crafting jest też zbyt mało intuicyjny, ale gdy się podłapie co z czym, daje sporo frajdy. <br />2) Strzelające krzaki, o czym wspomniał już Inf. Walka z takim Monolitem w czerwonym lesie to masochizm na miarę porządkowania złomu w schowkach. <br />3) Mniało być dwa, a będzie trzy, bo irytuje mnie też balans broni. Zbyt wiele z nich jest bezużytecznych, jak M16, i w ogóle mam wrażenie, że jedyna słuszna amunicja to 7,62x51, która jest droga jak cnota Infa. Boli mnie lekka bezużyteczność 5,56. <br />4) Mniało być dwa, a będzie cztery. O ile opcja podróżowania po Zonie wspólnie z kompanami to sztos nad sztosami, tak ich AI to dno pod dnami.<br /><br />Poza tym, jeszcze raz poletzam.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2878">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-03-03T22:15:42" class="text-sm text-gray-500 font-mono">2020-03-03 22:15:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2877" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>1) Ekwipunek. Rzeczy w plecaku nie porządkują się wg kategorii</div><br />Porządkują. Z racji natury ekwipunku w stolcu priorytet zawsze ma ilość zajmowanych kratek. Gra potem w wolne miejsca upycha kolejno rzeczy według uporządkowanych kategorii. Niestety autorzy moda zjebali w paru sprawach, stąd np. konkretne części broni w przypadku swoich odpowiedników z różnych spluw, owszem, są obok siebie, jednakże już inne części mogą znajdować się na drugim końcu listy kategorii. Dodatkowo niektóre artefakty i części mutantów przynależą do osobnych kategorii od reszty. Przy takim zajebaniu ilości przedmiotów w tym modzie tworzenie osobnych skrytek to tak czy siak konieczność, gdyż silnik gry nie wyrabia przy takiej ilości przedmiotów w jednym schowku.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2877" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>3) Mniało być dwa, a będzie trzy, bo irytuje mnie też balans broni. Zbyt wiele z nich jest bezużytecznych, jak M16, i w ogóle mam wrażenie, że jedyna słuszna amunicja to 7,62x51, która jest droga jak cnota Infa. Boli mnie lekka bezużyteczność 5,56.</div><br />To nie strzelaj z gówna. Ppanc. nawet w 5.45 radzą sobie dobrze przez całą grę. Przy takim zasraniu spluw niemożliwym jest zbalansować każdą, by miała swoją niszę. Nie wszystko też jest idealne do warunków Zony, co nie znaczy, że równie dobrze można biegać z patykiem. W vanilkowym CoP też sobie mogę nie nosić nic poza laserowym G36, ale nie na tym fun polega. Na początku biegasz z tym, co wpadnie w ręce, co jest zawsze fajnym losowym elementem tego typu gier, a potem grasz tym, co fajnie strzela/wygląda/bierze penis. Pomijam już ocenianie 5.56 poprzez tak potenshnom konstrukcję jak M16.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2877" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>5)Jestem pedałem</div><br />Offtopic, ban.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2879">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-03-04T09:20:59" class="text-sm text-gray-500 font-mono">2020-03-04 09:20:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ekwipunek - oksi, ale mam często sytuację, że jednokratkowe przedmioty też są wymieszane. Marzy mi się jakiś fix, który by porządkował syf wg kategorii.<br /><br />Ammo - musze sprawdzić czy będzie znaczna różnica w droższych rodzajach, z przyzwyczajenia szczelam tym co tańsze 😅<br />Przy okazji, wkurwia mnie że są aż dwa nowe typy ammo do kazdego typu (damaged i old, ja bym to połączył w jedno) a także to, że ikonki uszkodzonego i nnormalnego są czasem ledwo rozroznialne.<br /><br />M16 to tylko przykład, mam podobne wrazenie co do większości broni na 5,56 jakie spotkałem, ale nie chce jeszcze wyrokować, bo najpierw wypadalo by skolekcjonować i ulepszyć wszystko co jest w grze, a do tego daleka droga.<br /><br />PS. Podniecająca sygnatura.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2880">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-03-06T11:10:05" class="text-sm text-gray-500 font-mono">2020-03-06 11:10:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2879" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Ekwipunek - oksi, ale mam często sytuację, że jednokratkowe przedmioty też są wymieszane. Marzy mi się jakiś fix, który by porządkował syf wg kategorii.</div><br />Na szczęście Falgluta 4 zacząłem po Anomaly i przeżyłem.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2879" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Ammo - musze sprawdzić czy będzie znaczna różnica w droższych rodzajach, z przyzwyczajenia szczelam tym co tańsze 😅</div><br />Rodzaj amunicji ma ogromne znaczenie w tym modzie. Bazowe ammo to straszny badziew w prawie każdym kalibrze, nie sprawdza się nigdzie na północ od Wysypiska. Warto wybulić więcej.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2879" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Przy okazji, wkurwia mnie że są aż dwa nowe typy ammo do kazdego typu (damaged i old, ja bym to połączył w jedno) a także to, że ikonki uszkodzonego i nnormalnego są czasem ledwo rozroznialne.</div><br />Zgadzam się w 100%. Osobiście jeżeli nie jest to jakieś naprawdę wartościowe ammo, to nie zawracam sobie nawet dupy podnoszeniem go. Najbardziej mnie irytuje, gdy ikony ammo nowego są prawie nierozróżnialne od starego. Chujowe ikony amunicji to w zasadzie trade mark modów do Stalkera. Ruscy nie rozumieją, że czytelny HUD &gt; gówno &gt; Twoja Stara &gt;&gt;&gt;&gt; nacjonalizm &gt;&gt;&gt;&gt;&gt; SUPER REALISTYCZNE IKONKI.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2879" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>M16 to tylko przykład, mam podobne wrazenie co do większości broni na 5,56 jakie spotkałem, ale nie chce jeszcze wyrokować, bo najpierw wypadalo by skolekcjonować i ulepszyć wszystko co jest w grze, a do tego daleka droga.</div><br />Oczywiście nie poświadczę, spluw jest za dużo, a konstrukcji bazujących na AR-15 unikam (HK416/17 to mój guilty pleasure), ale SiG 552 czy AUG A1 sprawują się świetnie i to (imo) dużo lepiej niż SCAR-H czy G3. Zakładając oczywiście, że mowa o strzelaniu z amunicji AP.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2879" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>PS. Podniecająca sygnatura.</div><br />Wiem. Kiedy kończysz zmianę, bejbe?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2881">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-03-08T22:28:49" class="text-sm text-gray-500 font-mono">2020-03-08 22:28:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Abstrahując, jest jakiś sens wchodzić do X-18 w podstawowym wątku fabularnym? jestem po X-19, ale dalej żaden quest tam mnie nie prowadzi - pojawi się coś później czy olać?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2882">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-03-09T11:37:57" class="text-sm text-gray-500 font-mono">2020-03-09 11:37:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2881" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Abstrahując, jest jakiś sens wchodzić do X-18 w podstawowym wątku fabularnym? jestem po X-19, ale dalej żaden quest tam mnie nie prowadzi - pojawi się coś później czy olać?</div><br />Dopiero czwarty wątek fabularny prowadzi do X-18, ale to jak zaczniesz od nowa grę konkretną frakcją i to tylko po dokumenty. Normalnie nie ma po co tam chodzić, tylko kłesty poboczne czasami tam prowadzą. Tyle że z taką logiką nie ma sensu nigdzie łazić, gdzie nie trzeba. Ja tam zlazłem wszystko, żeby choćby zobaczyć co się zmieniło.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2883">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-03-09T22:37:46" class="text-sm text-gray-500 font-mono">2020-03-09 22:37:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A pamiętasz skąd wstrząsnąć jakiegoś pobocznego questa w X18 cobym przy okazji zwiedzania go sobie wykonał? Szkoda że z tego co mówisz olali trochę ten lab, przecież to był największy pieniądz w grze.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2884">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2020-03-12T14:14:59" class="text-sm text-gray-500 font-mono">2020-03-12 14:14:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2883" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br />A pamiętasz skąd wstrząsnąć jakiegoś pobocznego questa w X18 cobym przy okazji zwiedzania go sobie wykonał? Szkoda że z tego co mówisz olali trochę ten lab, przecież to był największy pieniądz w grze.<br /></div><br />To był losowy quest na przyniesienie dokumentów, z tej linii gdzie lider twojej frakcji każe Ci latać po całej mapie wykonywać zlecenia dla jakichś innych paziów. Nie ma żadnego questa &quot;gwarantowanego&quot; z tego co mi wiadomo. X-18 przynajmniej u mnie było też nieco zabugowane.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2885">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-03-12T14:45:43" class="text-sm text-gray-500 font-mono">2020-03-12 14:45:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Smutno mi teraz, X-18 ma przecież gigantyczny potencjał questowy. <br /><br />Przy okazji, dotarłem do Jupitera. To normalne, że Kardan siedzi w Janowie obok tego drugiego mechanika-pedała, czy mi się coś zbugowało? xD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2886">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2020-03-20T16:14:24" class="text-sm text-gray-500 font-mono">2020-03-20 16:14:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Gdyby ktoś tutaj w to jeszcze grał to znalazłem garść modziszczów, które znoszą mocno irytujące wg mnie aspekty:<br /><br /><a href="https://www.moddb.com/mods/stalker-anomaly/addons/peachs-item-categorization" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.moddb.com/mods/stalker-anomaly/addons/peachs-item-categorization</a> - łatwiejsze do rozróżnienia ikonki, szczególnie dotyczy to amunicji, plus wszystko ładniej się segreguje w ekwipunku, niewymagana nowa gra<br /><a href="https://www.moddb.com/mods/stalker-anomaly/addons/no-bad-or-damaged-ammo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.moddb.com/mods/stalker-anomaly/addons/no-bad-or-damaged-ammo</a> - całkowity brak old/damaged ammo, za to wincyj normalnego ammo się spawnuje we trupach. Wymagana nowa gra :cry:<br /><br /><a href="https://www.moddb.com/mods/stalker-anomaly/addons/returning-of-white-dots" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.moddb.com/mods/stalker-anomaly/addons/returning-of-white-dots</a> - białe kropky trupów na minimapce ( ❤ )
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

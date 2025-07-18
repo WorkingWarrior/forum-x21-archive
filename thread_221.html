@@ -1,0 +1,295 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobranocka - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Dobranocka</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1666">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-10-31T21:19:00" class="text-sm text-gray-500 font-mono">2017-10-31 21:19:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Cześć, forumowicze (jeśli ktokolwiek jeszcze wchodzi). Po kilku rozmowach, doszliśmy do wniosku, że sztuczne utrzymywanie przy życiu X-21 jest bezsensowne. Owszem, pomysł reaktywacji był bardzo ciekawy, ale zabrakło nam siły, czasu, zainteresowania. Jeśli kiedykolwiek wyjdzie Stalker 2, forum stanie na nogi z obecną bazą. Jeśli do 02.10.17 20:00 nie dostanę propozycji, która utrzyma forum przy życiu, zostanie ono przestawione w tryb tylko do odczytu. Następnie, w weekend będzie całkowicie wyłączone. Mam nadzieję, że te kilka osób, które tutaj jeszcze zaglądają, nie będzie miało mi za złe.<br /><br />Pozdrawiam,<br />Sölve.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1667">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-11-01T15:27:07" class="text-sm text-gray-500 font-mono">2017-11-01 15:27:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                nikt tematu nie zauważy bo założyłeś go w dziale na dole strony a w SB ni ma powiadomień :D<br />poza tym - jedyna racjonalna propozycja jaka przychodzi mi na myśl to odbanowanie wszystkich, zniesienie rang (ofc poza Cinkiem) i <a href="https://x-21.pl/viewtopic.php?f=7&t=3&sid=344cc096c151b7268e8b554d3cf0811a" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">regulamin taki jak Miska przykazał. </a> A następnie powiadomienie na steamie itd tych co o forumie zapomnieli, że jest nowy ład i większy luz. Stworzenie czegoś &quot;wartościowego&quot; nie wypaliło, więc pośmiechajmy może sobie do końca grudnia, kiedy to domena wygasa. Jak to nic nie da i wciąż będzie tu jedynie bot caleba zaglądał, to wtedy się rozejdziecie po fejsowych fanpejdżach, łotsapach, telegramach, ircach i innym gównie.<br /><br />co za pedał wyłączył bbcode, słów kurwa brak xD
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1668">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2017-11-01T15:54:22" class="text-sm text-gray-500 font-mono">2017-11-01 15:54:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zdelegalizujmy masturbację, bo ja głównie nie piszę nic dlatego, że mi włosy między palcami przeszkadzają.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1669">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-11-01T16:32:58" class="text-sm text-gray-500 font-mono">2017-11-01 16:32:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A przy waleniu konia nie przeszkadzają?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1670">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-11-01T17:34:24" class="text-sm text-gray-500 font-mono">2017-11-01 17:34:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Poważne forum dla poważnych alkoholików nie wyszło?<br /><br /><br /><div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />A przy waleniu konia nie przeszkadzają?<br /></div><br /><br />On lubi sobie powyobrażać, że to cztery Januszowe wąsy mu się o pałkę ślizgają.<br /><br /><br />Btw, co z tymi wszystkimi niestarogwardzistami, którzy zniknęli jeszcze zanim se stąd pojszłem? Odstraszyliście ich, czy zrobili zrzutę na paczkę apapów z Alchemikiem? Bo z tego co słyszę, to pies z kulawą nogą przestał tu nawet zaglądać.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1671">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-11-01T18:08:14" class="text-sm text-gray-500 font-mono">2017-11-01 18:08:14</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Infernal</strong> napisał:</span></div><br />Poważne forum dla poważnych alkoholików nie wyszło?<br />Btw, co z tymi wszystkimi niestarogwardzistami, którzy zniknęli jeszcze zanim se stąd pojszłem? Odstraszyliście ich, czy zrobili zrzutę na paczkę apapów z Alchemikiem? Bo z tego co słyszę, to pies z kulawą nogą przestał tu nawet zaglądać.<br /></div><br />Nie wiem, po co Ci ta osobista krucjata, nie ja ustalałem regulamin, jestem „techniczny”. Owszem, nie wyszło, sami wiecie dlaczego. Nawet ja nie siedzę na forum, poza tym od początku byłem przeciwny reaktywacji, bo czułem, że nie wyjdzie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1672">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-11-01T18:27:47" class="text-sm text-gray-500 font-mono">2017-11-01 18:27:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Krucjata. xD<br /><br />Tak sobie klawisza 2.0 aka Supa Yebanina męczę.<br /><br />Druga część posta była na serio. Gdzieś wsiąkła cała świeża krew i od tamtej pory gówno się tu dzieje. Poprzednie X-21 padło właśnie z powodu braku nowych użytkowników, tak więc zniknięcie ich nie wróżyło tej edycji Big Brothera nic na przyszłość. Starzy albo się ze sobą już wygadali na wszystkie tematy albo rozmawiają na privie, więc forum niepotrzebne, a polityka No Fun Allowed nie sprzyjała raczej okazjonalnym zbiegowiskom.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1673">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-11-01T18:49:35" class="text-sm text-gray-500 font-mono">2017-11-01 18:49:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Infernal</strong> napisał:</span></div><br />Krucjata. xD<br /><br />Tak sobie klawisza 2.0 aka Supa Yebanina męczę.<br /><br />Druga część posta była na serio. Gdzieś wsiąkła cała świeża krew i od tamtej pory gówno się tu dzieje. Poprzednie X-21 padło właśnie z powodu braku nowych użytkowników, tak więc zniknięcie ich nie wróżyło tej edycji Big Brothera nic na przyszłość. Starzy albo się ze sobą już wygadali na wszystkie tematy albo rozmawiają na privie, więc forum niepotrzebne, a polityka No Fun Allowed nie sprzyjała raczej okazjonalnym zbiegowiskom.<br /></div><br />Jak dla mnie regulamin może być naprawdę minimalny – byle zachowywać się jak człowiek i tyle. Nowi odeszli, bo nic się nie działo, nikt temu nie chciał przeciwdziałać&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1674">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-11-02T09:09:53" class="text-sm text-gray-500 font-mono">2017-11-02 09:09:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ponieważ trucie dupy jednym i tym samym żartem działa tak dobrze. Jedynce na co miałem ochotę, to bardziej wam dopierdolić na wasze własne życzenie, a później tylko płacz, że za ostro.<br /><br />Nową krew nie ma czym zachęcić, a osobiste koneksje i poczta pantoflowa nie wystarczają. Pomysły były, ale popadały. To już nie okres świetności for internetowych, nie ma z czego ulepić dobrego portalu o starej grze komputerowej.<br />Może przy wyjściu Stalkera 2, wtedy będzie to miało sens. Póki co żegnam.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1675">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-11-02T09:25:19" class="text-sm text-gray-500 font-mono">2017-11-02 09:25:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                &quot;Jedynce na co miałem ochotę&quot;<br />&quot;Pomysły były, ale popadały&quot;<br />Musisz to poprawić z tych faili bo czytać się nie da.  :roll:  :mrgreen:
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1676">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-11-02T15:52:42" class="text-sm text-gray-500 font-mono">2017-11-02 15:52:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ty się odstosunkuj, wiesz jak ciężko jest napisać cokolwiek nie po lovercraftiańsku jak się jest aż tydzień trzeźwym?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

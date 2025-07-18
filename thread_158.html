@@ -1,0 +1,106 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOM (i bajery od jeden do cztery) - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">DOOM (i bajery od jeden do cztery)</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1439">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-03-06T06:11:45" class="text-sm text-gray-500 font-mono">2017-03-06 06:11:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Rozmowy o Doomach przewijają się przez nasz czas co jakiś czas, więc warto by chyba było wreszcie założyć temat.<br />Swoją przygodę z Doomem zacząłem dość późno, bo za czasów poprzedniej generacji foruma i wziąłem się za te gry mając spore doświadczenia z Quakiem.<br />Doomy 1 i 2 można spokojnie opisywać razem. Gry te różnią się jedynie poziomami oraz częściowo przeciwnikami. <br />Można zapytać: po co w ogóle zajmować się tymi starożytnymi produkcjami? Odpowiedź jest prosta. Po zainstalowaniu portów umożliwiających pełne działanie na współczesnych systemach (oraz obsługę myszki!) dostajemy doskonałe FPSy o grywalności która od 1993 nie zestarzała się w ogóle. Pomimo chaosu który widzimy w czasie walki można wyczuć jak bardzo wyważona jest rozgrywka - przeciwników jest zawsze dużo ale nie na tyle, że czujemy się znużeni ich przytłaczającą ilością (co zdarzało mi się np. przy Serious Samie lub w późnych etapach NecroVision). Na dobre zaznajamiając się z Doomem w roku 2016 byłem oczarowany doskonałym strzelaniem i muszę przyznać że mam z niego sporo zabawy. Jako weteran FPSów muszę przyznać że Doom 1 i 2 to jedne z gier gdzie najlepiej czuć moc pukawek z których rozwalamy przeciwników. Wykonanie poziomów zaś jest typowe dla lat 90 - zawiłe korytarze wymagające od nas sporej orientacji w terenie. Gra nie prowadzi nas za rączkę i błądzenie może być problemem zwłaszcza dla niewprawionych graczy, zwłaszcza że tutaj nie ma żadnych świecących wskaźników i kompasów. <br /><br />O Doomie 3 powiem niewiele jako że niespecjalnie dobrze mi się w niego grało. Twórcy za bardzo chcieli iść w stronę horroru - efektem tego była strasznie niska grywalność. Wszechobecna ciemność sprawiała granie niemalże niemożliwym - najzwyczajniej w świecie w tej grze nic nie widać. Nie przeszedłem i wątpliwe żebym się za tę część zabrał ponownie.<br /><br />Najnowszy Doom z kolei do ostry powrót do korzeni. O ile twórcy próbowali wrzucić do gry trochę więcej narracji całość i tak skupia się na strzelaniu w stylu 1 i 2, może z ciut większą ilością elementów zręcznościowych. Mamy co prawda elementy wyjęte ze współczesnych gier, takie jak rozwój postaci czy ulepszanie broni i są one wymagane do komfortowej gry, jednak nie czuć że są wciśnięte na siłę. Mam wrażenie że rozgrywka w najnowszym Doomie nastawiona jest na to byśmy w czasie walki parę razy polegli. Musimy opracować strategię rozgryzienia każdej walki a i nabijanie umiejętności i osiągnięć zapisywane jest mimo śmierci. Podoba mi się to rozwiązanie. Do tego design poziomów - eksploracja w nowym Doomie to ogromny kawał gameplayu, zwłaszcza gdy gra się jak ja - przy wyłączonym interfejsie. Każda znajdźka cieszy wtedy znacznie bardziej. W tych korytarzach warto się parę razy zgubić.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1440">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-03-07T14:17:03" class="text-sm text-gray-500 font-mono">2017-03-07 14:17:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                W kwestii Dooma jestem ignorantem. Przeszłam tylko kawałek trójki, ale kawałek, bo było ciemno jak w dupie i stwierdziłam, że granie w to jest bardziej męczące niż przyjemne. <br />Co do najnowszej odsłony, zapewne kupię ją jak trochę stanieje i zobaczymy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

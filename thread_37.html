@@ -1,0 +1,358 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundtracki z gier - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Soundtracki z gier</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-489">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2016-12-30T21:25:52" class="text-sm text-gray-500 font-mono">2016-12-30 21:25:52</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zapodajcie fajną muzę z gier. <br /><br /><a href="https://www.youtube.com/watch?v=gFQwn6M1RMc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Dishonored: Honor for all</a><br /><br /><a href="https://www.youtube.com/watch?v=uwgskWlENQ8" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Bioshock Infinite: Burial at Sea - Episode 2 - You Belong To Me</a><br /><br />&#8230;i obowiązkowo:<br /><a href="https://www.youtube.com/watch?v=aTHhYf2rx3w" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">FireLake: Dirge for the Planet</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-490">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-30T21:32:28" class="text-sm text-gray-500 font-mono">2016-12-30 21:32:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Bardzo spodobał mi się soundtrack z Bravely Default i Bravely Second. Chociażby ten utwór: <a href="https://www.youtube.com/watch?v=5gPMQbBxgGE" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">The Fascinating Flower Country</a>. Za udźwiękowienie odpowiadał REVO, więc jest cacy :)<br />Często słucham ścieżki dźwiękowej z Transistora - <a href="https://www.youtube.com/watch?v=vFrjMq4aL-g" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Paper Boats</a>.<br />Nie przypomnę sobie wszystkich, ale te są jednymi z moich ulubionych. A, właśnie - jeszcze <a href="https://www.youtube.com/watch?v=7XmDYJBZZdc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Nuclear</a>!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-491">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2016-12-30T23:31:42" class="text-sm text-gray-500 font-mono">2016-12-30 23:31:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                U mnie jak i przed laty często pojawiają się wykonania sountracków z Touhou, a przynajmniej tych które wyszły do końca 2012 roku. Potem to już raczej fu.<br />Jedne z nowszych okryć:<br /><a href="https://www.youtube.com/watch?v=zSDGSRUbdP4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Slam Apple</a><br /><a href="https://www.youtube.com/watch?v=6ThIAMywETg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Eternal Shrine Maiden</a> - ogółem najlepszy, najzajebistszy, najwyjekurwabistszy motyw z Th ever.<br /><a href="https://www.youtube.com/watch?v=bJfeJFZM7Uk" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Apparition Stalks The Night</a><br /><a href="https://www.youtube.com/watch?v=iWai1g_jMbo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Capital City of Flowers in the Sky</a> - w sumie słabo z moim słyszeniem gdzie w tym ambiencie jest ten motyw ale biorę na słowo.<br /><br />Ten rok mijał mi raczej pod znakiem erpegów więc teraz trochę z nich. <br /><br />Najsampierw Earthbound i Earthbound 2. Zabierałem się do tych gier dłuższy czas i zmotywowało mnie do tego dopiero przejście fanowskiej gry mieszającej Eb z Touhou. Ostatecznie - było warto. Co ciekawe pierwszy raz o Earthboundzie usłyszałem właśnie przez soundtrack, prawdopodobnie był to dokładnie jeden z poniższych uploadów:<br /><a href="https://www.youtube.com/watch?v=HN4wS8uBPiE" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">The Place</a><br /><a href="https://www.youtube.com/watch?v=YYb9kSCkjE8" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Gyigas</a><br />Naturalnie zachęciła mnie horrorowo-posrana-psychodeliczna natura tych utworów. Sporo innych utworów ma raczej kwasowy odczyn, większość jednak jest luźna i przyjemna.<br /><a href="https://www.youtube.com/watch?v=6OqLkGWdwso" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Home, sweet home</a> lubię sobie puścić do poduszki, najlepiej w wykonaniu z Touhou Mother.<br /><a href="https://www.youtube.com/watch?v=07hIBlQa3T8" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Boy meets girl</a><br /><a href="https://www.youtube.com/watch?v=ljOkfOLCIIc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Happy Happy is blue</a> - zalatuje Silent Hillem.<br /><a href="https://www.youtube.com/watch?v=RL_RPM50C1k" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Mind of a Thief</a><br /><a href="https://www.youtube.com/watch?v=p9Pd3zbc1fA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Forest of Flames</a> z Earthbound 2, ale pozwoliłem sobie wrzucić wersję z Touhou Mother jako imho lepszą, parę takich pójdzie też niżej<br /><br />Muzyka w walkach również trzyma poziom.<br /><a href="https://www.youtube.com/watch?v=MFU6zwV47Q4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Battle Against a Machine</a><br /><a href="https://www.youtube.com/watch?v=sH79jE4IjGU" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kraken of the Sea</a><br /><a href="https://www.youtube.com/watch?v=oCwhCWkEFT8" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Bothersome Guys</a><br /><a href="https://www.youtube.com/watch?v=R5oun8l3Dls" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Dry Guys</a><br /><br />Po Earthboundach przyszło Memetale. Tylko Spider Dance <a href="https://www.youtube.com/watch?v=Xj94aDlh0so" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">w tym konkretnym wykonaniu</a> utwór zmotywował 3 osoby do zagrania. Z wykonań oryginalnych niezwykle mi się wryło zaś <a href="https://www.youtube.com/watch?v=5n2PFLlbpzw" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Hopes and Dreams/SAVE the World,</a> choć jeśli ktoś nie grał to polecam nie otwierać i usłyszeć te utwory po raz pierwszy w grze dla zwiększonego efektu. Dla osób znających ale z kolei wahających się zacząć Genocide Route polecam <a href="https://www.youtube.com/watch?v=xX_imE4zKD4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Battle Against a True Hero</a> - chęć usłyszenia tego w grze zachęciła mnie dość mocno.<br /><br />Od zeszłego roku chodzą też soundtracki z Wieśmina 3 ale są chyba na tyle znane że wklejać nie muszę.<br /><br />EDIT: Zapomniałem o Papers, Please. Soundtrack dość skromny ale przyjemny zwłaszcza do roboty.<br />https://www.youtube.com/watch?v=DbBB1j5qAFs
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-492">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2016-12-31T00:15:18" class="text-sm text-gray-500 font-mono">2016-12-31 00:15:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=FY4RDIN8RiA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/watch?v=FY4RDIN8RiA</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-493">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2016-12-31T17:12:42" class="text-sm text-gray-500 font-mono">2016-12-31 17:12:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=29utEOUT71Y" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Half-Life 2: Episode Two - Dark Interval</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-494">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2016-12-31T17:16:45" class="text-sm text-gray-500 font-mono">2016-12-31 17:16:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=w2cK8mOG4Q8" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/watch?v=w2cK8mOG4Q8</a> Silent Hill theme<br /><a href="https://www.youtube.com/watch?v=u116HbMOF_Y" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/watch?v=u116HbMOF_Y</a> Melodia z Maxa Payne
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-495">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-09T11:12:45" class="text-sm text-gray-500 font-mono">2017-01-09 11:12:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dla mnie się bardzo podoba <a href="https://www.youtube.com/watch?v=Ns7fNPiNiNc" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Icarus z Deus Exa</a>, ale to dlatego, że jak wiadomo lubię z dupy chórki. <br />Poza tym ofc Hotline Miami, tego w ogóle nikomu przedstawiać nie trzeba. <br />No i nieśmiertelny <a href="https://www.youtube.com/watch?v=sNEqItE9Yrk&t" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">poważny soundtrack na burzliwe czasy.</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-496">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-01-31T21:07:59" class="text-sm text-gray-500 font-mono">2017-01-31 21:07:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XswN2sTm5rE</span> <br />Resztę utworów też polecam.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-497">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">atikabubu</span>
+                                <time datetime="2017-01-31T21:24:11" class="text-sm text-gray-500 font-mono">2017-01-31 21:24:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Soulsy to mają soundtrack a nie&#8230;<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/stWae6r7Blw</span><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/PrbZc-J0-Z4</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-498">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-01T14:20:57" class="text-sm text-gray-500 font-mono">2017-02-01 14:20:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                To jest soundtrack, a nie jakieś dark solsy<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/E7PFm7mrdVY</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-499">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/ffa6e5bb4ddecbae1cc0daa5954e86d0?s=96&d=mp" alt="Awatar afrose" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">afrose</span>
+                                <time datetime="2017-02-01T18:34:41" class="text-sm text-gray-500 font-mono">2017-02-01 18:34:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                https://www.youtube.com/watch?v=yVm_ljDSdwA<br />https://www.youtube.com/watch?v=z3j_Wph6fSY<br />https://www.youtube.com/watch?v=29wUbw321Q8&amp;t=7s<br />Polecam choć pewnie dla większości nutki są znane.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-500">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-08-14T21:08:55" class="text-sm text-gray-500 font-mono">2017-08-14 21:08:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/dxTNqYAWISs</span><br /><br />Dawne czasy, kiedy Volvo robiło jeszcze normalne gry.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-501">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-19T15:13:09" class="text-sm text-gray-500 font-mono">2017-08-19 15:13:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/dxTNqYAWISs</span><br /><br />Dawne czasy, kiedy Volvo robiło jeszcze normalne gry.<br /></div>Od lat upewniam się w tym, że Portal był fantastyczną grą, do tej pory łezka mi się w oku kręci, jak słyszę Still alive ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-502">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-08-27T22:30:58" class="text-sm text-gray-500 font-mono">2017-08-27 22:30:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Hmm, aż się dziwię, że jeszcze nikt nie zarzucił soundtrackiem z nowego Doom&#39;a, który wg. mnie jest bardzo dobry i dodaje dużo klimatu grze. Na dobrą sprawę połowa to muzyka, a druga połowa to rozwałka :D<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/Q-vsx84hsbs</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD Action - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">CD Action</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2776">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-06-23T19:50:00" class="text-sm text-gray-500 font-mono">2019-06-23 19:50:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div style="text-align: center;"><img src="https://www.cdaction.pl/views/img1/logo_cdaction.png" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /><br /></div><br />Kto tu na forum czyta to pismo o grach komputerowych z tradycjami? Ja czasami zaglądam na strone WWW, a samo pismo kupuje jak jest jakaś fajna gra dodawna to wtedy też przeglądnę sobie artykuły i czasami przy czymś dłużej się zatrzymam. Kiedyś kupowałem częściej, a nawet stale, ale pierwszy numer sam kupiłem jakoś końcem lat 90 jak wujek przestał kupować i mi już nie podrzucał ;D Potem jakoś końcem gimnazjum przestałem na rzecz internetu i już tylko dla gier od czasu kupuję, dla samego czytania mi nie zależy, bo szału nie było i nie ma. Dla czytania inne growe gazetki kupowałem, no, póki one istniały. Teraz w zasadzie to już prawie nie jest CD Action, bo jak zamienili płyty CD na rzecz DVD to miało jeszcze trochę sens, tak teraz są jakieś zdrapki&#8230; no takie czasy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2777">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2019-06-23T20:01:45" class="text-sm text-gray-500 font-mono">2019-06-23 20:01:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                CD-Action się skończyło na numerze o Crysisie, Kale z Dupy 4, Pedoshocku i Gay of War.  Sierpień 2007? <br />Z perspektywy 12 lat, przynajmniej nie były to Tfa Dygotńje, WoT, czy inna Tibia, więc w sumie dna nie sięgnęli.<br />Trzeba przyznać, zaszkodził im też szerokodostępny internet, gdy nie mogli już wrzucać przedruków z Joe Monstera.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2778">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-06-23T20:21:30" class="text-sm text-gray-500 font-mono">2019-06-23 20:21:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zawsze ceniłem sobie polski IGN.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2779">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2019-06-23T23:46:03" class="text-sm text-gray-500 font-mono">2019-06-23 23:46:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                kupuję oczywiście, gdy dają złoto do mojej ukochanej gry o czołgach<br />a sama gazetka też spoko, miły w dotyku śliski papier okładki sprawia, że po zwinięciu w tubę jest z niej fajna sztuczna cipka
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2798">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-07-08T08:01:38" class="text-sm text-gray-500 font-mono">2019-07-08 08:01:38</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2777" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Lenny Weisstein</strong> napisał:</span></a></div><br />CD-Action się skończyło na numerze o Crysisie, Kale z Dupy 4, Pedoshocku i Gay of War.  Sierpień 2007?<br />Z perspektywy 12 lat, przynajmniej nie były to Tfa Dygotńje, WoT, czy inna Tibia, więc w sumie dna nie sięgnęli.<br />Trzeba przyznać, zaszkodził im też szerokodostępny internet, gdy nie mogli już wrzucać przedruków z Joe Monstera.<br /></div><br />Coś w tym jest. Mój kolega z klasy zawsze kupował, był nieco spierdolinkowy (ale poczytać dawał xD). Później już nie było zabawnie. A jeszcze pamiętam obszerny artykuł o Gothicu 3, który wychwalał go pod niebiosa (zajął chyba pół numeru). Cóż, coś się kończy, coś zaczyna. Właśnie, jakaś gazetka przejęła status lidera?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2800">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-07-08T10:22:24" class="text-sm text-gray-500 font-mono">2019-07-08 10:22:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Status lidera na pewno ma CDA bo żadna inna gazetkaja kompiuterowa nie wychodzi. Jak rzucą golda do WoT to ktoś może nawet to kupi, jak nie to pewnie tylko retro kurwy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

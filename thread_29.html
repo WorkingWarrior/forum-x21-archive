@@ -1,0 +1,2983 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Właśnie słucham... - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Właśnie słucham...</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-309">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2016-12-29T23:18:19" class="text-sm text-gray-500 font-mono">2016-12-29 23:18:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zapodajcie co tam u was leci na głośnikach.<br /><br />https://youtu.be/WZ8HKrLTqq8
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-310">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2016-12-29T23:35:52" class="text-sm text-gray-500 font-mono">2016-12-29 23:35:52</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                https://www.youtube.com/watch?v=bZwG2pjzUAo
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-311">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-30T00:40:35" class="text-sm text-gray-500 font-mono">2016-12-30 00:40:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=UbQgXeY_zi4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Caravan Palace - Lone Digger</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-312">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2016-12-30T00:43:21" class="text-sm text-gray-500 font-mono">2016-12-30 00:43:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=H4IF3BuQ0Rs" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Da Vosk Docta - I&#39;m gonna live forever</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-313">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2016-12-30T08:15:29" class="text-sm text-gray-500 font-mono">2016-12-30 08:15:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=l-ITv4OBV9c" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">The Connells - &#39;74-&#39;75</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-314">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2016-12-30T22:22:58" class="text-sm text-gray-500 font-mono">2016-12-30 22:22:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ostatnio słucham cały album Rammsteina - Liebe Ist Für Alle Da, o którym niemal zapomniałem zupełnie. Polecam do programowania.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-315">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2016-12-31T00:39:21" class="text-sm text-gray-500 font-mono">2016-12-31 00:39:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                U mnie ostatnio tłucze się w domu/pracy/aucie soundtrack z filmu The Guest <a href="https://www.youtube.com/watch?v=WTBYxKuo-_4&amp;list=PLMsFR-IuG_7GnbgXXjypO0YAx7OVq0H95&amp;index=2" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/watch?v=WTBYxKuo-_4&amp;list=PLMsFR-IuG_7GnbgXXjypO0YAx7OVq0H95&amp;index=2</a> <br /><br />Nawiasem mówiąc jak ktoś jeszcze nie widział tego filmu to polecam  ;)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-316">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2016-12-31T14:59:00" class="text-sm text-gray-500 font-mono">2016-12-31 14:59:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Budka Suflera<br /><a href="https://www.youtube.com/watch?v=wT_ObQMSs3U" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.youtube.com/watch?v=wT_ObQMSs3U</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-317">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2016-12-31T16:58:06" class="text-sm text-gray-500 font-mono">2016-12-31 16:58:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=Fn9Ima1lbVk" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Edward Sharpe and the Magnetic Zeros - Child</a><br /><br />Akurat wczoraj tego słuchałam i gadaliśmy z Alchemikiem o tej kapeli, no więc wrzucam. :3
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-318">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-01-01T21:00:15" class="text-sm text-gray-500 font-mono">2017-01-01 21:00:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=PAAUqBghiVo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">DARKSIDE - Paper Trails</a><br /><br />Tak na nowy rok. By spokojnie przez niego płynąć.<br /><br />EDIT:<br /><a href="https://www.youtube.com/watch?v=eB3RJ1U_MJA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Caravan Palace - Mighty</a><br /><br />Bo się zajawiłem na zespół, jak mi po Darkside youtube wrzucił.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-319">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-03T11:47:04" class="text-sm text-gray-500 font-mono">2017-01-03 11:47:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=Zn2TB6DANKA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Shoujo no Gensou</a> - OST z VN Clannad.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-320">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-01-09T19:18:57" class="text-sm text-gray-500 font-mono">2017-01-09 19:18:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=rOT7w2LInLQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">John Lennon - Steel And Glass</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-321">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-10T03:10:40" class="text-sm text-gray-500 font-mono">2017-01-10 03:10:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                https://www.youtube.com/watch?v=-FNKJGBtmM8<br />W sumie nie wiem czy tutaj to powinno być czy w humorze&#8230; enjoy.   :mrgreen:
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-322">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-13T10:27:44" class="text-sm text-gray-500 font-mono">2017-01-13 10:27:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <ul><li><a href="https://www.youtube.com/watch?v=YuuFZw2gZZA" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Tōi Tabi no Kioku</a></li><li><a href="https://www.youtube.com/watch?v=N2-IzSFA-2Q" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">MUCC - Shofu</a></li><li><a href="https://www.youtube.com/watch?v=9B0u0PAVkw0" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Dir en Grey - Kodou</a></li></ul><br />Sama chińszczyzna.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-323">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-01-14T00:12:43" class="text-sm text-gray-500 font-mono">2017-01-14 00:12:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Solve, łibus. Dir En Grey dla gejuw.<br /><br />https://www.youtube.com/watch?v=FYS5ABK7Ye8 - krawędź krawędzi<br />https://www.youtube.com/watch?v=okZ4uc272zM - krawędź krawędzi krawędzi<br />https://www.youtube.com/watch?v=-AlT5acPSvM - krawędź
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-324">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-14T15:03:53" class="text-sm text-gray-500 font-mono">2017-01-14 15:03:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.youtube.com/watch?v=HF1rqIWNQF8" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">The Immortal Country</a> ze ścieżki dźwiękowej Bravely Default.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-325">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-15T19:03:39" class="text-sm text-gray-500 font-mono">2017-01-15 19:03:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Aktualnie wzięło mnie na stare edgy shit metal, więc słucham sobie Huntera - albumy: Królestwo, Medeis i T.E.L.I., niekoniecznie w tej kolejności.<br />Polecam utworek <a href="https://www.youtube.com/watch?v=gKlwvxgmY4Q" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Dwie Siekiery</a>.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-326">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Valentino</span>
+                                <time datetime="2017-01-16T02:04:03" class="text-sm text-gray-500 font-mono">2017-01-16 02:04:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Takie oto <a href="https://www.youtube.com/watch?v=nF99kdCUpAg" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">rzeczy</a>.<br /><br />Poza tym industrial i EBM, powrót do &quot;Rammsteina&quot; i nadal ciągle Manson. <br /><br />I mnóstwo.<br />Mnóstwo.<br />Retro synth wave&#39;u.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-327">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-16T20:41:46" class="text-sm text-gray-500 font-mono">2017-01-16 20:41:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                STAROĆ, KURWA, STAROĆ<br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/PJ7E40Ec5ec</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-328">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-17T00:34:41" class="text-sm text-gray-500 font-mono">2017-01-17 00:34:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/EmXFBKLAUIE</span><br />Jak Cebul coś zjebał z linkiem to jego problem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-329">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-01-17T19:49:11" class="text-sm text-gray-500 font-mono">2017-01-17 19:49:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/QHRuTYtSbJQ</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-330">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-21T13:45:30" class="text-sm text-gray-500 font-mono">2017-01-21 13:45:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wzięło mnie na starocie<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/2Js_WUsXpxg</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-331">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-22T22:35:51" class="text-sm text-gray-500 font-mono">2017-01-22 22:35:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/OHJuGEiI4uQ</span><br />Hue hue, coś mnie ostatnio wzięło na nich.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-332">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-22T23:52:34" class="text-sm text-gray-500 font-mono">2017-01-22 23:52:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/v6qMD1lIWT0</span><br />//EDIT:<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/NYHZwPT0f80</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-333">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-01-23T21:17:55" class="text-sm text-gray-500 font-mono">2017-01-23 21:17:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/V5VdDLrqKQs</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-334">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-01-23T22:36:02" class="text-sm text-gray-500 font-mono">2017-01-23 22:36:02</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                I tak nikt nie odtworzy, nikt nie odsłucha, ale jeśli jednak&#8230; To post rock jest supi.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/v99IVXvslZo</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-335">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-24T00:07:40" class="text-sm text-gray-500 font-mono">2017-01-24 00:07:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/7Cf9BuOegJQ</span><br />Dzisiaj się luzuję.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-336">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-24T07:23:08" class="text-sm text-gray-500 font-mono">2017-01-24 07:23:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                To mój ukochany ruski zespół, dałbym Ci soga, jakbym mógł<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/MVhMGdsHYsA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-337">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-24T08:33:32" class="text-sm text-gray-500 font-mono">2017-01-24 08:33:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Aż przypomnieliście mi o Czarnym Obelisku. Dom Żółtego Snu wymiata.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/J8OO1pGbRCs</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-338">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-01-24T17:12:38" class="text-sm text-gray-500 font-mono">2017-01-24 17:12:38</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/OKRJfIPiJGY</span><br /><br /><div class="quote-block"><div class="quote-header"><span><strong>Najemnik</strong> napisał:</span></div>I tak nikt nie odtworzy, nikt nie odsłucha, ale jeśli jednak&#8230; To post rock jest supi.</div><br /><br />Jest supi. To leci kontra.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/igEjmy2NB-Q</span><br /><br />Bjutiful.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-339">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-24T21:06:06" class="text-sm text-gray-500 font-mono">2017-01-24 21:06:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/-Tdu4uKSZ3M</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-340">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-01-25T22:13:05" class="text-sm text-gray-500 font-mono">2017-01-25 22:13:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/kZH3BoTvv94</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-341">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-01-25T23:20:31" class="text-sm text-gray-500 font-mono">2017-01-25 23:20:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/bKkeQlq_pHQ</span><br /><br />Good old Mayhem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-342">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-26T09:21:32" class="text-sm text-gray-500 font-mono">2017-01-26 09:21:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/-Gu_Hwnvp5U</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-343">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-26T15:08:52" class="text-sm text-gray-500 font-mono">2017-01-26 15:08:52</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Przypomniałem sobie niedawno o tym teledysku - polecam choć raz oglądnąć.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/Wga5A6R9BJg</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-344">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-26T15:11:45" class="text-sm text-gray-500 font-mono">2017-01-26 15:11:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/vXClBjNxiOA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-345">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/25.jpg?1512503192" alt="Awatar PMG" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">PMG</span>
+                                <time datetime="2017-01-26T21:58:27" class="text-sm text-gray-500 font-mono">2017-01-26 21:58:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Distemper - мы обязательно вернемся<br />https://www.youtube.com/watch?v=qJo_8v0V3WQ<br />Jeśli chodzi o mnie to przede wszystkim pank, ska, rege, jakiś metal od czasu do czasu&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-346">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-01-27T02:51:53" class="text-sm text-gray-500 font-mono">2017-01-27 02:51:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                The Left Rights.<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><br />Pozdro dla forumowiczów potrzebujących:<span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/0GLoHifu6aM</span><br /><br />Pozdro dla forumowiczów tęskniących:<span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/xfBQppaKcS8</span><br /><br />Pozdro dla forumowych NEETów:<span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/8VqJGRHuKUE</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-347">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-01-27T15:55:03" class="text-sm text-gray-500 font-mono">2017-01-27 15:55:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dziś sobie słucham tych panów:<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/6Y3E4zfKxPo</span><br />Polecam i zapraszam.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-348">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/18.jpg?1512503192" alt="Awatar abbacchio" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">abbacchio</span>
+                                <time datetime="2017-01-27T23:40:54" class="text-sm text-gray-500 font-mono">2017-01-27 23:40:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/QiT37yZzq_M</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-349">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-28T10:53:26" class="text-sm text-gray-500 font-mono">2017-01-28 10:53:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Zacznijmy dzień od onimema:<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/_Yhyp-_hX2s</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-350">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-01-28T13:03:08" class="text-sm text-gray-500 font-mono">2017-01-28 13:03:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="https://s-media-cache-ak0.pinimg.com/564x/12/12/2b/12122b3abc9747bfffec3dcebf1e0aee.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/qX4kXbz9-48</span><br /><br />&quot;The Marshall Mathers LP&quot; to jeden z lepszych krążków jakie powstały evah.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-351">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/18.jpg?1512503192" alt="Awatar abbacchio" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">abbacchio</span>
+                                <time datetime="2017-01-28T22:43:57" class="text-sm text-gray-500 font-mono">2017-01-28 22:43:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                U mnie gorączka sobotniej nocy i fińskie disco.<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/5jtPhtSTt-k</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-352">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-01T07:16:19" class="text-sm text-gray-500 font-mono">2017-02-01 07:16:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/VZt7J0iaUD0</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-353">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-01T14:17:28" class="text-sm text-gray-500 font-mono">2017-02-01 14:17:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                My name is:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="http://i.imgur.com/ZegcnDX.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br /><br />Poppin&#39;Party - Tokimeki Experience!<br /><span class="custom-tag" title="Niestandardowy tag: audio">https://docs.google.com/uc?authuser=0&amp;id=0B7k-FNHpn0fZNXE2Y3gyU3hfM2M&amp;export=download</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-354">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-02T08:13:00" class="text-sm text-gray-500 font-mono">2017-02-02 08:13:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/8SbUC-UaAxE</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-355">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-02T11:55:49" class="text-sm text-gray-500 font-mono">2017-02-02 11:55:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/-6w_3P_l5FA</span><br /><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/KSpRHN-n7jo</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-356">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-02T13:10:30" class="text-sm text-gray-500 font-mono">2017-02-02 13:10:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                To chyba do tematu &quot;Właśnie oglądam&#8230;&quot; xD<br /><br />Do tego forum to bardziej pasuje to:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/QMWUYMWlEyo</span></div></details><br />: D<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/TniD5KS8TzE</span></div></details><br /><br />Polecam zespół, kawałek dobrego electro/industrial/edm. (tego ostatniego najmniej)<br /><span style="color: cyan;">//EDIT: Połączyłem, bo dwururka była - Slv.</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-357">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/15.jpg?1512503192" alt="Awatar Alechemik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Alechemik</span>
+                                <time datetime="2017-02-05T18:59:16" class="text-sm text-gray-500 font-mono">2017-02-05 18:59:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Klasyk&#8230;<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/fmLEtsVzYqs</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-358">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-02-06T16:10:42" class="text-sm text-gray-500 font-mono">2017-02-06 16:10:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Hm, nie wiem czy tego typu klimaty się tu lubi, bo za Da Vosk Docta zostałem wyzwany od gonciarzofila, choć gościa jedynie kojarzę z wyśmiewania na wypoku i jakiegoś tam filmiku. No ale do rzeczy, wkręciłem się ostatnio w tego typu klimaty i od wczoraj prawie cały czas zapętlam to:<br /><strong>N∅CNY - This Night </strong><br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/EylJ0VnDQRI</span><br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">dla zachęty, w 3:03 babka pokazuje cycki</div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-359">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-06T17:40:16" class="text-sm text-gray-500 font-mono">2017-02-06 17:40:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jak już jest temat o Kancolle to wstawię tu fajne MMD. Świetna nuta i świetny klip.<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/SvFqRoKdGfY</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-360">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">atikabubu</span>
+                                <time datetime="2017-02-07T14:02:05" class="text-sm text-gray-500 font-mono">2017-02-07 14:02:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Blyat, z reguły angielskie covery piosenek z fińskich bajek to kupa, ale przygwoździła to.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/ZmJ5oBdJTXQ</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-361">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-07T21:14:33" class="text-sm text-gray-500 font-mono">2017-02-07 21:14:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/o_l4Ab5FRwM</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-362">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-10T14:52:29" class="text-sm text-gray-500 font-mono">2017-02-10 14:52:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/4hbKn8hpE2M</span></div></details><br /><br />ps. Niedługo będę robił klipa z karaoke. Jak ktoś będzie chciał niech piszę, podzielę się.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-363">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-02-10T22:51:58" class="text-sm text-gray-500 font-mono">2017-02-10 22:51:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No dobra, to trochę rocka zarzucę. Żywy kawałek, polecam.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/3iUHsRp1L9I</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-364">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/25.jpg?1512503192" alt="Awatar PMG" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">PMG</span>
+                                <time datetime="2017-02-12T15:56:48" class="text-sm text-gray-500 font-mono">2017-02-12 15:56:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/WWhXBoQl8Zg</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-365">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-02-13T11:14:05" class="text-sm text-gray-500 font-mono">2017-02-13 11:14:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ghost - Square Hammer<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/VqoyKzgkqR4</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-366">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-17T17:21:53" class="text-sm text-gray-500 font-mono">2017-02-17 17:21:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/RYtVf0wvPpc</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-367">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-02-18T13:58:44" class="text-sm text-gray-500 font-mono">2017-02-18 13:58:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Szanuję za Carpenter Bruta. <br /><br />Ode mnie coś, co kocha mój subwoofer:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/3jTjBt0Enyw</span></div></details><br /><br />Rauek, czyli coś czego mój subwoofer już nie lubi, bo za tłuste i nie wyrabia:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/3pXb9GVQ3fY</span></div></details><br /><br />Und Gesaffelstein. Żeby było pierdolnięcie.<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/oRSijEW_cDM</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-368">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-19T02:54:14" class="text-sm text-gray-500 font-mono">2017-02-19 02:54:14</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A ja sobie dziś tych panów będę słuchał:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/Ld8359apOX4</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-369">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-02-19T23:42:29" class="text-sm text-gray-500 font-mono">2017-02-19 23:42:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/auFjc-DfP7E</span><br />Dzisiaj aryjsko i pogańsko, mordy :-D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-370">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-21T01:41:58" class="text-sm text-gray-500 font-mono">2017-02-21 01:41:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/PJQVlVHsFF8</span></div></details><br /><br />Trochę Hoffy
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-371">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-23T14:42:05" class="text-sm text-gray-500 font-mono">2017-02-23 14:42:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Czarny album :)<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/NR7sdQEvvb8</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-372">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-23T22:36:21" class="text-sm text-gray-500 font-mono">2017-02-23 22:36:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja dziś ten kawałek mocno osłuchuje:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/9BSoSePrWNo</span></div></details><br /><br />Piękna ballada.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-373">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/25.jpg?1512503192" alt="Awatar PMG" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">PMG</span>
+                                <time datetime="2017-02-26T17:08:22" class="text-sm text-gray-500 font-mono">2017-02-26 17:08:22</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/1AzCkSOSe0E</span><br />Lubię mocno.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-374">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-27T23:07:26" class="text-sm text-gray-500 font-mono">2017-02-27 23:07:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/zeWBD7zHG8o</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-375">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-28T16:05:09" class="text-sm text-gray-500 font-mono">2017-02-28 16:05:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/h_DYTjGalqY</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-376">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-02-28T21:54:40" class="text-sm text-gray-500 font-mono">2017-02-28 21:54:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <details class="spoiler-block my-4"><summary></summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/x7YHFDfW1NQ</span></div></details><br /><br />Wersja normalna.<br /><details class="spoiler-block my-4"><summary></summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/t8bEZcw3-wM</span></div></details><br /><br />Wersja z filmu.<br /><br />Polecam każdemu film kinowy Girls und Panzer. 10/10. Złoto jakich mało.<br /><br />ps. Solve  ;) &lt; &quot;lewd&quot;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-377">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-01T00:15:05" class="text-sm text-gray-500 font-mono">2017-03-01 00:15:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Staroszkolne gówno :D<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/o4kHR5SNB5Q</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-378">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/2b81dd78861de4bc77c56b8273ef41f3?s=96&d=mp" alt="Awatar atikabubu" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">atikabubu</span>
+                                <time datetime="2017-03-02T09:38:18" class="text-sm text-gray-500 font-mono">2017-03-02 09:38:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nostalgłem z mocą stu łibusów, pałujących wiplera do swoich waifu.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/ikbfzJrm29s</span><br /><br />W spoilerze sama piosenka)))<br /><details class="spoiler-block my-4"><summary></summary><div class="mt-2"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/zBJh7DSO5EQ</span></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-379">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-03T14:22:16" class="text-sm text-gray-500 font-mono">2017-03-03 14:22:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                DZIECI, NIGDY NIE JEDŹCIE DO HIN, TAM PSY JEDZO<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/gWKZ9E9piXI</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-380">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2017-03-05T11:37:11" class="text-sm text-gray-500 font-mono">2017-03-05 11:37:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/09GVMQohqyg</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-381">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-05T12:11:49" class="text-sm text-gray-500 font-mono">2017-03-05 12:11:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Super piosenka, kurwo.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/Q3sigAJXG1E</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-382">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-06T01:29:40" class="text-sm text-gray-500 font-mono">2017-03-06 01:29:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Konie są chujowe, ale tą piosenkę lubię.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/Tm4BrZjY_Sg</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-383">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-03-07T21:35:53" class="text-sm text-gray-500 font-mono">2017-03-07 21:35:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XvMxJkTaE4I</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-384">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-13T07:38:31" class="text-sm text-gray-500 font-mono">2017-03-13 07:38:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/Uo50P7edIjc</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-385">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-03-13T10:36:16" class="text-sm text-gray-500 font-mono">2017-03-13 10:36:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/zAx0t3O55Zo</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-386">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-13T22:45:05" class="text-sm text-gray-500 font-mono">2017-03-13 22:45:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/sZJDYlxkM-c</span><br />Przesłuchać sobie tą wersje, prawilną, a zaraz po niej oryginalną wersje. Efekt jest niesamowity.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-387">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-15T18:18:56" class="text-sm text-gray-500 font-mono">2017-03-15 18:18:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/2rePrmu3R9w</span><br />Dawno nie słuchałem.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-388">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-03-15T21:15:16" class="text-sm text-gray-500 font-mono">2017-03-15 21:15:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nidy nie sądziłem, że spodoba mi się cokolwiek powiązanego z Krawczykiem :D<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/_O6c4xJEyik</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-389">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-18T10:54:47" class="text-sm text-gray-500 font-mono">2017-03-18 10:54:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/KZY9oYSSjFI</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-390">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-20T05:19:07" class="text-sm text-gray-500 font-mono">2017-03-20 05:19:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Pisząc mój nowy temat zagrało mi to w głowie, łapcie.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/HQ3rvK8EdO8</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-391">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-03-23T18:56:31" class="text-sm text-gray-500 font-mono">2017-03-23 18:56:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/_-cB62Mvakk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-392">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-23T20:50:13" class="text-sm text-gray-500 font-mono">2017-03-23 20:50:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/PckpnCRDEyk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-393">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-24T03:11:21" class="text-sm text-gray-500 font-mono">2017-03-24 03:11:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Stary dobry Wu-Tang Clan, tak mnie naszło jak sprzątałem. Dobranoc.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/PBwAxmrE194</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-394">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-25T04:46:45" class="text-sm text-gray-500 font-mono">2017-03-25 04:46:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dziś trochę inne mudziny.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/MZjAantupsA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-395">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-03-28T00:02:04" class="text-sm text-gray-500 font-mono">2017-03-28 00:02:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/2Od5DcqvWXs</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-396">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-04-04T22:55:21" class="text-sm text-gray-500 font-mono">2017-04-04 22:55:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Piękne, Lenek!<br /><div style="text-align: center;"><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/-wILF0YwvNM</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-397">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-04-06T19:49:44" class="text-sm text-gray-500 font-mono">2017-04-06 19:49:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Tuaregów ciąg dalszy.<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/vACZA9dGvV4</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-398">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-04-09T21:03:19" class="text-sm text-gray-500 font-mono">2017-04-09 21:03:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/jItz-uNjoZA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-399">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-04-12T01:29:53" class="text-sm text-gray-500 font-mono">2017-04-12 01:29:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/cbk0ddD6MWw</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-400">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-04-15T09:42:20" class="text-sm text-gray-500 font-mono">2017-04-15 09:42:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/oE9CFBFUP9Q</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-401">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-04-15T14:39:11" class="text-sm text-gray-500 font-mono">2017-04-15 14:39:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/JYPuD3vK2xM</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-402">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-04-16T13:02:13" class="text-sm text-gray-500 font-mono">2017-04-16 13:02:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/RNb6srcp1S4</span><br /><br />Słucham sobie ostatnio (od czwartku) sporo eurobeat&#39;ów podczas ogrywania &quot;Grand Theft Auto: San Andreas&quot;.<br /><br /><span style="font-size: 0.8rem;">69 post, huehuehue : D</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-403">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-04-18T21:21:46" class="text-sm text-gray-500 font-mono">2017-04-18 21:21:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A takie klimaty lubicie?<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/XBYgwiGUsKc</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-404">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-04-22T02:10:53" class="text-sm text-gray-500 font-mono">2017-04-22 02:10:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/M3T6eo7DHVs</span><br />Chyba jeszcze nie słałem. Ogólnie dobry album.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-405">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-04-24T16:01:33" class="text-sm text-gray-500 font-mono">2017-04-24 16:01:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/NG-_CJzD1Lc</span><br /><br />Fajowy cover.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-406">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-04-29T08:00:07" class="text-sm text-gray-500 font-mono">2017-04-29 08:00:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/pgXozIma-Oc</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-407">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-05-01T19:35:47" class="text-sm text-gray-500 font-mono">2017-05-01 19:35:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/QwMSemZX81U</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-408">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-05-07T02:07:20" class="text-sm text-gray-500 font-mono">2017-05-07 02:07:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Myślę, że ktoś tu doceni ten mój bit, który ogólnie jest tu setnym bitem:<br /><span class="custom-tag" title="Niestandardowy tag: youtube">https://youtu.be/DrxJCOVsV1E</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-409">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-05-09T11:42:15" class="text-sm text-gray-500 font-mono">2017-05-09 11:42:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Klasse.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/QFrIc-67b-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-410">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-05-09T18:37:54" class="text-sm text-gray-500 font-mono">2017-05-09 18:37:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie sądziłem, że ktoś tu kojarzy ten zespół. To ja wrzucę na wymianę ognia ich inny kawałek który lubię.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/Gp8Dgd9F6e0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-411">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-05-12T00:14:24" class="text-sm text-gray-500 font-mono">2017-05-12 00:14:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Trafiłem na to, bo ktoś mi polecił teledysk. Zacząłem słuchać w kółko.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/_6B9tBRFEeE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-412">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-06-03T00:05:36" class="text-sm text-gray-500 font-mono">2017-06-03 00:05:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Tak jakoś mnie naszło na Dream Theater.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/D5lsjaQ-EQk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-413">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-06-14T03:05:13" class="text-sm text-gray-500 font-mono">2017-06-14 03:05:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/WEHPeNknfFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-414">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-06-22T18:47:34" class="text-sm text-gray-500 font-mono">2017-06-22 18:47:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Trochę hardbassu od Borisa<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/QIjKijhv1OU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-415">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-07-08T16:21:40" class="text-sm text-gray-500 font-mono">2017-07-08 16:21:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/R7SiZqWxdmQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-416">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-08-02T23:35:17" class="text-sm text-gray-500 font-mono">2017-08-02 23:35:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/f11aEVOKHts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />Ah, kochany NFS U2.<br /><br />Wrzucajcie jakieś pieniężne muzyki bo nie mam czego słuchać.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-417">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-08-10T18:45:16" class="text-sm text-gray-500 font-mono">2017-08-10 18:45:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/BU8HEzAcKGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-418">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-08-12T23:43:02" class="text-sm text-gray-500 font-mono">2017-08-12 23:43:02</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/ATFaTEYolYU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-419">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-08-28T13:35:29" class="text-sm text-gray-500 font-mono">2017-08-28 13:35:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/kJu3XUneVTA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1800">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-07T14:54:07" class="text-sm text-gray-500 font-mono">2018-01-07 14:54:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nowy post raz na pontyfikat!<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/KtlgYxa6BMU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1807">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-07T18:36:18" class="text-sm text-gray-500 font-mono">2018-01-07 18:36:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                czil<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/mzUbNObAJZo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1915">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-20T19:07:44" class="text-sm text-gray-500 font-mono">2018-01-20 19:07:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/foE1mO2yM04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />//E:<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/PKB4cioGs98" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2120">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-03-10T13:07:00" class="text-sm text-gray-500 font-mono">2018-03-10 13:07:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/4sk0uDbM5lc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />wrzućcie czasem coś kurwy
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2121">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-03-10T14:12:34" class="text-sm text-gray-500 font-mono">2018-03-10 14:12:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/RYtVf0wvPpc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2135">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-03-20T16:36:16" class="text-sm text-gray-500 font-mono">2018-03-20 16:36:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                jeden z lepsiejszych &quot;remixów&quot;. Minus za brak cycków w wideo. A Ty kurwo powyżej wrzuć coś czego nie zna całe forum.<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/KPMHfvj9tG0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2144">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-03-27T16:17:31" class="text-sm text-gray-500 font-mono">2018-03-27 16:17:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Chyba Cię pojebało, ty małpo<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/UXTlczyWJ-Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2160">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2018-03-28T22:04:43" class="text-sm text-gray-500 font-mono">2018-03-28 22:04:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Inf miał w pra<del>papieże</del>premierze, tu też miałem dać, ale zapomniałem, nadrabiam.<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/BRxMme53H3E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2246">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-05-30T10:05:15" class="text-sm text-gray-500 font-mono">2018-05-30 10:05:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Was, kurwy jebane, zaskoczę.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/QmTS2FD_UIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2319">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2018-07-22T04:44:01" class="text-sm text-gray-500 font-mono">2018-07-22 04:44:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dobra, żeby zabrzmiało tu coś wholesome dla kontrastu z ogólnie reprezentowaną przez co bardziej aktywnych userów chujnią.<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/IG_u4P-E1UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/9Km-Rl7SkzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2324">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-07-23T22:57:59" class="text-sm text-gray-500 font-mono">2018-07-23 22:57:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/Y1PVmANeyAg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />Dostarczam jedyną słuszną muzykę
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2339">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-07-31T02:38:44" class="text-sm text-gray-500 font-mono">2018-07-31 02:38:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/_UgSE4uKuTg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />Właśnie sobie wróciłem do Mars Volty, polecam jak jeszcze nie miał okazji się zapoznać. <br />To akurat z ostatniego albumu. Są na hitałhusie, ale kto wie, może jeszcze kiedyś wrócą.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2340">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-08-07T21:20:02" class="text-sm text-gray-500 font-mono">2018-08-07 21:20:02</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/lhu59y1-NAU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br />BEDZIE JAZDA
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2439">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-11-16T20:51:17" class="text-sm text-gray-500 font-mono">2018-11-16 20:51:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                BUMP<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/x_KvGY-ZYuA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2484">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-11-30T18:07:57" class="text-sm text-gray-500 font-mono">2018-11-30 18:07:57</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Cudne podsumowanie siks najnów i reszty tego syfu - muj idol wraca po 5 latach und czekam na więcej. A tak szczerze, to słucham tate, jak je salceson z musztardo.<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/_3YPik6HTpw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2488">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-12-06T16:49:05" class="text-sm text-gray-500 font-mono">2018-12-06 16:49:05</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2484" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div>Cudne podsumowanie siks najnów i reszty tego syfu - muj idol wraca po 5 latach und czekam na więcej. A tak szczerze, to słucham tate, jak je salceson z musztardo.<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/_3YPik6HTpw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div><br /><br />Jest dupsko (S R A N I E), bit i nabijanie się z rapu. Nie tak złe połączenie. x-D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2521">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-12-15T21:49:27" class="text-sm text-gray-500 font-mono">2018-12-15 21:49:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/cRy2qWpRJfc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2523">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-12-18T12:22:19" class="text-sm text-gray-500 font-mono">2018-12-18 12:22:19</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/NGSnh5EzB5w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2562">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-01-29T08:46:01" class="text-sm text-gray-500 font-mono">2019-01-29 08:46:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/zxX_bDod7UI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2592">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/19.jpg?1606511630" alt="Awatar Ropasiak" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Ropasiak</span>
+                                <time datetime="2019-02-14T19:10:51" class="text-sm text-gray-500 font-mono">2019-02-14 19:10:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/LB9lObWclFQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2661">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2019-03-24T12:22:47" class="text-sm text-gray-500 font-mono">2019-03-24 12:22:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/XVON0vP8k4s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />Nie wiem skąd jutube to wziął, ale przez Australię na miniaturce musiałem kliknąć.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2700">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-05-09T06:59:16" class="text-sm text-gray-500 font-mono">2019-05-09 06:59:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/PD3RCwNseqQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2784">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-06-27T09:32:50" class="text-sm text-gray-500 font-mono">2019-06-27 09:32:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/mn59cSb0Q08" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2813">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-07-31T07:53:42" class="text-sm text-gray-500 font-mono">2019-07-31 07:53:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/4ZIoHtGgIkA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />SPIERDAAALAAAAAAAAAĆ
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2816">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2019-08-18T02:47:18" class="text-sm text-gray-500 font-mono">2019-08-18 02:47:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/AK60YRTslkw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />z dedykacją dla plebsu<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/dwGEJW6ZsAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br />z dedykacją dla plebsu od TDI. Gaz, benzyna, normalna rodzina.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2830">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2019-08-28T10:15:10" class="text-sm text-gray-500 font-mono">2019-08-28 10:15:10</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/qTSKPgMte0k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2838">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-09-13T08:12:54" class="text-sm text-gray-500 font-mono">2019-09-13 08:12:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2830" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Missile</strong> napisał:</span></a></div><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/qTSKPgMte0k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /></div><br />Trochę się posrałem xD<br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/qtvkiQRAOq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2871">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/43.jpg?1558912131" alt="Awatar King Crimson" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">King Crimson</span>
+                                <time datetime="2020-01-19T02:55:07" class="text-sm text-gray-500 font-mono">2020-01-19 02:55:07</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Piękny tekst o miłości. <div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/eYDI8b5Nn5s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

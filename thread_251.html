@@ -1,0 +1,211 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westworld - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Westworld</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2016">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-02-03T11:16:01" class="text-sm text-gray-500 font-mono">2018-02-03 11:16:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div style="text-align: center;"><img src="attachments/0/5-d9503120557aa124a24334a129f4df81.data" alt="Załącznik 5" class="rounded-lg my-4 max-w-full h-auto shadow-lg" /></div><br />Zdziwię się, jeśli ktoś do tej pory chociaż nie usłyszał o ww. serialu.<br />Dla nieogarniętych – serial opowiada o futurystycznym parku rozrywki w stylu Dzikiego Zachodu, gdzie ludzie mogą wyzwolić swe żądze i zapomnieć o moralności. Klientom oferowana jest masa ścieżek fabularnych, co nie oznacza, że nie mogą poruszać się samopas i eksplorować wedle uznania. Motywem przewodnim fabuły jest człowieczeństwo i uzyskanie świadomości przez androidy. Wszystko uzupełnione jest smaczkami i rozważaniami nad ludzką naturą.<br />Obejrzałem ze smakiem, a niebawem ma wyjść drugi sezon – na pewno będę oglądał.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2026">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-02-03T22:50:39" class="text-sm text-gray-500 font-mono">2018-02-03 22:50:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ja obejrzałem kiedyś z kolegom dwa odcinki. Pierwszy obejrzałem i wow, mega, wciągnęło mnie, podoba mi się, może być dobre. Obejrzałem drugi i ciśnienie opadło, zrobiło się trochę nudno, zaczęło się dużo wyjaśniać i jakoś tak meh, odpuściłem sobie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2027">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-02-04T07:40:51" class="text-sm text-gray-500 font-mono">2018-02-04 07:40:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2026" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Ja obejrzałem kiedyś z kolegom dwa odcinki. Pierwszy obejrzałem i wow, mega, wciągnęło mnie, podoba mi się, może być dobre. Obejrzałem drugi i ciśnienie opadło, zrobiło się trochę nudno […]</div><br />To zależy od tego, jak podejdziesz do danego tematu. Albo interesuje Cię samoświadomość maszyn i ich dążenie do „człowieczeństwa”, albo nie.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2026" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>zaczęło się dużo wyjaśniać</div><br />Tam się prawie nic konkretnego nie wyjaśnia do przedostatniego odcinka :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2028">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-02-04T14:10:15" class="text-sm text-gray-500 font-mono">2018-02-04 14:10:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2027" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>To zależy od tego, jak podejdziesz do danego tematu. Albo interesuje Cię samoświadomość maszyn i ich dążenie do „człowieczeństwa”, albo nie.</div><br /><br />Interesuje mnie, ale to mi wygląda bardziej na:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">&#8230;zabawę w bogów bogatych ludzi, a nie na serial o samoświadomości maszyn. Może się to potem zmienia i jest większy nacisk na to drugie, ale ja tak to odebrałem i nie spodobało mi się. Może kiedyś dam szanse pierwszemu sezonowi, ale póki co nie.</div></details><br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-2027" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>Sölve</strong> napisał:</span></a></div>Tam się prawie nic konkretnego nie wyjaśnia do przedostatniego odcinka :D</div><br /><br />To może miałem mylne wrażenie. Chodziło mi o to, że:<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">&#8230;wiadomo kto jest tym złym i o co mu mniej więcej chodzi plus parę innych jeszcze faktów, ale chwile już minęło to zapomniałem jakie te fakty.</div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2029">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-02-04T20:26:50" class="text-sm text-gray-500 font-mono">2018-02-04 20:26:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-2028" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">&#8230;zabawę w bogów bogatych ludzi, a nie na serial o samoświadomości maszyn. Może się to potem zmienia i jest większy nacisk na to drugie, ale ja tak to odebrałem i nie spodobało mi się. Może kiedyś dam szanse pierwszemu sezonowi, ale póki co nie.</div></details></div><br />Paskudnie złożyłeś zdanie, mógłbym uznać, że oni się bawią w bogów bogatych ludzi, a nie, iż bogaci ludzie bawią się w bogów, siejąc destrukcję! Cóż, owszem, głównie na tym polega „zabawa” w ww. parku rozrywki, ale gdybyś obejrzał więcej, wiedziałbyś, że początek sezonu stoi w opozycji do jego końca.<br /><div class="quote-block"><div class="quote-header"><a href="#post-2028" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">&#8230;wiadomo kto jest tym złym i o co mu mniej więcej chodzi plus parę innych jeszcze faktów, ale chwile już minęło to zapomniałem jakie te fakty</div></details>.</div><br />Jak bardzo zdziwiony byłbyś, gdybyś obejrzał do końca. Można odnieść wrażenie, że ten podział jest wyraźnie zaznaczony, ale to tylko przykrywka do głębszej warstwy fabuły. Poza tym – kto powiedział, że wszystkie kadry pochodzą z jednej linii czasu? :) William pozdrawia!
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2030">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-02-04T21:53:17" class="text-sm text-gray-500 font-mono">2018-02-04 21:53:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No, źle złożyłem. Chodziło mi o to, że bogaci ludzie bawią się w bogów.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2891">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2020-04-17T13:06:44" class="text-sm text-gray-500 font-mono">2020-04-17 13:06:44</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                No, ktoś ogląda trzeci sezon?<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2">Trochę to wszystko takie rozproszone. Wydostali się na zewnątrz, okazuje się, że tam życiem kieruje inny „bóg”.<br />Czy teraz nasza pro-/antagonistka zmieni zdanie o ludzkości? Czy powie, że chce ją uratować, ponieważ też jest uciskana? Takie trochę xD Dodatkowo ten Pinkman :D</div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

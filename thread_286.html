@@ -1,0 +1,85 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[VN] Island - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">[VN] Island</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2620">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2019-02-18T10:30:36" class="text-sm text-gray-500 font-mono">2019-02-18 10:30:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <em>Urashima jest niewielką wyspą położoną z dala od wybrzeży Japonii. To prawdziwa utopia obdarzona bogactwem naturalnego piękna. Kryje w sobie trudną przeszłość, która niebawem, po cichu, może zostać wymazana z kart historii. Syndrom zarazy odsłonecznej, endemiczna choroba, wyryła przepaść między wyspą i stałym lądem. Platforma badawcza, przeznaczona morskim badaniom została dawno temu porzucona. Pięć lat wcześniej, trzy niepowiązane ze sobą wypadki, niemal doprowadziły Trzy Wielkie Rodziny do upadku. Pogłoski o zaginięciach dzieci stały się częścią lokalnego folkloru. Jest też kolejna historia, powtarzana od niepamiętnych czasów:<br />„Pozwól, że opowiem ci historię tej wyspy. To opowieść o tragicznej miłości…”.<br />Kluczem do uratowania wyspy są trzy dziewczyny, każda z nich jest potomkinią jednej z Trzech Rodzin. Same nie są w stanie zmienić losu wyspy, ale może im się to udać z pomocą młodzieńca, który właśnie wylądował na wyspie. Głosząc, że jest podróżnikiem w czasie, od razu wyrusza w samotną podróż, rzucając wyzwanie wielowiekowym tradycjom wyspy, starając się zmienić przyszłość. Aczkolwiek nie jest to jego jedyny cel. W jaki sposób jego obecność zmieni życie dziewcząt, przyszłość wyspy i losy świata?</em><br /><br />Jakiś czas temu przeczytałem wszystkie ścieżki tej gry. Przeprowadza nas ona po kolejnych iteracjach, w których zawieramy „przyjaźń”  z danymi dziewczętami (od razu mówię, nie ma zawartości +18). Dowiadujemy się szczegółów, poznajemy tajemnice. Scenariusz został napisany przez naukowca, dlatego też zostajemy uraczeni masą terminów i ciekawostek, jak również hipotez. O ile pierwsze dwie ścieżki były dosyć „na luzie”, to dwie ostatnie odkrywały wszystkie karty. Gra, oprócz masy negatywnych zakończeń, posiada też szczęśliwe i prawdziwe. I muszę szczerze przyznać, że wolałem to szczęśliwe, bo prawdziwe jebie po czapie. Przeczytałem masę powieści wizualnych, ale niewiele pozostawiło kaca książkowego – ISLAND ma to do siebie, że wywołuje go (w przypadku przeczytania prawdziwego zakończenia i „zimy”). Ludzie płaczą, że scenariusz zawiera dziury i jest niespójny – mówiąc szczerze, to gówno prawda. Wystarczy odpowiednio skupić się na lekturze, a wszystkie zagadki układają się w całość. Owszem, niektóre części są naciągane, inne nie, ale cała powieść wychodzi stanowczo na plus. Gorąco polecam.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frostpunk 2 - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Frostpunk 2</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-2956">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2021-08-12T20:24:54" class="text-sm text-gray-500 font-mono">2021-08-12 20:24:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Półtora jebanego roku temu zakładałem podobny temat o pierwszej odsłonie gry. Teraz przyszedł czas na drugą - została dzisiaj zapowiedziana!<br /><br /><div class="video-wrapper my-4 rounded-lg overflow-hidden shadow-lg"><iframe src="https://www.youtube-nocookie.com/embed/9kfHUN4gFiw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br /><br /><div class="quote-block"><strong>Frostpunk 2</strong> to kontynuacja cieszącej się dużym uznaniem, nominowanej do nagrody BAFTA survivalowej gry o społeczeństwie, która dzięki unikalnemu połączeniu rozgrywki strategicznej, elementów zarządzania i mechaniki budowania miasta, stworzyła zupełnie nowy gatunek. Akcja następcy toczy się 30 lat po apokaliptycznej zamieci, gdy Ziemia wciąż jest pogrążona w lodowatym klimacie niekończącego się mrozu i nieprzyjaznej pogody.<br /><br />Wcielasz się w przywódcę metropolii, w której ekspansja i poszukiwanie nowych źródeł energii są koniecznością. Po erze węgla, nowym ratunkiem dla ostatnich ludzkich pokoleń ma być podbój Frostlandu dla przemysłu wydobywczego ropy naftowej. Jednak zmiany nie przychodzą łatwo i nie wszyscy w tym nowym, wielowarstwowym społeczeństwie przychylnie patrzą na taki obrót spraw.<br /><br />Żądania i oczekiwania różnych frakcji będą podnosić napięcie i wywoływać konflikty, ale czy konieczne będą zimnokrwiste rządy i makiaweliczne podejście do polityki? Podczas gdy wieczny mróz będzie utrzymywał swój uścisk na mieście, a z zewnątrz będą pojawiać się kolejne zagrożenia, Twoim obowiązkiem będzie dopilnowanie, żeby twoi ludzie byli zjednoczeni, zmotywowani, i przygotowani na trudne, nieuniknione poświęcenia!</div><br /><br />Czekacie?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

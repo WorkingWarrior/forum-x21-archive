@@ -1,0 +1,757 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash X-21 - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Bash X-21</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-182">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2016-12-29T12:40:50" class="text-sm text-gray-500 font-mono">2016-12-29 12:40:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Czyli durnoty z ShoutBoxa na tyle <em>zabawne</em> (przynajmniej w ocenie autora postu), że aż zarchiwizowane w tym temacie.<br /><br />Rozpocznę temat wymianą zdań z nieistniejącego już kanału IRC:<br /><div class="quote-block"><div class="quote-header"><span><strong>Nieistniejący już kanał IRC</strong> napisał:</span></div>Missile: no przyznaję nuta zacna, ale nic nie poradzę, że lubię z dupy chórki<br />Inf: xD<br />Inf: <span class="custom-tag" title="Niestandardowy tag: missile"> It&#39;s my only weakness.<br />MCaleb: Missile: Z tego co wiem Ace Ventura nie nagrał żadnej płyty</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-183">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-05T15:12:50" class="text-sm text-gray-500 font-mono">2017-01-05 15:12:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Sölve: Samotność na forumie<br />MCaleb: The horror.<br />Lenny Weisstein: Czarna sosna&#8230;<br />Infernal: Czarna pyta.<br />Lenny Weisstein: Czarna sosna. Pinus nigra.<br />Sölve: Czarny murzyn, pinus pyta.<br />Lenny Weisstein: Arnold Schwarzenegger<br /></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-184">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-12T13:39:38" class="text-sm text-gray-500 font-mono">2017-01-12 13:39:38</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Stroop: I&#39;m gonna hurt myself<br />Stroop: JEBAĆ, OD TYŁU<br />MCaleb: ĆABEJ?<br /></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-185">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-13T00:15:35" class="text-sm text-gray-500 font-mono">2017-01-13 00:15:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Lenny Weisstein: Ej Caleb kto to już jest bo się gubię, myślałem że Inf a teraz się w Miske zamienia.<br />MCaleb: Bo to ani jeden, ani drugi.<br />Lenny Weisstein: No to już gurwa nie wiem.<br />Lenny Weisstein: Nie wiem kurwa jakaś kola czy co? xD<br />Stroop: Cola z wudkom<br />MCaleb: Dobrze, że nie z Walkerem.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-186">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-01-25T20:47:48" class="text-sm text-gray-500 font-mono">2017-01-25 20:47:48</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">SOG • śr sty 25, 2017 7:44 pm<br />To ja jestem sogiem, uświadom to sobie. O rany rany rany, jestem niedojebany.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-187">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-27T01:32:15" class="text-sm text-gray-500 font-mono">2017-01-27 01:32:15</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Muad&#39;Dib: Kurwa, potrzebuję obejrzeć jakiegoś naprawdę dobrego animu.<br />Muad&#39;Dib: Coś głebokiego, epickiego zarazem, coś zajebistego jednym słowem<br />Enzo: Ropasiak Trucker, #sliceoflife, #shota, #drama, #spaceopera</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-188">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-29T18:38:00" class="text-sm text-gray-500 font-mono">2017-01-29 18:38:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Missile: Na stalker.pl szykanują za adblocka? Znowu nasrali reklam wiagry i suwalszczyzny i zbijają na nich majątek?<br />Lenny Weisstein: A co Ty tam jeszcze robiłeś?<br />Lenny Weisstein Dalej w poselstwie siedzisz?<br />Infernal: http://images.tinypic.pl/i/00864/vg5q1o8kkyvc.jpg<br />Lenny Weisstein Meh, tylko 46cm.<br />Infernal: Papieskie.<br />Rex: chcę zauważyć, że reklamy google są spersonalizowane i wyświetlają reklamy skorelowane z wynikami wyszukiwania&#8230;<br /></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-189">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-29T18:51:33" class="text-sm text-gray-500 font-mono">2017-01-29 18:51:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Infernal: O, kolejny. Ale tego to nie winię, jak afczy co rok.<br />Missile: Twoja Stara.</div><br /><br />Quality wypowiedzi Miski.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-190">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-29T19:03:08" class="text-sm text-gray-500 font-mono">2017-01-29 19:03:08</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                XD<br />Dobre, Missile. Tutaj jest lepsze nawet.<br /><div class="quote-block">Infernal: O, kolejny. Ale tego to nie winię, jak afczy co rok.<br />Missile: Twoja Stara.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-191">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-29T19:16:04" class="text-sm text-gray-500 font-mono">2017-01-29 19:16:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                HAHAHAHA MISSILE JAKIE TO DOBRE XD<br /><br />Tutaj nawet lepsze. Miska nawet 3 na raz wstawi za chwilę.<br /><div class="quote-block">Infernal: O, kolejny. Ale tego to nie winię, jak afczy co rok.<br />Missile: Twoja Stara.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-192">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-29T19:17:40" class="text-sm text-gray-500 font-mono">2017-01-29 19:17:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                HAHAHAHA MISSILE JAKIE TO DOBRE XD<br /><br />Tutaj nawet lepsze. Miska się wstydzi i kasuje.<br /><div class="quote-block">Infernal: O, kolejny. Ale tego to nie winię, jak afczy co rok.<br />Missile: Twoja Stara.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-193">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-30T01:43:23" class="text-sm text-gray-500 font-mono">2017-01-30 01:43:23</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Wyciąłem dla większej śmieszkowości i quality contentu.<br /><div class="quote-block">[00:24:29] Lenin: wiem tyle że każdy ma dość twojej &quot;twojej starej&quot; więc to sobie powinieneś przemyśleć.<br />[00:25:54] Kron Kromkowy: nie daję jebania czy urażam czyjeś uczucia estetyczne<br />[00:26:15] Lenin: to nie chodzi o urażanie uczuć tylko o bycie nudnym fhuj xD<br />[00:28:59] Kron Kromkowy: w zasadzie jedynymi faktycznie buldópiącymi o to jesteś Ty i Miska, więc pozdro, wszyscy mają dość motzno<br />[00:29:04] Lenin: e, nie.<br />[00:29:16] Lenin: to że Ty tego nie słyszysz to nie znaczy że tak nie jest<br />[00:29:27] Kron Kromkowy: no dajesz<br />[00:29:35] Kron Kromkowy: wymieniaj tych wszystkich co nie mogą wytrzymać<br />[00:29:37] Lenin: to nie leży w mojej kompetencji<br />[00:29:50] Kron Kromkowy: xD<br />[00:29:55] Kron Kromkowy: fajna wymówka bro<br />[00:29:57] Lenin: stary, zjebałeś i taka jest prawda<br />[00:30:11] Kron Kromkowy: co niby zjebałem?<br />[00:30:17] Kron Kromkowy: fantomy rozpadły się niby przez Twoją Starą? xD<br />[00:30:20] Lenin: to, że jesteś nudny dla reszty<br />[00:34:54] Lenin: wkurwiasz ludzi.<br />[00:35:15] Lenin: nie jesteś jedyny ale jesteś wyjątkowo namolny<br />[00:35:57] Lenin: no tylko ja z Tobą mam ciągły kontakt od praktycznie początku<br />[00:36:08] Lenin: więc ja wiem jak się z Tobą rozprawić<br />[00:36:16] Lenin: powiem Ci jedno<br />[00:36:18] Lenin: drocz się<br />[00:36:22] Lenin: rób co chcesz<br />[00:36:35] Lenin: ja Ci w tym przeszkadzać nie będę bo mi szkalowanie na X-21 pasuje<br />[00:37:11] Lenin: ale lepiej se kurwa opracuj nowe metody<br />[00:37:14] Lenin: bo nudzisz ludzi<br />[00:37:25] Lenin: i za repetytywność i ode mnie warna wyhaczysz<br />[00:37:49] Lenin: a nuda to coś czego sobie na X-21 nie życzymy<br />[00:45:59] Lenin: ja jakoś umiem jechać innych bez &quot;twojej starej&quot;<br />[00:49:30] Lenin: to że Ty chcesz Enzowi pokazać jaki fajny jesteś to już nie moja sprawa<br />[00:50:39] Lenin: bo reszcie się tego słuchać nie chce<br />[00:52:50] Lenin: Tylko TROCHĘ PIERDOLONEJ RÓŻNORODNOŚCI<br />[00:52:56] Kron Kromkowy: ale po co?<br />[00:53:04] Kron Kromkowy: skoro tak dobrze buldópicie bez jakiegokolwiek wysiłku?<br />[00:53:09] Lenin: po to by nie kończyć na jednej randze z Rexem<br />[00:53:17] Kron Kromkowy: witamy w Internetach Lenny, witamy, 2017!<br />[00:53:26] Kron Kromkowy: trolling sobie wygooglaj, bo ciężko Ci będzie na początku<br />[00:53:28] Lenin: nie buldupimy<br />[00:53:32] Lenin: tylko jestesmy znudzeni<br />[00:53:32] Kron Kromkowy: widzę xD<br />[00:53:33] Lenin: ziewamy<br />[00:53:51] Lenin: Powiem tyle<br />[00:53:58] Lenin: Jeśli dłużej tak będziesz postępował<br />[00:54:05] Lenin: To za wiele okazji ku temu mieć nie będziesz.<br />[01:08:23] Kron Kromkowy: a jak Solve się zapyta gdzie się podziałem to powiedz, że ja i Enzo poszliśmy być nudni gdzie indziej, ale na szczęście ma Ciebie<br />[01:11:04] Kron Kromkowy: jak ktoś zamierza mnie cenzurować tylko dlatego, że triggeruję jego autyzm, a nie dlatego, że faktycznie coś złego robię, to ciao, spierdalaj xD</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-194">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-30T23:41:59" class="text-sm text-gray-500 font-mono">2017-01-30 23:41:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">MCaleb: Czy Ty zawsze wybierasz sposoby wymagające od Ciebie najmniej wysiłku fizycznego?<br />Enzo: Trzeba kombinować tak, na ile zdrowie pozwala. Albo kupić egzoszkielet, ale jak wiadomo chuj w Kutwę.<br />MCaleb: Słyszałem że czopki z artefaktów pomagają.<br />Enzo: no sprzedałem z milion Twojej Starej, ale dalej mnie na egzo nie stać.<br />MCaleb: Twoje Stare straciły na wartości przez to że Ty z Infem szastaliście nimi na lewo i prawo.<br />Enzo: Twoja Stara nigdy nie miała żadnej wartości, tylko masę.<br />MCaleb: Zdajesz sobie w ogóle sprawę jak te żarty są żałosne?<br />Enzo: Nie, nie pomyślałem nawet co robię i kogo obrażam.</div><br /><br /><br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><div class="quote-block">Sölve: Ej, ale Twoja Stara jako artefakt jest OK<br />Sölve: Mnie to rozbawiło xD<br />MCaleb: Właśnie nikogo nie obrażasz, poza swoim dobrym gustem.<br />Sölve: Będzie w nowym PTP :D</div></div></details>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-195">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-02-18T04:46:09" class="text-sm text-gray-500 font-mono">2017-02-18 04:46:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ciomgnijcie mój penis, żadna kurwia nic nie wrzuca, więc będę doublepościł.<br /><div class="quote-block">hubi1: w ogole Solve, dzis sie prawie zabilem : D<br />Sölve: znowu?<br />Lenny Weisstein: A co Ty, kowek?<br />hubi1: tylko pare razy w tym roku xD<br />Sölve: On niechcacy xD<br />hubi1: ale sie przerwrocilem dynka na lodowke xD<br />Sölve: A kowek nieumiejetnie</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-196">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-02-18T16:15:30" class="text-sm text-gray-500 font-mono">2017-02-18 16:15:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><br />[16:12:13] Walter Black: http://gif.wiocha.pl/images/7/c/7c3fdbddaa17bb159ff71c725cdb73b6.gif xD<br />[16:13:32] Kron Kromkowy: ten gif ma przesłanie filozoficzne<br />[16:13:59] Kron Kromkowy: tragicznego ludzkiego losu, gdzie ze smutną zobojętniałą twarzą patrzysz przed siebie, Twoja dusza nieruchoma i sztywna, ale nogi muszą instynktownie zapierdalać<br /></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-197">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-05-07T15:23:59" class="text-sm text-gray-500 font-mono">2017-05-07 15:23:59</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Śmiechom nie było końca:<br /><div class="quote-block">Missile: Za każde szkalowanie miski wprowadzam karę przymusowego wyjścia z piwnicy na 5 minut.<br />Infernal: Aby nałożyć karę musisz podnieść obcas. Good luck!<br />Missile: Challenge accepted, trochę ciężko było ale chyba dałem radę<br /><details class="spoiler-block my-4"><summary>Pokaż / ukryj spoiler</summary><div class="mt-2"><img src="http://files.tinypic.pl/i/00898/4i8ytynd0ajo.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div></details><br />Missile: Specjalnie dla Ciebie, obuwie które podjebałem mamie żeby móc się swobodnie bawić w transika<br />Lenny Weisstein: #shrekt #mlg #420noscope<br />Missile: #polishboy #instaboy<br />Missile: Za karę Inf wychodzi z piwnicy na okres 5 minut.<br />Lenny Weisstein: #fuccboi<br />Lenny Weisstein: W ogóle wpadłem na genialny pomysł.<br />Lenny Weisstein: Przenośna piwnica którą można ubierać. Enzoszkielet.<br />Lenny Weisstein: https://s-media-cache-ak0.pinimg.com/originals/b9/b6/d0/b9b6d033581165097aa38c5859dbbb02.jpg w zasadzie coś takiego tylko z systemem zbierania odchodów i modułem VR zamiast monitora. </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-198">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-05-29T16:46:04" class="text-sm text-gray-500 font-mono">2017-05-29 16:46:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Infernal: Skalujecie biednego Miskę.<br />Infernal: A może on ma wrażliwy penis?<br />Fred: No i ?<br />Fred: Pójdzie, upije beniza i położy na torach ?<br />Infernal: Żeby się pociąg wykoleił?<br />Infernal: Chyba sobie nie zdajesz sprawy jaką moc na te żydowsko-ślunskie prącie.<br />Fred: Eee, to nie może mieć wrażliwego beniza skoro jest oskórowany<br />Fred: Icek Mizzile Benizman<br />Fred: Rabin zakonu musli</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-199">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/11.jpg?1512503192" alt="Awatar Najemnik" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Najemnik</span>
+                                <time datetime="2017-06-12T22:21:51" class="text-sm text-gray-500 font-mono">2017-06-12 22:21:51</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Niby takie krótkie, ale śmiechłem.<br /><div class="quote-block">Missile: Nie grałem w ani jedno Metro. Dużo straciłem?<br />Sölve: Kilka stacji</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-200">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-07-13T02:51:26" class="text-sm text-gray-500 font-mono">2017-07-13 02:51:26</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">&gt;: http://images.eurogamer.net/2017/articles/2017-07-12-14-50/unibailsafarizone.jpg<br />jakbym gral w to	<br />to bym napierdalal do pragi	<br />that&#39;s why	1:39<br />http://i.imgur.com/jaanL86.jpg<br />Ja:	<br />nie rozumiem zdaje się	1:40<br />&gt;:	<br />no, widzisz maskotke	<br />to ten pokemon z pragi	<br />w chuj go lubie	<br />Ja:	<br />ja w Pradze widzę jajko a nie pokemona<br />&gt;:	<br />still, mogles sie domyslec xD ale jak widze tego &gt;	http://i.imgur.com/4xAFAgd.png<br />Ja:	<br />Ty masz jakikolwiek kurwa pojęcie o mapie Europy?<br />nie, nie mogłem, mogłeś mówić że warszawska Praga	<br />bo ten jest jakos nad Mazowszem xD<br />&gt;:	<br />e, to fajnie : D	1:43<br />ale i tak, nie	<br />bo nie gram :D<br />Ja:	<br />wiesz, nie trzeba grać by wiedzieć gdzie są kurwa Czechy xD</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-201">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-08-04T15:03:58" class="text-sm text-gray-500 font-mono">2017-08-04 15:03:58</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Enzo: https://upload.wikimedia.org/wikipedia/commons/c/cb/Wc1.jpg - &quot;Do takiej standardowej ubikacji nie ma dostępu ok. 40% ludzi na świecie&quot; - wikipedia jest jednak cudowna.<br />Missile: Enzowi się mocno w pracy nudzi skoro czyta o kiblach na wikipedii.<br />Enzo: czytam o Światowej Organizacji Toaletowej!<br />Missile: ŚOT?<br />Enzo: I tak se myślę, załóż Miska Światową Organizację Ruchaniową, będziesz mógł wstawić na wiki zdjęcie cipy z podpisem &quot;do takiej standardowej waginy nie ma dostępu 100% spierdoxów&quot;.</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1804">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-01-07T16:29:17" class="text-sm text-gray-500 font-mono">2018-01-07 16:29:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Pierdłem lekko.<br /><br /><span class="user-mention">@Lenny Weisstein</span>: Co tam polaczki dalej shitpost, pay2win i mamine kanapeczki?<br /><span class="user-mention">@Infernal</span>: Nie, teraz jest wygryw i pay2ruch.<br /><span class="user-mention">@Lenny Weisstein</span>: Musisz wynajmować wózek inwalidzki? Byłoby mi Cię szkoda ale nie jest.<br /><span class="user-mention">@Infernal</span>: Kręgosłup mi się nadwyrężył odkąd musiałem Pana cyc przesunąć by wyjść z domu.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1897">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-01-20T01:19:47" class="text-sm text-gray-500 font-mono">2018-01-20 01:19:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Miska feat. Zuolve<br /><br /><div class="quote-block">Missile: spust na tate płatny 500zł ekstra<br />Missile: mame Ty kurwo<br />Missile: xD<br />Missile: PRECZ Z MOIM TATE<br />Missile: xD</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1950">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-01-22T23:17:33" class="text-sm text-gray-500 font-mono">2018-01-22 23:17:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                O jak się zesrałem xD<br /><br /><br /><span class="user-mention">@Ropasiak</span>: rozkaz pisemny JP2 numer 21/37 z dnia 2 kwietnia 2005 roku, zezwalam na wyjazd ze stacji Wadowice do stacji Watykan , ostania kremówka przybyła do watykanu o godzinie 21:36 godzina wystawienia rozkazu 21:37 <br /><span class="user-mention">@Sölve</span>: Zespół R znowu błysnął?
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2040">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-02-12T14:19:56" class="text-sm text-gray-500 font-mono">2018-02-12 14:19:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Sölve: Emzo, Ty żywiesz<br />Enzo: no bo ja jestem gruby<br />Enzo: nie ma tyle apapów, żeby mnie powalić<br />Sölve: Dzięki temu masz +10 do odporności na zimno<br />Enzo: od psychiatrełe też muszę następnym razem wziąć jakąś końską dawkę tych ssri, bo jeszcze skończę jak Alchemik z Leninem jako życiowym guru<br />Sölve: Lepiej SNRI<br />Enzo: nie, bo ssri działają też na przedwczesny wytrysk, po nich mogę dłużej patrzeć na fejsikowy tryptyk Miski<br />Sölve: Trochę parsknąłem :D<br />Enzo: i snri gorzej reagują z alkoholem, niż ssri. Miska, Caleb, no mam leki dobrane pod forum</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2047">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-02-15T08:57:35" class="text-sm text-gray-500 font-mono">2018-02-15 08:57:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Enzo: ♪Kiedy byłem, kiedy byłem małą Miską, hej!♪<br />Enzo: ♪Wziął mnie ojciec, jeden z dwojga, i tak do mnie rzekł♪<br />Enzo: ♪Głosem penisa się kieruj. Tylko męski odbyt liczy się!♪</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2182">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-04-12T18:54:36" class="text-sm text-gray-500 font-mono">2018-04-12 18:54:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block">Ropasiak: Jest w ogóle możliwość wykopania kogoś z mieszkania jak nie płaci? Pamiętam, że kiedyś było o tym głośnio, a teraz nie wiem czy przepisy się zmieniły<br />Enzo: Umowa kupna-sprzedaży, ale nie wiem kto Ci tę bejcę weźmie</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2243">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-05-22T17:59:34" class="text-sm text-gray-500 font-mono">2018-05-22 17:59:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="user-mention">@Enzo</span>: chciałbym być obieraczką do kartofli<br /><span class="user-mention">@Missile</span>: chciałbym być kartoflem<br /><span class="user-mention">@Enzo</span>: ale Ty już jesteś bez skórki, żydku
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2313">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2018-07-20T09:30:40" class="text-sm text-gray-500 font-mono">2018-07-20 09:30:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Lenny Weisstein: O kurwa Leeter<br />Lenny Weisstein: Z banku go wyjebali?<br />Infernal: Chyba spermy, zjadał zapasy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2318">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-07-20T17:30:40" class="text-sm text-gray-500 font-mono">2018-07-20 17:30:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Podobło mnie się.<br /><br /><span class="user-mention">@Leeter</span>: &gt;Ropasiak mieszka w Gdańsku<br /><span class="user-mention">@Leeter</span>: Mam się, kurwa, bać?<br /><span class="user-mention">@Missile</span>: Ropas ma już anemię z niedożywienia, może Ci co najwyżej wpierdolić tynk z bloku.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2350">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-08-26T12:25:45" class="text-sm text-gray-500 font-mono">2018-08-26 12:25:45</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Solve: Dej dla wujka Sölvego lynka do descorda<br />Enzo: Było nie łajpać SB, niczym Miller polskiego budżetu<br />Solve: SB się samo łajpuje, boonie<br />Enzo: a alkohol sam się wlewa Calebu do pyska
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2433">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/23.jpg?1532088218" alt="Awatar Leeter" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Leeter</span>
+                                <time datetime="2018-11-08T20:31:42" class="text-sm text-gray-500 font-mono">2018-11-08 20:31:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="user-mention">@Lenny Weisstein</span>: Jaki kraj taki Hitler, kaczka to max co może u was być.<br /><span class="user-mention">@Infernal</span>: Na zmywak, polski śmieciu.<br /><span class="user-mention">@Lenny Weisstein</span>: morda psie<br /><span class="user-mention">@Lenny Weisstein</span>: Na zmywaku to cię robili, co najlepsze spłynęło w rury<br /><span class="user-mention">@Missile</span>: Byłem przy tym, tą rurą był mój przełyk.<br /><span class="user-mention">@Infernal</span>: Potwierdzam, był, mama pokazywała mi zdjęcia.<br /><span class="user-mention">@Enzo</span>: Gardzę Wami, heteroseksualiści.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2516">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2018-12-12T17:49:32" class="text-sm text-gray-500 font-mono">2018-12-12 17:49:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="user-mention">@Enzo</span>: mam spermę w bucie<br /><span class="user-mention">@MCaleb</span>: Wytrzep.<br /><span class="user-mention">@Enzo</span>: to będę miał jeszcze więcej
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2848">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2019-10-28T15:42:09" class="text-sm text-gray-500 font-mono">2019-10-28 15:42:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <span class="user-mention">@Enzo</span>: w sumie to dalej nie wiadomo co to jest ten Crimson, a może to po prostu odrodzony Alchem?<br /><span class="user-mention">@Sölve</span>: Chuj wi<br /><span class="user-mention">@Sölve</span>: Missile, wypowiedz się<br /><span class="user-mention">@King Crimson</span>: Ta, reinkarnowany kurwa<br /><span class="user-mention">@King Crimson</span>: Ja to ja, al to trup<br /><span class="user-mention">@King Crimson</span>: nie mam rymu, to chlup w dziób<br /><span class="user-mention">@Enzo</span>: ale to może być taka metafora, jak Konrad i Gustaw. Alchemik &quot;umar&quot;, został Crimson<br /><span class="user-mention">@Lenny Weisstein</span>: Też umrzyj, może zostanie coś fajniejszego
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

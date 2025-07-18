@@ -1,0 +1,148 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowe wersje starych gier - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Nowe wersje starych gier</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1048">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-01-28T19:21:11" class="text-sm text-gray-500 font-mono">2017-01-28 19:21:11</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Istnieje w ciul gier, które kiedyś były kultowe i zapierały dech w piersiach&#8230; Niestety czas nie jest dla nikogo łaskawy i część tych gier odeszła w zapomnienie, nie działa na nowych systemach operacyjnych, jest niegrywalna lub po prostu chujowo wygląda z perspektywy czasu. Ale fani nie śpią i wiele starych gier doczekało się nowych wersji albo przynajmniej bajerów modyfikujących grafikę w taki czy inny sposób. <br />Zapraszam wszystkich do fascynującej dyskusji na temat nowych wersji starych gier, zarówno tych stworzonych jako samodzielne produkcje, jak i szeroko pojętych modów oraz &quot;ulepszaczy&quot; grafiki. Pierwszymi tytułami, które przychodzą mi na myśl są (oczywiście) &quot;Black Mesa&quot; i &quot;System Shock: Enhanced Edition&quot; (premiera w przyszłym roku czy jakoś tak). Dorzucajcie wasze znaleziska.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1049">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-01-28T19:52:16" class="text-sm text-gray-500 font-mono">2017-01-28 19:52:16</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Mi na myśl przychodzi od razu Age of Empires II HD oraz dodatek African Kingdoms. Uwielbiałem AoE2, dosyć często zdarzało mi się pogrywać mimo że niedługo minie 20 lat od jej wydania, stąd wieści o powstawaniu wersji HD i dodatkowego rozszerzenia bardzo mnie podjarały. Proces tworzenia trwał bardzo długo, ale warto było czekać - polecam wszystkim sentymentalnym fanom. Działa bezproblemowo na Windows 8.0 i 8.1, na nowszych też powinien śmigać. <br /><div style="text-align: center;"><img src="https://s-media-cache-ak0.pinimg.com/736x/f8/6e/3d/f86e3d70ee7d7a2ffbabb76606cec4d2.jpg" alt="Obrazek" class="rounded-lg my-4 max-w-full h-auto shadow-lg" loading="lazy" /></div><br /><br />Słyszałem jeszcze o Serious Sam II HD, nie miałem jeszcze okazji zagrać, ale na pewno kiedyś to zrobię.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1050">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-01-28T19:56:35" class="text-sm text-gray-500 font-mono">2017-01-28 19:56:35</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Na System Shock to ja czekam, bardzo mnie ta wieść ucieszyła.<br /><br />Sporo już takich gier wyszło, dużo zostało poprawione graficznie, a niektóre nawet wzbogacone o nowe poziomy.<br /><br /><a href="http://store.steampowered.com/agecheck/app/434050/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&quot;Duke Nukem 3D: 20th Anniversary World Tour&quot;.</a> Porawili grafikę, dodali nowy poziom i sporo innych pierdółek, cały opis zmian znajduję się na steamie. Ogólnie mocno na plus.<br /><br /><a href="http://store.steampowered.com/app/221380/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&quot;Age of Empires II HD&quot;</a>. Ta gra to się doczekała nawet dwóch zupełnie nowych dodatków. (Oczywiście ten który był już wcześniej został również wydany w wersji HD) Pierwszy miał premiere 5 listopada 2015 - &quot;Age of Empires II HD: The African Kingdoms&quot; natomiast drugi wyszedł dość niedawno, bo 19 grudnia 2016 - &quot;Age of Empires II HD: Rise of the Rajas&quot;.<br /><br />Takie rzeczy cieszą, ale żeby tak nie zasłodzić. Są też spore rozczarowania, a jest nim:<br /><br /><a href="http://store.steampowered.com/app/297000/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">&quot;Heroes® of Might &amp; Magic® III - HD Edition&quot;</a>. Wygląda to nie lepiej od fanowskich modów HD, a ja bym nawet powiedział, że i wygląda on gorzej. Wymagania ma z kosmosu, a cena, no cóż, porównując do innych remasterów jest zbyt wygórowana, niewspółmierna do swojej zawartości. Nosz kurcze, oni tu nic tu nie dodali, ani nowych scenariuszy, ani przedmiotów, już nie wspominając o dodatkach. Ktoś może powiedzieć, ale hola hola hola, ale czy muszą coś dodawać? No nie muszą, ale patrząc na to jak inni to te remastery robią swoje odswieżone wersje, ile wysiłku w to wkładają, to może by jednak by coś zrobili. Zlecili jakiejś firmie remaster i po najmniejszej linii oporu odwalili pańszczyznę, bo przecież i tak się sprzeda, no nie? Fani kupią, bo HD no i steam teraz taki fajny i modny to będą chcieli tam mieć w bibliotece. Na najwieksza bure zasługuję tu fakt, że nie dodali nawet warsztatu steam, jednym słowem porażka. Myślę, że kolejnym dodatków się nie doczekamy.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1051">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-07-08T16:14:01" class="text-sm text-gray-500 font-mono">2017-07-08 16:14:01</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="http://steamcommunity.com/games/362890/announcements/detail/2767873904708195662" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">KLIK</a><br />Wygląda na to że, wprawdzie z półrocznym poślizgiem ale spoko, gra Black Mesa w końcu zostanie ukończona (tak, tak, Xen).
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

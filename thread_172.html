@@ -1,0 +1,127 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wściekły retro hubi - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Wściekły retro hubi</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1504">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-20T05:07:43" class="text-sm text-gray-500 font-mono">2017-03-20 05:07:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ten moment musiał nastąpić, że zrobię taki temat.<br /><br />Ludzie którym blisko gry 8 bitowe i 16 bitowe! (<a href="https://en.wikipedia.org/wiki/Nintendo_Entertainment_System" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">NES</a>, <a href="https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">SNES</a>, <a href="https://en.wikipedia.org/wiki/Master_System" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Sega Master System</a>, <a href="https://pl.wikipedia.org/wiki/Sega_Genesis" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Sega Mega Drive</a> itd.)<br />Wołam was! Tak, do was mówię!<br /><br />Jak już wszyscy jesteście to posłuchajcie mnie.<br /><br />Tutaj możemy sobie o takich grach podyskutować, tak ogólnie, ale już zapowiadam, że tematy o poszczególnych seriach gier na takie systemy pojawią się na bank :mrgreen:<br /><br />Drugie ogłoszenie, zbieram chętnych do rozgrywki online. O co chodzi? Gry które mają co-op, jak w NESowych np. <a href="https://en.wikipedia.org/wiki/Contra_(video_game)" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Contra</a>, <a href="https://en.wikipedia.org/wiki/Double_Dragon_2" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Double Dragon 2</a> albo <a href="https://en.wikipedia.org/wiki/Ikari_Warriors" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Ikari Warriors</a> można sobie fajnie ogrywać przez neta na emulatorze <a href="https://en.wikipedia.org/wiki/Nestopia" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Nestopia</a>. Rozkurwiłem takich gier z kolegami w brud. Grywałem też w gry SNESowe, spoko to idzie ogarnąć  na <a href="https://en.wikipedia.org/wiki/ZSNES" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">ZSNES</a>ie.<br />Tytuły na konsole SEGA jeszcze nie testowałem, to nie wiem jak to jest.<br /><br />Tyle na gorąco, pewnie jeszcze coś ogłoszę.<br /><br />To ogłszam coś. Temat obejmuje konsole od 1 do 6 generacji.<br /><br /><a href="https://www.youtube.com/watch?v=shBLSsIJ4b4" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">See you <del>space cowboy</del> retro gamers&#8230;</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1505">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-03-24T16:11:03" class="text-sm text-gray-500 font-mono">2017-03-24 16:11:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A można gadać o grach amigowych? Bo w sumie więcej styczności miałem z nimi, niż ze snesowymi.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1506">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-24T21:09:46" class="text-sm text-gray-500 font-mono">2017-03-24 21:09:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Oczywiście, że można. Zaraz zedytuje opis. Pisałem z myślą o wszystkich retro konsolach, do 5 generacji, czyli:<br />PSX, Sega Saturn, Nintendo 64, Atari Jaguar, Amiga CD32 i tak dalej.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

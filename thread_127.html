@@ -1,0 +1,1135 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Łowcy okazji - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Łowcy okazji</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1145">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-04T19:14:29" class="text-sm text-gray-500 font-mono">2017-02-04 19:14:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Niedawno hubi1 podesłał mi linka <a href="https://www.gog.com/game/cayne" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">do darmowego Cayne na gog.com</a>, pomyślałam więc, że można by założyć zbiorczy temat odnośnie wszystkich promocji, darmówek itp.  :geek: <br />Tak zatem - dowiedziałeś się, że rozdają gry za darmo (tudzież za śmieszne pieniądze)? Pisz tu. :]
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1146">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-04T23:15:31" class="text-sm text-gray-500 font-mono">2017-02-04 23:15:31</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                www.lowcygier.pl i to by było na tyle w temacie
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1147">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/10.jpg?1512503192" alt="Awatar Rex" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Rex</span>
+                                <time datetime="2017-02-19T22:50:17" class="text-sm text-gray-500 font-mono">2017-02-19 22:50:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                http://www.biedronka.pl/pl/gry-9-99<br />http://www.biedronka.pl/pl/gry-19-99
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1148">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-20T05:34:09" class="text-sm text-gray-500 font-mono">2017-02-20 05:34:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Rex</strong> napisał:</span></div><br />http://www.biedronka.pl/pl/gry-9-99<br />http://www.biedronka.pl/pl/gry-19-99<br /></div><br />Dzięki za przypomnienie, dziś się chyba wybiorę.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1149">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-20T09:05:56" class="text-sm text-gray-500 font-mono">2017-02-20 09:05:56</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Cholera, zapomniałem, a miałem przed pracą jechać po Valhalla Hills,  może popołudniu jeszcze dostanę.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1150">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-20T13:34:17" class="text-sm text-gray-500 font-mono">2017-02-20 13:34:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Byłam w biedrze i upolowałam Assassin&#39;s Creed Revelations+Brotherhood za 39,99 zł, nie wiem czy to dobry deal, ale kto bogatemu zabroni.<br />Szkoda, że Dead Synchronicity kupiłam już wcześniej w jakimś bundlu, bo ma bardzo ładne pudełko. ;_; Nota bene polecam kupić i zagrać.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1151">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-02-20T16:11:33" class="text-sm text-gray-500 font-mono">2017-02-20 16:11:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Byłam w biedrze i upolowałam Assassin&#39;s Creed Revelations+Brotherhood za 39,99 zł, nie wiem czy to dobry deal, ale kto bogatemu zabroni.<br />Szkoda, że Dead Synchronicity kupiłam już wcześniej w jakimś bundlu, bo ma bardzo ładne pudełko. ;_; Nota bene polecam kupić i zagrać.<br /><br />Edit:<br /><a href="https://www.gog.com/promo/20170220_weekly_sale_kawaii_sale?utm_medium=social&utm_source=twitter&utm_campaign=20170220_weekly_sale_kawaii_sale&utm_term=EN&utm_content=logo" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">o, coś dla Sölve chyba? :P</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1152">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-21T07:19:36" class="text-sm text-gray-500 font-mono">2017-02-21 07:19:36</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Edit:<br />o, coś dla Sölve chyba?<br /></div>Corpse Party już ogrywam na 3DS-ie. Kiedyś przeszedłem Ys I na andka, fajna gierka. W każdym razie, dzięki, Lou :)<br />PS zawsze jestem zachwycony ich layoutem, srsly.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1153">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-02-21T17:40:50" class="text-sm text-gray-500 font-mono">2017-02-21 17:40:50</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Lou</strong> napisał:</span></div><br />Byłam w biedrze i upolowałam Assassin&#39;s Creed Revelations+Brotherhood za 39,99 zł, nie wiem czy to dobry deal, ale kto bogatemu zabroni.</div><br /><br />Deal chyba dobry ;)<br /><br />Swego czasu Assassins Creed był w Humble Bundle. Za niecałe 6$ kupiłem Assassin&#39;s Creed, Assassin&#39;s Creed Chronicles: India, Assassin&#39;s Creed Chronicles: China, Assassin&#39;s Creed Chronicles: Russia, Assassin&#39;s Creed Liberation HD, Assassin&#39;s Creed III + Assassin&#39;s Creed III Tyranny of King Washington: The Infamy (DLC), Assassin&#39;s Creed II Deluxe Edition. Brotherhood był dopiero w progu za 15$ razem z Unity więc dokupiłem go później osobno właśnie za jakieś 20pln.<br /><br />PS. Udało mi się wczoraj po robocie dorwać Valhalla Hills :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1154">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2017-02-21T19:06:46" class="text-sm text-gray-500 font-mono">2017-02-21 19:06:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jak ktoś lubi podetrzeć się święcącym gazetowym papierem, to w przyszłym numerze cede akszyn (04/2017, 7 marca) dorzucają <del>Ace Combat</del> Assassin&#39;s Creed: Brotherhood i Fyr Kryja 3.<br /><br />PS Wiem, że CDA to nie gazeta (tylko szmatławiec).
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1155">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-02-28T22:33:24" class="text-sm text-gray-500 font-mono">2017-02-28 22:33:24</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Bo hubi to lama i nie wie, że takie linki to do tematu się daje:<br />https://www.g2a.com/game-deals?adid=deal_20170209_B_interests&amp;id=100_B_interests
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1156">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-03-07T13:40:46" class="text-sm text-gray-500 font-mono">2017-03-07 13:40:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Od wczoraj jest wyprzedaż na https://www.gog.com
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1157">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-03-08T11:42:30" class="text-sm text-gray-500 font-mono">2017-03-08 11:42:30</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                W nowym bundle jest Valhalla Hills, Legends of Eisenwald, a powyżej średniej Warhammer End Times Vermintide https://www.humblebundle.com
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1158">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-08T16:58:18" class="text-sm text-gray-500 font-mono">2017-03-08 16:58:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                https://www.indiegala.com/rockin<br />Polecam fajne chińskie gierki, głownie shootery typu bullet hell, jest też fajna metroidvania.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1159">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-03-29T18:06:23" class="text-sm text-gray-500 font-mono">2017-03-29 18:06:23</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jakby ktoś przegapił to są wyprzedaże na www.muve.pl i www.gram.pl
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1160">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-03-29T22:17:18" class="text-sm text-gray-500 font-mono">2017-03-29 22:17:18</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                https://www.humblebundle.com/hooked-on-multiplayer-bundle<br /><br />Fajna giera za dolara:<br /><br />&gt;Primal Carnage: Extinction<br /><br />Może te pozostałe też fajnie. Nie wiem, niech ktoś mi powie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1161">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-04-20T08:58:17" class="text-sm text-gray-500 font-mono">2017-04-20 08:58:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Starcrafty za darmo dajo<br />https://eu.battle.net/shop/en/product/starcraft
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1162">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/5.jpg?1558897754" alt="Awatar Lenny Weisstein" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lenny Weisstein</span>
+                                <time datetime="2017-04-20T21:16:21" class="text-sm text-gray-500 font-mono">2017-04-20 21:16:21</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A na gogełe Saints Row 2.<br />https://www.gog.com/game/saints_row_2
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1163">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-04-22T03:37:27" class="text-sm text-gray-500 font-mono">2017-04-22 03:37:27</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Mam do rozdania trzy klucze do zamkniętej bety <a href="https://www.playgwent.com/pl" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Gwint</a>.<br />Ktoś chce to pisać na PW.<br />ps. Saints Row 2 za darmo też na stimie, stil work&#8230;
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1164">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-04-23T16:17:39" class="text-sm text-gray-500 font-mono">2017-04-23 16:17:39</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>hubi1</strong> napisał:</span></div><br />Mam do rozdania trzy klucze do zamkniętej bety <a href="https://www.playgwent.com/pl" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Gwint</a>.<br />Ktoś chce to pisać na PW.<br />ps. Saints Row 2 za darmo też na stimie, stil work&#8230;<br /></div>A ja dostałem egzemplarz od reda, niestety jeszcze nie zaistalowalem :(
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1165">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2017-04-27T13:36:34" class="text-sm text-gray-500 font-mono">2017-04-27 13:36:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://sexyliberation.org/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Klik!</a><br /><br />Polecam, na stronce oprócz free contentu znajdziemy prawdziwe okazje cenowe.<br /><br /><span style="color: #FFFF00;">Zły dział. (L)</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1166">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/7.jpg?1559192456" alt="Awatar MCaleb" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">MCaleb</span>
+                                <time datetime="2017-05-12T15:43:12" class="text-sm text-gray-500 font-mono">2017-05-12 15:43:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jeszcze przez jeden dzień Dungeons II jest na Humble Bundle za darmo:<br />https://www.humblebundle.com/store/dungeons-2<br />Brać, póki jest okazja.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1167">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-06-06T22:53:34" class="text-sm text-gray-500 font-mono">2017-06-06 22:53:34</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Chińskie gierki https://www.humblebundle.com/sekai-project-bundle
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1168">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-07-08T16:10:46" class="text-sm text-gray-500 font-mono">2017-07-08 16:10:46</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Może kogoś zainteresuje: https://www.cdaction.pl/news-50540/ryse-son-of-rome-dostepne-za-darmo-.html<br />Trochę pierdolenia z tym, ale może ktoś skorzysta.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1169">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-07-15T20:44:40" class="text-sm text-gray-500 font-mono">2017-07-15 20:44:40</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jotun: Valhalla Edition:<br /><br />&gt; https://www.gog.com/game/jotun<br /><br />&gt; http://store.steampowered.com/app/323580/Jotun_Valhalla_Edition/<br /><br />Za darmo.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1170">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2017-07-20T20:19:33" class="text-sm text-gray-500 font-mono">2017-07-20 20:19:33</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Shadow Warrior - Special Edition<br /><br />&gt; https://www.humblebundle.com/store/shadow-warrior-special-edition<br /><br />Na stima, oczywiście, ZA DARMO.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1171">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-07-21T07:39:37" class="text-sm text-gray-500 font-mono">2017-07-21 07:39:37</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                W Biedrach są Metro LL i Far Cry 3 + parę innych.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1172">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-08-14T21:05:06" class="text-sm text-gray-500 font-mono">2017-08-14 21:05:06</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.gog.com/game/deadlight_directors_cut?pp=ba5bfc9d29e57bda5c45cf82d9fff043329f313a" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Deadlight: Director&#39;s Cut</a> za darmo na GOG, biercie.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1173">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/12.jpg?1512503192" alt="Awatar Fred" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Fred</span>
+                                <time datetime="2017-08-22T17:36:54" class="text-sm text-gray-500 font-mono">2017-08-22 17:36:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Jak ktoś jeszcze nie widział to na <a href="https://www.gog.com/promo/29170821_special_sale_bethesda" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">GOG.com</a> stary dobry Quake, Doom i Wolfenstein są na promocji
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1174">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2017-09-30T20:01:49" class="text-sm text-gray-500 font-mono">2017-09-30 20:01:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Prędko, prędko, za darmo Fallouta dajo<br />http://store.steampowered.com/app/38400/Fallout_A_Post_Nuclear_Role_Playing_Game/
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1705">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/4.jpg?1559579200" alt="Awatar Enzo" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Enzo</span>
+                                <time datetime="2017-12-19T20:26:55" class="text-sm text-gray-500 font-mono">2017-12-19 20:26:55</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Znowu nie gry, ale Lenin nie moderuje, to może nie dostanę warna (poza tym, że oczywiście i tak jebać to).<br />Do meritum: może jeszcze jakiś domorosły youtuberek nie widział, a okazja na Vegasa chyba zacna: <a href="https://www.humblebundle.com/software/vegas-pro-creative-freedom" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.humblebundle.com/software/vegas-pro-creative-freedom</a><br /><br />Creditsy za info o ofercie idą do Starej Krona.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1710">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-12-20T22:17:17" class="text-sm text-gray-500 font-mono">2017-12-20 22:17:17</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Yyy, ten, dzisiaj Oxenfree za darmo na GOG-u :)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1862">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/13.jpg?1516379200" alt="Awatar Lou" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Lou</span>
+                                <time datetime="2018-01-15T20:11:28" class="text-sm text-gray-500 font-mono">2018-01-15 20:11:28</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                The Red Solstice za darmo<br /><a href="https://www.humblebundle.com/store/the-red-solstice" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.humblebundle.com/store/the-red-solstice</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1880">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-01-18T22:21:49" class="text-sm text-gray-500 font-mono">2018-01-18 22:21:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Carmageddon TDR 2000 za free<br /><a href="https://www.gog.com/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.gog.com/</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1990">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-01-25T14:56:32" class="text-sm text-gray-500 font-mono">2018-01-25 14:56:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Kampania of firmy SEGA - Make War Not Love powraca. W linku poniżej można zapisać się do subskrypcji aby nie przegapić darmowych gier.<br /><br /><a href="https://www.makewarnotlove.com/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.makewarnotlove.com/</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1996">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-01-26T01:44:32" class="text-sm text-gray-500 font-mono">2018-01-26 01:44:32</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Amnesia Collection za free<br /><a href="https://www.humblebundle.com/store/amnesia-collection" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.humblebundle.com/store/amnesia-collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1997">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-01-26T10:04:03" class="text-sm text-gray-500 font-mono">2018-01-26 10:04:03</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><a href="#post-1996" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Amnesia Collection za free<br /><a href="https://www.humblebundle.com/store/amnesia-collection" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.humblebundle.com/store/amnesia-collection</a></div><br />A w tę Amnesię to nie grał reddd? :D
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2010">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-01-30T22:06:04" class="text-sm text-gray-500 font-mono">2018-01-30 22:06:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Nie, to chyba było coś innego.<br />Bundle Rockstara, niezła gratka:<br /><a href="https://www.humblebundle.com/games/rockstar-games-bundle" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.humblebundle.com/games/rockstar-games-bundle</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2018">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2018-02-03T11:55:00" class="text-sm text-gray-500 font-mono">2018-02-03 11:55:00</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                A w monthly Dark Souls III :)<br /><a href="https://www.humblebundle.com/monthly" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.humblebundle.com/monthly</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2045">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-02-13T16:02:09" class="text-sm text-gray-500 font-mono">2018-02-13 16:02:09</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Przypominam, że jutro się zaczyna. Kto się nie zapisał, może jeszcze się zapisać.<br /><br /><div class="quote-block"><div class="quote-header"><a href="#post-1990" class="flex items-center gap-2 hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg><span><strong>hubi1</strong> napisał:</span></a></div>Kampania of firmy SEGA - Make War Not Love powraca. W linku poniżej można zapisać się do subskrypcji aby nie przegapić darmowych gier.<br /><br /><a href="https://www.makewarnotlove.com/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.makewarnotlove.com/</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2046">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-02-13T19:04:04" class="text-sm text-gray-500 font-mono">2018-02-13 19:04:04</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <strong>Zbiórczy post</strong><br /><br />Dead Space za darmo na Origin:<br /><br /><a href="https://www.origin.com/pol/pl-pl/store/dead-space/dead-space/standard-edition" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.origin.com/pol/pl-pl/store/dead-space/dead-space/standard-edition</a><br /><br />The King of Fighters 2002 za darmo na GOGu:<br /><br /><a href="https://www.gog.com/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.gog.com/</a><br /><br />Na GOGu jeszcze w ofercie GOG Connect 11 nowych gier:<br /><br />– Mount &amp; Blade <br />– AI War Collection <br />– HuniePop <br />– Kim <br />– Orwell <br />– Pirates! Gold Plus <br />– Tempest <br />– The Sexy Brutale <br />– Torchlight <br />– Tropico 4 <br />– Unreal Tournament GOTY<br /><br />Dla miłośników gier na andka Lost Journey za free na Google Play:<br /><br /><a href="https://play.google.com/store/apps/details?id=me.dreamsky.lostjourney2" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://play.google.com/store/apps/details?id=me.dreamsky.lostjourney2</a><br /><br />Można oczekiwać, że na dniach i pewnie Humble Bundle rzuci jakiś klucz na steam za free.<br /><br />To tyle, można się rozejść.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2129">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-03-16T14:31:53" class="text-sm text-gray-500 font-mono">2018-03-16 14:31:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dead In Bermuda za darmo na Origin:<br /><br /><a href="https://www.origin.com/pol/pl-pl/store/dead-in-bermuda/dead-in-bermuda/standard-edition" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.origin.com/pol/pl-pl/store/dead-in-bermuda/dead-in-bermuda/standard-edition</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2291">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-07-05T19:18:49" class="text-sm text-gray-500 font-mono">2018-07-05 19:18:49</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                The Guild II: Renaissance za darmo na GameSessions:<br /><br /><a href="https://www.gamesessions.com/zz/Game/TheGuild2Renaissance" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">https://www.gamesessions.com/zz/Game/TheGuild2Renaissance</a><br /><br /><span style="font-size: 0.7rem;">Do pobrania bezpośrednio ze strony.</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2522">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-12-18T12:19:54" class="text-sm text-gray-500 font-mono">2018-12-18 12:19:54</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Sins of a Solar Empire: Rebellion® - za darmo na <a href="https://store.steampowered.com/app/204880/Sins_of_a_Solar_Empire_Rebellion/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Steam</a><br />Geneshift -  za darmo na <a href="https://store.steampowered.com/app/308600/Geneshift/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Steam</a><br />Anno 1602 -  za darmo na Uplay (trzeba odpalic klienta)<br />LEGO® The Hobbit™ - za darmo dlh.net (trzeba zrobić konto *jeżeli się nie ma* i wejść w zakładkę Steam Keys.)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2526">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-12-20T20:41:29" class="text-sm text-gray-500 font-mono">2018-12-20 20:41:29</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.humblebundle.com/store/lego-the-lord-of-the-rings" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">LEGO® Lord of the Ring</a>  - za darmo w The Humble Store
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2528">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-12-25T03:12:53" class="text-sm text-gray-500 font-mono">2018-12-25 03:12:53</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://freebies.indiegala.com/mahjong-strip-solitaire" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Mahjong „Strip” Solitaire</a> - za darmo (DRM Free)<br /><a href="https://freebies.indiegala.com/xmas-shooting-scramble" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Xmas Shooting - Scramble!!</a> - za darmo (DRM Free)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2529">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2018-12-28T16:45:25" class="text-sm text-gray-500 font-mono">2018-12-28 16:45:25</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.gog.com/game/soma" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">SOMA </a>- za darmo na GOGu (DRM Free)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2535">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-01-10T19:51:12" class="text-sm text-gray-500 font-mono">2019-01-10 19:51:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.humblebundle.com/store/a-story-about-my-uncle" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">A Story About My Uncle</a> - za darmo w The Humble Store
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2537">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-01-11T10:49:43" class="text-sm text-gray-500 font-mono">2019-01-11 10:49:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.epicgames.com/store/pl/product/what-remains-of-edith-finch/home" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">What Remains of Edith Finch</a> - za darmo na Epic Games Store<br /><a href="https://store.steampowered.com/app/649190/Blast_Zone_Tournament/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Blast Zone! Tournament</a> - za darmo na Steam
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2538">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-01-18T03:39:42" class="text-sm text-gray-500 font-mono">2019-01-18 03:39:42</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://www.gamesessions.com/en/Game/HitmanAbsolution" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Hitman: Absolution</a> - za darmo na Gamesessions. (Trzeba ściągnąć launcher, zainstalować i zagrać 5 minut)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-2580">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/24.jpg?1559183528" alt="Awatar hubi1" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">hubi1</span>
+                                <time datetime="2019-02-01T19:38:23" class="text-sm text-gray-500 font-mono">2019-02-01 19:38:23</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <a href="https://store.steampowered.com/app/343710/Kholat/" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">Kholat</a> - za darmo na Steam<br />Assassin’s Creed Chronicles: China - za darmo na Uplay
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokond to wszystko? - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Dokond to wszystko?</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-1655">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-08-28T21:08:43" class="text-sm text-gray-500 font-mono">2017-08-28 21:08:43</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Od dość dawna zadaję sobie pewne pytanie i chciałbym je w końcu puścić w eter, mianowicie jak to jest na ten moment z forum? Jest jakiś wyznaczony kierunek? Zdawało mi się, że nie, że były podejmowane próby stworzenia czegoś fajnego na poziomie, ale nie wypaliły i stanęło na zwykłym śmieszkowaniu i twoich starych. Najpierw zaczęło mi to zwisać, później na zmianę to bawić, to żenować, ale przywykłem i tylko raz na jakiś czas czytając SB miałem ochotę włożyć sobie kilof w dupę. Ostatnio okazało się jednak, że jest inaczej, i że dwóch pedałów, którzy robią z siebie debili, ale jednak coś tam przynajmniej czasem napiszą w SB, dostało bana za igraszki z adminem. <br />Wiem że na początku mieliśmy duże aspiracje, aby stworzyć dużo contentu który przyciągnie ciekawe osoby, ale łagodnie mówiąc nie wypaliło, przerosło nas to, rolę błaznów przejęli Inf i Enzo, MC botował, Anal się zabijał, ja pantofliłem, Lenin autyzmował, czasem ktoś jeszcze się dołączył i jakoś się to kręciło. <br />Szału nie było, bo bywało kilka dni pod rząd bez jakiejkolwiek rozmowy w SB, ale wydaje mi się że teraz jedną rozmowę od drugiej będzie oddzielał okres kilku tygodni, a nie dni. <br />Dlatego zapytuję: jest jakiś konkretny powód takiego działania i uszczuplania i tak już ubogiej listy użytkowników? Ktoś wpadł na jakiś pomysł rozwoju forum? Szykują się jakieś zmiany? Jeśli tak, to czy można jakoś pomóc? Bo inaczej ostatnia podwójna banicja wygląda słabo - ot MC wrócił z urlopu i wyjebał dwóch paziów za śmieszkowanie, robienie z siebie debili i docinki. Do listy zdarzeń które mnie dziwią dodałbym jeszcze &quot;oficjalną naganę&quot; za moją cipowatą sygnaturę (tak jakby tu papież zaglądał) czy wywalanie tematów takich jak <a href="https://x-21.pl/viewtopic.php?f=4&t=202&sid=e390730f834a1e6c639814e4bc17fd5c" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">ten</a>. Dla mnie to takie robienie czegoś na siłę - z gówna bata nie ukręcisz. Jeśli nie ma w planach czegoś konkretnego pod względem rozwoju forum to nie widzę w tych działaniach żadnego sensu, pozwólmy się ludziom wyszaleć i wyśmieszkować, a jeśli jest - to dajcie znać, żeby ludzie wiedzieli na co mogą sobie pozwolić, czy śmieszkujemy do woli czy też &quot;trzymamy poziom&quot; bo są jakieś konkretne pomysły, bo jeśli są, to niektórzy na pewno chętnie pomogą w ich wdrażaniu/rozwijaniu. <br />inb4 płaczesz bo ci moderatora zabrali.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1656">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-08-29T16:24:20" class="text-sm text-gray-500 font-mono">2017-08-29 16:24:20</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Pytanie jak najbardziej sensowne, ponieważ, jak piszesz, aspirowaliśmy do nieco większej roli w „społeczeństwie” Stalkera czy też ogólnie pojętej postapokalipytcznej społeczności. Na forum nie ma ruchu – dlaczego? Większość z Was na pewno wie, że dzisiejsze czasy nie sprzyjają rozwojowi forów dyskusyjnych, to grupki na słynnym portalu stały się centrum rozmów. Jednakże istnieją obszary tematyczne, które nie poddają się ww. trendowi. Są to m.in. szeroko pojęte technikalia. Moim zdaniem czytanie artykułów i wypowiadanie się na ich temat na ww. wspomnianym portalu nie jest równe wygodzie, dlatego lepiej odwiedzić znane forum i klepnąć kilka słów.<div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div>łagodnie mówiąc nie wypaliło, przerosło nas to</div>W 100% masz rację. Przy obecnym rozkładzie dnia, bardzo rzadko mam czas, żeby zająć się forum. Zapewne sprawa wygląda podobnie u Caleba i Lenka. Niektórzy z Was jeszcze studiują, natomiast ja i Caleb codziennie pracujemy, mamy domy, sromy itd., co doprowadza nas do tragicznej utraty czasu i nierzadkiego stanu wkurwienia.<div class="quote-block"><div class="quote-header"><span><strong>Missile</strong> napisał:</span></div><br />Dlatego zapytuję: jest jakiś konkretny powód takiego działania i uszczuplania i tak już ubogiej listy użytkowników? Ktoś wpadł na jakiś pomysł rozwoju forum? Szykują się jakieś zmiany? Jeśli tak, to czy można jakoś pomóc? Bo inaczej ostatnia podwójna banicja wygląda słabo - ot MC wrócił z urlopu i wyjebał dwóch paziów za śmieszkowanie, robienie z siebie debili i docinki. Do listy zdarzeń które mnie dziwią dodałbym jeszcze &quot;oficjalną naganę&quot; za moją cipowatą sygnaturę (tak jakby tu papież zaglądał) czy wywalanie tematów takich jak ten. Dla mnie to takie robienie czegoś na siłę - z gówna bata nie ukręcisz. Jeśli nie ma w planach czegoś konkretnego pod względem rozwoju forum to nie widzę w tych działaniach żadnego sensu, pozwólmy się ludziom wyszaleć i wyśmieszkować, a jeśli jest - to dajcie znać, żeby ludzie wiedzieli na co mogą sobie pozwolić, czy śmieszkujemy do woli czy też &quot;trzymamy poziom&quot; bo są jakieś konkretne pomysły, bo jeśli są, to niektórzy na pewno chętnie pomogą w ich wdrażaniu/rozwijaniu.<br /></div>Strasznie długi cytat, ale postaram się do niego odnieść w całości. Cóż, pytasz o dalsze plany i sensowność decyzji Caleba. To drugie po części wyjaśniłem wcześniej. Owszem, mamy plany, ale są one na razie na etapie dokładnego ustalania - odkąd MC utworzył grupę na Telegramie, idzie nieco szybciej (nope, nie posysam pałki, mówię szczerze). Tylko dzisiaj odjebaliśmy kilka nowych pomysłów. W każdym razie – X-21 przejdzie przemianę, nawet większą, niż kiedyś przeszło ClearSky.pl. Na pewno będziemy społecznością bardziej otwartą na ludzi, z uproszczonymi schematami obsługi forum.<br />Wracając do sensowności decyzji Caleba – nie mnie oceniać, ale sądzę, że nie zrobił tego bez powodu. Wielokrotne upominanie, szczególnie jeśli nic nie daje, zaczyna być niezmiernie wkurwiające. Zawsze można się odwołać od decyzji, nie jesteśmy z betonu, możemy jeszcze raz sprawę przegadać. Wystarczy złapać nas na jakimś komunikatorze (najlepiej Telegramie) albo tutaj wysrać do nas PW.<br />Podsumowując – plany są, decyzje mogą zostać zmienione. Co nas wstrzymuje? Czekamy na odpowiedni software i kasę na licencję ;)<br /><br />Dobra, na razie chyba tyle pierdolenia.<br />Życzę miłego popołudnia,<br />Wasz ukochany admin.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-1657">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/3.jpg?1740478208" alt="Awatar Missile" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Missile</span>
+                                <time datetime="2017-08-29T16:33:13" class="text-sm text-gray-500 font-mono">2017-08-29 16:33:13</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Skoro plany są - to się nie wpierdalam i rozumiem ostatnie decyzje Caleba. Postaram się też w takim razie sam nie odwalać maniany w międzyczasie. Podzięksy za objaśnienia.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

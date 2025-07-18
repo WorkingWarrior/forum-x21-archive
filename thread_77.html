@@ -1,0 +1,127 @@
+<!-- templates/thread_template.html -->
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergo Proxy - Archiwum Forum X-21</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* Style dla treści generowanej z BBCode */
+        .post-body a { @apply text-blue-400 hover:underline; }
+        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
+        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
+        .post-body ul { @apply list-disc; }
+        .post-body ol { @apply list-decimal; }
+        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
+        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
+        
+        /* NOWOŚĆ: Style dla dodatkowych tagów */
+        .code-block { 
+            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
+        }
+        details.spoiler-block summary {
+            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center;
+        }
+        details.spoiler-block div {
+            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
+        }
+        .user-mention {
+            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
+        }
+        table.bbcode-table {
+            @apply w-full my-4 text-left border-collapse;
+        }
+        table.bbcode-table th, table.bbcode-table td {
+            @apply border border-gray-600 p-2;
+        }
+        table.bbcode-table th {
+            @apply bg-gray-700 font-bold;
+        }
+        .custom-tag {
+            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
+        }
+        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
+        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans antialiased">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Ergo Proxy</h1>
+            <nav>
+                <a href="index.html" class="text-blue-400 hover:text-blue-300">← Wróć do listy forów</a>
+            </nav>
+        </header>
+        <ol class="post-list space-y-10">
+            
+            <li id="post-850">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/20.jpg?1512503192" alt="Awatar Valentino" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Valentino</span>
+                                <time datetime="2017-01-15T15:14:41" class="text-sm text-gray-500 font-mono">2017-01-15 15:14:41</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Dla kogo genialne i przemądre, a dla którego przekombinowane i pretensjonalne? <br />Mnie samemu bliżej jest raczej twierdzącym to pierwsze, choć minęło trochę czasu, odkąd to oglądałem - a oglądałem w dość <strong>ciekawych okolicznościach</strong> - i wypadałoby zrobić powtórkę. Jakie myśli macie Wy, którzy być może oglądali to stosunkowo niedawno i/lub lepiej pamiętają, czy często się nudzili, przewracali oczyma, a może i - bezgranicznie zachwycali? <br /><br />Bardzo lubię piosenkę z napisów końcowych, zamieszczam więc <a href="https://www.youtube.com/watch?v=kI4fAU_X1fQ" rel="nofollow" target="_blank" class="text-blue-400 hover:underline">inny utwór tego jakże dobrego zespołu, tytułem nawet w podobnym klimacie, co ten użyty w anime.</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-851">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp" alt="Awatar Sölve" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Sölve</span>
+                                <time datetime="2017-01-15T15:28:47" class="text-sm text-gray-500 font-mono">2017-01-15 15:28:47</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                Ostatnio zrobiłem rewatch i muszę przyznać, że nadal mam sentyment do tego anime. Uważam, że jest raczej odkrywcze i filozoficzne. Najbardziej lubiłem postać Pino, która jest analogią do Pinokia i jego podróży ku człowieczeństwu. Można się nawet pokusić, by całą historię nazwać &quot;kinem drogi&quot;. Zakończenie było ciekawe i rozwiązywało wszystkie wątki fabularne.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+            <li id="post-852">
+                <article class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        
+                        <img src="data/avatars/m/0/16.jpg?1561655666" alt="Awatar Infernal" class="w-12 h-12 rounded-full object-cover shadow-md">
+                        
+                    </div>
+                    <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                        <div class="bg-gray-800 rounded-lg p-5">
+                            <header class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-lg text-white">Infernal</span>
+                                <time datetime="2017-01-15T15:57:12" class="text-sm text-gray-500 font-mono">2017-01-15 15:57:12</time>
+                            </header>
+                            <div class="text-gray-200 leading-7 post-body">
+                                <div class="quote-block"><div class="quote-header"><span><strong>Valentino</strong> napisał:</span></div>Dla kogo genialne i przemądre, a dla którego przekombinowane i pretensjonalne? </div><br /><br />Osobiście jestem chyba gdzieś po środku.<br />Obejrzałem Ergo Proxy stosunkowo niedawno, więc mam jeszcze dość świeży pogląd.<br />Doceniam motywy, które wykorzystano, jednak było tego za duże nasranie. Miejscami anime przypominało zabawę pretensjonalnego kółka literackiego w wyliczanie rozkmin filozoficznych. Wątki padają, ale żaden nie jest w większy sposób zgłębiony. Nie daj boże ktoś zacznie to oglądać, a nie interesuje się ani filozofią ani literaturą. Wytrzyma ~3 odcinki.<br /><br />Narracja jest poprowadzona potwornie źle. Przez prawie cały serial widz jest wodzony za nos, na 100 pytań pojawiających się co odcinek odpowiedź pojawia się na 1 i to 10 odcinków później. Wszystkie wyjaśnienia wręcz wciśnięte na siłę w zakończenie do tego stopnia, że prawie zdają się nie mieć sensu. Do tego epizodyczny charakter większości serialu nie pomaga wkręcić się w jakikolwiek wątek fabularny. Oglądasz tylko po to, żeby zobaczyć na co bohaterowie wpadną dalej. Co jakiś czas serial rzuci jakąś podpowiedź co do tego, co się dzieje i jeżeli masz wystarczająco szarych komórek i czasu między odcinkami, to zdołasz sobie to jakoś poukładać w całość, chociaż budowla myśli, którą tworzysz ma tak słabe podstawy, że cały czas obawiasz się, że przy kolejnym szczątkowym fakcie, jaki autorzy rzucą Ci od niechcenia na twarz, teoria posypie się jak domek z kart. Do tego, gdy dotrzesz już do jakichś wyjaśnień, nie masz żadnego wrażenia, którego mógłbyś oczekiwać po tytule, który się w ten sposób kreuje. Zamiast &quot;mózg rozjebany&quot; ogarnia Cię jedynie &quot;no, w sumie to tak jak myślałem, fajnie&quot;. Dobrym porównaniem jest tutaj Steins;Gate, który też powoli rozkręcał akcję i szczątkowo rzucał faktami, jednak robił to poprawnie i z zachowaniem płynności zachęcającej widza do oglądania dalej, by na koniec zrzucić solidną bombę. Ergo Proxy dla owego widza nie ma zaś żadnej litości.<br /><br />Bohaterowie są strasznie miałcy, przy czym rozpieszczona gówniara Re-L, która trochę zaczyna uczyć się o życiu wraz z kolejnymi odcinkami to chyba szczyt możliwości tego serialu.<br /><br /><br />Jeżeli jeszcze ktoś to dalej czyta i go jeszcze nie zniechęciłem, to zacznę o plusach.<br />Przede wszystkim serial ma genialną oprawę audiowizualną. Piękne widoki, piękna muzyka, świetna animacja. Jeden z głównych powodów, dla których pomimo tragicznej narracji miałem ochotę włączać kolejne odcinki.<br />Niektóre odcinki (znów, epizodyczność) są bardzo przyjemne, a postacie, które nie rozwijają się absurdalnie jak Raul czy Daedalus, rozwijają się tak, jakby się tego chciało.<br /><br />Niektóre motywy pojawiające się w anime, jak ludzie którzy z AI zamiast sługusów zrobili sobie kaganiec, &quot;dusze&quot; rodzące się w robotach, czy też podkręcony do maksimum makiawelizm, to rzeczy które satysfakcjonująco ogląda się &quot;w praniu&quot;.<br /><br />Opening i ending są jednymi z lepszych jakie widziałem do tej pory. Grzech pomijać przy oglądaniu.<br /><br />No i Pino. Obok Chaiki Trabant najpocieszniejszy stworek jaki kiedykolwiek istniał w anime.<br /><br /><br />Podsumowując: jak spałeś na języku polskim i potrzebujesz 20 wybuchów na sekundę animacji, żeby wysiedzieć przed ekranem, to nawet tego nie dotykaj.<br /><br />A w ogóle to Pino teraz czyta książkę, więc spi*rdalaj.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>
