@@ -1,69 +1,28 @@
-<!-- templates/forum_template.html -->
 <!DOCTYPE html>
 <html lang="pl" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oprogramowanie - Archiwum Forum X-21</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom accessibility and UX styles */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: 8px;
-            background-color: #1f2937;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .skip-link:focus {
-            left: 6px;
-            top: 6px;
-        }
-        
-        /* Enhanced focus styles - WCAG 2.1 AA compliant */
-        .focus-ring:focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-        
-        /* Touch target improvements for mobile */
-        @media (max-width: 768px) {
-            .touch-target {
-                min-height: 44px;
-                min-width: 44px;
-                display: flex;
-                align-items: center;
-                padding: 8px;
-            }
-        }
-        
-        /* Breadcrumb microdata styling */
-        .breadcrumb {
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./css/milligram.min.css">
+    <link rel="stylesheet" href="./css/styles.min.css">
 </head>
-<body class="bg-gray-900 text-gray-300 font-sans antialiased">
-    <!-- Skip Link for keyboard navigation -->
+<body class="bg-gray-900 text-gray-300 antialiased">
     <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
 
     <div class="container mx-auto max-w-4xl px-4 py-8">
-        <!-- Breadcrumb Navigation -->
         <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
                         <span itemprop="name">Strona główna</span>
                     </a>
                     <meta itemprop="position" content="1" />
                 </li>
-                <li class="text-gray-400" aria-hidden="true">/</li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li class="text-gray-400" class="list-none" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <span itemprop="name" class="text-white font-semibold">Oprogramowanie</span>
                     <meta itemprop="position" content="2" />
                 </li>
@@ -75,11 +34,6 @@
             
                 <p class="text-gray-400 mt-2">Dział poświęcony oprogramowaniu</p>
             
-            <nav class="mt-4" aria-label="Nawigacja powrotna">
-                <a href="index.html"
-                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
-                   aria-label="Wróć do strony głównej Forum X-21">&larr; Wróć do strony głównej</a>
-            </nav>
         </header>
 
         <main id="main-content" role="main">

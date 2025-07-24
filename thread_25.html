@@ -1,4 +1,3 @@
-<!-- templates/thread_template.html -->
 <!DOCTYPE html>
 <html lang="pl" class="dark">
 
@@ -6,123 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gra w Czołgi - Archiwum Forum X-21</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-        /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
-        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
-        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
-        .post-body ul { @apply list-disc; }
-        .post-body ol { @apply list-decimal; }
-        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
-        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
-        
-        /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block {
-            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
-        }
-        details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
-        }
-        details.spoiler-block div {
-            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
-        }
-        .user-mention {
-            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
-        }
-        table.bbcode-table {
-            @apply w-full my-4 text-left border-collapse;
-        }
-        table.bbcode-table th, table.bbcode-table td {
-            @apply border border-gray-600 p-2;
-        }
-        table.bbcode-table th {
-            @apply bg-gray-700 font-bold;
-        }
-        .custom-tag {
-            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
-        }
-        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
-        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
-        
-        /* Custom accessibility and UX styles */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: 8px;
-            background-color: #1f2937;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .skip-link:focus {
-            left: 6px;
-            top: 6px;
-        }
-        
-        /* Enhanced focus styles - WCAG 2.1 AA compliant */
-        .focus-ring:focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-        
-        /* Touch target improvements for mobile */
-        @media (max-width: 768px) {
-            .touch-target {
-                min-height: 44px;
-                min-width: 44px;
-                display: flex;
-                align-items: center;
-                padding: 8px;
-            }
-        }
-        
-        /* Breadcrumb microdata styling */
-        .breadcrumb {
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* Screen reader only content */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./css/milligram.min.css">
+    <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
-<body class="bg-gray-900 text-gray-300 font-sans antialiased">
-    <!-- Skip Link for keyboard navigation -->
+<body class="bg-gray-900 text-gray-300 antialiased">
     <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
 
-    <div class="container mx-auto max-w-4xl px-4 py-8">
-        <!-- Breadcrumb Navigation -->
+    <div class="container mx-auto max-w-5xl px-4 py-8">
         <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
                         <span itemprop="name">Strona główna</span>
                     </a>
                     <meta itemprop="position" content="1" />
                 </li>
-                <li class="text-gray-400" aria-hidden="true">/</li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li class="text-gray-400" class="list-none" aria-hidden="true" >/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <a href="forum_19.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
                         <span itemprop="name">Konkrety</span>
                     </a>
                     <meta itemprop="position" content="2" />
                 </li>
-                <li class="text-gray-400" aria-hidden="true">/</li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li class="text-gray-400" class="list-none" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <span itemprop="name" class="text-white font-semibold">Gra w Czołgi</span>
                     <meta itemprop="position" content="3" />
                 </li>
@@ -131,11 +39,6 @@
 
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Gra w Czołgi</h1>
-            <nav aria-label="Nawigacja powrotna">
-                <a href="index.html"
-                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
-                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
-            </nav>
         </header>
 
         <main id="main-content" role="main">
@@ -148,21 +51,22 @@
                                  role="article"
                                  aria-labelledby="post-author-202"
                                  aria-describedby="post-content-202">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-202" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2016-12-29T15:03:44"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.12.2016 15:03</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-202" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2016-12-29T15:03:44"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-29 15:03:44</time>
-                                    </header>
                                     <div id="post-content-202"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -179,21 +83,22 @@
                                  role="article"
                                  aria-labelledby="post-author-203"
                                  aria-describedby="post-content-203">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-203" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2016-12-29T19:51:26"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.12.2016 19:51</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-203" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2016-12-29T19:51:26"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-29 19:51:26</time>
-                                    </header>
                                     <div id="post-content-203"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -210,21 +115,22 @@
                                  role="article"
                                  aria-labelledby="post-author-204"
                                  aria-describedby="post-content-204">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-204" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2016-12-29T19:52:58"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.12.2016 19:52</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-204" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2016-12-29T19:52:58"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-29 19:52:58</time>
-                                    </header>
                                     <div id="post-content-204"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -241,21 +147,22 @@
                                  role="article"
                                  aria-labelledby="post-author-205"
                                  aria-describedby="post-content-205">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-205" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2016-12-29T20:36:33"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.12.2016 20:36</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-205" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2016-12-29T20:36:33"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-29 20:36:33</time>
-                                    </header>
                                     <div id="post-content-205"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -272,21 +179,22 @@
                                  role="article"
                                  aria-labelledby="post-author-206"
                                  aria-describedby="post-content-206">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-206" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2016-12-30T11:42:08"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">30.12.2016 11:42</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-206" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2016-12-30T11:42:08"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-30 11:42:08</time>
-                                    </header>
                                     <div id="post-content-206"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -303,21 +211,22 @@
                                  role="article"
                                  aria-labelledby="post-author-207"
                                  aria-describedby="post-content-207">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-207" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-01-01T16:54:46"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">01.01.2017 16:54</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-207" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-01-01T16:54:46"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-01-01 16:54:46</time>
-                                    </header>
                                     <div id="post-content-207"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -334,21 +243,22 @@
                                  role="article"
                                  aria-labelledby="post-author-208"
                                  aria-describedby="post-content-208">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-208" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2017-01-01T18:12:09"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">01.01.2017 18:12</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-208" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2017-01-01T18:12:09"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-01-01 18:12:09</time>
-                                    </header>
                                     <div id="post-content-208"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -365,21 +275,22 @@
                                  role="article"
                                  aria-labelledby="post-author-209"
                                  aria-describedby="post-content-209">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/10.jpg?1512503192"
                                      alt="Awatar użytkownika Rex"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-209" class="font-bold text-lg text-white">Rex</h3>
+                                    <time datetime="2017-01-09T14:32:15"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">09.01.2017 14:32</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-209" class="font-bold text-lg text-white">Rex</h3>
-                                        <time datetime="2017-01-09T14:32:15"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-01-09 14:32:15</time>
-                                    </header>
                                     <div id="post-content-209"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -396,21 +307,22 @@
                                  role="article"
                                  aria-labelledby="post-author-210"
                                  aria-describedby="post-content-210">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-210" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-01-09T18:39:14"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">09.01.2017 18:39</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-210" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-01-09T18:39:14"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-01-09 18:39:14</time>
-                                    </header>
                                     <div id="post-content-210"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -427,21 +339,22 @@
                                  role="article"
                                  aria-labelledby="post-author-211"
                                  aria-describedby="post-content-211">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-211" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-01-19T20:10:02"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">19.01.2017 20:10</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-211" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-01-19T20:10:02"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-01-19 20:10:02</time>
-                                    </header>
                                     <div id="post-content-211"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -458,21 +371,22 @@
                                  role="article"
                                  aria-labelledby="post-author-212"
                                  aria-describedby="post-content-212">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-212" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-06T02:20:51"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">06.02.2017 02:20</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-212" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-06T02:20:51"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-06 02:20:51</time>
-                                    </header>
                                     <div id="post-content-212"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -489,21 +403,22 @@
                                  role="article"
                                  aria-labelledby="post-author-213"
                                  aria-describedby="post-content-213">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-213" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-02-06T16:38:41"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">06.02.2017 16:38</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-213" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-02-06T16:38:41"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-06 16:38:41</time>
-                                    </header>
                                     <div id="post-content-213"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -520,21 +435,22 @@
                                  role="article"
                                  aria-labelledby="post-author-214"
                                  aria-describedby="post-content-214">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-214" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-06T16:40:43"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">06.02.2017 16:40</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-214" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-06T16:40:43"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-06 16:40:43</time>
-                                    </header>
                                     <div id="post-content-214"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -551,21 +467,22 @@
                                  role="article"
                                  aria-labelledby="post-author-215"
                                  aria-describedby="post-content-215">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-215" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-02-06T18:33:33"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">06.02.2017 18:33</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-215" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-02-06T18:33:33"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-06 18:33:33</time>
-                                    </header>
                                     <div id="post-content-215"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -582,21 +499,22 @@
                                  role="article"
                                  aria-labelledby="post-author-216"
                                  aria-describedby="post-content-216">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-216" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-18T14:55:17"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">18.02.2017 14:55</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-216" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-18T14:55:17"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-18 14:55:17</time>
-                                    </header>
                                     <div id="post-content-216"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -613,21 +531,22 @@
                                  role="article"
                                  aria-labelledby="post-author-217"
                                  aria-describedby="post-content-217">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-217" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-02-18T17:33:59"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">18.02.2017 17:33</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-217" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-02-18T17:33:59"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-18 17:33:59</time>
-                                    </header>
                                     <div id="post-content-217"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -644,21 +563,22 @@
                                  role="article"
                                  aria-labelledby="post-author-218"
                                  aria-describedby="post-content-218">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-218" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-02-20T21:42:36"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">20.02.2017 21:42</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-218" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-02-20T21:42:36"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-20 21:42:36</time>
-                                    </header>
                                     <div id="post-content-218"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -675,21 +595,22 @@
                                  role="article"
                                  aria-labelledby="post-author-219"
                                  aria-describedby="post-content-219">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-219" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-02-20T21:43:11"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">20.02.2017 21:43</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-219" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-02-20T21:43:11"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-20 21:43:11</time>
-                                    </header>
                                     <div id="post-content-219"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -706,21 +627,22 @@
                                  role="article"
                                  aria-labelledby="post-author-220"
                                  aria-describedby="post-content-220">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-220" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-21T12:11:44"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">21.02.2017 12:11</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-220" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-21T12:11:44"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-21 12:11:44</time>
-                                    </header>
                                     <div id="post-content-220"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -737,21 +659,22 @@
                                  role="article"
                                  aria-labelledby="post-author-221"
                                  aria-describedby="post-content-221">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-221" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-02-21T15:50:06"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">21.02.2017 15:50</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-221" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-02-21T15:50:06"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-21 15:50:06</time>
-                                    </header>
                                     <div id="post-content-221"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -768,21 +691,22 @@
                                  role="article"
                                  aria-labelledby="post-author-222"
                                  aria-describedby="post-content-222">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-222" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-23T14:49:32"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">23.02.2017 14:49</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-222" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-23T14:49:32"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-23 14:49:32</time>
-                                    </header>
                                     <div id="post-content-222"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -799,21 +723,22 @@
                                  role="article"
                                  aria-labelledby="post-author-223"
                                  aria-describedby="post-content-223">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/10.jpg?1512503192"
                                      alt="Awatar użytkownika Rex"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-223" class="font-bold text-lg text-white">Rex</h3>
+                                    <time datetime="2017-02-23T23:03:41"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">23.02.2017 23:03</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-223" class="font-bold text-lg text-white">Rex</h3>
-                                        <time datetime="2017-02-23T23:03:41"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-23 23:03:41</time>
-                                    </header>
                                     <div id="post-content-223"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -830,21 +755,22 @@
                                  role="article"
                                  aria-labelledby="post-author-224"
                                  aria-describedby="post-content-224">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-224" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-24T11:46:36"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.02.2017 11:46</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-224" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-24T11:46:36"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-24 11:46:36</time>
-                                    </header>
                                     <div id="post-content-224"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -861,21 +787,22 @@
                                  role="article"
                                  aria-labelledby="post-author-225"
                                  aria-describedby="post-content-225">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-225" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-24T13:26:24"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.02.2017 13:26</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-225" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-24T13:26:24"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-24 13:26:24</time>
-                                    </header>
                                     <div id="post-content-225"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -892,21 +819,22 @@
                                  role="article"
                                  aria-labelledby="post-author-226"
                                  aria-describedby="post-content-226">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/10.jpg?1512503192"
                                      alt="Awatar użytkownika Rex"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-226" class="font-bold text-lg text-white">Rex</h3>
+                                    <time datetime="2017-02-24T18:26:13"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.02.2017 18:26</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-226" class="font-bold text-lg text-white">Rex</h3>
-                                        <time datetime="2017-02-24T18:26:13"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-24 18:26:13</time>
-                                    </header>
                                     <div id="post-content-226"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -923,21 +851,22 @@
                                  role="article"
                                  aria-labelledby="post-author-227"
                                  aria-describedby="post-content-227">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-227" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-24T18:31:15"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.02.2017 18:31</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-227" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-24T18:31:15"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-24 18:31:15</time>
-                                    </header>
                                     <div id="post-content-227"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -954,21 +883,22 @@
                                  role="article"
                                  aria-labelledby="post-author-228"
                                  aria-describedby="post-content-228">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/10.jpg?1512503192"
                                      alt="Awatar użytkownika Rex"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-228" class="font-bold text-lg text-white">Rex</h3>
+                                    <time datetime="2017-02-24T18:59:19"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.02.2017 18:59</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-228" class="font-bold text-lg text-white">Rex</h3>
-                                        <time datetime="2017-02-24T18:59:19"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-24 18:59:19</time>
-                                    </header>
                                     <div id="post-content-228"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -985,21 +915,22 @@
                                  role="article"
                                  aria-labelledby="post-author-229"
                                  aria-describedby="post-content-229">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-229" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-03-04T15:50:24"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">04.03.2017 15:50</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-229" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-03-04T15:50:24"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-04 15:50:24</time>
-                                    </header>
                                     <div id="post-content-229"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1016,21 +947,22 @@
                                  role="article"
                                  aria-labelledby="post-author-230"
                                  aria-describedby="post-content-230">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-230" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-03-05T18:04:52"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">05.03.2017 18:04</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-230" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-03-05T18:04:52"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-05 18:04:52</time>
-                                    </header>
                                     <div id="post-content-230"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1047,21 +979,22 @@
                                  role="article"
                                  aria-labelledby="post-author-231"
                                  aria-describedby="post-content-231">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-231" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-03-06T16:34:17"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">06.03.2017 16:34</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-231" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-03-06T16:34:17"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-06 16:34:17</time>
-                                    </header>
                                     <div id="post-content-231"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1078,21 +1011,22 @@
                                  role="article"
                                  aria-labelledby="post-author-232"
                                  aria-describedby="post-content-232">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-232" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-03-12T14:14:40"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">12.03.2017 14:14</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-232" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-03-12T14:14:40"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-12 14:14:40</time>
-                                    </header>
                                     <div id="post-content-232"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1109,21 +1043,22 @@
                                  role="article"
                                  aria-labelledby="post-author-233"
                                  aria-describedby="post-content-233">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/10.jpg?1512503192"
                                      alt="Awatar użytkownika Rex"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-233" class="font-bold text-lg text-white">Rex</h3>
+                                    <time datetime="2017-03-13T21:55:48"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">13.03.2017 21:55</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-233" class="font-bold text-lg text-white">Rex</h3>
-                                        <time datetime="2017-03-13T21:55:48"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-13 21:55:48</time>
-                                    </header>
                                     <div id="post-content-233"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1140,21 +1075,22 @@
                                  role="article"
                                  aria-labelledby="post-author-234"
                                  aria-describedby="post-content-234">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-234" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-03-14T18:49:13"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">14.03.2017 18:49</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-234" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-03-14T18:49:13"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-14 18:49:13</time>
-                                    </header>
                                     <div id="post-content-234"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1171,21 +1107,22 @@
                                  role="article"
                                  aria-labelledby="post-author-235"
                                  aria-describedby="post-content-235">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-235" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-05-15T20:33:21"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.05.2017 20:33</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-235" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-05-15T20:33:21"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-05-15 20:33:21</time>
-                                    </header>
                                     <div id="post-content-235"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1202,21 +1139,22 @@
                                  role="article"
                                  aria-labelledby="post-author-236"
                                  aria-describedby="post-content-236">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-236" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-05-15T20:37:30"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.05.2017 20:37</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-236" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-05-15T20:37:30"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-05-15 20:37:30</time>
-                                    </header>
                                     <div id="post-content-236"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1233,21 +1171,22 @@
                                  role="article"
                                  aria-labelledby="post-author-237"
                                  aria-describedby="post-content-237">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-237" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-05-18T19:49:40"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">18.05.2017 19:49</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-237" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-05-18T19:49:40"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-05-18 19:49:40</time>
-                                    </header>
                                     <div id="post-content-237"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1264,21 +1203,22 @@
                                  role="article"
                                  aria-labelledby="post-author-238"
                                  aria-describedby="post-content-238">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-238" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-05-23T22:19:10"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">23.05.2017 22:19</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-238" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-05-23T22:19:10"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-05-23 22:19:10</time>
-                                    </header>
                                     <div id="post-content-238"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1295,21 +1235,22 @@
                                  role="article"
                                  aria-labelledby="post-author-239"
                                  aria-describedby="post-content-239">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-239" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-05-24T15:11:14"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.05.2017 15:11</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-239" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-05-24T15:11:14"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-05-24 15:11:14</time>
-                                    </header>
                                     <div id="post-content-239"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1326,21 +1267,22 @@
                                  role="article"
                                  aria-labelledby="post-author-240"
                                  aria-describedby="post-content-240">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-240" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-06-13T14:36:19"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">13.06.2017 14:36</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-240" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-06-13T14:36:19"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-06-13 14:36:19</time>
-                                    </header>
                                     <div id="post-content-240"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1357,21 +1299,22 @@
                                  role="article"
                                  aria-labelledby="post-author-241"
                                  aria-describedby="post-content-241">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-241" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2017-07-01T11:20:10"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">01.07.2017 11:20</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-241" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2017-07-01T11:20:10"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-07-01 11:20:10</time>
-                                    </header>
                                     <div id="post-content-241"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1388,21 +1331,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1777"
                                  aria-describedby="post-content-1777">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1777" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-01-07T13:52:02"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 13:52</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1777" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-01-07T13:52:02"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 13:52:02</time>
-                                    </header>
                                     <div id="post-content-1777"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1419,21 +1363,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1788"
                                  aria-describedby="post-content-1788">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1788" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-01-07T14:13:26"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:13</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1788" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-01-07T14:13:26"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:13:26</time>
-                                    </header>
                                     <div id="post-content-1788"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1450,21 +1395,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1791"
                                  aria-describedby="post-content-1791">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1791" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-01-07T14:20:49"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:20</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1791" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-01-07T14:20:49"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:20:49</time>
-                                    </header>
                                     <div id="post-content-1791"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1481,21 +1427,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1792"
                                  aria-describedby="post-content-1792">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1792" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-01-07T14:24:51"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:24</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1792" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-01-07T14:24:51"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:24:51</time>
-                                    </header>
                                     <div id="post-content-1792"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1512,21 +1459,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1793"
                                  aria-describedby="post-content-1793">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1793" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-01-07T14:26:54"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:26</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1793" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-01-07T14:26:54"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:26:54</time>
-                                    </header>
                                     <div id="post-content-1793"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1543,21 +1491,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1795"
                                  aria-describedby="post-content-1795">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1795" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-01-07T14:29:18"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:29</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1795" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-01-07T14:29:18"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:29:18</time>
-                                    </header>
                                     <div id="post-content-1795"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1574,21 +1523,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1798"
                                  aria-describedby="post-content-1798">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1798" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-01-07T14:38:35"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:38</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1798" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-01-07T14:38:35"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:38:35</time>
-                                    </header>
                                     <div id="post-content-1798"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1605,21 +1555,22 @@
                                  role="article"
                                  aria-labelledby="post-author-1799"
                                  aria-describedby="post-content-1799">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-1799" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-01-07T14:50:46"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.01.2018 14:50</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-1799" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-01-07T14:50:46"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-01-07 14:50:46</time>
-                                    </header>
                                     <div id="post-content-1799"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1636,21 +1587,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2050"
                                  aria-describedby="post-content-2050">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2050" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-02-15T17:44:30"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.02.2018 17:44</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2050" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-02-15T17:44:30"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-02-15 17:44:30</time>
-                                    </header>
                                     <div id="post-content-2050"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1667,21 +1619,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2054"
                                  aria-describedby="post-content-2054">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2054" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-02-19T16:39:43"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">19.02.2018 16:39</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2054" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-02-19T16:39:43"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-02-19 16:39:43</time>
-                                    </header>
                                     <div id="post-content-2054"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1698,21 +1651,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2056"
                                  aria-describedby="post-content-2056">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2056" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-02-19T17:26:14"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">19.02.2018 17:26</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2056" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-02-19T17:26:14"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-02-19 17:26:14</time>
-                                    </header>
                                     <div id="post-content-2056"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1729,21 +1683,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2057"
                                  aria-describedby="post-content-2057">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2057" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-02-19T18:04:25"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">19.02.2018 18:04</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2057" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-02-19T18:04:25"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-02-19 18:04:25</time>
-                                    </header>
                                     <div id="post-content-2057"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1760,21 +1715,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2060"
                                  aria-describedby="post-content-2060">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2060" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-02-19T21:00:36"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">19.02.2018 21:00</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2060" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-02-19T21:00:36"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-02-19 21:00:36</time>
-                                    </header>
                                     <div id="post-content-2060"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1791,21 +1747,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2145"
                                  aria-describedby="post-content-2145">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/24.jpg?1559183528"
                                      alt="Awatar użytkownika hubi1"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2145" class="font-bold text-lg text-white">hubi1</h3>
+                                    <time datetime="2018-03-27T20:16:32"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">27.03.2018 20:16</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2145" class="font-bold text-lg text-white">hubi1</h3>
-                                        <time datetime="2018-03-27T20:16:32"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-27 20:16:32</time>
-                                    </header>
                                     <div id="post-content-2145"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1824,21 +1781,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2146"
                                  aria-describedby="post-content-2146">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2146" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2018-03-28T05:23:49"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 05:23</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2146" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2018-03-28T05:23:49"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 05:23:49</time>
-                                    </header>
                                     <div id="post-content-2146"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1857,21 +1815,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2147"
                                  aria-describedby="post-content-2147">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2147" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-03-28T10:27:48"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 10:27</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2147" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-03-28T10:27:48"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 10:27:48</time>
-                                    </header>
                                     <div id="post-content-2147"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1888,21 +1847,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2150"
                                  aria-describedby="post-content-2150">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2150" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-03-28T14:07:30"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 14:07</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2150" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-03-28T14:07:30"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 14:07:30</time>
-                                    </header>
                                     <div id="post-content-2150"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1919,21 +1879,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2151"
                                  aria-describedby="post-content-2151">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2151" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2018-03-28T14:13:26"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 14:13</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2151" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2018-03-28T14:13:26"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 14:13:26</time>
-                                    </header>
                                     <div id="post-content-2151"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1950,21 +1911,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2152"
                                  aria-describedby="post-content-2152">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2152" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-03-28T14:20:43"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 14:20</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2152" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-03-28T14:20:43"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 14:20:43</time>
-                                    </header>
                                     <div id="post-content-2152"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -1981,21 +1943,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2153"
                                  aria-describedby="post-content-2153">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2153" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2018-03-28T14:21:59"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 14:21</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2153" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2018-03-28T14:21:59"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 14:21:59</time>
-                                    </header>
                                     <div id="post-content-2153"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2012,21 +1975,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2154"
                                  aria-describedby="post-content-2154">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2154" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-03-28T15:09:37"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 15:09</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2154" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-03-28T15:09:37"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 15:09:37</time>
-                                    </header>
                                     <div id="post-content-2154"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2043,21 +2007,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2155"
                                  aria-describedby="post-content-2155">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2155" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2018-03-28T17:31:48"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 17:31</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2155" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2018-03-28T17:31:48"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 17:31:48</time>
-                                    </header>
                                     <div id="post-content-2155"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2074,21 +2039,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2156"
                                  aria-describedby="post-content-2156">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/5.jpg?1558897754"
                                      alt="Awatar użytkownika Lenny Weisstein"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2156" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                    <time datetime="2018-03-28T17:47:54"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 17:47</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2156" class="font-bold text-lg text-white">Lenny Weisstein</h3>
-                                        <time datetime="2018-03-28T17:47:54"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 17:47:54</time>
-                                    </header>
                                     <div id="post-content-2156"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2105,21 +2071,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2157"
                                  aria-describedby="post-content-2157">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2157" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-03-28T21:05:14"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 21:05</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2157" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-03-28T21:05:14"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 21:05:14</time>
-                                    </header>
                                     <div id="post-content-2157"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2136,21 +2103,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2158"
                                  aria-describedby="post-content-2158">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2158" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2018-03-28T21:55:31"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 21:55</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2158" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2018-03-28T21:55:31"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 21:55:31</time>
-                                    </header>
                                     <div id="post-content-2158"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2167,21 +2135,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2161"
                                  aria-describedby="post-content-2161">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2161" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-03-28T22:09:48"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 22:09</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2161" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-03-28T22:09:48"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 22:09:48</time>
-                                    </header>
                                     <div id="post-content-2161"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2198,21 +2167,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2163"
                                  aria-describedby="post-content-2163">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2163" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-03-28T22:39:17"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2018 22:39</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2163" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-03-28T22:39:17"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-03-28 22:39:17</time>
-                                    </header>
                                     <div id="post-content-2163"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2229,21 +2199,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2178"
                                  aria-describedby="post-content-2178">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2178" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-04-12T13:05:26"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">12.04.2018 13:05</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2178" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-04-12T13:05:26"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-04-12 13:05:26</time>
-                                    </header>
                                     <div id="post-content-2178"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2260,21 +2231,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2183"
                                  aria-describedby="post-content-2183">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2183" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2018-04-14T19:36:09"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">14.04.2018 19:36</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2183" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2018-04-14T19:36:09"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-04-14 19:36:09</time>
-                                    </header>
                                     <div id="post-content-2183"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2291,21 +2263,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2184"
                                  aria-describedby="post-content-2184">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2184" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-04-15T09:12:54"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.04.2018 09:12</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2184" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-04-15T09:12:54"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-04-15 09:12:54</time>
-                                    </header>
                                     <div id="post-content-2184"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2322,21 +2295,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2186"
                                  aria-describedby="post-content-2186">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2186" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2018-04-15T19:14:30"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.04.2018 19:14</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2186" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2018-04-15T19:14:30"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-04-15 19:14:30</time>
-                                    </header>
                                     <div id="post-content-2186"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2353,21 +2327,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2187"
                                  aria-describedby="post-content-2187">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2187" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-04-15T19:29:11"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.04.2018 19:29</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2187" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-04-15T19:29:11"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-04-15 19:29:11</time>
-                                    </header>
                                     <div id="post-content-2187"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2384,21 +2359,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2373"
                                  aria-describedby="post-content-2373">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2373" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2018-09-03T15:54:11"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">03.09.2018 15:54</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2373" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2018-09-03T15:54:11"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-09-03 15:54:11</time>
-                                    </header>
                                     <div id="post-content-2373"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2415,21 +2391,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2375"
                                  aria-describedby="post-content-2375">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2375" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-09-04T09:46:15"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">04.09.2018 09:46</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2375" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-09-04T09:46:15"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-09-04 09:46:15</time>
-                                    </header>
                                     <div id="post-content-2375"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2446,21 +2423,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2376"
                                  aria-describedby="post-content-2376">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/4.jpg?1559579200"
                                      alt="Awatar użytkownika Enzo"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2376" class="font-bold text-lg text-white">Enzo</h3>
+                                    <time datetime="2018-09-04T11:13:17"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">04.09.2018 11:13</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2376" class="font-bold text-lg text-white">Enzo</h3>
-                                        <time datetime="2018-09-04T11:13:17"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-09-04 11:13:17</time>
-                                    </header>
                                     <div id="post-content-2376"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2477,21 +2455,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2409"
                                  aria-describedby="post-content-2409">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2409" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2018-10-22T16:23:32"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">22.10.2018 16:23</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2409" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2018-10-22T16:23:32"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2018-10-22 16:23:32</time>
-                                    </header>
                                     <div id="post-content-2409"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2508,21 +2487,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2670"
                                  aria-describedby="post-content-2670">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2670" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2019-03-28T11:18:44"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">28.03.2019 11:18</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2670" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2019-03-28T11:18:44"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2019-03-28 11:18:44</time>
-                                    </header>
                                     <div id="post-content-2670"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2539,21 +2519,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2671"
                                  aria-describedby="post-content-2671">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/16.jpg?1561655666"
                                      alt="Awatar użytkownika Infernal"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2671" class="font-bold text-lg text-white">Infernal</h3>
+                                    <time datetime="2019-03-29T02:44:01"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.03.2019 02:44</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2671" class="font-bold text-lg text-white">Infernal</h3>
-                                        <time datetime="2019-03-29T02:44:01"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2019-03-29 02:44:01</time>
-                                    </header>
                                     <div id="post-content-2671"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2570,21 +2551,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2672"
                                  aria-describedby="post-content-2672">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2672" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2019-03-29T12:14:20"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.03.2019 12:14</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2672" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2019-03-29T12:14:20"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2019-03-29 12:14:20</time>
-                                    </header>
                                     <div id="post-content-2672"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2601,21 +2583,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2796"
                                  aria-describedby="post-content-2796">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2796" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2019-07-04T10:17:49"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">04.07.2019 10:17</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2796" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2019-07-04T10:17:49"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2019-07-04 10:17:49</time>
-                                    </header>
                                     <div id="post-content-2796"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -2632,21 +2615,22 @@
                                  role="article"
                                  aria-labelledby="post-author-2797"
                                  aria-describedby="post-content-2797">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-2797" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2019-07-04T11:21:16"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">04.07.2019 11:21</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-2797" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2019-07-04T11:21:16"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2019-07-04 11:21:16</time>
-                                    </header>
                                     <div id="post-content-2797"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"

@@ -1,4 +1,3 @@
-<!-- templates/thread_template.html -->
 <!DOCTYPE html>
 <html lang="pl" class="dark">
 
@@ -6,123 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gry na tablety i telefony - Archiwum Forum X-21</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-        /* Style dla treści generowanej z BBCode */
-        .post-body a { @apply text-blue-400 hover:underline focus:ring-2 focus:ring-blue-500 focus:outline-none rounded; }
-        .post-body img { @apply rounded-lg my-4 max-w-full h-auto shadow-lg; }
-        .post-body ul, .post-body ol { @apply list-inside space-y-1 pl-4; }
-        .post-body ul { @apply list-disc; }
-        .post-body ol { @apply list-decimal; }
-        .quote-block { @apply mt-4 border-l-4 border-gray-600 bg-gray-900/50 p-4 rounded-r-lg; }
-        .quote-header { @apply text-sm text-gray-400 mb-2 flex items-center gap-2; }
-        
-        /* NOWOŚĆ: Style dla dodatkowych tagów */
-        .code-block {
-            @apply block bg-gray-900 text-sm text-yellow-300 font-mono p-4 my-4 rounded-lg overflow-x-auto whitespace-pre;
-        }
-        details.spoiler-block summary {
-            @apply cursor-pointer bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-500 focus:outline-none;
-        }
-        details.spoiler-block div {
-            @apply border border-gray-700 border-t-0 p-4 rounded-b-lg;
-        }
-        .user-mention {
-            @apply font-bold text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded;
-        }
-        table.bbcode-table {
-            @apply w-full my-4 text-left border-collapse;
-        }
-        table.bbcode-table th, table.bbcode-table td {
-            @apply border border-gray-600 p-2;
-        }
-        table.bbcode-table th {
-            @apply bg-gray-700 font-bold;
-        }
-        .custom-tag {
-            @apply font-semibold text-xs border border-purple-500 text-purple-300 bg-purple-900/50 px-2 py-1 rounded-full inline-block;
-        }
-        .video-wrapper { @apply relative w-full h-0 pb-[56.25%]; }
-        .video-wrapper iframe { @apply absolute top-0 left-0 w-full h-full; }
-        
-        /* Custom accessibility and UX styles */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: 8px;
-            background-color: #1f2937;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .skip-link:focus {
-            left: 6px;
-            top: 6px;
-        }
-        
-        /* Enhanced focus styles - WCAG 2.1 AA compliant */
-        .focus-ring:focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-        
-        /* Touch target improvements for mobile */
-        @media (max-width: 768px) {
-            .touch-target {
-                min-height: 44px;
-                min-width: 44px;
-                display: flex;
-                align-items: center;
-                padding: 8px;
-            }
-        }
-        
-        /* Breadcrumb microdata styling */
-        .breadcrumb {
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* Screen reader only content */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./css/milligram.min.css">
+    <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
-<body class="bg-gray-900 text-gray-300 font-sans antialiased">
-    <!-- Skip Link for keyboard navigation -->
+<body class="bg-gray-900 text-gray-300 antialiased">
     <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
 
-    <div class="container mx-auto max-w-4xl px-4 py-8">
-        <!-- Breadcrumb Navigation -->
+    <div class="container mx-auto max-w-5xl px-4 py-8">
         <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
             <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400 space-x-2">
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <a href="index.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
                         <span itemprop="name">Strona główna</span>
                     </a>
                     <meta itemprop="position" content="1" />
                 </li>
-                <li class="text-gray-400" aria-hidden="true">/</li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li class="text-gray-400" class="list-none" aria-hidden="true" >/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <a href="forum_18.html" itemprop="item" class="text-blue-400 hover:text-blue-300 focus-ring">
                         <span itemprop="name">Ogólna dyskusja</span>
                     </a>
                     <meta itemprop="position" content="2" />
                 </li>
-                <li class="text-gray-400" aria-hidden="true">/</li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li class="text-gray-400" class="list-none" aria-hidden="true">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="list-none">
                     <span itemprop="name" class="text-white font-semibold">Gry na tablety i telefony</span>
                     <meta itemprop="position" content="3" />
                 </li>
@@ -131,11 +39,6 @@
 
         <header class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Gry na tablety i telefony</h1>
-            <nav aria-label="Nawigacja powrotna">
-                <a href="index.html"
-                   class="text-blue-400 hover:text-blue-300 focus-ring touch-target"
-                   aria-label="Wróć do listy forów">← Wróć do listy forów</a>
-            </nav>
         </header>
 
         <main id="main-content" role="main">
@@ -148,21 +51,22 @@
                                  role="article"
                                  aria-labelledby="post-author-535"
                                  aria-describedby="post-content-535">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/13.jpg?1516379200"
                                      alt="Awatar użytkownika Lou"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-535" class="font-bold text-lg text-white">Lou</h3>
+                                    <time datetime="2016-12-30T23:54:09"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">30.12.2016 23:54</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-535" class="font-bold text-lg text-white">Lou</h3>
-                                        <time datetime="2016-12-30T23:54:09"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-30 23:54:09</time>
-                                    </header>
                                     <div id="post-content-535"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -179,21 +83,22 @@
                                  role="article"
                                  aria-labelledby="post-author-536"
                                  aria-describedby="post-content-536">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/12.jpg?1512503192"
                                      alt="Awatar użytkownika Fred"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-536" class="font-bold text-lg text-white">Fred</h3>
+                                    <time datetime="2016-12-31T00:51:05"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">31.12.2016 00:51</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-536" class="font-bold text-lg text-white">Fred</h3>
-                                        <time datetime="2016-12-31T00:51:05"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2016-12-31 00:51:05</time>
-                                    </header>
                                     <div id="post-content-536"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -210,21 +115,22 @@
                                  role="article"
                                  aria-labelledby="post-author-537"
                                  aria-describedby="post-content-537">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-537" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2017-02-10T09:14:14"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">10.02.2017 09:14</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-537" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2017-02-10T09:14:14"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-10 09:14:14</time>
-                                    </header>
                                     <div id="post-content-537"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -241,21 +147,22 @@
                                  role="article"
                                  aria-labelledby="post-author-538"
                                  aria-describedby="post-content-538">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/24.jpg?1559183528"
                                      alt="Awatar użytkownika hubi1"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-538" class="font-bold text-lg text-white">hubi1</h3>
+                                    <time datetime="2017-02-10T14:04:44"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">10.02.2017 14:04</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-538" class="font-bold text-lg text-white">hubi1</h3>
-                                        <time datetime="2017-02-10T14:04:44"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-10 14:04:44</time>
-                                    </header>
                                     <div id="post-content-538"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -272,21 +179,22 @@
                                  role="article"
                                  aria-labelledby="post-author-539"
                                  aria-describedby="post-content-539">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/3.jpg?1740478208"
                                      alt="Awatar użytkownika Missile"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-539" class="font-bold text-lg text-white">Missile</h3>
+                                    <time datetime="2017-02-12T15:17:31"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">12.02.2017 15:17</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-539" class="font-bold text-lg text-white">Missile</h3>
-                                        <time datetime="2017-02-12T15:17:31"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-12 15:17:31</time>
-                                    </header>
                                     <div id="post-content-539"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -303,21 +211,22 @@
                                  role="article"
                                  aria-labelledby="post-author-540"
                                  aria-describedby="post-content-540">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/11.jpg?1512503192"
                                      alt="Awatar użytkownika Najemnik"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-540" class="font-bold text-lg text-white">Najemnik</h3>
+                                    <time datetime="2017-02-15T03:49:56"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.02.2017 03:49</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-540" class="font-bold text-lg text-white">Najemnik</h3>
-                                        <time datetime="2017-02-15T03:49:56"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-15 03:49:56</time>
-                                    </header>
                                     <div id="post-content-540"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -334,21 +243,22 @@
                                  role="article"
                                  aria-labelledby="post-author-541"
                                  aria-describedby="post-content-541">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/23.jpg?1532088218"
                                      alt="Awatar użytkownika Leeter"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-541" class="font-bold text-lg text-white">Leeter</h3>
+                                    <time datetime="2017-02-15T21:11:34"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">15.02.2017 21:11</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-541" class="font-bold text-lg text-white">Leeter</h3>
-                                        <time datetime="2017-02-15T21:11:34"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-15 21:11:34</time>
-                                    </header>
                                     <div id="post-content-541"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -365,21 +275,22 @@
                                  role="article"
                                  aria-labelledby="post-author-542"
                                  aria-describedby="post-content-542">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/13.jpg?1516379200"
                                      alt="Awatar użytkownika Lou"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-542" class="font-bold text-lg text-white">Lou</h3>
+                                    <time datetime="2017-02-18T11:16:29"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">18.02.2017 11:16</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-542" class="font-bold text-lg text-white">Lou</h3>
-                                        <time datetime="2017-02-18T11:16:29"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-18 11:16:29</time>
-                                    </header>
                                     <div id="post-content-542"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -396,21 +307,22 @@
                                  role="article"
                                  aria-labelledby="post-author-543"
                                  aria-describedby="post-content-543">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/11.jpg?1512503192"
                                      alt="Awatar użytkownika Najemnik"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-543" class="font-bold text-lg text-white">Najemnik</h3>
+                                    <time datetime="2017-02-24T17:59:40"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">24.02.2017 17:59</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-543" class="font-bold text-lg text-white">Najemnik</h3>
-                                        <time datetime="2017-02-24T17:59:40"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-24 17:59:40</time>
-                                    </header>
                                     <div id="post-content-543"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -427,21 +339,22 @@
                                  role="article"
                                  aria-labelledby="post-author-544"
                                  aria-describedby="post-content-544">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/12.jpg?1512503192"
                                      alt="Awatar użytkownika Fred"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-544" class="font-bold text-lg text-white">Fred</h3>
+                                    <time datetime="2017-02-26T12:53:51"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">26.02.2017 12:53</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-544" class="font-bold text-lg text-white">Fred</h3>
-                                        <time datetime="2017-02-26T12:53:51"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-02-26 12:53:51</time>
-                                    </header>
                                     <div id="post-content-544"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -458,21 +371,22 @@
                                  role="article"
                                  aria-labelledby="post-author-545"
                                  aria-describedby="post-content-545">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/11.jpg?1512503192"
                                      alt="Awatar użytkownika Najemnik"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-545" class="font-bold text-lg text-white">Najemnik</h3>
+                                    <time datetime="2017-03-09T22:29:24"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">09.03.2017 22:29</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-545" class="font-bold text-lg text-white">Najemnik</h3>
-                                        <time datetime="2017-03-09T22:29:24"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-09 22:29:24</time>
-                                    </header>
                                     <div id="post-content-545"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -489,21 +403,22 @@
                                  role="article"
                                  aria-labelledby="post-author-546"
                                  aria-describedby="post-content-546">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="https://gravatar.com/avatar/79a1c90178d766844ad7aa54806e2a62?s=96&d=mp"
                                      alt="Awatar użytkownika Sölve"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-546" class="font-bold text-lg text-white">Sölve</h3>
+                                    <time datetime="2017-03-09T23:02:49"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">09.03.2017 23:02</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-546" class="font-bold text-lg text-white">Sölve</h3>
-                                        <time datetime="2017-03-09T23:02:49"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-09 23:02:49</time>
-                                    </header>
                                     <div id="post-content-546"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -520,21 +435,22 @@
                                  role="article"
                                  aria-labelledby="post-author-547"
                                  aria-describedby="post-content-547">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/11.jpg?1512503192"
                                      alt="Awatar użytkownika Najemnik"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-547" class="font-bold text-lg text-white">Najemnik</h3>
+                                    <time datetime="2017-03-29T17:13:52"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.03.2017 17:13</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-547" class="font-bold text-lg text-white">Najemnik</h3>
-                                        <time datetime="2017-03-29T17:13:52"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-29 17:13:52</time>
-                                    </header>
                                     <div id="post-content-547"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -551,21 +467,22 @@
                                  role="article"
                                  aria-labelledby="post-author-548"
                                  aria-describedby="post-content-548">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/12.jpg?1512503192"
                                      alt="Awatar użytkownika Fred"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-548" class="font-bold text-lg text-white">Fred</h3>
+                                    <time datetime="2017-03-29T18:04:23"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">29.03.2017 18:04</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-548" class="font-bold text-lg text-white">Fred</h3>
-                                        <time datetime="2017-03-29T18:04:23"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-03-29 18:04:23</time>
-                                    </header>
                                     <div id="post-content-548"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -582,21 +499,22 @@
                                  role="article"
                                  aria-labelledby="post-author-549"
                                  aria-describedby="post-content-549">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/12.jpg?1512503192"
                                      alt="Awatar użytkownika Fred"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-549" class="font-bold text-lg text-white">Fred</h3>
+                                    <time datetime="2017-05-07T13:18:54"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">07.05.2017 13:18</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-549" class="font-bold text-lg text-white">Fred</h3>
-                                        <time datetime="2017-05-07T13:18:54"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-05-07 13:18:54</time>
-                                    </header>
                                     <div id="post-content-549"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"
@@ -613,21 +531,22 @@
                                  role="article"
                                  aria-labelledby="post-author-550"
                                  aria-describedby="post-content-550">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 w-32 flex flex-col items-center text-center space-y-2">
                                 
                                 <img src="data/avatars/m/0/5.jpg?1558897754"
                                      alt="Awatar użytkownika Lenny Weisstein"
-                                     class="w-12 h-12 rounded-full object-cover shadow-md">
+                                     class="w-16 h-16 rounded-full object-cover shadow-md">
                                 
+                                
+                                <div class="space-y-1">
+                                    <h3 id="post-author-550" class="font-bold text-lg text-white">Lenny Weisstein</h3>
+                                    <time datetime="2017-08-05T23:21:50"
+                                          class="text-sm text-gray-400 font-mono block"
+                                          title="Data publikacji postu">05.08.2017 23:21</time>
+                                </div>
                             </div>
-                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg">
+                            <div class="flex-grow bg-gray-800 rounded-xl p-1 shadow-lg min-w-0">
                                 <div class="bg-gray-800 rounded-lg p-5">
-                                    <header class="flex justify-between items-center mb-3">
-                                        <h3 id="post-author-550" class="font-bold text-lg text-white">Lenny Weisstein</h3>
-                                        <time datetime="2017-08-05T23:21:50"
-                                              class="text-sm text-gray-400 font-mono"
-                                              title="Data publikacji postu">2017-08-05 23:21:50</time>
-                                    </header>
                                     <div id="post-content-550"
                                          class="text-gray-200 leading-7 post-body"
                                          role="region"

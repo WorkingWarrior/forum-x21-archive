@@ -1,4 +1,3 @@
-<!-- templates/index_template.html -->
 <!DOCTYPE html>
 <html lang="pl" class="dark">
 
@@ -6,66 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archiwum Forum X-21</title>
-    <!-- Skrypt Tailwind Play CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom accessibility and UX styles */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: 8px;
-            background-color: #1f2937;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .skip-link:focus {
-            left: 6px;
-            top: 6px;
-        }
-        
-        /* Enhanced focus styles - WCAG 2.1 AA compliant */
-        .focus-ring:focus {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-        
-        /* Touch target improvements for mobile */
-        @media (max-width: 768px) {
-            .touch-target {
-                min-height: 44px;
-                min-width: 44px;
-                display: flex;
-                align-items: center;
-                padding: 8px;
-            }
-        }
-        
-        /* Breadcrumb microdata styling */
-        .breadcrumb {
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./css/milligram.min.css">
+    <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
-<body class="bg-gray-900 text-gray-300 font-sans antialiased">
-    <!-- Skip Link for keyboard navigation -->
+<body class="bg-gray-900 text-gray-300 antialiased">
     <a href="#main-content" class="skip-link focus-ring">Przejdź do głównej treści</a>
 
     <div class="container mx-auto max-w-6xl px-4 py-8">
-        <!-- Breadcrumb Navigation -->
-        <nav aria-label="Nawigacja strukturalna" class="breadcrumb">
-            <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="flex text-gray-400">
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <span itemprop="name" class="text-white font-semibold">Strona główna</span>
-                    <meta itemprop="position" content="1" />
-                </li>
-            </ol>
-        </nav>
-
         <header class="text-center mb-12">
             <h1 class="text-5xl font-bold text-white">Archiwum Forum X-21</h1>
             <p class="text-gray-400 mt-2">Zachowana historia społeczności.</p>
@@ -91,7 +39,7 @@
 
                             <nav aria-label="Najnowsze wątki w Stolik Barowy">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -103,7 +51,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Rodzynku mały">Rodzynku mały</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -115,7 +63,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Broken Light - Saga w wielu odcinkach">Broken Light - Saga w wielu odcinkach</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -127,7 +75,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Nowy Admin Forum 2019">Nowy Admin Forum 2019</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -139,7 +87,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: POŻEGNANIE CHLEBAJA">POŻEGNANIE CHLEBAJA</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -177,7 +125,7 @@
 
                             <nav aria-label="Najnowsze wątki w Laboratorium X-21">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -189,7 +137,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Rozpoznaj laboranta - końkurs z nagrodami.">Rozpoznaj laboranta - końkurs z nagrodami.</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -201,7 +149,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Wyścig Laborantów">Wyścig Laborantów</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -213,7 +161,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: X-21">X-21</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -225,7 +173,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Wafle, czyli X-21 edycja ilustrowana.">Wafle, czyli X-21 edycja ilustrowana.</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -270,7 +218,7 @@
 
                             <nav aria-label="Najnowsze wątki w Sprzęt">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -282,7 +230,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Plej stejszyn">Plej stejszyn</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -294,7 +242,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Procesory Ryzen – hit czy kit?">Procesory Ryzen – hit czy kit?</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -306,7 +254,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Monitor poszukiwany">Monitor poszukiwany</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -318,7 +266,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Zestaw komputerowy">Zestaw komputerowy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -356,7 +304,7 @@
 
                             <nav aria-label="Najnowsze wątki w Oprogramowanie">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -368,7 +316,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Android zasysa">Android zasysa</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -380,7 +328,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Android - pytanie laickie w chuj">Android - pytanie laickie w chuj</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -392,7 +340,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Najlepszy program do odtwarzania muzyki to...">Najlepszy program do odtwarzania muzyki to...</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -404,7 +352,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Antywirusy">Antywirusy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -442,7 +390,7 @@
 
                             <nav aria-label="Najnowsze wątki w Problemy">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -454,7 +402,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Skaner zostawia pasy">Skaner zostawia pasy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -492,7 +440,7 @@
 
                             <nav aria-label="Najnowsze wątki w Pchli targ">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -504,7 +452,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Sony WH-CH700N">Sony WH-CH700N</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -516,7 +464,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Kupię betę">Kupię betę</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -528,7 +476,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Kupię miskę">Kupię miskę</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -540,7 +488,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: DDR3 PC3-12800 4 GB SODIMM">DDR3 PC3-12800 4 GB SODIMM</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -585,7 +533,7 @@
 
                             <nav aria-label="Najnowsze wątki w Ogólna dyskusja">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -597,7 +545,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Ostatnie 4-5 lat w branży gier">Ostatnie 4-5 lat w branży gier</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -609,7 +557,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Nie dali mi nigdy">Nie dali mi nigdy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -621,7 +569,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: CoD: Warzone">CoD: Warzone</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -633,7 +581,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Chernobylite">Chernobylite</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -671,7 +619,7 @@
 
                             <nav aria-label="Najnowsze wątki w Konkrety">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -683,7 +631,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: S.T.A.L.K.E.R. 2">S.T.A.L.K.E.R. 2</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -695,7 +643,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Frostpunk 2">Frostpunk 2</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -707,7 +655,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Cybergej 2137">Cybergej 2137</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -719,7 +667,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Gord">Gord</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -757,7 +705,7 @@
 
                             <nav aria-label="Najnowsze wątki w Modyfikacje">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -769,7 +717,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: STALKER Anomaly">STALKER Anomaly</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -781,7 +729,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Gun Porn aka Gunslinger mod">Gun Porn aka Gunslinger mod</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -793,7 +741,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Halfquake Trilogy">Halfquake Trilogy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -805,7 +753,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Innovation Mod 2.0">Innovation Mod 2.0</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -850,7 +798,7 @@
 
                             <nav aria-label="Najnowsze wątki w Film i serial">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -862,7 +810,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Ekran duży i mały">Ekran duży i mały</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -874,7 +822,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: W głębi lasu">W głębi lasu</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -886,7 +834,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Westworld">Westworld</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -898,7 +846,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Sosnowiec">Sosnowiec</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -936,7 +884,7 @@
 
                             <nav aria-label="Najnowsze wątki w Amino i mango">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -948,7 +896,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Pop Team Epic">Pop Team Epic</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -960,7 +908,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Neon Genesis Evangelion">Neon Genesis Evangelion</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -972,7 +920,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Japoński Zjebog... Zwierzogród, czyli Beastars">Japoński Zjebog... Zwierzogród, czyli Beastars</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -984,7 +932,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Press F for KyoAnus">Press F for KyoAnus</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1022,7 +970,7 @@
 
                             <nav aria-label="Najnowsze wątki w Muzyka">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1034,7 +982,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Właśnie słucham...">Właśnie słucham...</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1046,7 +994,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Rapsy">Rapsy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1058,7 +1006,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Metal">Metal</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1070,7 +1018,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Muzyka elektroniczna / ambient">Muzyka elektroniczna / ambient</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1108,7 +1056,7 @@
 
                             <nav aria-label="Najnowsze wątki w Książka i komiks">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1120,7 +1068,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Co ostatnio czytacie / przeczytaliście?">Co ostatnio czytacie / przeczytaliście?</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1132,7 +1080,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Nowy awatar Solvego">Nowy awatar Solvego</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1144,7 +1092,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: [LN] Infinite Dendrogram">[LN] Infinite Dendrogram</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1156,7 +1104,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: [LN] WorldEnd">[LN] WorldEnd</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1201,7 +1149,7 @@
 
                             <nav aria-label="Najnowsze wątki w Humor">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1213,7 +1161,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Pasty">Pasty</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1225,7 +1173,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Z prasy">Z prasy</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1237,7 +1185,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Bash X-21">Bash X-21</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1249,7 +1197,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Cenzopapa">Cenzopapa</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1287,7 +1235,7 @@
 
                             <nav aria-label="Najnowsze wątki w O wszystkim">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1299,7 +1247,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Duda vs Trzasek">Duda vs Trzasek</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1311,7 +1259,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: A w Polsce dalej jak w lesie">A w Polsce dalej jak w lesie</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1323,7 +1271,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Czy wierzysz w obce cywilizacje / UFO?">Czy wierzysz w obce cywilizacje / UFO?</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1335,7 +1283,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Wynajęcie kombajnu">Wynajęcie kombajnu</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1380,7 +1328,7 @@
 
                             <nav aria-label="Najnowsze wątki w Główne rozporządzenia">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1392,7 +1340,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Sążnie wielki dzień">Sążnie wielki dzień</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1404,7 +1352,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Gdzie byłeś/aś najdalej?">Gdzie byłeś/aś najdalej?</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1416,7 +1364,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: REGULAMIN FORUM">REGULAMIN FORUM</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1428,7 +1376,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Discord">Discord</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1464,7 +1412,7 @@
 
                             <nav aria-label="Najnowsze wątki w Propozycje i zgłoszenia">
                                 <ul class="mt-4 space-y-2" role="list">
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1476,7 +1424,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Zbiórka pieniędzy na reklamę na onecie">Zbiórka pieniędzy na reklamę na onecie</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1488,7 +1436,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Dostosowanie forum do pci">Dostosowanie forum do pci</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1500,7 +1448,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Znajdźmy Infowi pracę">Znajdźmy Infowi pracę</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -1512,7 +1460,7 @@
                                            class="text-blue-400 hover:text-blue-300 text-sm focus-ring touch-target"
                                            aria-label="Otwórz wątek: Dej adminowi na etui">Dej adminowi na etui</a>
                                     </li>
-                                     <!-- Pokaż do 5 najnowszych wątków -->
+                                    
                                     <li class="flex items-start" role="listitem">
                                         <svg class="w-4 h-4 text-gray-400 mt-1 mr-2 flex-shrink-0"
                                              fill="none" stroke="currentColor" viewBox="0 0 24 24"
